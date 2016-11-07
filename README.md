@@ -19,7 +19,7 @@ Proyecto pensado para ser el punto de partida de aplicaciones desarrolladas con 
 ### Estructura del proyecto ###
 
 ```
-ionic-conference-app/
+angular2-seed/
 ├── src/
 |    ├── app/
 |    |    ├── app.module.ts
