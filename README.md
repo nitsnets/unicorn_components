@@ -1,31 +1,74 @@
 # NTS Angular 2 Seed
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.19-3.
+Proyecto pensado para ser el punto de partida de aplicaciones desarrolladas con Angular 2
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Prerequisitos ###
+1. [NodeJS](https://nodejs.org/) (>6.x) con NPM (>3.x). Se recomienda utilizar [NVM](http://nvm.sh) para la gestión de versiones de Node
+2. Typings (>1.x) ```npm install -g typings```
+3. Angular CLI (>1.0.0-beta.19-3) ```npm install -g angular-cli```)
 
-## Code scaffolding
+### Set up ###
+1. **Fork** del proyecto
+2. **Instalación** de las dependencias con ```npm install```
+3. **Compilación y ejecución** con ```npm start```. Este comando realiza las siguientes tareas automáticas:
+    * Crea la carpeta ```/dist```
+    * Compila todo el Typescript en Javascript y lo agrupa en el bundle ```dist/main.bundle.js```
+    * Compila todo el Sass en CSS y lo agrupa en el bundle ```dist/styles.bundle.css```
+    * Crea un servidor local en ```localhost:4200``` y activa *watchers* que lo recargan cuando cambia algún fichero
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
+### Estructura del proyecto ###
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Deploying to Github Pages
-
-Run `ng github-pages:deploy` to deploy to Github Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+ionic-conference-app/
+├── src/
+|    ├── app/
+|    |    ├── app.module.ts
+|    |    ├── app.routing.ts
+|    |    ├── app.component.ts
+|    |    ├── app.component.html
+|    |    ├── app.component.scss
+|    |    ├── index.ts
+|    |    ├── main.prod.ts
+|    |    ├── dashboard/
+│    │    │    ├── dashboard.component.html
+│    │    │    ├── dashboard.component.ts
+│    │    │    ├── dashboard.component.scss
+│    │    │    └── dashboard.module.ts
+│    │    │
+│    │    ├── header/
+│    │    │── home/
+│    │    │── users/
+│    │    └── shared/
+│    │         ├── components/
+│    │         ├── directives/
+│    │         ├── models/
+│    │         ├── modules/
+│    │         ├── pipes/
+│    │         ├── services/
+│    │         ├── styles/
+│    │         ├── shared.modules.ts
+│    │         └── utils.ts
+|    |
+|    ├── assests/
+|    |    └── images/
+|    |          └── icons/
+|    |                ├── arrow-down.svg
+|    |                ├── arrow-left.svg
+|    |                ├── arrow-right.svg
+|    |                └── ...
+|    ├── index.html
+|    ├── main.ts
+|    ├── styles.scss
+|    ├── test.ts
+|    └── tsconfig.json                  * Define las opciones del compilador de Typescript
+|
+├── .gitignore                          
+├── .editorconfig                       * Define el estilo del código deseado
+├── README.md                           * Este fichero
+├── karma.conf.js                       * Configuración de los tests unitarios
+├── protractor.conf.js                  * Configuración de los tests e2e
+├── angular-cli.json                    * Define las opciones del proyecto de Angular
+├── package.json                        * Define las dependencias del proyecto
+├── tsconfig.json                       * Define las opciones del compilador de Typescript
+└── tslint.json                         * Define las reglas del linter de TypeScript
+```
