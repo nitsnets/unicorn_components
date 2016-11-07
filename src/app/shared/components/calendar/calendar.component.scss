@@ -1,0 +1,42 @@
+@import './../../styles/variables.scss';
+@import './../../styles/mixins.scss';
+
+.calendar-container{
+  width: $calendar-size;
+  height: $calendar-size;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  @include border-radius($border-radius);
+  @include border($border-width);
+  @include no-touch();
+  padding: $basic-padding/3;
+}
+.month-name, .days-name, .week-row{
+  display: flex;
+  align-items: center;
+  p{ flex:1; text-align: center; }
+}
+.month-name {
+  p{ font-weight: bold; }
+}
+.days-name {
+  p{ color: $medium-grey; font-weight: bold; font-size: 10px; }
+}
+.week-row{
+  flex:1;
+  p{ display: flex; justify-content: center; }
+}
+.day{
+  @include border-radius(50%);
+  cursor: default;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  &:hover:not(.selected){ background-color: $lightest-alpha; }
+  &.today{ color: $brand-color; font-weight: bold; border: 1px $brand-color solid;}
+  &.selected{ background-color: $brand-color; color: white; }
+  &.different-month{ visibility: hidden}
+}

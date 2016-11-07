@@ -1,0 +1,75 @@
+@import './../../styles/variables';
+@import './../../styles/mixins';
+
+i {
+  display: block;
+  height: $input-padding * 2;
+  position: relative;
+  width: $input-padding * 2;
+
+  &.large {
+    height: $input-height - $border-width;
+    width: $input-height - $border-width;
+  }
+
+  &.medium {
+    height: $input-padding * 2;
+    width: $input-padding * 2;
+  }
+
+  &::before {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  &.undo::before { background-image: url('/assets/images/icons/undo.svg'); }
+  &.redo::before { background-image: url('/assets/images/icons/redo.svg'); }
+  &.page::before { background-image: url('/assets/images/icons/paper.svg'); }
+  &.user::before { background-image: url('/assets/images/icons/head.svg'); }
+  &.back::before { background-image: url('/assets/images/icons/arrow-left.svg'); }
+  &.forw::before { background-image: url('/assets/images/icons/arrow-right.svg'); }
+  &.up::before { background-image: url('/assets/images/icons/arrow-up.svg'); }
+  &.down::before { background-image: url('/assets/images/icons/arrow-down.svg'); }
+  &.plus::before { background-image: url('/assets/images/icons/plus.svg'); }
+  &.minus::before { background-image: url('/assets/images/icons/minus.svg'); }
+  &.close::before { background-image: url('/assets/images/icons/cross.svg'); }
+  &.check::before { background-image: url('/assets/images/icons/check.svg'); }
+  &.delete::before { background-image: url('/assets/images/icons/trash.svg'); }
+  &.more-v::before { background-image: url('/assets/images/icons/more.svg'); }
+  &.more-h::before { background-image: url('/assets/images/icons/ellipsis.svg'); }
+  &.layout::before { background-image: url('/assets/images/icons/layout.svg'); }
+  &.desktop::before { background-image: url('/assets/images/icons/desktop.svg'); }
+  &.laptop::before { background-image: url('/assets/images/icons/laptop.svg'); }
+  &.tablet::before { background-image: url('/assets/images/icons/tablet.svg'); }
+  &.mobile::before { background-image: url('/assets/images/icons/mobile.svg'); }
+  &.cloud1::before { background-image: url('/assets/images/icons/cloud1.svg'); }
+  &.cloud2::before { background-image: url('/assets/images/icons/cloud2.svg'); }
+  &.cloud3::before { background-image: url('/assets/images/icons/cloud3.svg'); }
+  &.cloud4::before { background-image: url('/assets/images/icons/cloud4.svg'); }
+  &.edit::before { background-image: url('/assets/images/icons/edit.svg'); }
+  &.eye::before { background-image: url('/assets/images/icons/eye.svg'); }
+  &.loading::before { background-image: url('/assets/images/icons/loading.svg'); }
+  &.error::before { background-image: url('/assets/images/icons/circle-cross.svg'); }
+  &.caret::before { background-image: url('/assets/images/icons/caret.svg'); }
+  &.search::before { background-image: url('/assets/images/icons/search.svg'); }
+  &.calendar::before { background-image: url('/assets/images/icons/calendar.svg'); }
+  &.clock::before { background-image: url('/assets/images/icons/clock.svg'); }
+  &.clock-in::before { background-image: url('/assets/images/icons/clock-in.svg'); }
+  &.clock-out::before { background-image: url('/assets/images/icons/clock-out.svg'); }
+  &.plus::before { background-image: url('/assets/images/icons/plus.svg'); }
+  &.edit::before { background-image: url('/assets/images/icons/edit.svg'); }
+  &.copy::before { background-image: url('/assets/images/icons/stack.svg'); }
+  &.file-add::before { background-image: url('/assets/images/icons/file-add.svg'); }
+  &.code::before { background-image: url('/assets/images/icons/code.svg'); }
+  &.drag::before { background-image: url('/assets/images/icons/align-justify.svg'); }
+  &.bars::before {background-image: url('/assets/images/icons/bar-graph.svg'); }
+  &.media::before {background-image: url('/assets/images/icons/archive.svg'); }
+  &.grid::before {background-image: url('/assets/images/icons/grid.svg'); }
+  &.square::before {background-image: url('/assets/images/icons/square.svg'); }
+}

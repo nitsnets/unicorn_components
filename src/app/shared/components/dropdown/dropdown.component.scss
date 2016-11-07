@@ -1,0 +1,7 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+:host{
+  height: $input-height;
+  position: relative;
+}

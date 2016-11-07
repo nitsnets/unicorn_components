@@ -1,0 +1,13 @@
+<go-header goSize="medium">
+  <go-input
+    icon="search"
+    [value]="value"
+    [placeholder]="placeholder"
+    [goModel]="goModel"
+    (goModelChange)="onGoModelChange($event)"
+    [debounce]="debounce"
+    [floating]="true">
+  </go-input>
+  <go-button class="btn-header-md" icon="close" (click)="clear()" *ngIf="goModel"></go-button>
+  
+</go-header>

@@ -1,0 +1,10 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+go-input{
+  flex: 1;
+  margin-left: ($header-md-height - $input-height) - $basic-padding;
+}
+go-button{
+  margin-right: - $basic-padding;
+}

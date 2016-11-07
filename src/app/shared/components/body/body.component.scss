@@ -1,0 +1,16 @@
+@import './../../styles/variables.scss';
+@import './../../styles/mixins.scss';
+
+:host{
+  &.has-header, &.has-subheader{ .body-container{ overflow-y: auto; } }
+  &.has-header{ .body-container{ height: calc(100% - #{$header-height}); } }
+  &.has-subheader{ .body-container{ height: calc(100% - #{$header-height * 2}); } }
+}
+.body-container{
+  display: flex;
+  justify-content: center;
+}
+.body{
+  flex: 1;
+  max-width: 1080px;
+}

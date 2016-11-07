@@ -1,0 +1,21 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+
+:host{
+  @include border($border-width);
+  background-color: #fff;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+}
+.popup-content{
+  padding: $basic-padding/2;
+  padding-right: $input-height;
+  flex: 1;
+}
+.close-button{
+  position: absolute;
+  right: 0;
+  top: 0;
+}

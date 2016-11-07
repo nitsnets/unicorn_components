@@ -1,0 +1,31 @@
+<div class="clock-container">
+
+  <div class="clock-mode clock-am" [ngClass]="{'selected': mode === 'AM'}" (click)="selectMode('AM')"> AM </div>
+  <div class="clock-mode clock-pm" [ngClass]="{'selected': mode === 'PM'}" (click)="selectMode('PM')"> PM </div>
+
+  <div class="clock-circle">
+    <div class="clock-hour-tick" [style.transform]="'rotate('+hourDegrees+'deg)'"> </div>
+
+    <div class="clock-minute-tick" [style.transform]="'rotate('+minuteDegrees+'deg)'"> </div>
+    <div class="clock-center"> </div>
+
+    <ul class="clock-hours">
+      <li *ngFor="let hour of hours; let i = index"
+        [class]="'clock-number clock-hour clock-hour-' + i"
+        [ngClass]="{'selected': hourIndex === i}"
+        (click)="selectHour(i)"
+      >
+        {{hour}}
+      </li>
+    </ul>
+    <ul class="clock-minutes">
+      <li *ngFor="let minute of minutes; let i = index"
+        [class]=" 'clock-number clock-minute clock-minute-' + i"
+        [ngClass]="{'selected': minuteIndex === i}"
+        (click)="selectMinute(i)"
+      >
+        {{minute}}
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<label [ngClass]="{
+  'with-prefix': prefix,
+  'with-icon': icon,
+  'with-icon-right': iconRight,
+  'with-clear': clear
+}">
+  <div class="label" *ngIf="label || counter">
+    <span *ngIf="label">{{label}}</span>
+    <span *ngIf="counter">
+      {{goModel? goModel.length : 0}} <span *ngIf="max>-1">/ {{max}}</span>
+    </span>
+  </div>
+  <go-icon [icon]="icon" class="icon"></go-icon>
+  <go-icon [icon]="iconRight" class="icon-right"></go-icon>
+
+  <div class="input-container">
+    <span class="prefix" *ngIf="prefix">{{prefix}}</span>
+    <input
+      *ngIf="!multiline"
+      [ngClass]="{floating: floating}"
+      [type]="type"
+      [attr.maxlength]="max"
+      [name]="name"
+      [placeholder]="placeholder"
+      [value]="value"
+      [autofocus]="autofocus"
+      [ngModel]="goModel"
+      (ngModelChange)="onNgModelChange($event)"
+      (blur)="goBlur.emit($event)"
+      (focus)="goFocus.emit($event)"
+    />
+    <textarea
+      *ngIf="multiline"
+      [ngClass]="{floating: floating}"
+      [attr.maxlength]="max"
+      [name]="name"
+      [placeholder]="placeholder"
+      [value]="value"
+      [ngModel]="goModel"
+      (ngModelChange)="onNgModelChange($event)"
+      (blur)="goBlur.emit($event)"
+      (focus)="goFocus.emit($event)">
+    </textarea>
+  </div>
+  <small *ngIf="hint" class="hint">{{hint}}</small>
+  <small *ngIf="error" class="error">{{error}}</small>
+
+</label>

@@ -1,0 +1,14 @@
+@import '../shared/styles/variables';
+@import '../shared/styles/mixins';
+
+.header-title{
+  font-size: $font-large;
+  line-height: 2;
+  padding-left: $header-height/2;
+}
+.body{
+  padding: $basic-padding;
+}
+.popup-test-btn{
+  float: right;
+}

@@ -1,0 +1,22 @@
+@import './../../styles/variables.scss';
+@import './../../styles/mixins.scss';
+
+@mixin header($height:$header-height, $padding:$basic-padding){
+  @include border-bottom();
+  @include flexbox();
+  height: $height;
+  padding: 0 $padding;
+  align-items: center;
+  transition: margin-top ease $slow;
+
+  &.hidden{ margin-top:-$height; }
+  &.grey{ background-color: $lightest-alpha; }
+  &.red{
+    background-color: $error-color-light;
+    border-color: $error-color-medium !important;
+    color: $error-color;
+  }
+}
+
+header{ @include header(); }
+header.medium{ @include header($header-md-height); }

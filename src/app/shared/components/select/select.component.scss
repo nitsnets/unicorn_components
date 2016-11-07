@@ -1,0 +1,23 @@
+@import './../../styles/variables.scss';
+@import './../../styles/mixins.scss';
+
+:host{ display: inline-block; position: relative;}
+
+go-input{
+  width: 100%;
+}
+.options{
+  z-index: 5;
+  width: 100%;
+  list-style: none;
+  position: absolute;
+  background-color: white;
+  @include border($border-width);
+}
+.option{
+  cursor: default;
+  padding: $basic-padding/4;
+  font-size: $font-small;
+  &:hover{background-color: $lightest-alpha;}
+  &.selected{background-color: $medium-alpha;}
+}

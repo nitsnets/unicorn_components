@@ -1,0 +1,9 @@
+<header
+  [class]="goBg"
+  [ngClass]="{
+    'hidden': !goVisible,
+    'medium': goSize == 'medium'
+  }"
+>
+  <ng-content></ng-content>
+</header>

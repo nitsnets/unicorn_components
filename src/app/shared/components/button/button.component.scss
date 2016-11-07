@@ -1,0 +1,173 @@
+@import './../../styles/variables.scss';
+@import './../../styles/mixins.scss';
+
+:host{
+  position: relative;
+  display: flex;
+
+  button{
+    display: block;
+    overflow: hidden;
+    height: $input-height;
+    line-height: 1;
+    position: relative;
+
+    border: $border-width solid transparent;
+    padding: 0 $input-padding*2;
+    border-radius: $border-radius;
+
+    background-color: transparent;
+    @include transition(background-color, $fast, ease);
+
+    &:not(.with-dropdown){min-width: 100%;}
+    &.with-dropdown{border-radius: $border-radius 0 0 $border-radius;}
+    &.dropdown{
+      border-radius: 0 $border-radius $border-radius 0;
+      border-left: 1px solid $light-alpha;
+      padding-right: 0;
+    }
+    &:hover{background-color: $lightest-alpha}
+    &:focus{background-color: $light-alpha}
+    &:active{background-color: $medium-alpha}
+
+    &.only-icon{ width: 0; padding-right: 0; border-radius:$input-height/2; }
+    &.with-icon{ padding-left: $input-height - $border-width*2; } // minus the two borders
+
+    .icon{
+      opacity: 0.25;
+      position: absolute;
+      left: $basic-padding/4 - $border-width;
+      top: $basic-padding/4 - $border-width;
+    }
+    .sublabel{
+      color: $medium-grey;
+      display: block;
+      margin-top: $basic-padding/4;
+    }
+  }
+}
+:host.btn-small{
+  button{
+    font-size: $font-small;
+    color: $dark-grey;
+  }
+}
+button.btn-large{
+  height: $input-height*2;
+  padding: 0 0 0 $input-height*2;
+  text-align: left;
+
+  &.with-icon{ padding-left: $input-height*2 - $border-width*2; } // minus the two borders
+
+  .icon{
+    left: $basic-padding/2 - $border-width;
+    top: $basic-padding/2 - $border-width;
+  }
+}
+:host.btn-default{
+  button{
+    @include border($border-width);
+  }
+}
+:host.btn-primary{
+  button{
+    background-color: $brand-color;
+    color: white;
+    .sublabel{color: white}
+    &:hover{background-color: lighten($brand-color, 2.5%);}
+    &:focus{background-color: lighten($brand-color, 2.5%);}
+    &:active{background-color: lighten($brand-color, 5%);}
+    .icon{ opacity: 1; filter: invert(100%); -webkit-filter: invert(100%); }
+  }
+}
+:host.btn-error{
+  button{
+    background-color: $error-color;
+    color: white;
+    .sublabel{color: white}
+    &:hover{background-color: lighten($error-color, 2.5%);}
+    &:focus{background-color: lighten($error-color, 2.5%);}
+    &:active{background-color: lighten($error-color, 5%);}
+    .icon{ opacity: 1; filter: invert(100%); -webkit-filter: invert(100%); }
+  }
+}
+:host.btn-success{
+  button{
+    background-color: $success-color;
+    color: white;
+    .sublabel{color: white}
+    &:hover{background-color: lighten($success-color, 2.5%);}
+    &:focus{background-color: lighten($success-color, 2.5%);}
+    &:active{background-color: lighten($success-color, 5%);}
+    .icon{ opacity: 1; filter: invert(100%); -webkit-filter: invert(100%); }
+  }
+}
+:host.btn-light{
+  button{
+    background-color: $light-grey;
+    color: $black;
+    .sublabel{color: $black}
+    &:hover{background-color: $medium-grey;}
+    &:focus{background-color: $medium-grey;}
+    &:active{background-color: $dark-grey;}
+  }
+}
+:host.btn-accent{
+  button{
+
+  }
+}
+:host.btn-header-md{
+  height: 100%;
+  button{
+    border: 0;
+    border-radius: 0;
+    min-width: $header-md-height;
+    min-height: $header-md-height;
+    &:hover{ background-color: $lightest-alpha }
+    &:active{ background-color: $light-alpha }
+    .icon{
+      height: 100%;
+      width: 100%;
+      opacity: 0.75;
+      top: $header-height/4;
+      left: $header-height/4;
+    }
+    span{
+      padding-right: $header-md-height/4;
+    }
+  }
+}
+:host.btn-header{
+  height: 100%;
+  button{
+    border: 0;
+    border-radius: 0;
+    min-width: $header-height;
+    min-height: $header-height;
+    &:hover{ background-color: $lightest-alpha }
+    &:active{ background-color: $light-alpha }
+    .icon{
+      height: 100%;
+      width: 100%;
+      opacity: 0.75;
+      top: $header-height/3;
+      left: $header-height/3;
+    }
+    span{
+      padding-right: $header-height/4;
+    }
+  }
+}
+:host.selected{
+  background-color: $lightest-alpha;
+}
+.aux-btn{
+  margin-top: $basic-padding / 4;
+  margin-left: -($input-height + $basic-padding / 4);
+  
+  &.aux-btn-large{
+    margin-top: $basic-padding / 2;
+    margin-left: -($input-height + $basic-padding / 2)
+  }
+}

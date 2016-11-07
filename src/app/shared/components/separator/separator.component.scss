@@ -1,0 +1,7 @@
+@import './../../styles/variables.scss';
+@import './../../styles/mixins.scss';
+
+hr{
+  border: 0;
+  @include border-bottom();
+}

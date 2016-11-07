@@ -1,0 +1,28 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+
+:host{
+  padding: 0 $input-padding*2;
+  height: $input-height;
+  line-height: 1;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: black;
+
+  .dropdown-item{
+    padding-left: $input-padding*2;
+    .icon{
+      opacity: 0.25;
+      position: absolute;
+      left: ($input-height - $input-padding*2) / 2 - $border-width;
+      top: ($input-height - $input-padding*2) / 2 - $border-width;
+    }
+  }
+
+  &:hover{
+    background-color: $lightest-alpha;
+  }
+}

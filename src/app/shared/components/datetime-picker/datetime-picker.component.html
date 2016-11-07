@@ -1,0 +1,48 @@
+<div class="datetime-container">
+
+  <div class="datetime-inputs-container">
+    <go-input
+        type="date"
+        icon="calendar"
+        class="go-input-date clear-webkit-controls"
+        [goModel]="date"
+        (goModelChange)="onDateChanges($event)"
+        (goFocus)="mode = 'date'"
+    > </go-input>
+    <go-input
+        type="time"
+        icon="clock"
+        class="clear-webkit-controls"
+        [goModel]="time"
+        (goModelChange)="onTimeChanges($event)"
+        (goFocus)="mode = 'time'"
+    > </go-input>
+  </div>
+  <div class="datetime-controls-container">
+    <go-calendar
+      *ngIf="mode === 'date'"
+      [goModel]="date"
+      (goModelChange)="onDateChanges($event)">
+    </go-calendar>
+    <go-clock
+      *ngIf="mode === 'time'"
+      [goModel]="time"
+      (goModelChange)="onTimeChanges($event)">
+    </go-clock>
+  </div>
+  <div *ngIf="mode" class="datetime-buttons-container">
+    <go-button
+      class="btn-small"
+      icon="up"
+      label="close"
+      (click)="mode = null">
+    </go-button>
+    <go-button
+      *ngIf="date || time"
+      class="btn-small"
+      icon="close"
+      label="clear"
+      (click)="clear()">
+    </go-button>
+  </div>
+</div>

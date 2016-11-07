@@ -1,0 +1,95 @@
+@import './../../styles/variables.scss';
+@import './../../styles/mixins.scss';
+
+:host{
+  display: flex;
+}
+.input-container{ display: flex; }
+label{
+  font-weight: 400;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 0;
+  .icon, .icon-right{
+    opacity: 0.25;
+    position: absolute;
+    bottom: ($input-height - $input-padding*2) / 2;
+  }
+  .icon{
+    left: ($input-height - $input-padding*2) / 2;
+  }
+  .icon-right{
+    right: ($input-height - $input-padding*2) / 2;
+  }
+}
+.label, .prefix{
+  font-weight: 400;
+  font-size: $font-small;
+  color: $dark-grey;
+  margin: 0 $input-padding/4;
+  display: flex;
+  justify-content: space-between;
+  height: $label-height;
+};
+.prefix{
+  height: $input-height;
+  padding: 0 $input-padding;
+  margin:0;
+  display: flex;
+  align-items: center;
+  background-color: $lightest-alpha;
+  @include border($border-width);
+  border-radius: $border-radius 0 0 $border-radius;
+  border-right: 0 !important;
+}
+.hint{
+  font-style: italic;
+  font-size: $font-small;
+  color: $medium-grey;
+}
+.error{
+  font-style: italic;
+  font-size: $font-small;
+  color: $error-color;
+}
+input, textarea{
+  width: 100%;
+  height: $input-height;
+  padding-left: $input-padding;
+  padding-right: $input-padding;
+  border-radius: $border-radius;
+  @include border($border-width);
+  &:focus{border-color: $brand-color !important}
+  &.floating{@include border(0);}
+}
+.with-icon input{ padding-left: $input-height; }
+.with-icon-right input{ padding-right: $input-height; }
+.with-prefix input{ border-radius: 0 $border-radius $border-radius 0; }
+textarea{
+  padding: $input-padding;
+  min-height: $input-height*2;
+  resize: vertical;
+}
+:host.input-large{
+  max-height: $input-height + $label-height*2;
+  label{ height: $input-height + $label-height*2; }
+  input, textarea{
+    height: $input-height + $label-height;
+    font-size: $font-largest;
+  }
+}
+:host.clear-webkit-controls{
+  input[type=date]::-webkit-calendar-picker-indicator{
+    -webkit-appearance: none;
+    display: none;
+  }
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+  }
+  ::-webkit-clear-button{
+      display: none; /* Hide the button */
+      -webkit-appearance: none; /* turn off default browser styling */
+  }
+}

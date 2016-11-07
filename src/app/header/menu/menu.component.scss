@@ -1,0 +1,28 @@
+@import '../../shared/styles/variables.scss';
+@import '../../shared/styles/mixins.scss';
+
+ul{
+  @include flexbox();
+  align-items: center;
+  list-style: none;
+  li{
+    line-height: 0;
+  }
+}
+nav{
+  display: flex;
+  .menu-item{
+    &:after{
+      content: '';
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+    }
+    &:hover{ background-color: $lightest-alpha; }
+    &:active{ background-color: $light-alpha; }
+    &.selected{
+      &:after{ border-bottom: solid 5px $brand-color; }
+    }
+  }
+}

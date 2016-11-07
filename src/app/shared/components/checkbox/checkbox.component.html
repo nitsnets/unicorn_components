@@ -1,0 +1,8 @@
+<label #goChk [ngClass]="{
+  checked: goModel == true,
+  partial: partial == true,
+  'only-icon': goChk.childNodes.length < 5
+}">
+  <input type="checkbox" [name]="name" [ngModel]="goModel" (ngModelChange)="onChange(!goModel)">
+  <ng-content></ng-content>
+</label>

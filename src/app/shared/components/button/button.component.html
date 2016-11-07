@@ -1,0 +1,45 @@
+<button
+  [type]="type || 'button'"
+  [name]="name"
+  [class]="icon"
+  (click)="onClickButton($event)"
+  [ngClass]="{
+    'with-icon': icon,
+    'btn-large': size === 'large',
+    'with-dropdown': dropdown,
+    'only-icon': icon && (!label || !label.length)
+  }">
+  <go-icon class="icon" [icon]="icon" [size]="size || 'medium'"></go-icon>
+  {{label}}
+  <span class="sublabel" *ngIf="size==='large' && sublabel">
+    {{sublabel}}
+  </span>
+</button>
+
+<!-- Hidden input to emulate file browsing -->
+<input
+  #inputFile
+  type="file"
+  *ngIf="type=='file'"
+  (change)="fileChanged.emit($event.target.value)"
+  [accept]="fileType || null"
+  [style.visibility]="'hidden'">
+
+<!-- Dropdown attached to button -->
+<go-dropdown *ngIf="dropdown" (click)="$event.stopPropagation()">
+  <button class="dropdown with-icon caret" type="button" goDropdownTrigger>
+    <go-icon class="icon" icon="caret"></go-icon>
+  </button>
+  <go-dropdown-container>
+    <ng-content select=".go-dropdown-container"></ng-content>
+  </go-dropdown-container>
+</go-dropdown>
+
+<go-popup *ngIf="popup" (click)="$event.stopPropagation()">
+  <go-button class="aux-btn" goPopupTrigger
+    [ngClass]="{ 'aux-btn-large': size === 'large' }"
+    [icon]="popupIcon"></go-button>
+  <go-popup-container >
+    <ng-content select=".go-popup-container"></ng-content>
+  </go-popup-container>
+</go-popup>

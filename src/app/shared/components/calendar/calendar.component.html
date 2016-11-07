@@ -1,0 +1,24 @@
+<div class="calendar-container">
+  <div class="month-name">
+      <go-button icon="back" (click)="previous()"></go-button>
+      <p>{{month.format("MMMM YYYY")}}</p>
+      <go-button icon="forw" (click)="next()"></go-button>
+  </div>
+  <div class="days-name">
+      <p *ngFor="let dayName of dayNames">{{dayName}}</p>
+  </div>
+  <div class="week-row" *ngFor="let week of weeks">
+      <p *ngFor="let day of week.days">
+        <span class="day"
+          [ngClass]="{
+            'today': day.isToday,
+            'different-month': !day.isCurrentMonth,
+            'selected': day.date.isSame(selected)
+          }"
+          (click)="select(day)">
+
+          {{day.number}}
+        </span>
+      </p>
+  </div>
+</div>

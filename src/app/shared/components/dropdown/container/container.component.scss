@@ -1,0 +1,13 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+
+:host{
+  @include border($border-width);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+}

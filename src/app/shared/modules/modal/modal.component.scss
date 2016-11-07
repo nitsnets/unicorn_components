@@ -1,0 +1,29 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.modal-bg{
+  position: fixed;
+  background-color: $modal-bg;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding-top: 20%;
+  @include xs { padding-top: 100px;}
+}
+.modal-container{
+  @include border($border-width);
+  background-color: #fff;
+  width: 80%;
+  max-width: 800px;
+
+  .close-button{
+    margin-left: auto;
+    margin-right: - $basic-padding/2;
+  }
+}

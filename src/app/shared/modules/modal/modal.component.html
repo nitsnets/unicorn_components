@@ -1,0 +1,9 @@
+<div class="modal-bg">
+  <div class="modal-container" (clickOutside)="onClickOutside($event)">
+    <go-header>
+      <h3>{{modalOptions['title']}}</h3>
+      <go-button icon="close" (click)="onCancel()" class="close-button"></go-button>
+    </go-header>
+    <div [goComponentLoader]="contentComponent" (goComponentLoaded)="componentLoaded($event)"></div>
+  </div>
+</div>
