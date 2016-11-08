@@ -89,6 +89,25 @@ angular2-seed/
 
 ### Extender el proyecto ###
 
-Para crear nuevos elementos de una manera sencilla, el CLI nos ofrece varios comandos. Para empezar siempre deberemos navegar hasta la carpeta del módulo / componente / 
-**Crear nuevos módulos**
-Navegar a la carpeta
+Para crear nuevos elementos de una manera sencilla, el CLI nos ofrece varios comandos. Para empezar siempre deberemos navegar hasta la carpeta donde queramos colocar el nuevo elemento.
+
+**Crear un nuevo módulo**
+
+Deberá crearse dentro de la carpeta de su módulo padre o en alguna de las carpetas ```shared/modules/```.
+```
+ng generate module module_name
+```
+**Crear un nuevo módulo**
+
+Deberá crearse dentro de la carpeta de su módulo / componente padre o en alguna de las carpetas ```shared/components/```.
+```
+ng generate component component_name
+```
+**Crear un nueva directiva**
+
+Deberá crearse dentro de la carpeta de su módulo / componente padre o en alguna de las carpetas ```shared/directives/```.
+```
+ng generate directive diretive_name
+```
+
+Para más opciones de scaffolding consultar la documentación de [Angular CLI](https://github.com/angular/angular-cli#generating-components-directives-pipes-and-services).
