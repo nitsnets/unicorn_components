@@ -1,6 +1,6 @@
 # NTS Angular 2 Seed
 
-Punto de partida de aplicaciones desarrolladas con Angular 2 en NitsNets studios
+Punto de partida de aplicaciones desarrolladas con Angular 2 en NITSNETS
 
 ### Prerequisitos ###
 1. [NodeJS](https://nodejs.org/) (>6.x) con NPM (>3.x). Se recomienda utilizar [NVM](http://nvm.sh) para la gestión de versiones de Node
