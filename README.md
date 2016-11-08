@@ -7,6 +7,10 @@ Proyecto pensado para ser el punto de partida de aplicaciones desarrolladas con 
 2. Typings (>1.x) ```npm install -g typings```
 3. Angular CLI (>1.0.0-beta.19-3) ```npm install -g angular-cli```)
 
+### Recomendaciones ###
+1. Como IDE, se recomienda Visual Studio Code
+2. Pluggins recomendados: [Angular 2 Typescript Snippets](https://marketplace.visualstudio.com/items?itemName=UVBrain.Angular2) | [Angular2 Files](https://marketplace.visualstudio.com/items?itemName=alexiv.vscode-angular2-files) | [TS Lint](https://marketplace.visualstudio.com/items?itemName=eg2.tslint) | [Typescript Importer](https://marketplace.visualstudio.com/items?itemName=pmneo.tsimporter) | [Sass Lint](https://marketplace.visualstudio.com/items?itemName=glen-84.sass-lint)
+
 ### Set up ###
 1. **Fork** del proyecto
 2. **Instalación** de las dependencias con ```npm install```
@@ -17,6 +21,21 @@ Proyecto pensado para ser el punto de partida de aplicaciones desarrolladas con 
     * Crea un servidor local en ```localhost:4200``` y activa *watchers* que lo recargan cuando cambia algún fichero
 
 ### Estructura del proyecto ###
+
+Todos los ficheros de configuración se encuentran en la carpeta raíz. La carpeta ```src/``` contiene el código fuente de desarrollo. En la raíz de ```src/``` están los ficheros raíz del proyecto y dos carpetas: ```assets/``` donde se colocan los ficheros estático que simplemente se copiarán  durante la compilación; y ```app/``` que es la carpeta del primer y más básico módulo del proyecto.
+
+La carpeta de un módulo (module_name) puede constar de los siguientes elementos:
+
+* **Clase del módulo** con los elementos que empaqueta ```module_name.module.ts```
+* **Componente principal** del módulo, que comparte nombre con él, y tambien carpeta
+     * **Clase** del componente, que contiene la lógica ```module_name.component.ts```
+     * **Template** HTML del componente, que contiene la estructura: ```module_name.component.html```
+     * **Estilos** Sass del componente: ```module_name.component.scss```.
+* **Enrutado** del módulo en su caso: ```module_name.routing.ts```.
+* **Otros componentes** o módulos secundarios que en su caso se colocan en subcarpetas con el nombre correspondiente
+* **Elementos compartidos** del módulo (servicios, modelos, pipes, ...) en una carpeta siempre llamada ```shared/```
+
+Aunque cada componente debe pertenecer a un solo módulo, un módulo puede contener varios componentes. En el caso de componentes definidos en carpetas independientes, estas contarán solo con los tres ficheros de clase, template y estilos.
 
 ```
 angular2-seed/
@@ -67,3 +86,9 @@ angular2-seed/
 ├── tsconfig.json                               * Define las opciones del compilador de Typescript
 └── tslint.json                                 * Define las reglas del linter de TypeScript
 ```
+
+### Extender el proyecto ###
+
+Para crear nuevos elementos de una manera sencilla, el CLI nos ofrece varios comandos. Para empezar siempre deberemos navegar hasta la carpeta del módulo / componente / 
+**Crear nuevos módulos**
+Navegar a la carpeta
