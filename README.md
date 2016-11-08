@@ -97,7 +97,7 @@ Deberá crearse dentro de la carpeta de su módulo padre o en alguna de las carp
 ```
 ng generate module module_name
 ```
-**Crear un nuevo módulo**
+**Crear un nuevo componente**
 
 Deberá crearse dentro de la carpeta de su módulo / componente padre o en alguna de las carpetas ```shared/components/```.
 ```
