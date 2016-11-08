@@ -12,3 +12,22 @@
 .popup-test-btn{
   float: right;
 }
+go-button{
+  float: left;
+  margin-right: 10px;
+}
+h3{
+  margin: 20px 0 10px 0;
+}
+h5{
+  margin: 10px 0;
+  clear: both;
+}
+.clear{
+  clear: both;
+}
+.clear:after {
+    clear: both;
+    content: "";
+    display: table;
+}

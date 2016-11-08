@@ -20,12 +20,13 @@
     @include transition(background-color, $fast, ease);
 
     &:not(.with-dropdown){min-width: 100%;}
-    &.with-dropdown{border-radius: $border-radius 0 0 $border-radius;}
-    &.dropdown{
-      border-radius: 0 $border-radius $border-radius 0;
-      border-left: 1px solid $light-alpha;
-      padding-right: 0;
-    }
+
+    &.with-dropdown{border-radius: $border-radius 0 0 $border-radius; border-right-width: 0 !important;}
+    &.dropdown{ border-radius: 0 $border-radius $border-radius 0; border-left: 1px solid $light-alpha; padding-right: 0;  }
+    &.dropdown-large{ height: $input-height * 2; .icon{margin-top: $basic-padding/2;}}
+
+    &.with-popup{padding-right: $input-height + $basic-padding/2;}
+
     &:hover{background-color: $lightest-alpha}
     &:focus{background-color: $light-alpha}
     &:active{background-color: $medium-alpha}
@@ -54,10 +55,10 @@
 }
 button.btn-large{
   height: $input-height*2;
-  padding: 0 0 0 $input-height*2;
+  padding: 0 $input-height 0 $input-height;
   text-align: left;
-
   &.with-icon{ padding-left: $input-height*2 - $border-width*2; } // minus the two borders
+  &.with-popup{ padding-right: $input-height + $basic-padding; }
 
   .icon{
     left: $basic-padding/2 - $border-width;
@@ -65,12 +66,12 @@ button.btn-large{
   }
 }
 :host.btn-default{
-  button{
-    @include border($border-width);
+  &>button, button.dropdown{
+    border: solid $border-width $medium-grey;
   }
 }
 :host.btn-primary{
-  button{
+  &>button, button.dropdown{
     background-color: $brand-color;
     color: white;
     .sublabel{color: white}
@@ -81,7 +82,7 @@ button.btn-large{
   }
 }
 :host.btn-error{
-  button{
+  &>button, button.dropdown{
     background-color: $error-color;
     color: white;
     .sublabel{color: white}
@@ -92,7 +93,7 @@ button.btn-large{
   }
 }
 :host.btn-success{
-  button{
+  &>button, button.dropdown{
     background-color: $success-color;
     color: white;
     .sublabel{color: white}
@@ -103,7 +104,7 @@ button.btn-large{
   }
 }
 :host.btn-light{
-  button{
+  &>button, button.dropdown{
     background-color: $light-grey;
     color: $black;
     .sublabel{color: $black}
@@ -113,7 +114,7 @@ button.btn-large{
   }
 }
 :host.btn-accent{
-  button{
+  &>button, button.dropdown{
 
   }
 }
@@ -162,12 +163,9 @@ button.btn-large{
 :host.selected{
   background-color: $lightest-alpha;
 }
-.aux-btn{
-  margin-top: $basic-padding / 4;
-  margin-left: -($input-height + $basic-padding / 4);
-  
-  &.aux-btn-large{
-    margin-top: $basic-padding / 2;
-    margin-left: -($input-height + $basic-padding / 2)
-  }
+.popup{ margin-left: -$input-height; }
+.popup-large{
+  margin-top: $input-height / 2;
+  margin-left: -($input-height + $basic-padding / 2);
+  margin-right: $basic-padding / 2;
 }

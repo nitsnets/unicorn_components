@@ -7,6 +7,7 @@
     'with-icon': icon,
     'btn-large': size === 'large',
     'with-dropdown': dropdown,
+    'with-popup': popup,
     'only-icon': icon && (!label || !label.length)
   }">
   <go-icon class="icon" [icon]="icon" [size]="size || 'medium'"></go-icon>
@@ -25,9 +26,21 @@
   [accept]="fileType || null"
   [style.visibility]="'hidden'">
 
+<!-- Aux button to fire popup -->
+<go-popup class="popup" *ngIf="popup" (click)="$event.stopPropagation()" [ngClass]="{ 'popup-large': size === 'large' }">
+  <button class="only-icon with-icon" goPopupTrigger type="button">
+    <go-icon class="icon" [icon]="popupIcon"></go-icon>
+  </button>
+  <go-popup-container >
+    <ng-content select=".go-popup-container"></ng-content>
+  </go-popup-container>
+</go-popup>
+
 <!-- Dropdown attached to button -->
 <go-dropdown *ngIf="dropdown" (click)="$event.stopPropagation()">
-  <button class="dropdown with-icon caret" type="button" goDropdownTrigger>
+  <button class="dropdown with-icon caret" goDropdownTrigger
+    type="button"
+    [ngClass]="{ 'dropdown-large': size === 'large' }">
     <go-icon class="icon" icon="caret"></go-icon>
   </button>
   <go-dropdown-container>
@@ -35,11 +48,3 @@
   </go-dropdown-container>
 </go-dropdown>
 
-<go-popup *ngIf="popup" (click)="$event.stopPropagation()">
-  <go-button class="aux-btn" goPopupTrigger
-    [ngClass]="{ 'aux-btn-large': size === 'large' }"
-    [icon]="popupIcon"></go-button>
-  <go-popup-container >
-    <ng-content select=".go-popup-container"></ng-content>
-  </go-popup-container>
-</go-popup>
