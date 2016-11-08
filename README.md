@@ -22,53 +22,48 @@ Proyecto pensado para ser el punto de partida de aplicaciones desarrolladas con 
 angular2-seed/
 ├── src/
 |    ├── app/
-|    |    ├── app.module.ts
-|    |    ├── app.routing.ts
-|    |    ├── app.component.ts
-|    |    ├── app.component.html
-|    |    ├── app.component.scss
-|    |    ├── index.ts
-|    |    ├── main.prod.ts
-|    |    ├── dashboard/
-│    │    │    ├── dashboard.component.html
-│    │    │    ├── dashboard.component.ts
-│    │    │    ├── dashboard.component.scss
-│    │    │    └── dashboard.module.ts
+|    |    ├── app.module.ts                     * Empaquetado del módulo principal
+|    |    ├── app.routing.ts                    * Enrutado del módulo principal
+|    |    ├── app.component.ts                  * Lógica del componente principal
+|    |    ├── app.component.html                * Template del componente principal
+|    |    ├── app.component.scss                * Estilos del componente principal
+|    |    ├── dashboard/                        * Carpeta ejemplo de módulo con un sólo componente
+│    │    │    ├── dashboard.component.html     
+│    │    │    ├── dashboard.component.ts       
+│    │    │    ├── dashboard.component.scss     
+│    │    │    └── dashboard.module.ts          
 │    │    │
-│    │    ├── header/
+│    │    ├── header/                           * Carpeta ejemplo de componentes anidados
 │    │    │── home/
 │    │    │── users/
-│    │    └── shared/
-│    │         ├── components/
+│    │    └── shared/                           * Clases y funciones compartidas con toda la app
+│    │         ├── components/                  
 │    │         ├── directives/
 │    │         ├── models/
 │    │         ├── modules/
 │    │         ├── pipes/
 │    │         ├── services/
 │    │         ├── styles/
-│    │         ├── shared.modules.ts
-│    │         └── utils.ts
+│    │         ├── shared.modules.ts            * Módulo que aglutina las clases compartidas
+│    │         └── utils.ts                     * Funciones auxiliares
 |    |
-|    ├── assests/
+|    ├── assests/                               * Ficheros estáticos
 |    |    └── images/
 |    |          └── icons/
-|    |                ├── arrow-down.svg
 |    |                ├── arrow-left.svg
-|    |                ├── arrow-right.svg
 |    |                └── ...
-|    ├── index.html
-|    ├── main.ts
-|    ├── styles.scss
-|    ├── test.ts
-|    └── tsconfig.json                  * Define las opciones del compilador de Typescript
+|    ├── index.html                             * HTML raíz donde se renderiza la app
+|    ├── main.ts                                * TypeScript raíz desde donde se lanza la app
+|    ├── styles.scss                            * Estilos generales
+|    └── tsconfig.json                          * Define las opciones del compilador de Typescript
 |
 ├── .gitignore                          
-├── .editorconfig                       * Define el estilo del código deseado
-├── README.md                           * Este fichero
-├── karma.conf.js                       * Configuración de los tests unitarios
-├── protractor.conf.js                  * Configuración de los tests e2e
-├── angular-cli.json                    * Define las opciones del proyecto de Angular
-├── package.json                        * Define las dependencias del proyecto
-├── tsconfig.json                       * Define las opciones del compilador de Typescript
-└── tslint.json                         * Define las reglas del linter de TypeScript
+├── .editorconfig                               * Define el estilo del código deseado
+├── README.md                                   * Este fichero
+├── karma.conf.js                               * Configuración de los tests unitarios
+├── protractor.conf.js                          * Configuración de los tests e2e
+├── angular-cli.json                            * Define las opciones del proyecto de Angular
+├── package.json                                * Define las dependencias del proyecto
+├── tsconfig.json                               * Define las opciones del compilador de Typescript
+└── tslint.json                                 * Define las reglas del linter de TypeScript
 ```
