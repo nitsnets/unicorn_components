@@ -14,20 +14,23 @@
 }
 go-button{
   float: left;
+}
+go-input, go-select, go-button{
   margin-right: 10px;
 }
 h3{
-  margin: 20px 0 10px 0;
+  margin: 30px 0 15px 0;
 }
 h5{
-  margin: 10px 0;
+  margin: 20px 0;
   clear: both;
 }
-.clear{
-  clear: both;
-}
+
 .clear:after {
     clear: both;
     content: "";
     display: table;
+}
+.flex{
+  display: flex;
 }

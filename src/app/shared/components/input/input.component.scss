@@ -14,7 +14,7 @@ label{
   .icon, .icon-right{
     opacity: 0.25;
     position: absolute;
-    bottom: ($input-height - $input-padding*2) / 2;
+    margin-top: ($input-height - $input-padding*2) / 2;
   }
   .icon{
     left: ($input-height - $input-padding*2) / 2;
