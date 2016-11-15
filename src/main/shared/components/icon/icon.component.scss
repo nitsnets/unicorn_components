@@ -80,4 +80,5 @@ i {
   &.tag       { @include bgicon('tag'); }
   &.undo      { @include bgicon('undo'); }
   &.up        { @include bgicon('arrow-up'); }
+  &.user      { @include bgicon('head'); }
 }
