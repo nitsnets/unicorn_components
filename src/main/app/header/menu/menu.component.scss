@@ -1,5 +1,5 @@
-@import '../../shared/styles/variables.scss';
-@import '../../shared/styles/mixins.scss';
+@import '../../../shared/styles/variables.scss';
+@import '../../../shared/styles/mixins.scss';
 
 ul{
   @include flexbox();

@@ -1,0 +1,25 @@
+<div class="login-container">
+
+  <form class="login" (submit)="doLogin($event)">
+    <h2>Login</h2>
+
+    <go-input
+      class="login-input"
+      label="email"
+      [(goModel)]="user.email"
+      type="email"
+      placeholder="example@domain.com"></go-input>
+    <go-input
+      class="login-input"
+      label="password"
+      [(goModel)]="user.password"
+      type="password">
+    </go-input>
+
+    <div class="login-buttons">
+      <go-button type="button" label="Sign up"></go-button>
+      <go-button class="btn-primary" type="submit" label="Log in"></go-button>
+    </div>
+  </form>
+
+</div>

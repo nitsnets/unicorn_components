@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { BASIC_GO_COMPONENTS } from './components/';
 import { BASIC_GO_DIRECTIVES } from './directives/';
 import { BASIC_GO_PIPES } from './pipes/';
 
-import { ApiService } from './services/api.service';
-
 @NgModule({
     imports: [
         CommonModule,
+        RouterModule,
         FormsModule
     ],
     declarations: [
@@ -24,10 +24,8 @@ import { ApiService } from './services/api.service';
         BASIC_GO_DIRECTIVES,
         BASIC_GO_PIPES,
         CommonModule,
+        RouterModule,
         FormsModule
-    ],
-    providers: [
-        ApiService
     ]
 })
 export class SharedModule { }

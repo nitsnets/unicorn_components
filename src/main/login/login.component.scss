@@ -1,0 +1,27 @@
+@import '../shared/styles/variables';
+@import '../shared/styles/mixins';
+
+.login-container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+
+  .login {
+    @include border($border-width);
+    @include border-radius($border-radius);
+    max-width: 100%;
+    padding: $basic-padding;
+    width: 300px;
+  }
+
+  .login-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: $basic-padding;
+  }
+
+  .login-input {
+    margin-top: $basic-padding / 2;
+  }
+}
