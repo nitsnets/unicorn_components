@@ -8,12 +8,14 @@ import { AppComponent } from './app/app.component';
 import { UsersComponent } from './app/users/users.component';
 import { DashboardComponent } from './app/dashboard/dashboard.component';
 import { HomeComponent } from './app/home/home.component';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 export const mainRoutingProviders: any[] = [ ];
 
 export const mainRouting: ModuleWithProviders = RouterModule.forRoot([
     { path: '',
       component: AppComponent,
+      canActivate: [AuthGuard],
       children: [
         { path: '', component: HomeComponent, data: {
                 title: 'Home'

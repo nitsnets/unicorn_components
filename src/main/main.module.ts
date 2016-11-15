@@ -15,6 +15,7 @@ import { PageNotFoundComponent } from './404/404.component';
 import { GoModalComponent } from './shared/modules/modal/modal.component';
 import { ModalModule } from './shared/modules/modal/modal.module';
 import { AppModule } from './app/app.module';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -32,9 +33,11 @@ import { AppModule } from './app/app.module';
     AppModule
   ],
   providers: [
+    mainRoutingProviders,
+
     ApiService,
     AuthenticationService,
-    mainRoutingProviders
+    AuthGuard
   ],
   entryComponents: [
     GoModalComponent

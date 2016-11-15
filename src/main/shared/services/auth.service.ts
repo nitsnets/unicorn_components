@@ -11,17 +11,28 @@ export class AuthenticationService {
   constructor(private router: Router) { }
 
   logout() {
-    // Clean this.activeUser or localstorage.activeUser and navigate to login
+    // Call API method
+    this.activeUser = null;
+    localStorage.removeItem('activeUser');
     this.router.navigate(['/login']);
   }
 
   login(user: User) {
-    // Call API method, and store the token inside this.activeUser and localstorage
+    // Call API method
+    user.token = 'THIS TOKEN MUST BE GIVEN BY THE API';
+
+    this.activeUser = user;
+    localStorage.setItem('activeUser', JSON.stringify(user));
+    this.router.navigate(['/']);
   }
 
   checkLogin(): boolean {
-    // Check this.activeUser or localstorage.activeUser
+    if (this.activeUser && this.activeUser.token) { return true; }
 
-    return true;
+    let activeUser = User.newFromJSON(localStorage.getItem('activeUser'));
+    if (activeUser && activeUser.token) { return true; }
+
+    this.logout();
+    return false;
   }
 }
