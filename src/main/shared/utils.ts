@@ -165,3 +165,6 @@ export function unsubscribe(subscription: Subscription) {
 export function deepClone(object: Object): Object {
     return JSON.parse(JSON.stringify(object));
 }
+export function objEquals(obj1: Object, obj2: Object): boolean{
+    return JSON.stringify(obj1) === JSON.stringify(obj2);
+}
