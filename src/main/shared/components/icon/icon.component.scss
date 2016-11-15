@@ -28,48 +28,56 @@ i {
     top: 0;
     width: 100%;
   }
-  &.undo::before { background-image: url('/assets/images/icons/undo.svg'); }
-  &.redo::before { background-image: url('/assets/images/icons/redo.svg'); }
-  &.page::before { background-image: url('/assets/images/icons/paper.svg'); }
-  &.user::before { background-image: url('/assets/images/icons/head.svg'); }
-  &.back::before { background-image: url('/assets/images/icons/arrow-left.svg'); }
-  &.forw::before { background-image: url('/assets/images/icons/arrow-right.svg'); }
-  &.up::before { background-image: url('/assets/images/icons/arrow-up.svg'); }
-  &.down::before { background-image: url('/assets/images/icons/arrow-down.svg'); }
-  &.plus::before { background-image: url('/assets/images/icons/plus.svg'); }
-  &.minus::before { background-image: url('/assets/images/icons/minus.svg'); }
-  &.close::before { background-image: url('/assets/images/icons/cross.svg'); }
-  &.check::before { background-image: url('/assets/images/icons/check.svg'); }
-  &.delete::before { background-image: url('/assets/images/icons/trash.svg'); }
-  &.more-v::before { background-image: url('/assets/images/icons/more.svg'); }
-  &.more-h::before { background-image: url('/assets/images/icons/ellipsis.svg'); }
-  &.layout::before { background-image: url('/assets/images/icons/layout.svg'); }
-  &.desktop::before { background-image: url('/assets/images/icons/desktop.svg'); }
-  &.laptop::before { background-image: url('/assets/images/icons/laptop.svg'); }
-  &.tablet::before { background-image: url('/assets/images/icons/tablet.svg'); }
-  &.mobile::before { background-image: url('/assets/images/icons/mobile.svg'); }
-  &.cloud1::before { background-image: url('/assets/images/icons/cloud1.svg'); }
-  &.cloud2::before { background-image: url('/assets/images/icons/cloud2.svg'); }
-  &.cloud3::before { background-image: url('/assets/images/icons/cloud3.svg'); }
-  &.cloud4::before { background-image: url('/assets/images/icons/cloud4.svg'); }
-  &.edit::before { background-image: url('/assets/images/icons/edit.svg'); }
-  &.eye::before { background-image: url('/assets/images/icons/eye.svg'); }
-  &.loading::before { background-image: url('/assets/images/icons/loading.svg'); }
-  &.error::before { background-image: url('/assets/images/icons/circle-cross.svg'); }
-  &.caret::before { background-image: url('/assets/images/icons/caret.svg'); }
-  &.search::before { background-image: url('/assets/images/icons/search.svg'); }
-  &.calendar::before { background-image: url('/assets/images/icons/calendar.svg'); }
-  &.clock::before { background-image: url('/assets/images/icons/clock.svg'); }
-  &.clock-in::before { background-image: url('/assets/images/icons/clock-in.svg'); }
-  &.clock-out::before { background-image: url('/assets/images/icons/clock-out.svg'); }
-  &.plus::before { background-image: url('/assets/images/icons/plus.svg'); }
-  &.edit::before { background-image: url('/assets/images/icons/edit.svg'); }
-  &.copy::before { background-image: url('/assets/images/icons/stack.svg'); }
-  &.file-add::before { background-image: url('/assets/images/icons/file-add.svg'); }
-  &.code::before { background-image: url('/assets/images/icons/code.svg'); }
-  &.drag::before { background-image: url('/assets/images/icons/align-justify.svg'); }
-  &.bars::before {background-image: url('/assets/images/icons/bar-graph.svg'); }
-  &.media::before {background-image: url('/assets/images/icons/archive.svg'); }
-  &.grid::before {background-image: url('/assets/images/icons/grid.svg'); }
-  &.square::before {background-image: url('/assets/images/icons/square.svg'); }
+
+  @mixin bgicon($b) { &::before {background-image: url('/assets/images/icons/#{$b}.svg');}}
+  &.back      { @include bgicon('arrow-left'); }
+  &.bars      { @include bgicon('bar-graph'); }
+  &.book      { @include bgicon('book'); }
+  &.box       { @include bgicon('box'); }
+  &.calendar  { @include bgicon('calendar'); }
+  &.caret     { @include bgicon('caret'); }
+  &.check     { @include bgicon('check'); }
+  &.clock     { @include bgicon('clock'); }
+  &.clock-in  { @include bgicon('clock-in'); }
+  &.clock-out { @include bgicon('clock-out'); }
+  &.close     { @include bgicon('cross'); }
+  &.cloud1    { @include bgicon('cloud1'); }
+  &.cloud2    { @include bgicon('cloud2'); }
+  &.cloud3    { @include bgicon('cloud3'); }
+  &.cloud4    { @include bgicon('cloud4'); }
+  &.code      { @include bgicon('code'); }
+  &.copy      { @include bgicon('stack'); }
+  &.delete    { @include bgicon('trash'); }
+  &.desktop   { @include bgicon('desktop'); }
+  &.drag      { @include bgicon('align-justify'); }
+  &.down      { @include bgicon('arrow-down'); }
+  &.download  { @include bgicon('download'); }
+  &.edit      { @include bgicon('edit'); }
+  &.eye       { @include bgicon('eye'); }
+  &.error     { @include bgicon('circle-cross'); }
+  &.file-add  { @include bgicon('file-add'); }
+  &.forw      { @include bgicon('arrow-right'); }
+  &.grid      { @include bgicon('grid'); }
+  &.grid-2    { @include bgicon('grid-2'); }
+  &.laptop    { @include bgicon('laptop'); }
+  &.layout    { @include bgicon('layout'); }
+  &.link      { @include bgicon('link'); }
+  &.loading   { @include bgicon('loading'); }
+  &.media     { @include bgicon('archive'); }
+  &.menu      { @include bgicon('menu'); }
+  &.minus     { @include bgicon('minus'); }
+  &.mobile    { @include bgicon('mobile'); }
+  &.more-v    { @include bgicon('more'); }
+  &.more-h    { @include bgicon('ellipsis'); }
+  &.page      { @include bgicon('paper'); }
+  &.plus      { @include bgicon('plus'); }
+  &.redo      { @include bgicon('redo'); }
+  &.search    { @include bgicon('search'); }
+  &.split     { @include bgicon('split'); }
+  &.square    { @include bgicon('square'); }
+  &.tablet    { @include bgicon('tablet'); }
+  &.tabs      { @include bgicon('tabs'); }
+  &.tag       { @include bgicon('tag'); }
+  &.undo      { @include bgicon('undo'); }
+  &.up        { @include bgicon('arrow-up'); }
 }

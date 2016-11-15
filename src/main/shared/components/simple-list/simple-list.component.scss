@@ -1,0 +1,42 @@
+@import '../../../shared/styles/variables.scss';
+@import '../../../shared/styles/mixins.scss';
+
+.items {
+  display: flex;
+
+  ul {
+    list-style: none;
+    margin-top: $basic-padding;
+    width: 100%;
+  }
+
+  li .item {
+    align-items: center;
+    cursor: default;
+    display: flex;
+    min-height: $input-height;
+    padding-left: $basic-padding;
+
+    span {
+      @include noselect();
+      padding: $basic-padding / 6 0;
+
+      &.selected{
+        color: $brand-color;
+      }
+    }
+
+    .delete {
+      visibility: hidden;
+    }
+
+    .pull-right {
+      margin-left: auto;
+    }
+
+    &.highlight-hover:hover {
+      background-color: $lightest-alpha;
+      go-icon, .delete {visibility: visible}
+    }
+  }
+}

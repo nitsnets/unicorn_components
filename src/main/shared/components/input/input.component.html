@@ -14,13 +14,13 @@
   <go-icon [icon]="iconRight" class="icon-right"></go-icon>
 
   <div class="input-container">
-    <span class="prefix" *ngIf="prefix">{{prefix}}</span>
+    <span class="prefix" *ngIf="prefix" [innerHtml]="prefix"></span>
     <input
       *ngIf="!multiline"
       [ngClass]="{floating: floating}"
       [type]="type"
       [attr.maxlength]="max"
-      [name]="name"
+      [name]="name || 'inputName'"
       [placeholder]="placeholder"
       [value]="value"
       [autofocus]="autofocus"

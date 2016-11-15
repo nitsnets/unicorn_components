@@ -11,6 +11,7 @@
   align-items: center;
   position: relative;
   color: black;
+  white-space: nowrap;
 
   .dropdown-item{
     padding-left: $input-padding*2;

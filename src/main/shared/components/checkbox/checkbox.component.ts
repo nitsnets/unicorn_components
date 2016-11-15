@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class GoCheckboxComponent implements OnInit {
 
     @Input() name: string = '';
+    @Input() label: string;
     @Input() partial: boolean = false;
     @Input() goModel: boolean = false;
     @Output() goModelChange = new EventEmitter();

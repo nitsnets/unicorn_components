@@ -1,0 +1,27 @@
+<div class="acc-container">
+  <div class="acc-header">
+    <go-button class="acc-caret"
+      icon="caret"
+      [ngClass]="{collapsed: collapsed}"
+      (click)="collapsed = !collapsed">
+    </go-button>
+
+    <span class="acc-title" (click)="collapsed = !collapsed">
+      {{name}}
+    </span>
+    
+    <div class="acc-options" *ngIf="!options">
+      <ng-content select=".accordion-buttons"></ng-content>
+    </div>
+
+    <go-dropdown class="acc-options" *ngIf="options">
+      <go-button class="acc-options-trigger" icon="more-v" goDropdownTrigger></go-button>
+      <go-dropdown-container>
+          <ng-content select=".accordion-options"></ng-content>
+      </go-dropdown-container>
+    </go-dropdown>
+  </div>
+  <div class="acc-content" *ngIf="!collapsed">
+    <ng-content select=".accordion-content"></ng-content>
+  </div>
+</div>

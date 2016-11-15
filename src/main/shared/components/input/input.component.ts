@@ -34,7 +34,7 @@ export class GoInputComponent implements OnInit {
     @Input() clear = false;
     @Input() caret = false;
 
-    // formControl = new NgControl();
+    debounceTimer: NodeJS.Timer;
 
     constructor() { }
 
@@ -44,25 +44,11 @@ export class GoInputComponent implements OnInit {
         } else {
             this.value = this.goModel;
         }
-        if (this.debounce) {
-
-            /* TODO: Re-implementar el debounce con NgControl o similar
-             * (http://stackoverflow.com/questions/36919011/how-to-add-debounce-time-to-an-async-validator-in-angular-2)
-             */
-
-            // this.formControl.valueChanges.debounceTime(this.debounce || 0).subscribe(
-            //     (newValue) => {
-            //         if (this.goModel === newValue) { return; }
-            //         this.goModel = newValue;
-            //         this.goModelChange.emit(newValue);
-            //     }
-            // );
-
-        }
     }
     onNgModelChange(ev) {
-        // if (!this.debounce) {
-        this.goModelChange.emit(ev);
-        // }
+        clearTimeout(this.debounceTimer);
+        this.debounceTimer = setTimeout(
+            _ => this.goModelChange.emit(ev), this.debounce || 0
+        );
     }
 }

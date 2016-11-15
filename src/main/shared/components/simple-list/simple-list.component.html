@@ -1,0 +1,24 @@
+<div class="items" *ngIf="items && items.length">
+  <ul>
+    <li *ngFor="let item of items; let i = index">
+      <div class="item highlight-hover" 
+        *ngIf="!item.editing" 
+        (click)="onClickItem(item)" 
+        (dblclick)="onDoubleclickItem(item)"
+      >
+        <span [class.selected]="isitemSelected(item)">{{item.name || '(Untitled)'}}</span>
+        <go-button class="pull-right delete" icon="delete" (click)="onDeleteItem(i, $event)"></go-button>
+      </div>
+      <form class="item" *ngIf="item.editing === true" (submit)="onEditItem(item)">
+        <go-input
+          floating="true"
+          [(goModel)]="item.newname"
+          [placeholder]="placeholder"
+        >
+        </go-input>
+        <go-button class="pull-right" icon="close" (click)="item.editing = false"></go-button>
+        <go-button icon="check" type="submit"></go-button>
+      </form>
+    </li>
+  </ul>
+</div>

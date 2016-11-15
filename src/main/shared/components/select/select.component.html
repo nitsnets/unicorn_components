@@ -1,17 +1,3 @@
-<!--<label [ngClass]="{
-  'with-icon': icon,
-  'search-icon': icon=='search'
-}">
-  <span *ngIf="label">{{label}}</span>
-  <select
-    [name]="name"
-    [value]="value"
-    [(ngModel)]="goModel"
-    (change)="onSelect($event.target.value)"
-  >
-    <option *ngFor="let option of options" [value]="option.value" [label]="option.label">{{option.label}}</option>
-  </select>
-</label>-->
 <div (clickOutside)="onClickOutside()">
   <go-input
     iconRight="caret"
