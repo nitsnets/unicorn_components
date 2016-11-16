@@ -22,6 +22,7 @@
     "@angular/router": "~3.1.0",
     "core-js": "^2.4.1",
     "moment": "^2.15.2",
+    "ng2-interceptors": "^1.2.1",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.6.23"

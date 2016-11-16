@@ -27,12 +27,18 @@ export class AuthenticationService {
   }
 
   checkLogin(): boolean {
-    if (this.activeUser && this.activeUser.token) { return true; }
+    let loggedIn = this.isLoggedIn();
 
+    if (loggedIn) {
+      return true;
+    } else { this.logout(); }
+    return false;
+  }
+
+  isLoggedIn(): boolean {
+    if (this.activeUser && this.activeUser.token) { return true; }
     let activeUser = User.newFromJSON(localStorage.getItem('activeUser'));
     if (activeUser && activeUser.token) { return true; }
-
-    this.logout();
     return false;
   }
 }

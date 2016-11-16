@@ -1,8 +1,10 @@
+import { ApiInterceptor } from './shared/services/api.interceptor';
 import { AuthenticationService } from './shared/services/auth.service';
 import { ApiService } from './shared/services/api.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { provideInterceptorService } from 'ng2-interceptors';
 
 import { SharedModule } from './shared/shared.module';
 
@@ -34,6 +36,7 @@ import { AuthGuard } from './shared/guards/auth.guard';
   ],
   providers: [
     mainRoutingProviders,
+    provideInterceptorService([new ApiInterceptor()]),
 
     ApiService,
     AuthenticationService,
