@@ -15,10 +15,15 @@ Punto de partida de aplicaciones desarrolladas con Angular 2 en NITSNETS
 1. **Fork** del proyecto
 2. **Instalación** de las dependencias con ```npm install```
 3. **Compilación y ejecución** con ```npm start```. Este comando realiza las siguientes tareas automáticas:
-    * Crea la carpeta ```/dist```
-    * Compila todo el Typescript en Javascript y lo agrupa en el bundle ```dist/main.bundle.js```
-    * Compila todo el Sass en CSS y lo agrupa en el bundle ```dist/styles.bundle.css```
+    * Compila todo el Typescript en Javascript y lo agrupa en un bundle
+    * Compila todo el Sass en CSS y lo agrupa en un bundle
     * Crea un servidor local en ```localhost:4200``` y activa *watchers* que lo recargan cuando cambia algún fichero
+
+### Despliegue ###
+
+1. En el servidor web de producción, descargar el código mediante ```git pull```
+2. Compilarlo para producción con el comando ```npm build-prod```
+3. Crear un virtual host que tenga como root dist/index.html
 
 ### Estructura del proyecto ###
 
