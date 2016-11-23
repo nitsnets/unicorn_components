@@ -22,7 +22,7 @@ Punto de partida de aplicaciones desarrolladas con Angular 2 en NITSNETS
 ### Despliegue ###
 
 1. En el servidor web de producción, descargar el código mediante ```git pull```
-2. Compilarlo para producción con el comando ```npm build-prod```
+2. Compilarlo para producción con el comando ```npm build -prod```
 3. Crear un virtual host que tenga como root dist/index.html
 
 ### Estructura del proyecto ###
