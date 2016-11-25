@@ -12,6 +12,9 @@ export class GoDatetimePickerComponent implements OnChanges {
     @Output() dateChange = new EventEmitter();
     @Output() timeChange = new EventEmitter();
 
+    @Input() maxDate;
+    @Input() minDate;
+
     constructor() { }
 
     ngOnChanges(changes) {

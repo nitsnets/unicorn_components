@@ -13,7 +13,8 @@
           [ngClass]="{
             'today': day.isToday,
             'different-month': !day.isCurrentMonth,
-            'selected': day.date.isSame(selected)
+            'selected': day.date.isSame(selected),
+            'unavailable': maxDate && day.date.isAfter(maxDate) || minDate && day.date.isBefore(minDate)
           }"
           (click)="select(day)">
 

@@ -10,6 +10,10 @@ export class GoCalendarComponent implements OnChanges {
     @Input() goModel;
     @Output() goModelChange = new EventEmitter();
 
+    @Input() maxDate;
+    @Input() minDate;
+    
+
     selected: moment.Moment;
     month: moment.Moment = null;
     weeks = [];
@@ -29,6 +33,8 @@ export class GoCalendarComponent implements OnChanges {
     };
 
     select(day) {
+        if(this.maxDate && day.date.isAfter(this.maxDate) || this.minDate && day.date.isBefore(this.minDate)){ return; }
+        
         this.selected = day.date;
         let newDate = this.selected.format('YYYY-MM-DD');
         this.goModelChange.emit(newDate);

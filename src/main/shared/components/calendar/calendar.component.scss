@@ -35,8 +35,9 @@
   height: 30px;
   align-items: center;
   justify-content: center;
-  &:hover:not(.selected){ background-color: $lightest-alpha; }
+  &:hover:not(.selected):not(.unavailable){ background-color: $lightest-alpha; }
   &.today{ color: $brand-color; font-weight: bold; border: 1px $brand-color solid;}
   &.selected{ background-color: $brand-color; color: white; }
   &.different-month{ visibility: hidden}
+  &.unavailable{ opacity: 0.25; }
 }

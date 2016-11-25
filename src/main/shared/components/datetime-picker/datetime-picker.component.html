@@ -1,4 +1,4 @@
-<div class="datetime-container">
+<div class="datetime-container" (clickOutside)="mode=null">
 
   <div class="datetime-inputs-container">
     <go-input
@@ -21,6 +21,8 @@
   <div class="datetime-controls-container">
     <go-calendar
       *ngIf="mode === 'date'"
+      [maxDate]="maxDate"
+      [minDate]="minDate"
       [goModel]="date"
       (goModelChange)="onDateChanges($event)">
     </go-calendar>
