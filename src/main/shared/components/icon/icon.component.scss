@@ -71,6 +71,7 @@ i {
   &.more-h    { @include bgicon('ellipsis'); }
   &.page      { @include bgicon('paper'); }
   &.plus      { @include bgicon('plus'); }
+  &.power     { @include bgicon('power'); }
   &.redo      { @include bgicon('redo'); }
   &.search    { @include bgicon('search'); }
   &.split     { @include bgicon('split'); }
