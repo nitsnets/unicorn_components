@@ -1,21 +1,27 @@
 @import './../../styles/variables.scss';
 @import './../../styles/mixins.scss';
 
-.datetime-container{
-  width: $calendar-size;
-}
-.datetime-inputs-container{
+.spacing { margin-right: $basic-padding / 2;}
+
+.datetime-inputs-container {
   display: flex;
 }
-.go-input-date{
-  margin-right: $basic-padding/2;
+
+.datetime-input {
+  flex: 1;
 }
-.datetime-controls-container{
-  margin-top: $basic-padding/2;
+
+.datetime-controls-container {
+  margin-top: $basic-padding / 2;
+
+  &.floating {
+    position: absolute;
+  }
 }
-.datetime-buttons-container{
+
+.datetime-buttons-container {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  margin-bottom: $basic-padding/2;
+  margin-bottom: $basic-padding / 2;
 }

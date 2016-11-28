@@ -1,38 +1,44 @@
-<div class="datetime-container" (clickOutside)="mode=null">
-
+<div class="datetime-container" (clickOutside)="mode = popup? null: mode">
   <div class="datetime-inputs-container">
     <go-input
         type="date"
         icon="calendar"
-        class="go-input-date clear-webkit-controls"
-        [goModel]="date"
+        class="datetime-input clear-webkit-controls"
+        *ngIf="dateShow"
+        [class.spacing]="timeShow"
+        [label]="dateLabel || (timeLabel ? ' ' : '')"
+        [clear]="popup"
+        [goModel]="dateModel"
         (goModelChange)="onDateChanges($event)"
         (goFocus)="mode = 'date'"
     > </go-input>
     <go-input
         type="time"
         icon="clock"
-        class="clear-webkit-controls"
-        [goModel]="time"
+        class="datetime-input clear-webkit-controls"
+        *ngIf="timeShow"
+        [label]="timeLabel || (dateLabel ? ' ' : '')"
+        [clear]="popup"
+        [goModel]="timeModel"
         (goModelChange)="onTimeChanges($event)"
         (goFocus)="mode = 'time'"
     > </go-input>
   </div>
-  <div class="datetime-controls-container">
+  <div class="datetime-controls-container" [class.floating]="popup">
     <go-calendar
-      *ngIf="mode === 'date'"
+      *ngIf="dateShow && mode === 'date'"
       [maxDate]="maxDate"
       [minDate]="minDate"
-      [goModel]="date"
+      [goModel]="dateModel"
       (goModelChange)="onDateChanges($event)">
     </go-calendar>
     <go-clock
-      *ngIf="mode === 'time'"
-      [goModel]="time"
+      *ngIf="timeShow && mode === 'time'"
+      [goModel]="timeModel"
       (goModelChange)="onTimeChanges($event)">
     </go-clock>
   </div>
-  <div *ngIf="mode" class="datetime-buttons-container">
+  <div *ngIf="mode && !popup" class="datetime-buttons-container">
     <go-button
       class="btn-small"
       icon="up"
@@ -40,7 +46,7 @@
       (click)="mode = null">
     </go-button>
     <go-button
-      *ngIf="date || time"
+      *ngIf="dateModel || timeModel"
       class="btn-small"
       icon="close"
       label="clear"
