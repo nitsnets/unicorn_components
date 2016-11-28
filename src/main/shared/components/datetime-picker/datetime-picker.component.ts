@@ -6,24 +6,31 @@ import { Component, OnChanges, Input, Output, EventEmitter } from '@angular/core
     styleUrls: ['datetime-picker.component.scss'],
 })
 export class GoDatetimePickerComponent implements OnChanges {
-    @Input() date: String; // 'YYYY-MM-DD'
-    @Input() time: String; // 'HH:MM'
 
+    @Input() dateShow = true;
+    @Input() dateModel: String; // 'YYYY-MM-DD'
+    @Input() dateLabel: String;
     @Output() dateChange = new EventEmitter();
+
+    @Input() timeShow = true;
+    @Input() timeModel: String; // 'HH:MM'
+    @Input() timeLabel: String;
     @Output() timeChange = new EventEmitter();
+
+    @Input() popup = false;
+
+    mode = null;
 
     constructor() { }
 
-    ngOnChanges(changes) {
-
-    }
+    ngOnChanges(changes) { }
 
     onDateChanges(date) {
-        this.date = date;
+        this.dateModel = date;
         this.dateChange.emit(date);
     }
     onTimeChanges(time) {
-        this.time = time;
+        this.timeModel = time;
         this.timeChange.emit(time);
     }
     clear() {

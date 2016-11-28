@@ -22,6 +22,8 @@ $m-radius: $clock-size/2 - $m-padding - $m-size/2;
   position: relative;
   width: $clock-size;
   height: $clock-size;
+  background-color: #fff;
+  
   @include border-radius($border-radius);
   @include border($border-width);
   @include no-touch();
