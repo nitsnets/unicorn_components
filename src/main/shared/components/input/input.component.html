@@ -1,8 +1,8 @@
 <label [ngClass]="{
   'with-prefix': prefix,
   'with-icon': icon,
-  'with-icon-right': iconRight,
-  'with-clear': clear
+  'with-icon-right': iconRight || clear,
+  'with-two-icon-right': iconRight && clear
 }">
   <div class="label" *ngIf="label || counter">
     <span *ngIf="label">{{label}}</span>
@@ -16,7 +16,7 @@
   <div class="input-container">
     <span class="prefix" *ngIf="prefix" [innerHtml]="prefix"></span>
     <input
-      *ngIf="!multiline"
+      *ngIf="!multiline && !colorType"
       [ngClass]="{floating: floating}"
       [type]="type"
       [attr.maxlength]="max"
@@ -24,13 +24,21 @@
       [placeholder]="placeholder"
       [value]="value"
       [autofocus]="autofocus"
+      [required]="required"
       [ngModel]="goModel"
       (ngModelChange)="onNgModelChange($event)"
       (blur)="goBlur.emit($event)"
       (focus)="goFocus.emit($event)"
     />
+    <go-button
+      class="clear-btn"
+      icon="close"
+      *ngIf="!multiline && !colorType && clear && goModel && goModel.length"
+      (click)="onNgModelChange(null)"
+    > </go-button>
+
     <textarea
-      *ngIf="multiline"
+      *ngIf="multiline && !colorType"
       [ngClass]="{floating: floating}"
       [attr.maxlength]="max"
       [name]="name"
@@ -41,6 +49,15 @@
       (blur)="goBlur.emit($event)"
       (focus)="goFocus.emit($event)">
     </textarea>
+
+    <input 
+     *ngIf="colorType && !multiline"     
+    [colorPicker]="goModel"
+    (colorPickerChange)="onNgModelChange($event)"    
+    [value]="goModel"/>
+
+    <!--[style.background]="goModel"--> 
+
   </div>
   <small *ngIf="hint" class="hint">{{hint}}</small>
   <small *ngIf="error" class="error">{{error}}</small>

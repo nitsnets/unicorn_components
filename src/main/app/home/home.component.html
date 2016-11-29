@@ -272,10 +272,25 @@
       <go-checkbox [(goModel)]="checkboxModel" [partial]="true"></go-checkbox>
       <go-checkbox [(goModel)]="checkboxModel">Checkbox with label</go-checkbox>
       <go-checkbox [(goModel)]="checkboxModel" [partial]="true">Checkbox with partial</go-checkbox>
-    </div>
+    </div>  
+
     <h5>Color picker</h5>
     <div class="flex">
       <nts-color-picker [(color)]="colorSelected"></nts-color-picker>      
     </div>
+
+    
+    <h5>Color picker input</h5>
+    <div class="flex">
+      <go-input class="user-input" colorType="true" label="Seleciona color" [(goModel)]="colorSelected"></go-input>      
+    </div>
+
+
   </div>
+
+  
+
+  
+
+  
 </div>

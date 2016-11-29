@@ -25,6 +25,7 @@ export class GoInputComponent implements OnInit {
     @Input() error: string = '';
     @Input() floating = false;
     @Input() debounce = 0;
+    @Input() colorType = false;
     @Input() multiline = false;
     @Input() prefix = '';
     @Input() max = -1;
@@ -33,6 +34,7 @@ export class GoInputComponent implements OnInit {
     @Input() autofocus = false;
     @Input() clear = false;
     @Input() caret = false;
+    @Input() required = false;
 
     debounceTimer: NodeJS.Timer;
 
