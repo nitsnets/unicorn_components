@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { ColorPickerModule } from 'angular2-color-picker';
 
 import { BASIC_GO_COMPONENTS } from './components/';
 import { BASIC_GO_DIRECTIVES } from './directives/';
@@ -12,7 +13,8 @@ import { BASIC_GO_PIPES } from './pipes/';
     imports: [
         CommonModule,
         RouterModule,
-        FormsModule
+        FormsModule,
+        ColorPickerModule
     ],
     declarations: [
         BASIC_GO_COMPONENTS,

@@ -16,11 +16,13 @@ import { GoClockComponent } from './clock/index';
 import { GoCalendarComponent } from './calendar/index';
 import { DROPDOWN_DIRECTIVES } from './dropdown/index';
 import { POPUP_DIRECTIVES } from './popup/index';
+import { NtsColorPickerComponent } from './color-picker/color-picker.component';
+
 
 export const BASIC_GO_COMPONENTS = [
     DROPDOWN_DIRECTIVES, POPUP_DIRECTIVES, GoInputComponent, GoCheckboxComponent,
     GoButtonComponent, GoHeaderComponent, GoSelectComponent, GoSeparatorComponent,
     GoBodyComponent, GoDatetimePickerComponent, GoClockComponent, GoIconComponent,
     GoCalendarComponent, GoAsideComponent, GoLayoutComponent, SimpleListComponent,
-    GoSearchHeaderComponent, GoAccordionComponent
+    GoSearchHeaderComponent, GoAccordionComponent, NtsColorPickerComponent
 ];
