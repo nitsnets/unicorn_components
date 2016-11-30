@@ -5,7 +5,7 @@
   },
   "apps": [
     {
-      "root": "src",
+      "root": "demo",
       "outDir": "dist",
       "assets": [
         "assets",
@@ -15,7 +15,7 @@
       "main": "index.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
-      "prefix": "app",
+      "prefix": "nts",
       "mobile": false,
       "styles": [
         "styles.scss"
