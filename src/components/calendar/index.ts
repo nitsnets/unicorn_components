@@ -1,1 +1,1 @@
-export { GoCalendarComponent } from './calendar.component';
+export { NtsCalendarComponent } from './calendar.component';

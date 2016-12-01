@@ -1,6 +1,6 @@
 <div class="datetime-container" (clickOutside)="mode = popup? null: mode">
   <div class="datetime-inputs-container">
-    <go-input
+    <nts-input
         type="date"
         icon="calendar"
         class="datetime-input clear-webkit-controls"
@@ -8,49 +8,49 @@
         [class.spacing]="timeShow"
         [label]="dateLabel || (timeLabel ? ' ' : '')"
         [clear]="popup"
-        [goModel]="dateModel"
-        (goModelChange)="onDateChanges($event)"
-        (goFocus)="mode = 'date'"
-    > </go-input>
-    <go-input
+        [ntsModel]="dateModel"
+        (ntsModelChange)="onDateChanges($event)"
+        (ntsFocus)="mode = 'date'"
+    > </nts-input>
+    <nts-input
         type="time"
         icon="clock"
         class="datetime-input clear-webkit-controls"
         *ngIf="timeShow"
         [label]="timeLabel || (dateLabel ? ' ' : '')"
         [clear]="popup"
-        [goModel]="timeModel"
-        (goModelChange)="onTimeChanges($event)"
-        (goFocus)="mode = 'time'"
-    > </go-input>
+        [ntsModel]="timeModel"
+        (ntsModelChange)="onTimeChanges($event)"
+        (ntsFocus)="mode = 'time'"
+    > </nts-input>
   </div>
   <div class="datetime-controls-container" [class.floating]="popup">
-    <go-calendar
+    <nts-calendar
       *ngIf="dateShow && mode === 'date'"
       [maxDate]="maxDate"
       [minDate]="minDate"
-      [goModel]="dateModel"
-      (goModelChange)="onDateChanges($event)">
-    </go-calendar>
-    <go-clock
+      [ntsModel]="dateModel"
+      (ntsModelChange)="onDateChanges($event)">
+    </nts-calendar>
+    <nts-clock
       *ngIf="timeShow && mode === 'time'"
-      [goModel]="timeModel"
-      (goModelChange)="onTimeChanges($event)">
-    </go-clock>
+      [ntsModel]="timeModel"
+      (ntsModelChange)="onTimeChanges($event)">
+    </nts-clock>
   </div>
   <div *ngIf="mode && !popup" class="datetime-buttons-container">
-    <go-button
+    <nts-button
       class="btn-small"
       icon="up"
       label="close"
       (click)="mode = null">
-    </go-button>
-    <go-button
+    </nts-button>
+    <nts-button
       *ngIf="dateModel || timeModel"
       class="btn-small"
       icon="close"
       label="clear"
       (click)="clear()">
-    </go-button>
+    </nts-button>
   </div>
 </div>

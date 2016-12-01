@@ -1,6 +1,6 @@
 import { Injectable, ApplicationRef, Type, ViewContainerRef, ComponentFactoryResolver, ElementRef, Injector } from '@angular/core';
 import { Subject } from 'rxjs/Rx';
-import { GoModalComponent } from './modal.component';
+import { NtsModalComponent } from './modal.component';
 
 @Injectable()
 export class ModalService {
@@ -16,7 +16,7 @@ export class ModalService {
         let modalSub = new Subject();
 
         let modalRef = viewContainer.createComponent(
-            this.cmpFactoryResolver.resolveComponentFactory(GoModalComponent),
+            this.cmpFactoryResolver.resolveComponentFactory(NtsModalComponent),
             viewContainer.length, this.injector, null
         );
         modalRef.instance.initContent(component, options);

@@ -1,16 +1,16 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-    selector: 'go-header',
+    selector: 'nts-header',
     templateUrl: 'header.component.html',
     styleUrls: ['header.component.scss'],
 })
-export class GoHeaderComponent implements OnInit {
+export class NtsHeaderComponent implements OnInit {
 
-    @Input() goVisible = true;
-    @Input() goSize = null;
-    @Input() goBg = null;
-    @Input() goWithIcon = false;
+    @Input() ntsVisible = true;
+    @Input() ntsSize = null;
+    @Input() ntsBg = null;
+    @Input() ntsWithIcon = false;
 
     constructor() { }
 

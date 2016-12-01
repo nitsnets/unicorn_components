@@ -1,1 +1,1 @@
-export { GoIconComponent } from './icon.component';
+export { NtsIconComponent } from './icon.component';

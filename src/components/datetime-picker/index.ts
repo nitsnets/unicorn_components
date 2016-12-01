@@ -1,1 +1,1 @@
-export { GoDatetimePickerComponent } from './datetime-picker.component';
+export { NtsDatetimePickerComponent } from './datetime-picker.component';

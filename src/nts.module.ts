@@ -5,29 +5,30 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ColorPickerModule } from 'angular2-color-picker';
 
-import { BASIC_GO_COMPONENTS } from './components/';
-import { BASIC_GO_DIRECTIVES } from './directives/';
-import { BASIC_GO_PIPES } from './pipes/';
+import { NTS_COMPONENTS } from './components/';
+import { NTS_DIRECTIVES } from './directives/';
+import { NTS_PIPES } from './pipes/';
 
 @NgModule({
     imports: [
         CommonModule,
         RouterModule,
         FormsModule,
-        ColorPickerModule
+        ColorPickerModule,
     ],
     declarations: [
-        BASIC_GO_COMPONENTS,
-        BASIC_GO_DIRECTIVES,
-        BASIC_GO_PIPES
+        NTS_COMPONENTS,
+        NTS_DIRECTIVES,
+        NTS_PIPES
     ],
     exports: [
-        BASIC_GO_COMPONENTS,
-        BASIC_GO_DIRECTIVES,
-        BASIC_GO_PIPES,
+        NTS_COMPONENTS,
+        NTS_DIRECTIVES,
+        NTS_PIPES,
         CommonModule,
         RouterModule,
-        FormsModule
+        FormsModule,
+        
     ]
 })
-export class SharedModule { }
+export class  NtsModule { }

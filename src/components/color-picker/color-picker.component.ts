@@ -7,7 +7,7 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
     templateUrl: 'color-picker.component.html',
     styleUrls: ['color-picker.component.scss'],
 })
-export class NtsColorPickerComponent implements OnInit {
+export class  NtsColorPickerComponent implements OnInit {
     @Input() color;
     @Output() colorChange = new EventEmitter();
 

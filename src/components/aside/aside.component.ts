@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'go-aside',
+    selector: 'nts-aside',
     templateUrl: 'aside.component.html',
     styleUrls: ['aside.component.scss'],
 })
-export class GoAsideComponent {
+export class NtsAsideComponent {
     constructor() { }
 }

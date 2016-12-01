@@ -1,1 +1,1 @@
-export class GoOption { value; label; obj; }
+export class NtsOption { value; label; obj; }

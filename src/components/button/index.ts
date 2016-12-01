@@ -1,1 +1,1 @@
-export { GoButtonComponent } from './button.component';
+export { NtsButtonComponent } from './button.component';

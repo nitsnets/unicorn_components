@@ -6,14 +6,14 @@ import {
 import { COMPONENT_OUTLET_MODULE } from './provider';
 
 @Directive({
-    selector: '[goComponentOutlet]',
+    selector: '[ntsComponentOutlet]',
 })
 export class ComponentOutletDirective implements OnDestroy, OnChanges {
-    @Input() goComponentOutletTemplate: string;
-    @Input() goComponentOutletSelector: string;
-    @Input() goComponentOutletContext: any;
+    @Input() ntsComponentOutletTemplate: string;
+    @Input() ntsComponentOutletSelector: string;
+    @Input() ntsComponentOutletContext: any;
 
-    @Output() goComponentOutletLoaded = new EventEmitter();
+    @Output() ntsComponentOutletLoaded = new EventEmitter();
 
     private component: ComponentRef<any>;
     private moduleType: any;
@@ -26,9 +26,9 @@ export class ComponentOutletDirective implements OnDestroy, OnChanges {
     ) { }
 
     private _createDynamicComponent(): Type<any> {
-        let ctx = this.goComponentOutletContext;
+        let ctx = this.ntsComponentOutletContext;
 
-        const metadata = new Component({ selector: this.goComponentOutletSelector, template: this.goComponentOutletTemplate, });
+        const metadata = new Component({ selector: this.ntsComponentOutletSelector, template: this.ntsComponentOutletTemplate, });
 
         const cmpClass = class DynamicComponentClass implements OnInit, OnDestroy {
             // context = ctx;
@@ -59,7 +59,7 @@ export class ComponentOutletDirective implements OnDestroy, OnChanges {
     }
 
     ngOnChanges(changes: SimpleChanges) {
-        if (!this.goComponentOutletTemplate) { return; }
+        if (!this.ntsComponentOutletTemplate) { return; }
         this.cmpType = this._createDynamicComponent();
         this.moduleType = this._createDynamicModule(this.cmpType);
         const injector = ReflectiveInjector.fromResolvedProviders([], this.vcRef.parentInjector);
@@ -80,7 +80,7 @@ export class ComponentOutletDirective implements OnDestroy, OnChanges {
                     this.vcRef.clear();
                     this.component = this.vcRef.createComponent(cmpFactory, 0, injector);
                     this.component.changeDetectorRef.detectChanges();
-                    this.goComponentOutletLoaded.emit(this.component);
+                    this.ntsComponentOutletLoaded.emit(this.component);
                 }
             });
     }

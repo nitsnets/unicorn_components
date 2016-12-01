@@ -1,24 +1,24 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector: 'go-checkbox',
+    selector: 'nts-checkbox',
     templateUrl: 'checkbox.component.html',
     styleUrls: ['checkbox.component.scss'],
 })
-export class GoCheckboxComponent implements OnInit {
+export class NtsCheckboxComponent implements OnInit {
 
     @Input() name: string = '';
     @Input() label: string;
     @Input() partial: boolean = false;
-    @Input() goModel: boolean = false;
-    @Output() goModelChange = new EventEmitter();
+    @Input() ntsModel: boolean = false;
+    @Output() ntsModelChange = new EventEmitter();
 
     constructor() { }
 
     ngOnInit() { }
 
     onChange(value) {
-        this.goModelChange.emit(value);
+        this.ntsModelChange.emit(value);
     }
 
 }

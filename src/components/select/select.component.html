@@ -1,5 +1,5 @@
 <div (clickOutside)="onClickOutside()">
-  <go-input
+  <nts-input
     iconRight="caret"
     [placeholder]="placeholder"
     [name]="name"
@@ -7,11 +7,11 @@
     [label]="label"
     [clear]="true"
     (keydown)="onKeyDown($event)"
-    (goFocus)="onFocus($event)"
-    (goBlur)="onBlur($event)"
-    [(goModel)]="search"
-    (goModelChange)="onFilter()">
-  </go-input>
+    (ntsFocus)="onFocus($event)"
+    (ntsBlur)="onBlur($event)"
+    [(ntsModel)]="search"
+    (ntsModelChange)="onFilter()">
+  </nts-input>
 
   <ul class="options" *ngIf="areOptionsVisible">
     <li class="option" *ngFor="let option of options | filterOptions:search"

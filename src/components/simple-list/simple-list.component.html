@@ -7,17 +7,17 @@
         (dblclick)="onDoubleclickItem(item)"
       >
         <span [class.selected]="isitemSelected(item)">{{item.name || '(Untitled)'}}</span>
-        <go-button class="pull-right delete" icon="delete" (click)="onDeleteItem(i, $event)"></go-button>
+        <nts-button class="pull-right delete" icon="delete" (click)="onDeleteItem(i, $event)"></nts-button>
       </div>
       <form class="item" *ngIf="item.editing === true" (submit)="onEditItem(item)">
-        <go-input
+        <nts-input
           floating="true"
-          [(goModel)]="item.newname"
+          [(ntsModel)]="item.newname"
           [placeholder]="placeholder"
         >
-        </go-input>
-        <go-button class="pull-right" icon="close" (click)="item.editing = false"></go-button>
-        <go-button icon="check" type="submit"></go-button>
+        </nts-input>
+        <nts-button class="pull-right" icon="close" (click)="item.editing = false"></nts-button>
+        <nts-button icon="check" type="submit"></nts-button>
       </form>
     </li>
   </ul>

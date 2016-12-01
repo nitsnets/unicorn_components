@@ -1,1 +1,1 @@
-export { GoBodyComponent } from './body.component';
+export { NtsBodyComponent } from './body.component';

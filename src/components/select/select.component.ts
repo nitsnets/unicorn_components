@@ -1,26 +1,26 @@
 import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
-import { GoOption } from '../../models/option';
+import { NtsOption } from '../../models/option';
 
 export enum SelectTypes { text, number, email, password }
 
 @Component({
-    selector: 'go-select',
+    selector: 'nts-select',
     templateUrl: 'select.component.html',
     styleUrls: ['select.component.scss']
 })
-export class GoSelectComponent implements OnInit, OnChanges {
-    @Input() goModel;
-    @Output() goModelChange = new EventEmitter();
+export class NtsSelectComponent implements OnInit, OnChanges {
+    @Input() ntsModel;
+    @Output() ntsModelChange = new EventEmitter();
 
     @Input() name: string = '';
     @Input() label: string = '';
     @Input() placeholder: string = '';
     @Input() value: string = '';
     @Input() icon: string;
-    @Input() goOptions: GoOption[] = [];
-    @Input() goExcludedOptions: string[];
+    @Input() ntsOptions: NtsOption[] = [];
+    @Input() ntsExcludedOptions: string[];
 
-    options: GoOption[] = [];
+    options: NtsOption[] = [];
     areOptionsVisible = false;
     optionSelected = null;
     selecting = false;
@@ -30,26 +30,26 @@ export class GoSelectComponent implements OnInit, OnChanges {
 
     ngOnInit() { }
     ngOnChanges(changes) {
-        if (changes.goOptions || changes.goExcludeOptions) {
+        if (changes.ntsOptions || changes.ntsExcludeOptions) {
             this.excludeOptions();
         }
-        if (changes.goOptions || changes.goModel) {
+        if (changes.ntsOptions || changes.ntsModel) {
             this.updateSelectedOption();
         }
     }
     excludeOptions() {
-        if (!this.goExcludedOptions || !this.goExcludedOptions.length) {
-            this.options = this.goOptions;
+        if (!this.ntsExcludedOptions || !this.ntsExcludedOptions.length) {
+            this.options = this.ntsOptions;
             return;
         }
-        this.options = this.goOptions.filter(
-            (option) => this.goExcludedOptions.indexOf(option.value) === -1
+        this.options = this.ntsOptions.filter(
+            (option) => this.ntsExcludedOptions.indexOf(option.value) === -1
         );
     }
     updateSelectedOption() {
-        if (!this.goOptions) { return; }
-        for (let option of this.goOptions) {
-            if (option.value === this.goModel) {
+        if (!this.ntsOptions) { return; }
+        for (let option of this.ntsOptions) {
+            if (option.value === this.ntsModel) {
                 this.optionSelected = option;
                 this.search = option.label;
                 return;
@@ -64,7 +64,7 @@ export class GoSelectComponent implements OnInit, OnChanges {
         this.areOptionsVisible = true;
         this.search = '';
     }
-    isOptionSelected(option: GoOption) {
+    isOptionSelected(option: NtsOption) {
         return this.optionSelected && option.value === this.optionSelected.value;
     }
     onClickOutside() {
@@ -97,10 +97,10 @@ export class GoSelectComponent implements OnInit, OnChanges {
     onSelectingOption(value) {
         this.selecting = value;
     }
-    onSelect(option: GoOption) {
+    onSelect(option: NtsOption) {
         this.optionSelected = option;
-        this.goModel = option.value;
-        this.goModelChange.emit(this.goModel);
+        this.ntsModel = option.value;
+        this.ntsModelChange.emit(this.ntsModel);
         this.hideOptions();
     }
     onFilter() {

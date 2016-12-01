@@ -1,10 +1,10 @@
 <div class="acc-container">
   <div class="acc-header">
-    <go-button class="acc-caret"
+    <nts-button class="acc-caret"
       icon="caret"
       [ngClass]="{collapsed: collapsed}"
       (click)="collapsed = !collapsed">
-    </go-button>
+    </nts-button>
 
     <span class="acc-title" (click)="collapsed = !collapsed">
       {{name}}
@@ -14,12 +14,12 @@
       <ng-content select=".accordion-buttons"></ng-content>
     </div>
 
-    <go-dropdown class="acc-options" *ngIf="options">
-      <go-button class="acc-options-trigger" icon="more-v" goDropdownTrigger></go-button>
-      <go-dropdown-container>
+    <nts-dropdown class="acc-options" *ngIf="options">
+      <nts-button class="acc-options-trigger" icon="more-v" ntsDropdownTrigger></nts-button>
+      <nts-dropdown-container>
           <ng-content select=".accordion-options"></ng-content>
-      </go-dropdown-container>
-    </go-dropdown>
+      </nts-dropdown-container>
+    </nts-dropdown>
   </div>
   <div class="acc-content" *ngIf="!collapsed">
     <ng-content select=".accordion-content"></ng-content>

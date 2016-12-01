@@ -1,11 +1,11 @@
 import { Component, OnInit, Input, ElementRef, ViewChild, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector: 'go-button',
+    selector: 'nts-button',
     templateUrl: 'button.component.html',
     styleUrls: ['button.component.scss'],
 })
-export class GoButtonComponent implements OnInit {
+export class NtsButtonComponent implements OnInit {
     @Input() label: string;
     @Input() sublabel: string;
     @Input() icon: string;

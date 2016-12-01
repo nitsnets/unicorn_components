@@ -1,1 +1,1 @@
-export { GoHeaderComponent } from './header.component';
+export { NtsHeaderComponent } from './header.component';

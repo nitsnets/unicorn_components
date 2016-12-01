@@ -1,8 +1,8 @@
-<label #goChk [ngClass]="{
-  checked: goModel == true,
+<label #ntsChk [ngClass]="{
+  checked: ntsModel == true,
   partial: partial == true,
   'only-icon': !label || !label.length
 }">
-  <input type="checkbox" [name]="name" [ngModel]="goModel" (ngModelChange)="onChange(!goModel)">
+  <input type="checkbox" [name]="name" [ngModel]="ntsModel" (ngModelChange)="onChange(!ntsModel)">
   <span>{{label}}</span>
 </label>

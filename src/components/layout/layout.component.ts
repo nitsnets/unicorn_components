@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'go-layout',
+    selector: 'nts-layout',
     templateUrl: 'layout.component.html',
     styleUrls: ['layout.component.scss'],
 })
-export class GoLayoutComponent {
+export class NtsLayoutComponent {
     constructor() { }
 }

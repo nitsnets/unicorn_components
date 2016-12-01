@@ -2,11 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
-import { SharedModule } from '../src/shared.module';
+import {  NtsModule } from '../src/nts.module';
 
 import { DemoComponent } from './demo.component';
 
-import { GoModalComponent } from '../src/modules/modal/modal.component';
+import { NtsModalComponent } from '../src/modules/modal/modal.component';
 import { ModalModule } from '../src/modules/modal/modal.module';
 
 @NgModule({
@@ -14,13 +14,13 @@ import { ModalModule } from '../src/modules/modal/modal.module';
     DemoComponent
   ],
   imports: [
-    SharedModule,
+     NtsModule,
     BrowserModule,
     HttpModule,
-    ModalModule,
+    ModalModule
   ],
   entryComponents: [
-    GoModalComponent
+    NtsModalComponent
   ],
   bootstrap: [
     DemoComponent

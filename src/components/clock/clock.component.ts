@@ -1,13 +1,13 @@
 import { Component, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector: 'go-clock',
+    selector: 'nts-clock',
     templateUrl: 'clock.component.html',
     styleUrls: ['clock.component.scss'],
 })
-export class GoClockComponent implements OnChanges {
-    @Input() goModel;
-    @Output() goModelChange = new EventEmitter();
+export class NtsClockComponent implements OnChanges {
+    @Input() ntsModel;
+    @Output() ntsModelChange = new EventEmitter();
 
     mode: String;
     hoursModes = {
@@ -28,7 +28,7 @@ export class GoClockComponent implements OnChanges {
 
     constructor() { this.initValue(); }
 
-    ngOnChanges(changes) { if (this.goModel) { this.updateValue(); } else { this.initValue(); } }
+    ngOnChanges(changes) { if (this.ntsModel) { this.updateValue(); } else { this.initValue(); } }
 
     selectMode(mode) { this.setMode(mode); this.applyValue(); }
     selectHour(hour) { this.hourIndex = hour; this.apply(); }
@@ -51,11 +51,11 @@ export class GoClockComponent implements OnChanges {
         let minuteStr = this.minutes[this.minuteIndex];
         this.hour = +hourStr;
         this.minute = +minuteStr;
-        this.goModelChange.emit(hourStr + ':' + minuteStr);
+        this.ntsModelChange.emit(hourStr + ':' + minuteStr);
     }
     private updateValue() {
         // Get hour and minute string from input hh:mm
-        let timeSplitted = this.goModel.split(':');
+        let timeSplitted = this.ntsModel.split(':');
         let hour = timeSplitted[0];
         let minute = timeSplitted[1];
         // Set the clock hours and minutes as integers

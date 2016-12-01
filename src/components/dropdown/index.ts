@@ -1,10 +1,10 @@
-import { GoDropdownComponent, GoDropdownTriggerDirective } from './dropdown.component';
-import { GoDropdownContainerComponent } from './container/container.component';
-import { GoDropdownItemComponent } from './item/item.component';
+import { NtsDropdownComponent, NtsDropdownTriggerDirective } from './dropdown.component';
+import { NtsDropdownContainerComponent } from './container/container.component';
+import { NtsDropdownItemComponent } from './item/item.component';
 
 export const DROPDOWN_DIRECTIVES = [
-    GoDropdownComponent,
-    GoDropdownTriggerDirective,
-    GoDropdownContainerComponent,
-    GoDropdownItemComponent
+    NtsDropdownComponent,
+    NtsDropdownTriggerDirective,
+    NtsDropdownContainerComponent,
+    NtsDropdownItemComponent
 ];

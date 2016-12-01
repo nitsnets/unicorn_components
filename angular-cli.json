@@ -8,12 +8,12 @@
       "root": "demo",
       "outDir": "dist",
       "assets": [
-        "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "logo.png"
       ],
       "index": "index.html",
       "main": "index.ts",
-      "test": "test.ts",
+      "test": "",
       "tsconfig": "tsconfig.json",
       "prefix": "nts",
       "mobile": false,
@@ -30,16 +30,8 @@
   ],
   "addons": [],
   "packages": [],
-  "e2e": {
-    "protractor": {
-      "config": "./protractor.conf.js"
-    }
-  },
-  "test": {
-    "karma": {
-      "config": "./karma.conf.js"
-    }
-  },
+  "e2e": {  },
+  "test": {  },
   "defaults": {
     "styleExt": "css",
     "prefixInterfaces": false,

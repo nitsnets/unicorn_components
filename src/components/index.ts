@@ -1,28 +1,28 @@
-import { GoAccordionComponent } from './accordion/accordion.component';
-import { GoSearchHeaderComponent } from './search-header/search.component';
-import { GoLayoutComponent } from './layout/layout.component';
-import { GoAsideComponent } from './aside/aside.component';
-import { GoSeparatorComponent } from './separator/separator.component';
-import { GoInputComponent } from './input/index';
-import { GoCheckboxComponent } from './checkbox/index';
-import { GoSelectComponent } from './select/index';
-import { GoHeaderComponent } from './header/index';
-import { GoBodyComponent } from './body/index';
-import { GoButtonComponent } from './button/index';
-import { GoIconComponent } from './icon/index';
+import { NtsAccordionComponent } from './accordion/accordion.component';
+import { NtsSearchHeaderComponent } from './search-header/search.component';
+import { NtsLayoutComponent } from './layout/layout.component';
+import { NtsAsideComponent } from './aside/aside.component';
+import { NtsSeparatorComponent } from './separator/separator.component';
+import { NtsInputComponent } from './input/index';
+import { NtsCheckboxComponent } from './checkbox/index';
+import { NtsSelectComponent } from './select/index';
+import { NtsHeaderComponent } from './header/index';
+import { NtsBodyComponent } from './body/index';
+import { NtsButtonComponent } from './button/index';
+import { NtsIconComponent } from './icon/index';
 import { SimpleListComponent } from './simple-list/simple-list.component';
-import { GoDatetimePickerComponent } from './datetime-picker/index';
-import { GoClockComponent } from './clock/index';
-import { GoCalendarComponent } from './calendar/index';
+import { NtsDatetimePickerComponent } from './datetime-picker/index';
+import { NtsClockComponent } from './clock/index';
+import { NtsCalendarComponent } from './calendar/index';
 import { DROPDOWN_DIRECTIVES } from './dropdown/index';
 import { POPUP_DIRECTIVES } from './popup/index';
-import { NtsColorPickerComponent } from './color-picker/color-picker.component';
+import {  NtsColorPickerComponent } from './color-picker/color-picker.component';
 
 
-export const BASIC_GO_COMPONENTS = [
-    DROPDOWN_DIRECTIVES, POPUP_DIRECTIVES, GoInputComponent, GoCheckboxComponent,
-    GoButtonComponent, GoHeaderComponent, GoSelectComponent, GoSeparatorComponent,
-    GoBodyComponent, GoDatetimePickerComponent, GoClockComponent, GoIconComponent,
-    GoCalendarComponent, GoAsideComponent, GoLayoutComponent, SimpleListComponent,
-    GoSearchHeaderComponent, GoAccordionComponent, NtsColorPickerComponent
+export const NTS_COMPONENTS = [
+    DROPDOWN_DIRECTIVES, POPUP_DIRECTIVES, NtsInputComponent, NtsCheckboxComponent,
+    NtsButtonComponent, NtsHeaderComponent, NtsSelectComponent, NtsSeparatorComponent,
+    NtsBodyComponent, NtsDatetimePickerComponent, NtsClockComponent, NtsIconComponent,
+    NtsCalendarComponent, NtsAsideComponent, NtsLayoutComponent, SimpleListComponent,
+    NtsSearchHeaderComponent, NtsAccordionComponent,  NtsColorPickerComponent
 ];

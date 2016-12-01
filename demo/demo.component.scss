@@ -1,7 +1,10 @@
 .header-title {
   font-size: 18px;
   line-height: 2;
-  padding-left: 30px;
+  padding-left: 15px;
+}
+.header-logo {
+  height: 80%;
 }
 
 .content {
@@ -12,13 +15,13 @@
   float: right;
 }
 
-go-button {
+nts-button {
   float: left;
 }
 
-go-input,
-go-select,
-go-button {
+nts-input,
+nts-select,
+nts-button {
   margin-right: 10px;
 }
 

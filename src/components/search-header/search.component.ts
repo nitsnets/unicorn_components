@@ -1,13 +1,13 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector: 'go-search-header',
+    selector: 'nts-search-header',
     templateUrl: 'search.component.html',
     styleUrls: ['search.component.scss'],
 })
-export class GoSearchHeaderComponent implements OnInit {
-    @Input() goModel;
-    @Output() goModelChange = new EventEmitter();
+export class NtsSearchHeaderComponent implements OnInit {
+    @Input() ntsModel;
+    @Output() ntsModelChange = new EventEmitter();
     @Input() placeholder: string = '';
     @Input() value: string = '';
     @Input() debounce: number = 0;
@@ -15,12 +15,12 @@ export class GoSearchHeaderComponent implements OnInit {
     constructor() { }
 
     ngOnInit() { }
-    onGoModelChange(event) {
-        this.goModel = event;
-        this.goModelChange.emit(event);
+    onNtsModelChange(event) {
+        this.ntsModel = event;
+        this.ntsModelChange.emit(event);
     }
     clear() {
-        this.goModel = '';
-        this.goModelChange.emit(this.goModel);
+        this.ntsModel = '';
+        this.ntsModelChange.emit(this.ntsModel);
     }
 }

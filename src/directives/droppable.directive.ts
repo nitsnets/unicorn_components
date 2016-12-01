@@ -7,8 +7,8 @@ export class Droppable implements OnInit {
     @HostListener('dragenter', ['$event']) dragenter = this.onDragEnter;
     @HostListener('dragleave', ['$event']) dragleave = this.onDragLeave;
 
-    @Output() goDragenter = new EventEmitter();
-    @Output() goDragleave = new EventEmitter();
+    @Output() ntsDragenter = new EventEmitter();
+    @Output() ntsDragleave = new EventEmitter();
 
     first = false;
     second = false;
@@ -23,7 +23,7 @@ export class Droppable implements OnInit {
             return this.second = true;
         } else {
             this.first = true;
-            this.goDragenter.emit({
+            this.ntsDragenter.emit({
                 dataTransfer: e.dataTransfer,
                 sourceEvent: e
             });
@@ -36,7 +36,7 @@ export class Droppable implements OnInit {
             this.first = false;
         }
         if (!this.first && !this.second) {
-            this.goDragleave.emit({
+            this.ntsDragleave.emit({
                 dataTransfer: e.dataTransfer,
                 sourceEvent: e
             });

@@ -1,11 +1,11 @@
 import { Component, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector: 'go-datetime-picker',
+    selector: 'nts-datetime-picker',
     templateUrl: 'datetime-picker.component.html',
     styleUrls: ['datetime-picker.component.scss'],
 })
-export class GoDatetimePickerComponent implements OnChanges {
+export class NtsDatetimePickerComponent implements OnChanges {
 
     @Input() dateShow = true;
     @Input() dateModel: String; // 'YYYY-MM-DD'

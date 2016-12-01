@@ -7,11 +7,11 @@
   <div class="label" *ngIf="label || counter">
     <span *ngIf="label">{{label}}</span>
     <span *ngIf="counter">
-      {{goModel? goModel.length : 0}} <span *ngIf="max>-1">/ {{max}}</span>
+      {{ntsModel? ntsModel.length : 0}} <span *ngIf="max>-1">/ {{max}}</span>
     </span>
   </div>
-  <go-icon [icon]="icon" class="icon"></go-icon>
-  <go-icon [icon]="iconRight" class="icon-right"></go-icon>
+  <nts-icon [icon]="icon" class="icon"></nts-icon>
+  <nts-icon [icon]="iconRight" class="icon-right"></nts-icon>
 
   <div class="input-container">
     <span class="prefix" *ngIf="prefix" [innerHtml]="prefix"></span>
@@ -25,17 +25,17 @@
       [value]="value"
       [autofocus]="autofocus"
       [required]="required"
-      [ngModel]="goModel"
+      [ngModel]="ntsModel"
       (ngModelChange)="onNgModelChange($event)"
-      (blur)="goBlur.emit($event)"
-      (focus)="goFocus.emit($event)"
+      (blur)="ntsBlur.emit($event)"
+      (focus)="ntsFocus.emit($event)"
     />
-    <go-button
+    <nts-button
       class="clear-btn"
       icon="close"
-      *ngIf="!multiline && !colorType && clear && goModel && goModel.length"
+      *ngIf="!multiline && !colorType && clear && ntsModel && ntsModel.length"
       (click)="onNgModelChange(null)"
-    > </go-button>
+    > </nts-button>
 
     <textarea
       *ngIf="multiline && !colorType"
@@ -44,19 +44,19 @@
       [name]="name"
       [placeholder]="placeholder"
       [value]="value"
-      [ngModel]="goModel"
+      [ngModel]="ntsModel"
       (ngModelChange)="onNgModelChange($event)"
-      (blur)="goBlur.emit($event)"
-      (focus)="goFocus.emit($event)">
+      (blur)="ntsBlur.emit($event)"
+      (focus)="ntsFocus.emit($event)">
     </textarea>
 
     <input 
      *ngIf="colorType && !multiline"     
-    [colorPicker]="goModel"
+    [colorPicker]="ntsModel"
     (colorPickerChange)="onNgModelChange($event)"    
-    [value]="goModel"/>
+    [value]="ntsModel"/>
 
-    <!--[style.background]="goModel"--> 
+    <!--[style.background]="ntsModel"--> 
 
   </div>
   <small *ngIf="hint" class="hint">{{hint}}</small>

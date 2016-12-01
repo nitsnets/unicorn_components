@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'go-body',
+    selector: 'nts-body',
     templateUrl: 'body.component.html',
     styleUrls: ['body.component.scss'],
 })
-export class GoBodyComponent {
+export class NtsBodyComponent {
     constructor() { }
 }

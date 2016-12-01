@@ -2,19 +2,19 @@ import {
     Component, Directive, Input, Output, EventEmitter, ElementRef,
     ContentChild, Host, HostListener, OnDestroy
 } from '@angular/core';
-import { GoDropdownContainerComponent } from './container/container.component';
+import { NtsDropdownContainerComponent } from './container/container.component';
 
 @Component({
-    selector: 'go-dropdown',
+    selector: 'nts-dropdown',
     templateUrl: 'dropdown.component.html',
     styleUrls: ['dropdown.component.scss'],
 })
-export class GoDropdownComponent {
+export class NtsDropdownComponent {
     @Input() toggle = false;
     @Input() keepOpen = false;
     @Output() openedChange = new EventEmitter();
 
-    @ContentChild(GoDropdownContainerComponent) dropdownScope: GoDropdownContainerComponent;
+    @ContentChild(NtsDropdownContainerComponent) dropdownScope: NtsDropdownContainerComponent;
 
     opened: boolean = false;
 
@@ -35,13 +35,13 @@ export class GoDropdownComponent {
 }
 
 @Directive({
-    selector: '[goDropdownTrigger]'
+    selector: '[ntsDropdownTrigger]'
 })
-export class GoDropdownTriggerDirective implements OnDestroy {
+export class NtsDropdownTriggerDirective implements OnDestroy {
     private openedByFocus: boolean = false;
     private closeDropdownOnOutsideClick = (event: MouseEvent) => this.close(event);
 
-    constructor( @Host() public dropdown: GoDropdownComponent, private elementRef: ElementRef) { }
+    constructor( @Host() public dropdown: NtsDropdownComponent, private elementRef: ElementRef) { }
 
     @HostListener('click') openDropdown() {
         if (this.openedByFocus) {

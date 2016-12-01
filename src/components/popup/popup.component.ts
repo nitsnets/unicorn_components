@@ -2,19 +2,19 @@ import {
     Component, Directive, Input, Output, EventEmitter, ElementRef,
     ContentChild, Host, HostListener, OnDestroy, AfterViewInit
 } from '@angular/core';
-import { GoPopupContainerComponent } from './container/container.component';
+import { NtsPopupContainerComponent } from './container/container.component';
 
 @Component({
-    selector: 'go-popup',
+    selector: 'nts-popup',
     templateUrl: 'popup.component.html',
     styleUrls: ['popup.component.scss'],
 })
-export class GoPopupComponent implements AfterViewInit {
+export class NtsPopupComponent implements AfterViewInit {
     @Input() toggle = false;
     @Input() keepOpen = true;
     @Output() openedChange = new EventEmitter();
 
-    @ContentChild(GoPopupContainerComponent) popupScope: GoPopupContainerComponent;
+    @ContentChild(NtsPopupContainerComponent) popupScope: NtsPopupContainerComponent;
 
     opened: boolean = false;
 
@@ -39,13 +39,13 @@ export class GoPopupComponent implements AfterViewInit {
 }
 
 @Directive({
-    selector: '[goPopupTrigger]'
+    selector: '[ntsPopupTrigger]'
 })
-export class GoPopupTriggerDirective implements OnDestroy {
+export class NtsPopupTriggerDirective implements OnDestroy {
     private openedByFocus: boolean = false;
     private closePopupOnOutsideClick = (event: MouseEvent) => this.close(event);
 
-    constructor( @Host() public popup: GoPopupComponent, private elementRef: ElementRef) { }
+    constructor( @Host() public popup: NtsPopupComponent, private elementRef: ElementRef) { }
 
     @HostListener('click') openPopup() {
         if (this.openedByFocus) {

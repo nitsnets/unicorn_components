@@ -1,13 +1,13 @@
-<go-header goSize="medium">
-  <go-input
+<nts-header ntsSize="medium">
+  <nts-input
     icon="search"
     [value]="value"
     [placeholder]="placeholder"
-    [goModel]="goModel"
-    (goModelChange)="onGoModelChange($event)"
+    [ntsModel]="ntsModel"
+    (ntsModelChange)="onNtsModelChange($event)"
     [debounce]="debounce"
     [floating]="true">
-  </go-input>
-  <go-button class="btn-header-md" icon="close" (click)="clear()" *ngIf="goModel"></go-button>
+  </nts-input>
+  <nts-button class="btn-header-md" icon="close" (click)="clear()" *ngIf="ntsModel"></nts-button>
   
-</go-header>
+</nts-header>

@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 
-import { SharedModule } from '../../shared.module';
+import {  NtsModule } from '../../nts.module';
 
 import { ModalService } from './modal.service';
-import { GoModalComponent } from './modal.component';
+import { NtsModalComponent } from './modal.component';
 
 @NgModule({
     imports: [
-        SharedModule
+         NtsModule
     ],
     declarations: [
-        GoModalComponent,
+        NtsModalComponent,
     ],
     providers: [
         ModalService
     ],
     exports: [
-        GoModalComponent,
+        NtsModalComponent,
     ]
 })
 export class ModalModule { }

@@ -1,1 +1,1 @@
-export { GoInputComponent } from './input.component';
+export { NtsInputComponent } from './input.component';

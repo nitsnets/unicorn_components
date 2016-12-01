@@ -3,16 +3,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export enum InputTypes { text, number, email, password }
 
 @Component({
-    selector: 'go-input',
+    selector: 'nts-input',
     templateUrl: 'input.component.html',
     styleUrls: ['input.component.scss'],
 })
-export class GoInputComponent implements OnInit {
+export class NtsInputComponent implements OnInit {
 
-    @Input() goModel;
-    @Output() goModelChange = new EventEmitter();
-    @Output() goBlur = new EventEmitter();
-    @Output() goFocus = new EventEmitter();
+    @Input() ntsModel;
+    @Output() ntsModelChange = new EventEmitter();
+    @Output() ntsBlur = new EventEmitter();
+    @Output() ntsFocus = new EventEmitter();
 
     @Input() type: InputTypes = InputTypes.text;
     @Input() placeholder: string = '';
@@ -41,16 +41,16 @@ export class GoInputComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
-        if (!this.goModel) {
-            this.goModel = this.value;
+        if (!this.ntsModel) {
+            this.ntsModel = this.value;
         } else {
-            this.value = this.goModel;
+            this.value = this.ntsModel;
         }
     }
     onNgModelChange(ev) {
         clearTimeout(this.debounceTimer);
         this.debounceTimer = setTimeout(
-            _ => this.goModelChange.emit(ev), this.debounce || 0
+            _ => this.ntsModelChange.emit(ev), this.debounce || 0
         );
     }
 }

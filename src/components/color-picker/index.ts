@@ -1,1 +1,1 @@
-export { NtsColorPickerComponent } from './color-picker.component';
+export {  NtsColorPickerComponent } from './color-picker.component';

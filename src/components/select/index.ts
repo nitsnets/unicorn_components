@@ -1,1 +1,1 @@
-export { GoSelectComponent } from './select.component';
+export { NtsSelectComponent } from './select.component';

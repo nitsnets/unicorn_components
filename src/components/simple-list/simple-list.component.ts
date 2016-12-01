@@ -4,7 +4,7 @@ import { objEquals } from '../../utils';
 interface SimpleListItem { name: String; }
 
 @Component({
-    selector: 'go-simple-list',
+    selector: 'nts-simple-list',
     templateUrl: 'simple-list.component.html',
     styleUrls: ['simple-list.component.scss']
 })

@@ -4,11 +4,11 @@ import {
 } from '@angular/core';
 
 @Component({
-    selector: 'go-modal',
+    selector: 'nts-modal',
     templateUrl: 'modal.component.html',
     styleUrls: ['modal.component.scss'],
 })
-export class GoModalComponent implements AfterContentInit {
+export class NtsModalComponent implements AfterContentInit {
     contentComponent: Type<any>;
     contentComponentRef: ComponentRef<any>;
 

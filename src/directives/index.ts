@@ -5,7 +5,7 @@ import { ComponentOutletDirective } from './component-outlet/component-outlet.di
 import { ComponentLoaderDirective } from './component-loader.directive';
 
 
-export const BASIC_GO_DIRECTIVES = [
+export const NTS_DIRECTIVES = [
     AutofocusDirective, ClickOutsideDirective, Droppable, ComponentOutletDirective,
     ComponentLoaderDirective
 ];

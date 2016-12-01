@@ -1,1 +1,1 @@
-export { GoClockComponent } from './clock.component';
+export { NtsClockComponent } from './clock.component';

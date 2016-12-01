@@ -1,8 +1,8 @@
-import { GoPopupComponent, GoPopupTriggerDirective } from './popup.component';
-import { GoPopupContainerComponent } from './container/container.component';
+import { NtsPopupComponent, NtsPopupTriggerDirective } from './popup.component';
+import { NtsPopupContainerComponent } from './container/container.component';
 
 export const POPUP_DIRECTIVES = [
-    GoPopupComponent,
-    GoPopupTriggerDirective,
-    GoPopupContainerComponent
+    NtsPopupComponent,
+    NtsPopupTriggerDirective,
+    NtsPopupContainerComponent
 ];

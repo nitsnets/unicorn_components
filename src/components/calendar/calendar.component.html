@@ -1,8 +1,8 @@
 <div class="calendar-container">
   <div class="month-name">
-      <go-button icon="back" (click)="previous()"></go-button>
+      <nts-button icon="back" (click)="previous()"></nts-button>
       <p>{{month.format("MMMM YYYY")}}</p>
-      <go-button icon="forw" (click)="next()"></go-button>
+      <nts-button icon="forw" (click)="next()"></nts-button>
   </div>
   <div class="days-name">
       <p *ngFor="let dayName of dayNames">{{dayName}}</p>

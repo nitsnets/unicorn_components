@@ -2,13 +2,13 @@ import { Component, OnChanges, Input, Output, EventEmitter } from '@angular/core
 import * as moment from 'moment';
 
 @Component({
-    selector: 'go-calendar',
+    selector: 'nts-calendar',
     templateUrl: 'calendar.component.html',
     styleUrls: ['calendar.component.scss'],
 })
-export class GoCalendarComponent implements OnChanges {
-    @Input() goModel;
-    @Output() goModelChange = new EventEmitter();
+export class NtsCalendarComponent implements OnChanges {
+    @Input() ntsModel;
+    @Output() ntsModelChange = new EventEmitter();
 
     @Input() maxDate;
     @Input() minDate;
@@ -22,8 +22,8 @@ export class GoCalendarComponent implements OnChanges {
     constructor() { }
 
     ngOnChanges() {
-        if (this.goModel) {
-            this.selected = this.normalizeDate(moment(this.goModel));
+        if (this.ntsModel) {
+            this.selected = this.normalizeDate(moment(this.ntsModel));
             this.month = this.selected.clone();
         } else {
             this.selected = null;
@@ -37,7 +37,7 @@ export class GoCalendarComponent implements OnChanges {
         
         this.selected = day.date;
         let newDate = this.selected.format('YYYY-MM-DD');
-        this.goModelChange.emit(newDate);
+        this.ntsModelChange.emit(newDate);
     };
 
     next() {
