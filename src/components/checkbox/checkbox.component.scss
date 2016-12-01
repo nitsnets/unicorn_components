@@ -20,12 +20,12 @@
 
     border: 0;
     padding: 0;
-    padding-left: $input-height;
-    padding-right: $input-height;
+    padding-left: $input-height / 2 - $input-padding;
+    padding-right: $input-height / 2 - $input-padding;
     border-radius: $border-radius;
     background-color: transparent;
 
-    &.only-icon{ border-radius:$input-height/2; padding-right: 0;}
+    &.only-icon{ border-radius:$input-height/2;}
 
     &:hover{background-color: $lightest-alpha}
     &:focus{background-color: $light-alpha}
@@ -43,10 +43,8 @@
       background-repeat: no-repeat;
       opacity: 0.25;
     }
-    &:before{background-image: url('/assets/images/icons/square.svg');}
-    &.partial:before{ background-image: url('/assets/images/icons/square-minus.svg'); opacity: 1; }
-    &.checked:before{ background-image: url('/assets/images/icons/square-check.svg'); opacity: 1; }
 
     input{display: none;};
+    span{margin-left: $input-height / 2 - $input-padding}
   }
 }

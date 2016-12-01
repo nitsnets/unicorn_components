@@ -1,6 +1,10 @@
 @import './../../styles/variables.scss';
 @import './../../styles/mixins.scss';
 
+:host {
+  display: flex;
+}
+
 .spacing { margin-right: $basic-padding / 2;}
 
 .datetime-inputs-container {
@@ -13,6 +17,7 @@
 
 .datetime-controls-container {
   margin-top: $basic-padding / 2;
+  z-index: 1;
 
   &.floating {
     position: absolute;

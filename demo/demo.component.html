@@ -1,14 +1,14 @@
 <nts-header>
   <img class="header-logo" src="logo.png" alt="">
-  <h2 class="header-title">NTS Angular 2 Components</h2>
+  <h2 class="header-title">NTS Angular 2 Components - Showroom</h2>
 </nts-header>
 <nts-layout>
+  <!--
   <nts-aside class="aside-left content">
     Aside
   </nts-aside>
-  <nts-body class="content">
-    <h2>Showroom</h2>
-    <nts-separator></nts-separator>
+  -->
+  <nts-body class="content full-width">
     <div>
       <h3>Buttons</h3>
       <nts-separator></nts-separator>
@@ -233,7 +233,12 @@
         hint="Write something above">
       </nts-input>
       <h5>Datetime picker</h5>
-      <nts-datetime-picker minDate="2016-10-01" maxDate="2016-12-31"></nts-datetime-picker>
+      <nts-datetime-picker> </nts-datetime-picker>
+      <nts-datetime-picker dateLabel="Min and max date" timeLabel="Hour" minDate="2016-10-01" maxDate="2016-12-31"> </nts-datetime-picker>
+      <nts-datetime-picker dateLabel="Floating calendar" [popup]="true"> </nts-datetime-picker>
+      <nts-datetime-picker dateLabel="Only date" [popup]="true" [timeShow]="false"> </nts-datetime-picker>
+      <nts-datetime-picker timeLabel="Only hour" [popup]="true" [dateShow]="false"> </nts-datetime-picker>
+
       <h5>Select inputs</h5>
       <div class="flex">
         <nts-select label="Default select"
@@ -273,13 +278,12 @@
       <div class="flex">
         <nts-checkbox [(ntsModel)]="checkboxModel"></nts-checkbox>
         <nts-checkbox [(ntsModel)]="checkboxModel" [partial]="true"></nts-checkbox>
-        <nts-checkbox [(ntsModel)]="checkboxModel">Checkbox with label</nts-checkbox>
-        <nts-checkbox [(ntsModel)]="checkboxModel" [partial]="true">Checkbox with partial</nts-checkbox>
+        <nts-checkbox [(ntsModel)]="checkboxModel" label="Checkbox with label"></nts-checkbox>
+        <nts-checkbox [(ntsModel)]="checkboxModel" label="Checkbox with partial" [partial]="true"></nts-checkbox>
       </div>
 
       <h5>Color picker</h5>
       <div class="flex">
-        <nts-color-picker [(color)]="colorSelected"></nts-color-picker>
         <nts-input type="color" label="Color input" [(ntsModel)]="colorSelected"></nts-input>
         <nts-input type="color" label="Color input with swatch" [(ntsModel)]="colorSelected" [colorSwatch]="true"></nts-input>
       </div>

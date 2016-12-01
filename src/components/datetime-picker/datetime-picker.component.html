@@ -24,7 +24,7 @@
         (ntsFocus)="mode = 'time'"
     > </nts-input>
   </div>
-  <div class="datetime-controls-container" [class.floating]="popup">
+  <div *ngIf="mode!==null" class="datetime-controls-container" [class.floating]="popup">
     <nts-calendar
       *ngIf="dateShow && mode === 'date'"
       [maxDate]="maxDate"
