@@ -1,5 +1,5 @@
 <label [ngClass]="{
-  'with-prefix': prefix,
+  'with-prefix': prefix || type === 'color',
   'with-icon': icon,
   'with-icon-right': iconRight || clear,
   'with-two-icon-right': iconRight && clear
@@ -14,9 +14,10 @@
   <nts-icon [icon]="iconRight" class="icon-right"></nts-icon>
 
   <div class="input-container">
-    <span class="prefix" *ngIf="prefix" [innerHtml]="prefix"></span>
+    <span class="prefix" *ngIf="prefix &&  type !== 'color'" [innerHtml]="prefix"></span>
+    <span class="prefix" *ngIf="type === 'color' && colorSwatch" [style.backgroundColor]="ntsModel"></span>
     <input
-      *ngIf="!multiline && !colorType"
+      *ngIf="!multiline && type !== 'color'"
       [ngClass]="{floating: floating}"
       [type]="type"
       [attr.maxlength]="max"
@@ -33,12 +34,12 @@
     <nts-button
       class="clear-btn"
       icon="close"
-      *ngIf="!multiline && !colorType && clear && ntsModel && ntsModel.length"
+      *ngIf="!multiline && clear && ntsModel && ntsModel.length"
       (click)="onNgModelChange(null)"
     > </nts-button>
 
     <textarea
-      *ngIf="multiline && !colorType"
+      *ngIf="multiline && type !== 'color'"
       [ngClass]="{floating: floating}"
       [attr.maxlength]="max"
       [name]="name"
@@ -50,13 +51,13 @@
       (focus)="ntsFocus.emit($event)">
     </textarea>
 
-    <input 
-     *ngIf="colorType && !multiline"     
-    [colorPicker]="ntsModel"
-    (colorPickerChange)="onNgModelChange($event)"    
-    [value]="ntsModel"/>
+    <input
+      *ngIf="type === 'color' && !multiline"
+      [colorPicker]="ntsModel"
+      (colorPickerChange)="onNgModelChange($event)"
+      [value]="ntsModel"/>
 
-    <!--[style.background]="ntsModel"--> 
+    <!--[style.background]="ntsModel"-->
 
   </div>
   <small *ngIf="hint" class="hint">{{hint}}</small>

@@ -34,6 +34,7 @@ export class NtsInputComponent implements OnInit {
     @Input() autofocus = false;
     @Input() clear = false;
     @Input() caret = false;
+  @Input() colorSwatch = false;
     @Input() required = false;
 
     debounceTimer: NodeJS.Timer;
