@@ -1,17 +1,21 @@
 {
   "compilerOptions": {
-    "declaration": false,
+    "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "lib": ["es6", "dom"],
-    "mapRoot": "./",
     "module": "es6",
     "moduleResolution": "node",
-    "outDir": "../demo-dist/out-tsc",
     "sourceMap": true,
-    "target": "es5",
+    "target": "ES5",
     "typeRoots": [
-      "../node_modules/@types"
+      "node_modules/@types"
     ]
-  }
+  },
+  "files": [
+    "nts-ng2-components.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

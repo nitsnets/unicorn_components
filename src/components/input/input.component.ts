@@ -37,7 +37,7 @@ export class NtsInputComponent implements OnInit {
   @Input() colorSwatch = false;
     @Input() required = false;
 
-    debounceTimer: NodeJS.Timer;
+    debounceTimer;
 
     constructor() { }
 

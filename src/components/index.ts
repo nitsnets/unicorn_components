@@ -14,15 +14,39 @@ import { SimpleListComponent } from './simple-list/simple-list.component';
 import { NtsDatetimePickerComponent } from './datetime-picker/index';
 import { NtsClockComponent } from './clock/index';
 import { NtsCalendarComponent } from './calendar/index';
-import { DROPDOWN_DIRECTIVES } from './dropdown/index';
-import { POPUP_DIRECTIVES } from './popup/index';
-import {  NtsColorPickerComponent } from './color-picker/color-picker.component';
+import { NtsColorPickerComponent } from './color-picker/color-picker.component';
 
+import { NtsPopupComponent, NtsPopupTriggerDirective } from './popup/popup.component';
+import { NtsPopupContainerComponent } from './popup/container/container.component';
+
+import { NtsDropdownComponent, NtsDropdownTriggerDirective } from './dropdown/dropdown.component';
+import { NtsDropdownContainerComponent } from './dropdown/container/container.component';
+import { NtsDropdownItemComponent } from './dropdown/item/item.component';
 
 export const NTS_COMPONENTS = [
-    DROPDOWN_DIRECTIVES, POPUP_DIRECTIVES, NtsInputComponent, NtsCheckboxComponent,
-    NtsButtonComponent, NtsHeaderComponent, NtsSelectComponent, NtsSeparatorComponent,
-    NtsBodyComponent, NtsDatetimePickerComponent, NtsClockComponent, NtsIconComponent,
-    NtsCalendarComponent, NtsAsideComponent, NtsLayoutComponent, SimpleListComponent,
-    NtsSearchHeaderComponent, NtsAccordionComponent,  NtsColorPickerComponent
+    NtsPopupComponent,
+    NtsPopupTriggerDirective,
+    NtsPopupContainerComponent,
+    NtsDropdownComponent,
+    NtsDropdownTriggerDirective,
+    NtsDropdownContainerComponent,
+    NtsDropdownItemComponent,
+    
+    NtsInputComponent,
+    NtsCheckboxComponent,
+    NtsButtonComponent,
+    NtsHeaderComponent,
+    NtsSelectComponent,
+    NtsSeparatorComponent,
+    NtsBodyComponent,
+    NtsDatetimePickerComponent,
+    NtsClockComponent,
+    NtsIconComponent,
+    NtsCalendarComponent,
+    NtsAsideComponent,
+    NtsLayoutComponent,
+    SimpleListComponent,
+    NtsSearchHeaderComponent,
+    NtsAccordionComponent,
+    NtsColorPickerComponent
 ];

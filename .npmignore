@@ -35,6 +35,5 @@ Thumbs.db
 
 # built files
 
-*.js
-*.map
-*.d.ts
+*.ts
+!*.d.ts

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { objEquals } from '../../utils';
 
-interface SimpleListItem { name: String; }
+export interface SimpleListItem { name: String; }
 
 @Component({
     selector: 'nts-simple-list',

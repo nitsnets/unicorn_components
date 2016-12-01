@@ -5,5 +5,5 @@ Paquete de componentes para Angular2 desarrollado por Nitsnets.
 ## Uso ##
 
 ```
-npm install nts-angular2-components
+npm install nts-ng2-components
 ```
