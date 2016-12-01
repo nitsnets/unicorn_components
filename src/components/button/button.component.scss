@@ -66,12 +66,12 @@ button.btn-large{
   }
 }
 :host.btn-default{
-  &>button, button.dropdown{
+  &>button, button.dropdown {
     border: solid $border-width $medium-grey;
   }
 }
 :host.btn-primary{
-  &>button, button.dropdown{
+  &>button, button.dropdown, button.popup {
     background-color: $brand-color;
     color: white;
     .sublabel{color: white}
@@ -82,7 +82,7 @@ button.btn-large{
   }
 }
 :host.btn-error{
-  &>button, button.dropdown{
+  &>button, button.dropdown, button.popup {
     background-color: $error-color;
     color: white;
     .sublabel{color: white}
@@ -93,7 +93,7 @@ button.btn-large{
   }
 }
 :host.btn-success{
-  &>button, button.dropdown{
+  &>button, button.dropdown, button.popup {
     background-color: $success-color;
     color: white;
     .sublabel{color: white}
@@ -104,7 +104,7 @@ button.btn-large{
   }
 }
 :host.btn-light{
-  &>button, button.dropdown{
+  &>button, button.dropdown, button.popup {
     background-color: $light-grey;
     color: $black;
     .sublabel{color: $black}
@@ -114,7 +114,7 @@ button.btn-large{
   }
 }
 :host.btn-accent{
-  &>button, button.dropdown{
+  &>button, button.dropdown, button.popup {
 
   }
 }
@@ -163,7 +163,7 @@ button.btn-large{
 :host.selected{
   background-color: $lightest-alpha;
 }
-.popup{ margin-left: -$input-height; }
+.popup-container{ margin-left: -$input-height; }
 .popup-large{
   margin-top: $input-height / 2;
   margin-left: -($input-height + $basic-padding / 2);

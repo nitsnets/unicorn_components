@@ -27,8 +27,8 @@
   [style.visibility]="'hidden'">
 
 <!-- Aux button to fire popup -->
-<nts-popup class="popup" *ngIf="popup" (click)="$event.stopPropagation()" [ngClass]="{ 'popup-large': size === 'large' }">
-  <button class="only-icon with-icon" ntsPopupTrigger type="button">
+<nts-popup class="popup-container" *ngIf="popup" (click)="$event.stopPropagation()" [ngClass]="{ 'popup-large': size === 'large' }">
+  <button class="popup only-icon with-icon" ntsPopupTrigger type="button">
     <nts-icon class="icon" [icon]="popupIcon"></nts-icon>
   </button>
   <nts-popup-container >

@@ -99,11 +99,13 @@ export class NtsSelectComponent implements OnInit, OnChanges {
     }
     onSelect(option: NtsOption) {
         this.optionSelected = option;
-        this.ntsModel = option.value;
+        this.ntsModel = option ? option.value : null;
         this.ntsModelChange.emit(this.ntsModel);
         this.hideOptions();
     }
-    onFilter() {
-
+    onFilter(value) {
+        if (value === null) {
+            this.onSelect(null);
+        }
     }
 }

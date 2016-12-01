@@ -10,7 +10,7 @@
     (ntsFocus)="onFocus($event)"
     (ntsBlur)="onBlur($event)"
     [(ntsModel)]="search"
-    (ntsModelChange)="onFilter()">
+    (ntsModelChange)="onFilter($event)">
   </nts-input>
 
   <ul class="options" *ngIf="areOptionsVisible">
