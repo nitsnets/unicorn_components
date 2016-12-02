@@ -15,6 +15,7 @@ import { NtsDatetimePickerComponent } from './datetime-picker/index';
 import { NtsClockComponent } from './clock/index';
 import { NtsCalendarComponent } from './calendar/index';
 import { NtsColorPickerComponent } from './color-picker/color-picker.component';
+import { NtsImagePickerComponent } from './image-picker/image-picker.component';
 
 import { NtsPopupComponent, NtsPopupTriggerDirective } from './popup/popup.component';
 import { NtsPopupContainerComponent } from './popup/container/container.component';
@@ -48,5 +49,6 @@ export const NTS_COMPONENTS = [
     SimpleListComponent,
     NtsSearchHeaderComponent,
     NtsAccordionComponent,
-    NtsColorPickerComponent
+    NtsColorPickerComponent,
+    NtsImagePickerComponent    
 ];

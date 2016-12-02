@@ -12,11 +12,12 @@ import { NtsPopupContainerComponent } from './container/container.component';
 export class NtsPopupComponent implements AfterViewInit {
     @Input() toggle = false;
     @Input() keepOpen = true;
+    @Input()  opened: boolean = false;
     @Output() openedChange = new EventEmitter();
 
     @ContentChild(NtsPopupContainerComponent) popupScope: NtsPopupContainerComponent;
 
-    opened: boolean = false;
+    
 
     constructor(private elementRef: ElementRef) { }
 

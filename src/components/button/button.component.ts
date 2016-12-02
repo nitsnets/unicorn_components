@@ -14,6 +14,7 @@ export class NtsButtonComponent implements OnInit {
     @Input() dropdown = false;
     @Input() popup = false;
     @Input() popupIcon: string;
+    @Input() disabled: boolean;
 
 
     @Input() fileType: string;

@@ -55,6 +55,11 @@
       *ngIf="type === 'color' && !multiline"
       [colorPicker]="ntsModel"
       (colorPickerChange)="onNgModelChange($event)"
+      [cpPosition]="'bottom'"
+      [cpOutputFormat]="'hex'"
+      [cpSaveClickOutside]="true"
+      [cpAlphaChannel]="'disabled'"
+      [cpDialogDisplay]="'popup'"
       [value]="ntsModel"/>
 
     <!--[style.background]="ntsModel"-->
