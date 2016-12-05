@@ -25,7 +25,7 @@
       (mousedown)="onSelectingOption(true)"
       (mouseup)="onSelectingOption(false)">
 
-      <nts-icon class="icon" [icon]="isOptionSelected(option) ? 'square-check' : 'square'"></nts-icon>
+      <nts-icon *ngIf="multiple" class="icon" [icon]="isOptionSelected(option) ? 'square-check' : 'square'"></nts-icon>
       <span [innerHtml]="(option.label | highlight:search) || '(Unlabeled)'"></span>
     </li>
   </ul>
