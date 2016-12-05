@@ -208,6 +208,70 @@
     <div>
       <h3>Inputs</h3>
       <nts-separator></nts-separator>
+      <h5>Datetime picker</h5>
+      <div class="flex">
+        <nts-datetime-picker> </nts-datetime-picker>
+      </div>
+      <div class="flex">
+        <nts-datetime-picker dateLabel="Min and max date" timeLabel="Hour" minDate="2016-10-01" maxDate="2016-12-31"> </nts-datetime-picker>
+      </div>
+      <div class="flex">
+        <nts-datetime-picker dateLabel="Floating calendar" [popup]="true"> </nts-datetime-picker>
+      </div>
+      <div class="flex">
+        <nts-datetime-picker dateLabel="Only date" [popup]="true" [timeShow]="false"> </nts-datetime-picker>
+      </div>
+      <div class="flex">
+        <nts-datetime-picker timeLabel="Only hour" [popup]="true" [dateShow]="false"> </nts-datetime-picker>
+      </div>
+
+      <h5>Select inputs </h5>
+
+      <div class="flex">
+        <nts-select label="Default select"
+          [(ntsModel)]="selectModel"
+          [options]="[
+            {value: 1, label: 'Option 1'},
+            {value: 2, label: 'Option 2'},
+            {value: 3, label: 'Option 3'},
+            {value: 4, label: 'Option 4'},
+            {value: 5, label: 'Option 5'}
+          ]">
+        </nts-select>
+        <nts-select label="Select with placeholder"
+          placeholder="Select placeholder"
+          [(ntsModel)]="selectModel"
+          [options]="[
+            {value: 1, label: 'Option 1'},
+            {value: 2, label: 'Option 2'},
+            {value: 3, label: 'Option 3'},
+            {value: 4, label: 'Option 4'},
+            {value: 5, label: 'Option 5'}
+          ]">
+        </nts-select>
+        <nts-select label="Select with icon"
+          icon="user"
+          [(ntsModel)]="selectModel"
+          [options]="[
+            {value: 1, label: 'Option 1'},
+            {value: 2, label: 'Option 2'},
+            {value: 3, label: 'Option 3'},
+            {value: 4, label: 'Option 4'},
+            {value: 5, label: 'Option 5'}
+          ]">
+        </nts-select>
+        <nts-select label="Select with multiple options"
+          [(ntsModel)]="selectModel2"
+          [multiple]="true"
+          [options]="[
+            {value: 1, label: 'Option 1'},
+            {value: 2, label: 'Option 2'},
+            {value: 3, label: 'Option 3'},
+            {value: 4, label: 'Option 4'},
+            {value: 5, label: 'Option 5'}
+          ]">
+        </nts-select>
+      </div>
       <h5>Single-line inputs</h5>
       <div class="flex">
         <nts-input [(ntsModel)]="inputModel" label="Default input"></nts-input>
@@ -232,48 +296,7 @@
         error="Something went wrong"
         hint="Write something above">
       </nts-input>
-      <h5>Datetime picker</h5>
-      <nts-datetime-picker> </nts-datetime-picker>
-      <nts-datetime-picker dateLabel="Min and max date" timeLabel="Hour" minDate="2016-10-01" maxDate="2016-12-31"> </nts-datetime-picker>
-      <nts-datetime-picker dateLabel="Floating calendar" [popup]="true"> </nts-datetime-picker>
-      <nts-datetime-picker dateLabel="Only date" [popup]="true" [timeShow]="false"> </nts-datetime-picker>
-      <nts-datetime-picker timeLabel="Only hour" [popup]="true" [dateShow]="false"> </nts-datetime-picker>
 
-      <h5>Select inputs</h5>
-      <div class="flex">
-        <nts-select label="Default select"
-          [(ntsModel)]="selectModel"
-          [ntsOptions]="[
-            {value: 1, label: 'Option 1'},
-            {value: 2, label: 'Option 2'},
-            {value: 3, label: 'Option 3'},
-            {value: 4, label: 'Option 4'},
-            {value: 5, label: 'Option 5'}
-          ]">
-        </nts-select>
-        <nts-select label="Select with placeholder"
-          placeholder="Select placeholder"
-          [(ntsModel)]="selectModel"
-          [ntsOptions]="[
-            {value: 1, label: 'Option 1'},
-            {value: 2, label: 'Option 2'},
-            {value: 3, label: 'Option 3'},
-            {value: 4, label: 'Option 4'},
-            {value: 5, label: 'Option 5'}
-          ]">
-        </nts-select>
-        <nts-select label="Select with icon"
-          icon="user"
-          [(ntsModel)]="selectModel"
-          [ntsOptions]="[
-            {value: 1, label: 'Option 1'},
-            {value: 2, label: 'Option 2'},
-            {value: 3, label: 'Option 3'},
-            {value: 4, label: 'Option 4'},
-            {value: 5, label: 'Option 5'}
-          ]">
-        </nts-select>
-      </div>
       <h5>Checkbox inputs</h5>
       <div class="flex">
         <nts-checkbox [(ntsModel)]="checkboxModel"></nts-checkbox>

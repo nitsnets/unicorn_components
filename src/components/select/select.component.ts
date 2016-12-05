@@ -4,108 +4,154 @@ import { NtsOption } from '../../models/option';
 export enum SelectTypes { text, number, email, password }
 
 @Component({
-    selector: 'nts-select',
-    templateUrl: 'select.component.html',
-    styleUrls: ['select.component.scss']
+  selector: 'nts-select',
+  templateUrl: 'select.component.html',
+  styleUrls: ['select.component.scss']
 })
 export class NtsSelectComponent implements OnInit, OnChanges {
-    @Input() ntsModel;
-    @Output() ntsModelChange = new EventEmitter();
+  @Input() ntsModel;
+  @Output() ntsModelChange = new EventEmitter();
 
-    @Input() name: string = '';
-    @Input() label: string = '';
-    @Input() placeholder: string = '';
-    @Input() value: string = '';
-    @Input() icon: string;
-    @Input() ntsOptions: NtsOption[] = [];
-    @Input() ntsExcludedOptions: string[];
+  @Input() name: string = '';
+  @Input() label: string = '';
+  @Input() placeholder: string = '';
+  @Input() value: string = '';
+  @Input() icon: string;
+  @Input() options: NtsOption[] = [];
+  @Input() excludedOptions: string[];
+  @Input() multiple = false;
 
-    options: NtsOption[] = [];
-    areOptionsVisible = false;
-    optionSelected = null;
-    selecting = false;
-    search = null;
+  areOptionsVisible = false;
+  optionsSelected: NtsOption[] = [];
+  selecting = false;
+  search = null;
 
-    constructor() { }
+  constructor() { }
 
-    ngOnInit() { }
-    ngOnChanges(changes) {
-        if (changes.ntsOptions || changes.ntsExcludeOptions) {
-            this.excludeOptions();
+  ngOnInit() { }
+  ngOnChanges(changes) {
+    if (changes.options || changes.ntsExcludedOptions) {
+      this.excludeOptions();
+    }
+    if (changes.options || changes.ntsModel) {
+      this.updateOptionsSelectedByModel();
+      if (!this.areOptionsVisible) {
+        this.updateSearchByOptionsSelected();
+      }
+    }
+  }
+  onKeyDown(e: KeyboardEvent) {
+    switch (e.key) {
+      case 'Escape': this.hideOptions(); break;
+      case 'Enter':
+        if (this.areOptionsVisible) {
+          this.hideOptions();
+          e.preventDefault(); e.stopPropagation();
         }
-        if (changes.ntsOptions || changes.ntsModel) {
-            this.updateSelectedOption();
+        break;
+      case 'ArrowDown':
+        if (!this.areOptionsVisible) {
+          this.showOptions();
         }
+        break;
+      case 'ArrowUp': break;
     }
-    excludeOptions() {
-        if (!this.ntsExcludedOptions || !this.ntsExcludedOptions.length) {
-            this.options = this.ntsOptions;
-            return;
-        }
-        this.options = this.ntsOptions.filter(
-            (option) => this.ntsExcludedOptions.indexOf(option.value) === -1
-        );
+  }
+  isOptionSelected(option: NtsOption) {
+    return this.optionsSelected &&
+      this.optionsSelected.length &&
+      this.optionsSelected.indexOf(option) !== -1;
+  }
+  onClickOutside() {
+    this.hideOptions();
+  }
+  onFocus($event) {
+    this.areOptionsVisible = true;
+    this.search = '';
+  }
+  // Manage non desirable closing
+  onBlur($event) { if (!this.selecting) { this.hideOptions(); } }
+  onSelectingOption(value) { this.selecting = value; }
+
+  onSelect(option: NtsOption) {
+    if (option === null) {
+      this.optionsSelected = [];
+    } else if (this.multiple) {
+      let index = this.optionsSelected.indexOf(option);
+      if (index > -1) {
+        this.optionsSelected.splice(index, 1);
+      } else {
+        this.optionsSelected.push(option);
+      }
+    } else {
+      this.optionsSelected = [option];
+      this.hideOptions();
     }
-    updateSelectedOption() {
-        if (!this.ntsOptions) { return; }
-        for (let option of this.ntsOptions) {
-            if (option.value === this.ntsModel) {
-                this.optionSelected = option;
-                this.search = option.label;
-                return;
-            }
-        }
+
+    this.updateModelByOptionsSelected();
+  }
+  onSelectAll() {
+    this.optionsSelected = [];
+    Object.assign(this.optionsSelected, this.options);
+    this.updateModelByOptionsSelected();
+  }
+  onFilter(value) {
+    if (value === null) {
+      this.onSelect(null);
     }
-    hideOptions() {
-        this.areOptionsVisible = false;
-        this.search = this.optionSelected ? this.optionSelected.label : null;
+  }
+
+  private excludeOptions() {
+    if (this.excludedOptions && this.excludedOptions.length) {
+      this.options = this.options.filter(
+        (option) => this.excludedOptions.indexOf(option.value) === -1
+      );
     }
-    showOptions() {
-        this.areOptionsVisible = true;
-        this.search = '';
+  }
+  private updateOptionsSelectedByModel() {
+    this.optionsSelected = [];
+    if (!this.options || !this.ntsModel) { return; }
+    for (let option of this.options) {
+      if (!this.multiple && option.value === this.ntsModel ||
+        this.multiple && this.ntsModel.includes(option.value)) {
+        this.optionsSelected.push(option);
+      }
     }
-    isOptionSelected(option: NtsOption) {
-        return this.optionSelected && option.value === this.optionSelected.value;
+  }
+  private updateModelByOptionsSelected() {
+    let newModel = null;
+    if (!this.optionsSelected || !this.optionsSelected.length) {
+      if (this.multiple) {
+        newModel = [];
+      }
+    } else {
+      if (this.multiple) {
+        newModel = this.optionsSelected.map(o => o.value);
+      } else {
+        newModel = this.optionsSelected[0].value;
+      }
     }
-    onClickOutside() {
-        this.hideOptions();
+    this.ntsModel = newModel;
+    this.ntsModelChange.emit(newModel);
+  }
+  private updateSearchByOptionsSelected() {
+    if (!this.optionsSelected || !this.optionsSelected.length) {
+      this.search = '';
+    } else {
+      if (this.multiple) {
+        this.search = this.optionsSelected.map(o => o.label).join();
+      } else {
+        this.search = this.optionsSelected[0].label;
+      }
     }
-    onKeyDown(e: KeyboardEvent) {
-        switch (e.key) {
-            case 'Escape': this.hideOptions(); break;
-            case 'Enter':
-                if (this.areOptionsVisible) {
-                    this.hideOptions();
-                    e.preventDefault(); e.stopPropagation();
-                }
-                break;
-            case 'ArrowDown':
-                if (!this.areOptionsVisible) {
-                    this.showOptions();
-                }
-                break;
-            case 'ArrowUp': break;
-        }
-    }
-    onFocus($event) {
-        this.areOptionsVisible = true;
-        this.search = '';
-    }
-    onBlur($event) {
-        if (!this.selecting) { this.hideOptions(); }
-    }
-    onSelectingOption(value) {
-        this.selecting = value;
-    }
-    onSelect(option: NtsOption) {
-        this.optionSelected = option;
-        this.ntsModel = option ? option.value : null;
-        this.ntsModelChange.emit(this.ntsModel);
-        this.hideOptions();
-    }
-    onFilter(value) {
-        if (value === null) {
-            this.onSelect(null);
-        }
-    }
+  }
+  private hideOptions() {
+    this.areOptionsVisible = false;
+    this.updateSearchByOptionsSelected();
+  }
+  private showOptions() {
+    this.areOptionsVisible = true;
+    this.search = '';
+  }
+
 }

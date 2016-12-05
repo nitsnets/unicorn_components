@@ -5,6 +5,9 @@
   display: flex;
 }
 
+.datetime-container {
+  flex: 1;
+}
 .spacing { margin-right: $basic-padding / 2;}
 
 .datetime-inputs-container {

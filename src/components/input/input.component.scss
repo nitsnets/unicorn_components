@@ -65,6 +65,7 @@ label{
 input, textarea{
   width: 100%;
   height: $input-height;
+  text-overflow:ellipsis;
   padding-left: $input-padding;
   padding-right: $input-padding;
   border-radius: $border-radius;

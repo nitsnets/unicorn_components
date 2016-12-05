@@ -16,8 +16,22 @@ nts-input{
 }
 .option{
   cursor: default;
-  padding: $basic-padding/4;
+  display: flex;
   font-size: $font-small;
-  &:hover{background-color: $lightest-alpha;}
-  &.selected{background-color: $medium-alpha;}
+  padding: $basic-padding/4;
+
+  &:hover {background-color: $lightest-alpha;}
+
+  &.selected {
+    background-color: $medium-alpha;
+
+    .icon {
+      opacity: 1;
+    }
+  }
+
+  .icon {
+    margin-right: $basic-padding / 4;
+    opacity: 0.25;
+  }
 }

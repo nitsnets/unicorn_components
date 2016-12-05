@@ -14,12 +14,18 @@
   </nts-input>
 
   <ul class="options" *ngIf="areOptionsVisible">
+    <li *ngIf="multiple && !search" class="option" (click)="onSelectAll()" (mousedown)="onSelectingOption(true)" (mouseup)="onSelectingOption(false)">Select all</li>
+    <li *ngIf="multiple && !search" class="option" (click)="onSelect(null)" (mousedown)="onSelectingOption(true)" (mouseup)="onSelectingOption(false)">Select none</li>
+
+    <nts-separator *ngIf="multiple && !search"></nts-separator>
+
     <li class="option" *ngFor="let option of options | filter : 'label' : search"
       [class.selected]="isOptionSelected(option)"
       (click)="onSelect(option)"
       (mousedown)="onSelectingOption(true)"
       (mouseup)="onSelectingOption(false)">
 
+      <nts-icon class="icon" [icon]="isOptionSelected(option) ? 'square-check' : 'square'"></nts-icon>
       <span [innerHtml]="(option.label | highlight:search) || '(Unlabeled)'"></span>
     </li>
   </ul>
