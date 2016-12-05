@@ -32,7 +32,10 @@
     &:active{background-color: $medium-alpha;}
 
     .icon{ opacity: 0.25; }
-    .checked, .partial { .icon{ opacity: 1; } }
+    &.checked,
+    &.partial {
+      .icon{ opacity: 1; }
+    }
 
     input{display: none;};
     span{margin-left: $input-height / 2 - $input-padding}
