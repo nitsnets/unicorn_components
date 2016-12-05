@@ -14,7 +14,7 @@
   </nts-input>
 
   <ul class="options" *ngIf="areOptionsVisible">
-    <li class="option" *ngFor="let option of options | filterOptions:search"
+    <li class="option" *ngFor="let option of options | filter : 'label' : search"
       [class.selected]="isOptionSelected(option)"
       (click)="onSelect(option)"
       (mousedown)="onSelectingOption(true)"

@@ -6,10 +6,9 @@
   "typings": "./nts-ng2-components.d.ts",
   "main": "nts-ng2-components",
   "scripts": {
-    "start": "ng serve",
+    "start": "ng serve --port 4201 --live-reload-port 49153",
     "build": "ng build",
     "build-prod": "ng build --prod",
-    "prepublish": "tsc",
     "demo": "ng serve",
     "lint": "tslint \"src/**/*.ts\""
   },

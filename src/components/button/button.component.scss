@@ -42,16 +42,12 @@
     }
     .sublabel{
       color: $medium-grey;
-      display: block;
-      margin-top: $basic-padding/4;
     }
   }
 }
-:host.btn-small{
-  button{
-    font-size: $font-small;
-    color: $dark-grey;
-  }
+button.btn-small{
+  font-size: $font-small;
+  color: $dark-grey;
 }
 button.btn-large{
   height: $input-height*2;
@@ -63,6 +59,10 @@ button.btn-large{
   .icon{
     left: $basic-padding/2 - $border-width;
     top: $basic-padding/2 - $border-width;
+  }
+  .sublabel{
+    display: block;
+    margin-top: $basic-padding / 4;
   }
 }
 :host.btn-default{

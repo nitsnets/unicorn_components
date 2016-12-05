@@ -23,6 +23,7 @@ import { NTS_PIPES } from './pipes/';
     NTS_COMPONENTS,
     NTS_DIRECTIVES,
     NTS_PIPES,
+    ColorPickerModule
   ]
 })
 export class NtsModule { }

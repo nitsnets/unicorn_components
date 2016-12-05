@@ -31,18 +31,8 @@
     &:focus{background-color: $light-alpha}
     &:active{background-color: $medium-alpha;}
 
-    &:before{
-      content: '';
-      position: absolute;
-      height: $input-height;
-      width: $input-height;
-      left: 0;
-      bottom: 0;
-      background-size: $input-padding*2;
-      background-position: center;
-      background-repeat: no-repeat;
-      opacity: 0.25;
-    }
+    .icon{ opacity: 0.25; }
+    .checked, .partial { .icon{ opacity: 1; } }
 
     input{display: none;};
     span{margin-left: $input-height / 2 - $input-padding}
