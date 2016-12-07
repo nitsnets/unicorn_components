@@ -4,9 +4,7 @@
 :host {
   flex: 1;
 }
-
 .body-container {
-  background-color: $light-grey;
   display: flex;
   height: 100%;
   justify-content: center;
@@ -21,4 +19,8 @@
 :host.full-width .body {
   max-width: 100%;
   width: 100%;
+}
+
+:host.grey .body-container {
+  background-color: $light-grey;
 }

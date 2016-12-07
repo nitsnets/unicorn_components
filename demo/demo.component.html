@@ -311,8 +311,24 @@
         <nts-input type="color" label="Color input with swatch" [(ntsModel)]="colorSelected" [colorSwatch]="true"></nts-input>
       </div>
     </div>
-    
-    <h5>Toast</h5>
+
+    <div class="content">
+      <h3>Other</h3>
+      <nts-separator></nts-separator>
+      <h5>Chips</h5>
+      <div class="flex">
+        <nts-chip label="regular chip"> </nts-chip>
+        <nts-chip label="removable chip" [removable]="true" (remove)="removed1 = true" *ngIf="!removed1"> </nts-chip>
+        <nts-chip label="primary chip" class="primary" [removable]="true" (remove)="removed2 = true" *ngIf="!removed2"> </nts-chip>
+        <nts-chip label="success chip" class="success" [removable]="true" (remove)="removed3 = true" *ngIf="!removed3"> </nts-chip>
+        <nts-chip label="error chip" class="error" [removable]="true" (remove)="removed4 = true" *ngIf="!removed4"> </nts-chip>
+        <nts-chip label="warning chip" class="warning" [removable]="true" (remove)="removed5 = true" *ngIf="!removed5"> </nts-chip>
+      </div>
+
+    </div>
+
+     <h5>Toast</h5>
     <nts-button label="Open Toast" class="btn-primary" (click)="openToast()"></nts-button>
+
   </nts-body>
 </nts-layout>

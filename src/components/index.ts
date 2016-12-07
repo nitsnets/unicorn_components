@@ -25,6 +25,7 @@ import { NtsPopupContainerComponent } from './popup/container/container.componen
 import { NtsDropdownComponent, NtsDropdownTriggerDirective } from './dropdown/dropdown.component';
 import { NtsDropdownContainerComponent } from './dropdown/container/container.component';
 import { NtsDropdownItemComponent } from './dropdown/item/item.component';
+import { NtsChipComponent } from './chip/chip.component';
 
 export const NTS_COMPONENTS = [
   NtsPopupComponent,
@@ -53,6 +54,6 @@ export const NTS_COMPONENTS = [
   NtsColorPickerComponent,
   NtsImagePickerComponent,
   NtsBoxComponent,
-  NtsRowComponent
-  
+  NtsRowComponent,
+  NtsChipComponent
 ];

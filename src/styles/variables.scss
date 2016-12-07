@@ -1,14 +1,14 @@
 $brand-color: #48b0f7;
-$brand-color-medium: #b8e0e6;
-$brand-color-light: #e6f4f6;
+$brand-color-medium: lighten($brand-color, 20%);
+$brand-color-light: lighten($brand-color, 35%);
 
 $error-color: #f55753;
-$error-color-medium: lighten($error-color, 50%);
-$error-color-light: lighten($error-color, 60%);
+$error-color-medium: lighten($error-color, 20%);
+$error-color-light: lighten($error-color, 30%);
 
 $warning-color: #f8d053;
-$warning-color-medium: lighten($warning-color, 35%);
-$warning-color-light: lighten($warning-color, 55%);
+$warning-color-medium: lighten($warning-color, 10%);
+$warning-color-light: lighten($warning-color, 20%);
 
 $success-color: #10cfbd;
 $success-color-medium: lighten($success-color, 40%);
