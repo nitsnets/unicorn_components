@@ -1,0 +1,29 @@
+@import './../../styles/variables.scss';
+@import './../../styles/mixins.scss';
+
+
+.container {
+  position: relative;
+  height: $input-height / 2;
+  background-color: $light-grey;
+}
+.bar {
+  background-color: $medium-grey;
+  max-width: 100%;
+  height:100%;
+  display: flex;
+  align-items: center;
+  padding-left: $basic-padding / 6;
+
+}
+
+span {
+  color: $dark-grey;
+  font-size: $font-smallest;
+  display:block;
+}
+
+:host.primary { .bar { background-color: $brand-color; span { color: white; } } }
+:host.error { .bar { background-color: $error-color; span { color: white; } } }
+:host.warning { .bar { background-color: $warning-color; } }
+:host.success { .bar { background-color: $success-color; span { color: white; } } }

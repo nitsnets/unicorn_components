@@ -1,0 +1,6 @@
+<div class="container">
+  <div class="bar" [style.width]="value * 100 / total + '%'">
+    <span class="percentage" *ngIf="showPercentage">{{value * 100 / total | number:'1.0-2'}}%</span>
+  </div>
+</div>
+<span class="counter" *ngIf="showCount"> {{value}}/{{total}}</span>

@@ -324,7 +324,12 @@
         <nts-chip label="error chip" class="error" [removable]="true" (remove)="removed4 = true" *ngIf="!removed4"> </nts-chip>
         <nts-chip label="warning chip" class="warning" [removable]="true" (remove)="removed5 = true" *ngIf="!removed5"> </nts-chip>
       </div>
-
+      <h5>Progress bar</h5>
+      <nts-progress value="30"></nts-progress>
+      <nts-progress class="primary" value="20"></nts-progress>
+      <nts-progress class="success" value="40"></nts-progress>
+      <nts-progress class="warning" value="70"></nts-progress>
+      <nts-progress class="error" value="10" [showCount]="true"></nts-progress>
     </div>
 
      <h5>Toast</h5>

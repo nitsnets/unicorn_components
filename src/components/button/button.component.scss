@@ -48,6 +48,11 @@
 button.btn-small{
   font-size: $font-small;
   color: $dark-grey;
+
+  .icon{
+    left: $basic-padding/3 - $border-width;
+    top: $basic-padding/3 - $border-width;
+  }
 }
 button.btn-large{
   height: $input-height*2;
