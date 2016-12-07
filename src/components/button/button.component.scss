@@ -41,7 +41,7 @@
       top: $basic-padding/4 - $border-width;
     }
     .sublabel{
-      color: $medium-grey;
+      color: $regular-grey;
     }
   }
 }
@@ -108,9 +108,9 @@ button.btn-large{
     background-color: $light-grey;
     color: $black;
     .sublabel{color: $black}
-    &:hover{background-color: $medium-grey;}
-    &:focus{background-color: $medium-grey;}
-    &:active{background-color: $dark-grey;}
+    &:hover{background-color: $light-alpha;}
+    &:focus{background-color: $light-alpha;}
+    &:active{background-color: white; }
   }
 }
 :host.btn-accent{
