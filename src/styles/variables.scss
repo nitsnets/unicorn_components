@@ -1,22 +1,23 @@
-$brand-color: #018fa3;
+$brand-color: #48b0f7;
 $brand-color-medium: #b8e0e6;
 $brand-color-light: #e6f4f6;
 
-$error-color: complement($brand-color);
+$error-color: #f55753;
 $error-color-medium: lighten($error-color, 50%);
 $error-color-light: lighten($error-color, 60%);
 
-$warning-color: adjust-hue($brand-color, 200);
+$warning-color: #f8d053;
 $warning-color-medium: lighten($warning-color, 35%);
 $warning-color-light: lighten($warning-color, 55%);
 
-$success-color: adjust-hue($brand-color, -90);
+$success-color: #10cfbd;
 $success-color-medium: lighten($success-color, 40%);
 $success-color-light: lighten($success-color, 60%);
 
-$light-grey: #f2f2f2;
-$medium-grey: #c2c2c2;
-$dark-grey: #646464;
+$light-grey: #f5f5f5;
+$medium-grey: #e6e6e6;
+$regular-grey: #919191;
+$dark-grey: #626262;
 $black: #333;
 
 $lightest-alpha: rgba(0,0,0,0.075);
@@ -27,7 +28,7 @@ $dark-alpha: rgba(0,0,0,0.5);
 $modal-bg: rgba(255, 255, 255, 0.75);
 
 $border-width: 1px;
-$border-radius: 2px;
+$border-radius: 3px;
 
 $font-largest: 24px;
 $font-large: 18px;

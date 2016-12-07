@@ -20,10 +20,10 @@ nts-input{
   font-size: $font-small;
   padding: $basic-padding/4;
 
-  &:hover {background-color: $lightest-alpha;}
+  &:hover {background-color: $light-grey;}
 
   &.selected {
-    background-color: $medium-alpha;
+    background-color: $light-alpha;
 
     .icon {
       opacity: 1;
