@@ -35,7 +35,6 @@ export const NTS_COMPONENTS = [
   NtsDropdownTriggerDirective,
   NtsDropdownContainerComponent,
   NtsDropdownItemComponent,
-
   NtsInputComponent,
   NtsCheckboxComponent,
   NtsButtonComponent,
