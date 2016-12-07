@@ -23,6 +23,7 @@ import { NtsPopupContainerComponent } from './popup/container/container.componen
 import { NtsDropdownComponent, NtsDropdownTriggerDirective } from './dropdown/dropdown.component';
 import { NtsDropdownContainerComponent } from './dropdown/container/container.component';
 import { NtsDropdownItemComponent } from './dropdown/item/item.component';
+import { AvatarComponent } from './avatar/avatar.component';
 
 export const NTS_COMPONENTS = [
     NtsPopupComponent,
@@ -50,5 +51,6 @@ export const NTS_COMPONENTS = [
     NtsSearchHeaderComponent,
     NtsAccordionComponent,
     NtsColorPickerComponent,
-    NtsImagePickerComponent
+    NtsImagePickerComponent,
+    AvatarComponent
 ];
