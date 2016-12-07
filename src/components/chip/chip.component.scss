@@ -6,7 +6,7 @@
 
   align-items: center;
   background-color: $light-grey;
-  display: flex;
+  display: inline-flex;
   font-size: $font-small;
   height: $input-height - $basic-padding / 2;
   padding: 0 $basic-padding / 5;
