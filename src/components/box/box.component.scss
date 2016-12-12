@@ -3,9 +3,6 @@
 
 :host {
   flex: 1;
-}
-
-.box {
   background-color: white;
   @include border($border-width);
 }

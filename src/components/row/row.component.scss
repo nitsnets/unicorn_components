@@ -3,14 +3,9 @@
 
 :host {
   flex: 1;
-}
-
-.row {
   display: flex;
 }
 
 :host.vertical {
-  .row{
-    flex-direction: column;
-  }
+  flex-direction: column;
 }
