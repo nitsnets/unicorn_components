@@ -4,10 +4,12 @@ import {  NtsModule } from '../../nts.module';
 
 import { ToastService } from './toast.service';
 import { NtsToastComponent } from './toast.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
     imports: [
-         NtsModule
+         NtsModule,
+         BrowserModule
     ],
     declarations: [
         NtsToastComponent,
