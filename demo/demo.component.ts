@@ -8,7 +8,6 @@ import { ToastService } from '../src/modules/toast/toast.service';
 })
 export class DemoComponent {
 
-
     constructor(
         private viewContainerRef: ViewContainerRef,
         private toastService: ToastService
@@ -19,7 +18,5 @@ export class DemoComponent {
             _ => { console.log('accept'); }
         );
     }
-
-
 
 }
