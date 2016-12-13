@@ -52,3 +52,42 @@ $input-padding: 10px;
 
 $slow: 500ms;
 $fast: 200ms;
+
+
+
+/// Breakpoints
+/// @type Length
+$screen-xs-min: 480px !default;
+$screen-sm-min: 768px !default;
+$screen-md-min: 992px !default;
+$screen-lg-min: 1200px !default;
+$screen-xlg-min: 1366px !default;
+$screen-xxlg-min: 1680px !default;
+$screen-xxxlg-min: 1920px !default;
+
+$screen-xxs-max: ($screen-xs-min - 1) !default;
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+$screen-lg-max: ($screen-xlg-min - 1) !default;
+$screen-xlg-max: ($screen-xxlg-min - 1) !default;
+$screen-xxlg-max: ($screen-xxxlg-min - 1) !default;
+/// Breakpoints map for Sass-mq
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+/// @see {mixin} mq
+$mq-breakpoints: (
+    xxs: 1px,
+    iphone6: 375px,
+    iphone6p: 414px,
+    xs: $screen-xs-min,
+    sm: $screen-sm-min,
+    md: $screen-md-min,
+    mdplus: 1024px,
+    lg: $screen-lg-min,
+    lgplus: 1280px,
+    xlg: $screen-xlg-min,
+    xxlg: $screen-xxlg-min,
+    xxxlg: $screen-xxxlg-min
+) !default;
+
+$mq-show-breakpoints: (xxs, iphone6, iphone6p, xs, sm, md, mdplus, lg, lgplus, xlg, xxlg, xxxlg) !default;

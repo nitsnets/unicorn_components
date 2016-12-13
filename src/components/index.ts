@@ -8,6 +8,7 @@ import { NtsAsideComponent } from './aside/aside.component';
 import { NtsSeparatorComponent } from './separator/separator.component';
 import { NtsInputComponent } from './input/input.component';
 import { NtsCheckboxComponent } from './checkbox/checkbox.component';
+import { NtsRadioComponent } from './radio/radio.component';
 import { NtsSelectComponent } from './select/select.component';
 import { NtsHeaderComponent } from './header/header.component';
 import { NtsBodyComponent } from './body/body.component';
@@ -21,6 +22,7 @@ import { NtsColorPickerComponent } from './color-picker/color-picker.component';
 import { NtsImagePickerComponent } from './image-picker/image-picker.component';
 import { NtsChipComponent } from './chip/chip.component';
 import { NtsProgressComponent } from './progress/progress.component';
+import { NtsAddInfoComponent } from './addinfo/addinfo.component';
 
 import { NtsPopupComponent, NtsPopupTriggerDirective } from './popup/popup.component';
 import { NtsPopupContainerComponent } from './popup/container/container.component';
@@ -40,6 +42,7 @@ export const NTS_COMPONENTS = [
   NtsDropdownItemComponent,
   NtsInputComponent,
   NtsCheckboxComponent,
+    NtsRadioComponent,
   NtsButtonComponent,
   NtsHeaderComponent,
   NtsSelectComponent,
@@ -61,5 +64,6 @@ export const NTS_COMPONENTS = [
   NtsChipComponent,
   NtsProgressComponent,
   NtsFaceComponent,
-  NtsBadgeComponent
+  NtsBadgeComponent,
+  NtsAddInfoComponent
 ];
