@@ -7,6 +7,7 @@ export class ToastService {
     // appElementRef: ElementRef;
     toastRef;
     toastSub;
+    intervalClose;
 
     constructor(
         private appRef: ApplicationRef,
@@ -37,7 +38,7 @@ export class ToastService {
             this.toastRef.instance.setMessage(msg);
         }
 
-        setTimeout(() => { this.close(); }, options.time ? options.time : 2000);
+        this.intervalClose = setTimeout(() => { this.close(); }, options.time ? options.time : 2000);
 
         return this.toastSub.asObservable();
 
@@ -45,6 +46,9 @@ export class ToastService {
     }
 
     close() {
+        if (this.intervalClose) {
+            clearTimeout(this.intervalClose);
+        }
         if (this.toastRef) {
             this.toastRef.destroy();
             this.toastRef = null;

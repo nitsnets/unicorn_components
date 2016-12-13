@@ -15,7 +15,7 @@ export class DemoComponent {
     ) { }
 
     openToast() {
-        this.toastService.createToast('Esto es el mensaje', { showClose: false, time: 3000 }, this.viewContainerRef).subscribe(
+        this.toastService.createToast('Esto es el mensaje', { showClose: true, time: 3000 }, this.viewContainerRef).subscribe(
             _ => { console.log('accept'); }
         );
     }

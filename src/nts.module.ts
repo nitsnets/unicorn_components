@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ColorPickerModule } from 'angular2-color-picker';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { NTS_COMPONENTS } from './components/';
 import { NTS_DIRECTIVES } from './directives/';
@@ -13,6 +14,7 @@ import { NTS_PIPES } from './pipes/';
     CommonModule,
     FormsModule,
     ColorPickerModule,
+    BrowserModule
   ],
   declarations: [
     NTS_COMPONENTS,
@@ -23,7 +25,8 @@ import { NTS_PIPES } from './pipes/';
     NTS_COMPONENTS,
     NTS_DIRECTIVES,
     NTS_PIPES,
-    ColorPickerModule
+    ColorPickerModule,
+    BrowserModule
   ]
 })
 export class NtsModule { }
