@@ -12,6 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  overflow-y: auto;
 
   padding-top: 20%;
   @include xs { padding-top: 100px;}
@@ -35,7 +36,7 @@
       border: 0;
     }
     .close-button{
-      
+
     }
   }
 }
