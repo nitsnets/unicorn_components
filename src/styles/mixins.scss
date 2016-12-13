@@ -1,3 +1,6 @@
+@import '_mq';
+
+
 @mixin keyframes($animation-name) {
     @-webkit-keyframes #{$animation-name} {
         @content;
@@ -144,6 +147,15 @@
   border-color: $medium-grey !important;
   border-style: solid !important;
   border-width: $args !important;
+}
+/// Pseudo selector most common properties
+/// @param {String} $display
+/// @param {String} $pos
+/// @param {String} $content
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
 }
 
 @mixin border-bottom(){ border-bottom: solid $medium-grey $border-width;}

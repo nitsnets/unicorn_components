@@ -7,6 +7,7 @@ import { NtsAsideComponent } from './aside/aside.component';
 import { NtsSeparatorComponent } from './separator/separator.component';
 import { NtsInputComponent } from './input/input.component';
 import { NtsCheckboxComponent } from './checkbox/checkbox.component';
+import { NtsRadioComponent } from './radio/radio.component';
 import { NtsSelectComponent } from './select/select.component';
 import { NtsHeaderComponent } from './header/header.component';
 import { NtsBodyComponent } from './body/body.component';
@@ -38,6 +39,7 @@ export const NTS_COMPONENTS = [
     NtsDropdownItemComponent,
     NtsInputComponent,
     NtsCheckboxComponent,
+    NtsRadioComponent,
     NtsButtonComponent,
     NtsHeaderComponent,
     NtsSelectComponent,
