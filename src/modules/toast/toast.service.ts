@@ -3,8 +3,11 @@ import { Subject } from 'rxjs/Rx';
 import { NtsToastComponent } from './toast.component';
 
 @Injectable()
-export  class ToastService {
-    appElementRef: ElementRef;
+export class ToastService {
+    // appElementRef: ElementRef;
+    toastRef;
+    toastSub;
+    intervalClose;
 
     constructor(
         private appRef: ApplicationRef,
@@ -12,19 +15,44 @@ export  class ToastService {
         private cmpFactoryResolver: ComponentFactoryResolver
     ) { }
 
-    createToast(options: {}, viewContainer: ViewContainerRef) {
-        let toastSub = new Subject();
 
-        let toastRef = viewContainer.createComponent(
-            this.cmpFactoryResolver.resolveComponentFactory(NtsToastComponent),
-            viewContainer.length, this.injector, null
-        );
-        toastRef.instance.initContent(options);
+    createToast(msg: string, options, viewContainer: any) {
 
-         toastRef.instance.accept.subscribe(
-            ev => { toastSub.next(ev); toastRef.destroy(); }
-        );
-      
-        return toastSub.asObservable();
+        if (!this.toastRef) {
+
+            this.toastSub = new Subject();
+
+            this.toastRef = viewContainer.createComponent(
+                this.cmpFactoryResolver.resolveComponentFactory(NtsToastComponent),
+                viewContainer.length, this.injector, null
+            );
+            this.toastRef.instance.setMessage(msg);
+            this.toastRef.instance.initContent(options);
+
+            this.toastRef.instance.accept.subscribe(
+                ev => {
+                    this.toastSub.next(ev);
+                    this.close();
+                }
+            );
+        } else {
+            this.toastRef.instance.setMessage(msg);
+        }
+
+        this.intervalClose = setTimeout(() => { this.close(); }, options.time ? options.time : 2000);
+
+        return this.toastSub.asObservable();
+
+
+    }
+
+    close() {
+        if (this.intervalClose) {
+            clearTimeout(this.intervalClose);
+        }
+        if (this.toastRef) {
+            this.toastRef.destroy();
+            this.toastRef = null;
+        }
     }
 }

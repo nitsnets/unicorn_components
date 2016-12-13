@@ -1,2 +1,23 @@
 @import '../../styles/mixins.scss';
 @import '../../styles/variables.scss';
+
+.toast-container {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    font-size: $font-regular;
+    background: $light-grey;
+    padding: $basic-padding;
+}
+
+.remove {
+    margin-left: auto;
+    cursor: pointer;        
+    opacity: 0.5;
+    &:hover {
+    opacity: 1;
+    }
+}
+

@@ -8,8 +8,9 @@ import {
     styleUrls: ['toast.component.scss'],
 })
 export class NtsToastComponent implements AfterContentInit {
-    
-    @Input() toastOptions = {};
+
+    toastOptions = {};
+    msg = '';
 
     @Output() accept = new EventEmitter();
 
@@ -20,6 +21,12 @@ export class NtsToastComponent implements AfterContentInit {
         this.toastOptions = options;
     }
 
-    onAccept() { this.accept.emit(true); }
+    setMessage(msg) {
+        this.msg = msg;
+    }
+
+    onAccept() {
+        this.accept.emit(true);
+    }
 
 }

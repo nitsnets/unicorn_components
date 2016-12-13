@@ -1,3 +1,4 @@
-<h1>TOAST</h1>
-<p>{{toastOptions['msg']}}</p>
-<nts-button icon="close" (click)="onAccept()" class="close-button"></nts-button>
+<div class="toast-container">    
+    <p>{{msg}}</p>    
+    <nts-icon *ngIf="toastOptions.showClose"  class="remove" size="small" icon="close" (click)="onAccept()"></nts-icon>
+</div>
