@@ -1,7 +1,7 @@
 import { EventEmitter } from '@angular/core';
 
 export interface IModalContent {
-    submitModal: EventEmitter<any>;
-    cancelModal: EventEmitter<any>;
+    submitModal: any;
+    cancelModal: any;
     initModalOptions(obj: {});
 }

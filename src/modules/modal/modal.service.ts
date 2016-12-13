@@ -12,7 +12,8 @@ export class ModalService {
         private cmpFactoryResolver: ComponentFactoryResolver
     ) { }
 
-    createModal(component: Type<any>, options: {}, viewContainer: ViewContainerRef) {
+
+    createModal(component: Type<any>, options: {}, viewContainer: any) {
         let modalSub = new Subject();
 
         let modalRef = viewContainer.createComponent(

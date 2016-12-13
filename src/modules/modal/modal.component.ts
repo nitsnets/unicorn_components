@@ -18,8 +18,7 @@ export class NtsModalComponent implements AfterContentInit {
     @Output() cancel = new EventEmitter();
     @Output() submit = new EventEmitter();
 
-    @HostListener('keyup', ['$event']) onKeyup(e: KeyboardEvent) {
-        console.log('key up', e);
+    @HostListener('keyup', ['$event']) onKeyup(e: KeyboardEvent) {        
         if (e.key === 'Escape') { this.onCancel(); }
     }
 
@@ -27,6 +26,7 @@ export class NtsModalComponent implements AfterContentInit {
 
     ngAfterContentInit() { }
     initContent(component: Type<any>, options) {
+        
         this.contentComponent = component;
         this.modalOptions = options;
     }

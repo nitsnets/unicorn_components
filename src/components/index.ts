@@ -20,6 +20,7 @@ import { NtsColorPickerComponent } from './color-picker/color-picker.component';
 import { NtsImagePickerComponent } from './image-picker/image-picker.component';
 import { NtsChipComponent } from './chip/chip.component';
 import { NtsProgressComponent } from './progress/progress.component';
+import { NtsAddInfoComponent } from './addinfo/addinfo.component';
 
 import { NtsPopupComponent, NtsPopupTriggerDirective } from './popup/popup.component';
 import { NtsPopupContainerComponent } from './popup/container/container.component';
@@ -57,5 +58,6 @@ export const NTS_COMPONENTS = [
     NtsBoxComponent,
     NtsRowComponent,
     NtsChipComponent,
-    NtsProgressComponent
+    NtsProgressComponent,
+    NtsAddInfoComponent
 ];

@@ -1,5 +1,8 @@
 import { Component, ViewContainerRef } from '@angular/core';
 import { ToastService } from '../src/modules/toast/toast.service';
+import { ModalService } from '../src/modules/modal/modal.service';
+
+import { NtsAddInfoComponent } from '../src/components/addinfo/addinfo.component';
 
 @Component({
     selector: 'nts-demo',
@@ -10,7 +13,8 @@ export class DemoComponent {
 
     constructor(
         private viewContainerRef: ViewContainerRef,
-        private toastService: ToastService
+        private toastService: ToastService,
+        private modalService: ModalService
     ) { }
 
     openToast() {
@@ -18,5 +22,13 @@ export class DemoComponent {
             _ => { console.log('accept'); }
         );
     }
+
+    openModal() {
+        this.modalService.createModal(NtsAddInfoComponent, { title: 'Demo Modal' }, this.viewContainerRef).subscribe(
+            param => { console.log('ok: ', param); }, _ => { console.log('ko'); }
+        );
+    }
+
+
 
 }
