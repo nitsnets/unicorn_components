@@ -1,0 +1,18 @@
+@import './../../styles/variables.scss';
+@import './../../styles/mixins.scss';
+
+.body{
+  padding: $basic-padding;
+  display: flex;
+  
+}
+.footer{
+  display: flex;
+  justify-content: space-between;
+  padding: $basic-padding/2 $basic-padding;
+  .buttons{ display: flex; }
+  .button-cancel{
+    margin-right: $basic-padding;
+  }
+}
+

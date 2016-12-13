@@ -11,13 +11,13 @@ import { NtsToastComponent } from './toast.component';
         NtsModule
     ],
     declarations: [
-        NtsToastComponent,
+        NtsToastComponent
     ],
     providers: [
         ToastService
     ],
     exports: [
-        NtsToastComponent,
+        NtsToastComponent
     ]
 })
 export class ToastModule { }

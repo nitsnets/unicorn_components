@@ -9,6 +9,8 @@ import {
 })
 export class NtsToastComponent implements AfterContentInit {
 
+    animateIn = false;
+    animateOut = false;
     toastOptions = {};
     msg = '';
 
@@ -16,7 +18,15 @@ export class NtsToastComponent implements AfterContentInit {
 
     constructor(private elementRef: ElementRef) { }
 
-    ngAfterContentInit() { }
+    ngAfterContentInit() {
+        this.animateIn = false;
+        setTimeout( () => this.onEndAnimateOpen(), 50);
+    }
+
+    onEndAnimateOpen() {
+        this.animateIn = true;
+    }
+
     initContent(options) {
         this.toastOptions = options;
     }
@@ -25,8 +35,17 @@ export class NtsToastComponent implements AfterContentInit {
         this.msg = msg;
     }
 
-    onAccept() {
+    clickClose() {
         this.accept.emit(true);
+    }
+
+    close() {
+        this.animateIn = false;
+        this.animateOut = true;
+    }
+
+    onEndAnimateClose() {
+        
     }
 
 }

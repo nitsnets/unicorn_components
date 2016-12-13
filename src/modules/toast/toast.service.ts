@@ -15,8 +15,10 @@ export class ToastService {
         private cmpFactoryResolver: ComponentFactoryResolver
     ) { }
 
-    createToast(msg: string, options, viewContainer: ViewContainerRef) {
 
+    createToast(msg: string, options, viewContainer: any) {
+
+        console.log("open: " , this.toastRef);
         if (!this.toastRef) {
 
             this.toastSub = new Subject();
@@ -38,6 +40,7 @@ export class ToastService {
             this.toastRef.instance.setMessage(msg);
         }
 
+        clearTimeout(this.intervalClose);
         this.intervalClose = setTimeout(() => { this.close(); }, options.time ? options.time : 2000);
 
         return this.toastSub.asObservable();
@@ -49,6 +52,12 @@ export class ToastService {
         if (this.intervalClose) {
             clearTimeout(this.intervalClose);
         }
+
+        this.toastRef.instance.close();
+        setTimeout(() => { this.clear(); }, 500);
+    }
+
+    clear() {
         if (this.toastRef) {
             this.toastRef.destroy();
             this.toastRef = null;

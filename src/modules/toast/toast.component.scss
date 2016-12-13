@@ -2,10 +2,11 @@
 @import '../../styles/variables.scss';
 
 .toast-container {
+    transition: all 0.5s ease 0s;
     display: flex;
-    position: fixed;
-    bottom: 0;
+    position: fixed;    
     width: 100%;
+    bottom: -80px;
 
     font-size: $font-regular;
     background: $light-grey;
@@ -19,5 +20,13 @@
     &:hover {
     opacity: 1;
     }
+}
+
+.animate-in {
+    bottom: 0px;
+}
+
+.animate-out {
+    bottom: -80px;
 }
 
