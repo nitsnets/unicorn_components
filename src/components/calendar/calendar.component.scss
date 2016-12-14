@@ -1,19 +1,22 @@
 @import './../../styles/variables.scss';
 @import './../../styles/mixins.scss';
 
-.calendar-container{
+:host.floating {
+  .calendar-container { border: 0; }
+}
+.calendar-container {
+  border: solid $medium-grey $border-width;
   width: $calendar-size;
   height: $calendar-size;
   background-color: #fff;
   font-size: 12px;
   display: flex;
   flex-direction: column;
-  @include border-radius($border-radius);
-  @include border($border-width);
-  @include no-touch();
   padding: $basic-padding/3;
+  @include border-radius($border-radius);
+  @include no-touch();
 }
-.month-name, .days-name, .week-row{
+.month-name, .days-name, .week-row {
   display: flex;
   align-items: center;
   p{ flex:1; text-align: center; }
@@ -24,11 +27,11 @@
 .days-name {
   p{ color: $medium-grey; font-weight: bold; font-size: 10px; }
 }
-.week-row{
+.week-row {
   flex:1;
   p{ display: flex; justify-content: center; }
 }
-.day{
+.day {
   @include border-radius(50%);
   cursor: default;
   display: flex;
@@ -36,9 +39,9 @@
   height: 30px;
   align-items: center;
   justify-content: center;
-  &:hover:not(.selected):not(.unavailable){ background-color: $lightest-alpha; }
-  &.today{ color: $brand-color; font-weight: bold; border: 1px $brand-color solid;}
-  &.selected{ background-color: $brand-color; color: white; }
-  &.different-month{ visibility: hidden}
-  &.unavailable{ opacity: 0.25; }
+  &:hover:not(.selected):not(.unavailable) { background-color: $lightest-alpha; }
+  &.today { color: $brand-color; font-weight: bold; border: 1px $brand-color solid;}
+  &.selected { background-color: $brand-color; color: white; }
+  &.different-month { visibility: hidden}
+  &.unavailable { opacity: 0.25; }
 }

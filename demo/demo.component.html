@@ -325,8 +325,8 @@
 
       <h5>Radio inputs</h5>
       <div class="flex">
-        <nts-radio [ntsModel]="true" label="Option 1"></nts-radio>
-        <nts-radio [ntsModel]="false" label="Option 2"></nts-radio>
+        <nts-radio [(ntsModel)]="radioModel" value="0" label="Option 1"></nts-radio>
+        <nts-radio [(ntsModel)]="radioModel" value="1" label="Option 2"></nts-radio>
       </div>
 
       <h5>Checkbox inputs</h5>
@@ -348,6 +348,13 @@
            ################################################################## -->
       <h3>Other</h3>
       <nts-separator></nts-separator>
+      <h5>Badges</h5>
+      <div class="flex">
+        <nts-badge value="1" class="primary"> </nts-badge>
+        <nts-badge value="1" class="success"> </nts-badge>
+        <nts-badge value="1" class="error"> </nts-badge>
+        <nts-badge value="1" class="warning"> </nts-badge>
+      </div>
       <h5>Chips</h5>
       <div class="flex">
         <nts-chip label="regular chip"> </nts-chip>
@@ -364,14 +371,23 @@
       <nts-progress class="warning" value="70"></nts-progress>
       <nts-progress class="error" value="10" [showCount]="true"></nts-progress>
 
+      <h5>Faces</h5>
+      <div class="flex">
+        <nts-face [user]="{name: 'Alvaro'}"> </nts-face>
+        <nts-face [user]="{name: 'Alvaro', image: 'https://placekitten.com/g/200/200'}"> </nts-face>
+        <nts-face [user]="{name: 'Alvaro', image: 'https://placekitten.com/g/200/200'}" badge="1"> </nts-face>
+      </div>
       <h5>Toast</h5>
-      <nts-button label="Open Toast" class="btn-primary" (click)="openToast()"></nts-button>
+      <div class="flex">
+        <nts-button label="Open toast" icon="open" class="btn-default" (click)="openToast()"></nts-button>
+      </div>
 
       <h5>Modal</h5>
-      <nts-button label="Open Modal" class="btn-primary" (click)="openModal()"></nts-button>
+      <div class="flex">
+        <nts-button label="Open modal" icon="open" class="btn-default" (click)="openModal()"></nts-button>
+        <nts-button label="Open full-screen modal" icon="open" class="btn-default" (click)="openModal(true)"></nts-button>
+      </div>
     </div>
-
-
 
   </nts-body>
 </nts-layout>

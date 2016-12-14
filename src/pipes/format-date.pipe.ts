@@ -3,9 +3,13 @@ import * as moment from 'moment';
 
 @Pipe({ name: 'formatDate' })
 export class FormatDatePipe implements PipeTransform {
-  transform(value: string, format: string = null): string {
+  transform(value: string, format: string = null, today = false, yesterday = false): string {
     if (!value) { return value; }
-    if (!format) { return moment(new Date(value)).calendar(); }
-    return moment(new Date(value)).format(format);
+    let mo = moment(new Date(value));
+    if (!format) { return mo.calendar(); }
+    console.log(today, yesterday, moment().diff(mo, 'days'));
+    if (today && moment().diff(mo, 'days') === 0) { return 'Today'; }
+    if (yesterday && moment().diff(mo, 'days') === 1) { return 'Yesterday'; }
+    return mo.format(format);
   }
 }

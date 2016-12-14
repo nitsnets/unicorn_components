@@ -1,0 +1,37 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+
+.face{
+
+  @include border-radius(50%);
+  background-color: $light-grey;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  width: $input-height + $basic-padding / 3;
+  height: $input-height + $basic-padding / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &.small { width: $input-height; height: $input-height;}
+  &.big { width: $input-height * 2; height: $input-height * 2; }
+  &.initial { background-color: $regular-grey; }
+
+  p{
+    color: white;
+    font-weight: 700;
+  }
+
+  .icon {
+    opacity: 0.25;
+  }
+}
+
+.badge {
+  position: absolute;
+  top: - $basic-padding / 8;
+  right: - $basic-padding / 8;
+}

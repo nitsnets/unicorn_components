@@ -1,2 +1,4 @@
 <ng-content select="[ntsPopupTrigger]"></ng-content>
-<ng-content *ngIf="opened" select="nts-popup-container"></ng-content>
+<div *ngIf="opened" [class]="'container '+(position || calculatedPosition)">
+    <ng-content select="nts-popup-container"></ng-content>
+</div>

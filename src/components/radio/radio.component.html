@@ -1,12 +1,10 @@
 <label #ntsChk [ngClass]="{
-  checked: ntsModel == true,
-  partial: partial == true,
+  checked: ntsModel == value,
   'only-icon': !label || !label.length
 }">
   <nts-icon class="icon" [icon]="
-    ntsModel == true ? 'circle-check' :
-    partial == true ? 'square-minus' : 'circle'"
+    ntsModel == value ? 'circle-check' : 'circle'"
   ></nts-icon>
-  <input type="radio" [name]="name" [value]="value" [ngModel]="ntsModel" (ngModelChange)="onChange()">
+  <input type="checkbox" [name]="name" [ngModel]="ntsModel == value" (ngModelChange)="ntsModelChange.emit(this.value)">
   <span *ngIf="label">{{label}}</span>
 </label>

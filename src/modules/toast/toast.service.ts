@@ -17,8 +17,6 @@ export class ToastService {
 
 
     createToast(msg: string, options, viewContainer: any) {
-
-        console.log("open: " , this.toastRef);
         if (!this.toastRef) {
 
             this.toastSub = new Subject();
