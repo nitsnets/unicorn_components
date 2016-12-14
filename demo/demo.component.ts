@@ -2,7 +2,7 @@ import { Component, ViewContainerRef } from '@angular/core';
 import { ToastService } from '../src/modules/toast/toast.service';
 import { ModalService } from '../src/modules/modal/modal.service';
 
-import { NtsAddInfoComponent } from '../src/components/addinfo/addinfo.component';
+import { NtsAddInfoComponent } from './addinfo/addinfo.component';
 
 @Component({
     selector: 'nts-demo',

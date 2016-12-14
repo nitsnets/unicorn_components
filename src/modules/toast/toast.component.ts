@@ -1,5 +1,5 @@
 import {
-    Component, Input, Output, EventEmitter, ElementRef, AfterContentInit
+    Component, Output, EventEmitter, ElementRef, AfterContentInit
 } from '@angular/core';
 
 @Component({
@@ -44,8 +44,5 @@ export class NtsToastComponent implements AfterContentInit {
         this.animateOut = true;
     }
 
-    onEndAnimateClose() {
-        
-    }
 
 }

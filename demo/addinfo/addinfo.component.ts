@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 
-import { IModalContent } from '../../modules/modal/modal.interface';
+import { IModalContent } from '../../src/modules/modal/modal.interface';
 
 @Component({
     selector: 'nts-addinfo',

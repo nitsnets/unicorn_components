@@ -15,7 +15,7 @@ import { NTS_PIPES } from './pipes/';
     FormsModule,
     ColorPickerModule,
     BrowserModule
-    
+
   ],
   declarations: [
     NTS_COMPONENTS,
