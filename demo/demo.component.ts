@@ -2,7 +2,7 @@ import { Component, ViewContainerRef } from '@angular/core';
 import { ToastService } from '../src/modules/toast/toast.service';
 import { ModalService } from '../src/modules/modal/modal.service';
 
-import { NtsAddInfoComponent } from './addinfo/addinfo.component';
+import { NtsDemoModalContentComponent } from './demo-modal-content/demo-modal-content.component';
 
 @Component({
     selector: 'nts-demo',
@@ -24,7 +24,7 @@ export class DemoComponent {
     }
 
     openModal() {
-        this.modalService.createModal(NtsAddInfoComponent, { title: 'Demo Modal' }, this.viewContainerRef).subscribe(
+        this.modalService.createModal(NtsDemoModalContentComponent, { title: 'Demo Modal' }, this.viewContainerRef).subscribe(
             param => { console.log('ok: ', param); }, _ => { console.log('ko'); }
         );
     }

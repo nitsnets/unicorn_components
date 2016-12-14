@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import {  NtsModule } from '../src/nts.module';
 
 import { DemoComponent } from './demo.component';
-import { NtsAddInfoComponent } from './addinfo/addinfo.component';
+import { NtsDemoModalContentComponent } from './demo-modal-content/demo-modal-content.component';
 
 
 import { NtsModalComponent  } from '../src/modules/modal/modal.component';
@@ -16,7 +16,7 @@ import { ToastModule } from '../src/modules/toast/toast.module';
 @NgModule({
   declarations: [
     DemoComponent,
-    NtsAddInfoComponent
+    NtsDemoModalContentComponent
   ],
   imports: [
     NtsModule,
@@ -27,7 +27,7 @@ import { ToastModule } from '../src/modules/toast/toast.module';
   ],
   entryComponents: [
     NtsModalComponent,
-    NtsAddInfoComponent,
+    NtsDemoModalContentComponent,
     NtsToastComponent
   ],
   bootstrap: [
