@@ -1,3 +1,4 @@
+import { NtsFaceComponent } from './face/face.component';
 import { NtsBoxComponent } from './box/box.component';
 import { NtsRowComponent } from './row/row.component';
 import { NtsAccordionComponent } from './accordion/accordion.component';
@@ -13,7 +14,7 @@ import { NtsHeaderComponent } from './header/header.component';
 import { NtsBodyComponent } from './body/body.component';
 import { NtsButtonComponent } from './button/button.component';
 import { NtsIconComponent } from './icon/icon.component';
-import { SimpleListComponent } from './simple-list/simple-list.component';
+import { NtsSimpleListComponent } from './simple-list/simple-list.component';
 import { NtsDatetimePickerComponent } from './datetime-picker/datetime-picker.component';
 import { NtsClockComponent } from './clock/clock.component';
 import { NtsCalendarComponent } from './calendar/calendar.component';
@@ -29,36 +30,40 @@ import { NtsPopupContainerComponent } from './popup/container/container.componen
 import { NtsDropdownComponent, NtsDropdownTriggerDirective } from './dropdown/dropdown.component';
 import { NtsDropdownContainerComponent } from './dropdown/container/container.component';
 import { NtsDropdownItemComponent } from './dropdown/item/item.component';
+import { NtsBadgeComponent } from './badge/badge.component';
 
 export const NTS_COMPONENTS = [
-    NtsPopupComponent,
-    NtsPopupTriggerDirective,
-    NtsPopupContainerComponent,
-    NtsDropdownComponent,
-    NtsDropdownTriggerDirective,
-    NtsDropdownContainerComponent,
-    NtsDropdownItemComponent,
-    NtsInputComponent,
-    NtsCheckboxComponent,
-    NtsRadioComponent,
-    NtsButtonComponent,
-    NtsHeaderComponent,
-    NtsSelectComponent,
-    NtsSeparatorComponent,
-    NtsBodyComponent,
-    NtsDatetimePickerComponent,
-    NtsClockComponent,
-    NtsIconComponent,
-    NtsCalendarComponent,
-    NtsAsideComponent,
-    NtsLayoutComponent,
-    SimpleListComponent,
-    NtsSearchHeaderComponent,
-    NtsAccordionComponent,
-    NtsColorPickerComponent,
-    NtsImagePickerComponent,
-    NtsBoxComponent,
-    NtsRowComponent,
-    NtsChipComponent,
-    NtsProgressComponent
+  NtsPopupComponent,
+  NtsPopupTriggerDirective,
+  NtsPopupContainerComponent,
+  NtsDropdownComponent,
+  NtsDropdownTriggerDirective,
+  NtsDropdownContainerComponent,
+  NtsDropdownItemComponent,
+  NtsInputComponent,
+  NtsCheckboxComponent,
+  NtsRadioComponent,
+  NtsButtonComponent,
+  NtsHeaderComponent,
+  NtsSelectComponent,
+  NtsSeparatorComponent,
+  NtsBodyComponent,
+  NtsDatetimePickerComponent,
+  NtsClockComponent,
+  NtsIconComponent,
+  NtsCalendarComponent,
+  NtsAsideComponent,
+  NtsLayoutComponent,
+  NtsSearchHeaderComponent,
+  NtsAccordionComponent,
+  NtsColorPickerComponent,
+  NtsImagePickerComponent,
+  NtsSimpleListComponent,
+  NtsBoxComponent,
+  NtsRowComponent,
+  NtsChipComponent,
+  NtsProgressComponent,
+  NtsFaceComponent,
+  NtsBadgeComponent
+
 ];

@@ -1,0 +1,10 @@
+<div class="face"
+  [class.small]="size === 'small'"
+  [class.big]="size === 'big'"
+  [class.initial]="user && !user.image"
+  [style.background-image]="'url('+user?.image+')'"
+>
+  <p *ngIf="user && !user.image">{{user.name?.charAt(0) | uppercase}}</p>
+  <nts-icon class="icon" [icon]="icon" *ngIf="!user"></nts-icon>
+<div>
+<nts-badge class="badge error" [value]="badge"></nts-badge>

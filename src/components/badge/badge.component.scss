@@ -1,0 +1,22 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+:host {
+  display: flex;
+}
+.badge {
+  align-items: center;
+  background-color: $regular-grey;
+  border-radius: $input-height / 4;
+  color: white;
+  display: inline-flex;
+  font-size: $font-small;
+  height: $input-height / 2;
+  justify-content: center;
+  min-width: $input-height / 2;
+}
+
+:host.primary { .badge { background-color: $brand-color; } }
+:host.success { .badge { background-color: $success-color; } }
+:host.warning { .badge { background-color: $warning-color; } }
+:host.error { .badge { background-color: $error-color; } }
