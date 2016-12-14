@@ -1,6 +1,3 @@
-@import '_mq';
-
-
 @mixin keyframes($animation-name) {
     @-webkit-keyframes #{$animation-name} {
         @content;
