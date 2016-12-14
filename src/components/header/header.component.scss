@@ -1,5 +1,4 @@
-@import './../../styles/variables.scss';
-@import './../../styles/mixins.scss';
+@import './../../styles/abstracts/index.scss';
 
 @mixin header($height:$header-height, $padding:$basic-padding){
   @include border-bottom();

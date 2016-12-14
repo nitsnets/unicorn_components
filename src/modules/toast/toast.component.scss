@@ -1,10 +1,9 @@
-@import '../../styles/mixins.scss';
-@import '../../styles/variables.scss';
+@import './../../styles/abstracts/index.scss';
 
 .toast-container {
     transition: all 0.5s ease 0s;
     display: flex;
-    position: fixed;    
+    position: fixed;
     width: 100%;
     bottom: -80px;
 
@@ -15,7 +14,7 @@
 
 .remove {
     margin-left: auto;
-    cursor: pointer;        
+    cursor: pointer;
     opacity: 0.5;
     &:hover {
     opacity: 1;
