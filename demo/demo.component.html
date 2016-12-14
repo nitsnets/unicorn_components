@@ -350,10 +350,15 @@
         <nts-face [user]="{name: 'Alvaro', image: 'https://placekitten.com/g/200/200'}" badge="1"> </nts-face>
       </div>
       <h5>Toast</h5>
-      <nts-button label="Open Toast" class="btn-primary" (click)="openToast()"></nts-button>
-
+      <div class="flex">
+        <nts-button label="Open toast" icon="open" class="btn-default" (click)="openToast()"></nts-button>
+      </div>
+      
       <h5>Modal</h5>
-      <nts-button label="Open Modal" class="btn-primary" (click)="openModal()"></nts-button>    
+      <div class="flex">
+        <nts-button label="Open modal" icon="open" class="btn-default" (click)="openModal()"></nts-button>    
+        <nts-button label="Open full-screen modal" icon="open" class="btn-default" (click)="openModal(true)"></nts-button>    
+      </div>
 
     </div>
 

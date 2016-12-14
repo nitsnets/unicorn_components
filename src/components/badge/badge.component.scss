@@ -2,7 +2,7 @@
 @import '../../styles/mixins';
 
 :host {
-  display: flex;
+  display: inline-flex;
 }
 .badge {
   align-items: center;

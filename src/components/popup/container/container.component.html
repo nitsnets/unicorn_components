@@ -1,4 +1,4 @@
-<div class="popup-content">
+<div class="popup-content" [class.padding]="closeBtn">
   <ng-content></ng-content>
 </div>
-<nts-button icon="close" (click)="onClose()" class="close-button"></nts-button>
+<nts-button *ngIf="closeBtn" icon="close" (click)="onClose()" class="close-button"></nts-button>

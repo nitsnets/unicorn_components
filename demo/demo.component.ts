@@ -23,8 +23,8 @@ export class DemoComponent {
         );
     }
 
-    openModal() {
-        this.modalService.createModal(NtsDemoModalContentComponent, { title: 'Demo Modal' }, this.viewContainerRef).subscribe(
+    openModal(fullWidth = false) {
+        this.modalService.createModal(NtsDemoModalContentComponent, { title: 'Demo Modal', full: fullWidth }, this.viewContainerRef).subscribe(
             param => { console.log('ok: ', param); }, _ => { console.log('ko'); }
         );
     }

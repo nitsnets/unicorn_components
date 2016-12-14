@@ -4,4 +4,34 @@
 :host{
   height: $input-height;
   position: relative;
+  display: inline-flex;
+}
+.container {
+  @include border($border-width);
+  background-color: #fff;
+  position: absolute;
+  z-index: 1;
+
+  &.top-right {
+    bottom: 0;
+    left: 0;
+  }
+  &.top-left {
+    bottom: 0;
+    right: 0;
+  }
+  &.bottom-right {
+    left: 0;
+    top: 0;
+  }
+  &.bottom-left {
+    right: 0;
+    top: 0;
+  }
+
+  &::not(&.top-right, &.top-left, &.bottom-right) {
+    right: 0;
+    top: 0;
+  }
+
 }

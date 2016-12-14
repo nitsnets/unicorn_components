@@ -3,8 +3,6 @@
 
 :host {
   flex: 1;
-}
-.body-container {
   display: flex;
   height: 100%;
   justify-content: center;
@@ -21,6 +19,6 @@
   width: 100%;
 }
 
-:host.grey .body-container {
+:host.grey {
   background-color: $light-grey;
 }
