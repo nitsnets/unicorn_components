@@ -1,3 +1,13 @@
+// Antialias
+@mixin antialias {
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
 @mixin on-event($self: false) {
     @if $self {
         &,

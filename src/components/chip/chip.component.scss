@@ -6,7 +6,9 @@
   align-items: center;
   background-color: $light-grey;
   display: inline-flex;
+  font-family: "Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: $font-small;
+  font-weight: 600;
   height: $input-height - $basic-padding / 2;
   padding: 0 $basic-padding / 5;
 
