@@ -10,6 +10,30 @@
   -->
   <nts-body class="full-width">
     <div class="content">
+
+      <!-- ##################################################################
+           ###########################  TYPOGRAPHY  #########################
+           ################################################################## -->
+      <h3>Typography</h3>
+      <nts-row>
+        <nts-box>
+          <h1>h1 Heading</h1>
+          <h2>h2 Heading</h2>
+          <h3>h3 Heading</h3>
+          <h4>h4 Heading</h4>
+          <h5>h5 Heading</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum metus sem, ut tincidunt arcu convallis ut. Etiam lacinia sem vestibulum sapien feugiat laoreet. Duis id sodales lacus. Nulla euismod mollis luctus. Pellentesque vel ligula euismod, aliquam turpis mattis, faucibus sem. Integer et rutrum lacus. Proin pulvinar ac odio sed interdum. Etiam iaculis dolor massa, sed commodo lectus malesuada non. Morbi vehicula ante facilisis dignissim sodales.</p>
+
+          <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam interdum metus turpis, eget ultricies massa pellentesque vitae. Pellentesque vel diam a enim tincidunt condimentum aliquet eleifend libero. Mauris condimentum mi vitae lectus vulputate placerat. Nam consequat ligula at lorem maximus, vitae mollis libero consequat. Vivamus et feugiat felis, quis accumsan nulla. Etiam vitae elit eget libero facilisis dignissim a non erat. Morbi luctus a dolor quis tempor. Nullam ultricies justo ultricies, pulvinar turpis vitae, pulvinar enim. Donec sit amet quam diam.</p>
+
+          <p>Texto en párrafo con un bloque <mark>resaltado</mark></p>
+        </nts-box>
+      </nts-row>
+
+
+      <!-- ##################################################################
+           ############################  BUTTONS  ###########################
+           ################################################################## -->
       <h3>Buttons</h3>
       <nts-separator></nts-separator>
       <h5>Default buttons</h5>
@@ -204,8 +228,10 @@
           </div>
         </nts-button>
       </div>
-    </div>
-    <div class="content">
+
+      <!-- ##################################################################
+           #############################  INPUTS  ###########################
+           ################################################################## -->
       <h3>Inputs</h3>
       <nts-separator></nts-separator>
       <h5>Datetime picker</h5>
@@ -316,9 +342,10 @@
         <nts-input type="color" label="Color input" [(ntsModel)]="colorSelected"></nts-input>
         <nts-input type="color" label="Color input with swatch" [(ntsModel)]="colorSelected" [colorSwatch]="true"></nts-input>
       </div>
-    </div>
 
-    <div class="content">
+      <!-- ##################################################################
+           #############################  OTHER  ############################
+           ################################################################## -->
       <h3>Other</h3>
       <nts-separator></nts-separator>
       <h5>Badges</h5>
@@ -343,6 +370,7 @@
       <nts-progress class="success" value="40"></nts-progress>
       <nts-progress class="warning" value="70"></nts-progress>
       <nts-progress class="error" value="10" [showCount]="true"></nts-progress>
+
       <h5>Faces</h5>
       <div class="flex">
         <nts-face [user]="{name: 'Alvaro'}"> </nts-face>
@@ -353,15 +381,13 @@
       <div class="flex">
         <nts-button label="Open toast" icon="open" class="btn-default" (click)="openToast()"></nts-button>
       </div>
-      
+
       <h5>Modal</h5>
       <div class="flex">
-        <nts-button label="Open modal" icon="open" class="btn-default" (click)="openModal()"></nts-button>    
-        <nts-button label="Open full-screen modal" icon="open" class="btn-default" (click)="openModal(true)"></nts-button>    
+        <nts-button label="Open modal" icon="open" class="btn-default" (click)="openModal()"></nts-button>
+        <nts-button label="Open full-screen modal" icon="open" class="btn-default" (click)="openModal(true)"></nts-button>
       </div>
-
     </div>
-
 
   </nts-body>
 </nts-layout>

@@ -1,5 +1,4 @@
-@import './../../styles/variables';
-@import './../../styles/mixins';
+@import './../../styles/abstracts/index.scss';
 
 :host {
   display: inline-flex;
@@ -1797,6 +1796,11 @@ i {
             S66.209,44,64,44z"/>
     </g>
     </svg>');
+
+  }
+
+  &.google {
+    @include bgdata('<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360.58 360"><title>google2</title><path d="M195.78 210.48h71.59a91.1 91.1 0 0 1-86.45 60.71c-48.35-.36-88.33-39-90.2-87.35a90.91 90.91 0 0 1 151.94-71 9.86 9.86 0 0 0 13.41 0l26.3-24.75a9.83 9.83 0 0 0 0-14.29 146.06 146.06 0 0 0-97.88-40.14C103.7 32.08 35.57 98.35 35 179.19a146.6 146.6 0 0 0 293 9.29c.11-1 .19-33.65.19-33.65H195.78a9.82 9.82 0 0 0-9.82 9.82v36a9.82 9.82 0 0 0 9.82 9.83z" /></svg>');
 
   }
 }

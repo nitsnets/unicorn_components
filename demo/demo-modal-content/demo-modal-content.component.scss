@@ -1,10 +1,9 @@
-@import './../../src/styles/variables.scss';
-@import './../../src/styles/mixins.scss';
+@import './../../src/styles/abstracts/index.scss';
 
 .body{
   padding: $basic-padding;
   display: flex;
-  
+
 }
 .footer{
   display: flex;
