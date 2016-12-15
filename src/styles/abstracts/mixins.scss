@@ -1,3 +1,20 @@
+@mixin on-event($self: false) {
+    @if $self {
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            @content;
+        }
+    } @else {
+        &:hover,
+        &:active,
+        &:focus {
+            @content;
+        }
+    }
+}
+
 @mixin keyframes($animation-name) {
     @-webkit-keyframes #{$animation-name} {
         @content;

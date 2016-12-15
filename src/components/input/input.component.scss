@@ -2,10 +2,29 @@
 
 :host{
   display: flex;
+
+  ::-webkit-input-placeholder {
+     color: $dark-grey;
+     font-weight: 300;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+     color: $dark-grey;
+     font-weight: 300;
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+     color: $dark-grey;
+     font-weight: 300;
+  }
+
+  :-ms-input-placeholder {
+     color: $dark-grey;
+     font-weight: 300;
+  }
 }
 .input-container{ display: flex; }
 label{
-  font-weight: 400;
   position: relative;
   display: inline-block;
   width: 100%;
@@ -23,7 +42,7 @@ label{
   }
 }
 .label, .prefix{
-  font-weight: 400;
+  font-weight: 300;
   font-size: $font-small;
   color: $dark-grey;
   margin: 0 $input-padding/4;
@@ -87,6 +106,11 @@ textarea{
   input, textarea{
     height: $input-height + $label-height;
     font-size: $font-largest;
+  }
+}
+:host.input-text-big{
+  input, textarea{
+    font-size: $font-large;
   }
 }
 :host {
