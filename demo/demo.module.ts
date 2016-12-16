@@ -10,8 +10,12 @@ import { NtsDemoModalContentComponent } from './demo-modal-content/demo-modal-co
 
 import { NtsModalComponent  } from '../src/modules/modal/modal.component';
 import { NtsToastComponent } from '../src/modules/toast/toast.component';
+import { NtsTooltipComponent } from '../src/modules/tooltip/tooltip.component';
+
 import { ModalModule } from '../src/modules/modal/modal.module';
 import { ToastModule } from '../src/modules/toast/toast.module';
+import { TooltipModule } from '../src/modules/tooltip/tooltip.module';
+
 
 @NgModule({
   declarations: [
@@ -23,12 +27,14 @@ import { ToastModule } from '../src/modules/toast/toast.module';
     BrowserModule,
     HttpModule,
     ModalModule,
-    ToastModule
+    ToastModule,
+    TooltipModule
   ],
   entryComponents: [
     NtsModalComponent,
     NtsDemoModalContentComponent,
-    NtsToastComponent
+    NtsToastComponent,
+    NtsTooltipComponent
   ],
   bootstrap: [
     DemoComponent

@@ -1,8 +1,10 @@
 import { Component, ViewContainerRef } from '@angular/core';
 import { ToastService } from '../src/modules/toast/toast.service';
 import { ModalService } from '../src/modules/modal/modal.service';
+import { TooltipService } from '../src/modules/tooltip/tooltip.service';
 
 import { NtsDemoModalContentComponent } from './demo-modal-content/demo-modal-content.component';
+
 
 @Component({
     selector: 'nts-demo',
@@ -14,6 +16,7 @@ export class DemoComponent {
     constructor(
         private viewContainerRef: ViewContainerRef,
         private toastService: ToastService,
+        private tooltipService: TooltipService,
         private modalService: ModalService
     ) { }
 
@@ -27,6 +30,16 @@ export class DemoComponent {
         this.modalService.createModal(NtsDemoModalContentComponent, { title: 'Demo Modal', full: fullWidth }, this.viewContainerRef).subscribe(
             param => { console.log('ok: ', param); }, _ => { console.log('ko'); }
         );
+    }
+
+    openTooltip(event) {        
+        this.tooltipService.createTooltip('Esto es el mensaje del tooltip informativo', { x: event.clientX, y: event.clientY }, this.viewContainerRef).subscribe(
+            _ => { console.log('accept'); }
+        );
+    }
+
+    closeTooltip() {
+        this.tooltipService.close();
     }
 
 
