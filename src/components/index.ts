@@ -31,6 +31,7 @@ import { NtsDropdownComponent, NtsDropdownTriggerDirective } from './dropdown/dr
 import { NtsDropdownContainerComponent } from './dropdown/container/container.component';
 import { NtsDropdownItemComponent } from './dropdown/item/item.component';
 import { NtsBadgeComponent } from './badge/badge.component';
+import { NtsPaginatorComponent } from './paginator/paginator.component';
 
 export const NTS_COMPONENTS = [
   NtsPopupComponent,
@@ -64,6 +65,8 @@ export const NTS_COMPONENTS = [
   NtsChipComponent,
   NtsProgressComponent,
   NtsFaceComponent,
-  NtsBadgeComponent
+  NtsBadgeComponent,
+  NtsPaginatorComponent
+
 
 ];

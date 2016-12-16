@@ -1,0 +1,59 @@
+@import './../../styles/abstracts/index.scss';
+
+:host {
+  @include border-radius;
+
+  &.right {
+    .paginator-container {
+      ul {
+        @include mq($from: sm) {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+
+  &.center {
+    .paginator-container {
+      text-align: center;
+    }
+  }
+
+  .paginator-container {
+    display: flex;
+    justify-content: center;
+
+    @include mq($from: sm) {
+      justify-content: space-between;
+    }
+  }
+
+  p {
+    display: none;
+    padding: $basic-padding;
+    text-align: left;
+
+    @include mq($from: sm) {
+      display: inline-block;
+    }
+  }
+
+  ul {
+    padding: $basic-padding;
+  }
+
+  li {
+    display: inline-block;
+    font-size: $font-small;
+  }
+
+  a {
+    padding: 5px 10px;
+    opacity: .35;
+  }
+
+  .icon {
+    width: 12px;
+    height: 12px;
+  }
+}
