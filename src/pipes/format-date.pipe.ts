@@ -7,7 +7,6 @@ export class FormatDatePipe implements PipeTransform {
     if (!value) { return value; }
     let mo = moment(new Date(value));
     if (!format) { return mo.calendar(); }
-    console.log(today, yesterday, moment().diff(mo, 'days'));
     if (today && moment().diff(mo, 'days') === 0) { return 'Today'; }
     if (yesterday && moment().diff(mo, 'days') === 1) { return 'Yesterday'; }
     return mo.format(format);
