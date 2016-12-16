@@ -377,6 +377,12 @@
         <nts-face [user]="{name: 'Alvaro', image: 'https://placekitten.com/g/200/200'}"> </nts-face>
         <nts-face [user]="{name: 'Alvaro', image: 'https://placekitten.com/g/200/200'}" badge="1"> </nts-face>
       </div>
+
+      <h5>Tooltip</h5>
+      <div class="flex">
+        <nts-button label="Open Tooltip" icon="open" class="btn-default" (mouseover)="openTooltip($event)" (mouseout)="closeTooltip()"></nts-button>        
+      </div>
+
       <h5>Toast</h5>
       <div class="flex">
         <nts-button label="Open toast" icon="open" class="btn-default" (click)="openToast()"></nts-button>
@@ -387,6 +393,8 @@
         <nts-button label="Open modal" icon="open" class="btn-default" (click)="openModal()"></nts-button>
         <nts-button label="Open full-screen modal" icon="open" class="btn-default" (click)="openModal(true)"></nts-button>
       </div>
+     
+      
     </div>
 
   </nts-body>
