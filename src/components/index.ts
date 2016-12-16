@@ -1,3 +1,10 @@
+import { NtsPopupComponent, NtsPopupTriggerDirective } from './popup/popup.component';
+import { NtsPopupContainerComponent } from './popup/container/container.component';
+
+import { NtsDropdownComponent, NtsDropdownTriggerDirective } from './dropdown/dropdown.component';
+import { NtsDropdownContainerComponent } from './dropdown/container/container.component';
+import { NtsDropdownItemComponent } from './dropdown/item/item.component';
+
 import { NtsFaceComponent } from './face/face.component';
 import { NtsBoxComponent } from './box/box.component';
 import { NtsRowComponent } from './row/row.component';
@@ -22,14 +29,6 @@ import { NtsColorPickerComponent } from './color-picker/color-picker.component';
 import { NtsImagePickerComponent } from './image-picker/image-picker.component';
 import { NtsChipComponent } from './chip/chip.component';
 import { NtsProgressComponent } from './progress/progress.component';
-
-
-import { NtsPopupComponent, NtsPopupTriggerDirective } from './popup/popup.component';
-import { NtsPopupContainerComponent } from './popup/container/container.component';
-
-import { NtsDropdownComponent, NtsDropdownTriggerDirective } from './dropdown/dropdown.component';
-import { NtsDropdownContainerComponent } from './dropdown/container/container.component';
-import { NtsDropdownItemComponent } from './dropdown/item/item.component';
 import { NtsBadgeComponent } from './badge/badge.component';
 import { NtsPaginatorComponent } from './paginator/paginator.component';
 
@@ -67,6 +66,4 @@ export const NTS_COMPONENTS = [
   NtsFaceComponent,
   NtsBadgeComponent,
   NtsPaginatorComponent
-
-
 ];

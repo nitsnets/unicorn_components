@@ -51,10 +51,8 @@ h1, h2, h3, h4, h5 {
  * Basic styles for paragraphs
  */
 p {
-    margin: 0 0 1em;
-
-    &.mb0 {
-        margin: 0;
+    &.mb {
+        margin: 0 0 1em;
     }
 }
 
