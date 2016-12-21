@@ -14,7 +14,7 @@ export class NtsInputComponent implements OnInit {
     @Output() ntsBlur = new EventEmitter();
     @Output() ntsFocus = new EventEmitter();
 
-    @Input() type: InputTypes = InputTypes.text;
+    @Input() type: string = 'text'; //InputTypes.text;
     @Input() placeholder: string = '';
     @Input() name: string = '';
     @Input() label: string = '';

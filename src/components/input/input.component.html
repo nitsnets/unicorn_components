@@ -20,7 +20,7 @@
       *ngIf="!multiline && type !== 'color'"
       [ngClass]="{floating: floating}"
       [type]="type"
-      [attr.maxlength]="max"
+      [attr.maxlength]="max && max > 0 ? max : 999999"
       [name]="name || 'inputName'"
       [placeholder]="placeholder"
       [value]="value"
