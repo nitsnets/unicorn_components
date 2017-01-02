@@ -1,5 +1,6 @@
 import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 import { NtsOption } from '../../models/option';
+import { FilterPipe } from '../../pipes/filter.pipe';
 
 export enum SelectTypes { text, number, email, password }
 
@@ -17,12 +18,17 @@ export class NtsSelectComponent implements OnInit, OnChanges {
   @Input() placeholder: string = '';
   @Input() value: string = '';
   @Input() icon: string;
-  @Input() options: NtsOption[] = [];
-  @Input() excludedOptions: string[];
   @Input() multiple = false;
 
+  @Input() options: NtsOption[] = [];
+  @Input() excludedOptions: string[];
+  @Input() multipleptions: NtsOption[] = [];
+
+
   areOptionsVisible = false;
+  optionsFiltered: NtsOption[] = [];
   optionsSelected: NtsOption[] = [];
+  pointedIndex: number = 0;
   selecting = false;
   search = null;
 
@@ -39,39 +45,44 @@ export class NtsSelectComponent implements OnInit, OnChanges {
         this.updateSearchByOptionsSelected();
       }
     }
+    if (changes.options) {
+      this.onFilter();
+    }
   }
   onKeyDown(e: KeyboardEvent) {
     switch (e.key) {
       case 'Escape': this.hideOptions(); break;
-      case 'Enter':
-        if (this.areOptionsVisible) {
-          this.hideOptions();
-          e.preventDefault(); e.stopPropagation();
-        }
+      case 'Enter': this.selectPointedOption();
         break;
-      case 'ArrowDown':
-        if (!this.areOptionsVisible) {
-          this.showOptions();
-        }
-        break;
-      case 'ArrowUp': break;
+      case 'ArrowDown': this.areOptionsVisible ? this.updatePointedIndex(1) : this.showOptions(); e.preventDefault(); break;
+      case 'ArrowUp': this.updatePointedIndex(-1); e.preventDefault(); break;
     }
   }
-  isOptionSelected(option: NtsOption) {
+  isOptionSelected(option: NtsOption): boolean {
     return this.optionsSelected &&
       this.optionsSelected.length &&
       this.optionsSelected.indexOf(option) !== -1;
+  }
+  isOptionPointed(i: number): boolean {
+    return this.pointedIndex === i;
   }
   onClickOutside() {
     this.hideOptions();
   }
   onFocus($event) {
-    this.areOptionsVisible = true;
-    this.search = '';
+    this.showOptions();
   }
   // Manage non desirable closing
-  onBlur($event) { if (!this.selecting) { this.hideOptions(); } }
-  onSelectingOption(value) { this.selecting = value; }
+  onBlur($event) {
+    if (!this.selecting) { this.hideOptions(); }
+  }
+  onSelectingOption(value) {
+    this.selecting = value;
+  }
+
+  onHoverOption(index: number) {
+    this.pointedIndex = index;
+  }
 
   onSelect(option: NtsOption) {
     if (option === null) {
@@ -83,7 +94,7 @@ export class NtsSelectComponent implements OnInit, OnChanges {
       } else {
         this.optionsSelected.push(option);
       }
-    } else {
+    } else if (option) {
       this.optionsSelected = [option];
       this.hideOptions();
     }
@@ -95,12 +106,26 @@ export class NtsSelectComponent implements OnInit, OnChanges {
     Object.assign(this.optionsSelected, this.options);
     this.updateModelByOptionsSelected();
   }
-  onFilter(value) {
+  onFilter(value = this.search) {
+    this.optionsFiltered = new FilterPipe().transform(this.options, 'label', value);
+    this.updatePointedIndex();
     if (value === null) {
       this.onSelect(null);
+      return;
     }
   }
 
+  /* PRIVATE METHODS */
+  private updatePointedIndex(inc = 0) {
+    let newIndex = this.pointedIndex + inc;
+    if (newIndex < 0) {
+      this.pointedIndex = 0;
+    } else if (newIndex >= this.optionsFiltered.length) {
+      this.pointedIndex = this.optionsFiltered.length - 1;
+    } else { this.pointedIndex = newIndex; }
+
+    console.log('Option pointed', this.pointedIndex);
+  }
   private excludeOptions() {
     if (this.excludedOptions && this.excludedOptions.length) {
       this.options = this.options.filter(
@@ -152,6 +177,12 @@ export class NtsSelectComponent implements OnInit, OnChanges {
   private showOptions() {
     this.areOptionsVisible = true;
     this.search = '';
+    this.onFilter();
   }
+  private selectPointedOption() {
+    let pointedOption = this.optionsFiltered[this.pointedIndex];
+    this.onSelect(pointedOption);
+  }
+
 
 }

@@ -16,6 +16,7 @@
     border-radius: $border-radius;
 
     background-color: transparent;
+    color: $dark-grey;
     @include transition(background-color, $fast, ease);
 
     &:not(.with-dropdown){min-width: 100%;}

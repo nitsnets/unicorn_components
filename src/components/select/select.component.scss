@@ -19,14 +19,15 @@ nts-input{
   font-size: $font-small;
   padding: $basic-padding/4;
 
-  &:hover {background-color: $light-grey;}
-
   &.selected {
-    background-color: $light-alpha;
+    background-color: $medium-grey;
 
     .icon {
       opacity: 1;
     }
+  }
+  &.pointed {
+    background-color: $light-grey;
   }
 
   .icon {

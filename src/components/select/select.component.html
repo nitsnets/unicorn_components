@@ -19,11 +19,14 @@
 
     <nts-separator *ngIf="multiple && !search"></nts-separator>
 
-    <li class="option" *ngFor="let option of options | filter : 'label' : search"
+    <li class="option" *ngFor="let option of optionsFiltered; let i = index;"
       [class.selected]="isOptionSelected(option)"
+      [class.pointed]="isOptionPointed(i)"
       (click)="onSelect(option)"
+      (mouseover)="onHoverOption(i)"
       (mousedown)="onSelectingOption(true)"
-      (mouseup)="onSelectingOption(false)">
+      (mouseup)="onSelectingOption(false)"
+    >
 
       <nts-icon *ngIf="multiple" class="icon" [icon]="isOptionSelected(option) ? 'square-check' : 'square'"></nts-icon>
       <span [innerHtml]="(option.label | highlight:search) || '(Unlabeled)'"></span>
