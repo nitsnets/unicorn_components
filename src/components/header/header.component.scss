@@ -7,6 +7,7 @@
   padding: 0 $padding;
   align-items: center;
   transition: margin-top ease $slow;
+  
 
   &.hidden{ margin-top:-$height; }
   &.grey{ background-color: $lightest-alpha; }
@@ -16,6 +17,15 @@
     color: $error-color;
   }
 }
+
+:host.less-padding{
+  header{
+    padding: 0 $basic-padding/2;
+  }
+  
+}
+
+
 
 header{ @include header(); }
 header.medium{ @include header($header-md-height); }
