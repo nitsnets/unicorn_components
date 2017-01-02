@@ -1,54 +1,19 @@
-<div class="paginator-container">
+<div class="container">
 
-  <p>
-    Showing <b>1 to 5</b> of 57 entries
+  <p class="counter">
+    Showing <b>{{selected * pageSize + 1}} to {{(selected + 1) * pageSize}}</b> of {{totalElements}} entries
   </p>
 
-  <ul>
-    <li class="prev disabled">
-      <a href="#" aria-controls="" tabindex="0">
-        <nts-icon class="icon" icon="search"></nts-icon>
-      </a>
-    </li>
-    <li class="active">
-      <a href="#" aria-controls="" tabindex="0">
-        1
-      </a>
-    </li>
-    <li>
-      <a href="#" aria-controls="" tabindex="0">
-        2
-      </a>
-    </li>
-    <li>
-      <a href="#" aria-controls="" tabindex="0">
-        3
-      </a>
-    </li>
-    <li>
-      <a href="#" aria-controls="" tabindex="0">
-        4
-      </a>
-    </li>
-    <li>
-      <a href="#" aria-controls="" tabindex="0">
-        5
-      </a>
-    </li>
-    <li class="disabled">
-      <a href="#" aria-controls="" tabindex="0">
-        …
-      </a>
-    </li>
-    <li>
-      <a href="#" aria-controls="" tabindex="0">
-        12
-      </a>
-    </li>
-    <li class="next">
-      <a href="#" aria-controls="" tabindex="0">
-        <nts-icon class="icon" icon="search"></nts-icon>
-      </a>
-    </li>
-  </ul>
+  <div class="pages">
+    <nts-button icon="back" (click)="prevPage()"></nts-button>
+    <span class="page"
+      *ngFor="let page of pages"
+      [class.selectable]="page !== selected && page !== null"
+      [class.selected]="page === selected"
+      (click)="selectPage(page)"
+    >
+      {{page === null ? '...' : page+1}}
+    </span>
+    <nts-button icon="forw" (click)="nextPage()"></nts-button>
+  </div>
 </div>

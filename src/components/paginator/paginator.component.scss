@@ -1,11 +1,9 @@
 @import './../../styles/abstracts/index.scss';
 
 :host {
-  @include border-radius;
-
   &.right {
-    .paginator-container {
-      ul {
+    .container {
+      .pages {
         @include mq($from: sm) {
           margin-left: auto;
         }
@@ -14,12 +12,14 @@
   }
 
   &.center {
-    .paginator-container {
+    .container {
       text-align: center;
+      padding: $basic-padding;
     }
   }
 
-  .paginator-container {
+  .container {
+    padding: $basic-padding;
     display: flex;
     justify-content: center;
 
@@ -27,33 +27,32 @@
       justify-content: space-between;
     }
   }
+  .pages {
+    display: flex;
+    align-items: center;
+  }
+  .page {
+    display: flex;
+    min-width: $input-height;
+    height: $input-height;
+    padding: $basic-padding / 3;
+    align-items: center;
+    justify-content: center;
+    border-radius: $input-height / 2;
 
-  p {
+    &.selectable {
+      cursor: default;
+      &:hover { background-color: $lightest-alpha }
+    }
+    &.selected { color: $brand-color; font-weight: bold; }
+  }
+
+  .counter {
     display: none;
-    padding: $basic-padding;
     text-align: left;
 
     @include mq($from: sm) {
       display: inline-block;
     }
-  }
-
-  ul {
-    padding: $basic-padding;
-  }
-
-  li {
-    display: inline-block;
-    font-size: $font-small;
-  }
-
-  a {
-    padding: 5px 10px;
-    opacity: .35;
-  }
-
-  .icon {
-    width: 12px;
-    height: 12px;
   }
 }
