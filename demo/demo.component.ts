@@ -7,40 +7,43 @@ import { NtsDemoModalContentComponent } from './demo-modal-content/demo-modal-co
 
 
 @Component({
-    selector: 'nts-demo',
-    templateUrl: './demo.component.html',
-    styleUrls: ['./demo.component.scss']
+  selector: 'nts-demo',
+  templateUrl: './demo.component.html',
+  styleUrls: ['./demo.component.scss']
 })
 export class DemoComponent {
 
-    constructor(
-        private viewContainerRef: ViewContainerRef,
-        private toastService: ToastService,
-        private tooltipService: TooltipService,
-        private modalService: ModalService
-    ) { }
+  constructor(
+    private viewContainerRef: ViewContainerRef,
+    private toastService: ToastService,
+    private tooltipService: TooltipService,
+    private modalService: ModalService
+  ) { }
 
-    openToast() {
-        this.toastService.createToast('Esto es el mensaje', { showClose: true, time: 3000 }, this.viewContainerRef).subscribe(
-            _ => { console.log('accept'); }
-        );
-    }
+  openToast() {
+    this.toastService.createToast('Esto es el mensaje', { showClose: true, time: 3000 }, this.viewContainerRef).subscribe(
+      _ => { console.log('accept'); }
+    );
+  }
 
-    openModal(fullWidth = false) {
-        this.modalService.createModal(NtsDemoModalContentComponent, { title: 'Demo Modal', full: fullWidth }, this.viewContainerRef).subscribe(
-            param => { console.log('ok: ', param); }, _ => { console.log('ko'); }
-        );
-    }
+  openModal(fullWidth = false) {
+    this.modalService.createModal(NtsDemoModalContentComponent, { title: 'Demo Modal', full: fullWidth }, this.viewContainerRef).subscribe(
+      param => { console.log('ok: ', param); }, _ => { console.log('ko'); }
+    );
+  }
 
-    openTooltip(event) {        
-        this.tooltipService.createTooltip('Esto es el mensaje del tooltip informativo', { x: event.clientX, y: event.clientY }, this.viewContainerRef).subscribe(
-            _ => { console.log('accept'); }
-        );
-    }
+  openTooltip(event) {
+    this.tooltipService.createTooltip('Esto es el mensaje del tooltip informativo', {
+      x: event.clientX,
+      y: event.clientY
+    }, this.viewContainerRef).subscribe(
+      _ => { console.log('accept'); }
+      );
+  }
 
-    closeTooltip() {
-        this.tooltipService.close();
-    }
+  closeTooltip() {
+    this.tooltipService.close();
+  }
 
 
 
