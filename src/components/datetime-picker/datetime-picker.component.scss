@@ -23,9 +23,9 @@
   margin-top: $basic-padding / 2;
   z-index: 1;
 
-  &.floating {
-    position: absolute;
-  }
+  &.floating { position: absolute; }
+  &.align-right { right: 0; }
+  &.align-left { left: 0; }
 }
 
 .datetime-buttons-container {

@@ -1,7 +1,7 @@
-<div class="datetime-container" (clickOutside)="mode = popup? null: mode">
+<div class="datetime-container" (clickOutside)="setMode(popup? null: mode)">
   <div class="datetime-inputs-container">
     <nts-input
-        type="text"
+        type="date"
         icon="calendar"
         class="datetime-input clear-webkit-controls"
         *ngIf="dateShow"
@@ -10,7 +10,7 @@
         [clear]="popup"
         [ntsModel]="dateModel"
         (ntsModelChange)="onDateChanges($event)"
-        (ntsFocus)="mode = 'date'"
+        (ntsFocus)="setMode('date')"
     > </nts-input>
     <nts-input
         type="time"
@@ -21,10 +21,15 @@
         [clear]="popup"
         [ntsModel]="timeModel"
         (ntsModelChange)="onTimeChanges($event)"
-        (ntsFocus)="mode = 'time'"
+        (ntsFocus)="setMode('time')"
     > </nts-input>
   </div>
-  <div *ngIf="mode!==null" class="datetime-controls-container" [class.floating]="popup">
+  <div *ngIf="mode!==null"
+    class="datetime-controls-container"
+    [class.floating]="popup"
+    [class.align-left]="side === 'left'"
+    [class.align-right]="side === 'right'"
+  >
     <nts-calendar
       *ngIf="dateShow && mode === 'date'"
       [maxDate]="maxDate"
@@ -43,7 +48,7 @@
       class="btn-small"
       icon="up"
       label="close"
-      (click)="mode = null">
+      (click)="setMode(null)">
     </nts-button>
     <nts-button
       *ngIf="dateModel || timeModel"

@@ -15,6 +15,9 @@ body {
     color: $dark-grey;
     background: #fff;
 }
+input {
+    font-family: 'Open Sans', sans-serif;
+}
 
 /**
  * Make all elements from the DOM inherit from the parent box-sizing
@@ -68,8 +71,6 @@ hr {
 
 ul {
     list-style: disc;
-    padding: 0 0 0 1.7em;
-    margin: 0 0 1em;
 }
 
 
