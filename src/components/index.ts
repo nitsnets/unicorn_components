@@ -31,6 +31,7 @@ import { NtsChipComponent } from './chip/chip.component';
 import { NtsProgressComponent } from './progress/progress.component';
 import { NtsBadgeComponent } from './badge/badge.component';
 import { NtsPaginatorComponent } from './paginator/paginator.component';
+import { NtsDaterangePickerComponent } from './daterange-picker/daterange-picker.component';
 
 export const NTS_COMPONENTS = [
   NtsPopupComponent,
@@ -65,5 +66,6 @@ export const NTS_COMPONENTS = [
   NtsProgressComponent,
   NtsFaceComponent,
   NtsBadgeComponent,
-  NtsPaginatorComponent
+  NtsPaginatorComponent,
+  NtsDaterangePickerComponent
 ];

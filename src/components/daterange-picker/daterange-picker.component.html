@@ -1,0 +1,51 @@
+<div class="container" (clickOutside)="setMode(null)">
+  <div class="input-container" >
+    <nts-input
+        type="date"
+        icon="calendar"
+        class="input clear-webkit-controls spacing"
+        [label]="fromLabel || (toLabel ? ' ' : '')"
+        [clear]="true"
+        [ntsModel]="fromModel"
+        (ntsModelChange)="onFromChanges($event)"
+        (ntsFocus)="setMode('from')"
+    > </nts-input>
+    <div class="calendar-container"
+      [class.align-left]="side === 'left'"
+      [class.align-right]="side === 'right'">
+      <nts-calendar
+        *ngIf="mode === 'from'"
+        [maxDate]="toModel || maxDate"
+        [minDate]="minDate"
+        [rangeTo]="toModel"
+        [ntsModel]="fromModel"
+        (ntsModelChange)="onFromChanges($event)">
+      </nts-calendar>
+    </div>
+  </div>
+  <div class="input-container">
+    <nts-input
+        type="date"
+        icon="calendar"
+        class="input clear-webkit-controls"
+        [label]="toLabel || (fromLabel ? ' ' : '')"
+        [clear]="true"
+        [ntsModel]="toModel"
+        (ntsModelChange)="onToChanges($event)"
+        (ntsFocus)="setMode('to')"
+    > </nts-input>
+    <div *ngIf="mode!==null"
+      class="calendar-container"
+      [class.align-left]="side === 'left'"
+      [class.align-right]="side === 'right'">
+      <nts-calendar
+        *ngIf="mode === 'to'"
+        [maxDate]="maxDate"
+        [minDate]="fromModel || minDate"
+        [rangeFrom]="fromModel"
+        [ntsModel]="toModel"
+        (ntsModelChange)="onToChanges($event)">
+      </nts-calendar>
+    </div>
+  </div>
+</div>

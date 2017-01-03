@@ -14,14 +14,12 @@
   &.center {
     .container {
       text-align: center;
-      padding: $basic-padding;
     }
   }
-
   .container {
-    padding: $basic-padding;
     display: flex;
     justify-content: center;
+    align-items: center;
 
     @include mq($from: sm) {
       justify-content: space-between;
@@ -30,6 +28,7 @@
   .pages {
     display: flex;
     align-items: center;
+
   }
   .page {
     display: flex;

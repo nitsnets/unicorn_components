@@ -251,6 +251,10 @@
         <nts-datetime-picker timeLabel="Only hour" [popup]="true" [dateShow]="false"> </nts-datetime-picker>
       </div>
 
+      <h5>Daterange picker</h5>
+      <div class="flex">
+        <nts-daterange-picker> </nts-daterange-picker>
+      </div>
       <h5>Select inputs </h5>
 
       <div class="flex">
@@ -380,7 +384,7 @@
 
       <h5>Tooltip</h5>
       <div class="flex">
-        <nts-button label="Open Tooltip" icon="open" class="btn-default" (mouseover)="openTooltip($event)" (mouseout)="closeTooltip()"></nts-button>        
+        <nts-button label="Open Tooltip" icon="open" class="btn-default" (mouseover)="openTooltip($event)" (mouseout)="closeTooltip()"></nts-button>
       </div>
 
       <h5>Toast</h5>
@@ -393,8 +397,11 @@
         <nts-button label="Open modal" icon="open" class="btn-default" (click)="openModal()"></nts-button>
         <nts-button label="Open full-screen modal" icon="open" class="btn-default" (click)="openModal(true)"></nts-button>
       </div>
-     
-      
+
+      <h5>Paginator</h5>
+      <nts-paginator [totalElements]="30" [pageSize]="10" [selected]="0"></nts-paginator>
+      <nts-paginator [totalElements]="150" [pageSize]="9" [selected]="0"></nts-paginator>
+
     </div>
 
   </nts-body>
