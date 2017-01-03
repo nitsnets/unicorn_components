@@ -1,6 +1,6 @@
 import { Component, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 
-const pagesToShow = 7;
+const pagesToShow = 4;
 
 @Component({
   selector: 'nts-paginator',
@@ -38,21 +38,28 @@ export class NtsPaginatorComponent implements OnChanges {
     this.selectPage(this.selected - 1);
   }
   private refreshPagesToShow() {
-    let pages = [0];
-    let start = Math.max(1, this.selected - Math.floor(pagesToShow / 2));
-    let end = Math.min(this.pagesCount - 1, this.selected + Math.floor(pagesToShow / 2));
+    let firstPage = 0;
+    let lastPage = this.pagesCount - 1;
+    let pages = [];
+    // The window of middle pages is bounded by:
+    let first = Math.max(firstPage, Math.min(this.pagesCount - pagesToShow, this.selected - Math.ceil((pagesToShow - 1) / 2)));
+    let last = Math.min(lastPage, first + pagesToShow - 1);
 
-    if (start > 1) {
-      pages.push(null);
+    // Add to array the first page, the null (...),
+    if (first > firstPage + 1) {
+      pages.push(firstPage, null);
+    } else if (first > firstPage) {
+      pages.push(firstPage);
     }
-    for (let i = start; i <= end; i++) {
-      pages.push(i);
+    // the window of middle pages,
+    for (let i = first; i <= last; i++) { pages.push(i); }
+    // the null (...) and the last page
+    if (last < lastPage - 1) {
+      pages.push(null, lastPage);
+    } else if (last < lastPage) {
+      pages.push(lastPage);
     }
-    if (end < this.pagesCount - 2) {
-      pages.push(null, this.pagesCount - 1);
-    } else if (end < this.pagesCount - 1) {
-      pages.push(this.pagesCount - 1);
-    }
+
     this.pages = pages;
   }
 

@@ -123,8 +123,6 @@ export class NtsSelectComponent implements OnInit, OnChanges {
     } else if (newIndex >= this.optionsFiltered.length) {
       this.pointedIndex = this.optionsFiltered.length - 1;
     } else { this.pointedIndex = newIndex; }
-
-    console.log('Option pointed', this.pointedIndex);
   }
   private excludeOptions() {
     if (this.excludedOptions && this.excludedOptions.length) {

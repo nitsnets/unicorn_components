@@ -39,12 +39,13 @@
     align-items: center;
     justify-content: center;
     border-radius: $input-height / 2;
+    color: $dark-grey;
 
     &.selectable {
       cursor: default;
       &:hover { background-color: $lightest-alpha }
     }
-    &.selected { color: $brand-color; font-weight: bold; }
+    &.selected { color: $black; font-weight: bold; }
   }
 
   .counter {
