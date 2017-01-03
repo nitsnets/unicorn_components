@@ -97,6 +97,17 @@ button.btn-large{
     .icon{ opacity: 1; filter: invert(100%); -webkit-filter: invert(100%); }
   }
 }
+:host.btn-warning{
+  &>button, button.dropdown, button.popup {
+    background-color: $warning-color;
+    color: white;
+    .sublabel{color: white}
+    &:hover{background-color: lighten($warning-color, 2.5%);}
+    &:focus{background-color: lighten($warning-color, 2.5%);}
+    &:active{background-color: lighten($warning-color, 5%);}
+    .icon{ opacity: 1; filter: invert(100%); -webkit-filter: invert(100%); }
+  }
+}
 :host.btn-success{
   &>button, button.dropdown, button.popup {
     background-color: $success-color;
