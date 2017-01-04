@@ -380,7 +380,7 @@
 
       <h5>Tooltip</h5>
       <div class="flex">
-        <nts-button label="Open Tooltip" icon="open" class="btn-default" (mouseover)="openTooltip($event)" (mouseout)="closeTooltip()"></nts-button>        
+        <nts-button label="Open Tooltip" icon="open" class="btn-default" (mouseover)="openTooltip($event)" (mouseout)="closeTooltip()"></nts-button>
       </div>
 
       <h5>Toast</h5>
@@ -393,8 +393,159 @@
         <nts-button label="Open modal" icon="open" class="btn-default" (click)="openModal()"></nts-button>
         <nts-button label="Open full-screen modal" icon="open" class="btn-default" (click)="openModal(true)"></nts-button>
       </div>
-     
-      
+
+      <!-- ##################################################################
+           #############################  ICONS  ############################
+           ################################################################## -->
+      <h3>Icons</h3>
+      <nts-separator></nts-separator>
+      <div class="">
+        <nts-icon class="icon" icon="air-play"></nts-icon>
+        <nts-icon class="icon" icon="align-center"></nts-icon>
+        <nts-icon class="icon" icon="align-left"></nts-icon>
+        <nts-icon class="icon" icon="align-right"></nts-icon>
+        <nts-icon class="icon" icon="alt"></nts-icon>
+        <nts-icon class="icon" icon="anchor"></nts-icon>
+        <nts-icon class="icon" icon="back"></nts-icon>
+        <nts-icon class="icon" icon="bag"></nts-icon>
+        <nts-icon class="icon" icon="ban"></nts-icon>
+        <nts-icon class="icon" icon="bars"></nts-icon>
+        <nts-icon class="icon" icon="bar-graph-2"></nts-icon>
+        <nts-icon class="icon" icon="battery"></nts-icon>
+        <nts-icon class="icon" icon="bell"></nts-icon>
+        <nts-icon class="icon" icon="book"></nts-icon>
+        <nts-icon class="icon" icon="box"></nts-icon>
+        <nts-icon class="icon" icon="briefcase"></nts-icon>
+        <nts-icon class="icon" icon="calendar"></nts-icon>
+        <nts-icon class="icon" icon="camera"></nts-icon>
+        <nts-icon class="icon" icon="caret"></nts-icon>
+        <nts-icon class="icon" icon="check"></nts-icon>
+        <nts-icon class="icon" icon="circle"></nts-icon>
+        <nts-icon class="icon" icon="circle-add"></nts-icon>
+        <nts-icon class="icon" icon="circle-check"></nts-icon>
+        <nts-icon class="icon" icon="circle-minus"></nts-icon>
+        <nts-icon class="icon" icon="clock"></nts-icon>
+        <nts-icon class="icon" icon="cloud"></nts-icon>
+        <nts-icon class="icon" icon="cloud1"></nts-icon>
+        <nts-icon class="icon" icon="cloud2"></nts-icon>
+        <nts-icon class="icon" icon="cloud3"></nts-icon>
+        <nts-icon class="icon" icon="cloud4"></nts-icon>
+        <nts-icon class="icon" icon="cloud-download"></nts-icon>
+        <nts-icon class="icon" icon="cloud-upload"></nts-icon>
+        <nts-icon class="icon" icon="code"></nts-icon>
+        <nts-icon class="icon" icon="cog"></nts-icon>
+        <nts-icon class="icon" icon="columns"></nts-icon>
+        <nts-icon class="icon" icon="command"></nts-icon>
+        <nts-icon class="icon" icon="content-left"></nts-icon>
+        <nts-icon class="icon" icon="content-right"></nts-icon>
+        <nts-icon class="icon" icon="contract"></nts-icon>
+        <nts-icon class="icon" icon="copy"></nts-icon>
+        <nts-icon class="icon" icon="close"></nts-icon>
+        <nts-icon class="icon" icon="delete"></nts-icon>
+        <nts-icon class="icon" icon="desktop"></nts-icon>
+        <nts-icon class="icon" icon="disc"></nts-icon>
+        <nts-icon class="icon" icon="down"></nts-icon>
+        <nts-icon class="icon" icon="download"></nts-icon>
+        <nts-icon class="icon" icon="drag"></nts-icon>
+        <nts-icon class="icon" icon="drop"></nts-icon>
+        <nts-icon class="icon" icon="edit"></nts-icon>
+        <nts-icon class="icon" icon="esc"></nts-icon>
+        <nts-icon class="icon" icon="error"></nts-icon>
+        <nts-icon class="icon" icon="expand"></nts-icon>
+        <nts-icon class="icon" icon="forw"></nts-icon>
+        <nts-icon class="icon" icon="eye"></nts-icon>
+        <nts-icon class="icon" icon="fast-forward"></nts-icon>
+        <nts-icon class="icon" icon="file"></nts-icon>
+        <nts-icon class="icon" icon="file-add"></nts-icon>
+        <nts-icon class="icon" icon="file-subtract"></nts-icon>
+        <nts-icon class="icon" icon="flag"></nts-icon>
+        <nts-icon class="icon" icon="folder"></nts-icon>
+        <nts-icon class="icon" icon="globe"></nts-icon>
+        <nts-icon class="icon" icon="google"></nts-icon>
+        <nts-icon class="icon" icon="grid"></nts-icon>
+        <nts-icon class="icon" icon="grid-2"></nts-icon>
+        <nts-icon class="icon" icon="user"></nts-icon>
+        <nts-icon class="icon" icon="heart"></nts-icon>
+        <nts-icon class="icon" icon="help"></nts-icon>
+        <nts-icon class="icon" icon="image"></nts-icon>
+        <nts-icon class="icon" icon="inbox"></nts-icon>
+        <nts-icon class="icon" icon="layers"></nts-icon>
+        <nts-icon class="icon" icon="layout"></nts-icon>
+        <nts-icon class="icon" icon="link"></nts-icon>
+        <nts-icon class="icon" icon="loader"></nts-icon>
+        <nts-icon class="icon" icon="location"></nts-icon>
+        <nts-icon class="icon" icon="location-2"></nts-icon>
+        <nts-icon class="icon" icon="lock"></nts-icon>
+        <nts-icon class="icon" icon="mail"></nts-icon>
+        <nts-icon class="icon" icon="map"></nts-icon>
+        <nts-icon class="icon" icon="marquee"></nts-icon>
+        <nts-icon class="icon" icon="marquee-add"></nts-icon>
+        <nts-icon class="icon" icon="marquee-subtract"></nts-icon>
+        <nts-icon class="icon" icon="maximize"></nts-icon>
+        <nts-icon class="icon" icon="media"></nts-icon>
+        <nts-icon class="icon" icon="menu"></nts-icon>
+        <nts-icon class="icon" icon="microphone"></nts-icon>
+        <nts-icon class="icon" icon="minimize"></nts-icon>
+        <nts-icon class="icon" icon="minus"></nts-icon>
+        <nts-icon class="icon" icon="mobile"></nts-icon>
+        <nts-icon class="icon" icon="monitor"></nts-icon>
+        <nts-icon class="icon" icon="moon"></nts-icon>
+        <nts-icon class="icon" icon="more-h"></nts-icon>
+        <nts-icon class="icon" icon="more-v"></nts-icon>
+        <nts-icon class="icon" icon="move"></nts-icon>
+        <nts-icon class="icon" icon="mute"></nts-icon>
+        <nts-icon class="icon" icon="open"></nts-icon>
+        <nts-icon class="icon" icon="outbox"></nts-icon>
+        <nts-icon class="icon" icon="page"></nts-icon>
+        <nts-icon class="icon" icon="paper-clip"></nts-icon>
+        <nts-icon class="icon" icon="paper-stack"></nts-icon>
+        <nts-icon class="icon" icon="paragraph"></nts-icon>
+        <nts-icon class="icon" icon="pause"></nts-icon>
+        <nts-icon class="icon" icon="pie-graph"></nts-icon>
+        <nts-icon class="icon" icon="play"></nts-icon>
+        <nts-icon class="icon" icon="plus"></nts-icon>
+        <nts-icon class="icon" icon="power"></nts-icon>
+        <nts-icon class="icon" icon="printer"></nts-icon>
+        <nts-icon class="icon" icon="record"></nts-icon>
+        <nts-icon class="icon" icon="redo"></nts-icon>
+        <nts-icon class="icon" icon="reload"></nts-icon>
+        <nts-icon class="icon" icon="repeat"></nts-icon>
+        <nts-icon class="icon" icon="reply"></nts-icon>
+        <nts-icon class="icon" icon="rewind"></nts-icon>
+        <nts-icon class="icon" icon="ribbon"></nts-icon>
+        <nts-icon class="icon" icon="search"></nts-icon>
+        <nts-icon class="icon" icon="server"></nts-icon>
+        <nts-icon class="icon" icon="share"></nts-icon>
+        <nts-icon class="icon" icon="shuffle"></nts-icon>
+        <nts-icon class="icon" icon="signal"></nts-icon>
+        <nts-icon class="icon" icon="skip-back"></nts-icon>
+        <nts-icon class="icon" icon="skip-forward"></nts-icon>
+        <nts-icon class="icon" icon="speech-bubble"></nts-icon>
+        <nts-icon class="icon" icon="square"></nts-icon>
+        <nts-icon class="icon" icon="square-add"></nts-icon>
+        <nts-icon class="icon" icon="square-check"></nts-icon>
+        <nts-icon class="icon" icon="square-cross"></nts-icon>
+        <nts-icon class="icon" icon="square-minus"></nts-icon>
+        <nts-icon class="icon" icon="stack-2"></nts-icon>
+        <nts-icon class="icon" icon="star"></nts-icon>
+        <nts-icon class="icon" icon="stop"></nts-icon>
+        <nts-icon class="icon" icon="sun"></nts-icon>
+        <nts-icon class="icon" icon="tablet"></nts-icon>
+        <nts-icon class="icon" icon="tag"></nts-icon>
+        <nts-icon class="icon" icon="target"></nts-icon>
+        <nts-icon class="icon" icon="thermometer"></nts-icon>
+        <nts-icon class="icon" icon="toggle"></nts-icon>
+        <nts-icon class="icon" icon="umbrella"></nts-icon>
+        <nts-icon class="icon" icon="undo"></nts-icon>
+        <nts-icon class="icon" icon="unlock"></nts-icon>
+        <nts-icon class="icon" icon="up"></nts-icon>
+        <nts-icon class="icon" icon="upload"></nts-icon>
+        <nts-icon class="icon" icon="video"></nts-icon>
+        <nts-icon class="icon" icon="volume"></nts-icon>
+        <nts-icon class="icon" icon="watch"></nts-icon>
+        <nts-icon class="icon" icon="zoom-in"></nts-icon>
+        <nts-icon class="icon" icon="zoom-out"></nts-icon>
+      </div>
     </div>
 
   </nts-body>
