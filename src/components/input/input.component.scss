@@ -89,7 +89,7 @@ input, textarea{
   border-radius: $border-radius;
   @include border($border-width);
   &:focus{border-color: $brand-color !important}
-  &.floating{@include border(0);}
+  &.floating{@include border(0); background-color: transparent; }
 }
 .with-icon input{ padding-left: $input-height; }
 .with-icon-right input{ padding-right: $input-height; }
@@ -101,16 +101,21 @@ textarea{
   resize: vertical;
 }
 :host.input-large{
-  max-height: $input-height + $label-height*2;
-  label{ height: $input-height + $label-height*2; }
-  input, textarea{
+  input{
     height: $input-height + $label-height;
+  }
+  input, textarea{
     font-size: $font-largest;
   }
 }
-:host.input-text-big{
+:host.input-text-large{
   input, textarea{
     font-size: $font-large;
+  }
+}
+:host.input-text-xlarge{
+  input, textarea{
+    font-size: $font-xlarge;
   }
 }
 :host {

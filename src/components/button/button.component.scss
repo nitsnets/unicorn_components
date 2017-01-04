@@ -72,7 +72,7 @@ button.btn-large{
 }
 :host.btn-default{
   &>button, button.dropdown {
-    border: solid $border-width $medium-grey;
+    border: solid $border-width $light-alpha;
   }
 }
 :host.btn-primary{
