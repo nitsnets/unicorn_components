@@ -39,6 +39,27 @@ nts-icon {
   height: 14px;
 }
 
+.icon-wrap {
+  display: inline-block;
+  width: 100px;
+  margin: 0 2px 2px 0;
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid #f5f5f5;
+  text-align: center;
+  line-height: 1;
+  transition: transform 0.2s linear;
+
+  span {
+    display: block;
+    font-size: 11px;
+  }
+
+  &:hover {
+    transform: scale(1.5);
+  }
+}
+
 .clear {
   &::after {
     clear: both;
