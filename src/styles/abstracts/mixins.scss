@@ -167,10 +167,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-@mixin border($args...){
-  border-color: $medium-grey !important;
-  border-style: solid !important;
-  border-width: $args !important;
+@mixin border($width: $border-width){
+  border-color: $medium-grey;
+  border-style: solid;
+  border-width: $width;
 }
 /// Pseudo selector most common properties
 /// @param {String} $display
@@ -182,6 +182,7 @@
     position: $pos;
 }
 
+@mixin border-top(){ border-top: solid $medium-grey $border-width;}
 @mixin border-bottom(){ border-bottom: solid $medium-grey $border-width;}
 @mixin border-right(){ border-right: solid $medium-grey $border-width;}
 @mixin border-left(){ border-left: solid $medium-grey $border-width;}

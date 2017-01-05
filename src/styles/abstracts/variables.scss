@@ -8,7 +8,7 @@ $error-color-light: lighten($error-color, 30%);
 
 $warning-color: #f8d053;
 $warning-color-medium: lighten($warning-color, 10%);
-$warning-color-light: lighten($warning-color, 20%);
+$warning-color-light: lighten($warning-color, 27.5%);
 
 $success-color: #10cfbd;
 $success-color-medium: lighten($success-color, 40%);
@@ -39,6 +39,7 @@ $border-radius: 3px;
 
 $font-giant: 72px;
 $font-largest: 24px;
+$font-xlarge: 18px;
 $font-large: 16px;
 $font-regular: 13.3333px;
 $font-small: 11px;

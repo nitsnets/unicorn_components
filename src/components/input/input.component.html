@@ -30,6 +30,7 @@
       (ngModelChange)="onNgModelChange($event)"
       (blur)="ntsBlur.emit($event)"
       (focus)="ntsFocus.emit($event)"
+      (keypress)="ntsKeypress.emit($event)"
     />
     <nts-button
       class="clear-btn"
@@ -48,7 +49,8 @@
       [ngModel]="ntsModel"
       (ngModelChange)="onNgModelChange($event)"
       (blur)="ntsBlur.emit($event)"
-      (focus)="ntsFocus.emit($event)">
+      (focus)="ntsFocus.emit($event)"
+      (keypress)="ntsKeypress.emit($event)">
     </textarea>
 
     <input
