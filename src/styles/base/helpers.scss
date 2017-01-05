@@ -1,0 +1,405 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+.u-color-black {
+    color: #000 !important;
+}
+
+.u-color-white {
+    color: #fff !important;
+}
+
+.u-color-brand {
+    color: $brand-color !important;
+}
+
+.u-color-grey {
+    color: $regular-grey !important;
+}
+
+.u-color-grey-dark {
+    color: $dark-grey !important;
+}
+
+.u-color-grey-light {
+    color: $light-grey !important;
+}
+
+/**
+ * Position relative
+ */
+.u-relative {
+    position: relative;
+}
+
+/**
+ * Clear inner floats
+ */
+.u-clearfix::after {
+    clear: both;
+    content: '';
+    display: table;
+}
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+.u-hide-text {
+    overflow: hidden;
+    padding: 0;
+    text-indent: 101%;
+    white-space: nowrap;
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.u-visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+
+/**
+ * Hide from both screenreaders and browsers
+ */
+.u-hidden {
+    display: none;
+    visibility: hidden;
+}
+
+
+/**
+ * Center a block in the screen
+ */
+.u-center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.u-pull-right {
+    float: right !important;
+}
+
+.u-pull-left {
+    float: left !important;
+}
+
+.u-text-center {
+    text-align: center !important;
+}
+
+.u-text-right {
+    text-align: right !important;
+}
+
+.u-text-left {
+    text-align: left !important;
+}
+
+.u-text-light {
+    font-weight: 300 !important;
+}
+
+.u-text-regular {
+    font-weight: 400 !important;
+}
+
+.u-text-medium {
+    font-weight: 500 !important;
+}
+
+.u-text-semibold {
+    font-weight: 600 !important;
+}
+
+.u-text-bold, strong {
+    font-weight: 700 !important;
+}
+
+.u-text-upper {
+    text-transform: uppercase;
+}
+
+.u-show {
+    display: block !important;
+}
+
+.u-invisible {
+    visibility: hidden;
+}
+
+.u-text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.u-affix {
+    position: fixed;
+}
+
+
+@at-root {
+    @-ms-viewport {
+        width: device-width;
+    }
+}
+
+// Visibility utilities
+// Note: Deprecated .u-visible-xs, .u-visible-sm, .u-visible-md, and .u-visible-lg as of v3.2.0
+
+@include responsive-invisibility('.u-visible-xxs');
+@include responsive-invisibility('.u-visible-xs');
+@include responsive-invisibility('.u-visible-sm');
+@include responsive-invisibility('.u-visible-md');
+@include responsive-invisibility('.u-visible-lg');
+
+.u-visible-xxs-block,
+.u-visible-xxs-inline,
+.u-visible-xxs-inline-block,,
+.u-visible-xs-block,
+.u-visible-xs-inline,
+.u-visible-xs-inline-block,
+.u-visible-sm-block,
+.u-visible-sm-inline,
+.u-visible-sm-inline-block,
+.u-visible-md-block,
+.u-visible-md-inline,
+.u-visible-md-inline-block,
+.u-visible-lg-block,
+.u-visible-lg-inline,
+.u-visible-lg-inline-block {
+    display: none !important;
+}
+
+@media (max-width: $screen-xxs-max) {
+    @include responsive-visibility('.u-visible-xxs');
+}
+
+.u-visible-xxs-block {
+    @media (max-width: $screen-xxs-max) {
+        display: block !important;
+    }
+}
+
+.u-visible-xxs-inline {
+    @media (max-width: $screen-xxs-max) {
+        display: inline !important;
+    }
+}
+
+.u-visible-xxs-inline-block {
+    @media (max-width: $screen-xxs-max) {
+        display: inline-block !important;
+    }
+}
+
+@media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
+    @include responsive-visibility('.u-visible-xs');
+}
+
+.u-visible-xs-block {
+    @media (max-width: $screen-xs-max) {
+        display: block !important;
+    }
+}
+
+.u-visible-xs-inline {
+    @media (max-width: $screen-xs-max) {
+        display: inline !important;
+    }
+}
+
+.u-visible-xs-inline-block {
+    @media (max-width: $screen-xs-max) {
+        display: inline-block !important;
+    }
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    @include responsive-visibility('.u-visible-sm');
+}
+
+.u-visible-sm-block {
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        display: block !important;
+    }
+}
+
+.u-visible-sm-inline {
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        display: inline !important;
+    }
+}
+
+.u-visible-sm-inline-block {
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        display: inline-block !important;
+    }
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    @include responsive-visibility('.u-visible-md');
+}
+
+.u-visible-md-block {
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+        display: block !important;
+    }
+}
+
+.u-visible-md-inline {
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+        display: inline !important;
+    }
+}
+
+.u-visible-md-inline-block {
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+        display: inline-block !important;
+    }
+}
+
+@media (min-width: $screen-lg-min) {
+    @include responsive-visibility('.u-visible-lg');
+}
+
+.u-visible-lg-block {
+    @media (min-width: $screen-lg-min) {
+        display: block !important;
+    }
+}
+
+.u-visible-lg-inline {
+    @media (min-width: $screen-lg-min) {
+        display: inline !important;
+    }
+}
+
+.u-visible-lg-inline-block {
+    @media (min-width: $screen-lg-min) {
+    display: inline-block !important;
+    }
+}
+
+@media (max-width: $screen-xxs-max) {
+    @include responsive-invisibility('.u-hidden-xxs');
+}
+
+@media (min-width: $screen-xs-min) and (max-width: $screen-xs-max ) {
+    @include responsive-invisibility('.u-hidden-xs');
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    @include responsive-invisibility('.u-hidden-sm');
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    @include responsive-invisibility('.u-hidden-md');
+}
+
+@media (min-width: $screen-lg-min) {
+    @include responsive-invisibility('.u-hidden-lg');
+}
+
+
+/**
+ * Hide SVG sprites
+ */
+.svg-sprite {
+    position: absolute;
+    display: none;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+
+
+.u-loading {
+    display: inline-block;
+}
+
+.u-animation-spin {
+    animation: animation-spin 0.65s infinite linear;
+}
+
+@keyframes animation-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+.backdrop {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: -1;
+    background: transparent;
+}
+
+.u-mt0 {
+    margin-top: 0px !important;
+}
+
+.u-mb0 {
+    margin-bottom: 0px !important;
+}
+
+.u-mb10 {
+    margin-bottom: 10px !important;
+}
+
+.u-mb15 {
+    margin-bottom: 15px !important;
+}
+
+.u-mb20 {
+    margin-bottom: 20px !important;
+}
+
+.u-mb25 {
+    margin-bottom: 25px !important;
+}
+
+.u-mb30 {
+    margin-bottom: 30px !important;
+}
+
+.u-mb35 {
+    margin-bottom: 35px !important;
+}
+
+.u-text-lowercase {
+    text-transform: lowercase;
+}
+
+.u-overflow-hidden {
+    overflow: hidden;
+}
+
+.u-text-underline {
+    text-decoration: underline;
+}

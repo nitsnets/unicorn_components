@@ -6,11 +6,8 @@
   align-items: center;
   background-color: $medium-grey;
   display: inline-flex;
-  font-family: "Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: $font-small;
-  font-weight: 600;
-  height: $input-height - $basic-padding / 2;
-  padding: 0 $basic-padding / 5;
+  padding: $basic-padding / 10 $basic-padding / 5;
 
   &.primary{ background-color: $brand-color; color: white; .icon, .remove{ @include invert; } }
   &.success{ background-color: $success-color; color: white; .icon, .remove{ @include invert; } }

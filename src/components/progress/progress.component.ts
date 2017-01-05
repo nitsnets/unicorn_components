@@ -9,7 +9,7 @@ export class NtsProgressComponent {
 
   @Input() value = 0;
   @Input() total = 100;
-  @Input() showPercentage = true;
+  @Input() showPercentage = false;
   @Input() showCount = false;
 
   constructor() { }
