@@ -31,8 +31,21 @@
   &.full{
     background-color: $modal-bg-full;
     .modal-container{
-      background-color: $modal-bg-light;
       border: 0;
+      background-color: transparent;
+    }
+    .close-button{
+
+    }
+  }
+
+  &.aside {
+    padding-top: 0;
+    justify-content: flex-end;
+
+    .modal-container{
+      height: 100%;
+      width: 30%;
     }
     .close-button{
 

@@ -1,4 +1,7 @@
-<div class="modal-bg" [class.full]="modalOptions['full']">
+<div class="modal-bg" [ngClass]="{
+  full: modalOptions['type'] === 'full',
+  aside: modalOptions['type'] === 'aside'
+}">
   <div class="modal-container" (clickOutside)="onClickOutside($event)">
     <nts-header>
       <h3>{{modalOptions['title']}}</h3>
