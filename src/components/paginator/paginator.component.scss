@@ -14,14 +14,12 @@
   &.center {
     .container {
       text-align: center;
-      padding: $basic-padding;
     }
   }
-
   .container {
-    padding: $basic-padding;
     display: flex;
     justify-content: center;
+    align-items: center;
 
     @include mq($from: sm) {
       justify-content: space-between;
@@ -30,6 +28,7 @@
   .pages {
     display: flex;
     align-items: center;
+
   }
   .page {
     display: flex;
@@ -39,12 +38,13 @@
     align-items: center;
     justify-content: center;
     border-radius: $input-height / 2;
+    color: $dark-grey;
 
     &.selectable {
       cursor: default;
       &:hover { background-color: $lightest-alpha }
     }
-    &.selected { color: $brand-color; font-weight: bold; }
+    &.selected { color: $black; font-weight: bold; }
   }
 
   .counter {

@@ -1,0 +1,22 @@
+@import './../../styles/abstracts/index.scss';
+
+:host {
+  display: flex;
+}
+.container {
+  display: flex;
+}
+.input-container {
+  flex: 1;
+  position: relative;
+}
+.inputs-container { display: flex; }
+.input { flex: 1; }
+.spacing { margin-right: $basic-padding / 2;}
+.calendar-container {
+  margin-top: $basic-padding / 2;
+  position: absolute;
+  z-index: 1;
+  &.align-right { right: 0; }
+  &.align-left { left: 0; }
+}

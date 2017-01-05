@@ -22,7 +22,7 @@ $m-radius: $clock-size/2 - $m-padding - $m-size/2;
   width: $clock-size;
   height: $clock-size;
   background-color: #fff;
-  
+
   @include border-radius($border-radius);
   @include border($border-width);
   @include no-touch();
@@ -60,7 +60,7 @@ $m-radius: $clock-size/2 - $m-padding - $m-size/2;
 @mixin clock-tick($width, $height) {
   width: $width;
   height: $height;
-  background-color: #018fa3;
+  background-color: $brand-color;
   position: absolute;
   top: $clock-size/2 - $height;
   left: $clock-size/2 - $width/2;

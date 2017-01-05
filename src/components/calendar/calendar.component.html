@@ -1,4 +1,7 @@
-<div class="calendar-container">
+<div class="calendar-container" [ngClass]="{
+  'rangeFromActive': isRangeFromActive(),
+  'rangeToActive': isRangeToActive()
+}">
   <div class="month-name">
       <nts-button icon="back" (click)="previous()"></nts-button>
       <p>{{month.format("MMMM YYYY")}}</p>
@@ -7,19 +10,22 @@
   <div class="days-name">
       <p *ngFor="let dayName of dayNames">{{dayName}}</p>
   </div>
-  <div class="week-row" *ngFor="let week of weeks">
-      <p *ngFor="let day of week.days">
-        <span class="day"
-          [ngClass]="{
-            'today': day.isToday,
-            'different-month': !day.isCurrentMonth,
-            'selected': day.date.isSame(selected),
-            'unavailable': maxDate && day.date.isAfter(maxDate) || minDate && day.date.isBefore(minDate)
-          }"
-          (click)="select(day)">
-
-          {{day.number}}
-        </span>
-      </p>
+  <div class="week-row" *ngFor="let week of weeks"
+    >
+    <p class="day-container"
+      *ngFor="let day of week.days"
+      [ngClass]="{
+        'selected': day.date.isSame(selected),
+        'rangeMiddle': day.isRangeMiddle,
+        'rangeFrom': day.isRangeFrom,
+        'rangeTo': day.isRangeTo,
+        'today': day.isToday,
+        'different-month': !day.isCurrentMonth,
+        'unavailable': day.isUnavailable
+      }">
+      <span class="day" (click)="select(day)">
+        {{day.number}}
+      </span>
+    </p>
   </div>
 </div>

@@ -1,7 +1,7 @@
 <div class="container">
 
   <p class="counter">
-    Showing <b>{{selected * pageSize + 1}} to {{(selected + 1) * pageSize}}</b> of {{totalElements}} entries
+    Showing <b>{{selected * pageSize + 1}} to {{min(totalElements, (selected + 1) * pageSize)}}</b> of {{totalElements}} entries
   </p>
 
   <div class="pages">

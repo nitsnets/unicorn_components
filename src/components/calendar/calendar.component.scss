@@ -1,5 +1,16 @@
 @import './../../styles/abstracts/index.scss';
 
+@mixin halfBg($side, $color: $brand-color-light) {
+  &::before {
+    @include pseudo;
+    background-color: $color;
+    z-index: 0;
+    height: 100%;
+    width: 50%;
+    @if $side == left { left: 0; } @else { right: 0; }
+  }
+}
+
 :host.floating {
   .calendar-container { border: 0; }
 }
@@ -30,6 +41,28 @@
   flex:1;
   p{ display: flex; justify-content: center; }
 }
+.day-container {
+  position: relative;
+
+  &:hover { .day{ background-color: $lightest-alpha; } }
+  &.today { .day { border: 1px $brand-color solid;} }
+  &.selected { .day { background-color: $brand-color; color: white; } }
+  &.rangeFrom { .day {background-color: $brand-color-medium;} }
+  &.rangeTo { .day {background-color: $brand-color-medium;} }
+  &.rangeMiddle { background-color: $brand-color-light }
+  &.different-month { visibility: hidden}
+  &.unavailable { opacity: 0.25; }
+
+  .rangeFromActive & {
+    &.selected { @include halfBg(left) }
+    &.rangeFrom { @include halfBg(right) }
+  }
+  .rangeToActive & {
+    &.selected { @include halfBg(right) }
+    &.rangeTo { @include halfBg(left) }
+  }
+}
+
 .day {
   @include border-radius(50%);
   cursor: default;
@@ -38,9 +71,5 @@
   height: 30px;
   align-items: center;
   justify-content: center;
-  &:hover:not(.selected):not(.unavailable) { background-color: $lightest-alpha; }
-  &.today { color: $brand-color; font-weight: bold; border: 1px $brand-color solid;}
-  &.selected { background-color: $brand-color; color: white; }
-  &.different-month { visibility: hidden}
-  &.unavailable { opacity: 0.25; }
+  z-index: 1;
 }
