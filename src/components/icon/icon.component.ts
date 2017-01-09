@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NtsIconComponent implements OnInit {
     @Input() icon: string;
-    @Input() size: string = 'medium';
+    @Input() size: string;
     constructor() { }
     ngOnInit() { }
 }

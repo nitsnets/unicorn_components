@@ -34,11 +34,6 @@ nts-face {
   margin-right: 5px;
 }
 
-nts-icon {
-  width: 14px;
-  height: 14px;
-}
-
 .icon-wrap {
   display: inline-block;
   width: 100px;
@@ -52,11 +47,12 @@ nts-icon {
 
   span {
     display: block;
+    margin-top: 5px;
     font-size: 11px;
   }
 
   &:hover {
-    transform: scale(1.5);
+    transform: scale(1.25);
   }
 }
 
