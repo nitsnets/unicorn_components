@@ -1,0 +1,17 @@
+@import './../../styles/abstracts/index.scss';
+
+.tabs-container {
+    display: flex;
+    @include border-bottom;
+}
+
+.tab {
+    padding: 2*$basic-padding/3 $basic-padding;
+    line-height: 2*$basic-padding/3 - $border-width * 2;
+    border-bottom: $border-width * 2 transparent solid;
+    cursor: default;
+
+    &.selected{
+      border-bottom: $border-width * 2 $brand-color solid;
+    }
+}

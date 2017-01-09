@@ -32,40 +32,14 @@ import { NtsProgressComponent } from './progress/progress.component';
 import { NtsBadgeComponent } from './badge/badge.component';
 import { NtsPaginatorComponent } from './paginator/paginator.component';
 import { NtsDaterangePickerComponent } from './daterange-picker/daterange-picker.component';
+import { NtsTabsComponent } from './tabs/tabs.component';
 
 export const NTS_COMPONENTS = [
-  NtsPopupComponent,
-  NtsPopupTriggerDirective,
-  NtsPopupContainerComponent,
-  NtsDropdownComponent,
-  NtsDropdownTriggerDirective,
-  NtsDropdownContainerComponent,
-  NtsDropdownItemComponent,
-  NtsInputComponent,
-  NtsCheckboxComponent,
-  NtsRadioComponent,
-  NtsButtonComponent,
-  NtsHeaderComponent,
-  NtsSelectComponent,
-  NtsSeparatorComponent,
-  NtsBodyComponent,
-  NtsDatetimePickerComponent,
-  NtsClockComponent,
-  NtsIconComponent,
-  NtsCalendarComponent,
-  NtsAsideComponent,
-  NtsLayoutComponent,
-  NtsSearchHeaderComponent,
-  NtsAccordionComponent,
-  NtsColorPickerComponent,
-  NtsImagePickerComponent,
-  NtsSimpleListComponent,
-  NtsBoxComponent,
-  NtsRowComponent,
-  NtsChipComponent,
-  NtsProgressComponent,
-  NtsFaceComponent,
-  NtsBadgeComponent,
-  NtsPaginatorComponent,
-  NtsDaterangePickerComponent
+  NtsPopupComponent, NtsPopupTriggerDirective, NtsPopupContainerComponent, NtsDropdownComponent, NtsDropdownTriggerDirective,
+  NtsDropdownContainerComponent, NtsDropdownItemComponent, NtsInputComponent, NtsCheckboxComponent, NtsRadioComponent,
+  NtsButtonComponent, NtsHeaderComponent, NtsSelectComponent, NtsSeparatorComponent, NtsBodyComponent, NtsDatetimePickerComponent,
+  NtsClockComponent, NtsIconComponent, NtsCalendarComponent, NtsAsideComponent, NtsLayoutComponent, NtsSearchHeaderComponent,
+  NtsAccordionComponent, NtsColorPickerComponent, NtsImagePickerComponent, NtsSimpleListComponent, NtsBoxComponent, NtsRowComponent,
+  NtsChipComponent, NtsProgressComponent, NtsFaceComponent, NtsBadgeComponent, NtsPaginatorComponent, NtsDaterangePickerComponent,
+  NtsTabsComponent
 ];

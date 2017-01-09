@@ -1,0 +1,8 @@
+<div class="tabs-container" *ngIf="tabs && tabs.length">
+  <div class="tab"
+    *ngFor="let tab of tabs; let i = index;"
+    [class.selected]="i === tabSelected"
+    (click)="selectTab(tab, i)">
+    {{tab.label}}
+  </div>
+</div>
