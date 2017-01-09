@@ -34,30 +34,27 @@ nts-face {
   margin-right: 5px;
 }
 
-nts-icon {
-  width: 14px;
-  height: 14px;
-}
-
 .icon-wrap {
   display: inline-block;
   width: 100px;
-  margin: 0 2px 2px 0;
+  margin: 0 2px 6px 0;
   padding: 4px;
   background-color: #fff;
   border: 1px solid transparent;
+  border-radius: 2px;
   text-align: center;
   line-height: 1;
   transition: transform 0.2s linear;
 
   span {
     display: block;
+    margin-top: 5px;
     font-size: 11px;
   }
 
   &:hover {
     border: 1px solid #e6e6e6;
-    transform: scale(1.5);
+    transform: scale(1.25);
   }
 }
 
