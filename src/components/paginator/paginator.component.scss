@@ -28,8 +28,17 @@
   .pages {
     display: flex;
     align-items: center;
-
   }
+
+  .paginator-icon {
+    padding: $basic-padding / 3;
+    opacity: 0.35;
+
+    &:hover {
+      opacity: 0.65;
+    }
+  }
+
   .page {
     display: flex;
     min-width: $input-height;
@@ -39,12 +48,14 @@
     justify-content: center;
     border-radius: $input-height / 2;
     color: $dark-grey;
+    opacity: 0.35;
+    font-size: $font-small;
+    cursor: pointer;
 
     &.selectable {
-      cursor: default;
-      &:hover { background-color: $lightest-alpha }
+      &:hover { opacity: 0.65; }
     }
-    &.selected { color: $black; font-weight: bold; }
+    &.selected { opacity: 1; font-weight: bold; }
   }
 
   .counter {
