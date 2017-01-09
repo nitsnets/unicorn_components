@@ -8,9 +8,11 @@ import { NtsOption } from '../../models/option';
 })
 export class NtsTabsComponent implements OnChanges {
 
+  @Input() size: 'small';
+
   @Input() tabs: NtsOption[];
-  @Input() tabSelected: number;
-  @Output() tabSelectedChange = new EventEmitter<number>();
+  @Input() tabSelected: string | number;
+  @Output() tabSelectedChange = new EventEmitter<string | number>();
 
   constructor(private elementRef: ElementRef) { }
 
@@ -23,8 +25,14 @@ export class NtsTabsComponent implements OnChanges {
   }
 
   selectTab(tab: NtsOption, i: number) {
-    if (this.tabSelected === i) { return; }
-    this.tabSelected = i;
-    this.tabSelectedChange.emit(i);
+    if (tab.value) {
+      if (this.tabSelected === tab.value) { return; }
+      this.tabSelected = tab.value;
+      this.tabSelectedChange.emit(tab.value);
+    } else {
+      if (this.tabSelected === i) { return; }
+      this.tabSelected = i;
+      this.tabSelectedChange.emit(i);
+    }
   }
 }

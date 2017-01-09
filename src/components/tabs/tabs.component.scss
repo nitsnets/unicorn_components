@@ -7,11 +7,28 @@
 
 .tab {
     padding: 2*$basic-padding/3 $basic-padding;
-    line-height: 2*$basic-padding/3 - $border-width * 2;
+    line-height: $basic-padding/3 - $border-width * 3;
     border-bottom: $border-width * 2 transparent solid;
     cursor: default;
+    opacity: 0.5;
+
+    :hover {
+      opacity: 0.75;
+    }
 
     &.selected{
       border-bottom: $border-width * 2 $brand-color solid;
+      opacity: 1;
+    }
+    &.small {
+      border-bottom: $border-width transparent solid;
+      padding: $basic-padding/3 $basic-padding/2;
+      line-height: $basic-padding/2 - $border-width * 2;
+
+      &.selected{
+        border-bottom: $border-width $brand-color solid;
+      }
     }
 }
+
+
