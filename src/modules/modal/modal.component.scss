@@ -12,8 +12,8 @@
   justify-content: center;
   align-items: flex-start;
   overflow-y: auto;
+  padding: 20% 0;
 
-  padding-top: 20%;
   @include xs { padding-top: 100px;}
 
   .modal-container{
@@ -40,7 +40,7 @@
   }
 
   &.aside {
-    padding-top: 0;
+    padding: 0;
     justify-content: flex-end;
 
     .modal-container{

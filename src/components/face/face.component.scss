@@ -19,9 +19,8 @@
   &.big { width: $input-height * 2; height: $input-height * 2; }
   &.initial { background-color: $regular-grey; }
 
-  p{
+  .letter{
     color: white;
-    font-weight: 700;
   }
 
   .icon {
