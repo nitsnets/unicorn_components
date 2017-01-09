@@ -80,5 +80,14 @@ i {
   &.arrow-left:before { content: '\e81d'; } /* '' */
   &.arrow-right:before { content: '\e81e'; } /* '' */
   &.arrow-up:before { content: '\e81f'; } /* '' */
-
+  &.google:before { content: '\e8e4'; } /* '' */
+  &.search:before { content: '\e8e5'; } /* '' */
+  &.board:before { content: '\e900'; } /* '' */
+  &.star-filled:before { content: '\e901'; } /* '' */
+  &.star-half:before { content: '\e902'; } /* '' */
+  &.star:before { content: '\e903'; } /* '' */
+  &.suitcase:before,
+  &.briefcase:before { content: '\e904'; } /* '' */
+  &.dollar:before { content: '\e905'; } /* '' */
+  &.caret:before { content: '\e906'; } /* '' */
 }
