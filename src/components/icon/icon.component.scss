@@ -3,11 +3,13 @@
 :host {
   display: inline-flex;
 }
+
 :host.paginator-icon {
   i {
     font-size: $font-small;
   }
 }
+
 i {
   display: block;
   position: relative;
@@ -53,6 +55,11 @@ i {
     /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
   }
 
+  &.caret {
+    font-size: $font-large / 2;
+    line-height: $label-height;
+  }
+
   &.user:before { content: '\e800'; } /* '' */
   &.user-unfollow:before { content: '\e801'; } /* '' */
   &.user-following:before { content: '\e802'; } /* '' */
@@ -71,7 +78,7 @@ i {
   &.list:before { content: '\e80f'; } /* '' */
   &.graph:before { content: '\e810'; } /* '' */
   &.square-check:before { content: '\e811'; } /* '' */
-  &.calender:before { content: '\e812'; } /* '' */
+  &.calendar:before { content: '\e812'; } /* '' */
   &.chart:before { content: '\e813'; } /* '' */
   &.clock:before { content: '\e814'; } /* '' */
   &.doc:before { content: '\e815'; } /* '' */
@@ -92,9 +99,10 @@ i {
   &.filled-circle:before { content: '\e8e6'; } /* '' */
   &.minus-circle:before { content: '\e8e9'; } /* '' */
   &.plus-circle:before { content: '\e8ea'; } /* '' */
-  &.caret-down:before { content: '\e8eb'; } /* '' */
+  &.caret:before { content: '\e8eb'; } /* '' */
   &.circle-check:before { content: '\e8ec'; } /* '' */
   &.circle:before { content: '\e8ed'; } /* '' */
+  &.close:before { content: '\e8ee'; } /* '' */
   &.board:before { content: '\e900'; } /* '' */
   &.star-filled:before { content: '\e901'; } /* '' */
   &.star-half:before { content: '\e902'; } /* '' */
