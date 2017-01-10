@@ -1,8 +1,9 @@
 <div class="modal-bg" [ngClass]="{
   full: modalOptions['type'] === 'full',
-  aside: modalOptions['type'] === 'aside'
+  aside: modalOptions['type'] === 'aside',
+  leaving: leaving
 }">
-  <div class="modal-container" (clickOutside)="onClickOutside($event)">
+  <div class="modal-container" (clickOutside)="onClickOutside($event)" [class.leaving]="leaving">
     <nts-header>
       <h3>{{modalOptions['title']}}</h3>
       <nts-button icon="close" (click)="onCancel()" class="close-button"></nts-button>
