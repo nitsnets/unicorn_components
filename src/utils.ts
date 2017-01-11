@@ -57,7 +57,7 @@ export function removeAccents(input: string): string {
     { re: /[\xF1]/g, ch: 'n' }
   ];
   for (var i = 0, len = rExps.length; i < len; i++) {
-    input = input.replace(rExps[i].re, rExps[i].ch);
+    input = ('' + input).replace(rExps[i].re, rExps[i].ch);
   }
   return input;
 }
