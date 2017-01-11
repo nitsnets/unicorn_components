@@ -27,7 +27,7 @@
     &:not(.with-dropdown){min-width: 100%;}
 
     &.with-dropdown{border-radius: $border-radius 0 0 $border-radius; border-right-width: 0 !important;}
-    &.dropdown{ border-radius: 0 $border-radius $border-radius 0; border-left: 1px solid $light-alpha; padding: $input-padding/2 $input-padding/2 0 $input-padding; }
+    &.dropdown{ border-radius: 0 $border-radius $border-radius 0; border-left: 1px solid $light-alpha; padding: $input-padding/2 $input-padding 0 $input-padding; }
     &.dropdown-large{ height: $input-height * 2; .icon{margin-top: $basic-padding/2;}}
     &.with-popup{padding-right: $input-height + $basic-padding/2;}
     &.only-icon{ width: $input-height; padding: $input-padding/4; border-radius:$input-height/2; }

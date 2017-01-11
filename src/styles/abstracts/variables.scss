@@ -30,9 +30,10 @@ $lightest-alpha-white: rgba(255, 255, 255, 0.9);
 $light-alpha-white: rgba(255, 255, 255, 0.75);
 $medium-alpha-white: rgba(255, 255, 255, 0.3);
 $dark-alpha-white: rgba(255, 255, 255, 0.1);
+$light-alpha-black: rgba(0, 0, 0, 0.3);
 
 $modal-bg-full: $lightest-alpha-white;
-$modal-bg: $light-alpha-white;
+$modal-bg: $light-alpha-black;
 $modal-bg-light: $medium-alpha-white;
 
 $border-width: 1px;
