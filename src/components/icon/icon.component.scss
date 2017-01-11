@@ -16,6 +16,11 @@ i {
   font-size: $font-regular;
   transition: all 0.1s linear;
 
+  &.small {
+    padding: $font-regular / 4;
+    font-size: $font-regular / 2;
+  }
+
   &.large {
     font-size: $input-height - $border-width;
   }
@@ -103,6 +108,8 @@ i {
   &.circle-check:before { content: '\e8ec'; } /* '' */
   &.circle:before { content: '\e8ed'; } /* '' */
   &.close:before { content: '\e8ee'; } /* '' */
+  &.chevron-left:before { content: '\e8ef'; } /* '' */
+  &.chevron-right:before { content: '\e8f0'; } /* '' */
   &.board:before { content: '\e900'; } /* '' */
   &.star-filled:before { content: '\e901'; } /* '' */
   &.star-half:before { content: '\e902'; } /* '' */

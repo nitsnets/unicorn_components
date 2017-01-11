@@ -29,13 +29,13 @@
 .month-name, .days-name, .week-row {
   display: flex;
   align-items: center;
-  p{ flex:1; text-align: center; }
+  p{ flex:1; text-align: center; margin: 0; }
 }
 .month-name {
   p{ font-weight: bold; }
 }
 .days-name {
-  p{ color: $medium-grey; font-weight: bold; font-size: 10px; }
+  p{ color: $brand-color; font-weight: bold; font-size: $font-small - 1px; text-transform: uppercase; }
 }
 .week-row {
   flex:1;
@@ -64,7 +64,7 @@
 }
 
 .day {
-  @include border-radius(50%);
+  @include border-radius($label-height / 5);
   cursor: default;
   display: flex;
   width: 30px;
