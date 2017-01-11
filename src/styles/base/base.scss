@@ -134,7 +134,7 @@ p {
 
 ol, ul {
     margin: 0 0 10px 0;
-    padding: 0 0 0 20px;
+    padding: 0;
 
     > li {
         line-height: 24px;
@@ -167,7 +167,7 @@ code {
 }
 
 mark {
-    padding: .2em;
+    padding: .2em 0;
     background-color: #fcf8e3;
 }
 
