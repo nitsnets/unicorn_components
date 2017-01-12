@@ -15,7 +15,7 @@
   justify-content: center;
   position: relative;
 
-  &.small { width: $input-height; height: $input-height;}
+  &.small { width: $input-xs-height; height: $input-xs-height;}
   &.big { width: $input-height * 2; height: $input-height * 2; }
   &.initial { background-color: $regular-grey; }
 
@@ -25,6 +25,10 @@
 
   .icon {
     opacity: 0.25;
+  }
+
+  @include mq($from: sm) {
+    &.small { width: $input-height; height: $input-height;}
   }
 }
 

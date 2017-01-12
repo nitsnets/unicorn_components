@@ -18,10 +18,8 @@ $modal-animation-time: 200ms;
   justify-content: center;
   align-items: flex-start;
   overflow-y: auto;
-  padding: 20% 0;
+  padding: 5%;
   @include animation(bg-enter $modal-animation-time);
-
-  @include xs { padding-top: 100px;}
 
   &.leaving{
     opacity: 0;
@@ -31,7 +29,7 @@ $modal-animation-time: 200ms;
   .modal-container{
     border: $border-width $medium-grey solid;
     background-color: #fff;
-    width: 80%;
+    width: 100%;
     max-width: 800px;
 
     .close-button{
@@ -74,5 +72,13 @@ $modal-animation-time: 200ms;
     .close-button{
 
     }
+  }
+
+  @include mq($from: sm) {
+    padding-top: $aside-width / 6;
+  }
+
+  @include mq($from: lg) {
+    padding-top: $aside-width / 3;
   }
 }

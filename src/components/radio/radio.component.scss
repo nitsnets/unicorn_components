@@ -25,9 +25,11 @@
 
     &.only-icon{ border-radius:$input-height/2;}
 
-    &:hover{background-color: $lightest-alpha}
-    &:focus{background-color: $light-alpha}
-    &:active{background-color: $medium-alpha;}
+    &:not(.only-icon) {
+      &:hover {background-color: $lightest-alpha}
+      &:focus{background-color: $light-alpha}
+      &:active{background-color: $medium-alpha;}
+    }
 
     .icon{ opacity: 0.25; }
     &.checked,

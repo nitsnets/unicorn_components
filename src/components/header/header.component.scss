@@ -1,13 +1,12 @@
 @import './../../styles/abstracts/index.scss';
 
-@mixin header($height:$header-height, $padding:$basic-padding){
+@mixin header($height:$header-xs-height, $padding:$basic-padding){
   @include border-bottom();
   @include flexbox();
   height: $height;
-  padding: 0 $padding;
+  padding: 0 $padding / 2;
   align-items: center;
-  transition: margin-top ease $slow;
-  
+  transition: all ease $slow;
 
   &.hidden{ margin-top:-$height; }
   &.grey{ background-color: $lightest-alpha; }
@@ -16,16 +15,26 @@
     border-color: $error-color-medium !important;
     color: $error-color;
   }
+
+  @include mq($from: sm) {
+    padding: 0 $padding;
+    height: $header-height;
+  }
 }
 
 :host.less-padding{
   header{
     padding: 0 $basic-padding/2;
   }
-  
 }
 
 
 
 header{ @include header(); }
-header.medium{ @include header($header-md-height); }
+header.medium{
+  @include header($header-xs-height);
+
+  @include mq($from: sm) {
+    height: $header-md-height;
+  }
+}

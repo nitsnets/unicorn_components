@@ -27,7 +27,11 @@ i {
   }
 
   &.large {
-    font-size: $font-largest;
+    font-size: $font-regular;
+
+    @include mq($from: sm) {
+      font-size: $font-largest;
+    }
   }
 
   &::before {
@@ -69,6 +73,10 @@ i {
     font-size: $font-large / 2;
     line-height: $label-height;
   }
+  &.drag {
+    cursor: move;
+  }
+
 
   &.user:before { content: '\e800'; } /* '' */
   &.user-unfollow:before { content: '\e801'; } /* '' */
@@ -115,6 +123,9 @@ i {
   &.close:before { content: '\e8ee'; } /* '' */
   &.chevron-left:before { content: '\e8ef'; } /* '' */
   &.chevron-right:before { content: '\e8f0'; } /* '' */
+  &.drag:before { content: '\e8f1'; } /* '' */
+  &.more-v:before { content: '\e8f2'; } /* '' */
+  &.delete:before { content: '\e8f3'; } /* '' */
   &.board:before { content: '\e900'; } /* '' */
   &.star-filled:before { content: '\e901'; } /* '' */
   &.star-half:before { content: '\e902'; } /* '' */
