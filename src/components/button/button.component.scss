@@ -7,7 +7,7 @@
   button{
     display: block;
     overflow: hidden;
-    height: $input-height;
+    min-height: $input-xs-height;
     font-family: Arial, sans-serif;
     font-size: $font-regular;
     letter-spacing: 0.01em;
@@ -17,7 +17,7 @@
     outline: none;
 
     border: $border-width solid transparent;
-    padding: 0 $input-padding*2;
+    padding: 0 $input-padding;
     border-radius: $border-radius;
 
     background-color: transparent;
@@ -40,6 +40,11 @@
     }
     .sublabel{
       color: $regular-grey;
+    }
+
+    @include mq($from: sm) {
+      min-height: $input-height;
+      padding: 0 $input-padding * 2;
     }
   }
 }
@@ -159,8 +164,8 @@ button.btn-large{
   button{
     border: 0;
     border-radius: 0;
-    min-width: $header-height;
-    min-height: $header-height;
+    min-width: $header-xs-height;
+    min-height: $header-xs-height;
     &:hover{ background-color: $lightest-alpha }
     &:active{ background-color: $light-alpha }
     .icon{
@@ -178,6 +183,16 @@ button.btn-large{
     }
     span{
       padding-right: $header-height/4;
+    }
+
+    @include mq($from: sm) {
+      min-width: $header-height;
+      min-height: $header-height;
+
+      .icon {
+        top: $header-height/3;
+        left: $header-height/3;
+      }
     }
   }
 }

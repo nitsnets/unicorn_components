@@ -6,13 +6,19 @@
 .badge {
   align-items: center;
   background-color: $regular-grey;
-  border-radius: $input-height / 4;
+  border-radius: 50%;
   color: white;
   display: inline-flex;
-  font-size: $font-small;
-  height: $input-height / 2;
+  font-size: $font-smallest;
+  height: $input-height / 2 - 4px;
   justify-content: center;
-  min-width: $input-height / 2;
+  min-width: $input-height / 2 - 4px;
+
+  @include mq($from: sm) {
+    min-width: $input-height / 2;
+    height: $input-height / 2;
+    font-size: $font-small;
+  }
 }
 
 :host.primary { .badge { background-color: $brand-color; } }
