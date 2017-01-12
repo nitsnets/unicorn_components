@@ -13,7 +13,7 @@
     (ntsModelChange)="onFilter($event)">
   </nts-input>
 
-  <ul class="options" *ngIf="areOptionsVisible">
+  <ul class="options nospacing" *ngIf="areOptionsVisible">
     <li *ngIf="multiple && !search" class="option" (click)="onSelectAll()" (mousedown)="onSelectingOption(true)" (mouseup)="onSelectingOption(false)">Select all</li>
     <li *ngIf="multiple && !search" class="option" (click)="onSelect(null)" (mousedown)="onSelectingOption(true)" (mouseup)="onSelectingOption(false)">Select none</li>
 

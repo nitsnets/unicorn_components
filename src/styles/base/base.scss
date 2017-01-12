@@ -139,6 +139,10 @@ ol, ul {
     > li {
         line-height: 24px;
     }
+    &.nospacing {
+      margin: 0;
+      padding: 0;
+    }
 }
 
 hr {
@@ -148,6 +152,10 @@ hr {
     margin: 30px 0;
     margin: 3rem 0;
     box-sizing: content-box;
+
+    &.nospacing {
+      margin: 0;
+    }
 }
 
 code {

@@ -149,9 +149,8 @@ button.btn-large{
     &:hover{ background-color: $lightest-alpha }
     &:active{ background-color: $light-alpha }
     .icon{
-      height: 100%;
-      width: 100%;
-      opacity: 0.75;
+      height: 20px;
+      width: 20px;
       top: $header-height/4;
       left: $header-height/4;
     }
@@ -171,11 +170,12 @@ button.btn-large{
     &:active{ background-color: $light-alpha }
     .icon{
       position: absolute;
-      height: 100%;
-      width: 100%;
-      opacity: 0.75;
-      top: $header-xs-height/4;
-      left: $header-xs-height/4;
+      height: $header-height/3;
+      width: $header-height/3;
+      top: $header-height/3;
+      left: $header-height/3;
+      display: flex;
+      align-items: center;
 
       i {
         font-size: $font-large;
