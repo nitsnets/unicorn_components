@@ -20,12 +20,40 @@
 }
 
 .datetime-controls-container {
-  margin-top: $basic-padding / 2;
+  position: absolute;
   z-index: 1;
 
-  &.floating { position: absolute; }
-  &.align-right { right: 0; }
-  &.align-left { left: 0; }
+  &.floating {
+    position: absolute;
+
+    &:before {
+      @include pseudo;
+      top: -7px;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-bottom: 7px solid $medium-grey;
+      border-top: 0;
+    }
+
+    &:after {
+      @include pseudo;
+      top: -5px;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid #fff;
+      border-top: 0;
+    }
+  }
+  &.align-right {
+    right: 0;
+    &:before { right: 6px; }
+    &:after { right: 7px; }
+  }
+  &.align-left {
+    left: 0;
+    &:before { left: 6px; }
+    &:after { left: 7px; }
+  }
 }
 
 .datetime-buttons-container {

@@ -11,10 +11,10 @@
         (ntsFocus)="setMode('from')"
     > </nts-input>
     <div class="calendar-container"
+      *ngIf="mode === 'from'"
       [class.align-left]="side === 'left'"
       [class.align-right]="side === 'right'">
       <nts-calendar
-        *ngIf="mode === 'from'"
         [maxDate]="toModel || maxDate"
         [minDate]="minDate"
         [rangeTo]="toModel"
@@ -34,12 +34,11 @@
         (ntsModelChange)="onToChanges($event)"
         (ntsFocus)="setMode('to')"
     > </nts-input>
-    <div *ngIf="mode!==null"
+    <div *ngIf="mode === 'to'"
       class="calendar-container"
       [class.align-left]="side === 'left'"
       [class.align-right]="side === 'right'">
       <nts-calendar
-        *ngIf="mode === 'to'"
         [maxDate]="maxDate"
         [minDate]="fromModel || minDate"
         [rangeFrom]="fromModel"
