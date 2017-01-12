@@ -88,7 +88,7 @@ input, textarea{
   padding-right: $input-padding;
   border-radius: $border-radius;
   @include border($border-width);
-  &:focus{border-color: $brand-color !important}
+  &:focus{outline: none; background-color: $lightest-alpha !important; border-color: $light-alpha !important; }
   &.floating{@include border(0); background-color: transparent; }
 }
 .with-icon input{ padding-left: $input-height; }

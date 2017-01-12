@@ -170,12 +170,11 @@ button.btn-large{
     &:active{ background-color: $light-alpha }
     .icon{
       position: absolute;
-      height: $header-height/3;
-      width: $header-height/3;
-      top: $header-height/3;
-      left: $header-height/3;
-      display: flex;
-      align-items: center;
+      height: 100%;
+      width: 100%;
+      opacity: 0.75;
+      top: $header-xs-height/4;
+      left: $header-xs-height/4;
 
       i {
         font-size: $font-large;
