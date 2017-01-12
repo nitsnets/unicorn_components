@@ -9,23 +9,23 @@
     <div class="clock-minute-tick" [style.transform]="'rotate('+minuteDegrees+'deg)'"> </div>
     <div class="clock-center"> </div>
 
-    <ul class="clock-hours">
-      <li *ngFor="let hour of hours; let i = index"
+    <div class="clock-hours">
+      <span *ngFor="let hour of hours; let i = index"
         [class]="'clock-number clock-hour clock-hour-' + i"
         [ngClass]="{'selected': hourIndex === i}"
         (click)="selectHour(i)"
       >
         {{hour}}
-      </li>
-    </ul>
-    <ul class="clock-minutes">
-      <li *ngFor="let minute of minutes; let i = index"
+      </span>
+    </div>
+    <div class="clock-minutes">
+      <span *ngFor="let minute of minutes; let i = index"
         [class]=" 'clock-number clock-minute clock-minute-' + i"
         [ngClass]="{'selected': minuteIndex === i}"
         (click)="selectMinute(i)"
       >
         {{minute}}
-      </li>
-    </ul>
+      </span>
+    </div>
   </div>
 </div>
