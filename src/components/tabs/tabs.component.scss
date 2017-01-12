@@ -1,6 +1,7 @@
 @import './../../styles/abstracts/index.scss';
 
 .tabs-container {
+    max-height: $header-md-height;
     display: flex;
     @include border-bottom;
 }
@@ -21,7 +22,7 @@
 
   &:after {
     @include pseudo;
-    @include transition(all, 0.1s, linear)
+    @include transition(all, 0.1s, linear);
     width: 100%;
     height: 0;
     left: 50%;
