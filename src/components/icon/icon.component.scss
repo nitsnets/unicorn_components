@@ -15,6 +15,11 @@ i {
   position: relative;
   font-size: $font-regular;
   transition: all 0.1s linear;
+  opacity: 0.7;
+
+  @include on-event {
+    opacity: 1;
+  }
 
   &.small {
     padding: $font-regular / 4;
@@ -22,7 +27,7 @@ i {
   }
 
   &.large {
-    font-size: $input-height - $border-width;
+    font-size: $font-largest;
   }
 
   &::before {
