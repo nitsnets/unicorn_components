@@ -383,8 +383,43 @@
       </div>
     </div>
     <div *ngIf="tabSelected === 'charts'" class="content">
-      <div *ngFor="let chart of charts" [class]="'chart ' + chart.class">
-        <nts-chart [type]="chart.type" [series]="chart.series" [labels]="chart.labels" [options]="chart.options"></nts-chart>
+
+      <!-- ##################################################################
+           #############################  CHARTS  ###########################
+           ################################################################## -->
+      <h3>Charts</h3>
+      <nts-separator></nts-separator>
+
+      <div class="chart chart-half">
+        <nts-chart title="Line chart" type="line" [series]="lineSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
+      </div>
+      <div class="chart chart-half">
+        <nts-chart title="Area chart" type="line" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
+      </div>
+      <div class="chart chart-half">
+        <nts-chart title="Bar chart" type="bar" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
+      </div>
+      <div class="chart chart-half">
+        <nts-chart title="Stack chart" type="bar" [series]="baseSeries" [labels]="baseLabels" [options]="stackOptions"></nts-chart>
+      </div>
+      <div class="chart chart-half">
+        <nts-chart title="Horizontal bar chart" type="horizontalBar" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
+      </div>
+      <div class="chart chart-half">
+        <nts-chart title="Mixed chart" type="bar" [series]="mixedSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
+      </div>
+
+      <div class="chart chart-quarter">
+        <nts-chart title="chart" type="pie" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
+      </div>
+      <div class="chart chart-quarter">
+        <nts-chart title="chart" type="radar" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
+      </div>
+      <div class="chart chart-quarter">
+        <nts-chart title="chart" type="doughnut" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
+      </div>
+      <div class="chart chart-quarter">
+        <nts-chart title="chart" type="polarArea" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
       </div>
     </div>
     <div *ngIf="tabSelected === 'other'" class="content">

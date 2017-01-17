@@ -14,92 +14,22 @@ import { NtsDemoModalContentComponent } from './demo-modal-content/demo-modal-co
 export class DemoComponent {
   tabSelected = 'typos';
 
-  charts = [
-    {
-      class: 'chart-half',
-      type: 'line',
-      series: [{ label: 'Serie 1', data: [12, 19, 3, 5, 2, 3] }, { label: 'Serie 2', data: [22, 12, 20, 10, 5, 1] }],
-      labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5', 'Label 6'],
-      options: {},
-    },
-    {
-      class: 'chart-half',
-      type: 'line',
-      series: [
-        { label: 'Serie 1', data: [12, 19, 3, 5, 2, 3], fill: false },
-        { label: 'Serie 2', data: [22, 12, 20, 10, 5, 1], fill: false }
-      ],
-      labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5', 'Label 6'],
-      options: {},
-    },
-    {
-      class: 'chart-half',
-      type: 'bar',
-      series: [{ label: 'Serie 1', data: [12, 19, 3, 5, 2, 3] }, { label: 'Serie 2', data: [22, 12, 20, 10, 5, 1] }],
-      labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5', 'Label 6'],
-      options: {},
-    },
-    {
-      class: 'chart-half',
-      type: 'horizontalBar',
-      series: [{ label: 'Serie 1', data: [12, 19, 3, 5, 2, 3] }, { label: 'Serie 2', data: [22, 12, 20, 10, 5, 1] }],
-      labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5', 'Label 6'],
-      options: {},
-    },
-    {
-      class: 'chart-half',
-      type: 'bar',
-      series: [{ label: 'Serie 1', data: [12, 19, 3, 5, 2, 3] }, { label: 'Serie 2', data: [22, 12, 20, 10, 5, 1] }],
-      labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5', 'Label 6'],
-      options: {
-        scales: {
-          xAxes: [{
-            stacked: true
-          }],
-          yAxes: [{
-            stacked: true
-          }]
-        }
-      }
-    },
-    { // Mixed chart
-      class: 'chart-half',
-      type: 'bar',
-      series: [
-        { type: 'bar', label: 'Serie 1', data: [12, 19, 3, 5, 2, 3] },
-        { type: 'line', label: 'Serie 2', data: [22, 12, 20, 10, 5, 1] }],
-      labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5', 'Label 6'],
-      options: {},
-    },
-    {
-      class: 'chart-quarter',
-      type: 'pie',
-      series: [{ label: 'Serie 1', data: [12, 19, 3, 5, 2, 3] }, { label: 'Serie 2', data: [22, 12, 20, 10, 5, 1] }],
-      labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5', 'Label 6'],
-      options: {},
-    },
-    {
-      class: 'chart-quarter',
-      type: 'radar',
-      series: [{ label: 'Serie 1', data: [12, 19, 3, 5, 2, 3] }, { label: 'Serie 2', data: [22, 12, 20, 10, 5, 1] }],
-      labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5', 'Label 6'],
-      options: {},
-    },
-    {
-      class: 'chart-quarter',
-      type: 'doughnut',
-      series: [{ label: 'Serie 1', data: [12, 19, 3, 5, 2, 3] }, { label: 'Serie 2', data: [22, 12, 20, 10, 5, 1] }],
-      labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5', 'Label 6'],
-      options: {},
-    },
-    {
-      class: 'chart-quarter',
-      type: 'polarArea',
-      series: [{ label: 'Serie 1', data: [12, 19, 3, 5, 2, 3] }, { label: 'Serie 2', data: [22, 12, 20, 10, 5, 1] }],
-      labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5', 'Label 6'],
-      options: {},
-    }
+  baseSeries = [
+    { label: 'Serie 1', data: [12, 19, 3, 5, 2, 3] },
+    { label: 'Serie 2', data: [22, 12, 20, 10, 5, 1] }
   ];
+  baseLabels = ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5', 'Label 6'];
+  baseOptions = {};
+
+  lineSeries = [
+    { label: 'Serie 1', data: [12, 19, 3, 5, 2, 3], fill: false },
+    { label: 'Serie 2', data: [22, 12, 20, 10, 5, 1], fill: false }
+  ];
+  mixedSeries = [
+    { label: 'Serie 1', data: [12, 19, 3, 5, 2, 3], type: 'bar' },
+    { label: 'Serie 2', data: [22, 12, 20, 10, 5, 1], type: 'line' }
+  ];
+  stackOptions = { scales: { xAxes: [{ stacked: true }], yAxes: [{ stacked: true }] } };
 
   constructor(
     private viewContainerRef: ViewContainerRef,
@@ -132,7 +62,4 @@ export class DemoComponent {
   closeTooltip() {
     this.tooltipService.close();
   }
-
-
-
 }

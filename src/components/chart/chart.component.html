@@ -1,6 +1,13 @@
 <div class="chart-container">
+  <h5 *ngIf="title">{{title}}</h5>
+
   <canvas baseChart
     class="chart"
+    [ngClass]="{
+      'chart-small': size === 'small',
+      'chart-medium': size === 'medium',
+      'chart-large': size === 'large'
+    }"
     [datasets]="series"
     [data]="series"
     [labels]="labels"

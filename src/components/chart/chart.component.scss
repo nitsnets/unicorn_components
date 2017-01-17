@@ -3,3 +3,6 @@
 .chart-container {
   @include noselect;
 }
+.chart-small { height: $chart-small; }
+.chart-medium { height: $chart-medium; }
+.chart-large { height: $chart-large; }
