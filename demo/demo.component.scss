@@ -6,7 +6,10 @@
 .header-logo {
   height: 80%;
 }
-
+.header-tabs {
+  align-self: flex-end;
+  margin-left: auto;
+}
 .content {
   padding: 30px;
 }
@@ -34,7 +37,16 @@ nts-badge,
 nts-face {
   margin-right: 5px;
 }
-
+.chart {
+  float: left;
+  padding-bottom: 30px;
+}
+.chart-half {
+  width: 50%;
+}
+.chart-quarter {
+  width: 25%;
+}
 .icon-wrap {
   display: inline-block;
   width: 100px;

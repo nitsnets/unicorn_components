@@ -65,9 +65,10 @@ label{
 
 .clear-btn{
   margin-left: - $input-height;
+
 }
 .with-two-icon-right {
-  .clear-btn{  margin-left: - 2 * $input-height; }
+  .clear-btn{  margin-left: - 50px; }
 }
 
 .hint{
@@ -93,7 +94,7 @@ input, textarea{
 }
 .with-icon input{ padding-left: $input-height; }
 .with-icon-right input{ padding-right: $input-height; }
-.with-two-icon-right input{ padding-right: 2 * $input-height; }
+.with-two-icon-right input{ padding-right: 40px; }
 .with-prefix input{ border-radius: 0 $border-radius $border-radius 0; }
 textarea{
   padding: $input-padding;

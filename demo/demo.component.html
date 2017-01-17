@@ -1,6 +1,18 @@
 <nts-header>
   <img class="header-logo" src="logo.png" alt="">
-  <h2 class="header-title">NTS Angular 2 Components - Showroom</h2>
+  <h2 class="header-title">NTS Angular - Showroom</h2>
+  <nts-tabs
+    class="noborder header-tabs"
+    [(tabSelected)]="tabSelected"
+    [tabs]="[
+      {label: 'Typos', value: 'typos'},
+      {label: 'Buttons', value: 'buttons'},
+      {label: 'Inputs', value: 'inputs'},
+      {label: 'Charts', value: 'charts'},
+      {label: 'Other', value: 'other'}
+    ]"
+  >
+  </nts-tabs>
 </nts-header>
 <nts-layout class="has-header">
   <!--
@@ -9,7 +21,7 @@
   </nts-aside>
   -->
   <nts-body class="full-width">
-    <div class="content">
+    <div *ngIf="tabSelected === 'typos'" class="content">
 
       <!-- ##################################################################
            ###########################  TYPOGRAPHY  #########################
@@ -44,7 +56,8 @@
         <li>Strive not to be a success...</li>
         <li>Whatever the mind of man can...</li>
       </ul>
-
+    </div>
+    <div *ngIf="tabSelected === 'buttons'" class="content">
 
       <!-- ##################################################################
            ############################  BUTTONS  ###########################
@@ -248,6 +261,8 @@
           </div>
         </nts-button>
       </div>
+    </div>
+    <div *ngIf="tabSelected === 'inputs'" class="content">
 
       <!-- ##################################################################
            #############################  INPUTS  ###########################
@@ -366,6 +381,13 @@
         <nts-input type="color" label="Color input" [(ntsModel)]="colorSelected"></nts-input>
         <nts-input type="color" label="Color input with swatch" [(ntsModel)]="colorSelected" [colorSwatch]="true"></nts-input>
       </div>
+    </div>
+    <div *ngIf="tabSelected === 'charts'" class="content">
+      <div *ngFor="let chart of charts" [class]="'chart ' + chart.class">
+        <nts-chart [type]="chart.type" [series]="chart.series" [labels]="chart.labels" [options]="chart.options"></nts-chart>
+      </div>
+    </div>
+    <div *ngIf="tabSelected === 'other'" class="content">
 
       <!-- ##################################################################
            #############################  OTHER  ############################
@@ -660,6 +682,5 @@
         <span>more-v</span>
       </span>
     </div>
-
   </nts-body>
 </nts-layout>

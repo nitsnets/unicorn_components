@@ -1,0 +1,14 @@
+<div class="chart-container">
+  <canvas baseChart
+    class="chart"
+    [datasets]="series"
+    [data]="series"
+    [labels]="labels"
+    [options]="options"
+    [chartType]="type"
+    [colors]="colors"
+    [legend]="true"
+    (chartHover)="chartHover.emit($event)"
+    (chartClick)="chartClick.emit($event)">
+  </canvas>
+</div>
