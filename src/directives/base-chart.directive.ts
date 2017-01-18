@@ -1,21 +1,21 @@
-import { OnDestroy, OnInit, OnChanges, EventEmitter, ElementRef, Input, Output, NgModule, SimpleChanges, Directive } from '@angular/core';
+import { OnDestroy, OnInit, OnChanges, EventEmitter, ElementRef, Input, Output, SimpleChanges, Directive } from '@angular/core';
 
 declare var Chart: any;
 
+const CHART_COLORS: Array<number[]> = [
+  [72, 176, 247],
+  [248, 208, 83],
+  [16, 207, 189],
+  [245, 87, 83],
+  [158, 255, 177],
+  [145, 81, 142],
+  [151, 187, 205],
+  [148, 159, 177],
+  [77, 83, 96]
+];
 /* tslint:disable-next-line */
 @Directive({ selector: 'canvas[baseChart]', exportAs: 'base-chart' })
 export class BaseChartDirective implements OnDestroy, OnChanges, OnInit {
-  public static defaultColors: Array<number[]> = [
-    [72, 176, 247],
-    [248, 208, 83],
-    [16, 207, 189],
-    [245, 87, 83],
-    [158, 255, 177],
-    [145, 81, 142],
-    [151, 187, 205],
-    [148, 159, 177],
-    [77, 83, 96]
-  ];
 
   @Input() public data: number[] | Array<number[]>;
   @Input() public datasets: any[];
@@ -188,7 +188,20 @@ export interface Colors extends Color {
   label?: string;
 }
 
-function rgba(colour: Array<number>, alpha: number): string {
+/**
+ * Generate colors for pie|doughnut charts
+ * @param count
+ * @returns {Colors}
+ */
+export function generateColors(count: number): Array<number[]> {
+  let colorsArr: Array<number[]> = new Array(count);
+  for (let i = 0; i < count; i++) {
+    colorsArr[i] = CHART_COLORS[i] || getRandomColor();
+  }
+  return colorsArr;
+}
+
+export function arrToRgba(colour: Array<number>, alpha = 1): string {
   return 'rgba(' + colour.concat(alpha).join(',') + ')';
 }
 
@@ -198,41 +211,41 @@ function getRandomInt(min: number, max: number): number {
 
 function formatLineColor(colors: Array<number>): Color {
   return {
-    backgroundColor: rgba(colors, 0.4),
-    borderColor: rgba(colors, 1),
-    pointBackgroundColor: rgba(colors, 1),
+    backgroundColor: arrToRgba(colors, 0.4),
+    borderColor: arrToRgba(colors, 1),
+    pointBackgroundColor: arrToRgba(colors, 1),
     pointBorderColor: '#fff',
     pointHoverBackgroundColor: '#fff',
-    pointHoverBorderColor: rgba(colors, 0.8)
+    pointHoverBorderColor: arrToRgba(colors, 0.8)
   };
 }
 
 function formatBarColor(colors: Array<number>): Color {
   return {
-    backgroundColor: rgba(colors, 0.6),
-    borderColor: rgba(colors, 1),
-    hoverBackgroundColor: rgba(colors, 0.8),
-    hoverBorderColor: rgba(colors, 1)
+    backgroundColor: arrToRgba(colors, 0.6),
+    borderColor: arrToRgba(colors, 1),
+    hoverBackgroundColor: arrToRgba(colors, 0.8),
+    hoverBorderColor: arrToRgba(colors, 1)
   };
 }
 
 function formatPieColors(colors: Array<number[]>): Colors {
   return {
-    backgroundColor: colors.map((color: number[]) => rgba(color, 0.6)),
+    backgroundColor: colors.map((color: number[]) => arrToRgba(color, 0.6)),
     borderColor: colors.map(() => '#fff'),
-    pointBackgroundColor: colors.map((color: number[]) => rgba(color, 1)),
+    pointBackgroundColor: colors.map((color: number[]) => arrToRgba(color, 1)),
     pointBorderColor: colors.map(() => '#fff'),
-    pointHoverBackgroundColor: colors.map((color: number[]) => rgba(color, 1)),
-    pointHoverBorderColor: colors.map((color: number[]) => rgba(color, 1))
+    pointHoverBackgroundColor: colors.map((color: number[]) => arrToRgba(color, 1)),
+    pointHoverBorderColor: colors.map((color: number[]) => arrToRgba(color, 1))
   };
 }
 
 function formatPolarAreaColors(colors: Array<number[]>): Color {
   return {
-    backgroundColor: colors.map((color: number[]) => rgba(color, 0.6)),
-    borderColor: colors.map((color: number[]) => rgba(color, 1)),
-    hoverBackgroundColor: colors.map((color: number[]) => rgba(color, 0.8)),
-    hoverBorderColor: colors.map((color: number[]) => rgba(color, 1))
+    backgroundColor: colors.map((color: number[]) => arrToRgba(color, 0.6)),
+    borderColor: colors.map((color: number[]) => arrToRgba(color, 1)),
+    hoverBackgroundColor: colors.map((color: number[]) => arrToRgba(color, 0.8)),
+    hoverBorderColor: colors.map((color: number[]) => arrToRgba(color, 1))
   };
 }
 
@@ -246,20 +259,7 @@ function getRandomColor(): number[] {
  * @returns {number[]|Color}
  */
 function generateColor(index: number): number[] {
-  return BaseChartDirective.defaultColors[index] || getRandomColor();
-}
-
-/**
- * Generate colors for pie|doughnut charts
- * @param count
- * @returns {Colors}
- */
-function generateColors(count: number): Array<number[]> {
-  let colorsArr: Array<number[]> = new Array(count);
-  for (let i = 0; i < count; i++) {
-    colorsArr[i] = BaseChartDirective.defaultColors[i] || getRandomColor();
-  }
-  return colorsArr;
+  return CHART_COLORS[index] || getRandomColor();
 }
 
 /**

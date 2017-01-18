@@ -4,12 +4,12 @@
   <canvas baseChart
     class="chart"
     [ngClass]="{
+      'chart-tiny': size === 'tiny',
       'chart-small': size === 'small',
       'chart-medium': size === 'medium',
       'chart-large': size === 'large'
     }"
     [datasets]="series"
-    [data]="series"
     [labels]="labels"
     [options]="options"
     [chartType]="type"

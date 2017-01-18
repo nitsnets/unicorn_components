@@ -1,0 +1,10 @@
+<div class="legend-container" [class.editable]="editable">
+  <div class="legend-item"
+    *ngFor="let serie of series; let i = index"
+    (click)="toggleItem(i)"
+    [class.inactive]="serie.inactive"
+  >
+    <span class="legend-color" [style.background-color]="arrToRgba(colors[i])"></span>
+    <span class="legend-label"> {{serie.label}} </span>
+  </div>
+</div>

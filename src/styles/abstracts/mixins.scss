@@ -204,7 +204,28 @@
 @mixin border-bottom(){ border-bottom: solid $medium-grey $border-width;}
 @mixin border-right(){ border-right: solid $medium-grey $border-width;}
 @mixin border-left(){ border-left: solid $medium-grey $border-width;}
+@mixin cross($w, $h: $w){
+  position: relative;
 
+  width: $w;
+  height: $h;
+
+  &:before, &:after {
+    @include pseudo;
+    left: 50%;
+    top: $w / 4;
+    height: $h / 2;
+    width: $border-width;
+    margin-left: - $border-width;
+    background-color: $black;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
 @function pi() {
   @return 3.14159265359;
 }

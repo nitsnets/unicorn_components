@@ -21,25 +21,14 @@ export class NtsChartComponent implements OnChanges {
   @Output() chartHover = new EventEmitter();
   @Output() chartClick = new EventEmitter();
 
+
   ngOnChanges(changes) {
-    if (changes.options) {
-      this.options = Object.assign(defaultOptions, this.options);
-    }
-    if (changes.type || this.series || this.labels) {
-      switch (this.type) {
-        case 'line': case 'bar': case 'polarArea': case 'horizontalBar':
-          this.initLinearChart(); break;
-        case 'pie': case 'radar': case 'doughnut':
-          this.initRadialChart(); break;
-      }
+    if (changes.type || changes.options) {
+      this.options = Object.assign(this.options, defaultOptions);
     }
   }
 
   constructor() {
-
-  }
-  private initRadialChart() { }
-  private initLinearChart() {
 
   }
 }

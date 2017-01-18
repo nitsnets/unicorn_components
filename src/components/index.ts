@@ -34,6 +34,7 @@ import { NtsPaginatorComponent } from './paginator/paginator.component';
 import { NtsDaterangePickerComponent } from './daterange-picker/daterange-picker.component';
 import { NtsTabsComponent } from './tabs/tabs.component';
 import { NtsChartComponent } from './chart/chart.component';
+import { NtsChartLegendComponent } from './chart-legend/chart-legend.component';
 
 export const NTS_COMPONENTS = [
   NtsPopupComponent, NtsPopupTriggerDirective, NtsPopupContainerComponent, NtsDropdownComponent, NtsDropdownTriggerDirective,
@@ -42,5 +43,5 @@ export const NTS_COMPONENTS = [
   NtsClockComponent, NtsIconComponent, NtsCalendarComponent, NtsAsideComponent, NtsLayoutComponent, NtsSearchHeaderComponent,
   NtsAccordionComponent, NtsColorPickerComponent, NtsImagePickerComponent, NtsSimpleListComponent, NtsBoxComponent, NtsRowComponent,
   NtsChipComponent, NtsProgressComponent, NtsFaceComponent, NtsBadgeComponent, NtsPaginatorComponent, NtsDaterangePickerComponent,
-  NtsTabsComponent, NtsChartComponent
+  NtsTabsComponent, NtsChartComponent, NtsChartLegendComponent
 ];
