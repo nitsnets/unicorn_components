@@ -3,16 +3,22 @@
   (mouseup)="onMouseUp()"
   (clickOutside)="closeCombo()"
 >
-  <div class="input-container" *ngIf="combo">
+  <div class="input-container"
+    *ngIf="combo"
+    [class.filled]="toModel && fromModel"
+    [class.with-arrows]="showArrows"
+  >
     <nts-input
       icon="calendar"
+      [floating]="true"
       [ntsModel]="comboModel"
-      [label]="comboLabel"
+      [placeholder]="comboLabel"
+
       (ntsFocus)="openCombo()"
     >
     </nts-input>
-    <nts-button *ngIf="showArrows" icon="arrow-left" [disabled]="!toModel || !fromModel" (click)="prevRange()"></nts-button>
-    <nts-button *ngIf="showArrows" icon="arrow-right" [disabled]="!toModel || !fromModel" (click)="nextRange()"></nts-button>
+    <nts-button class="arrow-btn left" *ngIf="showArrows" icon="arrow-left" (click)="prevRange()"></nts-button>
+    <nts-button class="arrow-btn right" *ngIf="showArrows" icon="arrow-right" (click)="nextRange()"></nts-button>
   </div>
 
   <div class="main-container"

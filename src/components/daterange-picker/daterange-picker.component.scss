@@ -13,11 +13,30 @@
 .spacing { margin-right: $basic-padding / 2;}
 
 .input-container {
+  @include border;
+  @include border-radius;
   display: flex;
   align-items: flex-end;
+
   nts-input {
     width: 250px;
   }
+  &.with-arrows {
+    nts-input {
+      width: 250px + $input-height * 2;
+    }
+  }
+  &.filled {
+    .arrow-btn {
+      display: block;
+    }
+  }
+}
+.arrow-btn {
+  display: none;
+  position: absolute;
+  &.right { right: 0; }
+  &.left { right: $input-height; }
 }
 .main-container {
   &.floating {

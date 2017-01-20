@@ -35,7 +35,7 @@ export class NtsDaterangePickerComponent implements OnChanges {
 
   @Input() combo = false;
   @Input() showArrows = false;
-  @Input() comboLabel: String = 'date range';
+  @Input() comboLabel: String = 'Date range';
 
   @Input() fromModel: String; // 'YYYY-MM-DD'
   @Input() fromLabel: String = 'from';
