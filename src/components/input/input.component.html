@@ -21,6 +21,8 @@
       [ngClass]="{floating: floating}"
       [type]="type"
       [attr.maxlength]="max && max > 0 ? max : 999999"
+      [attr.max]="maxValue"
+      [attr.min]="minValue"
       [name]="name || 'inputName'"
       [placeholder]="placeholder"
       [value]="value"
@@ -28,7 +30,7 @@
       [required]="required"
       [ngModel]="ntsModel"
       (ngModelChange)="onNgModelChange($event)"
-      (blur)="ntsBlur.emit($event)"
+      (blur)="onInputBlur($event)"
       (focus)="ntsFocus.emit($event)"
       (keypress)="ntsKeypress.emit($event)"
     />

@@ -19,6 +19,8 @@ export class NtsInputComponent implements OnInit {
   @Input() placeholder: string = '';
   @Input() name: string = '';
   @Input() label: string = '';
+  @Input() maxValue: number = null;
+  @Input() minValue: number = null;
   @Input() value: string = '';
   @Input() icon: string;
   @Input() iconRight: string;
@@ -54,5 +56,16 @@ export class NtsInputComponent implements OnInit {
     this.debounceTimer = setTimeout(
       _ => this.ntsModelChange.emit(ev), this.debounce || 0
     );
+  }
+  onInputBlur(ev) {
+    if(this.maxValue && this.ntsModel > this.maxValue) {
+      this.ntsModel = this.maxValue;
+      this.ntsModelChange.emit(this.ntsModel);
+      
+    } else if(this.minValue && this.ntsModel < this.minValue) {
+      this.ntsModel = this.minValue;
+      this.ntsModelChange.emit(this.ntsModel);
+    }
+    this.ntsBlur.emit(ev);
   }
 }

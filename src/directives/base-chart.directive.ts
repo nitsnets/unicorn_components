@@ -2,7 +2,7 @@ import { OnDestroy, OnInit, OnChanges, EventEmitter, ElementRef, Input, Output, 
 
 declare var Chart: any;
 
-const CHART_COLORS: Array<number[]> = [
+export const CHART_COLORS: Array<number[]> = [
   [72, 176, 247],
   [248, 208, 83],
   [16, 207, 189],

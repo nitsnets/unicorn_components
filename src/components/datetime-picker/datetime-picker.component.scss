@@ -21,9 +21,14 @@
 
 .datetime-controls-container {
   z-index: 1;
+  margin-top: $basic-padding / 2;
 
   &.floating {
+    z-index: 2;
+    margin-top: 0;
     position: absolute;
+    border: solid $medium-grey $border-width;
+    @include border-radius($border-radius);
 
     &:before {
       @include pseudo;

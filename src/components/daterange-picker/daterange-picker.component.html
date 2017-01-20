@@ -1,50 +1,73 @@
-<div class="container" (clickOutside)="setMode(null)">
-  <div class="input-container" >
+<div
+  (mousedown)="onMouseDown()"
+  (mouseup)="onMouseUp()"
+  (clickOutside)="closeCombo()"
+>
+  <div class="input-container" *ngIf="combo">
     <nts-input
-        type="date"
-        icon="calendar"
-        class="input clear-webkit-controls spacing"
-        [label]="fromLabel || (toLabel ? ' ' : '')"
-        [clear]="true"
-        [ntsModel]="fromModel"
-        (ntsModelChange)="onFromChanges($event)"
-        (ntsFocus)="setMode('from')"
-    > </nts-input>
-    <div class="calendar-container"
-      *ngIf="mode === 'from'"
-      [class.align-left]="side === 'left'"
-      [class.align-right]="side === 'right'">
-      <nts-calendar
+      icon="calendar"
+      [ntsModel]="comboModel"
+      [label]="comboLabel"
+      (ntsFocus)="openCombo()"
+    >
+    </nts-input>
+    <nts-button *ngIf="showArrows" icon="arrow-left" [disabled]="!toModel || !fromModel" (click)="prevRange()"></nts-button>
+    <nts-button *ngIf="showArrows" icon="arrow-right" [disabled]="!toModel || !fromModel" (click)="nextRange()"></nts-button>
+  </div>
+
+  <div class="main-container"
+    *ngIf="!combo || comboOpened"
+    [class.floating]="combo"
+    [class.align-left]="side === 'left'"
+    [class.align-right]="side === 'right'"
+  >
+    <div class="pickers-container">
+      <nts-datetime-picker
+        class="picker spacing"
+        (dateChange)="onFromChanges($event)"
+        [dateModel]="fromModel"
+        [dateLabel]="fromLabel || (toLabel ? ' ' : '')"
+        [timeShow]="false"
+        [popup]="!combo"
+        [keepOpen]="true"
         [maxDate]="toModel || maxDate"
         [minDate]="minDate"
         [rangeTo]="toModel"
-        [ntsModel]="fromModel"
-        (ntsModelChange)="onFromChanges($event)">
-      </nts-calendar>
-    </div>
-  </div>
-  <div class="input-container">
-    <nts-input
-        type="date"
-        icon="calendar"
-        class="input clear-webkit-controls"
-        [label]="toLabel || (fromLabel ? ' ' : '')"
-        [clear]="true"
-        [ntsModel]="toModel"
-        (ntsModelChange)="onToChanges($event)"
-        (ntsFocus)="setMode('to')"
-    > </nts-input>
-    <div *ngIf="mode === 'to'"
-      class="calendar-container"
-      [class.align-left]="side === 'left'"
-      [class.align-right]="side === 'right'">
-      <nts-calendar
+      > </nts-datetime-picker>
+      <nts-datetime-picker
+        class="picker"
+        (dateChange)="onToChanges($event)"
+        [dateModel]="toModel"
+        [dateLabel]="toLabel || (fromLabel ? ' ' : '')"
+        [timeShow]="false"
+        [popup]="!combo"
+        [keepOpen]="true"
         [maxDate]="maxDate"
         [minDate]="fromModel || minDate"
         [rangeFrom]="fromModel"
-        [ntsModel]="toModel"
-        (ntsModelChange)="onToChanges($event)">
-      </nts-calendar>
+    > </nts-datetime-picker>
+    </div>
+    <div class="buttons-container" *ngIf="combo && comboOpened">
+      <nts-row>
+        <nts-button label="Today" (click)="loadPreset('today')"></nts-button>
+        <nts-button label="This week" (click)="loadPreset('week')"></nts-button>
+        <nts-button label="This month" (click)="loadPreset('month')"></nts-button>
+        <nts-button label="This year" (click)="loadPreset('year')"></nts-button>
+      </nts-row>
+      <nts-row>
+        <nts-button label="Yesterday" (click)="loadPreset('yesterday')"></nts-button>
+        <nts-button label="Last week" (click)="loadPreset('l_week')"></nts-button>
+        <nts-button label="Last month" (click)="loadPreset('l_month')"></nts-button>
+        <nts-button label="Last year" (click)="loadPreset('l_year')"></nts-button>
+      </nts-row>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+

@@ -1,40 +1,54 @@
 @import './../../styles/abstracts/index.scss';
 
 :host {
+  position: relative;
+}
+.pickers-container {
   display: flex;
 }
-.container {
-  display: flex;
-}
-.input-container {
+.picker {
   flex: 1;
   position: relative;
 }
-.inputs-container { display: flex; }
-.input { flex: 1; }
 .spacing { margin-right: $basic-padding / 2;}
-.calendar-container {
-  position: absolute;
-  z-index: 1;
 
-  &:before {
-    @include pseudo;
-    top: -7px;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-bottom: 7px solid $medium-grey;
-    border-top: 0;
+.input-container {
+  display: flex;
+  align-items: flex-end;
+  nts-input {
+    width: 250px;
   }
+}
+.main-container {
+  &.floating {
+    z-index: 2;
+    margin-top: 0;
+    position: absolute;
+    background-color: white;
+    border: solid $medium-grey $border-width;
+    @include border-radius($border-radius);
 
-  &:after {
-    @include pseudo;
-    top: -5px;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid #fff;
-    border-top: 0;
+    &:before {
+      @include pseudo;
+      top: -7px;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-bottom: 7px solid $medium-grey;
+      border-top: 0;
+    }
+
+    &:after {
+      @include pseudo;
+      top: -5px;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid #fff;
+      border-top: 0;
+    }
+    .pickers-container {
+      padding: $basic-padding / 3 $basic-padding / 2;
+    }
   }
-
   &.align-right {
     right: 0;
     &:before { right: 6px; }
@@ -44,5 +58,13 @@
     left: 0;
     &:before { left: 6px; }
     &:after { left: 7px; }
+  }
+}
+.buttons-container {
+  background-color: $light-grey;
+  padding: $basic-padding / 3 0;
+
+  nts-button {
+    flex: 1
   }
 }

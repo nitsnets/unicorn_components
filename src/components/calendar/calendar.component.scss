@@ -16,7 +16,7 @@
 }
 
 .calendar-container {
-  border: solid $medium-grey $border-width;
+
   width: $calendar-size;
   height: $calendar-size;
   background-color: #fff;
@@ -24,7 +24,7 @@
   display: flex;
   flex-direction: column;
   padding: $basic-padding/3;
-  @include border-radius($border-radius);
+
   @include no-touch();
 }
 .month-name, .days-name, .week-row {
@@ -47,10 +47,10 @@
 
   &:hover { .day{ background-color: $lightest-alpha; } }
   &.today { .day { border: 1px $brand-color solid;} }
-  &.selected { .day { background-color: $brand-color; color: white; } }
   &.rangeFrom { .day {background-color: $brand-color-medium;} }
   &.rangeTo { .day {background-color: $brand-color-medium;} }
   &.rangeMiddle { background-color: $brand-color-light }
+  &.selected { .day { background-color: $brand-color; color: white; } }
   &.different-month { visibility: hidden}
   &.unavailable { opacity: 0.25; }
 

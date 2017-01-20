@@ -19,16 +19,24 @@ export class NtsDatetimePickerComponent implements OnChanges {
   @Output() timeChange = new EventEmitter();
 
   @Input() popup = false;
+  @Input() keepOpen = false;
 
   @Input() maxDate;
   @Input() minDate;
+
+  @Input() rangeFrom;
+  @Input() rangeTo;
 
   mode = null;
   side = 'left';
 
   constructor(private elementRef: ElementRef) { }
 
-  ngOnChanges(changes) { }
+  ngOnChanges(changes) {
+    if(changes.keepOpen && this.keepOpen && !this.popup) {
+      this.setMode('date');
+    }
+  }
 
   setMode(mode: 'time' | 'date', event = null) {
     this.mode = mode;
@@ -36,7 +44,11 @@ export class NtsDatetimePickerComponent implements OnChanges {
       this.side = sideOfScreen(this.elementRef.nativeElement);
     }
   }
-
+  onKeyPress(ev: KeyboardEvent, mode: 'time' | 'date') {
+    if(ev.code === 'Enter' || ev.key === 'Enter') {
+      this.setMode(null);
+    } else { this.setMode(mode); }
+  }
   onDateChanges(date) {
     this.dateModel = date;
     this.dateChange.emit(date);
