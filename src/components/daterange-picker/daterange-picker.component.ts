@@ -1,14 +1,15 @@
 import { Component, OnChanges, Input, Output, EventEmitter, ElementRef } from '@angular/core';
-import { sideOfScreen } from '../../utils';
+import { sideOfScreen, abbrDateRange } from '../../utils';
 import * as moment from 'moment';
 
 moment.locale('es', { week: { dow: 1, doy: 4 } });
 
-function range(type: 'd' | 'w' | 'M' | 'y', range: 'from' | 'to', adj: 'prev' | 'next' = null): string {
+const nameFromType = t => t === 'd' ? 'day' : t === 'w' ? 'week' : t === 'M' ? 'month' : 'year';
+const range = (type: 'd' | 'w' | 'M' | 'y', side: 'from' | 'to', adj: 'prev' | 'next' = null): string => {
   let ref = moment();
-  let nameFromType = t => type === 'd' ? 'day' : type === 'w' ? 'week' : type === 'M' ? 'month' : 'year';
   ref = adj === 'prev' ? ref.subtract(1, type) : adj === 'next' ? ref.add(1, type) : ref;
-  ref = range === 'from' ? ref.startOf(nameFromType(type)) : range === 'to' ? ref.endOf(nameFromType(type)) : ref;
+  ref = side === 'from' ? ref.startOf(<moment.unitOfTime.StartOf>nameFromType(type)) :
+    side === 'to' ? ref.endOf(<moment.unitOfTime.StartOf>nameFromType(type)) : ref;
   return ref.format('YYYY-MM-DD');
 }
 
@@ -35,14 +36,14 @@ export class NtsDaterangePickerComponent implements OnChanges {
 
   @Input() combo = false;
   @Input() showArrows = false;
-  @Input() comboLabel: String = 'Date range';
+  @Input() comboLabel: string = 'Date range';
 
-  @Input() fromModel: String; // 'YYYY-MM-DD'
-  @Input() fromLabel: String = 'from';
-  @Output() fromChange = new EventEmitter<String>();
+  @Input() fromModel: string; // 'YYYY-MM-DD'
+  @Input() fromLabel: string = 'from';
+  @Output() fromChange = new EventEmitter<string>();
 
-  @Input() toModel: String; // 'YYYY-MM-DD'
-  @Input() toLabel: String = 'to';
+  @Input() toModel: string; // 'YYYY-MM-DD'
+  @Input() toLabel: string = 'to';
   @Output() toChange = new EventEmitter<String>();
 
   clickingInside = false;
@@ -94,15 +95,15 @@ export class NtsDaterangePickerComponent implements OnChanges {
 
   prevRange() {
     let {from, to} = this.getFromToMoment();
-    let range = this.rangeMagnitude(from, to);
-    this.onFromChanges(from.subtract(1, range).format('YYYY-MM-DD'));
-    this.onToChanges(to.subtract(1, range).format('YYYY-MM-DD'));
+    let mgnt = this.rangeMagnitude(from, to);
+    this.onFromChanges(from.subtract(1, mgnt).format('YYYY-MM-DD'));
+    this.onToChanges(to.subtract(1, mgnt).format('YYYY-MM-DD'));
   }
   nextRange() {
     let {from, to} = this.getFromToMoment();
-    let range = this.rangeMagnitude(from, to);
-    this.onFromChanges(from.add(1, range).format('YYYY-MM-DD'));
-    this.onToChanges(to.add(1, range).format('YYYY-MM-DD'));
+    let mgnt = this.rangeMagnitude(from, to);
+    this.onFromChanges(from.add(1, mgnt).format('YYYY-MM-DD'));
+    this.onToChanges(to.add(1, mgnt).format('YYYY-MM-DD'));
   }
   private rangeMagnitude(from, to): 'd' | 'w' | 'M' | 'y' {
     if (to.diff(from, 'months') > 0) {
@@ -111,7 +112,9 @@ export class NtsDaterangePickerComponent implements OnChanges {
       return 'M';
     } else if (to.diff(from, 'days') > 0) {
       return 'w';
-    } else { return 'd'; };
+    } else {
+      return 'd';
+    };
 
   }
   private getFromToMoment(): { from: moment.Moment, to: moment.Moment } {
@@ -128,13 +131,7 @@ export class NtsDaterangePickerComponent implements OnChanges {
     if (presetKey) {
       this.comboModel = presets[presetKey].label;
     } else {
-      this.comboModel = '';
-      if (this.fromModel) {
-        this.comboModel += `from ${moment(this.fromModel).format('DD/MM/YYYY')} `;
-      }
-      if (this.toModel) {
-        this.comboModel += `to ${moment(this.toModel).format('DD/MM/YYYY')}`;
-      }
+      this.comboModel = abbrDateRange(this.fromModel, this.toModel);
     }
   }
 }

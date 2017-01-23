@@ -1,6 +1,7 @@
 <div class="modal-bg" [ngClass]="{
   full: modalOptions['type'] === 'full',
   aside: modalOptions['type'] === 'aside',
+  large: modalOptions['size'] === 'large',
   leaving: leaving
 }">
   <div class="modal-container" (clickOutside)="onClickOutside($event)" [class.leaving]="leaving">

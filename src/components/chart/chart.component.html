@@ -1,6 +1,6 @@
-<div class="chart-container">
-  <h5 *ngIf="title">{{title}}</h5>
+<h5 *ngIf="chartTitle">{{chartTitle}}</h5>
 
+<div class="chart-container">
   <canvas baseChart
     class="chart"
     [ngClass]="{
@@ -18,4 +18,6 @@
     (chartHover)="chartHover.emit($event)"
     (chartClick)="chartClick.emit($event)">
   </canvas>
+  <nts-chart-tooltip [tooltip]="tooltip"> </nts-chart-tooltip>
+
 </div>

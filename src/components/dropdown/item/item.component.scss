@@ -15,10 +15,9 @@
   .dropdown-item{
     padding-left: $input-padding*2;
     .icon{
-      opacity: 0.25;
       position: absolute;
-      left: ($input-height - $input-padding*2) / 2 - $border-width;
-      top: ($input-height - $input-padding*2) / 2 - $border-width;
+      left: ($input-height - $font-regular) / 2;
+      top: ($input-height - $font-regular) / 2;
     }
   }
 

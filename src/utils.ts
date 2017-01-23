@@ -1,4 +1,5 @@
 import { Subscription } from 'rxjs/Rx';
+import * as moment from 'moment';
 
 export function generateUUID(pattern: string): string {
   var d = new Date().getTime();
@@ -173,3 +174,16 @@ export function sideOfScreen(element): 'left' | 'right' {
   let elementLeft = (element.offsetLeft - element.scrollLeft + element.clientLeft);
   return elementLeft < (windowWidth / 2) ? 'left' : 'right';
 }
+
+export function abbrDateRange(from: string = null, to: string = null): string {
+  let frM = from ? moment(from, 'YYYY-MM-DD') : null;
+  let toM = to ? moment(to, 'YYYY-MM-DD') : null;
+  if (!frM && !toM) { return ''; }
+  if (!toM) { return `from ${frM.format('MMM D, YYYY')}`; }
+  if (!frM) { return `until ${toM.format('MMM D, YYYY')}`; }
+  if (frM.year() !== toM.year()) { return `${frM.format('MMM D, YYYY')} - ${toM.format('MMM D, YYYY')}`; }
+  if (frM.month() !== toM.month()) { return `${frM.format('MMM D')} - ${toM.format('MMM D, YYYY')}`; }
+  if (frM.date() !== toM.date()) { return `${frM.format('MMM D')}-${toM.format('D, YYYY')}`; }
+  return frM.format('MMM D, YYYY');
+}
+

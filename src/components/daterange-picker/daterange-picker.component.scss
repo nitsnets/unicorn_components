@@ -19,11 +19,11 @@
   align-items: flex-end;
 
   nts-input {
-    width: 250px;
+    width: 228px;
   }
   &.with-arrows {
     nts-input {
-      width: 250px + $input-height * 2;
+      width: 228px + $input-height * 2;
     }
   }
   &.filled {

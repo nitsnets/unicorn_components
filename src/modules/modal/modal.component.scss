@@ -69,8 +69,9 @@ $modal-animation-time: 200ms;
         @include animation(aside-leave $modal-animation-time);
       }
     }
-    .close-button{
 
+    &.large {
+      .modal-container{ width: $aside-width * 2; }
     }
   }
 

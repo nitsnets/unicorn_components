@@ -2,6 +2,7 @@
 
 .chart-container {
   @include noselect;
+  position: relative;
 }
 .chart-tiny { height: $chart-tiny; }
 .chart-small { height: $chart-small; }

@@ -13,9 +13,9 @@ export type NtsPopupPosition = 'bottom-left' | 'bottom-right' | 'top-left' | 'to
 export class NtsPopupComponent implements AfterViewInit {
   @Input() toggle = false;
   @Input() keepOpen = true;
-  @Input() position: NtsPopupPosition = null;
   @Input() opened: boolean = false;
   @Output() openedChange = new EventEmitter();
+  @Input() position: NtsPopupPosition = null;
   calculatedPosition: NtsPopupPosition = null;
 
   @ContentChild(NtsPopupContainerComponent) popupScope: NtsPopupContainerComponent;

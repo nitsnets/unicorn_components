@@ -1,0 +1,33 @@
+@import './../../styles/abstracts/index.scss';
+
+.chart-tooltip {
+  @include border;
+  @include border-radius;
+  @include transition;
+  position: absolute;
+  background: white;
+  color: $black;
+  pointer-events: none;
+  padding: $basic-padding / 2;
+  opacity: 0;
+
+  ul {
+    list-style: none;
+  }
+  .tooltip-title {
+    margin-bottom: $basic-padding / 3;
+  }
+  .tooltip-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .tooltip-color {
+    margin-right: $basic-padding / 6;
+    display: inline-block;
+    height: $input-height / 2;
+    width: $input-height / 2;
+    border-radius: $border-radius;
+  }
+}
+
