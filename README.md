@@ -29,10 +29,10 @@ El paquete contiene un conjunto de ***components***, ***directives*** y ***pipes
 - `nts-aside`: Combinable con `nts-layout` para formar un contemedor lateral.
 - `nts-body`: Combinable con `nts-layout` para formar un contemedor principal.
 - `nts-button`: Botón configurable que acepta las siguientes opciones entre otras:
-  - `class`: Configurable el color (primary, error, warnign...).
-  - `size`: Configurable el tamaño (small, large).
-  - `popup`: Botón interno auxiliar que abre un popup con contenido personalizado.
-  - `dropdown`: Botón adyacente con *caret* que abre un dropdown con opciones personalizadas. 
+    - `class`: Configurable el color (primary, error, warnign...).
+    - `size`: Configurable el tamaño (small, large).
+    - `popup`: Botón interno auxiliar que abre un popup con contenido personalizado.
+    - `dropdown`: Botón adyacente con *caret* que abre un dropdown con opciones personalizadas. 
 - `nts-calendar`
 - `nts-checkbox`
 - `nts-clock`
