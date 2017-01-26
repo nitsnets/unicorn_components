@@ -21,7 +21,7 @@ export class NtsTooltipComponent implements AfterContentInit {
 
     ngAfterContentInit() {
         this.animateIn = false;
-        setTimeout( () => this.onEndAnimateOpen(), 50);
+        setTimeout(() => this.onEndAnimateOpen(), 50);
     }
 
     onEndAnimateOpen() {

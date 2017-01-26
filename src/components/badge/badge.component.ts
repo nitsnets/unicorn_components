@@ -1,16 +1,16 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'nts-badge',
-  templateUrl: './badge.component.html',
-  styleUrls: ['./badge.component.scss']
+    selector: 'nts-badge',
+    templateUrl: './badge.component.html',
+    styleUrls: ['./badge.component.scss']
 })
 export class NtsBadgeComponent implements OnInit {
-  @Input() value: number;
+    @Input() value: number;
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit() {
+    ngOnInit() {
 
-  }
+    }
 }

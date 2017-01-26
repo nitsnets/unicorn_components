@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 
-import {  NtsModule } from '../../nts.module';
+import { NtsModule } from '../../nts.module';
 
 import { ModalService } from './modal.service';
 import { NtsModalComponent } from './modal.component';
 
 @NgModule({
     imports: [
-         NtsModule
+        NtsModule
     ],
     declarations: [
         NtsModalComponent,

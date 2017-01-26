@@ -15,11 +15,9 @@ export class TooltipService {
         private cmpFactoryResolver: ComponentFactoryResolver
     ) { }
 
-
     createTooltip(msg: string, options, viewContainer: any) {
         clearTimeout(this.intervalClear);
         this.clear();
-
 
         this.tooltipSub = new Subject();
 
@@ -36,11 +34,7 @@ export class TooltipService {
                 this.close();
             }
         );
-
-
         return this.tooltipSub.asObservable();
-
-
     }
 
     close() {

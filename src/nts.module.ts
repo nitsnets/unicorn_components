@@ -11,23 +11,23 @@ import { NTS_DIRECTIVES } from './directives/';
 import { NTS_PIPES } from './pipes/';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    ColorPickerModule,
-    BrowserModule
-  ],
-  declarations: [
-    NTS_COMPONENTS,
-    NTS_DIRECTIVES,
-    NTS_PIPES
-  ],
-  exports: [
-    NTS_COMPONENTS,
-    NTS_DIRECTIVES,
-    NTS_PIPES,
-    ColorPickerModule,
-    BrowserModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ColorPickerModule,
+        BrowserModule
+    ],
+    declarations: [
+        NTS_COMPONENTS,
+        NTS_DIRECTIVES,
+        NTS_PIPES
+    ],
+    exports: [
+        NTS_COMPONENTS,
+        NTS_DIRECTIVES,
+        NTS_PIPES,
+        ColorPickerModule,
+        BrowserModule
+    ]
 })
 export class NtsModule { }

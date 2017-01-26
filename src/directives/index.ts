@@ -5,6 +5,6 @@ import { ComponentLoaderDirective } from './component-loader.directive';
 import { BaseChartDirective } from './base-chart.directive';
 
 export const NTS_DIRECTIVES = [
-  AutofocusDirective, ClickOutsideDirective, Droppable,
-  ComponentLoaderDirective, BaseChartDirective
+    AutofocusDirective, ClickOutsideDirective, Droppable,
+    ComponentLoaderDirective, BaseChartDirective
 ];

@@ -15,7 +15,6 @@ export class ToastService {
         private cmpFactoryResolver: ComponentFactoryResolver
     ) { }
 
-
     createToast(msg: string, options, viewContainer: any) {
         if (!this.toastRef) {
 

@@ -27,6 +27,6 @@ export class NtsDemoModalContentComponent implements OnInit, OnDestroy, IModalCo
         this.cancelModal.emit();
     }
     onSubmitForm() {
-        this.submitModal.emit({info: 'xxx'});
+        this.submitModal.emit({ info: 'xxx' });
     }
 }

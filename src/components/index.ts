@@ -39,11 +39,11 @@ import { NtsChartLegendComponent } from './chart-legend/chart-legend.component';
 import { NtsChartTooltipComponent } from './chart-tooltip/chart-tooltip.component';
 
 export const NTS_COMPONENTS = [
-  NtsPopupComponent, NtsPopupTriggerDirective, NtsPopupContainerComponent, NtsDropdownComponent, NtsDropdownTriggerDirective,
-  NtsDropdownContainerComponent, NtsDropdownItemComponent, NtsInputComponent, NtsCheckboxComponent, NtsRadioComponent,
-  NtsButtonComponent, NtsHeaderComponent, NtsSelectComponent, NtsSeparatorComponent, NtsBodyComponent, NtsDatetimePickerComponent,
-  NtsClockComponent, NtsIconComponent, NtsCalendarComponent, NtsAsideComponent, NtsLayoutComponent, NtsSearchHeaderComponent,
-  NtsAccordionComponent, NtsColorPickerComponent, NtsImagePickerComponent, NtsSimpleListComponent, NtsBoxComponent, NtsRowComponent,
-  NtsChipComponent, NtsProgressComponent, NtsFaceComponent, NtsBadgeComponent, NtsPaginatorComponent, NtsDaterangePickerComponent,
-  NtsTabsComponent, NtsChartComponent, NtsChartLegendComponent, NtsChartTooltipComponent, NtsRowSpacerComponent
+    NtsPopupComponent, NtsPopupTriggerDirective, NtsPopupContainerComponent, NtsDropdownComponent, NtsDropdownTriggerDirective,
+    NtsDropdownContainerComponent, NtsDropdownItemComponent, NtsInputComponent, NtsCheckboxComponent, NtsRadioComponent,
+    NtsButtonComponent, NtsHeaderComponent, NtsSelectComponent, NtsSeparatorComponent, NtsBodyComponent, NtsDatetimePickerComponent,
+    NtsClockComponent, NtsIconComponent, NtsCalendarComponent, NtsAsideComponent, NtsLayoutComponent, NtsSearchHeaderComponent,
+    NtsAccordionComponent, NtsColorPickerComponent, NtsImagePickerComponent, NtsSimpleListComponent, NtsBoxComponent, NtsRowComponent,
+    NtsChipComponent, NtsProgressComponent, NtsFaceComponent, NtsBadgeComponent, NtsPaginatorComponent, NtsDaterangePickerComponent,
+    NtsTabsComponent, NtsChartComponent, NtsChartLegendComponent, NtsChartTooltipComponent, NtsRowSpacerComponent
 ];
