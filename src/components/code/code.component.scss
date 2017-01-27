@@ -1,0 +1,12 @@
+@import './../../styles/abstracts/index.scss';
+
+.code-container {
+    @include border;
+    @include border-radius;
+    padding: $basic-padding / 2;
+}
+.code-editor {
+    min-height: 100px;
+    height: 100%;
+    z-index: 0;
+}

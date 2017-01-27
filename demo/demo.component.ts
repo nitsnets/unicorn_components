@@ -12,7 +12,7 @@ import { NtsDemoModalContentComponent } from './demo-modal-content/demo-modal-co
     styleUrls: ['./demo.component.scss']
 })
 export class DemoComponent {
-    tabSelected = 'charts';
+    tabSelected = 'typos';
 
     baseSeries = [
         { label: 'Serie 1', data: [12, 19, 3, 5, 2, 3] },

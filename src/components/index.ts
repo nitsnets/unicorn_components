@@ -37,6 +37,7 @@ import { NtsTabsComponent } from './tabs/tabs.component';
 import { NtsChartComponent } from './chart/chart.component';
 import { NtsChartLegendComponent } from './chart-legend/chart-legend.component';
 import { NtsChartTooltipComponent } from './chart-tooltip/chart-tooltip.component';
+import { CodeEditorComponent } from './code/code.component';
 
 export const NTS_COMPONENTS = [
     NtsPopupComponent, NtsPopupTriggerDirective, NtsPopupContainerComponent, NtsDropdownComponent, NtsDropdownTriggerDirective,
@@ -45,5 +46,5 @@ export const NTS_COMPONENTS = [
     NtsClockComponent, NtsIconComponent, NtsCalendarComponent, NtsAsideComponent, NtsLayoutComponent, NtsSearchHeaderComponent,
     NtsAccordionComponent, NtsColorPickerComponent, NtsImagePickerComponent, NtsSimpleListComponent, NtsBoxComponent, NtsRowComponent,
     NtsChipComponent, NtsProgressComponent, NtsFaceComponent, NtsBadgeComponent, NtsPaginatorComponent, NtsDaterangePickerComponent,
-    NtsTabsComponent, NtsChartComponent, NtsChartLegendComponent, NtsChartTooltipComponent, NtsRowSpacerComponent
+    NtsTabsComponent, NtsChartComponent, NtsChartLegendComponent, NtsChartTooltipComponent, NtsRowSpacerComponent, CodeEditorComponent
 ];
