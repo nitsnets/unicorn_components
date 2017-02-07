@@ -13,6 +13,7 @@ Botón simple
 
 
 // otro componente?
+
 - popup : bool / default = false / abrir un popup en el botón estilo Trello --> ok
 - popupAlign: string / default = right / right, down / permite la alineación del popup. En la derecha, donde clickeas, debajo del boton
 - popupArea: boolean / default = false / identifica todo el botón como para abrir el popup, no sólo el área de la derecha
