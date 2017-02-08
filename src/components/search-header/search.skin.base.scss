@@ -1,0 +1,8 @@
+nts-search-header {
+  nts-input{
+    margin-left: ($header-md-height - $input-height) - $basic-padding;
+  }
+  nts-button{
+    margin-right: - $basic-padding;
+  }
+}

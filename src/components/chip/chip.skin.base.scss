@@ -1,0 +1,27 @@
+nts-chip {
+  @include border-radius;
+
+  background-color: $medium-grey;
+  font-size: $font-small;
+  padding: $basic-padding / 10 $basic-padding / 5;
+
+  &.primary{ background-color: $brand-color; color: white; .icon, .remove{ @include invert; } }
+  &.success{ background-color: $success-color; color: white; .icon, .remove{ @include invert; } }
+  &.warning{ background-color: $warning-color; color: white; .icon, .remove{ @include invert; } }
+  &.error{ background-color: $error-color; color: white; .icon, .remove{ @include invert; } }
+
+  .icon {
+    margin-right: $basic-padding / 6;
+  }
+  .label {
+    line-height: 1;
+  }
+
+  .remove {
+    margin-left: $basic-padding / 6;
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

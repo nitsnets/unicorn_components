@@ -1,0 +1,116 @@
+nts-input{
+    display: flex;
+
+    ::-webkit-input-placeholder {
+        color: $dark-grey;
+        font-weight: 300;
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+        color: $dark-grey;
+        font-weight: 300;
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+        color: $dark-grey;
+        font-weight: 300;
+    }
+
+    :-ms-input-placeholder {
+        color: $dark-grey;
+        font-weight: 300;
+    }
+
+    .icon, .icon-right{
+        opacity: 0.5;
+        margin-top: ($input-height - $input-padding*2) / 2;
+    }
+    .icon{
+        left: ($input-height - $input-padding*2) / 2;
+    }
+    .icon-right{
+        right: ($input-height - $input-padding*2) / 2;
+    }
+    .label, .prefix{
+        font-weight: 300;
+        font-size: $font-small;
+        color: $dark-grey;
+        margin: 0 $input-padding/4;
+        height: $label-height;
+    };
+    .prefix{
+        height: $input-height;
+        padding: 0 $input-padding;
+        margin:0;
+        background-color: $lightest-alpha;
+        @include border($border-width);
+        border-radius: $border-radius 0 0 $border-radius;
+        border-right: 0 !important;
+    }
+
+    .clear-btn{
+        margin-left: - $input-height;
+    }
+
+    .with-two-icon-right {
+        .clear-btn{  margin-left: - 50px; }
+    }
+
+    .hint{
+        font-style: italic;
+        font-size: $font-small;
+        color: $regular-grey;
+    }
+    .error{
+        font-style: italic;
+        font-size: $font-small;
+        color: $error-color;
+    }
+    input, textarea{
+        height: $input-height;
+        padding-left: $input-padding;
+        padding-right: $input-padding;
+        border-radius: $border-radius;
+        @include border($border-width);
+        &:focus{
+            background-color: $lightest-alpha !important;
+            border-color: $light-alpha !important;
+        }
+        &.floating{
+            @include border(0);
+            background-color: transparent;
+        }
+    }
+    .with-icon input{ padding-left: $input-height; }
+    .with-icon-right input{ padding-right: $input-height; }
+    .with-two-icon-right input{ padding-right: 40px; }
+    .with-prefix input{ border-radius: 0 $border-radius $border-radius 0; }
+    textarea{
+        padding: $input-padding;
+        min-height: $input-height*2;
+    }
+    &.input-large{
+        input{
+            height: $input-height + $label-height;
+        }
+    input, textarea{
+            font-size: $font-largest;
+        }
+    }
+    &.input-text-large{
+        input, textarea{
+            font-size: $font-large;
+        }
+    }
+    &.input-text-xlarge{
+        input, textarea{
+            font-size: $font-xlarge;
+        }
+    }
+    &.input-primary{
+        input{
+            color: $brand-color;
+            font-weight: bold;
+        }
+    }
+}

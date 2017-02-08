@@ -1,43 +1,17 @@
-@import './../../styles/abstracts/index.scss';
 
 :host{
   display: inline-block;
-  height: $input-height;
 
   label{
-    @include noselect();
+    user-select: none;
     min-width: 100%;
-    height: $input-height;
     line-height: 1;
-    font-size: $font-regular;
     position: relative;
     display: block;
 
     display:flex;
     align-items: center;
 
-    border: 0;
-    padding: 0;
-    padding-left: $input-height / 2 - $input-padding;
-    padding-right: $input-height / 2 - $input-padding;
-    border-radius: $border-radius;
-    background-color: transparent;
-
-    &.only-icon{ border-radius:$input-height/2;}
-
-    &:not(.only-icon) {
-      &:hover {background-color: $lightest-alpha}
-      &:focus{background-color: $light-alpha}
-      &:active{background-color: $medium-alpha;}
-    }
-
-    .icon{ opacity: 0.25; }
-    &.checked,
-    &.partial {
-      .icon{ opacity: 1; }
-    }
-
     input{display: none;};
-    span{margin-left: $input-height / 2 - $input-padding}
   }
 }

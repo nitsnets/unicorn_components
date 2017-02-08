@@ -1,27 +1,8 @@
-@import './../../styles/abstracts/index.scss';
-
 :host {
   display: inline-flex;
 }
 .badge {
-  align-items: center;
-  background-color: $regular-grey;
-  border-radius: 50%;
-  color: white;
   display: inline-flex;
-  font-size: $font-smallest;
-  height: $input-height / 2 - 4px;
+  align-items: center;
   justify-content: center;
-  min-width: $input-height / 2 - 4px;
-
-  @include mq($from: sm) {
-    min-width: $input-height / 2;
-    height: $input-height / 2;
-    font-size: $font-small;
-  }
 }
-
-:host.primary { .badge { background-color: $brand-color; } }
-:host.success { .badge { background-color: $success-color; } }
-:host.warning { .badge { background-color: $warning-color; } }
-:host.error { .badge { background-color: $error-color; } }

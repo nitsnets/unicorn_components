@@ -1,0 +1,8 @@
+nts-popup{
+  height: $input-height;
+  
+  .container {
+    @include border($border-width);
+    background-color: #fff;
+  }
+}

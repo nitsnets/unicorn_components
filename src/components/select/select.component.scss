@@ -1,5 +1,3 @@
-@import './../../styles/abstracts/index.scss';
-
 :host{ display: inline-block; position: relative;}
 
 nts-input{
@@ -10,28 +8,8 @@ nts-input{
   width: 100%;
   list-style: none;
   position: absolute;
-  background-color: white;
-  @include border($border-width);
 }
 .option{
   cursor: default;
   display: flex;
-  font-size: $font-small;
-  padding: $basic-padding/4;
-
-  &.selected {
-    background-color: $medium-grey;
-
-    .icon {
-      opacity: 1;
-    }
-  }
-  &.pointed {
-    background-color: $light-grey;
-  }
-
-  .icon {
-    margin-right: $basic-padding / 4;
-    opacity: 0.25;
-  }
 }

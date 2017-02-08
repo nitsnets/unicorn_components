@@ -1,76 +1,34 @@
-@import './../../styles/abstracts/index.scss';
-
-@mixin halfBg($side, $color: $brand-color-light) {
-  &::before {
-    @include pseudo;
-    background-color: $color;
-    z-index: 0;
-    height: 100%;
-    width: 50%;
-    @if $side == left { left: 0; } @else { right: 0; }
-  }
-}
-
-:host.floating {
-  .calendar-container { border: 0; }
-}
-
 .calendar-container {
-
-  width: $calendar-size;
-  height: $calendar-size;
-  background-color: #fff;
-  font-size: 12px;
   display: flex;
   flex-direction: column;
-  padding: $basic-padding/3;
-
-  @include no-touch();
 }
 .month-name, .days-name, .week-row {
   display: flex;
   align-items: center;
-  p{ flex:1; text-align: center; margin: 0; }
-}
-.month-name {
-  p{ font-weight: bold; }
-}
-.days-name {
-  p{ color: $brand-color; font-weight: bold; font-size: $font-small - 1px; text-transform: uppercase; }
+  p{ 
+    flex:1; 
+    text-align: center;
+    margin: 0;
+  }
 }
 .week-row {
   flex:1;
-  p{ display: flex; justify-content: center; }
+  p{ 
+    display: flex; 
+    justify-content: center;
+  }
 }
 .day-container {
   position: relative;
-
-  &:hover { .day{ background-color: $lightest-alpha; } }
-  &.today { .day { border: 1px $brand-color solid;} }
-  &.rangeFrom { .day {background-color: $brand-color-medium;} }
-  &.rangeTo { .day {background-color: $brand-color-medium;} }
-  &.rangeMiddle { background-color: $brand-color-light }
-  &.selected { .day { background-color: $brand-color; color: white; } }
-  &.different-month { visibility: hidden}
-  &.unavailable { opacity: 0.25; }
-
-  .rangeFromActive & {
-    &.selected { @include halfBg(left) }
-    &.rangeFrom { @include halfBg(right) }
-  }
-  .rangeToActive & {
-    &.selected { @include halfBg(right) }
-    &.rangeTo { @include halfBg(left) }
-  }
 }
 
 .day {
-  @include border-radius($label-height / 5);
   cursor: default;
   display: flex;
-  width: 30px;
-  height: 30px;
   align-items: center;
   justify-content: center;
   z-index: 1;
+}
+:host.floating {
+  .calendar-container { border: 0; }
 }

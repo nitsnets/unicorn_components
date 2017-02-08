@@ -1,13 +1,8 @@
-@import '../../styles/abstracts/index.scss';
-
 :host{
-  height: $input-height;
   position: relative;
   display: inline-flex;
 }
 .container {
-  @include border($border-width);
-  background-color: #fff;
   position: absolute;
   z-index: 1;
 

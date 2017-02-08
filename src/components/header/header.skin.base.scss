@@ -1,0 +1,41 @@
+@mixin header($height:$header-xs-height, $padding:$basic-padding){
+  @include border-bottom();
+  height: $height;
+  padding: 0 $padding / 2;
+  transition: all ease $slow;
+
+  &.hidden{ margin-top:-$height; }
+  &.grey{ background-color: $lightest-alpha; }
+  &.red{
+    background-color: $error-color-light;
+    border-color: $error-color-medium !important;
+    color: $error-color;
+  }
+
+  @include mq($from: sm) {
+    padding: 0 $padding;
+    height: $header-height;
+  }
+}
+
+nts-header {
+
+  header{
+    @include header();
+  }
+  header.medium{
+    @include header($header-xs-height);
+
+    @include mq($from: sm) {
+      height: $header-md-height;
+    }
+  }
+  &.less-padding{
+    header{
+      padding: 0 $basic-padding/2;
+    }
+  }
+}
+
+
+

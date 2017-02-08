@@ -1,82 +1,25 @@
-@import './../../styles/abstracts/index.scss';
-
 :host {
   display: inline-flex;
 }
 
-:host.paginator-icon {
-  i {
-    font-size: $font-small;
-  }
-}
-
 i {
-  display: block;
-  position: relative;
-  font-size: $font-regular;
   transition: all 0.1s linear;
-  opacity: 0.7;
-
-  @include on-event {
-    opacity: 1;
-  }
-
-  &.small {
-    padding: $font-regular / 4;
-    font-size: $font-regular / 2;
-  }
-
-  &.large {
-    font-size: $font-regular;
-
-    @include mq($from: sm) {
-      font-size: $font-largest;
-    }
-  }
 
   &::before {
-    font-family: "nts-icon";
     font-style: normal;
     font-weight: normal;
     speak: none;
 
     display: inline-block;
     text-decoration: inherit;
-    font-size: 1em;
-    margin-right: .2em;
     text-align: center;
-    /* opacity: .8; */
 
-    /* For safety - reset parent styles, that can break glyph codes*/
     font-variant: normal;
     text-transform: none;
 
-    /* fix buttons height, for twitter bootstrap */
-    line-height: 1em;
-
-    /* Animation center compensation - margins should be symmetric */
-    /* remove if not needed */
-    margin-left: .2em;
-
-    /* you can be more comfortable with increased icons size */
-    /* font-size: 120%; */
-
-    /* Font smoothing. That was taken from TWBS */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
-    /* Uncomment for 3D effect */
-    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
   }
-
-  &.caret {
-    font-size: $font-large / 2;
-    line-height: $label-height;
-  }
-  &.drag {
-    cursor: move;
-  }
-
 
   &.user:before { content: '\e800'; } /* '' */
   &.user-unfollow:before { content: '\e801'; } /* '' */

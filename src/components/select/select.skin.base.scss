@@ -1,0 +1,27 @@
+nts-select {
+
+  .options{
+    background-color: white;
+    @include border($border-width);
+  }
+  .option{
+    font-size: $font-small;
+    padding: $basic-padding/4;
+
+    &.selected {
+      background-color: $medium-grey;
+
+      .icon {
+        opacity: 1;
+      }
+    }
+    &.pointed {
+      background-color: $light-grey;
+    }
+
+    .icon {
+      margin-right: $basic-padding / 4;
+      opacity: 0.25;
+    }
+  }
+}

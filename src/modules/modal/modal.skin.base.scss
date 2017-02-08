@@ -1,0 +1,72 @@
+$modal-animation-time: 200ms;
+@include keyframes(bg-enter) { from {opacity: 0;} to {opacity: 1;} }
+@include keyframes(bg-leave) { from {opacity: 1;} to {opacity: 0;} }
+@include keyframes(aside-enter) { from {transform: translateX(100%);} to {transform: translateX(0);} }
+@include keyframes(aside-leave) { from {transform: translateX(0);} to {transform: translateX(100%);} }
+
+nts-modal {
+  .modal-bg{
+    background-color: $modal-bg;
+    padding: 5%;
+    @include animation(bg-enter $modal-animation-time);
+
+    &.leaving{
+      opacity: 0;
+      @include animation(bg-leave $modal-animation-time);
+    }
+
+    .modal-container{
+      border: $border-width $medium-grey solid;
+      background-color: #fff;
+      width: 100%;
+      max-width: 800px;
+
+      .close-button{
+        opacity: 0.7;
+        margin-left: auto;
+        margin-right: - $basic-padding/2;
+
+        @include on-event {
+          opacity: 1;
+        }
+      }
+    }
+
+    &.full{
+      background-color: $modal-bg-full;
+      .modal-container{
+        border: 0;
+        background-color: transparent;
+      }
+      .close-button{
+
+      }
+    }
+
+    &.aside {
+
+      .modal-container{
+        @include animation(aside-enter $modal-animation-time);
+        height: 100%;
+        width: $aside-width;
+
+        &.leaving{
+          transform: translateX(100%);
+          @include animation(aside-leave $modal-animation-time);
+        }
+      }
+
+      &.large {
+        .modal-container{ width: $aside-width * 2; }
+      }
+    }
+
+    @include mq($from: sm) {
+      padding-top: $aside-width / 6;
+    }
+
+    @include mq($from: lg) {
+      padding-top: $aside-width / 3;
+    }
+  }
+}

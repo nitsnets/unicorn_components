@@ -1,0 +1,50 @@
+nts-paginator {
+  .container {
+    @include mq($from: sm) {
+      justify-content: space-between;
+    }
+  }
+
+  &.right {
+    .pages {
+      @include mq($from: sm) {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &.center {
+    .container {
+      text-align: center;
+    }
+  }
+
+  .paginator-icon {
+    padding: $basic-padding / 3;
+    opacity: 0.35;
+
+    &:hover {
+      opacity: 0.65;
+    }
+  }
+  .counter {
+    @include mq($from: sm) {
+      display: inline-block;
+    }
+  }
+
+  .page {
+    min-width: $input-height;
+    height: $input-height;
+    padding: $basic-padding / 3;
+    border-radius: $input-height / 2;
+    color: $dark-grey;
+    opacity: 0.35;
+    font-size: $font-small;
+
+    &.selectable {
+      &:hover { opacity: 0.65; }
+    }
+    &.selected { opacity: 1; font-weight: bold; }
+  }
+}

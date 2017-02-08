@@ -1,0 +1,26 @@
+nts-progress {
+
+  .container {
+    margin: 0 0 10px 0;
+    min-height: 3px;
+    background-color: $medium-grey;
+
+    &.only-bar {
+      margin: 0;
+    }
+  }
+  .bar {
+    background-color: $regular-grey;
+    padding: $basic-padding / 15 $basic-padding / 15 $basic-padding / 15 $basic-padding / 6;
+  }
+
+  span {
+    color: $dark-grey;
+    font-size: $font-smallest;
+  }
+
+  &.primary { .bar { background-color: $brand-color; span { color: white; } } }
+  &.error { .bar { background-color: $error-color; span { color: white; } } }
+  &.warning { .bar { background-color: $warning-color; } }
+  &.success { .bar { background-color: $success-color; span { color: white; } } }
+}

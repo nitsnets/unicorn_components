@@ -1,0 +1,5 @@
+nts-separator {
+  hr{
+    @include border-bottom();
+  }
+}

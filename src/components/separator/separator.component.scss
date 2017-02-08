@@ -1,7 +1,4 @@
-@import './../../styles/abstracts/index.scss';
-
 hr{
   margin: 0;
   border: 0;
-  @include border-bottom();
 }

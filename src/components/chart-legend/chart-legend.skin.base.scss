@@ -1,0 +1,33 @@
+nts-chart-legend {
+
+  .legend-item {
+    margin-right: $basic-padding;
+  }
+
+  .legend-color {
+    margin-right: $basic-padding / 6;
+    height: $input-height / 2;
+    width: $input-height / 2;
+    border-radius: $border-radius;
+  }
+
+  &.editable {
+    .legend-item {
+      cursor: default;
+
+      &:hover {
+        .legend-color {
+          opacity: 0.5;
+        }
+      }
+      &.inactive {
+        opacity: 0.5;
+
+        .legend-color {
+          @include cross($input-height / 2);
+        }
+      }
+    }
+
+  }
+}

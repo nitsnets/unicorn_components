@@ -1,40 +1,18 @@
-@import './../../styles/abstracts/index.scss';
-
-.acc-container {
-  @include border-bottom;
-}
-
 .acc-header {
   align-items: center;
   display: flex;
-  height: $header-md-height;
-  @include border-bottom;
-  padding: 0 $basic-padding / 4;
 }
 
 .acc-title {
   cursor: default;
-  margin-left: $basic-padding / 6;
-  @include noselect;
+  user-select: none;
 }
 
+.acc-options-trigger { visibility: hidden; }
+:host:hover {
+  .acc-options-trigger { visibility: visible; }
+}
 .acc-options {
   margin-left: auto;
-  .acc-options-trigger { visibility: hidden; }
-}
-
-:host:hover {
-  .acc-options {
-    .acc-options-trigger { visibility: visible; }
-  }
-}
-
-.acc-caret {
-  @include transition(transform, $fast, ease);
-  &.collapsed { @include rotate(-90); }
-}
-
-.acc-content {
-  /* @include v-grow-animation; */
 }
 

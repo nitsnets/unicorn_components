@@ -1,14 +1,9 @@
-@import './../../styles/abstracts/index.scss';
 
 .color-picker-container {
     display: block;
 }
 
 .square-color {
-    margin-left: 5px;
     vertical-align: middle;
     display: inline-block;
-    border: 1px solid #666;
-    width: 15px;
-    height: 15px;
 }

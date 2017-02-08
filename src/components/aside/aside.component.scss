@@ -1,30 +1,8 @@
-@import './../../styles/abstracts/index.scss';
 
 :host{
   &.has-header, &.has-subheader{ .body-container{ overflow-y: auto; } }
-  &.has-header{ .body-container{ height: calc(100% - #{$header-height}); } }
-  &.has-subheader{ .body-container{ height: calc(100% - #{$header-height * 2}); } }
-
-    &.collapsed{ .aside { margin-left: - ($input-height + $basic-padding); }}
-  @include md() {
-    &.collapsed{ .aside { margin-left: 0; width: $input-height + $basic-padding; }}
-  }
 }
 .aside{
-  height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  width: $input-height + $basic-padding;
-
-  @include transition(all, 200ms, ease);
-
-  @include md() {
-    width: $aside-width;
-  }
-}
-:host.aside-left{
-  @include border-right();
-}
-:host.aside-right{
-  @include border-left();
 }

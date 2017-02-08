@@ -1,0 +1,8 @@
+nts-body {
+  .body {
+    max-width: 1080px;
+  }
+  &.grey {
+    background-color: $light-grey;
+  }
+}

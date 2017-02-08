@@ -1,0 +1,19 @@
+nts-simple-list {
+  ul {
+    margin-top: $basic-padding;
+  }
+
+  li .item {
+    min-height: $input-height;
+    padding-left: $basic-padding;
+
+    span {
+      padding: $basic-padding / 6 0;
+
+      &.selected{
+        color: $brand-color;
+      }
+    }
+
+  }
+}

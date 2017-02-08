@@ -1,10 +1,4 @@
-@import './../../styles/abstracts/index.scss';
-
 .chart-container {
-  @include noselect;
   position: relative;
+  user-select: none;
 }
-.chart-tiny { height: $chart-tiny; }
-.chart-small { height: $chart-small; }
-.chart-medium { height: $chart-medium; }
-.chart-large { height: $chart-large; }

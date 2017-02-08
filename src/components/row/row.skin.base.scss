@@ -1,0 +1,6 @@
+nts-row {
+    flex-direction: column;
+    @include mq($from: sm) {
+        flex-direction: row;
+    }
+}

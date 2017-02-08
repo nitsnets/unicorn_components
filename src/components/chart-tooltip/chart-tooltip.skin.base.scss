@@ -1,0 +1,22 @@
+nts-chart-tooltip {
+  .chart-tooltip {
+    @include border;
+    @include border-radius;
+    @include transition;
+    background: white;
+    color: $black;
+    padding: $basic-padding / 2;
+
+    .tooltip-title {
+      margin-bottom: $basic-padding / 3;
+    }
+
+    .tooltip-color {
+      margin-right: $basic-padding / 6;
+      height: $input-height / 2;
+      width: $input-height / 2;
+      border-radius: $border-radius;
+    }
+  }
+
+}

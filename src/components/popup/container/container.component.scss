@@ -1,10 +1,6 @@
-@import '../../../styles/abstracts/index.scss';
 
 .popup-content {
   flex: 1;
-  padding: $basic-padding / 2;
-
-  &.padding { padding-right: $input-height; }
 }
 .close-button {
   position: absolute;

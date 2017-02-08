@@ -1,125 +1,34 @@
-@import './../../styles/abstracts/index.scss';
-
-//General vars
-$clock-size: $calendar-size;
-$center-size: 12px;
-$cos30: cos(30deg);
-//Hours vars
-$h-size: 40px;
-$h-padding: 5px;
-$h-tick-width: 4px;
-$h-tick-height: 30px;
-$h-radius: $clock-size/2 - $h-padding - $h-size/2;
-//Minutes vars
-$m-size: 30px;
-$m-tick-width: 1px;
-$m-tick-height: 45px;
-$m-padding: $h-size + $h-padding;
-$m-radius: $clock-size/2 - $m-padding - $m-size/2;
-
 .clock-container{
   position: relative;
-  width: $clock-size;
-  height: $clock-size;
-  background-color: #fff;
-
-  @include border-radius($border-radius);
-  @include border($border-width);
-  @include no-touch();
+  user-select: none;
 }
 .clock-mode{
   position: absolute;
   width: 50%;
   height: 50%;
   cursor: default;
-  padding: 10px;
-  font-size: 12px;
   &.clock-am{left: 0; right: auto; }
   &.clock-pm{left: auto; right: 0; text-align: right;}
-  &.selected{ background-color: $light-alpha; }
-  &:not(.selected):hover{ background-color: $lightest-alpha; }
 }
 .clock-circle{
   margin: -1px;
   position: relative;
-  width: $clock-size;
-  height: $clock-size;
   border-radius: 50%;
-  background-color: white;
-  @include border($border-width);
 }
 .clock-center{
-  width: $center-size;
-  height: $center-size;
   border-radius: 50%;
-  background-color: $dark-grey;
   position: absolute;
-  top: $clock-size/2 - $center-size/2;
-  left: $clock-size/2 - $center-size/2;
+  top: 50%;
+  left: 50%;
 }
-@mixin clock-tick($width, $height) {
-  width: $width;
-  height: $height;
-  background-color: $brand-color;
+.clock-hour-tick, .clock-minute-tick{ 
   position: absolute;
-  top: $clock-size/2 - $height;
-  left: $clock-size/2 - $width/2;
   transform-origin: bottom;
-  @include transition(transform, 500ms, ease);
 }
-.clock-hour-tick{ @include clock-tick($h-tick-width, $h-tick-height); }
-.clock-minute-tick{ @include clock-tick($m-tick-width, $m-tick-height); }
 
 ul{list-style-type: none;}
 .clock-number{
     position: absolute;
     border-radius: 50%;
     cursor: default;
-    &:not(.selected):hover{ background-color: $light-alpha; }
 }
-.clock-hour{
-  @include calc('left', '50% - #{$h-size/2}');
-  width: $h-size;
-  height: $h-size;
-  top: $h-padding;
-  padding: 8px 11px;
-  &.selected{
-    background-color: $brand-color;
-    color: white;
-  }
-}
-.clock-minute{
-  @include calc('left', '50% - #{$m-size/2}');
-  width: $m-size;
-  height: $m-size;
-  top: $m-padding;
-  font-size: 12px;
-  padding: 6px 8px;
-  &.selected{
-    box-shadow: inset 0 0 0 1px $brand-color
-  }
-}
-
-.clock-hour-1{margin-top: $h-radius - $h-radius*$cos30; margin-left: $h-radius/2;}
-.clock-hour-5{margin-top: $h-radius + $h-radius*$cos30; margin-left: $h-radius/2;}
-.clock-hour-7{margin-top: $h-radius + $h-radius*$cos30; margin-left: -$h-radius/2;}
-.clock-hour-11{margin-top: $h-radius - $h-radius*$cos30; margin-left: -$h-radius/2;}
-.clock-hour-2{margin-top: $h-radius/2; margin-left: $h-radius*$cos30;}
-.clock-hour-10{margin-top: $h-radius/2; margin-left: -$h-radius*$cos30;}
-.clock-hour-4{margin-top: $h-radius*1.5; margin-left: $h-radius*$cos30;}
-.clock-hour-8{margin-top: $h-radius*1.5; margin-left: -$h-radius*$cos30;}
-.clock-hour-3{margin-top: $h-radius; margin-left: $h-radius;}
-.clock-hour-9{margin-top: $h-radius; margin-left: -$h-radius;}
-.clock-hour-6{margin-top: 2*$h-radius;}
-
-.clock-minute-1{margin-top: $m-radius - $m-radius*$cos30; margin-left: $m-radius/2;}
-.clock-minute-5{margin-top: $m-radius + $m-radius*$cos30; margin-left: $m-radius/2;}
-.clock-minute-7{margin-top: $m-radius + $m-radius*$cos30; margin-left: -$m-radius/2;}
-.clock-minute-11{margin-top: $m-radius - $m-radius*$cos30; margin-left: -$m-radius/2;}
-.clock-minute-2{margin-top: $m-radius/2; margin-left: $m-radius*$cos30;}
-.clock-minute-10{margin-top: $m-radius/2; margin-left: -$m-radius*$cos30;}
-.clock-minute-4{margin-top: $m-radius*1.5; margin-left: $m-radius*$cos30;}
-.clock-minute-8{margin-top: $m-radius*1.5; margin-left: -$m-radius*$cos30;}
-.clock-minute-3{margin-top: $m-radius; margin-left: $m-radius;}
-.clock-minute-9{margin-top: $m-radius; margin-left: -$m-radius;}
-.clock-minute-6{margin-top: 2*$m-radius;}

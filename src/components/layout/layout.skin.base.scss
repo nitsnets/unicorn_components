@@ -1,0 +1,20 @@
+:host{
+  &.has-header{
+    .layout{
+      height: calc(100% - #{$header-xs-height});
+      @include mq($from: sm) { height: calc(100% - #{$header-height}); }
+    }
+  }
+  &.has-subheader{
+    .layout{
+      height: calc(100% - #{$header-xs-height * 2});
+      @include mq($from: sm) { height: calc(100% - #{$header-height * 2}); }
+    }
+  }
+  &.has-subheader-and-tabs {
+    .layout{
+      height: calc(100% - #{$header-xs-height * 3});
+      @include mq($from: sm) { height: calc(100% - #{$header-height * 3}); }
+    }
+  }
+}

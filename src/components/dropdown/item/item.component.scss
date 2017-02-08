@@ -1,27 +1,13 @@
-@import '../../../styles/abstracts/index.scss';
-
 :host{
-  padding: 0 $input-padding*2;
-  height: $input-height;
-  line-height: 1;
   cursor: pointer;
   text-align: left;
   display: flex;
   align-items: center;
   position: relative;
-  color: black;
   white-space: nowrap;
 
-  .dropdown-item{
-    padding-left: $input-padding*2;
-    .icon{
-      position: absolute;
-      left: ($input-height - $font-regular) / 2;
-      top: ($input-height - $font-regular) / 2;
-    }
+  .icon{
+    position: absolute;
   }
 
-  &:hover{
-    background-color: $lightest-alpha;
-  }
 }

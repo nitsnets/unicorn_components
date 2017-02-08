@@ -1,206 +1,26 @@
-@import './../../styles/abstracts/index.scss';
-
 :host{
   position: relative;
   display: inline-flex;
 
-  button{
-    display: block;
-    overflow: hidden;
-    min-height: $input-xs-height;
-    font-family: Arial, sans-serif;
-    font-size: $font-regular;
-    letter-spacing: 0.01em;
-    line-height: 1;
-    position: relative;
-    cursor: pointer;
-    outline: none;
+    button{
+        display: block;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        outline: none;
 
-    border: $border-width solid transparent;
-    padding: 0 $input-padding;
-    border-radius: $border-radius;
+        &:not(.with-dropdown){min-width: 100%;}
+        &.btn-large{
+            .icon{
+                position: absolute;
+            }
+            .sublabel{
+                display: block;
+            }
+        }
 
-    background-color: transparent;
-    color: $dark-grey;
-    @include transition(background-color, $fast, ease);
-
-    &:not(.with-dropdown){min-width: 100%;}
-
-    &.with-dropdown{border-radius: $border-radius 0 0 $border-radius; border-right-width: 0 !important;}
-    &.dropdown{ border-radius: 0 $border-radius $border-radius 0; border-left: 1px solid $light-alpha; padding: $input-padding/2 $input-padding 0 $input-padding; }
-    &.dropdown-large{ height: $input-height * 2; .icon{margin-top: $basic-padding/2;}}
-    &.with-popup{padding-right: $input-height + $basic-padding/2;}
-    &.only-icon{ width: $input-height; padding: $input-padding/4; border-radius:$input-height/2; }
-
-    .icon{
-      // opacity: 0.25;
-      // position: absolute;
-      // left: $basic-padding/4 - $border-width;
-      // top: $basic-padding/4;
+        .icon{
+        // position: absolute;
+        }
     }
-    .sublabel{
-      color: $regular-grey;
-    }
-
-    @include mq($from: sm) {
-      min-height: $input-height;
-      padding: 0 $input-padding * 2;
-    }
-  }
-}
-button.btn-small{
-  font-size: $font-small;
-  color: $dark-grey;
-
-  .icon{
-    // left: $basic-padding/3 - $border-width;
-    // top: $basic-padding/3 - $border-width;
-  }
-}
-button.btn-large{
-  height: $input-height*2;
-  padding: 0 $input-height 0 $input-height;
-  text-align: left;
-  &.with-icon{ padding-left: $input-height*2 - $border-width*2; }
-  &.with-popup{ padding-right: $input-height + $basic-padding; }
-
-  .icon{
-    opacity: 0.25;
-    position: absolute;
-    left: $basic-padding/2 - $border-width;
-    top: $basic-padding/2 - $border-width;
-  }
-  .sublabel{
-    display: block;
-    margin-top: $basic-padding / 4;
-  }
-}
-:host.btn-default{
-  &>button, button.dropdown {
-    border: solid $border-width $light-alpha;
-  }
-}
-:host.btn-primary{
-  &>button, button.dropdown, button.popup {
-    background-color: $brand-color;
-    color: white;
-    .sublabel{color: white}
-    &:hover{background-color: lighten($brand-color, 2.5%);}
-    &:focus{background-color: lighten($brand-color, 6%);}
-    &:active{background-color: lighten($brand-color, 3%);}
-    .icon{ opacity: 1; color: #fff; }
-  }
-}
-:host.btn-error{
-  &>button, button.dropdown, button.popup {
-    background-color: $error-color;
-    color: white;
-    .sublabel{color: white}
-    &:hover{background-color: lighten($error-color, 2.5%);}
-    &:focus{background-color: lighten($error-color, 2.5%);}
-    &:active{background-color: lighten($error-color, 5%);}
-    .icon{ opacity: 1; color: #fff; }
-  }
-}
-:host.btn-warning{
-  &>button, button.dropdown, button.popup {
-    background-color: $warning-color;
-    color: white;
-    .sublabel{color: white}
-    &:hover{background-color: lighten($warning-color, 2.5%);}
-    &:focus{background-color: lighten($warning-color, 2.5%);}
-    &:active{background-color: lighten($warning-color, 5%);}
-    .icon{ opacity: 1; color: #fff; }
-  }
-}
-:host.btn-success{
-  &>button, button.dropdown, button.popup {
-    background-color: $success-color;
-    color: white;
-    .sublabel{color: white}
-    &:hover{background-color: lighten($success-color, 2.5%);}
-    &:focus{background-color: lighten($success-color, 2.5%);}
-    &:active{background-color: lighten($success-color, 5%);}
-    .icon{ opacity: 1; color: #fff; }
-  }
-}
-:host.btn-light{
-  &>button, button.dropdown, button.popup {
-    background-color: $light-grey;
-    color: $black;
-    .sublabel{color: $black}
-    &:hover{background-color: $light-alpha;}
-    &:focus{background-color: $light-alpha;}
-    &:active{background-color: white; }
-  }
-}
-:host.btn-accent{
-  &>button, button.dropdown, button.popup {
-
-  }
-}
-:host.btn-header-md{
-  height: 100%;
-  button{
-    border: 0;
-    border-radius: 0;
-    min-width: $header-md-height;
-    min-height: $header-md-height;
-    &:hover{ background-color: $lightest-alpha }
-    &:active{ background-color: $light-alpha }
-    .icon{
-      height: 20px;
-      width: 20px;
-      top: $header-height/4;
-      left: $header-height/4;
-    }
-    span{
-      padding-right: $header-md-height/4;
-    }
-  }
-}
-:host.btn-header{
-  height: 100%;
-  button{
-    border: 0;
-    border-radius: 0;
-    min-width: $header-xs-height;
-    min-height: $header-xs-height;
-    &:hover{ background-color: $lightest-alpha }
-    &:active{ background-color: $light-alpha }
-    .icon{
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      opacity: 0.75;
-      top: $header-xs-height/4;
-      left: $header-xs-height/4;
-
-      i {
-        font-size: $font-large;
-      }
-    }
-    span{
-      padding-right: $header-height/4;
-    }
-
-    @include mq($from: sm) {
-      min-width: $header-height;
-      min-height: $header-height;
-
-      .icon {
-        top: $header-height/3;
-        left: $header-height/3;
-      }
-    }
-  }
-}
-:host.selected{
-  background-color: $lightest-alpha;
-}
-.popup-container{ margin-left: -$input-height; }
-.popup-large{
-  margin-top: $input-height / 2;
-  margin-left: -($input-height + $basic-padding / 2);
-  margin-right: $basic-padding / 2;
 }

@@ -1,0 +1,27 @@
+toast-component {
+    .toast-container {
+        transition: all 0.5s ease 0s;
+        width: 100%;
+        bottom: -80px;
+
+        font-size: $font-regular;
+        background: $light-grey;
+        padding: $basic-padding;
+    }
+
+    .remove {
+        margin-left: auto;
+        opacity: 0.5;
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .animate-in {
+        bottom: 0px;
+    }
+
+    .animate-out {
+        bottom: -80px;
+    }
+}

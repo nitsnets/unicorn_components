@@ -1,7 +1,3 @@
-@import './../../styles/abstracts/index.scss';
-
 :host {
   flex: 1;
-  background-color: white;
-  @include border($border-width);
 }

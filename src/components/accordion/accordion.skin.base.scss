@@ -1,0 +1,25 @@
+nts-accordion {
+  
+  .acc-container {
+    @include border-bottom;
+  }
+
+  .acc-header {
+    height: $header-md-height;
+    @include border-bottom;
+    padding: 0 $basic-padding / 4;
+  }
+
+  .acc-title {
+    margin-left: $basic-padding / 6;
+  }
+  .acc-caret {
+    @include transition(transform, $fast, ease);
+    &.collapsed { @include rotate(-90); }
+  }
+
+.acc-content {
+  /* @include v-grow-animation; */
+}
+}
+

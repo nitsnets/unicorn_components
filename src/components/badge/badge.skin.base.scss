@@ -1,0 +1,22 @@
+nts-badge {
+
+  .badge {
+    background-color: $regular-grey;
+    border-radius: 50%;
+    color: white;
+    font-size: $font-smallest;
+    height: $input-height / 2 - 4px;
+    min-width: $input-height / 2 - 4px;
+
+    @include mq($from: sm) {
+      min-width: $input-height / 2;
+      height: $input-height / 2;
+      font-size: $font-small;
+    }
+  }
+
+  &.primary { .badge { background-color: $brand-color; } }
+  &.success { .badge { background-color: $success-color; } }
+  &.warning { .badge { background-color: $warning-color; } }
+  &.error { .badge { background-color: $error-color; } }
+}

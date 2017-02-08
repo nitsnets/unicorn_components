@@ -1,0 +1,31 @@
+nts-face {
+  .face{
+
+    @include border-radius(50%);
+    background-color: $light-grey;
+
+    width: $input-height + $basic-padding / 3;
+    height: $input-height + $basic-padding / 3;
+
+    &.small { width: $input-xs-height; height: $input-xs-height;}
+    &.big { width: $input-height * 2; height: $input-height * 2; }
+    &.initial { background-color: $regular-grey; }
+
+    .letter{
+      color: white;
+    }
+
+    .icon {
+      opacity: 0.25;
+    }
+
+    @include mq($from: sm) {
+      &.small { width: $input-height; height: $input-height;}
+    }
+  }
+
+  .face-badge {
+    top: - $basic-padding / 8;
+    right: - $basic-padding / 8;
+  }
+}
