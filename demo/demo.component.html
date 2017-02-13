@@ -382,6 +382,21 @@
         <nts-checkbox [(ntsModel)]="checkboxModel" label="Checkbox with label"></nts-checkbox>
         <nts-checkbox [(ntsModel)]="checkboxModel" label="Checkbox with partial" [partial]="true"></nts-checkbox>
       </div>
+      <h5>Toggle inputs</h5>
+      <div class="flex">
+        <nts-toggle [(ntsModel)]="toggleModel" label="Toggle with label"></nts-toggle>
+        <nts-toggle [(ntsModel)]="toggleModel" label="Toggle squared with label" [rounded]="false"></nts-toggle>
+      </div>
+      <div class="flex">
+        <nts-toggle class="primary" [(ntsModel)]="toggleModel"></nts-toggle>
+        <nts-toggle class="success" [(ntsModel)]="toggleModel"></nts-toggle>
+        <nts-toggle class="warning" [(ntsModel)]="toggleModel"></nts-toggle>
+        <nts-toggle class="error" [(ntsModel)]="toggleModel"></nts-toggle>
+      </div>
+      <div class="flex">
+        <nts-toggle class="small" [(ntsModel)]="toggleModel" label="Small toggle with label"></nts-toggle>
+        <nts-toggle class="small" [(ntsModel)]="toggleModel" label="Small toggle squared with label" [rounded]="false"></nts-toggle>
+      </div>
 
       <h5>Color picker</h5>
       <div class="flex">

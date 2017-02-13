@@ -1,0 +1,82 @@
+$toggle-height: $input-height;
+$toggle-width: $input-height * 2 - $input-padding;
+$toggle-slide-size: $toggle-width - $toggle-height;
+$toggle-padding: $input-padding / 2;
+
+nts-toggle {
+    .toggle-container {
+        position: relative;
+        display: inline-block;
+        width: $toggle-width;
+        height: $toggle-height;
+    }
+
+    .toggle-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $light-grey;
+        transition: .4s;
+
+        &:before {
+            position: absolute;
+            content: "";
+            height: $toggle-slide-size;
+            width: $toggle-slide-size;
+            left: $toggle-padding;
+            bottom: $toggle-padding;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+        &.round {
+            border-radius: $toggle-height / 2;
+            &:before {
+                border-radius: 50%;
+            }
+        }
+    }
+
+    input:checked + .toggle-slider:before {
+        -webkit-transform: translateX($toggle-slide-size);
+        -ms-transform: translateX($toggle-slide-size);
+        transform: translateX($toggle-slide-size);
+    }
+
+    .toggle-label {
+        padding-left: $input-padding;
+        flex-shrink: 0;
+    }
+
+    input:checked + .toggle-slider { background-color: $dark-grey; }
+    &.primary input:checked + .toggle-slider { background-color: $brand-color; }
+    &.success input:checked + .toggle-slider { background-color: $success-color; }
+    &.warning input:checked + .toggle-slider { background-color: $warning-color; }
+    &.error input:checked + .toggle-slider { background-color: $error-color; }
+
+    &.small {
+        .toggle-container {
+            width: $toggle-width / 2;
+            height: $toggle-height / 2;
+        }
+        .toggle-slider {
+            &:before {
+                height: $toggle-slide-size / 2;
+                width: $toggle-slide-size / 2;
+                left: $toggle-padding / 2;
+                bottom: $toggle-padding / 2;
+            }
+            &.round {
+                border-radius: $input-height / 2;
+            }
+        }
+        input:checked + .toggle-slider:before {
+            -webkit-transform: translateX($toggle-slide-size / 2);
+            -ms-transform: translateX($toggle-slide-size / 2);
+            transform: translateX($toggle-slide-size / 2);
+        }
+    }
+}

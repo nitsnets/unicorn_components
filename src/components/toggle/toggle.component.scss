@@ -1,0 +1,13 @@
+:host{
+  display: inline-block;
+
+  label{
+    user-select: none;
+    position: relative;
+
+    display:flex;
+    align-items: center;
+
+    input{display: none;};
+  }
+}
