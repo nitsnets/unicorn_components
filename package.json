@@ -9,6 +9,7 @@
     "start": "ng serve --port 4201 --live-reload-port 49153",
     "build": "ng build",
     "build-prod": "ng build --prod",
+    "autoprefix-source": "postcss -s postcss-scss -u autoprefixer --autoprefixer.browsers \"last 2 versions\" -r src/**/*.scss",
     "demo": "ng serve",
     "lint": "tslint \"src/**/*.ts\""
   },
@@ -22,7 +23,6 @@
     "@angular/platform-browser": "2.4.1",
     "@angular/platform-browser-dynamic": "2.4.1",
     "@angular/router": "3.4.1",
-
     "angular2-color-picker": "^1.3.0",
     "brace": "^0.9.1",
     "chart.js": "^2.4.0",
@@ -34,10 +34,11 @@
     "zone.js": "^0.7.4"
   },
   "devDependencies": {
+    "@types/chartjs": "0.0.29",
     "@types/jasmine": "^2.2.30",
     "@types/node": "^6.0.42",
-    "@types/chartjs": "0.0.29",
     "angular-cli": "1.0.0-beta.24",
+    "autoprefixer": "^6.7.2",
     "codelyzer": "~2.0.0-beta.4",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "2.7.0",
@@ -46,6 +47,9 @@
     "karma-cli": "^1.0.1",
     "karma-jasmine": "^1.1.0",
     "karma-remap-istanbul": "^0.4.0",
+    "postcss": "^5.2.12",
+    "postcss-cli": "^2.6.0",
+    "postcss-scss": "^0.4.0",
     "protractor": "4.0.14",
     "ts-node": "1.7.2",
     "tslint": "4.2.0",
