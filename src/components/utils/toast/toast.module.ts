@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
-
-import { NtsModule } from '../../nts.module';
-
-import { ToastService } from './toast.service';
+import { NtsModule } from '../../../nts.module';
 import { NtsToastComponent } from './toast.component';
-
+import { ToastService } from './toast.service';
 
 @NgModule({
     imports: [

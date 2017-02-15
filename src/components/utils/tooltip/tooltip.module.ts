@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
-
-import { NtsModule } from '../../nts.module';
-
-import { TooltipService } from './tooltip.service';
+import { NtsModule } from '../../../nts.module';
 import { NtsTooltipComponent } from './tooltip.component';
-
+import { TooltipService } from './tooltip.service';
 
 @NgModule({
     imports: [

@@ -1,14 +1,11 @@
-import { NgModule } from '@angular/core';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { ColorPickerModule } from 'angular2-color-picker';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { ColorPickerModule } from 'angular2-color-picker';
-
 import { NTS_COMPONENTS } from './components/';
 import { NTS_DIRECTIVES } from './directives/';
 import { NTS_PIPES } from './pipes/';
+import { NgModule } from '@angular/core';
 
 @NgModule({
     imports: [
@@ -31,3 +28,4 @@ import { NTS_PIPES } from './pipes/';
     ]
 })
 export class NtsModule { }
+

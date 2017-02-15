@@ -1,21 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
-
-import { NtsModule } from '../src/nts.module';
-
 import { DemoComponent } from './demo.component';
+import { HttpModule } from '@angular/http';
+import { ModalModule } from '../src/components/containers/modal/modal.module';
+import { NgModule } from '@angular/core';
 import { NtsDemoModalContentComponent } from './demo-modal-content/demo-modal-content.component';
-
-
-import { NtsModalComponent } from '../src/modules/modal/modal.component';
-import { NtsToastComponent } from '../src/modules/toast/toast.component';
-import { NtsTooltipComponent } from '../src/modules/tooltip/tooltip.component';
-
-import { ModalModule } from '../src/modules/modal/modal.module';
-import { ToastModule } from '../src/modules/toast/toast.module';
-import { TooltipModule } from '../src/modules/tooltip/tooltip.module';
-
+import { NtsModalComponent } from '../src/components/containers/modal/modal.component';
+import { NtsModule } from '../src/nts.module';
+import { NtsToastComponent } from '../src/components/utils/toast/toast.component';
+import { NtsTooltipComponent } from '../src/components/utils/tooltip/tooltip.component';
+import { ToastModule } from '../src/components/utils/toast/toast.module';
+import { TooltipModule } from '../src/components/utils/tooltip/tooltip.module';
 
 @NgModule({
     declarations: [

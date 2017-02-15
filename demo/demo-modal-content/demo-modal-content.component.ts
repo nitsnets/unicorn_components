@@ -1,6 +1,6 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 
-import { IModalContent } from '../../src/modules/modal/modal.interface';
+import { IModalContent } from '../../src/components/containers/modal/modal.interface';
 
 @Component({
     selector: 'nts-demo-modal-content',

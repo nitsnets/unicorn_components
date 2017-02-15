@@ -1,10 +1,9 @@
 import { Component, ViewContainerRef } from '@angular/core';
-import { ToastService } from '../src/modules/toast/toast.service';
-import { ModalService } from '../src/modules/modal/modal.service';
-import { TooltipService } from '../src/modules/tooltip/tooltip.service';
 
+import { ModalService } from '../src/components/containers/modal/modal.service';
 import { NtsDemoModalContentComponent } from './demo-modal-content/demo-modal-content.component';
-
+import { ToastService } from '../src/components/utils/toast/toast.service';
+import { TooltipService } from '../src/components/utils/tooltip/tooltip.service';
 
 @Component({
     selector: 'nts-demo',

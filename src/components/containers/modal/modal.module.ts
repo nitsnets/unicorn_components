@@ -1,9 +1,7 @@
-import { NgModule } from '@angular/core';
-
-import { NtsModule } from '../../nts.module';
-
 import { ModalService } from './modal.service';
+import { NgModule } from '@angular/core';
 import { NtsModalComponent } from './modal.component';
+import { NtsModule } from '../../../nts.module';
 
 @NgModule({
     imports: [

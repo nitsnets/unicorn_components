@@ -6,11 +6,12 @@
   "typings": "./nts-ng2-components.d.ts",
   "main": "nts-ng2-components",
   "scripts": {
-    "start": "ng serve --port 4201 --live-reload-port 49153",
+    "start": "ng serve --port 4201 --live-reload-port 49153 --host 0.0.0.0",
     "build": "ng build",
     "build-prod": "ng build --prod",
+    "refresh": "git pull && npm install && npm run build",
+    "refresh-prod": "git pull && npm install && npm run build-prod",
     "autoprefix-source": "postcss -s postcss-scss -u autoprefixer --autoprefixer.browsers \"last 2 versions\" -r src/**/*.scss",
-    "demo": "ng serve",
     "lint": "tslint \"src/**/*.ts\""
   },
   "dependencies": {
@@ -23,7 +24,7 @@
     "@angular/platform-browser": "2.4.1",
     "@angular/platform-browser-dynamic": "2.4.1",
     "@angular/router": "3.4.1",
-    "angular2-color-picker": "^1.3.0",
+    "angular2-color-picker": "^1.3.1",
     "brace": "^0.9.1",
     "chart.js": "^2.4.0",
     "core-js": "^2.4.1",

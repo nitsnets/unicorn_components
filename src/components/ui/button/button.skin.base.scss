@@ -145,6 +145,7 @@ nts-button {
             border-radius: 0;
             min-width: $header-md-height;
             min-height: $header-md-height;
+            &.only-icon { width: $header-md-height;}
             &:hover{ background-color: $lightest-alpha }
             &:active{ background-color: $light-alpha }
             .icon{
@@ -165,6 +166,8 @@ nts-button {
             border-radius: 0;
             min-width: $header-xs-height;
             min-height: $header-xs-height;
+            &.only-icon { width: $header-xs-height;}
+
             &:hover{ background-color: $lightest-alpha }
             &:active{ background-color: $light-alpha }
             .icon{
@@ -186,6 +189,8 @@ nts-button {
             @include mq($from: sm) {
                 min-width: $header-height;
                 min-height: $header-height;
+                &.only-icon { width: $header-height;}
+
 
                 .icon {
                     top: $header-height/3;
