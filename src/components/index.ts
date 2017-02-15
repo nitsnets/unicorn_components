@@ -1,7 +1,6 @@
 import { NtsDropdownComponent, NtsDropdownTriggerDirective } from './ui/dropdown/dropdown.component';
 import { NtsPopupComponent, NtsPopupTriggerDirective } from './containers/popup/popup.component';
 
-import { CodeEditorComponent } from './forms/code/code.component';
 import { NtsAccordionComponent } from './containers/accordion/accordion.component';
 import { NtsAsideComponent } from './containers/aside/aside.component';
 import { NtsBadgeComponent } from './utils/badge/badge.component';
@@ -39,6 +38,8 @@ import { NtsSimpleListComponent } from './ui/simple-list/simple-list.component';
 import { NtsTabsComponent } from './containers/tabs/tabs.component';
 import { NtsToggleComponent } from './forms/toggle/toggle.component';
 
+// import { CodeEditorComponent } from './forms/code/code.component';
+
 export const NTS_COMPONENTS = [
     NtsPopupComponent, NtsPopupTriggerDirective, NtsPopupContainerComponent, NtsDropdownComponent, NtsDropdownTriggerDirective,
     NtsDropdownContainerComponent, NtsDropdownItemComponent, NtsInputComponent, NtsCheckboxComponent, NtsRadioComponent,
@@ -46,6 +47,5 @@ export const NTS_COMPONENTS = [
     NtsClockComponent, NtsIconComponent, NtsCalendarComponent, NtsAsideComponent, NtsLayoutComponent, NtsSearchHeaderComponent,
     NtsAccordionComponent, NtsColorPickerComponent, NtsImagePickerComponent, NtsSimpleListComponent, NtsBoxComponent, NtsRowComponent,
     NtsChipComponent, NtsProgressComponent, NtsFaceComponent, NtsBadgeComponent, NtsPaginatorComponent, NtsDaterangePickerComponent,
-    NtsTabsComponent, NtsChartComponent, NtsChartLegendComponent, NtsChartTooltipComponent, NtsRowSpacerComponent, CodeEditorComponent,
-    NtsToggleComponent
+    NtsTabsComponent, NtsChartComponent, NtsChartLegendComponent, NtsChartTooltipComponent, NtsRowSpacerComponent, NtsToggleComponent
 ];
