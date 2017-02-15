@@ -1,43 +1,49 @@
 @import '../../components/containers/popup/popup.skin.base';
 @import '../../components/containers/popup/container/container.skin.base';
+@import '../../components/containers/modal/modal.skin.base';
+@import '../../components/containers/box/box.skin.base';
+@import '../../components/containers/row/row.skin.base';
+@import '../../components/containers/accordion/accordion.skin.base';
+@import '../../components/containers/layout/layout.skin.base';
+@import '../../components/containers/aside/aside.skin.base';
+@import '../../components/containers/header/header.skin.base';
+@import '../../components/containers/body/body.skin.base';
+@import '../../components/containers/tabs/tabs.skin.base';
 
 @import '../../components/ui/dropdown/dropdown.skin.base';
 @import '../../components/ui/dropdown/container/container.skin.base';
 @import '../../components/ui/dropdown/item/item.skin.base';
+@import '../../components/ui/button/button.skin.base';
+@import '../../components/ui/simple-list/simple-list.skin.base';
+@import '../../components/ui/clock/clock.skin.base';
+@import '../../components/ui/calendar/calendar.skin.base';
+@import '../../components/ui/paginator/paginator.skin.base';
 
 @import '../../components/utils/face/face.skin.base';
-@import '../../components/containers/box/box.skin.base';
-@import '../../components/containers/row/row.skin.base';
-@import '../../components/containers/accordion/accordion.skin.base';
-@import '../../components/views/search-header/search.skin.base';
-@import '../../components/containers/layout/layout.skin.base';
-@import '../../components/containers/aside/aside.skin.base';
+@import '../../components/utils/chip/chip.skin.base';
+@import '../../components/utils/progress/progress.skin.base';
+@import '../../components/utils/badge/badge.skin.base';
 @import '../../components/utils/separator/separator.skin.base';
+@import '../../components/utils/icon/icon.skin.base';
+@import '../../components/utils/toast/toast.skin.base';
+@import '../../components/utils/tooltip/tooltip.skin.base';
+
 @import '../../components/forms/input/input.skin.base';
 @import '../../components/forms/checkbox/checkbox.skin.base';
 @import '../../components/forms/radio/radio.skin.base';
 @import '../../components/forms/select/select.skin.base';
-@import '../../components/containers/header/header.skin.base';
-@import '../../components/containers/body/body.skin.base';
-@import '../../components/ui/button/button.skin.base';
-@import '../../components/utils/icon/icon.skin.base';
-@import '../../components/ui/simple-list/simple-list.skin.base';
 @import '../../components/forms/datetime-picker/datetime-picker.skin.base';
-@import '../../components/ui/clock/clock.skin.base';
-@import '../../components/ui/calendar/calendar.skin.base';
 @import '../../components/forms/color-picker/color-picker.skin.base';
 @import '../../components/forms/image-picker/image-picker.skin.base';
-@import '../../components/utils/chip/chip.skin.base';
-@import '../../components/utils/progress/progress.skin.base';
-@import '../../components/utils/badge/badge.skin.base';
-@import '../../components/ui/paginator/paginator.skin.base';
 @import '../../components/forms/daterange-picker/daterange-picker.skin.base';
-@import '../../components/containers/tabs/tabs.skin.base';
-@import '../../components/charts/chart/chart.skin.base';
-@import '../../components/charts/chart-legend/chart-legend.skin.base';
-@import '../../components/charts/chart-tooltip/chart-tooltip.skin.base';
 @import '../../components/forms/code/code.skin.base';
 @import '../../components/forms/toggle/toggle.skin.base';
+
+@import '../../components/charts/chart-tooltip/chart-tooltip.skin.base';
+@import '../../components/charts/chart/chart.skin.base';
+@import '../../components/charts/chart-legend/chart-legend.skin.base';
+
+@import '../../components/views/search-header/search.skin.base';
 
 html, body {
   height: 100%;
