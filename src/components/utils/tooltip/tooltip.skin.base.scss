@@ -2,18 +2,16 @@ nts-tooltip {
 
     .tooltip-container {
         transition: all 0.5s ease 0s;
-        width: 225px;    
+        width: 225px;
         opacity : 0;
 
         font-size: $font-regular;
         background: $light-grey;
-        
+
         border: $border-width solid $medium-grey;
         padding: $basic-padding/2;
         border-radius: $border-radius;
-    }
 
-    
         opacity: 0.5;
         &:hover {
             opacity: 1;
