@@ -18,15 +18,24 @@ nts-calendar {
     padding: $basic-padding/3;
 
     @include no-touch();
+
+    &.rangeFromActive .day-container {
+      &.selected { @include halfBg(left) }
+      &.rangeFrom { @include halfBg(right) }
+    }
+    &.rangeToActive .day-container {
+      &.selected { @include halfBg(right) }
+      &.rangeTo { @include halfBg(left) }
+    }
   }
   .month-name {
     p{ font-weight: bold; }
   }
   .days-name {
-    p{ 
-      color: $brand-color; 
-      font-weight: bold; 
-      font-size: $font-small - 1px; 
+    p{
+      color: $brand-color;
+      font-weight: bold;
+      font-size: $font-small - 1px;
       text-transform: uppercase;
     }
   }
@@ -39,15 +48,6 @@ nts-calendar {
     &.selected { .day { background-color: $brand-color; color: white; } }
     &.different-month { visibility: hidden}
     &.unavailable { opacity: 0.25; }
-
-    .rangeFromActive & {
-      &.selected { @include halfBg(left) }
-      &.rangeFrom { @include halfBg(right) }
-    }
-    .rangeToActive & {
-      &.selected { @include halfBg(right) }
-      &.rangeTo { @include halfBg(left) }
-    }
   }
 
   .day {

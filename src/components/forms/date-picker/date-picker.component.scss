@@ -1,0 +1,39 @@
+
+:host {
+  display: flex;
+}
+
+.date-container {
+  flex: 1;
+  position: relative;
+}
+
+.date-inputs-container {
+  display: flex;
+}
+
+.date-input {
+  flex: 1;
+}
+
+.date-controls-container {
+  z-index: 1;
+
+  &.floating {
+    z-index: 2;
+    position: absolute;
+
+    &.align-right {
+      right: 0;
+    }
+    &.align-left {
+      left: 0;
+    }
+  }
+}
+
+.date-buttons-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}

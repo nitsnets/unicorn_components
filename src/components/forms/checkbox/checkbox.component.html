@@ -1,12 +1,16 @@
 <label [ngClass]="{
-  checked: ntsModel == true,
-  partial: partial == true,
-  'only-icon': !label || !label.length
+    checked: ntsModel == true,
+    partial: partial == true,
+    'only-icon': !label || !label.length
 }">
-  <nts-icon class="icon" [icon]="
-    ntsModel == true ? 'square-check' :
-    partial == true ? 'square-minus' : 'square'"
-  ></nts-icon>
-  <input type="checkbox" [name]="name" [ngModel]="ntsModel" (ngModelChange)="onChange(!ntsModel)">
-  <span *ngIf="label">{{label}}</span>
+    <nts-icon class="icon" [icon]="
+        ntsModel == true ? 'square-check' :
+        partial == true ? 'square-minus' : 'square'"
+    ></nts-icon>
+    <input type="checkbox"
+        [name]="name"
+        [ngModel]="ntsModel"
+        (ngModelChange)="onNgModelChange(!ntsModel)"
+    >
+    <span *ngIf="label">{{label}}</span>
 </label>

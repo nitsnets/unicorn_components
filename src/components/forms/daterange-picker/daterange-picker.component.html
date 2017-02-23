@@ -28,30 +28,26 @@
     [class.align-right]="side === 'right'"
   >
     <div class="pickers-container">
-      <nts-datetime-picker
+      <nts-date-picker
         class="picker spacing"
-        (dateChange)="onFromChanges($event)"
-        [dateModel]="fromModel"
-        [dateLabel]="fromLabel || (toLabel ? ' ' : '')"
-        [timeShow]="false"
-        [popup]="!combo"
-        [keepOpen]="true"
+        (ntsModelChange)="onFromChanges($event)"
+        [ntsModel]="fromModel"
+        [label]="fromLabel || (toLabel ? ' ' : '')"
+        [inline]="combo"
         [maxDate]="toModel || maxDate"
         [minDate]="minDate"
         [rangeTo]="toModel"
-      > </nts-datetime-picker>
-      <nts-datetime-picker
+      > </nts-date-picker>
+      <nts-date-picker
         class="picker"
-        (dateChange)="onToChanges($event)"
-        [dateModel]="toModel"
-        [dateLabel]="toLabel || (fromLabel ? ' ' : '')"
-        [timeShow]="false"
-        [popup]="!combo"
-        [keepOpen]="true"
+        (ntsModelChange)="onToChanges($event)"
+        [ntsModel]="toModel"
+        [label]="toLabel || (fromLabel ? ' ' : '')"
+        [inline]="combo"
         [maxDate]="maxDate"
         [minDate]="fromModel || minDate"
         [rangeFrom]="fromModel"
-    > </nts-datetime-picker>
+    > </nts-date-picker>
     </div>
     <div class="buttons-container" *ngIf="combo && comboOpened">
       <nts-row>

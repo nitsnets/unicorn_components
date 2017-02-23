@@ -1,21 +1,15 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { NtsFormInputComponent } from '../../base/form-input.component';
 
 @Component({
     selector: 'nts-radio',
     templateUrl: 'radio.component.html',
     styleUrls: ['radio.component.scss'],
 })
-export class NtsRadioComponent implements OnInit {
+export class NtsRadioComponent extends NtsFormInputComponent implements OnInit {
 
-    @Input() name: string = '';
-    @Input() value: string = '';
-    @Input() label: string;
-    @Input() ntsModel: boolean = false;
-    @Output() ntsModelChange = new EventEmitter();
-
-    constructor() { }
-
+    // @Override
     ngOnInit() { }
-
 
 }

@@ -1,3 +1,5 @@
-linters:
-  Indentation:
-    width: 4
+rules:
+  indentation:
+    - 1
+    -
+      size: 4

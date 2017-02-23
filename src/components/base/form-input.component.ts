@@ -14,9 +14,6 @@ export abstract class NtsFormInputComponent implements OnInit {
     @Input() debounce = 0;
 
     debounceTimer;
-    error
-
-    constructor() { }
 
     ngOnInit() {
         if (!this.ntsModel) {

@@ -1,0 +1,32 @@
+<div class="date-container" (clickOutside)="opened = (inline ? opened : false)">
+  <div class="date-inputs-container">
+    <nts-input
+      type="date"
+      icon="calendar"
+      class="date-input clear-webkit-controls"
+      [maxValue]="maxDate"
+      [minValue]="minDate"
+      [label]="label"
+      [clear]="true"
+      [ntsModel]="ntsModel"
+      (ntsModelChange)="onDateChanges($event)"
+      (ntsFocus)="opened = true"
+      (ntsKeypress)="onKeyPress($event, true)"
+    > </nts-input>
+  </div>
+  <div *ngIf="opened || inline"
+    class="date-controls-container"
+    [class.floating]="!inline"
+    [class.align-left]="side === 'left'"
+    [class.align-right]="side === 'right'"
+  >
+    <nts-calendar
+      [maxDate]="maxDate"
+      [minDate]="minDate"
+      [rangeFrom]="rangeFrom"
+      [rangeTo]="rangeTo"
+      [ntsModel]="ntsModel"
+      (ntsModelChange)="onDateChanges($event)">
+    </nts-calendar>
+  </div>
+</div>

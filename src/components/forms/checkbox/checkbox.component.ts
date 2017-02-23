@@ -1,24 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+import { NtsFormInputComponent } from '../../base/form-input.component';
 
 @Component({
     selector: 'nts-checkbox',
     templateUrl: 'checkbox.component.html',
     styleUrls: ['checkbox.component.scss'],
 })
-export class NtsCheckboxComponent implements OnInit {
-
-    @Input() name: string = '';
-    @Input() label: string;
+export class NtsCheckboxComponent extends NtsFormInputComponent {
     @Input() partial: boolean = false;
-    @Input() ntsModel: boolean = false;
-    @Output() ntsModelChange = new EventEmitter();
-
-    constructor() { }
-
-    ngOnInit() { }
-
-    onChange(value) {
-        this.ntsModelChange.emit(value);
-    }
-
 }

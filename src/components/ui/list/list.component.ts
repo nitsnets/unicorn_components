@@ -2,22 +2,22 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { objEquals } from '../../../utils';
 
-export interface SimpleListItem { name: String; }
+export interface ListItem { name: String; }
 
 @Component({
-    selector: 'nts-simple-list',
-    templateUrl: 'simple-list.component.html',
-    styleUrls: ['simple-list.component.scss']
+    selector: 'nts-list',
+    templateUrl: 'list.component.html',
+    styleUrls: ['list.component.scss']
 })
-export class NtsSimpleListComponent implements OnInit {
+export class NtsListComponent implements OnInit {
     @Input() placeholder: string;
 
-    @Input() itemActive: SimpleListItem;
-    @Output() itemActiveChange = new EventEmitter<SimpleListItem>();
+    @Input() itemActive: ListItem;
+    @Output() itemActiveChange = new EventEmitter<ListItem>();
 
-    @Input() items: SimpleListItem[];
+    @Input() items: ListItem[];
     @Output() deleteItem = new EventEmitter<number>();
-    @Output() editItem = new EventEmitter<SimpleListItem>();
+    @Output() editItem = new EventEmitter<ListItem>();
 
     // Double click handlers
     preventDoubleclick = false;
@@ -28,7 +28,7 @@ export class NtsSimpleListComponent implements OnInit {
     constructor() { }
     ngOnInit() { }
 
-    onClickItem(item: SimpleListItem) {
+    onClickItem(item: ListItem) {
         this.preventDoubleclick = false;
         this.timer = setTimeout(
             _ => {
@@ -39,7 +39,7 @@ export class NtsSimpleListComponent implements OnInit {
             }, this.delay
         );
     }
-    onDoubleclickItem(item: SimpleListItem) {
+    onDoubleclickItem(item: ListItem) {
         if (this.preventDoubleclick) { return false; }
         clearTimeout(this.timer);
         this.preventClick = true;
@@ -47,7 +47,7 @@ export class NtsSimpleListComponent implements OnInit {
         item['editing'] = true;
         item['newname'] = item.name;
     }
-    onEditItem(item: SimpleListItem) {
+    onEditItem(item: ListItem) {
         item.name = item['newname'];
         item['editing'] = false;
 
@@ -58,7 +58,7 @@ export class NtsSimpleListComponent implements OnInit {
         this.preventDoubleclick = true;
         this.deleteItem.emit(i);
     }
-    isitemSelected(item: SimpleListItem): boolean {
+    isitemSelected(item: ListItem): boolean {
         if (item['id'] && this.itemActive['id'] && item['id'] === this.itemActive['id']) { return true; }
         return objEquals(this.itemActive, item);
     }

@@ -269,21 +269,21 @@
            ################################################################## -->
       <h3>Inputs</h3>
       <nts-separator></nts-separator>
-      <h5>Datetime picker</h5>
+      <h5>Date-time picker</h5>
       <div class="flex">
-        <nts-datetime-picker> </nts-datetime-picker>
+        <nts-date-picker label="Date picker"> </nts-date-picker>
       </div>
       <div class="flex">
-        <nts-datetime-picker dateLabel="Min and max date" timeLabel="Hour" minDate="2017-02-01" maxDate="2017-02-26"> </nts-datetime-picker>
+        <nts-time-picker label="Time picker"> </nts-time-picker>
       </div>
       <div class="flex">
-        <nts-datetime-picker dateLabel="Floating calendar" [popup]="true"> </nts-datetime-picker>
+        <nts-date-picker label="Min and max date" minDate="2017-02-01" maxDate="2017-02-26"> </nts-date-picker>
       </div>
       <div class="flex">
-        <nts-datetime-picker dateLabel="Only date" [popup]="true" [timeShow]="false"> </nts-datetime-picker>
+        <nts-date-picker label="Inline calendar" [inline]="true"> </nts-date-picker>
       </div>
       <div class="flex">
-        <nts-datetime-picker timeLabel="Only hour" [popup]="true" [dateShow]="false"> </nts-datetime-picker>
+        <nts-datetime-picker dateLabel="Date picker" timeLabel="With time picker"> </nts-datetime-picker>
       </div>
 
       <h5>Daterange picker</h5>

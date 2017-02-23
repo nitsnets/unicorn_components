@@ -6,16 +6,15 @@ import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild }
     styleUrls: ['button.component.scss'],
 })
 export class NtsButtonComponent implements OnInit {
+    @Input() icon: string;
     @Input() label: string;
     @Input() sublabel: string;
-    @Input() icon: string;
     @Input() type: string;
     @Input() size: string;
     @Input() dropdown = false;
     @Input() popup = false;
     @Input() popupIcon: string;
     @Input() disabled: boolean;
-
 
     @Input() fileType: string;
     @Output() fileChanged = new EventEmitter();

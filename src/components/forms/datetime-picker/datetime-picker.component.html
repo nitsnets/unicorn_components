@@ -1,67 +1,16 @@
-<div class="datetime-container" (clickOutside)="setMode(popup? null: mode)">
-  <div class="datetime-inputs-container">
-    <nts-input
-      type="date"
-      icon="calendar"
-      class="datetime-input clear-webkit-controls"
-      *ngIf="dateShow"
-      [class.spacing]="timeShow"
-      [maxValue]="maxDate"
-      [minValue]="minDate"
-      [label]="dateLabel || (timeLabel ? ' ' : '')"
-      [clear]="popup"
-      [ntsModel]="dateModel"
-      (ntsModelChange)="onDateChanges($event)"
-      (ntsFocus)="setMode('date')"
-      (ntsKeypress)="onKeyPress($event, 'date')"
-    > </nts-input>
-    <nts-input
-      type="time"
-      icon="clock"
-      class="datetime-input clear-webkit-controls"
-      *ngIf="timeShow"
-      [label]="timeLabel || (dateLabel ? ' ' : '')"
-      [clear]="popup"
-      [ntsModel]="timeModel"
-      (ntsModelChange)="onTimeChanges($event)"
-      (ntsFocus)="setMode('time')"
-      (ntsKeypress)="onKeyPress($event, 'time')"
-    > </nts-input>
-  </div>
-  <div *ngIf="mode!==null || (!popup && keepOpen)"
-    class="datetime-controls-container"
-    [class.floating]="popup"
-    [class.align-left]="side === 'left'"
-    [class.align-right]="side === 'right'"
-  >
-    <nts-calendar
-      *ngIf="dateShow && mode === 'date'"
-      [maxDate]="maxDate"
-      [minDate]="minDate"
-      [rangeFrom]="rangeFrom"
-      [rangeTo]="rangeTo"
-      [ntsModel]="dateModel"
-      (ntsModelChange)="onDateChanges($event)">
-    </nts-calendar>
-    <nts-clock
-      *ngIf="timeShow && mode === 'time'"
-      [ntsModel]="timeModel"
-      (ntsModelChange)="onTimeChanges($event)">
-    </nts-clock>
-  </div>
-  <div *ngIf="!keepOpen && mode && !popup" class="datetime-buttons-container">
-    <nts-button
-      class="btn-small"
-      icon="up"
-      label="close"
-      (click)="setMode(null)">
-    </nts-button>
-    <nts-button
-      *ngIf="dateModel || timeModel"
-      class="btn-small"
-      icon="close"
-      label="clear"
-      (click)="clear()">
-    </nts-button>
-  </div>
+<div class="datetime-container">
+    <nts-date-picker class="spacing"
+        [ntsModel]="dateModel"
+        (ntsModelChange)="onDateChanges($event)"
+        [label]="dateLabel || (timeLabel ? ' ' : '')"
+        [maxDate]="maxDate"
+        [minDate]="minDate"
+        [inline]="inline"
+    ></nts-date-picker>
+    <nts-time-picker
+        [ntsModel]="timeModel"
+        (ntsModelChange)="onTimeChanges($event)"
+        [label]="timeLabel || (dateLabel ? ' ' : '')"
+        [inline]="inline"
+    ></nts-time-picker>
 </div>

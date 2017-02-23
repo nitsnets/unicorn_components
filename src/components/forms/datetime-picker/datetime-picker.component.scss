@@ -1,32 +1,3 @@
-
-:host {
-  display: flex;
-}
-
 .datetime-container {
-  flex: 1;
-  position: relative;
-}
-
-.datetime-inputs-container {
   display: flex;
-}
-
-.datetime-input {
-  flex: 1;
-}
-
-.datetime-controls-container {
-  z-index: 1;
-
-  &.floating {
-    z-index: 2;
-    position: absolute;
-  }
-}
-
-.datetime-buttons-container {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
 }
