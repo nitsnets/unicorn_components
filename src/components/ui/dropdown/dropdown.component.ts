@@ -12,8 +12,7 @@ import {
 } from '@angular/core';
 
 import { NtsDropdownContainerComponent } from './container/container.component';
-
-export type NtsDropdownPosition = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right';
+import { NtsPosition } from '../../../models/types';
 
 @Component({
     selector: 'nts-dropdown',
@@ -24,8 +23,8 @@ export class NtsDropdownComponent {
     @Input() toggle = false;
     @Input() keepOpen = false;
     @Output() openedChange = new EventEmitter();
-    @Input() position: NtsDropdownPosition = null;
-    calculatedPosition: NtsDropdownPosition = null;
+    @Input() position: NtsPosition = null;
+    calculatedPosition: NtsPosition = null;
 
     @ContentChild(NtsDropdownContainerComponent) dropdownScope: NtsDropdownContainerComponent;
 

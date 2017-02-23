@@ -7,6 +7,9 @@ import { NtsBadgeComponent } from './utils/badge/badge.component';
 import { NtsBodyComponent } from './containers/body/body.component';
 import { NtsBoxComponent } from './containers/box/box.component';
 import { NtsButtonComponent } from './ui/button/button.component';
+import { NtsButtonDropdownComponent } from './ui/button-dropdown/button-dropdown.component';
+import { NtsButtonFileComponent } from './ui/button-file/button-file.component';
+import { NtsButtonPopupComponent } from './ui/button-popup/button-popup.component';
 import { NtsCalendarComponent } from './ui/calendar/calendar.component';
 import { NtsChartComponent } from './charts/chart/chart.component';
 import { NtsChartLegendComponent } from './charts/chart-legend/chart-legend.component';
@@ -44,6 +47,7 @@ import { NtsToggleComponent } from './forms/toggle/toggle.component';
 
 
 
+
 export const NTS_COMPONENTS = [
     NtsPopupComponent, NtsPopupTriggerDirective, NtsPopupContainerComponent, NtsDropdownComponent, NtsDropdownTriggerDirective,
     NtsDropdownContainerComponent, NtsDropdownItemComponent, NtsInputComponent, NtsCheckboxComponent, NtsRadioComponent,
@@ -52,5 +56,5 @@ export const NTS_COMPONENTS = [
     NtsAccordionComponent, NtsColorPickerComponent, NtsImagePickerComponent, NtsListComponent, NtsBoxComponent, NtsRowComponent,
     NtsChipComponent, NtsProgressComponent, NtsFaceComponent, NtsBadgeComponent, NtsPaginatorComponent, NtsDaterangePickerComponent,
     NtsTabsComponent, NtsChartComponent, NtsChartLegendComponent, NtsChartTooltipComponent, NtsRowSpacerComponent, NtsToggleComponent,
-    NtsDatePickerComponent, NtsTimePickerComponent
+    NtsDatePickerComponent, NtsTimePickerComponent, NtsButtonDropdownComponent, NtsButtonPopupComponent, NtsButtonFileComponent
 ];

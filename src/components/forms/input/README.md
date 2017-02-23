@@ -3,34 +3,6 @@
 ---
 Input simple
 
-
- <h5>Single-line inputs</h5>
-      <div class="flex">
-        <nts-input [(ntsModel)]="inputModel" label="Default input"></nts-input>
-        <nts-input [(ntsModel)]="inputModel" label="Input with placeholder" placeholder="Input placeholder"></nts-input>
-        <nts-input [(ntsModel)]="inputModel" label="Input with icon" placeholder="Input placeholder" icon="user"></nts-input>
-        <nts-input [(ntsModel)]="inputModel" label="Input with hint" placeholder="Input placeholder" hint="i.e: user@domain.com"></nts-input>
-        <nts-input [(ntsModel)]="inputModel" label="Input with error" placeholder="Input placeholder" error="Must be a valid email"></nts-input>
-        <nts-input [(ntsModel)]="inputModel" label="Input with prefix" placeholder="Input placeholder" prefix="http://www."></nts-input>
-      </div>
-      <div class="flex">
-        <nts-input [(ntsModel)]="inputModel" label="Input with counter" counter="true"></nts-input>
-        <nts-input [(ntsModel)]="inputModel" label="Counter and max" max="10" counter="true"></nts-input>
-        <nts-input [(ntsModel)]="inputModel" label="Input with right icon" placeholder="Input placeholder" iconRight="user"></nts-input>
-      </div>
-      <h5>Multi-line inputs</h5>
-      <nts-input [(ntsModel)]="inputModel"
-        placeholder="Here you can see all the available options of multiline input activated"
-        label="Multiline input"
-        multiline="true"
-        counter="true"
-        max="140"
-        error="Something went wrong"
-        hint="Write something above">
-      </nts-input>
-
-
-
 ### Properties
 - label : string / default = null / label del input
 - sublabel : string / default = null / sublabel del input (ej: http://pages.revox.io/dashboard/latest/html/form_elements.html)
@@ -59,12 +31,6 @@ Input simple
 
 - multiline : bool / default = false / multilinea en los textos
     - ___¿que es mejor multiline o nts-textarea?___
-
-
-
-
-
-
 
 
 
@@ -117,7 +83,7 @@ Input simple
             - ___no me acaban los nombres___
     - ___¿añadimos color?___
     - ___¿podemos definir por defecto los estados: normal, over, active?___
-    
+
 - size : string / tamaño del boton: large, normal, small, extra-small  --> ok
 
 
@@ -129,6 +95,6 @@ Input simple
 
 ---
 
-### Methods 
+### Methods
 
 **/

@@ -1,0 +1,15 @@
+<nts-button (click)="onClick()"
+    [iconRight]="iconRight"
+    [color]="color"
+    [icon]="icon"
+    [label]="label"
+    [sublabel]="sublabel"
+    [size]="size"
+    [disabled]="disabled"
+></nts-button>
+<input
+  type="file"
+  (change)="fileChanged.emit($event.target.value)"
+  [accept]="fileType || null"
+  [style.visibility]="'hidden'"
+>

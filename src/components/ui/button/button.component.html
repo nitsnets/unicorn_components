@@ -2,51 +2,25 @@
   [disabled]="disabled || false"
   [type]="type || 'button'"
   [name]="name || ''"
-  [class]="icon"
-  (click)="onClickButton($event)"
+  [class]="color || ''"
   [ngClass]="{
     'with-icon': icon,
+    'with-icon': icon,
+    'with-icon-right': iconRight,
     'btn-large': size === 'large',
     'btn-small': size === 'small',
     'with-dropdown': dropdown,
     'with-popup': popup,
     'only-icon': icon && (!label || !label.length)
   }">
-  <nts-icon class="icon" [icon]="icon" [size]="size || 'medium'"></nts-icon>
+
+  <nts-icon class="icon" *ngIf="icon" [icon]="icon" [size]="size || 'medium'"></nts-icon>
+
   {{label}}
   <span class="sublabel" *ngIf="sublabel">
     {{sublabel}}
   </span>
+
+  <nts-icon class="iconRight" *ngIf="iconRight" [icon]="iconRight" [size]="size || 'medium'"></nts-icon>
+
 </button>
-
-<!-- Hidden input to emulate file browsing -->
-<input
-  #inputFile
-  type="file"
-  *ngIf="type=='file'"
-  (change)="fileChanged.emit($event.target.value)"
-  [accept]="fileType || null"
-  [style.visibility]="'hidden'">
-
-<!-- Aux button to fire popup -->
-<nts-popup class="popup-container" *ngIf="popup" (click)="$event.stopPropagation()" [ngClass]="{ 'popup-large': size === 'large' }">
-  <button class="popup only-icon with-icon" ntsPopupTrigger type="button">
-    <nts-icon class="icon" [icon]="popupIcon"></nts-icon>
-  </button>
-  <nts-popup-container >
-    <ng-content select=".nts-popup-container"></ng-content>
-  </nts-popup-container>
-</nts-popup>
-
-<!-- Dropdown attached to button -->
-<nts-dropdown *ngIf="dropdown" (click)="$event.stopPropagation()">
-  <button class="dropdown with-icon caret" ntsDropdownTrigger
-    type="button"
-    [ngClass]="{ 'dropdown-large': size === 'large' }">
-    <nts-icon class="icon" icon="caret"></nts-icon>
-  </button>
-  <nts-dropdown-container>
-    <ng-content select=".nts-dropdown-container"></ng-content>
-  </nts-dropdown-container>
-</nts-dropdown>
-

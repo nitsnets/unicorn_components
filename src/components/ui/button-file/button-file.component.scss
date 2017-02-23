@@ -11,12 +11,16 @@
 
         &:not(.with-dropdown){min-width: 100%;}
         &.btn-large{
-            .icon, .iconRight{
+            .icon{
                 position: absolute;
             }
             .sublabel{
                 display: block;
             }
+        }
+
+        .icon{
+        // position: absolute;
         }
     }
 }
