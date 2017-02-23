@@ -2,7 +2,7 @@
   [class.small]="size === 'small'"
   [class.big]="size === 'big'"
   [class.initial]="user && !user.image"
-  [style.background-image]="'url('+user?.image+')'"
+  [style.background-image]="user?.image ? 'url('+user?.image+')' : ''"
 >
   <h4 class="letter" *ngIf="user && !user.image">{{user.name?.charAt(0) | uppercase}}</h4>
   <nts-icon class="icon" [icon]="icon" *ngIf="!user"></nts-icon>

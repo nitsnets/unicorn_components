@@ -1,7 +1,7 @@
 <button
   [disabled]="disabled || false"
   [type]="type || 'button'"
-  [name]="name"
+  [name]="name || ''"
   [class]="icon"
   (click)="onClickButton($event)"
   [ngClass]="{
