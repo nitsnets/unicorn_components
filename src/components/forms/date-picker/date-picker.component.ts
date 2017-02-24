@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input } from '@angular/core';
 
-import { NtsFormInputComponent } from '../../base/form-input.component';
+import { NtsInputBaseComponent } from '../../base/input-base.component';
 import { sideOfScreen } from '../../../utils';
 
 @Component({
@@ -8,7 +8,7 @@ import { sideOfScreen } from '../../../utils';
     templateUrl: 'date-picker.component.html',
     styleUrls: ['date-picker.component.scss'],
 })
-export class NtsDatePickerComponent extends NtsFormInputComponent {
+export class NtsDatePickerComponent extends NtsInputBaseComponent {
 
     @Input() inline = false;
 

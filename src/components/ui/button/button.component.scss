@@ -1,6 +1,6 @@
 :host{
-  position: relative;
-  display: inline-flex;
+    position: relative;
+    display: inline-flex;
 
     button{
         display: block;
@@ -9,7 +9,6 @@
         cursor: pointer;
         outline: none;
 
-        &:not(.with-dropdown){min-width: 100%;}
         &.btn-large{
             .icon, .iconRight{
                 position: absolute;

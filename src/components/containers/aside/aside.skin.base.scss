@@ -1,24 +1,41 @@
 nts-aside {
-  &.has-header{ .body-container{ height: calc(100% - #{$header-height}); } }
-  &.has-subheader{ .body-container{ height: calc(100% - #{$header-height * 2}); } }
-  &.collapsed{ .aside { margin-left: - ($input-height + $basic-padding); }}
-  @include md() {
-    &.collapsed{ .aside { margin-left: 0; width: $input-height + $basic-padding; }}
-  }
-}
-.aside{
-  height: 100%;
-  width: $input-height + $basic-padding;
+    @include md() {
+        &.collapsed{
+            .aside {
+                margin-left: 0;
+                width: $input-height + $basic-padding;
+            }
+        }
+    }
+    .aside{
+        height: 100%;
+        width: $input-height + $basic-padding;
 
-  @include transition(all, 200ms, ease);
+        @include transition(all, 200ms, ease);
 
-  @include md() {
-    width: $aside-width;
-  }
-}
-:host.aside-left{
-  @include border-right();
-}
-:host.aside-right{
-  @include border-left();
+        @include md() {
+            width: $aside-width;
+        }
+    }
+    &.has-header {
+        .body-container {
+            height: calc(100% - #{$header-height});
+        }
+    }
+    &.has-subheader {
+        .body-container {
+            height: calc(100% - #{$header-height * 2});
+        }
+    }
+    &.collapsed{
+        .aside {
+            margin-left: - ($input-height + $basic-padding);
+        }
+    }
+    &.aside-left{
+        @include border-right();
+    }
+    &.aside-right{
+        @include border-left();
+    }
 }

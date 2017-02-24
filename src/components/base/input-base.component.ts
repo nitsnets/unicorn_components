@@ -1,6 +1,6 @@
 import { EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-export abstract class NtsFormInputComponent implements OnInit {
+export abstract class NtsInputBaseComponent implements OnInit {
 
     @Input() ntsModel;
     @Output() ntsModelChange = new EventEmitter();

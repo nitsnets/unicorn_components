@@ -5,13 +5,10 @@
   [class]="color || ''"
   [ngClass]="{
     'with-icon': icon,
-    'with-icon': icon,
     'with-icon-right': iconRight,
+    'only-icon': icon && (!label || !label.length),
     'btn-large': size === 'large',
-    'btn-small': size === 'small',
-    'with-dropdown': dropdown,
-    'with-popup': popup,
-    'only-icon': icon && (!label || !label.length)
+    'btn-small': size === 'small'
   }">
 
   <nts-icon class="icon" *ngIf="icon" [icon]="icon" [size]="size || 'medium'"></nts-icon>

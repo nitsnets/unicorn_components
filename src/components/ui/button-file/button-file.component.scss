@@ -1,26 +1,3 @@
-:host{
-  position: relative;
-  display: inline-flex;
-
-    button{
-        display: block;
-        overflow: hidden;
-        position: relative;
-        cursor: pointer;
-        outline: none;
-
-        &:not(.with-dropdown){min-width: 100%;}
-        &.btn-large{
-            .icon{
-                position: absolute;
-            }
-            .sublabel{
-                display: block;
-            }
-        }
-
-        .icon{
-        // position: absolute;
-        }
-    }
+input {
+    display: none;
 }

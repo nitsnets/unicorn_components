@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
 
-import { NtsFormInputComponent } from '../../base/form-input.component';
+import { NtsInputBaseComponent } from '../../base/input-base.component';
 
 @Component({
     selector: 'nts-checkbox',
     templateUrl: 'checkbox.component.html',
     styleUrls: ['checkbox.component.scss'],
 })
-export class NtsCheckboxComponent extends NtsFormInputComponent {
+export class NtsCheckboxComponent extends NtsInputBaseComponent {
     @Input() partial: boolean = false;
 }
