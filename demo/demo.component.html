@@ -194,32 +194,37 @@
       </div>
       <h5>Popup big buttons</h5>
       <div class="clear">
-        <nts-button-popup icon="page" label="Blank button" sublabel="Sublabel" size="large" iconRight="plus-circle">
+        <nts-button-popup label="Blank button" sublabel="Sublabel" size="large" iconRight="plus-circle">
             This is a custom popup content
             <br>
             Ut tempor consectetur et aute adipisicing commodo.
         </nts-button-popup>
-        <nts-button-popup icon="cloud2" label="Default button" sublabel="Sublabel" color="default" size="large" iconRight="plus-circle">
+        <nts-button-popup label="Default button" sublabel="Sublabel" color="default" size="large" iconRight="plus-circle">
             This is a custom popup content
             <br>
             Ut tempor consectetur et aute adipisicing commodo.
         </nts-button-popup>
-        <nts-button-popup icon="forw" label="Light button" sublabel="Sublabel" color="light" size="large" iconRight="plus-circle">
+        <nts-button-popup label="Light button" sublabel="Sublabel" color="light" size="large" iconRight="plus-circle">
             This is a custom popup content
             <br>
             Ut tempor consectetur et aute adipisicing commodo.
         </nts-button-popup>
-        <nts-button-popup icon="plus-circle" label="Primary button" sublabel="Sublabel" color="primary" size="large" iconRight="plus-circle">
+        <nts-button-popup label="Primary button" sublabel="Sublabel" color="primary" size="large" iconRight="plus-circle">
             This is a custom popup content
             <br>
             Ut tempor consectetur et aute adipisicing commodo.
         </nts-button-popup>
-        <nts-button-popup icon="close" label="Error button" sublabel="Sublabel" color="error" size="large" iconRight="plus-circle">
+        <nts-button-popup label="Error button" sublabel="Sublabel" color="error" size="large" iconRight="plus-circle">
             This is a custom popup content
             <br>
             Ut tempor consectetur et aute adipisicing commodo.
         </nts-button-popup>
-        <nts-button-popup icon="check" label="Success button" sublabel="Sublabel" color="success" size="large" iconRight="plus-circle">
+        <nts-button-popup label="Success button" sublabel="Sublabel" color="success" size="large" iconRight="plus-circle">
+            This is a custom popup content
+            <br>
+            Ut tempor consectetur et aute adipisicing commodo.
+        </nts-button-popup>
+        <nts-button-popup label="Success button" sublabel="Sublabel" color="warning" size="large" iconRight="plus-circle">
             This is a custom popup content
             <br>
             Ut tempor consectetur et aute adipisicing commodo.
@@ -352,14 +357,25 @@
         <nts-toggle [(ntsModel)]="toggleModel" label="Toggle squared with label" [rounded]="false"></nts-toggle>
       </div>
       <div class="flex">
-        <nts-toggle class="primary" [(ntsModel)]="toggleModel"></nts-toggle>
-        <nts-toggle class="success" [(ntsModel)]="toggleModel"></nts-toggle>
-        <nts-toggle class="warning" [(ntsModel)]="toggleModel"></nts-toggle>
-        <nts-toggle class="error" [(ntsModel)]="toggleModel"></nts-toggle>
+        <nts-toggle color="primary" [(ntsModel)]="toggleModel"></nts-toggle>
+        <nts-toggle color="success" [(ntsModel)]="toggleModel"></nts-toggle>
+        <nts-toggle color="warning" [(ntsModel)]="toggleModel"></nts-toggle>
+        <nts-toggle color="error" [(ntsModel)]="toggleModel"></nts-toggle>
       </div>
       <div class="flex">
         <nts-toggle class="small" [(ntsModel)]="toggleModel" label="Small toggle with label"></nts-toggle>
         <nts-toggle class="small" [(ntsModel)]="toggleModel" label="Small toggle squared with label" [rounded]="false"></nts-toggle>
+      </div>
+
+      <h5>Button toggle inputs</h5>
+      <div>
+        <nts-button-toggle label="Button toggle" [(ntsModel)]="toggleModel0"></nts-button-toggle>
+        <nts-button-toggle label="Button toggle" color="default" [(ntsModel)]="toggleModel1"></nts-button-toggle>
+        <nts-button-toggle label="Button toggle" color="light" [(ntsModel)]="toggleModel2"></nts-button-toggle>
+        <nts-button-toggle label="Button toggle" color="primary" [(ntsModel)]="toggleModel3"></nts-button-toggle>
+        <nts-button-toggle label="Button toggle" color="success" [(ntsModel)]="toggleModel4"></nts-button-toggle>
+        <nts-button-toggle label="Button toggle" color="warning" [(ntsModel)]="toggleModel5"></nts-button-toggle>
+        <nts-button-toggle label="Button toggle" color="error" [(ntsModel)]="toggleModel6"></nts-button-toggle>
       </div>
 
       <h5>Color picker</h5>

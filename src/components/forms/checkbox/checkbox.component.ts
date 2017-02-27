@@ -9,4 +9,8 @@ import { NtsInputBaseComponent } from '../../base/input-base.component';
 })
 export class NtsCheckboxComponent extends NtsInputBaseComponent {
     @Input() partial: boolean = false;
+
+    toggleNtsModel() {
+        this.onNgModelChange(this.ntsModel ? false : true);
+    }
 }

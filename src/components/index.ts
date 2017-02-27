@@ -10,6 +10,7 @@ import { NtsButtonComponent } from './ui/button/button.component';
 import { NtsButtonDropdownComponent } from './ui/button-dropdown/button-dropdown.component';
 import { NtsButtonFileComponent } from './ui/button-file/button-file.component';
 import { NtsButtonPopupComponent } from './ui/button-popup/button-popup.component';
+import { NtsButtonToggleComponent } from './forms/button-toggle/button-toggle.component';
 import { NtsCalendarComponent } from './ui/calendar/calendar.component';
 import { NtsChartComponent } from './charts/chart/chart.component';
 import { NtsChartLegendComponent } from './charts/chart-legend/chart-legend.component';
@@ -56,5 +57,6 @@ export const NTS_COMPONENTS = [
     NtsAccordionComponent, NtsColorPickerComponent, NtsImagePickerComponent, NtsListComponent, NtsBoxComponent, NtsRowComponent,
     NtsChipComponent, NtsProgressComponent, NtsFaceComponent, NtsBadgeComponent, NtsPaginatorComponent, NtsDaterangePickerComponent,
     NtsTabsComponent, NtsChartComponent, NtsChartLegendComponent, NtsChartTooltipComponent, NtsRowSpacerComponent, NtsToggleComponent,
-    NtsDatePickerComponent, NtsTimePickerComponent, NtsButtonDropdownComponent, NtsButtonPopupComponent, NtsButtonFileComponent
+    NtsDatePickerComponent, NtsTimePickerComponent, NtsButtonDropdownComponent, NtsButtonPopupComponent, NtsButtonFileComponent,
+    NtsButtonToggleComponent
 ];

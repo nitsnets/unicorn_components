@@ -1,12 +1,9 @@
 import { Input } from '@angular/core';
-import { NtsColor } from '../../models/types';
+import { NtsBaseComponent } from './base.component';
 
-export abstract class NtsButtonBaseComponent {
-    @Input() color: NtsColor;
+export abstract class NtsButtonBaseComponent extends NtsBaseComponent {
     @Input() icon: string;
     @Input() iconRight: string;
-    @Input() label: string;
     @Input() sublabel: string;
     @Input() size: string;
-    @Input() disabled: boolean = false;
 }

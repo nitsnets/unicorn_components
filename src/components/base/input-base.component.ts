@@ -1,6 +1,8 @@
 import { EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-export abstract class NtsInputBaseComponent implements OnInit {
+import { NtsBaseComponent } from './base.component';
+
+export abstract class NtsInputBaseComponent extends NtsBaseComponent implements OnInit {
 
     @Input() ntsModel;
     @Output() ntsModelChange = new EventEmitter();
@@ -8,7 +10,6 @@ export abstract class NtsInputBaseComponent implements OnInit {
     @Output() ntsBlur = new EventEmitter();
 
     @Input() name: string = '';
-    @Input() label: string = '';
     @Input() value: string = '';
     @Input() required = false;
     @Input() debounce = 0;

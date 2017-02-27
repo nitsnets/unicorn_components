@@ -10,7 +10,7 @@
     <input type="checkbox"
         [name]="name"
         [ngModel]="ntsModel"
-        (ngModelChange)="onNgModelChange(!ntsModel)"
+        (ngModelChange)="toggleNtsModel()"
     >
     <span *ngIf="label">{{label}}</span>
 </label>

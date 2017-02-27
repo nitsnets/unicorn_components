@@ -52,10 +52,10 @@ nts-toggle {
     }
 
     input:checked + .toggle-slider { background-color: $dark-grey; }
-    &.primary input:checked + .toggle-slider { background-color: $brand-color; }
-    &.success input:checked + .toggle-slider { background-color: $success-color; }
-    &.warning input:checked + .toggle-slider { background-color: $warning-color; }
-    &.error input:checked + .toggle-slider { background-color: $error-color; }
+    label.primary input:checked + .toggle-slider { background-color: $brand-color; }
+    label.success input:checked + .toggle-slider { background-color: $success-color; }
+    label.warning input:checked + .toggle-slider { background-color: $warning-color; }
+    label.error input:checked + .toggle-slider { background-color: $error-color; }
 
     &.small {
         .toggle-container {
