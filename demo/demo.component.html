@@ -230,6 +230,16 @@
             Ut tempor consectetur et aute adipisicing commodo.
         </nts-button-popup>
       </div>
+      <h5>Header buttons</h5>
+      <div class="clear">
+          <nts-header>
+              <nts-button-header icon="plus-circle"></nts-button-header>
+              <nts-button-header icon="lock"></nts-button-header>
+              <nts-button-header icon="clock" label="Button with label"></nts-button-header>
+              <nts-button-header label="Button just with label"></nts-button-header>
+              <nts-button-header label="Button right icon" iconRight="people"></nts-button-header>
+          </nts-header>
+      </div>
     </div>
     <div *ngIf="tabSelected === 'inputs'" class="content">
 
@@ -382,6 +392,11 @@
       <div class="flex">
         <nts-input type="color" label="Color input" [(ntsModel)]="colorSelected"></nts-input>
         <nts-input type="color" label="Color input with swatch" [(ntsModel)]="colorSelected" [colorSwatch]="true"></nts-input>
+      </div>
+
+      <h5>Image picker</h5>
+      <div class="flex">
+        <nts-image-picker [(ntsModel)]="image"></nts-image-picker>
       </div>
     </div>
     <div *ngIf="tabSelected === 'charts'" class="content">

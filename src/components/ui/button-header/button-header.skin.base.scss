@@ -1,0 +1,59 @@
+nts-button-header {
+    height: 100%;
+    button{
+        border: 0;
+        border-radius: 0;
+        background-color: transparent;
+        padding: 0 $input-padding;
+        min-width: $header-xs-height;
+        min-height: $header-xs-height;
+        font-size: $font-regular;
+        letter-spacing: 0.01em;
+        line-height: 1;
+
+        &.only-icon { width: $header-xs-height;}
+
+        &:hover{ background-color: $lightest-alpha }
+        &:active{ background-color: $light-alpha }
+
+        i {
+            font-size: $font-large;
+        }
+        span{
+            padding-right: $header-height/4;
+        }
+
+        @include mq($from: sm) {
+            min-width: $header-height;
+            min-height: $header-height;
+            &.only-icon { width: $header-height;}
+
+            .icon {
+                top: $header-height/3;
+                left: $header-height/3;
+            }
+        }
+    }
+    &.btn-header-md{
+        height: 100%;
+        button{
+            border: 0;
+            border-radius: 0;
+            min-width: $header-md-height;
+            min-height: $header-md-height;
+            &.only-icon { width: $header-md-height;}
+            &:hover{ background-color: $lightest-alpha }
+            &:active{ background-color: $light-alpha }
+            .icon{
+                height: 20px;
+                width: 20px;
+                top: $header-height/4;
+                left: $header-height/4;
+            }
+            span{
+                padding-right: $header-md-height/4;
+            }
+        }
+    }
+
+}

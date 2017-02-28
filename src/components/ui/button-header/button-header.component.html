@@ -1,0 +1,26 @@
+<button
+  [disabled]="disabled || false"
+  [type]="type || 'button'"
+  [name]="name || ''"
+  [class]="color || ''"
+  [ngClass]="{
+    'with-icon': icon,
+    'with-icon-right': iconRight,
+    'only-icon': icon && (!label || !label.length)
+  }">
+
+    <nts-icon
+        class="icon"
+        *ngIf="icon"
+        [icon]="icon"
+    ></nts-icon>
+
+    {{label}}
+
+    <nts-icon
+        class="iconRight"
+        *ngIf="iconRight"
+        [icon]="iconRight"
+    ></nts-icon>
+
+</button>

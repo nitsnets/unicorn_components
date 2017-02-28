@@ -1,0 +1,12 @@
+:host{
+    position: relative;
+    display: inline-flex;
+
+    button{
+        display: block;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        outline: none;
+    }
+}

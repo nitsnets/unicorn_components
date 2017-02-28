@@ -9,6 +9,7 @@ import { NtsBoxComponent } from './containers/box/box.component';
 import { NtsButtonComponent } from './ui/button/button.component';
 import { NtsButtonDropdownComponent } from './ui/button-dropdown/button-dropdown.component';
 import { NtsButtonFileComponent } from './ui/button-file/button-file.component';
+import { NtsButtonHeaderComponent } from './ui/button-header/button-header.component';
 import { NtsButtonPopupComponent } from './ui/button-popup/button-popup.component';
 import { NtsButtonToggleComponent } from './forms/button-toggle/button-toggle.component';
 import { NtsCalendarComponent } from './ui/calendar/calendar.component';
@@ -18,7 +19,6 @@ import { NtsChartTooltipComponent } from './charts/chart-tooltip/chart-tooltip.c
 import { NtsCheckboxComponent } from './forms/checkbox/checkbox.component';
 import { NtsChipComponent } from './utils/chip/chip.component';
 import { NtsClockComponent } from './ui/clock/clock.component';
-import { NtsColorPickerComponent } from './forms/color-picker/color-picker.component';
 import { NtsDatePickerComponent } from './forms/date-picker/date-picker.component';
 import { NtsDaterangePickerComponent } from './forms/daterange-picker/daterange-picker.component';
 import { NtsDatetimePickerComponent } from './forms/datetime-picker/datetime-picker.component';
@@ -46,17 +46,14 @@ import { NtsToggleComponent } from './forms/toggle/toggle.component';
 
 // import { CodeEditorComponent } from './forms/code/code.component';
 
-
-
-
 export const NTS_COMPONENTS = [
     NtsPopupComponent, NtsPopupTriggerDirective, NtsPopupContainerComponent, NtsDropdownComponent, NtsDropdownTriggerDirective,
     NtsDropdownContainerComponent, NtsDropdownItemComponent, NtsInputComponent, NtsCheckboxComponent, NtsRadioComponent,
     NtsButtonComponent, NtsHeaderComponent, NtsSelectComponent, NtsSeparatorComponent, NtsBodyComponent, NtsDatetimePickerComponent,
     NtsClockComponent, NtsIconComponent, NtsCalendarComponent, NtsAsideComponent, NtsLayoutComponent, NtsSearchHeaderComponent,
-    NtsAccordionComponent, NtsColorPickerComponent, NtsImagePickerComponent, NtsListComponent, NtsBoxComponent, NtsRowComponent,
+    NtsAccordionComponent, NtsImagePickerComponent, NtsListComponent, NtsBoxComponent, NtsRowComponent, NtsButtonToggleComponent,
     NtsChipComponent, NtsProgressComponent, NtsFaceComponent, NtsBadgeComponent, NtsPaginatorComponent, NtsDaterangePickerComponent,
     NtsTabsComponent, NtsChartComponent, NtsChartLegendComponent, NtsChartTooltipComponent, NtsRowSpacerComponent, NtsToggleComponent,
     NtsDatePickerComponent, NtsTimePickerComponent, NtsButtonDropdownComponent, NtsButtonPopupComponent, NtsButtonFileComponent,
-    NtsButtonToggleComponent
+    NtsButtonHeaderComponent// CodeEditorComponent
 ];

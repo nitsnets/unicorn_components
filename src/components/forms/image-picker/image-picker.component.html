@@ -4,7 +4,7 @@
   <div class="placeholder" *ngIf="!imageData">
     <nts-icon class="icon" icon="image" size="large"></nts-icon>
     <p class="label">
-      Click or drop an image to upload <br> (150 x 30)
+      Click or drop an image to upload <br> ({{width}} x {{height}})
     </p>
   </div>
   <div class="preview" *ngIf="imageData">
