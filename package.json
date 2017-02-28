@@ -9,6 +9,7 @@
     "start": "ng serve --port 4201 --live-reload-port 49153 --host 0.0.0.0",
     "build": "ng build",
     "build-prod": "ng build --prod",
+    "reset": "rm -Rf node_modules && npm install",
     "refresh": "git pull && npm install && npm run build",
     "refresh-prod": "git pull && npm install && npm run build-prod",
     "autoprefix-source": "postcss -s postcss-scss -u autoprefixer --autoprefixer.browsers \"last 2 versions\" -r src/**/*.scss",
