@@ -1,22 +1,27 @@
 nts-input{
     display: flex;
 
-    ::-webkit-input-placeholder {
-        color: $dark-grey;
-        font-weight: 300;
+    input, textarea{
+        height: $input-height;
+        padding-left: $input-padding;
+        padding-right: $input-padding;
+        border-radius: $border-radius;
+        @include border($border-width);
+        &:focus{
+            background-color: $lightest-alpha !important;
+            border-color: $light-alpha !important;
+        }
+        &.floating{
+            @include border(0);
+            background-color: transparent;
+        }
+    }
+    textarea{
+        padding: $input-padding;
+        min-height: $input-height*2;
     }
 
-    :-moz-placeholder { /* Firefox 18- */
-        color: $dark-grey;
-        font-weight: 300;
-    }
-
-    ::-moz-placeholder {  /* Firefox 19+ */
-        color: $dark-grey;
-        font-weight: 300;
-    }
-
-    :-ms-input-placeholder {
+    ::placeholder {
         color: $dark-grey;
         font-weight: 300;
     }
@@ -31,6 +36,12 @@ nts-input{
     .icon-right{
         right: ($input-height - $input-padding*2) / 2;
     }
+
+    .with-icon input{ padding-left: $input-height; }
+    .with-icon-right input{ padding-right: $input-height; }
+    .with-two-icon-right input{ padding-right: 40px; }
+    .with-prefix input{ border-radius: 0 $border-radius $border-radius 0; }
+
     .label, .prefix{
         font-weight: 300;
         font-size: $font-small;
@@ -38,6 +49,28 @@ nts-input{
         margin: 0 $input-padding/4;
         height: $label-height;
     };
+
+    .floating-label {
+        span {
+            font-size: $font-regular;
+            position: absolute;
+            top: $label-height;
+            left: $input-padding;
+            line-height: $input-height;
+
+            transition: 100ms ease all;
+        }
+    }
+    .focused, .has-content{
+        .floating-label {
+            span {
+                font-size: $font-small;
+                top: 0;
+                left: 0;
+                line-height: $label-height;
+            }
+        }
+    }
     .prefix{
         height: $input-height;
         padding: 0 $input-padding;
@@ -66,34 +99,13 @@ nts-input{
         font-size: $font-small;
         color: $error-color;
     }
-    input, textarea{
-        height: $input-height;
-        padding-left: $input-padding;
-        padding-right: $input-padding;
-        border-radius: $border-radius;
-        @include border($border-width);
-        &:focus{
-            background-color: $lightest-alpha !important;
-            border-color: $light-alpha !important;
-        }
-        &.floating{
-            @include border(0);
-            background-color: transparent;
-        }
-    }
-    .with-icon input{ padding-left: $input-height; }
-    .with-icon-right input{ padding-right: $input-height; }
-    .with-two-icon-right input{ padding-right: 40px; }
-    .with-prefix input{ border-radius: 0 $border-radius $border-radius 0; }
-    textarea{
-        padding: $input-padding;
-        min-height: $input-height*2;
-    }
+
+
     &.input-large{
         input{
             height: $input-height + $label-height;
         }
-    input, textarea{
+        input, textarea{
             font-size: $font-largest;
         }
     }

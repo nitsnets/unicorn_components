@@ -248,6 +248,72 @@
            ################################################################## -->
       <h3>Inputs</h3>
       <nts-separator></nts-separator>
+
+      <h5>Single-line inputs</h5>
+      <div class="flex">
+        <nts-input [(ntsModel)]="inputModel" label="Default input"></nts-input>
+        <nts-input [(ntsModel)]="inputModel" label="Input with placeholder" placeholder="Input placeholder"></nts-input>
+        <nts-input [(ntsModel)]="inputModel" label="Input with icon" placeholder="Input placeholder" icon="user"></nts-input>
+        <nts-input [(ntsModel)]="inputModel" label="Input with hint" placeholder="Input placeholder" hint="i.e: user@domain.com"></nts-input>
+        <nts-input [(ntsModel)]="inputModel" label="Input with error" placeholder="Input placeholder" error="Must be a valid email"></nts-input>
+        <nts-input [(ntsModel)]="inputModel" label="Input with prefix" placeholder="Input placeholder" prefix="http://www."></nts-input>
+      </div>
+      <div class="flex">
+        <nts-input [(ntsModel)]="inputModel" label="Input with counter" counter="true"></nts-input>
+        <nts-input [(ntsModel)]="inputModel" label="Counter and max" max="10" counter="true"></nts-input>
+        <nts-input [(ntsModel)]="inputModel" label="Input with right icon" placeholder="Input placeholder" iconRight="user"></nts-input>
+        <nts-input [(ntsModel)]="inputModel" label="Input with floating label" floatingLabel="true"></nts-input>
+      </div>
+      <h5>Multi-line inputs</h5>
+      <nts-input [(ntsModel)]="inputModel"
+        placeholder="Here you can see all the available options of multiline input activated"
+        label="Multiline input"
+        multiline="true"
+        counter="true"
+        max="140"
+        error="Something went wrong"
+        hint="Write something above">
+      </nts-input>
+
+      <h5>Radio inputs</h5>
+      <div class="flex">
+        <nts-radio [(ntsModel)]="radioModel" value="0" label="Option 1"></nts-radio>
+        <nts-radio [(ntsModel)]="radioModel" value="1" label="Option 2"></nts-radio>
+      </div>
+
+      <h5>Checkbox inputs</h5>
+      <div class="flex">
+        <nts-checkbox [(ntsModel)]="checkboxModel"></nts-checkbox>
+        <nts-checkbox [(ntsModel)]="checkboxModel" [partial]="true"></nts-checkbox>
+        <nts-checkbox [(ntsModel)]="checkboxModel" label="Checkbox with label"></nts-checkbox>
+        <nts-checkbox [(ntsModel)]="checkboxModel" label="Checkbox with partial" [partial]="true"></nts-checkbox>
+      </div>
+      <h5>Toggle inputs</h5>
+      <div class="flex">
+        <nts-toggle [(ntsModel)]="toggleModel" label="Toggle with label"></nts-toggle>
+        <nts-toggle [(ntsModel)]="toggleModel" label="Toggle squared with label" [rounded]="false"></nts-toggle>
+      </div>
+      <div class="flex">
+        <nts-toggle color="primary" [(ntsModel)]="toggleModel"></nts-toggle>
+        <nts-toggle color="success" [(ntsModel)]="toggleModel"></nts-toggle>
+        <nts-toggle color="warning" [(ntsModel)]="toggleModel"></nts-toggle>
+        <nts-toggle color="error" [(ntsModel)]="toggleModel"></nts-toggle>
+      </div>
+      <div class="flex">
+        <nts-toggle class="small" [(ntsModel)]="toggleModel" label="Small toggle with label"></nts-toggle>
+        <nts-toggle class="small" [(ntsModel)]="toggleModel" label="Small toggle squared with label" [rounded]="false"></nts-toggle>
+      </div>
+
+      <h5>Button toggle inputs</h5>
+      <div>
+        <nts-button-toggle label="Button toggle" [(ntsModel)]="toggleModel0"></nts-button-toggle>
+        <nts-button-toggle label="Button toggle" color="default" [(ntsModel)]="toggleModel1"></nts-button-toggle>
+        <nts-button-toggle label="Button toggle" color="light" [(ntsModel)]="toggleModel2"></nts-button-toggle>
+        <nts-button-toggle label="Button toggle" color="primary" [(ntsModel)]="toggleModel3"></nts-button-toggle>
+        <nts-button-toggle label="Button toggle" color="success" [(ntsModel)]="toggleModel4"></nts-button-toggle>
+        <nts-button-toggle label="Button toggle" color="warning" [(ntsModel)]="toggleModel5"></nts-button-toggle>
+        <nts-button-toggle label="Button toggle" color="error" [(ntsModel)]="toggleModel6"></nts-button-toggle>
+      </div>
       <h5>Date-time picker</h5>
       <div class="flex">
         <nts-date-picker label="Date picker"> </nts-date-picker>
@@ -322,70 +388,6 @@
             {value: 5, label: 'Option 5'}
           ]">
         </nts-select>
-      </div>
-      <h5>Single-line inputs</h5>
-      <div class="flex">
-        <nts-input [(ntsModel)]="inputModel" label="Default input"></nts-input>
-        <nts-input [(ntsModel)]="inputModel" label="Input with placeholder" placeholder="Input placeholder"></nts-input>
-        <nts-input [(ntsModel)]="inputModel" label="Input with icon" placeholder="Input placeholder" icon="user"></nts-input>
-        <nts-input [(ntsModel)]="inputModel" label="Input with hint" placeholder="Input placeholder" hint="i.e: user@domain.com"></nts-input>
-        <nts-input [(ntsModel)]="inputModel" label="Input with error" placeholder="Input placeholder" error="Must be a valid email"></nts-input>
-        <nts-input [(ntsModel)]="inputModel" label="Input with prefix" placeholder="Input placeholder" prefix="http://www."></nts-input>
-      </div>
-      <div class="flex">
-        <nts-input [(ntsModel)]="inputModel" label="Input with counter" counter="true"></nts-input>
-        <nts-input [(ntsModel)]="inputModel" label="Counter and max" max="10" counter="true"></nts-input>
-        <nts-input [(ntsModel)]="inputModel" label="Input with right icon" placeholder="Input placeholder" iconRight="user"></nts-input>
-      </div>
-      <h5>Multi-line inputs</h5>
-      <nts-input [(ntsModel)]="inputModel"
-        placeholder="Here you can see all the available options of multiline input activated"
-        label="Multiline input"
-        multiline="true"
-        counter="true"
-        max="140"
-        error="Something went wrong"
-        hint="Write something above">
-      </nts-input>
-
-      <h5>Radio inputs</h5>
-      <div class="flex">
-        <nts-radio [(ntsModel)]="radioModel" value="0" label="Option 1"></nts-radio>
-        <nts-radio [(ntsModel)]="radioModel" value="1" label="Option 2"></nts-radio>
-      </div>
-
-      <h5>Checkbox inputs</h5>
-      <div class="flex">
-        <nts-checkbox [(ntsModel)]="checkboxModel"></nts-checkbox>
-        <nts-checkbox [(ntsModel)]="checkboxModel" [partial]="true"></nts-checkbox>
-        <nts-checkbox [(ntsModel)]="checkboxModel" label="Checkbox with label"></nts-checkbox>
-        <nts-checkbox [(ntsModel)]="checkboxModel" label="Checkbox with partial" [partial]="true"></nts-checkbox>
-      </div>
-      <h5>Toggle inputs</h5>
-      <div class="flex">
-        <nts-toggle [(ntsModel)]="toggleModel" label="Toggle with label"></nts-toggle>
-        <nts-toggle [(ntsModel)]="toggleModel" label="Toggle squared with label" [rounded]="false"></nts-toggle>
-      </div>
-      <div class="flex">
-        <nts-toggle color="primary" [(ntsModel)]="toggleModel"></nts-toggle>
-        <nts-toggle color="success" [(ntsModel)]="toggleModel"></nts-toggle>
-        <nts-toggle color="warning" [(ntsModel)]="toggleModel"></nts-toggle>
-        <nts-toggle color="error" [(ntsModel)]="toggleModel"></nts-toggle>
-      </div>
-      <div class="flex">
-        <nts-toggle class="small" [(ntsModel)]="toggleModel" label="Small toggle with label"></nts-toggle>
-        <nts-toggle class="small" [(ntsModel)]="toggleModel" label="Small toggle squared with label" [rounded]="false"></nts-toggle>
-      </div>
-
-      <h5>Button toggle inputs</h5>
-      <div>
-        <nts-button-toggle label="Button toggle" [(ntsModel)]="toggleModel0"></nts-button-toggle>
-        <nts-button-toggle label="Button toggle" color="default" [(ntsModel)]="toggleModel1"></nts-button-toggle>
-        <nts-button-toggle label="Button toggle" color="light" [(ntsModel)]="toggleModel2"></nts-button-toggle>
-        <nts-button-toggle label="Button toggle" color="primary" [(ntsModel)]="toggleModel3"></nts-button-toggle>
-        <nts-button-toggle label="Button toggle" color="success" [(ntsModel)]="toggleModel4"></nts-button-toggle>
-        <nts-button-toggle label="Button toggle" color="warning" [(ntsModel)]="toggleModel5"></nts-button-toggle>
-        <nts-button-toggle label="Button toggle" color="error" [(ntsModel)]="toggleModel6"></nts-button-toggle>
       </div>
 
       <h5>Color picker</h5>

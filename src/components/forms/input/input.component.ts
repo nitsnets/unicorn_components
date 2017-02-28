@@ -28,6 +28,7 @@ export class NtsInputComponent extends NtsInputBaseComponent implements OnInit {
     @Input() minValue: number = null;
 
     @Input() floating = false;
+    @Input() floatingLabel = false;
     @Input() multiline = false;
     @Input() autofocus = false;
     @Input() clear = false;
@@ -36,6 +37,8 @@ export class NtsInputComponent extends NtsInputBaseComponent implements OnInit {
 
     @Output() ntsKeypress = new EventEmitter();
 
+    focused = false;
+
     ngOnInit() {
         if (!this.ntsModel) {
             this.ntsModel = this.value;
@@ -43,7 +46,13 @@ export class NtsInputComponent extends NtsInputBaseComponent implements OnInit {
             this.value = this.ntsModel;
         }
     }
+    onInputFocus(ev) {
+        this.focused = true;
+        this.ntsFocus.emit(ev);
+    }
     onInputBlur(ev) {
+        this.focused = false;
+
         if (this.maxValue && this.ntsModel > this.maxValue) {
             this.ntsModel = this.maxValue;
             this.ntsModelChange.emit(this.ntsModel);

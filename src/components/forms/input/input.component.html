@@ -1,10 +1,12 @@
 <label [ngClass]="{
+  'has-content': ntsModel && ntsModel.length,
+  'focused': focused,
   'with-prefix': prefix || type === 'color',
   'with-icon': icon,
   'with-icon-right': iconRight || clear,
   'with-two-icon-right': iconRight && clear
 }">
-  <div class="label" *ngIf="label || counter">
+  <div class="label" [class.floating-label]="floatingLabel" *ngIf="label || counter">
     <span *ngIf="label">{{label}}</span>
     <span *ngIf="counter">
       {{ntsModel? ntsModel.length : 0}} <span *ngIf="max>-1">/ {{max}}</span>
@@ -31,7 +33,7 @@
       [ngModel]="ntsModel"
       (ngModelChange)="onNgModelChange($event)"
       (blur)="onInputBlur($event)"
-      (focus)="ntsFocus.emit($event)"
+      (focus)="onInputFocus($event)"
       (keypress)="ntsKeypress.emit($event)"
     />
     <nts-button
