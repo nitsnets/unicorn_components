@@ -23,8 +23,8 @@
       "scripts": [
         "./../node_modules/chart.js/dist/Chart.min.js"
       ],
+      "environmentSource": "environment.ts",
       "environments": {
-        "source": "environment.ts",
         "dev": "environment.ts",
         "prod": "environment.ts"
       }
@@ -35,19 +35,12 @@
   "e2e": {  },
   "test": {  },
   "defaults": {
-    "styleExt": "css",
-    "prefixInterfaces": false,
-    "inline": {
-      "style": false,
-      "template": false
-    },
-    "spec": {
-      "class": false,
-      "component": true,
-      "directive": true,
-      "module": false,
-      "pipe": true,
-      "service": true
+    "styleExt": "scss",
+    "prefixInterfaces": true,
+    "component": {
+        "inlineTemplate": false,
+        "inlineStyle": false,
+        "spec": false
     }
   }
 }
