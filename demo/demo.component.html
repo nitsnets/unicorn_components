@@ -355,6 +355,10 @@
             {value: 5, label: 'Option 5'}
           ]">
         </nts-select>
+        <nts-select label="Many options select"
+          [(ntsModel)]="selectModel"
+          [options]="manyOptions">
+        </nts-select>
         <nts-select label="Select with placeholder"
           placeholder="Select placeholder"
           [(ntsModel)]="selectModel"

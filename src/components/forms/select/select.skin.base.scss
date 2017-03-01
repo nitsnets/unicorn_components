@@ -2,11 +2,15 @@ nts-select {
 
   .options{
     background-color: white;
+    max-height: $input-height * 8;
+    overflow-y: auto;
     @include border($border-width);
   }
   .option{
     font-size: $font-small;
     padding: $basic-padding/4;
+    line-height: $input-height/2;
+    min-height: $input-height;
 
     &.selected {
       background-color: $color-grey-medium;

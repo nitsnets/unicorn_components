@@ -2,6 +2,7 @@ import { Component, ViewContainerRef } from '@angular/core';
 
 import { ModalService } from '../src/components/containers/modal/modal.service';
 import { NtsDemoModalContentComponent } from './demo-modal-content/demo-modal-content.component';
+import { NtsOption } from './../src/models/option';
 import { ToastService } from '../src/components/utils/toast/toast.service';
 import { TooltipService } from '../src/components/utils/tooltip/tooltip.service';
 
@@ -12,6 +13,39 @@ import { TooltipService } from '../src/components/utils/tooltip/tooltip.service'
 })
 export class DemoComponent {
     tabSelected = 'typos';
+
+    manyOptions: NtsOption[] = [
+        new NtsOption({ value: 1, label: 'Option 1' }),
+        new NtsOption({ value: 2, label: 'Option 2' }),
+        new NtsOption({ value: 3, label: 'Option 3' }),
+        new NtsOption({ value: 4, label: 'Option 4' }),
+        new NtsOption({ value: 5, label: 'Option 5' }),
+        new NtsOption({ value: 11, label: 'Option 11' }),
+        new NtsOption({ value: 12, label: 'Option 12' }),
+        new NtsOption({ value: 13, label: 'Option 13' }),
+        new NtsOption({ value: 14, label: 'Option 14' }),
+        new NtsOption({ value: 15, label: 'Option 15' }),
+        new NtsOption({ value: 21, label: 'Option 21' }),
+        new NtsOption({ value: 22, label: 'Option 22' }),
+        new NtsOption({ value: 23, label: 'Option 23' }),
+        new NtsOption({ value: 24, label: 'Option 24' }),
+        new NtsOption({ value: 25, label: 'Option 25' }),
+        new NtsOption({ value: 31, label: 'Option 31' }),
+        new NtsOption({ value: 32, label: 'Option 32' }),
+        new NtsOption({ value: 33, label: 'Option 33' }),
+        new NtsOption({ value: 34, label: 'Option 34' }),
+        new NtsOption({ value: 35, label: 'Option 35' }),
+        new NtsOption({ value: 41, label: 'Option 41' }),
+        new NtsOption({ value: 42, label: 'Option 42' }),
+        new NtsOption({ value: 43, label: 'Option 43' }),
+        new NtsOption({ value: 44, label: 'Option 44' }),
+        new NtsOption({ value: 45, label: 'Option 45' }),
+        new NtsOption({ value: 51, label: 'Option 51' }),
+        new NtsOption({ value: 52, label: 'Option 52' }),
+        new NtsOption({ value: 53, label: 'Option 53' }),
+        new NtsOption({ value: 54, label: 'Option 54' }),
+        new NtsOption({ value: 55, label: 'Option 55' })
+    ];
 
     baseSeries = [
         { label: 'Serie 1', data: [12, 19, 3, 5, 2, 3] },
