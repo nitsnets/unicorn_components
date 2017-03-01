@@ -18,7 +18,7 @@ nts-toggle {
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: $light-grey;
+        background-color: $color-grey-light;
         transition: .4s;
 
         &:before {
@@ -51,11 +51,11 @@ nts-toggle {
         flex-shrink: 0;
     }
 
-    input:checked + .toggle-slider { background-color: $dark-grey; }
-    label.primary input:checked + .toggle-slider { background-color: $brand-color; }
-    label.success input:checked + .toggle-slider { background-color: $success-color; }
-    label.warning input:checked + .toggle-slider { background-color: $warning-color; }
-    label.error input:checked + .toggle-slider { background-color: $error-color; }
+    input:checked + .toggle-slider { background-color: $color-grey-dark; }
+    label.primary input:checked + .toggle-slider { background-color: $color-primary; }
+    label.success input:checked + .toggle-slider { background-color: $color-success; }
+    label.warning input:checked + .toggle-slider { background-color: $color-warning; }
+    label.error input:checked + .toggle-slider { background-color: $color-error; }
 
     &.small {
         .toggle-container {

@@ -1,11 +1,11 @@
 nts-button-toggle {
     nts-button.pressed button {
         box-shadow: rgba(0,0,0,0.1) 1px 1px 2px inset;
-        background-color: $light-alpha;
-        &.primary{ background-color: darken($brand-color, 10%); }
-        &.error{ background-color: darken($error-color, 10%); }
-        &.warning{ background-color: darken($warning-color, 10%); }
-        &.success{ background-color: darken($success-color, 10%); }
-        &.light{ background-color: darken($medium-grey, 10%); }
+        background-color: $alpha-black-medium;
+        &.primary{ background-color: darken($color-primary, 10%); }
+        &.error{ background-color: darken($color-error, 10%); }
+        &.warning{ background-color: darken($color-warning, 10%); }
+        &.success{ background-color: darken($color-success, 10%); }
+        &.light{ background-color: darken($color-grey-medium, 10%); }
     }
 }

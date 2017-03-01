@@ -1,4 +1,4 @@
-@mixin halfBg($side, $color: $brand-color-light) {
+@mixin halfBg($side, $color: $color-primary-light) {
   &::before {
     @include pseudo;
     background-color: $color;
@@ -33,19 +33,19 @@ nts-calendar {
   }
   .days-name {
     p{
-      color: $brand-color;
+      color: $color-primary;
       font-weight: bold;
       font-size: $font-small - 1px;
       text-transform: uppercase;
     }
   }
   .day-container {
-    &:hover { .day{ background-color: $lightest-alpha; } }
-    &.today { .day { border: 1px $brand-color solid;} }
-    &.rangeFrom { .day {background-color: $brand-color-medium;} }
-    &.rangeTo { .day {background-color: $brand-color-medium;} }
-    &.rangeMiddle { background-color: $brand-color-light }
-    &.selected { .day { background-color: $brand-color; color: white; } }
+    &:hover { .day{ background-color: $alpha-black-light; } }
+    &.today { .day { border: 1px $color-primary solid;} }
+    &.rangeFrom { .day {background-color: $color-primary-medium;} }
+    &.rangeTo { .day {background-color: $color-primary-medium;} }
+    &.rangeMiddle { background-color: $color-primary-light }
+    &.selected { .day { background-color: $color-primary; color: white; } }
     &.different-month { visibility: hidden}
     &.unavailable { opacity: 0.25; }
   }

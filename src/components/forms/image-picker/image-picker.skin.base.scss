@@ -5,19 +5,19 @@ nts-image-picker {
   height: $aside-width / 2;
 
   .img-picker {
-    background-color: $light-grey;
+    background-color: $color-grey-light;
     border: transparent dashed $border-width;
 
     &:hover, &.dragging{
       .placeholder {
-        border-color: $dark-grey;
+        border-color: $color-grey-dark;
         .icon{ opacity: 0.5; }
       }
     }
   }
   .placeholder {
     background-color: white;
-    border: $medium-grey dashed $border-width;
+    border: $color-grey-medium dashed $border-width;
     padding: $basic-padding / 2;
 
     .icon{
@@ -25,7 +25,7 @@ nts-image-picker {
     }
     .label{
       font-size: $font-small;
-      color: $dark-grey;
+      color: $color-grey-dark;
       text-align: center;
     }
   }

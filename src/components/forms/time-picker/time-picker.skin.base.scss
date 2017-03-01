@@ -7,7 +7,7 @@ nts-time-picker {
 
     &.floating {
       margin-top: 0;
-      border: solid $medium-grey $border-width;
+      border: solid $color-grey-medium $border-width;
       @include border-radius($border-radius);
 
       &:before {
@@ -15,7 +15,7 @@ nts-time-picker {
         top: -7px;
         border-left: 7px solid transparent;
         border-right: 7px solid transparent;
-        border-bottom: 7px solid $medium-grey;
+        border-bottom: 7px solid $color-grey-medium;
         border-top: 0;
       }
 

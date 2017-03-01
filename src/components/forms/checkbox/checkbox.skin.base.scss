@@ -17,9 +17,9 @@ nts-checkbox {
     &.only-icon{ border-radius:$input-height/2;}
 
     &:not(.only-icon) {
-      &:hover {background-color: $lightest-alpha}
-      &:focus{background-color: $light-alpha}
-      &:active{background-color: $medium-alpha;}
+      &:hover {background-color: $alpha-black-light}
+      &:focus{background-color: $alpha-black-medium}
+      &:active{background-color: $alpha-black;}
     }
 
     .icon{ opacity: 0.25; }

@@ -9,14 +9,14 @@ nts-select {
     padding: $basic-padding/4;
 
     &.selected {
-      background-color: $medium-grey;
+      background-color: $color-grey-medium;
 
       .icon {
         opacity: 1;
       }
     }
     &.pointed {
-      background-color: $light-grey;
+      background-color: $color-grey-light;
     }
 
     .icon {

@@ -1,7 +1,7 @@
 nts-badge {
 
   .badge {
-    background-color: $regular-grey;
+    background-color: $color-grey;
     border-radius: 50%;
     color: white;
     font-size: $font-smallest;
@@ -15,8 +15,8 @@ nts-badge {
     }
   }
 
-  &.primary { .badge { background-color: $brand-color; } }
-  &.success { .badge { background-color: $success-color; } }
-  &.warning { .badge { background-color: $warning-color; } }
-  &.error { .badge { background-color: $error-color; } }
+  &.primary { .badge { background-color: $color-primary; } }
+  &.success { .badge { background-color: $color-success; } }
+  &.warning { .badge { background-color: $color-warning; } }
+  &.error { .badge { background-color: $color-error; } }
 }

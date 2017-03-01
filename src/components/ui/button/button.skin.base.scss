@@ -23,22 +23,22 @@ nts-button {
         border-radius: $border-radius;
 
         background-color: transparent;
-        color: $dark-grey;
+        color: $color-grey-dark;
         @include transition(background-color, $fast, ease);
         @include mq($from: sm) {
             min-height: $input-height;
             padding: 0 $input-padding * 2;
         }
         &.default{
-            border: solid $border-width $light-alpha;
+            border: solid $border-width $alpha-black-medium;
         }
-        &.primary{ @include button-background($brand-color, true); }
-        &.error{ @include button-background($error-color, true); }
-        &.warning{ @include button-background($warning-color, true); }
-        &.success{ @include button-background($success-color, true); }
+        &.primary{ @include button-background($color-primary, true); }
+        &.error{ @include button-background($color-error, true); }
+        &.warning{ @include button-background($color-warning, true); }
+        &.success{ @include button-background($color-success, true); }
         &.light{
             color: $black;
-            @include button-background($medium-grey);
+            @include button-background($color-grey-medium);
             .sublabel{color: $black}
         }
     }
@@ -56,7 +56,7 @@ nts-button {
     /* SIZES */
     .btn-small{
         font-size: $font-small;
-        color: $dark-grey;
+        color: $color-grey-dark;
     }
     .btn-large{
         height: $input-height*2;

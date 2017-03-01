@@ -1,14 +1,14 @@
 nts-chip {
   @include border-radius;
 
-  background-color: $medium-grey;
+  background-color: $color-grey-medium;
   font-size: $font-small;
   padding: $basic-padding / 10 $basic-padding / 5;
 
-  &.primary{ background-color: $brand-color; color: white; .icon, .remove{ @include invert; } }
-  &.success{ background-color: $success-color; color: white; .icon, .remove{ @include invert; } }
-  &.warning{ background-color: $warning-color; color: white; .icon, .remove{ @include invert; } }
-  &.error{ background-color: $error-color; color: white; .icon, .remove{ @include invert; } }
+  &.primary{ background-color: $color-primary; color: white; .icon, .remove{ @include invert; } }
+  &.success{ background-color: $color-success; color: white; .icon, .remove{ @include invert; } }
+  &.warning{ background-color: $color-warning; color: white; .icon, .remove{ @include invert; } }
+  &.error{ background-color: $color-error; color: white; .icon, .remove{ @include invert; } }
 
   .icon {
     margin-right: $basic-padding / 6;

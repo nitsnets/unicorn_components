@@ -8,8 +8,8 @@ nts-input{
         border-radius: $border-radius;
         @include border($border-width);
         &:focus{
-            background-color: $lightest-alpha !important;
-            border-color: $light-alpha !important;
+            background-color: $alpha-black-light !important;
+            border-color: $alpha-black-medium !important;
         }
         &.floating{
             @include border(0);
@@ -22,7 +22,7 @@ nts-input{
     }
 
     ::placeholder {
-        color: $dark-grey;
+        color: $color-grey-dark;
         font-weight: 300;
     }
 
@@ -45,7 +45,7 @@ nts-input{
     .label, .prefix{
         font-weight: 300;
         font-size: $font-small;
-        color: $dark-grey;
+        color: $color-grey-dark;
         margin: 0 $input-padding/4;
         height: $label-height;
     };
@@ -75,7 +75,7 @@ nts-input{
         height: $input-height;
         padding: 0 $input-padding;
         margin:0;
-        background-color: $lightest-alpha;
+        background-color: $alpha-black-light;
         @include border($border-width);
         border-radius: $border-radius 0 0 $border-radius;
         border-right: 0 !important;
@@ -92,12 +92,12 @@ nts-input{
     .hint{
         font-style: italic;
         font-size: $font-small;
-        color: $regular-grey;
+        color: $color-grey;
     }
     .error{
         font-style: italic;
         font-size: $font-small;
-        color: $error-color;
+        color: $color-error;
     }
 
 
@@ -121,7 +121,7 @@ nts-input{
     }
     &.input-primary{
         input{
-            color: $brand-color;
+            color: $color-primary;
             font-weight: bold;
         }
     }

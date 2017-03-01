@@ -13,8 +13,8 @@ nts-button-header {
 
         &.only-icon { width: $header-xs-height;}
 
-        &:hover{ background-color: $lightest-alpha }
-        &:active{ background-color: $light-alpha }
+        &:hover{ background-color: $alpha-black-light }
+        &:active{ background-color: $alpha-black-medium }
 
         i {
             font-size: $font-large;
@@ -42,8 +42,8 @@ nts-button-header {
             min-width: $header-md-height;
             min-height: $header-md-height;
             &.only-icon { width: $header-md-height;}
-            &:hover{ background-color: $lightest-alpha }
-            &:active{ background-color: $light-alpha }
+            &:hover{ background-color: $alpha-black-light }
+            &:active{ background-color: $alpha-black-medium }
             .icon{
                 height: 20px;
                 width: 20px;

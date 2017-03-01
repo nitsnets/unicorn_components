@@ -7,7 +7,7 @@ body {
     font-size: $font-regular;
     line-height: 1.5;
     letter-spacing: 0.01em;
-    color: $dark-grey;
+    color: $color-grey-dark;
 }
 
 input, textarea {
@@ -23,7 +23,7 @@ input, textarea {
 h1, h2, h3, h4, h5 {
     margin: 10px 0;
     font-weight: 300;
-    color: $darker-grey
+    color: $black
 }
 h1 {
     font-size: 33px;
@@ -75,12 +75,12 @@ h5 small {
 // Links
 a {
     color: inherit;
-    color: $brand-color;
+    color: $color-primary;
     text-decoration: none;
     transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s;
 
     @include on-event {
-        color: $brand-color-light;
+        color: $color-primary-light;
         outline: 0;
         text-decoration: none;
     }
@@ -122,7 +122,7 @@ ol, ul {
 hr {
     height: 0;
     border: 0;
-    border-top: 1px solid $medium-grey;
+    border-top: 1px solid $color-grey-medium;
     margin: 30px 0;
     margin: 3rem 0;
     box-sizing: content-box;

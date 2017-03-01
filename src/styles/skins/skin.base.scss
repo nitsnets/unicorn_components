@@ -80,12 +80,12 @@ body {
 // Links
 a {
     color: inherit;
-    color: $brand-color;
+    color: $color-primary;
     text-decoration: none;
     transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s;
 
     @include on-event {
-        color: $brand-color-light;
+        color: $color-primary-light;
         outline: 0;
         text-decoration: none;
     }

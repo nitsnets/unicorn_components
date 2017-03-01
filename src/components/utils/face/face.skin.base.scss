@@ -2,14 +2,14 @@ nts-face {
   .face{
 
     @include border-radius(50%);
-    background-color: $light-grey;
+    background-color: $color-grey-light;
 
     width: $input-height + $basic-padding / 3;
     height: $input-height + $basic-padding / 3;
 
     &.small { width: $input-xs-height; height: $input-xs-height;}
     &.big { width: $input-height * 2; height: $input-height * 2; }
-    &.initial { background-color: $regular-grey; }
+    &.initial { background-color: $color-grey; }
 
     .letter{
       color: white;

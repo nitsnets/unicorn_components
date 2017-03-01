@@ -5,11 +5,11 @@
   transition: all ease $slow;
 
   &.hidden{ margin-top:-$height; }
-  &.grey{ background-color: $lightest-alpha; }
+  &.grey{ background-color: $alpha-black-light; }
   &.red{
-    background-color: $error-color-light;
-    border-color: $error-color-medium !important;
-    color: $error-color;
+    background-color: $color-error-light;
+    border-color: $color-error-medium !important;
+    color: $color-error;
   }
 
   @include mq($from: sm) {

@@ -28,8 +28,8 @@ $m-radius: $clock-size/2 - $m-padding - $m-size/2;
 .clock-mode{
   padding: 10px;
   font-size: 12px;
-  &.selected{ background-color: $light-alpha; }
-  &:not(.selected):hover{ background-color: $lightest-alpha; }
+  &.selected{ background-color: $alpha-black-medium; }
+  &:not(.selected):hover{ background-color: $alpha-black-light; }
 }
 .clock-circle{
   width: $clock-size;
@@ -40,14 +40,14 @@ $m-radius: $clock-size/2 - $m-padding - $m-size/2;
 .clock-center{
   width: $center-size;
   height: $center-size;
-  background-color: $dark-grey;
+  background-color: $color-grey-dark;
   margin-top: - $center-size/2;
   margin-left: - $center-size/2;
 }
 @mixin clock-tick($width, $height) {
   width: $width;
   height: $height;
-  background-color: $brand-color;
+  background-color: $color-primary;
   top: $clock-size/2 - $height;
   left: $clock-size/2 - $width/2;
   @include transition(transform, 500ms, ease);
@@ -56,7 +56,7 @@ $m-radius: $clock-size/2 - $m-padding - $m-size/2;
 .clock-minute-tick{ @include clock-tick($m-tick-width, $m-tick-height); }
 
 .clock-number{
-    &:not(.selected):hover{ background-color: $light-alpha; }
+    &:not(.selected):hover{ background-color: $alpha-black-medium; }
 }
 .clock-hour{
   @include calc('left', '50% - #{$h-size/2}');
@@ -65,7 +65,7 @@ $m-radius: $clock-size/2 - $m-padding - $m-size/2;
   top: $h-padding;
   padding: 8px 11px;
   &.selected{
-    background-color: $brand-color;
+    background-color: $color-primary;
     color: white;
   }
 }
@@ -77,7 +77,7 @@ $m-radius: $clock-size/2 - $m-padding - $m-size/2;
   font-size: 12px;
   padding: 6px 8px;
   &.selected{
-    box-shadow: inset 0 0 0 1px $brand-color
+    box-shadow: inset 0 0 0 1px $color-primary
   }
 }
 

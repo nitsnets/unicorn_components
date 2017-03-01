@@ -22,7 +22,7 @@ nts-daterange-picker {
     &.floating {
       margin-top: 0;
       background-color: white;
-      border: solid $medium-grey $border-width;
+      border: solid $color-grey-medium $border-width;
       @include border-radius($border-radius);
 
       &:before {
@@ -30,7 +30,7 @@ nts-daterange-picker {
         top: -7px;
         border-left: 7px solid transparent;
         border-right: 7px solid transparent;
-        border-bottom: 7px solid $medium-grey;
+        border-bottom: 7px solid $color-grey-medium;
         border-top: 0;
       }
 
@@ -58,7 +58,7 @@ nts-daterange-picker {
     }
   }
   .buttons-container {
-    background-color: $light-grey;
+    background-color: $color-grey-light;
     padding: $basic-padding / 3 0;
   }
 }

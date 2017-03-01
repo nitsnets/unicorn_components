@@ -186,7 +186,7 @@
   text-overflow: ellipsis;
 }
 @mixin border($width: $border-width){
-  border-color: $medium-grey;
+  border-color: $color-grey-medium;
   border-style: solid;
   border-width: $width;
 }
@@ -200,10 +200,10 @@
     position: $pos;
 }
 
-@mixin border-top(){ border-top: solid $medium-grey $border-width;}
-@mixin border-bottom(){ border-bottom: solid $medium-grey $border-width;}
-@mixin border-right(){ border-right: solid $medium-grey $border-width;}
-@mixin border-left(){ border-left: solid $medium-grey $border-width;}
+@mixin border-top(){ border-top: solid $color-grey-medium $border-width;}
+@mixin border-bottom(){ border-bottom: solid $color-grey-medium $border-width;}
+@mixin border-right(){ border-right: solid $color-grey-medium $border-width;}
+@mixin border-left(){ border-left: solid $color-grey-medium $border-width;}
 @mixin cross($w, $h: $w){
   position: relative;
 
