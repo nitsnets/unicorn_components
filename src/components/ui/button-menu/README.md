@@ -1,11 +1,11 @@
-## Button dropdown
+## Button menu
 
-```ui / nts-button-dropdown```
+```ui / nts-button-menu```
 
 parent:  ``` base / base-button```
 
 ---
-Botón con dropdown
+Botón con menu
 
 ### Contract
 
@@ -27,11 +27,11 @@ position: NtsPosition = 'bottom-left';
 ```
 ### Usage
 ```html
-<nts-button-dropdown label="Default button" color="primary">
-    <nts-dropdown-item icon="close">Option 1</nts-dropdown-item>
+<nts-button-menu label="Default button" color="primary">
+    <nts-menu-item icon="close">Option 1</nts-menu-item>
     <nts-separator></nts-separator>
-    <nts-dropdown-item icon="check">Option 2</nts-dropdown-item>
-</nts-button-dropdown>
+    <nts-menu-item icon="check">Option 2</nts-menu-item>
+</nts-button-menu>
 ```
 
 ### Known issues

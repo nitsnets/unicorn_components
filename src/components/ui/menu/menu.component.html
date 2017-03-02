@@ -1,0 +1,4 @@
+<ng-content select="[ntsMenuTrigger]"></ng-content>
+<div *ngIf="opened" [class]="'container '+(position || calculatedPosition)">
+    <ng-content select="nts-menu-container"></ng-content>
+</div>

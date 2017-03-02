@@ -1,100 +1,69 @@
-# INPUT
-## ui / nts-button
----
-Input simple
-
-### Properties
-- label : string / default = null / label del input
-- sublabel : string / default = null / sublabel del input (ej: http://pages.revox.io/dashboard/latest/html/form_elements.html)
-- placeholder : string / default = null / placeholder del input
-- ___hint : string / default = null / ayuda debajo del campo ¿valorar nombre? ¿valorar si meter icono a la derecha info...?___
-- ___error : string / default = null / me gusta mucho ?___
-
-- icon : string / default = null / nombre del icono o path de la url de carga del icono (o quizás poner url('file-path'))
-    - ___Kendo usa otro parametro para url iconUrl para imagen y iconClass por si es de Fonts___
-- iconAlign: string / default = left / left, right / alineación del icono
-    - ___¿iconRight para tener 2?___
-- prefix : string / default = null / texto del prefix del input
-- prefixIcon : string / default = null / nombre del icono o path de la url de carga del icono (o quizás poner url('file-path'))
-    - ___Kendo usa otro parametro para url iconUrl para imagen y iconClass por si es de Fonts___
-- subfix : string / default = null / texto del prefix del input
-- subfixIcon : string / default = null / nombre del icono o path de la url de carga del icono (o quizás poner url('file-path'))
-    - ___Kendo usa otro parametro para url iconUrl para imagen y iconClass por si es de Fonts___
+# Input
+`forms / nts-input`
 
 ---
+Input para introducción de texto con opciones avanzadas
 
-- counter : bool / default = false / contador de caracteres
-    - ___ponemos cosas del tipo: counterAlign, counterMax (max), counterMin(min)___
+### Contract
+Parent contract: 
 
+```typescript
+//INPUTS
+label: string;
+ntsModel: boolean;
+name: string = '';
+color: NtsColor;
+disabled: boolean = false;
+value: string = '';
+required: boolean = false;
+debounce: number = 0;
 
----
+//OUTPUTS
+ntsModelChange: EventEmitter<boolean>;
+ntsFocus: EventEmitter<Event>;
+ntsBlur: EventEmitter<Event>;
+```
 
-- multiline : bool / default = false / multilinea en los textos
-    - ___¿que es mejor multiline o nts-textarea?___
+Extended contract:
+```typescript
+//INPUTS
+type: 'text' | 'number' | 'email' | 'password' | 'color' = 'text';
+max: number = -1;
+step: number = 1;
 
+icon: string;
+iconRight: string;
 
+placeholder: string = '';
+prefix: string = '';
+hint: string = '';
+mask: string = '';
+error: string = '';
 
-/**
-- popup : bool / default = false / abrir un popup en el botón estilo Trello --> ok
-- popupAlign: string / default = right / right, tap, down / permite la alineación del popup. En la derecha, donde clickeas, debajo del boton
-- popupArea: boolean / default = false / identifica todo el botón como para abrir el popup, no sólo el área de la derecha
-- popupIcon: string / default = null / nombre del icono del popup o path de la url de carga del icono (o quizás poner url('file-path'))  --> ok
-- popupIconAlign: string / default = right / left, right / alineación del icono
-    - ___¿como poner el contenido del popup? ¿le ponemos el nombre del container?___
-    - ___¿que pasa con la grafica aperturas en esquinas?___
-    - ___¿que pasa con mobile?___
-    - ___¿control de scrolls por pantalla?___
+maxValue: number = null;
+minValue: number = null;
 
-- dropdown : bool / default = false / abrir un desplegable de acciones --> ok
-- dropdownArea: boolean / default = false / identifica todo el botón como para abrir el dropdown, no sólo el área de la derecha
-- dropdownIcon: string / default = null / nombre del icono del dropdown o path de la url de carga del icono (o quizás poner url('file-path'))
-- dropdownIconAlign: string / default = right / left, right / alineación del icono
-    - ___¿como poner el contenido del popup? ¿le ponemos el nombre del container?___
-    - ___¿que pasa con la grafica aperturas en esquinas?___
-    - ___¿que pasa con mobile?___
-    - ___¿control de scrolls por pantalla?___
-    - ___¿como poner los DIVIDERS?___
-    - ___submenus mejor no --> fase 5___
+floating: boolean = false;
+multiline: boolean = false;
+autofocus: boolean = false;
+clear: boolean = false;
+colorSwatch: boolean = false;
+caret: boolean = false;
+counter: boolean = false;
 
-- toggleable : bool / default = false / hace que funcione como si fuera un checkbox
-- toggleIcon : bool / default = false / nombre del icono del toggle activo o path de la url de carga del icono (o quizás poner url('file-path'))
-    - ___¿no me encajan los nombres del toggle? la alineación la coge del padre iconAlign___
-    - ___¿que sucede con el SwitchButton, es de checkbox o de aqui? ¿es simplemente una clase? http://quantumui.org/appdoc/documents/quantumui/switchbutton/___
+//OUTPUTS
+ntsKeypress: EventEmitter;
+```
 
-- ___¿@Input() type: string; ?___
-- ___¿@Input() fileType: string; ?___
-- ___¿@Output() fileChanged = new EventEmitter(); ?___
-- ___¿@ViewChild('inputFile') inputFile: ElementRef; ?___
+## Usage
+```html
+<nts-button-toggle label="Toggle button" [(ntsModel)]="model"></nts-button-toggle>
+```
 
+## Known Issues
 
-### Properties / common
-- id : string / identificador del componente
-- disabled : bool / default = false / deshabilitar componente --> ok
-- selected : bool / defautl = false / determina si el boton esta habilitado
-- tabIndex : number / default = -1 / indice en el formulario
-- ___¿formName : como agrupamos en un mismo form, dentro del anidamiento o por parámetro?___
-
-### Properties / style
-- class : string
-    - estilo base css: btn-default, btn-primary, btn-light, btn-info, btn-success, btn-warning, btn-error --> ok
-    - estilo labelButton css: lb-default, lb-primary, lb-light, lb-info, lb-success, lb-warning, lb-error
-        - ___¿o mejor LinkButton?___
-    - estilo añadir borde caja: box-normal, box-rounded, box-chip
-            - ___no me acaban los nombres___
-    - ___¿añadimos color?___
-    - ___¿podemos definir por defecto los estados: normal, over, active?___
-
-- size : string / tamaño del boton: large, normal, small, extra-small  --> ok
-
-
-### Events
-- click : click action  --> ok
-- dropdownClick : click en dropdown
-- popupClick : click en popup
-
-
----
-
-### Methods
-
-**/
+* Flexibilizar los iconos para poder introducir una url personalizada
+* Añadir el input `hintIcon`
+* Añadir el input `prefixIcon`
+* Añadir los input `subfix` y `subfixIcon` al estilo de `prefix`
+* Separar el input `[multiline]="true"` a otro componente

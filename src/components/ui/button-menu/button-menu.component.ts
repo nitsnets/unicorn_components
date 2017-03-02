@@ -4,10 +4,10 @@ import { NtsButtonBaseComponent } from '../../base/button-base.component';
 import { NtsPosition } from '../../../models/types';
 
 @Component({
-    selector: 'nts-button-dropdown',
-    templateUrl: 'button-dropdown.component.html',
-    styleUrls: ['button-dropdown.component.scss'],
+    selector: 'nts-button-menu',
+    templateUrl: 'button-menu.component.html',
+    styleUrls: ['button-menu.component.scss'],
 })
-export class NtsButtonDropdownComponent extends NtsButtonBaseComponent {
+export class NtsButtonMenuComponent extends NtsButtonBaseComponent {
     @Input() position: NtsPosition = 'bottom-left';
 }
