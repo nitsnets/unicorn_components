@@ -1,10 +1,10 @@
-import { AutofocusDirective } from './autofocus.directive';
-import { ClickOutsideDirective } from './clickoutside.directive';
-import { Droppable } from './droppable.directive';
-import { ComponentLoaderDirective } from './component-loader.directive';
-import { BaseChartDirective } from './base-chart.directive';
+import { NtsAutofocusDirective } from './autofocus.directive';
+import { NtsBaseChartDirective } from './base-chart.directive';
+import { NtsClickOutsideDirective } from './clickoutside.directive';
+import { NtsComponentLoaderDirective } from './component-loader.directive';
+import { NtsDroppableDirective } from './droppable.directive';
 
 export const NTS_DIRECTIVES = [
-    AutofocusDirective, ClickOutsideDirective, Droppable,
-    ComponentLoaderDirective, BaseChartDirective
+    NtsAutofocusDirective, NtsClickOutsideDirective, NtsDroppableDirective,
+    NtsComponentLoaderDirective, NtsBaseChartDirective
 ];

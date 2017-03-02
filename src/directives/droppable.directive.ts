@@ -1,9 +1,9 @@
-import { Directive, OnInit, ElementRef, HostListener, Output, EventEmitter } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 
 @Directive({
     selector: '[droppable]'
 })
-export class Droppable implements OnInit {
+export class NtsDroppableDirective implements OnInit {
     @HostListener('dragenter', ['$event']) dragenter = this.onDragEnter;
     @HostListener('dragleave', ['$event']) dragleave = this.onDragLeave;
 

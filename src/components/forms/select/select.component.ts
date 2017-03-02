@@ -14,10 +14,10 @@ export class NtsSelectComponent implements OnInit, OnChanges {
     @Input() ntsModel;
     @Output() ntsModelChange = new EventEmitter();
 
-    @Input() name: string = '';
-    @Input() label: string = '';
-    @Input() placeholder: string = '';
-    @Input() value: string = '';
+    @Input() name = '';
+    @Input() label = '';
+    @Input() placeholder = '';
+    @Input() value = '';
     @Input() icon: string;
     @Input() multiple = false;
 
@@ -29,7 +29,7 @@ export class NtsSelectComponent implements OnInit, OnChanges {
     areOptionsVisible = false;
     optionsFiltered: NtsOption[] = [];
     optionsSelected: NtsOption[] = [];
-    pointedIndex: number = 0;
+    pointedIndex = 0;
     selecting = false;
     search = null;
 

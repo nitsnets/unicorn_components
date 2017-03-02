@@ -11,10 +11,6 @@ nts-input{
             background-color: $alpha-black-light !important;
             border-color: $alpha-black-medium !important;
         }
-        &.floating{
-            @include border(0);
-            background-color: transparent;
-        }
     }
     textarea{
         padding: $input-padding;
@@ -50,25 +46,28 @@ nts-input{
         height: $label-height;
     };
 
-    .floating-label {
+    .floating {
+        &.focused, &.has-content{
+            span {
+                font-size: $font-small;
+                top: 0;
+                left: 0;
+                line-height: $label-height;
+                cursor: default;
+            }
+        }
         span {
             font-size: $font-regular;
             position: absolute;
             top: $label-height;
             left: $input-padding;
             line-height: $input-height;
-
+            cursor: text;
             transition: 100ms ease all;
         }
-    }
-    .focused, .has-content{
-        .floating-label {
-            span {
-                font-size: $font-small;
-                top: 0;
-                left: 0;
-                line-height: $label-height;
-            }
+        input, textarea{
+            @include border(0);
+            background-color: transparent;
         }
     }
     .prefix{

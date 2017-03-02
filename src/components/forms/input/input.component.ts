@@ -1,15 +1,18 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 import { NtsInputBaseComponent } from '../../base/input-base.component';
+import { conformToMask } from 'angular2-text-mask';
+
+// https://github.com/text-mask/text-mask/tree/master/angular2
 
 export type InputType = 'text' | 'number' | 'email' | 'password' | 'color';
-
+export type MaskArray = (string | RegExp)[];
 @Component({
     selector: 'nts-input',
     templateUrl: 'input.component.html',
     styleUrls: ['input.component.scss'],
 })
-export class NtsInputComponent extends NtsInputBaseComponent implements OnInit {
+export class NtsInputComponent extends NtsInputBaseComponent implements OnInit, OnChanges {
 
     @Input() type: InputType = 'text';
     @Input() max = -1;
@@ -18,33 +21,45 @@ export class NtsInputComponent extends NtsInputBaseComponent implements OnInit {
     @Input() icon: string;
     @Input() iconRight: string;
 
-    @Input() placeholder: string = '';
+    @Input() placeholder = '';
     @Input() prefix = '';
-    @Input() hint: string = '';
-    @Input() error: string = '';
+    @Input() hint = '';
+    @Input() mask = '';
+    @Input() error = '';
     @Input() counter = false;
 
     @Input() maxValue: number = null;
     @Input() minValue: number = null;
 
     @Input() floating = false;
-    @Input() floatingLabel = false;
     @Input() multiline = false;
     @Input() autofocus = false;
     @Input() clear = false;
-    @Input() caret = false;
     @Input() colorSwatch = false;
+    @Input() caret = false;
 
     @Output() ntsKeypress = new EventEmitter();
 
     focused = false;
+    _mask: MaskArray = null;
 
+
+    ngOnChanges(changes) {
+        if (changes.mask && this.mask) {
+            this.parseMask();
+        }
+        if (changes.ntsModel) {
+            this.applyMask();
+        }
+    }
     ngOnInit() {
         if (!this.ntsModel) {
             this.ntsModel = this.value;
         } else {
             this.value = this.ntsModel;
         }
+        this.ntsModelChange.subscribe(val => {
+        });
     }
     onInputFocus(ev) {
         this.focused = true;
@@ -62,5 +77,23 @@ export class NtsInputComponent extends NtsInputBaseComponent implements OnInit {
             this.ntsModelChange.emit(this.ntsModel);
         }
         this.ntsBlur.emit(ev);
+    }
+    private applyMask() {
+        if (!this._mask || !this.ntsModel) { return; }
+        console.log(conformToMask(this.ntsModel, this._mask, {}).conformedValue);
+        // this.ntsModel = conformToMask(this.ntsModel, this._mask, {}).conformedValue;
+    }
+    private parseMask(): MaskArray {
+        if (typeof this.mask !== 'string') { return this.mask; }
+        this._mask = this.mask.split('').map(c => {
+            switch (c) {
+                case '9': return /\d/;
+                case 'A': return /[A-Z]/;
+                case 'a': return /[a-z]/;
+                case 'x': return /[A-z]/;
+                case 'X': return /[A-z|\d]/;
+                default: return c;
+            }
+        });
     }
 }

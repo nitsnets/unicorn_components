@@ -9,8 +9,8 @@ export abstract class NtsInputBaseComponent extends NtsBaseComponent implements 
     @Output() ntsFocus = new EventEmitter();
     @Output() ntsBlur = new EventEmitter();
 
-    @Input() name: string = '';
-    @Input() value: string = '';
+    @Input() name = '';
+    @Input() value = '';
     @Input() required = false;
     @Input() debounce = 0;
 

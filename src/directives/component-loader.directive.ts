@@ -1,10 +1,21 @@
 import {
-    ComponentFactoryResolver, ComponentRef, Directive, EventEmitter, Injector, Input,
-    OnChanges, Output, Provider, ReflectiveInjector, SimpleChanges, Type, ViewContainerRef
+    ComponentFactoryResolver,
+    ComponentRef,
+    Directive,
+    EventEmitter,
+    Injector,
+    Input,
+    OnChanges,
+    Output,
+    Provider,
+    ReflectiveInjector,
+    SimpleChanges,
+    Type,
+    ViewContainerRef,
 } from '@angular/core';
 
 @Directive({ selector: '[ntsComponentLoader]' })
-export class ComponentLoaderDirective implements OnChanges {
+export class NtsComponentLoaderDirective implements OnChanges {
     @Input() ntsComponentLoader: Type<any>;
     @Input() ntsComponentLoaderInjector: Injector;
     @Input() ntsComponentLoaderProviders: Provider[];

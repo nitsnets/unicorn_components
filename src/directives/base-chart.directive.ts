@@ -1,4 +1,4 @@
-import { OnDestroy, OnInit, OnChanges, EventEmitter, ElementRef, Input, Output, SimpleChanges, Directive } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
 
 declare var Chart: any;
 
@@ -15,7 +15,7 @@ export const CHART_COLORS: Array<number[]> = [
 ];
 /* tslint:disable-next-line */
 @Directive({ selector: 'canvas[baseChart]', exportAs: 'base-chart' })
-export class BaseChartDirective implements OnDestroy, OnChanges, OnInit {
+export class NtsBaseChartDirective implements OnDestroy, OnChanges, OnInit {
 
     @Input() public data: number[] | Array<number[]>;
     @Input() public datasets: any[];

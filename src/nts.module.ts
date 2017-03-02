@@ -6,11 +6,13 @@ import { NTS_COMPONENTS } from './components/';
 import { NTS_DIRECTIVES } from './directives/';
 import { NTS_PIPES } from './pipes/';
 import { NgModule } from '@angular/core';
+import { TextMaskModule } from 'angular2-text-mask';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
+        TextMaskModule,
         ColorPickerModule,
         BrowserModule
     ],
