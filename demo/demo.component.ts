@@ -12,7 +12,7 @@ import { TooltipService } from '../src/components/utils/tooltip/tooltip.service'
     styleUrls: ['./demo.component.scss']
 })
 export class DemoComponent {
-    tabSelected = 'typos';
+    tabSelected = 'data';
 
     manyOptions: NtsOption[] = [
         new NtsOption({ value: 1, label: 'Option 1' }),
@@ -45,6 +45,27 @@ export class DemoComponent {
         new NtsOption({ value: 53, label: 'Option 53' }),
         new NtsOption({ value: 54, label: 'Option 54' }),
         new NtsOption({ value: 55, label: 'Option 55' })
+    ];
+
+    data = [
+        {
+            name: 'Alfredo',
+            birth: '1992-12-17',
+            progress: 0.25,
+            alerts: 2
+        },
+        {
+            name: 'Rafael',
+            birth: '1995-06-28',
+            progress: 0.5,
+            alerts: 3
+        },
+        {
+            name: 'Suso',
+            birth: '1985-09-07',
+            progress: 0.75,
+            alerts: 1
+        }
     ];
 
     baseSeries = [
@@ -94,5 +115,9 @@ export class DemoComponent {
 
     closeTooltip() {
         this.tooltipService.close();
+    }
+
+    onCellClick(cell) {
+        console.log('Cell clicked', cell);
     }
 }

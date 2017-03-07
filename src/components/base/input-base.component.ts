@@ -26,7 +26,10 @@ export abstract class NtsInputBaseComponent extends NtsBaseComponent implements 
     onNgModelChange(ev) {
         clearTimeout(this.debounceTimer);
         this.debounceTimer = setTimeout(
-            _ => this.ntsModelChange.emit(ev), this.debounce || 0
+            _ => {
+                this.ntsModel = ev;
+                this.ntsModelChange.emit(ev);
+            }, this.debounce || 0
         );
     }
 }

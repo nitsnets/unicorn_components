@@ -6,6 +6,7 @@
       {label: 'Buttons', value: 'buttons'},
       {label: 'Inputs', value: 'inputs'},
       {label: 'Charts', value: 'charts'},
+      {label: 'Data', value: 'data'},
       {label: 'Other', value: 'other'}
     ]">
     </nts-tabs>
@@ -267,7 +268,7 @@
 
             <h5>Checkbox inputs</h5>
             <div class="flex">
-                <nts-checkbox [(ntsModel)]="checkboxModel"></nts-checkbox>
+                <nts-checkbox [(ntsModel)]="checkboxModel" (ntsModelChange)="checkboxModel = $event; search();"></nts-checkbox>
                 <nts-checkbox [(ntsModel)]="checkboxModel" [partial]="true"></nts-checkbox>
                 <nts-checkbox [(ntsModel)]="checkboxModel" label="Checkbox with label"></nts-checkbox>
                 <nts-checkbox [(ntsModel)]="checkboxModel" label="Checkbox with partial" [partial]="true"></nts-checkbox>
@@ -416,6 +417,23 @@
                 <nts-chart chartTitle="Polar chart" type="polarArea" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
             </div>
         </div>
+        <div *ngIf="tabSelected === 'data'" class="content">
+
+            <!-- ##################################################################
+           #############################  Data  ############################
+           ################################################################## -->
+            <h3>Data</h3>
+            <nts-separator></nts-separator>
+
+            <h5>Datagrids</h5>
+            <nts-datagrid [data]="data" (cellClick)="onCellClick($event)">
+                <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>
+                <nts-datagrid-column title="Date of birth" field="birth" format="date"></nts-datagrid-column>
+                <nts-datagrid-column title="Progress" field="progress" format="percentage"></nts-datagrid-column>
+                <nts-datagrid-column title="Alerts" field="alerts" format="badge"></nts-datagrid-column>
+            </nts-datagrid>
+
+        </div>
         <div *ngIf="tabSelected === 'other'" class="content">
 
             <!-- ##################################################################
@@ -425,10 +443,10 @@
             <nts-separator></nts-separator>
             <h5>Badges</h5>
             <div class="flex">
-                <nts-badge value="1" class="primary"> </nts-badge>
-                <nts-badge value="1" class="success"> </nts-badge>
-                <nts-badge value="1" class="error"> </nts-badge>
-                <nts-badge value="1" class="warning"> </nts-badge>
+                <nts-badge label="1" color="primary"> </nts-badge>
+                <nts-badge label="1" color="success"> </nts-badge>
+                <nts-badge label="1" color="error"> </nts-badge>
+                <nts-badge label="1" color="warning"> </nts-badge>
             </div>
             <h5>Chips</h5>
             <div class="flex">

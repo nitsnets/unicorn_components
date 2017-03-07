@@ -19,6 +19,8 @@ import { NtsChartTooltipComponent } from './charts/chart-tooltip/chart-tooltip.c
 import { NtsCheckboxComponent } from './forms/checkbox/checkbox.component';
 import { NtsChipComponent } from './utils/chip/chip.component';
 import { NtsClockComponent } from './ui/clock/clock.component';
+import { NtsDatagridColumnComponent } from './ui/datagrid/column/column.component';
+import { NtsDatagridComponent } from './ui/datagrid/datagrid.component';
 import { NtsDatePickerComponent } from './forms/date-picker/date-picker.component';
 import { NtsDaterangePickerComponent } from './forms/daterange-picker/daterange-picker.component';
 import { NtsDatetimePickerComponent } from './forms/datetime-picker/datetime-picker.component';
@@ -46,6 +48,7 @@ import { NtsToggleComponent } from './forms/toggle/toggle.component';
 
 // import { CodeEditorComponent } from './forms/code/code.component';
 
+
 export const NTS_COMPONENTS = [
     NtsPopupComponent, NtsPopupTriggerDirective, NtsPopupContainerComponent, NtsMenuComponent, NtsMenuTriggerDirective,
     NtsMenuContainerComponent, NtsMenuItemComponent, NtsInputComponent, NtsCheckboxComponent, NtsRadioComponent,
@@ -55,5 +58,5 @@ export const NTS_COMPONENTS = [
     NtsChipComponent, NtsProgressComponent, NtsFaceComponent, NtsBadgeComponent, NtsPaginatorComponent, NtsDaterangePickerComponent,
     NtsTabsComponent, NtsChartComponent, NtsChartLegendComponent, NtsChartTooltipComponent, NtsRowSpacerComponent, NtsToggleComponent,
     NtsDatePickerComponent, NtsTimePickerComponent, NtsButtonMenuComponent, NtsButtonPopupComponent, NtsButtonFileComponent,
-    NtsButtonHeaderComponent// CodeEditorComponent
+    NtsButtonHeaderComponent, NtsDatagridComponent, NtsDatagridColumnComponent// CodeEditorComponent
 ];
