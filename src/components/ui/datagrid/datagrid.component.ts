@@ -37,7 +37,6 @@ export class NtsDatagridComponent implements AfterContentInit {
         this.customRow = this.customRowDirective ? this.customRowDirective.templateRef : null;
     }
     onOrderBy(column) {
-        console.log(column);
         if (column.sortable === false || column.sortable === undefined && this.sortable === false) { return; }
         if (this.order.field === column.field) {
             this.order.dir = !this.order.dir;

@@ -19,6 +19,8 @@ import { NtsChartTooltipComponent } from './charts/chart-tooltip/chart-tooltip.c
 import { NtsCheckboxComponent } from './forms/checkbox/checkbox.component';
 import { NtsChipComponent } from './utils/chip/chip.component';
 import { NtsClockComponent } from './ui/clock/clock.component';
+import { NtsDatagridCellComponent } from './ui/datagrid/cell/cell.component';
+import { NtsDatagridCellDirective } from './ui/datagrid/cell/cell-variables.directive';
 import { NtsDatagridColumnComponent } from './ui/datagrid/column/column.component';
 import { NtsDatagridComponent } from './ui/datagrid/datagrid.component';
 import { NtsDatagridRowComponent } from './ui/datagrid/row/row.component';
@@ -61,5 +63,5 @@ export const NTS_COMPONENTS = [
     NtsTabsComponent, NtsChartComponent, NtsChartLegendComponent, NtsChartTooltipComponent, NtsRowSpacerComponent, NtsToggleComponent,
     NtsDatePickerComponent, NtsTimePickerComponent, NtsButtonMenuComponent, NtsButtonPopupComponent, NtsButtonFileComponent,
     NtsButtonHeaderComponent, NtsDatagridComponent, NtsDatagridColumnComponent, NtsDatagridRowComponent, NtsDatagridRowDirective,
-    // CodeEditorComponent
+    NtsDatagridCellComponent, NtsDatagridCellDirective// CodeEditorComponent
 ];

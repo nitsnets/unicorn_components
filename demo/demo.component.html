@@ -443,6 +443,19 @@
                 <nts-datagrid-column title="Alerts" field="alerts" format="badge" [formatOptions]="{color: 'error'}"></nts-datagrid-column>
             </nts-datagrid>
 
+            <h5>Custom cells</h5>
+            <nts-datagrid [data]="data" (cellClick)="onCellClick($event)">
+                <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>
+                <nts-datagrid-column title="Date of birth" field="birth">
+                    <nts-datagrid-cell *cellVariables="let date = cell">
+                        <nts-icon icon="calendar"></nts-icon>
+                        <span>{{date | formatDate : 'ddd DD MMM, YYYY'}}</span>
+                    </nts-datagrid-cell>
+                </nts-datagrid-column>
+                <nts-datagrid-column title="Progress" field="progress" format="progress" [formatOptions]="{total: 1, color: 'success'}"></nts-datagrid-column>
+                <nts-datagrid-column title="Alerts" field="alerts" format="badge" [formatOptions]="{color: 'error'}"></nts-datagrid-column>
+            </nts-datagrid>
+
             <h5>Custom rows</h5>
             <nts-datagrid [data]="data" (cellClick)="onCellClick($event)">
                 <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>
@@ -450,7 +463,7 @@
                 <nts-datagrid-column title="Progress" field="progress"></nts-datagrid-column>
                 <nts-datagrid-column title="Alerts" field="alerts"></nts-datagrid-column>
 
-                <nts-datagrid-row *rowVariables="let user = item; let i = index">
+                <nts-datagrid-row *rowVariables="let user = row; let i = i">
                     <h3>{{i+1}}. {{user?.name}}</h3>
                     <p>{{user?.birth | formatDate : 'ddd DD MMM, YYYY'}}</p>
                 </nts-datagrid-row>
