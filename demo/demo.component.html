@@ -264,14 +264,16 @@
             <div class="flex">
                 <nts-radio [(ntsModel)]="radioModel" value="0" label="Option 1"></nts-radio>
                 <nts-radio [(ntsModel)]="radioModel" value="1" label="Option 2"></nts-radio>
+                <nts-radio [(ntsModel)]="radioModel" value="1" label="Custom <strong>HTML</strong> label"></nts-radio>
             </div>
 
             <h5>Checkbox inputs</h5>
             <div class="flex">
-                <nts-checkbox [(ntsModel)]="checkboxModel" (ntsModelChange)="checkboxModel = $event; search();"></nts-checkbox>
+                <nts-checkbox [(ntsModel)]="checkboxModel"></nts-checkbox>
                 <nts-checkbox [(ntsModel)]="checkboxModel" [partial]="true"></nts-checkbox>
                 <nts-checkbox [(ntsModel)]="checkboxModel" label="Checkbox with label"></nts-checkbox>
                 <nts-checkbox [(ntsModel)]="checkboxModel" label="Checkbox with partial" [partial]="true"></nts-checkbox>
+                <nts-checkbox [(ntsModel)]="checkboxModel" label="Custom <strong>HTML</strong> label"></nts-checkbox>
             </div>
             <h5>Toggle inputs</h5>
             <div class="flex">
@@ -331,38 +333,38 @@
 
             <div class="flex">
                 <nts-select label="Default select" [(ntsModel)]="selectModel" [options]="[
-            {value: 1, label: 'Option 1'},
-            {value: 2, label: 'Option 2'},
-            {value: 3, label: 'Option 3'},
-            {value: 4, label: 'Option 4'},
-            {value: 5, label: 'Option 5'}
-          ]">
+                    {value: 1, label: 'Option 1'},
+                    {value: 2, label: 'Option 2'},
+                    {value: 3, label: 'Option 3'},
+                    {value: 4, label: 'Option 4'},
+                    {value: 5, label: 'Option 5'}
+                ]">
                 </nts-select>
                 <nts-select label="Many options select" [(ntsModel)]="selectModel" [options]="manyOptions">
                 </nts-select>
                 <nts-select label="Select with placeholder" placeholder="Select placeholder" [(ntsModel)]="selectModel" [options]="[
-            {value: 1, label: 'Option 1'},
-            {value: 2, label: 'Option 2'},
-            {value: 3, label: 'Option 3'},
-            {value: 4, label: 'Option 4'},
-            {value: 5, label: 'Option 5'}
-          ]">
+                    {value: 1, label: 'Option 1'},
+                    {value: 2, label: 'Option 2'},
+                    {value: 3, label: 'Option 3'},
+                    {value: 4, label: 'Option 4'},
+                    {value: 5, label: 'Option 5'}
+                ]">
                 </nts-select>
                 <nts-select label="Select with icon" icon="user" [(ntsModel)]="selectModel" [options]="[
-            {value: 1, label: 'Option 1'},
-            {value: 2, label: 'Option 2'},
-            {value: 3, label: 'Option 3'},
-            {value: 4, label: 'Option 4'},
-            {value: 5, label: 'Option 5'}
-          ]">
+                    {value: 1, label: 'Option 1'},
+                    {value: 2, label: 'Option 2'},
+                    {value: 3, label: 'Option 3'},
+                    {value: 4, label: 'Option 4'},
+                    {value: 5, label: 'Option 5'}
+                ]">
                 </nts-select>
                 <nts-select label="Select with multiple options" [(ntsModel)]="selectModel2" [multiple]="true" [options]="[
-            {value: 1, label: 'Option 1'},
-            {value: 2, label: 'Option 2'},
-            {value: 3, label: 'Option 3'},
-            {value: 4, label: 'Option 4'},
-            {value: 5, label: 'Option 5'}
-          ]">
+                    {value: 1, label: 'Option 1'},
+                    {value: 2, label: 'Option 2'},
+                    {value: 3, label: 'Option 3'},
+                    {value: 4, label: 'Option 4'},
+                    {value: 5, label: 'Option 5'}
+                ]">
                 </nts-select>
             </div>
 
@@ -425,14 +427,34 @@
             <h3>Data</h3>
             <nts-separator></nts-separator>
 
-            <h5>Datagrids</h5>
+            <h5>Simple datagrids</h5>
             <nts-datagrid [data]="data" (cellClick)="onCellClick($event)">
                 <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>
-                <nts-datagrid-column title="Date of birth" field="birth" format="date"></nts-datagrid-column>
+                <nts-datagrid-column title="Date of birth" field="birth"></nts-datagrid-column>
                 <nts-datagrid-column title="Progress" field="progress" format="percentage"></nts-datagrid-column>
-                <nts-datagrid-column title="Alerts" field="alerts" format="badge"></nts-datagrid-column>
+                <nts-datagrid-column title="Alerts" field="alerts" [sortable]="false"></nts-datagrid-column>
             </nts-datagrid>
 
+            <h5>Cell formats</h5>
+            <nts-datagrid [data]="data" (cellClick)="onCellClick($event)" [sortable]="false">
+                <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>
+                <nts-datagrid-column title="Date of birth" field="birth" format="date"></nts-datagrid-column>
+                <nts-datagrid-column title="Progress" field="progress" format="progress" [formatOptions]="{total: 1, color: 'success'}"></nts-datagrid-column>
+                <nts-datagrid-column title="Alerts" field="alerts" format="badge" [formatOptions]="{color: 'error'}"></nts-datagrid-column>
+            </nts-datagrid>
+
+            <h5>Custom rows</h5>
+            <nts-datagrid [data]="data" (cellClick)="onCellClick($event)">
+                <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>
+                <nts-datagrid-column title="Date of birth" field="birth"></nts-datagrid-column>
+                <nts-datagrid-column title="Progress" field="progress"></nts-datagrid-column>
+                <nts-datagrid-column title="Alerts" field="alerts"></nts-datagrid-column>
+
+                <nts-datagrid-row *rowVariables="let user = item; let i = index">
+                    <h3>{{i+1}}. {{user?.name}}</h3>
+                    <p>{{user?.birth | formatDate : 'ddd DD MMM, YYYY'}}</p>
+                </nts-datagrid-row>
+            </nts-datagrid>
         </div>
         <div *ngIf="tabSelected === 'other'" class="content">
 

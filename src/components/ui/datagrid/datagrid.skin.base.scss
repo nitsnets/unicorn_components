@@ -2,32 +2,36 @@ nts-datagrid {
     .header-item {
         font-weight: bold;
         position: relative;
-        cursor: pointer;
         color: $alpha-black;
         min-height: $input-height;
-        &:hover {
-            color: $alpha-black-dark;
-        }
-        &:after {
-            @include pseudo();
-            background-image: url('../assets/img/sort_both.png');
-            background-position: center;
-            background-repeat: no-repeat;
-            height: $input-height;
-            width: $input-height;
-            right: $basic-padding / 4;
-            bottom: 0;
-        }
-        &.order-asc {
-            color: $black;
-            &:after {
-                background-image: url('../assets/img/sort_asc.png');
+
+        &.sortable{
+            cursor: pointer;
+            user-select: none;
+            &:hover {
+                color: $alpha-black-dark;
             }
-        }
-        &.order-desc {
-            color: $black;
             &:after {
-                background-image: url('../assets/img/sort_desc.png');
+                @include pseudo();
+                background-image: url('../assets/img/sort_both.png');
+                background-position: center;
+                background-repeat: no-repeat;
+                height: $input-height;
+                width: $input-height;
+                right: $basic-padding / 4;
+                bottom: 0;
+            }
+            &.order-asc {
+                color: $black;
+                &:after {
+                    background-image: url('../assets/img/sort_asc.png');
+                }
+            }
+            &.order-desc {
+                color: $black;
+                &:after {
+                    background-image: url('../assets/img/sort_desc.png');
+                }
             }
         }
     }
@@ -36,5 +40,17 @@ nts-datagrid {
     }
     .header-item {
         padding-right: $basic-padding / 2 + $input-height;
+    }
+    .content-row {
+        overflow: hidden;
+        &:hover { background-color: $color-grey-lighter; }
+    }
+    .content-cell {
+        &:hover { background-color: $color-grey-light; }
+    }
+    .progress-cell {
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
     }
 }

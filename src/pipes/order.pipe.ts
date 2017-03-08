@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class NtsOrderPipe implements PipeTransform {
 
     transform(input: any, config: Array<string> | string = '+'): any {
-
         if (!Array.isArray(input)) { return input; }
         if (!config || config === '+') { return input.sort(); }
         if (config === '-') { return input.sort().reverse(); }
@@ -23,7 +22,6 @@ export class NtsOrderPipe implements PipeTransform {
                 return 0;
             });
         }
-
         const rawProp = !Array.isArray(config) ? config : config[0];
         const desc = this.isDesc(rawProp);
         const prop: string = this.cleanProp(rawProp);
@@ -38,7 +36,6 @@ export class NtsOrderPipe implements PipeTransform {
         return key.substr(0, 1) === '-';
     }
     private compare(a, b, desc = false): number {
-
         if ((isNaN(parseFloat(a)) || !isFinite(a)) || (isNaN(parseFloat(b)) || !isFinite(b))) {
             if (a.toLowerCase() < b.toLowerCase()) { return desc ? -1 : 1; }
             if (a.toLowerCase() > b.toLowerCase()) { return desc ? 1 : -1; }

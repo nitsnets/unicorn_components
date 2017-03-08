@@ -12,6 +12,10 @@ nts-progress {
   .bar {
     background-color: $color-grey;
     padding: $basic-padding / 15 $basic-padding / 15 $basic-padding / 15 $basic-padding / 6;
+    &.primary {background-color: $color-primary; span { color: white; } }
+    &.error {background-color: $color-error; span { color: white; } }
+    &.warning {background-color: $color-warning; }
+    &.success {background-color: $color-success; span { color: white; } }
   }
 
   span {
@@ -19,8 +23,4 @@ nts-progress {
     font-size: $font-smallest;
   }
 
-  &.primary { .bar { background-color: $color-primary; span { color: white; } } }
-  &.error { .bar { background-color: $color-error; span { color: white; } } }
-  &.warning { .bar { background-color: $color-warning; } }
-  &.success { .bar { background-color: $color-success; span { color: white; } } }
 }

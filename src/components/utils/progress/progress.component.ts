@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+import { NtsColor } from '../../../models/types';
 
 @Component({
     selector: 'nts-progress',
@@ -11,6 +13,7 @@ export class NtsProgressComponent {
     @Input() total = 100;
     @Input() showPercentage = false;
     @Input() showCount = false;
+    @Input() color: NtsColor;
 
     constructor() { }
 }

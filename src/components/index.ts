@@ -21,6 +21,8 @@ import { NtsChipComponent } from './utils/chip/chip.component';
 import { NtsClockComponent } from './ui/clock/clock.component';
 import { NtsDatagridColumnComponent } from './ui/datagrid/column/column.component';
 import { NtsDatagridComponent } from './ui/datagrid/datagrid.component';
+import { NtsDatagridRowComponent } from './ui/datagrid/row/row.component';
+import { NtsDatagridRowDirective } from './ui/datagrid/row/row-variables.directive';
 import { NtsDatePickerComponent } from './forms/date-picker/date-picker.component';
 import { NtsDaterangePickerComponent } from './forms/daterange-picker/daterange-picker.component';
 import { NtsDatetimePickerComponent } from './forms/datetime-picker/datetime-picker.component';
@@ -58,5 +60,6 @@ export const NTS_COMPONENTS = [
     NtsChipComponent, NtsProgressComponent, NtsFaceComponent, NtsBadgeComponent, NtsPaginatorComponent, NtsDaterangePickerComponent,
     NtsTabsComponent, NtsChartComponent, NtsChartLegendComponent, NtsChartTooltipComponent, NtsRowSpacerComponent, NtsToggleComponent,
     NtsDatePickerComponent, NtsTimePickerComponent, NtsButtonMenuComponent, NtsButtonPopupComponent, NtsButtonFileComponent,
-    NtsButtonHeaderComponent, NtsDatagridComponent, NtsDatagridColumnComponent// CodeEditorComponent
+    NtsButtonHeaderComponent, NtsDatagridComponent, NtsDatagridColumnComponent, NtsDatagridRowComponent, NtsDatagridRowDirective,
+    // CodeEditorComponent
 ];
