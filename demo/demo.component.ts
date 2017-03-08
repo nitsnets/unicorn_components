@@ -98,8 +98,8 @@ export class DemoComponent {
         );
     }
 
-    openModal(type = null) {
-        this.modalService.createModal(NtsDemoModalContentComponent, { title: 'Demo Modal', type }, this.viewContainerRef).subscribe(
+    openModal(options = {}) {
+        this.modalService.createModal(NtsDemoModalContentComponent, options, this.viewContainerRef).subscribe(
             param => { console.log('ok: ', param); }, _ => { console.log('ko'); }
         );
     }

@@ -1,5 +1,6 @@
-import { Injectable, ApplicationRef, Type, ViewContainerRef, ComponentFactoryResolver, ElementRef, Injector } from '@angular/core';
-import { Subject, Observable } from 'rxjs/Rx';
+import { ApplicationRef, ComponentFactoryResolver, ElementRef, Injectable, Injector, Type, ViewContainerRef } from '@angular/core';
+import { Observable, Subject } from 'rxjs/Rx';
+
 import { NtsModalComponent } from './modal.component';
 
 @Injectable()
@@ -14,9 +15,9 @@ export class ModalService {
 
 
     createModal(component: Type<any>, options: {}, viewContainer: any): Observable<any> {
-        let modalSub = new Subject();
+        const modalSub = new Subject();
 
-        let modalRef = viewContainer.createComponent(
+        const modalRef = viewContainer.createComponent(
             this.cmpFactoryResolver.resolveComponentFactory(NtsModalComponent),
             viewContainer.length, this.injector, null
         );

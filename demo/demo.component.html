@@ -484,14 +484,14 @@
             <nts-progress value="0" [showPercentage]="true"></nts-progress>
             <nts-progress value="30"></nts-progress>
             <nts-progress value="30" [showPercentage]="true"></nts-progress>
-            <nts-progress class="primary" value="20"></nts-progress>
-            <nts-progress class="primary" value="20" [showPercentage]="true"></nts-progress>
-            <nts-progress class="success" value="40"></nts-progress>
-            <nts-progress class="success" value="40" [showPercentage]="true"></nts-progress>
-            <nts-progress class="warning" value="70"></nts-progress>
-            <nts-progress class="warning" value="70" [showPercentage]="true"></nts-progress>
-            <nts-progress class="error" value="10" [showPercentage]="true"></nts-progress>
-            <nts-progress class="error" value="10" [showCount]="true"></nts-progress>
+            <nts-progress color="primary" value="20"></nts-progress>
+            <nts-progress color="primary" value="20" [showPercentage]="true"></nts-progress>
+            <nts-progress color="success" value="40"></nts-progress>
+            <nts-progress color="success" value="40" [showPercentage]="true"></nts-progress>
+            <nts-progress color="warning" value="70"></nts-progress>
+            <nts-progress color="warning" value="70" [showPercentage]="true"></nts-progress>
+            <nts-progress color="error" value="10" [showPercentage]="true"></nts-progress>
+            <nts-progress color="error" value="10" [showCount]="true"></nts-progress>
 
             <h5>Faces</h5>
             <div class="flex">
@@ -512,9 +512,30 @@
 
             <h5>Modal</h5>
             <div class="flex">
-                <nts-button label="Open modal" icon="open" class="btn-default" (click)="openModal()"></nts-button>
-                <nts-button label="Open full-screen modal" icon="open" class="btn-default" (click)="openModal('full')"></nts-button>
-                <nts-button label="Open aside modal" icon="open" class="btn-default" (click)="openModal('aside')"></nts-button>
+                <nts-button
+                    label="Open modal"
+                    icon="open"
+                    color="default"
+                    (click)="openModal({ title: 'Demo Modal' })"
+                ></nts-button>
+                <nts-button
+                    label="Open modal without header"
+                    icon="open"
+                    color="default"
+                    (click)="openModal({ 'hideHeader': true })"
+                ></nts-button>
+                <nts-button
+                    color="default"
+                    label="Open full-screen modal"
+                    icon="open"
+                    (click)="openModal({ title: 'Demo Modal', type: 'full'})"
+                ></nts-button>
+                <nts-button
+                    color="default"
+                    label="Open aside modal"
+                    icon="open"
+                    (click)="openModal({ title: 'Demo Modal', type: 'aside'})"
+                ></nts-button>
             </div>
 
             <h5>Paginator</h5>
@@ -523,15 +544,15 @@
 
             <h5>Tabs</h5>
             <nts-tabs [tabs]="[
-        {label: 'Tab 1'},
-        {label: 'Tab 2'},
-        {label: 'Tab 3'}
-      ]"></nts-tabs>
+                {label: 'Tab 1'},
+                {label: 'Tab 2'},
+                {label: 'Tab 3'}
+            ]"></nts-tabs>
             <nts-tabs size="small" [tabs]="[
-        {label: 'Tab small 1'},
-        {label: 'Tab small 2'},
-        {label: 'Tab small 3'}
-      ]"></nts-tabs>
+                {label: 'Tab small 1'},
+                {label: 'Tab small 2'},
+                {label: 'Tab small 3'}
+            ]"></nts-tabs>
 
             <!-- ##################################################################
            #############################  ICONS  ############################
@@ -539,216 +560,216 @@
             <h3>Icons</h3>
 
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="user"></nts-icon>
-        <span>user</span>
+                <nts-icon class="icon" icon="user"></nts-icon>
+                <span>user</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="user-unfollow"></nts-icon>
-        <span>user-unfollow</span>
+                <nts-icon class="icon" icon="user-unfollow"></nts-icon>
+                <span>user-unfollow</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="user-following"></nts-icon>
-        <span>user-following</span>
+                <nts-icon class="icon" icon="user-following"></nts-icon>
+                <span>user-following</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="user-follow"></nts-icon>
-        <span>user-follow</span>
+                <nts-icon class="icon" icon="user-follow"></nts-icon>
+                <span>user-follow</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="people"></nts-icon>
-        <span>people</span>
+                <nts-icon class="icon" icon="people"></nts-icon>
+                <span>people</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="bell"></nts-icon>
-        <span>bell</span>
+                <nts-icon class="icon" icon="bell"></nts-icon>
+                <span>bell</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="speech"></nts-icon>
-        <span>speech</span>
+                <nts-icon class="icon" icon="speech"></nts-icon>
+                <span>speech</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="printer"></nts-icon>
-        <span>printer</span>
+                <nts-icon class="icon" icon="printer"></nts-icon>
+                <span>printer</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="picture"></nts-icon>
-        <span>picture</span>
+                <nts-icon class="icon" icon="picture"></nts-icon>
+                <span>picture</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="handbag"></nts-icon>
-        <span>handbag</span>
+                <nts-icon class="icon" icon="handbag"></nts-icon>
+                <span>handbag</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="folder-alt"></nts-icon>
-        <span>folder-alt</span>
+                <nts-icon class="icon" icon="folder-alt"></nts-icon>
+                <span>folder-alt</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="drawar"></nts-icon>
-        <span>drawar</span>
+                <nts-icon class="icon" icon="drawar"></nts-icon>
+                <span>drawar</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="trash"></nts-icon>
-        <span>trash</span>
+                <nts-icon class="icon" icon="trash"></nts-icon>
+                <span>trash</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="tag"></nts-icon>
-        <span>tag</span>
+                <nts-icon class="icon" icon="tag"></nts-icon>
+                <span>tag</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="logout"></nts-icon>
-        <span>logout</span>
+                <nts-icon class="icon" icon="logout"></nts-icon>
+                <span>logout</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="list"></nts-icon>
-        <span>list</span>
+                <nts-icon class="icon" icon="list"></nts-icon>
+                <span>list</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="graph"></nts-icon>
-        <span>graph</span>
+                <nts-icon class="icon" icon="graph"></nts-icon>
+                <span>graph</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="calendar"></nts-icon>
-        <span>calendar</span>
+                <nts-icon class="icon" icon="calendar"></nts-icon>
+                <span>calendar</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="chart"></nts-icon>
-        <span>chart</span>
+                <nts-icon class="icon" icon="chart"></nts-icon>
+                <span>chart</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="clock"></nts-icon>
-        <span>clock</span>
+                <nts-icon class="icon" icon="clock"></nts-icon>
+                <span>clock</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="doc"></nts-icon>
-        <span>doc</span>
+                <nts-icon class="icon" icon="doc"></nts-icon>
+                <span>doc</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="cloud-download"></nts-icon>
-        <span>cloud-download</span>
+                <nts-icon class="icon" icon="cloud-download"></nts-icon>
+                <span>cloud-download</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="eye"></nts-icon>
-        <span>eye</span>
+                <nts-icon class="icon" icon="eye"></nts-icon>
+                <span>eye</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="heart"></nts-icon>
-        <span>heart</span>
+                <nts-icon class="icon" icon="heart"></nts-icon>
+                <span>heart</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="location-pin"></nts-icon>
-        <span>location-pin</span>
+                <nts-icon class="icon" icon="location-pin"></nts-icon>
+                <span>location-pin</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="lock"></nts-icon>
-        <span>lock</span>
+                <nts-icon class="icon" icon="lock"></nts-icon>
+                <span>lock</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="lock-open"></nts-icon>
-        <span>lock-open</span>
+                <nts-icon class="icon" icon="lock-open"></nts-icon>
+                <span>lock-open</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="chevron-left"></nts-icon>
-        <span>chevron-left</span>
+                <nts-icon class="icon" icon="chevron-left"></nts-icon>
+                <span>chevron-left</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="chevron-right"></nts-icon>
-        <span>chevron-right</span>
+                <nts-icon class="icon" icon="chevron-right"></nts-icon>
+                <span>chevron-right</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="arrow-down"></nts-icon>
-        <span>arrow-down</span>
+                <nts-icon class="icon" icon="arrow-down"></nts-icon>
+                <span>arrow-down</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="arrow-left"></nts-icon>
-        <span>arrow-left</span>
+                <nts-icon class="icon" icon="arrow-left"></nts-icon>
+                <span>arrow-left</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="arrow-right"></nts-icon>
-        <span>arrow-right</span>
+                <nts-icon class="icon" icon="arrow-right"></nts-icon>
+                <span>arrow-right</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="arrow-up"></nts-icon>
-        <span>arrow-up</span>
+                <nts-icon class="icon" icon="arrow-up"></nts-icon>
+                <span>arrow-up</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="google"></nts-icon>
-        <span>google</span>
+                <nts-icon class="icon" icon="google"></nts-icon>
+                <span>google</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="board"></nts-icon>
-        <span>board</span>
+                <nts-icon class="icon" icon="board"></nts-icon>
+                <span>board</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="star-filled"></nts-icon>
-        <span>star-filled</span>
+                <nts-icon class="icon" icon="star-filled"></nts-icon>
+                <span>star-filled</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="star-half"></nts-icon>
-        <span>star-half</span>
+                <nts-icon class="icon" icon="star-half"></nts-icon>
+                <span>star-half</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="star"></nts-icon>
-        <span>star</span>
+                <nts-icon class="icon" icon="star"></nts-icon>
+                <span>star</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="suitcase"></nts-icon>
-        <span>suitcase</span>
+                <nts-icon class="icon" icon="suitcase"></nts-icon>
+                <span>suitcase</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="dollar"></nts-icon>
-        <span>dollar</span>
+                <nts-icon class="icon" icon="dollar"></nts-icon>
+                <span>dollar</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="caret"></nts-icon>
-        <span>caret</span>
+                <nts-icon class="icon" icon="caret"></nts-icon>
+                <span>caret</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="search"></nts-icon>
-        <span>search</span>
+                <nts-icon class="icon" icon="search"></nts-icon>
+                <span>search</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="filled-circle"></nts-icon>
-        <span>filled-circle</span>
+                <nts-icon class="icon" icon="filled-circle"></nts-icon>
+                <span>filled-circle</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="minus-circle"></nts-icon>
-        <span>minus-circle</span>
+                <nts-icon class="icon" icon="minus-circle"></nts-icon>
+                <span>minus-circle</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="plus-circle"></nts-icon>
-        <span>plus-circle</span>
+                <nts-icon class="icon" icon="plus-circle"></nts-icon>
+                <span>plus-circle</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="square"></nts-icon>
-        <span>square</span>
+                <nts-icon class="icon" icon="square"></nts-icon>
+                <span>square</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="square-minus"></nts-icon>
-        <span>square-minus</span>
+                <nts-icon class="icon" icon="square-minus"></nts-icon>
+                <span>square-minus</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="square-check"></nts-icon>
-        <span>square-check</span>
+                <nts-icon class="icon" icon="square-check"></nts-icon>
+                <span>square-check</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="circle"></nts-icon>
-        <span>circle</span>
+                <nts-icon class="icon" icon="circle"></nts-icon>
+                <span>circle</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="circle-check"></nts-icon>
-        <span>circle-check</span>
+                <nts-icon class="icon" icon="circle-check"></nts-icon>
+                <span>circle-check</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="delete"></nts-icon>
-        <span>delete</span>
+                <nts-icon class="icon" icon="delete"></nts-icon>
+                <span>delete</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="drag"></nts-icon>
-        <span>drag</span>
+                <nts-icon class="icon" icon="drag"></nts-icon>
+                <span>drag</span>
             </span>
             <span class="icon-wrap">
-        <nts-icon class="icon" icon="more-v"></nts-icon>
-        <span>more-v</span>
+                <nts-icon class="icon" icon="more-v"></nts-icon>
+                <span>more-v</span>
             </span>
         </div>
     </nts-body>

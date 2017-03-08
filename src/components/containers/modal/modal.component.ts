@@ -1,6 +1,13 @@
 import {
-    Component, Type, Input, Output, EventEmitter, ElementRef,
-    ComponentRef, HostListener, AfterContentInit
+    AfterContentInit,
+    Component,
+    ComponentRef,
+    ElementRef,
+    EventEmitter,
+    HostListener,
+    Input,
+    Output,
+    Type,
 } from '@angular/core';
 
 @Component({
@@ -28,7 +35,6 @@ export class NtsModalComponent implements AfterContentInit {
 
     ngAfterContentInit() { }
     initContent(component: Type<any>, options) {
-
         this.contentComponent = component;
         this.modalOptions = options;
     }
