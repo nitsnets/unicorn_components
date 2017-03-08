@@ -12,5 +12,5 @@
         [ngModel]="ntsModel"
         (ngModelChange)="toggleNtsModel()"
     >
-    <span *ngIf="label">{{label}}</span>
+    <span *ngIf="label" [innerHtml]="label"></span>
 </label>

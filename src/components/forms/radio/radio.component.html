@@ -6,5 +6,5 @@
     ntsModel == value ? 'circle-check' : 'circle'"
   ></nts-icon>
   <input type="checkbox" [name]="name" [ngModel]="ntsModel == value" (ngModelChange)="onNgModelChange(this.value)">
-  <span *ngIf="label">{{label}}</span>
+  <span *ngIf="label" [innerHtml]="label"></span>
 </label>
