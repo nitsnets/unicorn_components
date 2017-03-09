@@ -20,6 +20,7 @@ export class NtsSelectComponent implements OnInit, OnChanges {
     @Input() value = '';
     @Input() icon: string;
     @Input() multiple = false;
+    @Input() clear = false;
 
     @Input() options: NtsOption[] = [];
     @Input() excludedOptions: string[];

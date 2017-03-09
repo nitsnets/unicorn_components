@@ -3,22 +3,22 @@
         <nts-checkbox [ntsModel]="allSelected()" (ntsModelChange)="selectAll()"></nts-checkbox>
     </nts-datagrid-cell>
     <nts-datagrid-cell class="header-item"
-        *ngFor="let column of columns"
-        [width]="column.width || 1"
-        [highlight]="column.isSortable(sortable) ? true : false"
-        [style.text-align]="column.formatOptions?.align || 'left'"
         [ngClass]="{
             'sortable': column.isSortable(sortable),
             'order-asc': order.field === column.field && order.dir === false,
             'order-desc': order.field === column.field && order.dir === true
         }"
+        *ngFor="let column of columns"
+        [width]="column.width || 1"
+        [highlight]="column.isSortable(sortable) ? true : false"
+        [style.text-align]="column.formatOptions?.align || 'left'"
         (click)="onOrderBy(column)"
     >
         <span [innerHtml]="column.title"></span>
     </nts-datagrid-cell>
 </nts-row>
 <nts-separator></nts-separator>
-<ng-container *ngFor="let row of data | order : orderKey; let i = index;">
+<ng-container *ngFor="let row of dataView | fillMap : dataSource | order : orderKey; let i = index;">
     <ng-container *ngIf="!customRow">
     <nts-datagrid-row>
     <ng-container *ngFor="let column of columns; let j = index;">
@@ -50,8 +50,7 @@
             </ng-container>
         </nts-datagrid-cell>
         <ng-container *ngIf="column.customCell">
-            <template [ngTemplateOutlet]="column.customCell" [ngOutletContext]="{ $implicit: row, column: column, cell: row[column.field], i: i, j: j }">
-            </template>
+            <template [ngTemplateOutlet]="column.customCell" [ngOutletContext]="{ $implicit: row, column: column, cell: row[column.field], i: i, j: j }"> </template>
         </ng-container>
     </ng-container>
     </nts-datagrid-row>

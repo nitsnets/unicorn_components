@@ -1,14 +1,25 @@
-import { Subscription } from 'rxjs/Rx';
 import * as moment from 'moment';
 
-export function generateUUID(pattern: string): string {
-    var d = new Date().getTime();
-    var uuid = (pattern || 'xxxxxxxxxxxxxxxxxxxx').replace(/[xy]/g, function (c) {
-        var r = (d + Math.random() * 16) % 16 | 0;
-        d = Math.floor(d / 16);
-        return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-    });
-    return uuid;
+import { Subscription } from 'rxjs/Rx';
+
+export function uuid(): string {
+    const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
+    const uuid = new Array(36);
+    let rnd = 0;
+    let r;
+    for (let i = 0; i < 36; i++) {
+        if (i === 8 || i === 13 || i === 18 || i === 23) {
+            uuid[i] = '-';
+        } else if (i === 14) {
+            uuid[i] = '4';
+        } else {
+            if (rnd <= 0x02) { rnd = 0x2000000 + (Math.random() * 0x1000000) | 0 };
+            r = rnd & 0xf;
+            rnd = rnd >> 4;
+            uuid[i] = chars[(i === 19) ? (r & 0x3) | 0x8 : r];
+        }
+    }
+    return uuid.join('');
 };
 export function hasClass(el: any, name: string) {
     return new RegExp('(?:^|\s+)' + name + '(?:\s+|$)').test(el.className);
