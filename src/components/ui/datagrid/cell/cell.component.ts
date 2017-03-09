@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
-import { NtsDatagridComponent } from './../datagrid.component';
+import { Component, HostBinding, Input } from '@angular/core';
 
 @Component({
     selector: 'nts-datagrid-cell',
-    template: '<ng-content></ng-content>'
+    templateUrl: 'cell.component.html'
 })
 export class NtsDatagridCellComponent {
-
-    constructor(public datagrid: NtsDatagridComponent) {
-        console.log(datagrid);
-    }
+    @HostBinding('style.flex-grow') _width = 1;
+    @Input() set width(value) {
+        if (value === 0) { }
+        this._width = value;
+    };
 }

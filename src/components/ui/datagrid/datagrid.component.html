@@ -1,6 +1,11 @@
 <nts-row class="header">
-    <div class="header-item"
+    <nts-datagrid-cell *ngIf="selectable" width="0">
+        <nts-checkbox [ntsModel]="allSelected()" (ntsModelChange)="selectAll()"></nts-checkbox>
+    </nts-datagrid-cell>
+    <nts-datagrid-cell class="header-item"
         *ngFor="let column of columns"
+        [width]="column.width || 1"
+        [style.text-align]="column.formatOptions?.align || 'left'"
         [ngClass]="{
             'sortable': column.sortable === true || column.sortable === undefined && sortable === true,
             'order-asc': order.field === column.field && order.dir === false,
@@ -8,40 +13,48 @@
         }"
         (click)="onOrderBy(column)"
     >
-        {{column.title}} <span *ngIf="column.customCell">*</span>
-    </div>
+        {{column.title}}
+    </nts-datagrid-cell>
 </nts-row>
 <nts-separator></nts-separator>
-<div *ngIf="!customRow">
-    <nts-row class="content-row" *ngFor="let row of data | order : orderKey; let i = index;">
-        <div class="content-cell"
-            *ngFor="let column of columns; let j = index;"
-            (click)="cellClick.emit({i: i, j: j, row: row, column: column, cell: row[column.field]})"
-        >
-            <div [ngSwitch]="column.format" *ngIf="!column.customCell">
-                <div *ngSwitchCase="'custom'">Custom template</div>
-                <div *ngSwitchCase="'progress'" class="progress-cell">
-                    <nts-progress
-                        [value]="row[column.field]"
-                        [color]="column.formatOptions?.color"
-                        [total]="column.formatOptions?.total"
-                    ></nts-progress>
-                </div>
-                <div *ngSwitchCase="'badge'">
-                    <nts-badge [label]="row[column.field]" [color]="column.formatOptions?.color"></nts-badge>
-                </div>
-                <div *ngSwitchCase="'text'">{{row[column.field]}}</div>
-
-                <div *ngSwitchDefault>{{row[column.field] | format: column.format}}</div>
-            </div>
-            <div *ngIf="column.customCell">
-                <template [ngTemplateOutlet]="column.customCell" [ngOutletContext]="{i: i, j: j, row: row, column: column, cell: row[column.field]}"> </template>
-            </div>
-        </div>
-    </nts-row>
-</div>
-<div *ngIf="customRow">
-    <div class="content-row" *ngFor="let row of data | order : orderKey; let i = index;">
-        <template [ngTemplateOutlet]="customRow" [ngOutletContext]="{ row: row, i: i }"> </template>
-    </div>
-</div>
+<ng-container *ngFor="let row of data | order : orderKey; let i = index;">
+    <ng-container *ngIf="!customRow">
+        <nts-datagrid-row>
+            <ng-container *ngFor="let column of columns; let j = index;">
+                <nts-datagrid-cell
+                    [ngSwitch]="column.format"
+                    *ngIf="!column.customCell"
+                    [width]="column.width"
+                    [style.text-align]="column.formatOptions?.align || 'left'"
+                    (click)="cellClick.emit({i: i, j: j, row: row, column: column, cell: row[column.field]})"
+                >
+                    <ng-container *ngSwitchCase="'text'">
+                        {{row[column.field]}}
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'html'">
+                        <div [innerHtml]="row[column.field]"></div>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'image'">
+                        <img [src]="row[column.field]">
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'progress'">
+                        <nts-progress [value]="row[column.field]" [color]="column.formatOptions?.color" [total]="column.formatOptions?.total"></nts-progress>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'badge'">
+                        <nts-badge [label]="row[column.field]" [color]="column.formatOptions?.color"></nts-badge>
+                    </ng-container>
+                    <ng-container *ngSwitchDefault>
+                        {{row[column.field] | format: column.format}}
+                    </ng-container>
+                </nts-datagrid-cell>
+                <ng-container *ngIf="column.customCell">
+                    <template [ngTemplateOutlet]="column.customCell" [ngOutletContext]="{ $implicit: row, column: column, cell: row[column.field], i: i, j: j }">
+                    </template>
+                </ng-container>
+            </ng-container>
+        </nts-datagrid-row>
+    </ng-container>
+    <ng-container *ngIf="customRow">
+        <template [ngTemplateOutlet]="customRow" [ngOutletContext]="{ $implicit: row, i: i }"> </template>
+    </ng-container>
+</ng-container>

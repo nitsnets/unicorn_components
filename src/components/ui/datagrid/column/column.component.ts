@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, ContentChild, Input } from '@angular/core';
+import { AfterContentInit, Component, ContentChild, Input, TemplateRef } from '@angular/core';
 
 import { NtsDatagridCellDirective } from '../cell/cell-variables.directive';
 
@@ -9,13 +9,14 @@ import { NtsDatagridCellDirective } from '../cell/cell-variables.directive';
 export class NtsDatagridColumnComponent implements AfterContentInit {
     @Input() title: string = null;
     @Input() field: string = null;
+    @Input() width = 1;
     @Input() sortable;
     @Input() format = 'text';
     @Input() formatOptions: Object = null;
 
     @ContentChild(NtsDatagridCellDirective) customCellDirective: NtsDatagridCellDirective = null;
 
-    customCell = null;
+    customCell: TemplateRef<any> = null;
 
     constructor() { }
 

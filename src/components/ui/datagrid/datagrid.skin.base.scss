@@ -35,18 +35,9 @@ nts-datagrid {
             }
         }
     }
-    .header-item, .content-cell {
-        padding: $basic-padding / 4;
-    }
     .header-item {
-        padding-right: $basic-padding / 2 + $input-height;
-    }
-    .content-row {
-        overflow: hidden;
-        &:hover { background-color: $color-grey-lighter; }
-    }
-    .content-cell {
-        &:hover { background-color: $color-grey-light; }
+        padding: $basic-padding / 4;
+        flex-basis: 0;
     }
     .progress-cell {
         display: inline-block;

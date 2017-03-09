@@ -1,4 +1,14 @@
-import { AfterContentInit, Component, ContentChild, ContentChildren, EventEmitter, Input, Output, QueryList, TemplateRef } from '@angular/core';
+import {
+    AfterContentInit,
+    Component,
+    ContentChild,
+    ContentChildren,
+    EventEmitter,
+    Input,
+    Output,
+    QueryList,
+    TemplateRef,
+} from '@angular/core';
 
 import { NtsDatagridColumnComponent } from './column/column.component';
 import { NtsDatagridRowDirective } from './row/row-variables.directive';
@@ -8,14 +18,14 @@ export interface NtsDataOrder { field: string; dir: boolean; };
 
 @Component({
     selector: 'nts-datagrid',
-    templateUrl: './datagrid.component.html',
-    styleUrls: ['./datagrid.component.scss']
+    templateUrl: './datagrid.component.html'
 })
 export class NtsDatagridComponent implements AfterContentInit {
 
     @Input() data: NtsDataArray = null;
     @Output() dataChange = new EventEmitter<NtsDataArray>();
 
+    @Input() selectable = false;
     @Input() sortable = true;
     @Input() orderLocal = true;
     @Input() order: NtsDataOrder = { field: null, dir: false };
@@ -46,12 +56,15 @@ export class NtsDatagridComponent implements AfterContentInit {
         }
         if (this.orderLocal) {
             this.orderKey = (this.order.dir ? '+' : '-') + this.order.field;
+            this.updateData();
         }
         this.orderChange.emit(this.order);
-        this.updateData();
     }
     updateData() {
         this.data = [...this.data];
     }
+
+    allSelected() { }
+    selectAll() { }
 
 }

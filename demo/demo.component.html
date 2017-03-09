@@ -18,772 +18,792 @@
   </nts-aside>
   -->
     <nts-body class="full-width">
-        <div *ngIf="tabSelected === 'typos'" class="content">
+        <div class="content">
+            <ng-container *ngIf="tabSelected === 'typos'">
 
-            <!-- ##################################################################
-           ###########################  TYPOGRAPHY  #########################
-           ################################################################## -->
-            <h3>Typography</h3>
-            <nts-separator></nts-separator>
+                <!-- ##################################################################
+                ###########################  TYPOGRAPHY  #########################
+                ################################################################## -->
+                <h3>Typography</h3>
+                <nts-separator></nts-separator>
 
-            <h5>Headings</h5>
-            <h1>h1 Heading</h1>
-            <h2>h2 Heading</h2>
-            <h3>h3 Heading</h3>
-            <h4>h4 Heading</h4>
-            <h5>h5 Heading</h5>
+                <h5>Headings</h5>
+                <h1>h1 Heading</h1>
+                <h2>h2 Heading</h2>
+                <h3>h3 Heading</h3>
+                <h4>h4 Heading</h4>
+                <h5>h5 Heading</h5>
 
-            <h5>Paragraph</h5>
-            <p>Lorem ipsum dolor sit amet, <span class="u-text-bold">consectetur adipiscing elit</span>. Nunc condimentum metus
-                sem, ut tincidunt arcu convallis ut. Etiam lacinia sem vestibulum sapien feugiat laoreet. Duis id sodales
-                lacus. Nulla euismod mollis luctus. Pellentesque vel ligula euismod, aliquam turpis mattis, faucibus sem.
-                Integer et rutrum lacus. Proin pulvinar ac odio sed interdum. Etiam iaculis dolor massa, sed commodo lectus
-                malesuada non. Morbi vehicula ante facilisis dignissim sodales.</p>
+                <h5>Paragraph</h5>
+                <p>Lorem ipsum dolor sit amet, <span class="u-text-bold">consectetur adipiscing elit</span>. Nunc condimentum metus
+                    sem, ut tincidunt arcu convallis ut. Etiam lacinia sem vestibulum sapien feugiat laoreet. Duis id sodales
+                    lacus. Nulla euismod mollis luctus. Pellentesque vel ligula euismod, aliquam turpis mattis, faucibus sem.
+                    Integer et rutrum lacus. Proin pulvinar ac odio sed interdum. Etiam iaculis dolor massa, sed commodo lectus
+                    malesuada non. Morbi vehicula ante facilisis dignissim sodales.</p>
 
-            <p>For
-                <mark>highlighting a run of text</mark> due to its relevance in another context. Wrap the element in <code>&lt;mark&gt;</code></p>
+                <p>For
+                    <mark>highlighting a run of text</mark> due to its relevance in another context. Wrap the element in <code>&lt;mark&gt;</code></p>
 
-            <p>For <span class="u-text-bold">emphasizing a snippet of text</span> with a heavier font-weight. Use the class
-                <code>.u-text-bold</code> or wrap the element in <code>&lt;strong&gt;</code></p>
+                <p>For <span class="u-text-bold">emphasizing a snippet of text</span> with a heavier font-weight. Use the class
+                    <code>.u-text-bold</code> or wrap the element in <code>&lt;strong&gt;</code></p>
 
-            <h5>Ordered List <code>&lt;ol&gt;</code></h5>
-            <ol>
-                <li>Lorem ipsum dolor sit amet</li>
-                <li>Consectetur adipiscing elit</li>
-                <li>Integer molestie lorem at massa</li>
-            </ol>
+                <h5>Ordered List <code>&lt;ol&gt;</code></h5>
+                <ol>
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Consectetur adipiscing elit</li>
+                    <li>Integer molestie lorem at massa</li>
+                </ol>
 
-            <h5>Un-Ordered List <code>&lt;ul&gt;</code></h5>
-            <ul>
-                <li>Life isn’t about getting and having...</li>
-                <li>Strive not to be a success...</li>
-                <li>Whatever the mind of man can...</li>
-            </ul>
-        </div>
-        <div *ngIf="tabSelected === 'buttons'" class="content">
+                <h5>Un-Ordered List <code>&lt;ul&gt;</code></h5>
+                <ul>
+                    <li>Life isn’t about getting and having...</li>
+                    <li>Strive not to be a success...</li>
+                    <li>Whatever the mind of man can...</li>
+                </ul>
+            </ng-container>
+            <ng-container *ngIf="tabSelected === 'buttons'">
 
-            <!-- ##################################################################
-           ############################  BUTTONS  ###########################
-           ################################################################## -->
-            <h3>Buttons</h3>
-            <nts-separator></nts-separator>
-            <h5>Default buttons</h5>
-            <div class="clear">
-                <nts-button label="Blank button"></nts-button>
-                <nts-button label="Default button" color="default"></nts-button>
-                <nts-button label="Light button" color="light"></nts-button>
-                <nts-button label="Primary button" color="primary"></nts-button>
-                <nts-button label="Error button" color="error"></nts-button>
-                <nts-button label="Success button" color="success"></nts-button>
-                <nts-button label="Warning button" color="warning"></nts-button>
-            </div>
-            <h5>Just icon buttons</h5>
-            <div class="clear">
-                <nts-button icon="plus-circle"></nts-button>
-                <nts-button icon="lock" color="default"></nts-button>
-                <nts-button icon="clock" color="light"></nts-button>
-                <nts-button icon="graph" color="primary"></nts-button>
-                <nts-button icon="people" color="error"></nts-button>
-                <nts-button icon="arrow-left" color="success"></nts-button>
-                <nts-button icon="suitcase" color="warning"></nts-button>
-            </div>
-            <h5>Icon and label buttons</h5>
-            <div class="clear">
-                <nts-button icon="plus-circle" label="Blank button"></nts-button>
-                <nts-button icon="lock" label="Default button" color="default"></nts-button>
-                <nts-button icon="clock" label="Light button" color="light"></nts-button>
-                <nts-button icon="graph" label="Primary button" color="primary"></nts-button>
-                <nts-button icon="people" label="Error button" color="error"></nts-button>
-                <nts-button icon="arrow-left" label="Success button" color="success"></nts-button>
-                <nts-button icon="suitcase" label="Warning button" color="warning"></nts-button>
-            </div>
-            <h5>Small buttons</h5>
-            <div class="clear">
-                <nts-button label="Blank button" size="small"></nts-button>
-                <nts-button label="Default button" size="small" color="default"></nts-button>
-                <nts-button label="Light button" size="small" color="light"></nts-button>
-                <nts-button label="Primary button" size="small" color="primary"></nts-button>
-                <nts-button label="Error button" size="small" color="error"></nts-button>
-                <nts-button label="Success button" size="small" color="success"></nts-button>
-                <nts-button label="Success button" size="small" color="warning"></nts-button>
-            </div>
-            <h5>Big buttons</h5>
-            <div class="clear">
-                <nts-button icon="plus-circle" label="Blank button" sublabel="Sublabel" size="large"></nts-button>
-                <nts-button icon="lock" label="Default button" sublabel="Sublabel" size="large" color="default"></nts-button>
-                <nts-button icon="clock" label="Light button" sublabel="Sublabel" size="large" color="light"></nts-button>
-                <nts-button icon="graph" label="Primary button" sublabel="Sublabel" size="large" color="primary"></nts-button>
-                <nts-button icon="people" label="Error button" sublabel="Sublabel" size="large" color="error"></nts-button>
-                <nts-button icon="arrow-left" label="Success button" sublabel="Sublabel" size="large" color="success"></nts-button>
-                <nts-button icon="suitcase" label="Success button" sublabel="Sublabel" size="large" color="warning"></nts-button>
-            </div>
-            <h5>Dropdown buttons</h5>
-            <div class="clear">
-                <nts-button-menu label="Blank button">
-                    <nts-menu-item>Clear</nts-menu-item>
-                    <nts-menu-item icon="plus-circle">Option</nts-menu-item>
-                    <nts-menu-item icon="close">Option</nts-menu-item>
-                    <nts-separator></nts-separator>
-                    <nts-menu-item icon="check">Option</nts-menu-item>
-                </nts-button-menu>
-                <nts-button-menu label="Default button" color="default">
-                    <nts-menu-item>Clear</nts-menu-item>
-                    <nts-menu-item icon="plus-circle">Option</nts-menu-item>
-                    <nts-menu-item icon="close">Option</nts-menu-item>
-                    <nts-separator></nts-separator>
-                    <nts-menu-item icon="check">Option</nts-menu-item>
-                </nts-button-menu>
-                <nts-button-menu label="Light button" color="light">
-                    <nts-menu-item>Clear</nts-menu-item>
-                    <nts-menu-item icon="plus-circle">Option</nts-menu-item>
-                    <nts-menu-item icon="close">Option</nts-menu-item>
-                    <nts-separator></nts-separator>
-                    <nts-menu-item icon="check">Option</nts-menu-item>
-                </nts-button-menu>
-                <nts-button-menu label="Primary button" color="primary">
-                    <nts-menu-item>Clear</nts-menu-item>
-                    <nts-menu-item icon="plus-circle">Option</nts-menu-item>
-                    <nts-menu-item icon="close">Option</nts-menu-item>
-                    <nts-separator></nts-separator>
-                    <nts-menu-item icon="check">Option</nts-menu-item>
-                </nts-button-menu>
-                <nts-button-menu label="Error button" color="error">
-                    <nts-menu-item>Clear</nts-menu-item>
-                    <nts-menu-item icon="plus-circle">Option</nts-menu-item>
-                    <nts-menu-item icon="close">Option</nts-menu-item>
-                    <nts-separator></nts-separator>
-                    <nts-menu-item icon="check">Option</nts-menu-item>
-                </nts-button-menu>
-                <nts-button-menu label="Success button" color="success">
-                    <nts-menu-item>Clear</nts-menu-item>
-                    <nts-menu-item icon="plus-circle">Option</nts-menu-item>
-                    <nts-menu-item icon="close">Option</nts-menu-item>
-                    <nts-separator></nts-separator>
-                    <nts-menu-item icon="check">Option</nts-menu-item>
-                </nts-button-menu>
-            </div>
-            <h5>Popup buttons</h5>
-            <div class="clear">
-                <nts-button-popup label="Blank button" iconRight="plus-circle">
-                    This is a custom popup content
-                    <br> Ut tempor consectetur et aute adipisicing commodo.
-                </nts-button-popup>
-                <nts-button-popup label="Default button" color="default" iconRight="plus-circle">
-                    This is a custom popup content
-                    <br> Ut tempor consectetur et aute adipisicing commodo.
-                </nts-button-popup>
-                <nts-button-popup label="Light button" color="light" iconRight="plus-circle">
-                    This is a custom popup content
-                    <br> Ut tempor consectetur et aute adipisicing commodo.
-                </nts-button-popup>
-                <nts-button-popup label="Primary button" color="primary" iconRight="plus-circle">
-                    This is a custom popup content
-                    <br> Ut tempor consectetur et aute adipisicing commodo.
-                </nts-button-popup>
-                <nts-button-popup label="Error button" color="error" iconRight="plus-circle">
-                    This is a custom popup content
-                    <br> Ut tempor consectetur et aute adipisicing commodo.
-                </nts-button-popup>
-                <nts-button-popup label="Success button" color="success" iconRight="plus-circle">
-                    This is a custom popup content
-                    <br> Ut tempor consectetur et aute adipisicing commodo.
-                </nts-button-popup>
-            </div>
-            <h5>Popup big buttons</h5>
-            <div class="clear">
-                <nts-button-popup label="Blank button" sublabel="Sublabel" size="large" iconRight="plus-circle">
-                    This is a custom popup content
-                    <br> Ut tempor consectetur et aute adipisicing commodo.
-                </nts-button-popup>
-                <nts-button-popup label="Default button" sublabel="Sublabel" color="default" size="large" iconRight="plus-circle">
-                    This is a custom popup content
-                    <br> Ut tempor consectetur et aute adipisicing commodo.
-                </nts-button-popup>
-                <nts-button-popup label="Light button" sublabel="Sublabel" color="light" size="large" iconRight="plus-circle">
-                    This is a custom popup content
-                    <br> Ut tempor consectetur et aute adipisicing commodo.
-                </nts-button-popup>
-                <nts-button-popup label="Primary button" sublabel="Sublabel" color="primary" size="large" iconRight="plus-circle">
-                    This is a custom popup content
-                    <br> Ut tempor consectetur et aute adipisicing commodo.
-                </nts-button-popup>
-                <nts-button-popup label="Error button" sublabel="Sublabel" color="error" size="large" iconRight="plus-circle">
-                    This is a custom popup content
-                    <br> Ut tempor consectetur et aute adipisicing commodo.
-                </nts-button-popup>
-                <nts-button-popup label="Success button" sublabel="Sublabel" color="success" size="large" iconRight="plus-circle">
-                    This is a custom popup content
-                    <br> Ut tempor consectetur et aute adipisicing commodo.
-                </nts-button-popup>
-                <nts-button-popup label="Success button" sublabel="Sublabel" color="warning" size="large" iconRight="plus-circle">
-                    This is a custom popup content
-                    <br> Ut tempor consectetur et aute adipisicing commodo.
-                </nts-button-popup>
-            </div>
-            <h5>Header buttons</h5>
-            <div class="clear">
-                <nts-header>
-                    <nts-button-header icon="plus-circle"></nts-button-header>
-                    <nts-button-header icon="lock"></nts-button-header>
-                    <nts-button-header icon="clock" label="Button with label"></nts-button-header>
-                    <nts-button-header label="Button just with label"></nts-button-header>
-                    <nts-button-header label="Button right icon" iconRight="people"></nts-button-header>
-                </nts-header>
-            </div>
-        </div>
-        <div *ngIf="tabSelected === 'inputs'" class="content">
+                <!-- ##################################################################
+                ############################  BUTTONS  ###########################
+                ################################################################## -->
+                <h3>Buttons</h3>
+                <nts-separator></nts-separator>
+                <h5>Default buttons</h5>
+                <div class="clear">
+                    <nts-button label="Blank button"></nts-button>
+                    <nts-button label="Default button" color="default"></nts-button>
+                    <nts-button label="Light button" color="light"></nts-button>
+                    <nts-button label="Primary button" color="primary"></nts-button>
+                    <nts-button label="Error button" color="error"></nts-button>
+                    <nts-button label="Success button" color="success"></nts-button>
+                    <nts-button label="Warning button" color="warning"></nts-button>
+                </div>
+                <h5>Just icon buttons</h5>
+                <div class="clear">
+                    <nts-button icon="plus-circle"></nts-button>
+                    <nts-button icon="lock" color="default"></nts-button>
+                    <nts-button icon="clock" color="light"></nts-button>
+                    <nts-button icon="graph" color="primary"></nts-button>
+                    <nts-button icon="people" color="error"></nts-button>
+                    <nts-button icon="arrow-left" color="success"></nts-button>
+                    <nts-button icon="suitcase" color="warning"></nts-button>
+                </div>
+                <h5>Icon and label buttons</h5>
+                <div class="clear">
+                    <nts-button icon="plus-circle" label="Blank button"></nts-button>
+                    <nts-button icon="lock" label="Default button" color="default"></nts-button>
+                    <nts-button icon="clock" label="Light button" color="light"></nts-button>
+                    <nts-button icon="graph" label="Primary button" color="primary"></nts-button>
+                    <nts-button icon="people" label="Error button" color="error"></nts-button>
+                    <nts-button icon="arrow-left" label="Success button" color="success"></nts-button>
+                    <nts-button icon="suitcase" label="Warning button" color="warning"></nts-button>
+                </div>
+                <h5>Small buttons</h5>
+                <div class="clear">
+                    <nts-button label="Blank button" size="small"></nts-button>
+                    <nts-button label="Default button" size="small" color="default"></nts-button>
+                    <nts-button label="Light button" size="small" color="light"></nts-button>
+                    <nts-button label="Primary button" size="small" color="primary"></nts-button>
+                    <nts-button label="Error button" size="small" color="error"></nts-button>
+                    <nts-button label="Success button" size="small" color="success"></nts-button>
+                    <nts-button label="Success button" size="small" color="warning"></nts-button>
+                </div>
+                <h5>Big buttons</h5>
+                <div class="clear">
+                    <nts-button icon="plus-circle" label="Blank button" sublabel="Sublabel" size="large"></nts-button>
+                    <nts-button icon="lock" label="Default button" sublabel="Sublabel" size="large" color="default"></nts-button>
+                    <nts-button icon="clock" label="Light button" sublabel="Sublabel" size="large" color="light"></nts-button>
+                    <nts-button icon="graph" label="Primary button" sublabel="Sublabel" size="large" color="primary"></nts-button>
+                    <nts-button icon="people" label="Error button" sublabel="Sublabel" size="large" color="error"></nts-button>
+                    <nts-button icon="arrow-left" label="Success button" sublabel="Sublabel" size="large" color="success"></nts-button>
+                    <nts-button icon="suitcase" label="Success button" sublabel="Sublabel" size="large" color="warning"></nts-button>
+                </div>
+                <h5>Dropdown buttons</h5>
+                <div class="clear">
+                    <nts-button-menu label="Blank button">
+                        <nts-menu-item>Clear</nts-menu-item>
+                        <nts-menu-item icon="plus-circle">Option</nts-menu-item>
+                        <nts-menu-item icon="close">Option</nts-menu-item>
+                        <nts-separator></nts-separator>
+                        <nts-menu-item icon="check">Option</nts-menu-item>
+                    </nts-button-menu>
+                    <nts-button-menu label="Default button" color="default">
+                        <nts-menu-item>Clear</nts-menu-item>
+                        <nts-menu-item icon="plus-circle">Option</nts-menu-item>
+                        <nts-menu-item icon="close">Option</nts-menu-item>
+                        <nts-separator></nts-separator>
+                        <nts-menu-item icon="check">Option</nts-menu-item>
+                    </nts-button-menu>
+                    <nts-button-menu label="Light button" color="light">
+                        <nts-menu-item>Clear</nts-menu-item>
+                        <nts-menu-item icon="plus-circle">Option</nts-menu-item>
+                        <nts-menu-item icon="close">Option</nts-menu-item>
+                        <nts-separator></nts-separator>
+                        <nts-menu-item icon="check">Option</nts-menu-item>
+                    </nts-button-menu>
+                    <nts-button-menu label="Primary button" color="primary">
+                        <nts-menu-item>Clear</nts-menu-item>
+                        <nts-menu-item icon="plus-circle">Option</nts-menu-item>
+                        <nts-menu-item icon="close">Option</nts-menu-item>
+                        <nts-separator></nts-separator>
+                        <nts-menu-item icon="check">Option</nts-menu-item>
+                    </nts-button-menu>
+                    <nts-button-menu label="Error button" color="error">
+                        <nts-menu-item>Clear</nts-menu-item>
+                        <nts-menu-item icon="plus-circle">Option</nts-menu-item>
+                        <nts-menu-item icon="close">Option</nts-menu-item>
+                        <nts-separator></nts-separator>
+                        <nts-menu-item icon="check">Option</nts-menu-item>
+                    </nts-button-menu>
+                    <nts-button-menu label="Success button" color="success">
+                        <nts-menu-item>Clear</nts-menu-item>
+                        <nts-menu-item icon="plus-circle">Option</nts-menu-item>
+                        <nts-menu-item icon="close">Option</nts-menu-item>
+                        <nts-separator></nts-separator>
+                        <nts-menu-item icon="check">Option</nts-menu-item>
+                    </nts-button-menu>
+                </div>
+                <h5>Popup buttons</h5>
+                <div class="clear">
+                    <nts-button-popup label="Blank button" iconRight="plus-circle">
+                        This is a custom popup content
+                        <br> Ut tempor consectetur et aute adipisicing commodo.
+                    </nts-button-popup>
+                    <nts-button-popup label="Default button" color="default" iconRight="plus-circle">
+                        This is a custom popup content
+                        <br> Ut tempor consectetur et aute adipisicing commodo.
+                    </nts-button-popup>
+                    <nts-button-popup label="Light button" color="light" iconRight="plus-circle">
+                        This is a custom popup content
+                        <br> Ut tempor consectetur et aute adipisicing commodo.
+                    </nts-button-popup>
+                    <nts-button-popup label="Primary button" color="primary" iconRight="plus-circle">
+                        This is a custom popup content
+                        <br> Ut tempor consectetur et aute adipisicing commodo.
+                    </nts-button-popup>
+                    <nts-button-popup label="Error button" color="error" iconRight="plus-circle">
+                        This is a custom popup content
+                        <br> Ut tempor consectetur et aute adipisicing commodo.
+                    </nts-button-popup>
+                    <nts-button-popup label="Success button" color="success" iconRight="plus-circle">
+                        This is a custom popup content
+                        <br> Ut tempor consectetur et aute adipisicing commodo.
+                    </nts-button-popup>
+                </div>
+                <h5>Popup big buttons</h5>
+                <div class="clear">
+                    <nts-button-popup label="Blank button" sublabel="Sublabel" size="large" iconRight="plus-circle">
+                        This is a custom popup content
+                        <br> Ut tempor consectetur et aute adipisicing commodo.
+                    </nts-button-popup>
+                    <nts-button-popup label="Default button" sublabel="Sublabel" color="default" size="large" iconRight="plus-circle">
+                        This is a custom popup content
+                        <br> Ut tempor consectetur et aute adipisicing commodo.
+                    </nts-button-popup>
+                    <nts-button-popup label="Light button" sublabel="Sublabel" color="light" size="large" iconRight="plus-circle">
+                        This is a custom popup content
+                        <br> Ut tempor consectetur et aute adipisicing commodo.
+                    </nts-button-popup>
+                    <nts-button-popup label="Primary button" sublabel="Sublabel" color="primary" size="large" iconRight="plus-circle">
+                        This is a custom popup content
+                        <br> Ut tempor consectetur et aute adipisicing commodo.
+                    </nts-button-popup>
+                    <nts-button-popup label="Error button" sublabel="Sublabel" color="error" size="large" iconRight="plus-circle">
+                        This is a custom popup content
+                        <br> Ut tempor consectetur et aute adipisicing commodo.
+                    </nts-button-popup>
+                    <nts-button-popup label="Success button" sublabel="Sublabel" color="success" size="large" iconRight="plus-circle">
+                        This is a custom popup content
+                        <br> Ut tempor consectetur et aute adipisicing commodo.
+                    </nts-button-popup>
+                    <nts-button-popup label="Success button" sublabel="Sublabel" color="warning" size="large" iconRight="plus-circle">
+                        This is a custom popup content
+                        <br> Ut tempor consectetur et aute adipisicing commodo.
+                    </nts-button-popup>
+                </div>
+                <h5>Header buttons</h5>
+                <div class="clear">
+                    <nts-header>
+                        <nts-button-header icon="plus-circle"></nts-button-header>
+                        <nts-button-header icon="lock"></nts-button-header>
+                        <nts-button-header icon="clock" label="Button with label"></nts-button-header>
+                        <nts-button-header label="Button just with label"></nts-button-header>
+                        <nts-button-header label="Button right icon" iconRight="people"></nts-button-header>
+                    </nts-header>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="tabSelected === 'inputs'">
 
-            <!-- ##################################################################
-           #############################  INPUTS  ###########################
-           ################################################################## -->
-            <h3>Inputs</h3>
-            <nts-separator></nts-separator>
+                <!-- ##################################################################
+                #############################  INPUTS  ###########################
+                ################################################################## -->
+                <h3>Inputs</h3>
+                <nts-separator></nts-separator>
 
-            <h5>Single-line inputs</h5>
-            <div class="flex">
-                <nts-input [(ntsModel)]="inputModel" label="Default input"></nts-input>
-                <nts-input [(ntsModel)]="inputModel" label="Input with placeholder" placeholder="Input placeholder"></nts-input>
-                <nts-input [(ntsModel)]="inputModel" label="Input with icon" placeholder="Input placeholder" icon="user"></nts-input>
-                <nts-input [(ntsModel)]="inputModel" label="Input with hint" placeholder="Input placeholder" hint="i.e: user@domain.com"></nts-input>
-                <nts-input [(ntsModel)]="inputModel" label="Input with error" placeholder="Input placeholder" error="Must be a valid email"></nts-input>
-                <nts-input [(ntsModel)]="inputModel" label="Input with prefix" placeholder="Input placeholder" prefix="http://www."></nts-input>
-            </div>
-            <div class="flex">
-                <nts-input [(ntsModel)]="inputModel" label="Input with counter" counter="true"></nts-input>
-                <nts-input [(ntsModel)]="inputModel" label="Counter and max" max="10" counter="true"></nts-input>
-                <nts-input [(ntsModel)]="inputModel" label="Input with right icon" placeholder="Input placeholder" iconRight="user"></nts-input>
-                <nts-input [(ntsModel)]="inputModel" label="Input with floating label" floating="true"></nts-input>
-                <nts-input [(ntsModel)]="inputModel" label="Input with mask (alpha)" mask="(999) 999-999"></nts-input>
-            </div>
-            <h5>Multi-line inputs</h5>
-            <nts-input [(ntsModel)]="inputModel" placeholder="Here you can see all the available options of multiline input activated"
-                label="Multiline input" multiline="true" counter="true" max="140" error="Something went wrong" hint="Write something above">
-            </nts-input>
+                <h5>Single-line inputs</h5>
+                <div class="flex">
+                    <nts-input [(ntsModel)]="inputModel" label="Default input"></nts-input>
+                    <nts-input [(ntsModel)]="inputModel" label="Input with placeholder" placeholder="Input placeholder"></nts-input>
+                    <nts-input [(ntsModel)]="inputModel" label="Input with icon" placeholder="Input placeholder" icon="user"></nts-input>
+                    <nts-input [(ntsModel)]="inputModel" label="Input with hint" placeholder="Input placeholder" hint="i.e: user@domain.com"></nts-input>
+                    <nts-input [(ntsModel)]="inputModel" label="Input with error" placeholder="Input placeholder" error="Must be a valid email"></nts-input>
+                    <nts-input [(ntsModel)]="inputModel" label="Input with prefix" placeholder="Input placeholder" prefix="http://www."></nts-input>
+                </div>
+                <div class="flex">
+                    <nts-input [(ntsModel)]="inputModel" label="Input with counter" counter="true"></nts-input>
+                    <nts-input [(ntsModel)]="inputModel" label="Counter and max" max="10" counter="true"></nts-input>
+                    <nts-input [(ntsModel)]="inputModel" label="Input with right icon" placeholder="Input placeholder" iconRight="user"></nts-input>
+                    <nts-input [(ntsModel)]="inputModel" label="Input with floating label" floating="true"></nts-input>
+                    <nts-input [(ntsModel)]="inputModel" label="Input with mask (alpha)" mask="(999) 999-999"></nts-input>
+                </div>
+                <h5>Multi-line inputs</h5>
+                <nts-input [(ntsModel)]="inputModel" placeholder="Here you can see all the available options of multiline input activated"
+                    label="Multiline input" multiline="true" counter="true" max="140" error="Something went wrong" hint="Write something above">
+                </nts-input>
 
-            <h5>Radio inputs</h5>
-            <div class="flex">
-                <nts-radio [(ntsModel)]="radioModel" value="0" label="Option 1"></nts-radio>
-                <nts-radio [(ntsModel)]="radioModel" value="1" label="Option 2"></nts-radio>
-                <nts-radio [(ntsModel)]="radioModel" value="1" label="Custom <strong>HTML</strong> label"></nts-radio>
-            </div>
+                <h5>Radio inputs</h5>
+                <div class="flex">
+                    <nts-radio [(ntsModel)]="radioModel" value="0" label="Option 1"></nts-radio>
+                    <nts-radio [(ntsModel)]="radioModel" value="1" label="Option 2"></nts-radio>
+                    <nts-radio [(ntsModel)]="radioModel" value="2" label="Custom <strong>HTML</strong> label"></nts-radio>
+                </div>
 
-            <h5>Checkbox inputs</h5>
-            <div class="flex">
-                <nts-checkbox [(ntsModel)]="checkboxModel"></nts-checkbox>
-                <nts-checkbox [(ntsModel)]="checkboxModel" [partial]="true"></nts-checkbox>
-                <nts-checkbox [(ntsModel)]="checkboxModel" label="Checkbox with label"></nts-checkbox>
-                <nts-checkbox [(ntsModel)]="checkboxModel" label="Checkbox with partial" [partial]="true"></nts-checkbox>
-                <nts-checkbox [(ntsModel)]="checkboxModel" label="Custom <strong>HTML</strong> label"></nts-checkbox>
-            </div>
-            <h5>Toggle inputs</h5>
-            <div class="flex">
-                <nts-toggle [(ntsModel)]="toggleModel" label="Toggle with label"></nts-toggle>
-                <nts-toggle [(ntsModel)]="toggleModel" label="Toggle squared with label" [rounded]="false"></nts-toggle>
-            </div>
-            <div class="flex">
-                <nts-toggle color="primary" [(ntsModel)]="toggleModel"></nts-toggle>
-                <nts-toggle color="success" [(ntsModel)]="toggleModel"></nts-toggle>
-                <nts-toggle color="warning" [(ntsModel)]="toggleModel"></nts-toggle>
-                <nts-toggle color="error" [(ntsModel)]="toggleModel"></nts-toggle>
-            </div>
-            <div class="flex">
-                <nts-toggle class="small" [(ntsModel)]="toggleModel" label="Small toggle with label"></nts-toggle>
-                <nts-toggle class="small" [(ntsModel)]="toggleModel" label="Small toggle squared with label" [rounded]="false"></nts-toggle>
-            </div>
+                <h5>Checkbox inputs</h5>
+                <div class="flex">
+                    <nts-checkbox [(ntsModel)]="checkboxModel"></nts-checkbox>
+                    <nts-checkbox [(ntsModel)]="checkboxModel" [partial]="true"></nts-checkbox>
+                    <nts-checkbox [(ntsModel)]="checkboxModel" label="Checkbox with label"></nts-checkbox>
+                    <nts-checkbox [(ntsModel)]="checkboxModel" label="Checkbox with partial" [partial]="true"></nts-checkbox>
+                    <nts-checkbox [(ntsModel)]="checkboxModel" label="Custom <strong>HTML</strong> label"></nts-checkbox>
+                </div>
+                <h5>Toggle inputs</h5>
+                <div class="flex">
+                    <nts-toggle [(ntsModel)]="toggleModel" label="Toggle with label"></nts-toggle>
+                    <nts-toggle [(ntsModel)]="toggleModel" label="Toggle squared with label" [rounded]="false"></nts-toggle>
+                </div>
+                <div class="flex">
+                    <nts-toggle color="primary" [(ntsModel)]="toggleModel"></nts-toggle>
+                    <nts-toggle color="success" [(ntsModel)]="toggleModel"></nts-toggle>
+                    <nts-toggle color="warning" [(ntsModel)]="toggleModel"></nts-toggle>
+                    <nts-toggle color="error" [(ntsModel)]="toggleModel"></nts-toggle>
+                </div>
+                <div class="flex">
+                    <nts-toggle class="small" [(ntsModel)]="toggleModel" label="Small toggle with label"></nts-toggle>
+                    <nts-toggle class="small" [(ntsModel)]="toggleModel" label="Small toggle squared with label" [rounded]="false"></nts-toggle>
+                </div>
 
-            <h5>Button toggle inputs</h5>
-            <div>
-                <nts-button-toggle label="Button toggle" [(ntsModel)]="toggleModel0"></nts-button-toggle>
-                <nts-button-toggle label="Button toggle" color="default" [(ntsModel)]="toggleModel1"></nts-button-toggle>
-                <nts-button-toggle label="Button toggle" color="light" [(ntsModel)]="toggleModel2"></nts-button-toggle>
-                <nts-button-toggle label="Button toggle" color="primary" [(ntsModel)]="toggleModel3"></nts-button-toggle>
-                <nts-button-toggle label="Button toggle" color="success" [(ntsModel)]="toggleModel4"></nts-button-toggle>
-                <nts-button-toggle label="Button toggle" color="warning" [(ntsModel)]="toggleModel5"></nts-button-toggle>
-                <nts-button-toggle label="Button toggle" color="error" [(ntsModel)]="toggleModel6"></nts-button-toggle>
-            </div>
-            <h5>Date-time picker</h5>
-            <div class="flex">
-                <nts-date-picker label="Date picker"> </nts-date-picker>
-            </div>
-            <div class="flex">
-                <nts-time-picker label="Time picker"> </nts-time-picker>
-            </div>
-            <div class="flex">
-                <nts-date-picker label="Min and max date" minDate="2017-02-01" maxDate="2017-02-26"> </nts-date-picker>
-            </div>
-            <div class="flex">
-                <nts-date-picker label="Inline calendar" [inline]="true"> </nts-date-picker>
-            </div>
-            <div class="flex">
-                <nts-datetime-picker dateLabel="Date picker" timeLabel="With time picker"> </nts-datetime-picker>
-            </div>
+                <h5>Button toggle inputs</h5>
+                <div>
+                    <nts-button-toggle label="Button toggle" [(ntsModel)]="toggleModel0"></nts-button-toggle>
+                    <nts-button-toggle label="Button toggle" color="default" [(ntsModel)]="toggleModel1"></nts-button-toggle>
+                    <nts-button-toggle label="Button toggle" color="light" [(ntsModel)]="toggleModel2"></nts-button-toggle>
+                    <nts-button-toggle label="Button toggle" color="primary" [(ntsModel)]="toggleModel3"></nts-button-toggle>
+                    <nts-button-toggle label="Button toggle" color="success" [(ntsModel)]="toggleModel4"></nts-button-toggle>
+                    <nts-button-toggle label="Button toggle" color="warning" [(ntsModel)]="toggleModel5"></nts-button-toggle>
+                    <nts-button-toggle label="Button toggle" color="error" [(ntsModel)]="toggleModel6"></nts-button-toggle>
+                </div>
+                <h5>Date-time picker</h5>
+                <div class="flex">
+                    <nts-date-picker label="Date picker"> </nts-date-picker>
+                </div>
+                <div class="flex">
+                    <nts-time-picker label="Time picker"> </nts-time-picker>
+                </div>
+                <div class="flex">
+                    <nts-date-picker label="Min and max date" minDate="2017-02-01" maxDate="2017-02-26"> </nts-date-picker>
+                </div>
+                <div class="flex">
+                    <nts-date-picker label="Inline calendar" [inline]="true"> </nts-date-picker>
+                </div>
+                <div class="flex">
+                    <nts-datetime-picker dateLabel="Date picker" timeLabel="With time picker"> </nts-datetime-picker>
+                </div>
 
-            <h5>Daterange picker</h5>
-            <div class="flex">
-                <nts-daterange-picker> </nts-daterange-picker>
-            </div>
-            <div class="flex">
-                <nts-daterange-picker [combo]="true"> </nts-daterange-picker>
-            </div>
-            <div class="flex">
-                <nts-daterange-picker [combo]="true" [showArrows]="true"> </nts-daterange-picker>
-            </div>
+                <h5>Daterange picker</h5>
+                <div class="flex">
+                    <nts-daterange-picker> </nts-daterange-picker>
+                </div>
+                <div class="flex">
+                    <nts-daterange-picker [combo]="true"> </nts-daterange-picker>
+                </div>
+                <div class="flex">
+                    <nts-daterange-picker [combo]="true" [showArrows]="true"> </nts-daterange-picker>
+                </div>
 
-            <h5>Select inputs </h5>
+                <h5>Select inputs </h5>
 
-            <div class="flex">
-                <nts-select label="Default select" [(ntsModel)]="selectModel" [options]="[
-                    {value: 1, label: 'Option 1'},
-                    {value: 2, label: 'Option 2'},
-                    {value: 3, label: 'Option 3'},
-                    {value: 4, label: 'Option 4'},
-                    {value: 5, label: 'Option 5'}
-                ]">
-                </nts-select>
-                <nts-select label="Many options select" [(ntsModel)]="selectModel" [options]="manyOptions">
-                </nts-select>
-                <nts-select label="Select with placeholder" placeholder="Select placeholder" [(ntsModel)]="selectModel" [options]="[
-                    {value: 1, label: 'Option 1'},
-                    {value: 2, label: 'Option 2'},
-                    {value: 3, label: 'Option 3'},
-                    {value: 4, label: 'Option 4'},
-                    {value: 5, label: 'Option 5'}
-                ]">
-                </nts-select>
-                <nts-select label="Select with icon" icon="user" [(ntsModel)]="selectModel" [options]="[
-                    {value: 1, label: 'Option 1'},
-                    {value: 2, label: 'Option 2'},
-                    {value: 3, label: 'Option 3'},
-                    {value: 4, label: 'Option 4'},
-                    {value: 5, label: 'Option 5'}
-                ]">
-                </nts-select>
-                <nts-select label="Select with multiple options" [(ntsModel)]="selectModel2" [multiple]="true" [options]="[
-                    {value: 1, label: 'Option 1'},
-                    {value: 2, label: 'Option 2'},
-                    {value: 3, label: 'Option 3'},
-                    {value: 4, label: 'Option 4'},
-                    {value: 5, label: 'Option 5'}
-                ]">
-                </nts-select>
-            </div>
+                <div class="flex">
+                    <nts-select label="Default select" [(ntsModel)]="selectModel" [options]="[
+                        {value: 1, label: 'Option 1'},
+                        {value: 2, label: 'Option 2'},
+                        {value: 3, label: 'Option 3'},
+                        {value: 4, label: 'Option 4'},
+                        {value: 5, label: 'Option 5'}
+                    ]">
+                    </nts-select>
+                    <nts-select label="Many options select" [(ntsModel)]="selectModel" [options]="manyOptions">
+                    </nts-select>
+                    <nts-select label="Select with placeholder" placeholder="Select placeholder" [(ntsModel)]="selectModel" [options]="[
+                        {value: 1, label: 'Option 1'},
+                        {value: 2, label: 'Option 2'},
+                        {value: 3, label: 'Option 3'},
+                        {value: 4, label: 'Option 4'},
+                        {value: 5, label: 'Option 5'}
+                    ]">
+                    </nts-select>
+                    <nts-select label="Select with icon" icon="user" [(ntsModel)]="selectModel" [options]="[
+                        {value: 1, label: 'Option 1'},
+                        {value: 2, label: 'Option 2'},
+                        {value: 3, label: 'Option 3'},
+                        {value: 4, label: 'Option 4'},
+                        {value: 5, label: 'Option 5'}
+                    ]">
+                    </nts-select>
+                    <nts-select label="Select with multiple options" [(ntsModel)]="selectModel2" [multiple]="true" [options]="[
+                        {value: 1, label: 'Option 1'},
+                        {value: 2, label: 'Option 2'},
+                        {value: 3, label: 'Option 3'},
+                        {value: 4, label: 'Option 4'},
+                        {value: 5, label: 'Option 5'}
+                    ]">
+                    </nts-select>
+                </div>
 
-            <h5>Color picker</h5>
-            <div class="flex">
-                <nts-input type="color" label="Color input" [(ntsModel)]="colorSelected"></nts-input>
-                <nts-input type="color" label="Color input with swatch" [(ntsModel)]="colorSelected" [colorSwatch]="true"></nts-input>
-            </div>
+                <h5>Color picker</h5>
+                <div class="flex">
+                    <nts-input type="color" label="Color input" [(ntsModel)]="colorSelected"></nts-input>
+                    <nts-input type="color" label="Color input with swatch" [(ntsModel)]="colorSelected" [colorSwatch]="true"></nts-input>
+                </div>
 
-            <h5>Image picker</h5>
-            <div class="flex">
-                <nts-image-picker [(ntsModel)]="image"></nts-image-picker>
-            </div>
-        </div>
-        <div *ngIf="tabSelected === 'charts'" class="content">
+                <h5>Image picker</h5>
+                <div class="flex">
+                    <nts-image-picker [(ntsModel)]="image"></nts-image-picker>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="tabSelected === 'charts'">
 
-            <!-- ##################################################################
-           #############################  CHARTS  ###########################
-           ################################################################## -->
-            <h3>Charts</h3>
-            <nts-separator></nts-separator>
+                <!-- ##################################################################
+                #############################  CHARTS  ###########################
+                ################################################################## -->
+                <h3>Charts</h3>
+                <nts-separator></nts-separator>
 
-            <div class="chart chart-half">
-                <nts-chart chartTitle="Line chart" type="line" [series]="lineSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
-            </div>
-            <div class="chart chart-half">
-                <nts-chart chartTitle="Area chart" type="line" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
-            </div>
-            <div class="chart chart-half">
-                <nts-chart chartTitle="Bar chart" type="bar" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
-            </div>
-            <div class="chart chart-half">
-                <nts-chart chartTitle="Stack chart" type="bar" [series]="baseSeries" [labels]="baseLabels" [options]="stackOptions"></nts-chart>
-            </div>
-            <div class="chart chart-half">
-                <nts-chart chartTitle="Horizontal bar chart" type="horizontalBar" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
-            </div>
-            <div class="chart chart-half">
-                <nts-chart chartTitle="Mixed chart" type="bar" [series]="mixedSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
-            </div>
+                <div class="chart chart-half">
+                    <nts-chart chartTitle="Line chart" type="line" [series]="lineSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
+                </div>
+                <div class="chart chart-half">
+                    <nts-chart chartTitle="Area chart" type="line" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
+                </div>
+                <div class="chart chart-half">
+                    <nts-chart chartTitle="Bar chart" type="bar" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
+                </div>
+                <div class="chart chart-half">
+                    <nts-chart chartTitle="Stack chart" type="bar" [series]="baseSeries" [labels]="baseLabels" [options]="stackOptions"></nts-chart>
+                </div>
+                <div class="chart chart-half">
+                    <nts-chart chartTitle="Horizontal bar chart" type="horizontalBar" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
+                </div>
+                <div class="chart chart-half">
+                    <nts-chart chartTitle="Mixed chart" type="bar" [series]="mixedSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
+                </div>
 
-            <div class="chart chart-quarter">
-                <nts-chart chartTitle="Pie chart" type="pie" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
-            </div>
-            <div class="chart chart-quarter">
-                <nts-chart chartTitle="Radar chart" type="radar" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
-            </div>
-            <div class="chart chart-quarter">
-                <nts-chart chartTitle="Doughnut chart" type="doughnut" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
-            </div>
-            <div class="chart chart-quarter">
-                <nts-chart chartTitle="Polar chart" type="polarArea" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
-            </div>
-        </div>
-        <div *ngIf="tabSelected === 'data'" class="content">
+                <div class="chart chart-quarter">
+                    <nts-chart chartTitle="Pie chart" type="pie" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
+                </div>
+                <div class="chart chart-quarter">
+                    <nts-chart chartTitle="Radar chart" type="radar" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
+                </div>
+                <div class="chart chart-quarter">
+                    <nts-chart chartTitle="Doughnut chart" type="doughnut" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
+                </div>
+                <div class="chart chart-quarter">
+                    <nts-chart chartTitle="Polar chart" type="polarArea" [series]="baseSeries" [labels]="baseLabels" [options]="baseOptions"></nts-chart>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="tabSelected === 'data'">
 
-            <!-- ##################################################################
-           #############################  Data  ############################
-           ################################################################## -->
-            <h3>Data</h3>
-            <nts-separator></nts-separator>
+                <!-- ##################################################################
+                #############################  Data  ############################
+                ################################################################## -->
+                <h3>Data</h3>
+                <nts-separator></nts-separator>
 
-            <h5>Simple datagrids</h5>
-            <nts-datagrid [data]="data" (cellClick)="onCellClick($event)">
-                <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>
-                <nts-datagrid-column title="Date of birth" field="birth"></nts-datagrid-column>
-                <nts-datagrid-column title="Progress" field="progress" format="percentage"></nts-datagrid-column>
-                <nts-datagrid-column title="Alerts" field="alerts" [sortable]="false"></nts-datagrid-column>
-            </nts-datagrid>
+                <h5>Simple datagrids</h5>
+                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)">
+                    <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>
+                    <nts-datagrid-column title="Date of birth" field="birth"></nts-datagrid-column>
+                    <nts-datagrid-column title="Progress" field="progress"></nts-datagrid-column>
+                    <nts-datagrid-column title="Alerts" field="alerts"></nts-datagrid-column>
+                </nts-datagrid>
 
-            <h5>Cell formats</h5>
-            <nts-datagrid [data]="data" (cellClick)="onCellClick($event)" [sortable]="false">
-                <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>
-                <nts-datagrid-column title="Date of birth" field="birth" format="date"></nts-datagrid-column>
-                <nts-datagrid-column title="Progress" field="progress" format="progress" [formatOptions]="{total: 1, color: 'success'}"></nts-datagrid-column>
-                <nts-datagrid-column title="Alerts" field="alerts" format="badge" [formatOptions]="{color: 'error'}"></nts-datagrid-column>
-            </nts-datagrid>
+                <h5>Cell formats</h5>
+                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)" [sortable]="false">
+                    <nts-datagrid-column title="First name" field="name" width="3"></nts-datagrid-column>
+                    <nts-datagrid-column title="Date of birth" field="birth" format="date"></nts-datagrid-column>
+                    <nts-datagrid-column title="Progress" field="progress" format="progress" [formatOptions]="{total: 1, color: 'success'}"></nts-datagrid-column>
+                    <nts-datagrid-column title="Alerts" field="alerts" format="badge" [formatOptions]="{color: 'error', align: 'center'}"></nts-datagrid-column>
+                </nts-datagrid>
 
-            <h5>Custom cells</h5>
-            <nts-datagrid [data]="data" (cellClick)="onCellClick($event)">
-                <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>
-                <nts-datagrid-column title="Date of birth" field="birth">
-                    <nts-datagrid-cell *cellVariables="let date = cell">
-                        <nts-icon icon="calendar"></nts-icon>
-                        <span>{{date | formatDate : 'ddd DD MMM, YYYY'}}</span>
-                    </nts-datagrid-cell>
-                </nts-datagrid-column>
-                <nts-datagrid-column title="Progress" field="progress" format="progress" [formatOptions]="{total: 1, color: 'success'}"></nts-datagrid-column>
-                <nts-datagrid-column title="Alerts" field="alerts" format="badge" [formatOptions]="{color: 'error'}"></nts-datagrid-column>
-            </nts-datagrid>
+                <h5>Custom cells</h5>
+                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)">
+                    <nts-datagrid-column field="img" format="image" [sortable]="false" width="0.2"></nts-datagrid-column>
+                    <nts-datagrid-column title="First name" field="name">
+                        <nts-datagrid-cell *cellVariables="let user">
+                            <strong>{{user.name}}</strong>
+                            <p>{{user.birth | formatDate : 'ddd DD MMM, YYYY'}}</p>
+                        </nts-datagrid-cell>
+                    </nts-datagrid-column>
+                    <nts-datagrid-column title="Date of birth" field="birth">
+                        <nts-datagrid-cell *cellVariables="let user">
+                            <nts-icon icon="calendar"></nts-icon>
+                            <span>{{user.birth | formatDate : 'ddd DD MMM, YYYY'}}</span>
+                        </nts-datagrid-cell>
+                    </nts-datagrid-column>
+                    <nts-datagrid-column title="Progress" field="progress" format="progress" [formatOptions]="{total: 1, color: 'success'}"></nts-datagrid-column>
+                    <nts-datagrid-column title="Alerts" field="alerts" format="badge" [formatOptions]="{color: 'error'}" [sortable]="false" width="0.15"></nts-datagrid-column>
+                </nts-datagrid>
 
-            <h5>Custom rows</h5>
-            <nts-datagrid [data]="data" (cellClick)="onCellClick($event)">
-                <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>
-                <nts-datagrid-column title="Date of birth" field="birth"></nts-datagrid-column>
-                <nts-datagrid-column title="Progress" field="progress"></nts-datagrid-column>
-                <nts-datagrid-column title="Alerts" field="alerts"></nts-datagrid-column>
+                <h5>Selectable datagrids</h5>
+                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)" [selectable]="true">
+                    <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>
+                    <nts-datagrid-column title="Date of birth" field="birth"></nts-datagrid-column>
+                    <nts-datagrid-column title="Progress" field="progress" format="percentage"></nts-datagrid-column>
+                    <nts-datagrid-column title="Alerts" field="alerts" [sortable]="false"></nts-datagrid-column>
+                </nts-datagrid>
 
-                <nts-datagrid-row *rowVariables="let user = row; let i = i">
-                    <h3>{{i+1}}. {{user?.name}}</h3>
-                    <p>{{user?.birth | formatDate : 'ddd DD MMM, YYYY'}}</p>
-                </nts-datagrid-row>
-            </nts-datagrid>
-        </div>
-        <div *ngIf="tabSelected === 'other'" class="content">
+                <h5>Custom rows</h5>
+                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)">
+                    <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>
+                    <nts-datagrid-column title="Date of birth" field="birth"></nts-datagrid-column>
+                    <nts-datagrid-column title="Progress" field="progress"></nts-datagrid-column>
+                    <nts-datagrid-column title="Alerts" field="alerts"></nts-datagrid-column>
 
-            <!-- ##################################################################
-           #############################  OTHER  ############################
-           ################################################################## -->
-            <h3>Other</h3>
-            <nts-separator></nts-separator>
-            <h5>Badges</h5>
-            <div class="flex">
-                <nts-badge label="1" color="primary"> </nts-badge>
-                <nts-badge label="1" color="success"> </nts-badge>
-                <nts-badge label="1" color="error"> </nts-badge>
-                <nts-badge label="1" color="warning"> </nts-badge>
-            </div>
-            <h5>Chips</h5>
-            <div class="flex">
-                <nts-chip label="regular chip"> </nts-chip>
-                <nts-chip label="removable chip" [removable]="true" (remove)="removed1 = true" *ngIf="!removed1"> </nts-chip>
-                <nts-chip label="primary chip" class="primary" [removable]="true" (remove)="removed2 = true" *ngIf="!removed2"> </nts-chip>
-                <nts-chip label="success chip" class="success" [removable]="true" (remove)="removed3 = true" *ngIf="!removed3"> </nts-chip>
-                <nts-chip label="error chip" class="error" [removable]="true" (remove)="removed4 = true" *ngIf="!removed4"> </nts-chip>
-                <nts-chip label="warning chip" class="warning" [removable]="true" (remove)="removed5 = true" *ngIf="!removed5"> </nts-chip>
-            </div>
-            <h5>Progress bar</h5>
-            <nts-progress value="0"></nts-progress>
-            <nts-progress value="0" [showPercentage]="true"></nts-progress>
-            <nts-progress value="30"></nts-progress>
-            <nts-progress value="30" [showPercentage]="true"></nts-progress>
-            <nts-progress color="primary" value="20"></nts-progress>
-            <nts-progress color="primary" value="20" [showPercentage]="true"></nts-progress>
-            <nts-progress color="success" value="40"></nts-progress>
-            <nts-progress color="success" value="40" [showPercentage]="true"></nts-progress>
-            <nts-progress color="warning" value="70"></nts-progress>
-            <nts-progress color="warning" value="70" [showPercentage]="true"></nts-progress>
-            <nts-progress color="error" value="10" [showPercentage]="true"></nts-progress>
-            <nts-progress color="error" value="10" [showCount]="true"></nts-progress>
+                    <nts-datagrid-row *rowVariables="let user; let i = i">
+                        <nts-datagrid-cell>
+                            <h3>{{i+1}}. {{user?.name}}</h3>
+                        </nts-datagrid-cell>
+                        <nts-datagrid-cell width="3">
+                            <p>{{user?.birth | formatDate : 'ddd DD MMM, YYYY'}}</p>
+                        </nts-datagrid-cell>
+                    </nts-datagrid-row>
+                </nts-datagrid>
+            </ng-container>
+            <ng-container *ngIf="tabSelected === 'other'">
 
-            <h5>Faces</h5>
-            <div class="flex">
-                <nts-face [user]="{name: 'Alvaro'}"> </nts-face>
-                <nts-face [user]="{name: 'Alvaro', image: 'https://placekitten.com/g/200/200'}"> </nts-face>
-                <nts-face [user]="{name: 'Alvaro', image: 'https://placekitten.com/g/200/200'}" badge="1"> </nts-face>
-            </div>
+                <!-- ##################################################################
+                #############################  OTHER  ############################
+                ################################################################## -->
+                <h3>Other</h3>
+                <nts-separator></nts-separator>
+                <h5>Badges</h5>
+                <div class="flex">
+                    <nts-badge label="1" color="primary"> </nts-badge>
+                    <nts-badge label="1" color="success"> </nts-badge>
+                    <nts-badge label="1" color="error"> </nts-badge>
+                    <nts-badge label="1" color="warning"> </nts-badge>
+                </div>
+                <h5>Chips</h5>
+                <div class="flex">
+                    <nts-chip label="regular chip"> </nts-chip>
+                    <nts-chip label="removable chip" [removable]="true" (remove)="removed1 = true" *ngIf="!removed1"> </nts-chip>
+                    <nts-chip label="primary chip" class="primary" [removable]="true" (remove)="removed2 = true" *ngIf="!removed2"> </nts-chip>
+                    <nts-chip label="success chip" class="success" [removable]="true" (remove)="removed3 = true" *ngIf="!removed3"> </nts-chip>
+                    <nts-chip label="error chip" class="error" [removable]="true" (remove)="removed4 = true" *ngIf="!removed4"> </nts-chip>
+                    <nts-chip label="warning chip" class="warning" [removable]="true" (remove)="removed5 = true" *ngIf="!removed5"> </nts-chip>
+                </div>
+                <h5>Progress bar</h5>
+                <nts-progress value="0"></nts-progress>
+                <nts-progress value="0" [showPercentage]="true"></nts-progress>
+                <nts-progress value="30"></nts-progress>
+                <nts-progress value="30" [showPercentage]="true"></nts-progress>
+                <nts-progress color="primary" value="20"></nts-progress>
+                <nts-progress color="primary" value="20" [showPercentage]="true"></nts-progress>
+                <nts-progress color="success" value="40"></nts-progress>
+                <nts-progress color="success" value="40" [showPercentage]="true"></nts-progress>
+                <nts-progress color="warning" value="70"></nts-progress>
+                <nts-progress color="warning" value="70" [showPercentage]="true"></nts-progress>
+                <nts-progress color="error" value="10" [showPercentage]="true"></nts-progress>
+                <nts-progress color="error" value="10" [showCount]="true"></nts-progress>
 
-            <h5>Tooltip</h5>
-            <div class="flex">
-                <nts-button label="Open Tooltip" icon="open" class="btn-default" (mouseover)="openTooltip($event)" (mouseout)="closeTooltip()"></nts-button>
-            </div>
+                <h5>Faces</h5>
+                <div class="flex">
+                    <nts-face [user]="{name: 'Alvaro'}"> </nts-face>
+                    <nts-face [user]="{name: 'Alvaro', image: 'https://placekitten.com/g/200/200'}"> </nts-face>
+                    <nts-face [user]="{name: 'Alvaro', image: 'https://placekitten.com/g/200/200'}" badge="1"> </nts-face>
+                </div>
 
-            <h5>Toast</h5>
-            <div class="flex">
-                <nts-button label="Open toast" icon="open" class="btn-default" (click)="openToast()"></nts-button>
-            </div>
+                <h5>Tooltip</h5>
+                <div class="flex">
+                    <nts-button label="Open Tooltip" icon="open" class="btn-default" (mouseover)="openTooltip($event)" (mouseout)="closeTooltip()"></nts-button>
+                </div>
 
-            <h5>Modal</h5>
-            <div class="flex">
-                <nts-button
-                    label="Open modal"
-                    icon="open"
-                    color="default"
-                    (click)="openModal({ title: 'Demo Modal' })"
-                ></nts-button>
-                <nts-button
-                    label="Open modal without header"
-                    icon="open"
-                    color="default"
-                    (click)="openModal({ 'hideHeader': true })"
-                ></nts-button>
-                <nts-button
-                    color="default"
-                    label="Open full-screen modal"
-                    icon="open"
-                    (click)="openModal({ title: 'Demo Modal', type: 'full'})"
-                ></nts-button>
-                <nts-button
-                    color="default"
-                    label="Open aside modal"
-                    icon="open"
-                    (click)="openModal({ title: 'Demo Modal', type: 'aside'})"
-                ></nts-button>
-            </div>
+                <h5>Toast</h5>
+                <div class="flex">
+                    <nts-button label="Open toast" icon="open" class="btn-default" (click)="openToast()"></nts-button>
+                </div>
 
-            <h5>Paginator</h5>
-            <nts-paginator [totalElements]="30" [pageSize]="10" [selected]="0"></nts-paginator>
-            <nts-paginator [totalElements]="150" [pageSize]="9" [selected]="0"></nts-paginator>
+                <h5>Modal</h5>
+                <div class="flex">
+                    <nts-button
+                        label="Open modal"
+                        icon="open"
+                        color="default"
+                        (click)="openModal({ title: 'Demo Modal' })"
+                    ></nts-button>
+                    <nts-button
+                        label="Open modal without header"
+                        icon="open"
+                        color="default"
+                        (click)="openModal({ 'hideHeader': true })"
+                    ></nts-button>
+                    <nts-button
+                        color="default"
+                        label="Open full-screen modal"
+                        icon="open"
+                        (click)="openModal({ title: 'Demo Modal', type: 'full'})"
+                    ></nts-button>
+                    <nts-button
+                        color="default"
+                        label="Open aside modal"
+                        icon="open"
+                        (click)="openModal({ title: 'Demo Modal', type: 'aside'})"
+                    ></nts-button>
+                </div>
 
-            <h5>Tabs</h5>
-            <nts-tabs [tabs]="[
-                {label: 'Tab 1'},
-                {label: 'Tab 2'},
-                {label: 'Tab 3'}
-            ]"></nts-tabs>
-            <nts-tabs size="small" [tabs]="[
-                {label: 'Tab small 1'},
-                {label: 'Tab small 2'},
-                {label: 'Tab small 3'}
-            ]"></nts-tabs>
+                <h5>Paginator</h5>
+                <nts-paginator [totalElements]="30" [pageSize]="10" [selected]="0"></nts-paginator>
+                <nts-paginator [totalElements]="150" [pageSize]="9" [selected]="0"></nts-paginator>
 
-            <!-- ##################################################################
-           #############################  ICONS  ############################
-           ################################################################## -->
-            <h3>Icons</h3>
+                <h5>Tabs</h5>
+                <nts-tabs [tabs]="[
+                    {label: 'Tab 1'},
+                    {label: 'Tab 2'},
+                    {label: 'Tab 3'}
+                ]"></nts-tabs>
+                <nts-tabs size="small" [tabs]="[
+                    {label: 'Tab small 1'},
+                    {label: 'Tab small 2'},
+                    {label: 'Tab small 3'}
+                ]"></nts-tabs>
 
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="user"></nts-icon>
-                <span>user</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="user-unfollow"></nts-icon>
-                <span>user-unfollow</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="user-following"></nts-icon>
-                <span>user-following</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="user-follow"></nts-icon>
-                <span>user-follow</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="people"></nts-icon>
-                <span>people</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="bell"></nts-icon>
-                <span>bell</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="speech"></nts-icon>
-                <span>speech</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="printer"></nts-icon>
-                <span>printer</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="picture"></nts-icon>
-                <span>picture</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="handbag"></nts-icon>
-                <span>handbag</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="folder-alt"></nts-icon>
-                <span>folder-alt</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="drawar"></nts-icon>
-                <span>drawar</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="trash"></nts-icon>
-                <span>trash</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="tag"></nts-icon>
-                <span>tag</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="logout"></nts-icon>
-                <span>logout</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="list"></nts-icon>
-                <span>list</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="graph"></nts-icon>
-                <span>graph</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="calendar"></nts-icon>
-                <span>calendar</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="chart"></nts-icon>
-                <span>chart</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="clock"></nts-icon>
-                <span>clock</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="doc"></nts-icon>
-                <span>doc</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="cloud-download"></nts-icon>
-                <span>cloud-download</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="eye"></nts-icon>
-                <span>eye</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="heart"></nts-icon>
-                <span>heart</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="location-pin"></nts-icon>
-                <span>location-pin</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="lock"></nts-icon>
-                <span>lock</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="lock-open"></nts-icon>
-                <span>lock-open</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="chevron-left"></nts-icon>
-                <span>chevron-left</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="chevron-right"></nts-icon>
-                <span>chevron-right</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="arrow-down"></nts-icon>
-                <span>arrow-down</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="arrow-left"></nts-icon>
-                <span>arrow-left</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="arrow-right"></nts-icon>
-                <span>arrow-right</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="arrow-up"></nts-icon>
-                <span>arrow-up</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="google"></nts-icon>
-                <span>google</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="board"></nts-icon>
-                <span>board</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="star-filled"></nts-icon>
-                <span>star-filled</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="star-half"></nts-icon>
-                <span>star-half</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="star"></nts-icon>
-                <span>star</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="suitcase"></nts-icon>
-                <span>suitcase</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="dollar"></nts-icon>
-                <span>dollar</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="caret"></nts-icon>
-                <span>caret</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="search"></nts-icon>
-                <span>search</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="filled-circle"></nts-icon>
-                <span>filled-circle</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="minus-circle"></nts-icon>
-                <span>minus-circle</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="plus-circle"></nts-icon>
-                <span>plus-circle</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="square"></nts-icon>
-                <span>square</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="square-minus"></nts-icon>
-                <span>square-minus</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="square-check"></nts-icon>
-                <span>square-check</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="circle"></nts-icon>
-                <span>circle</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="circle-check"></nts-icon>
-                <span>circle-check</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="delete"></nts-icon>
-                <span>delete</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="drag"></nts-icon>
-                <span>drag</span>
-            </span>
-            <span class="icon-wrap">
-                <nts-icon class="icon" icon="more-v"></nts-icon>
-                <span>more-v</span>
-            </span>
-        </div>
+                <!-- ##################################################################
+                #############################  ICONS  ############################
+                ################################################################## -->
+                <h3>Icons</h3>
+
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="user"></nts-icon>
+                    <span>user</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="user-unfollow"></nts-icon>
+                    <span>user-unfollow</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="user-following"></nts-icon>
+                    <span>user-following</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="user-follow"></nts-icon>
+                    <span>user-follow</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="people"></nts-icon>
+                    <span>people</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="bell"></nts-icon>
+                    <span>bell</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="speech"></nts-icon>
+                    <span>speech</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="printer"></nts-icon>
+                    <span>printer</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="picture"></nts-icon>
+                    <span>picture</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="handbag"></nts-icon>
+                    <span>handbag</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="folder-alt"></nts-icon>
+                    <span>folder-alt</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="drawar"></nts-icon>
+                    <span>drawar</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="trash"></nts-icon>
+                    <span>trash</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="tag"></nts-icon>
+                    <span>tag</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="logout"></nts-icon>
+                    <span>logout</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="list"></nts-icon>
+                    <span>list</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="graph"></nts-icon>
+                    <span>graph</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="calendar"></nts-icon>
+                    <span>calendar</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="chart"></nts-icon>
+                    <span>chart</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="clock"></nts-icon>
+                    <span>clock</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="doc"></nts-icon>
+                    <span>doc</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="cloud-download"></nts-icon>
+                    <span>cloud-download</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="eye"></nts-icon>
+                    <span>eye</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="heart"></nts-icon>
+                    <span>heart</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="location-pin"></nts-icon>
+                    <span>location-pin</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="lock"></nts-icon>
+                    <span>lock</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="lock-open"></nts-icon>
+                    <span>lock-open</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="chevron-left"></nts-icon>
+                    <span>chevron-left</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="chevron-right"></nts-icon>
+                    <span>chevron-right</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="arrow-down"></nts-icon>
+                    <span>arrow-down</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="arrow-left"></nts-icon>
+                    <span>arrow-left</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="arrow-right"></nts-icon>
+                    <span>arrow-right</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="arrow-up"></nts-icon>
+                    <span>arrow-up</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="google"></nts-icon>
+                    <span>google</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="board"></nts-icon>
+                    <span>board</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="star-filled"></nts-icon>
+                    <span>star-filled</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="star-half"></nts-icon>
+                    <span>star-half</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="star"></nts-icon>
+                    <span>star</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="suitcase"></nts-icon>
+                    <span>suitcase</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="dollar"></nts-icon>
+                    <span>dollar</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="caret"></nts-icon>
+                    <span>caret</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="search"></nts-icon>
+                    <span>search</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="filled-circle"></nts-icon>
+                    <span>filled-circle</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="minus-circle"></nts-icon>
+                    <span>minus-circle</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="plus-circle"></nts-icon>
+                    <span>plus-circle</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="square"></nts-icon>
+                    <span>square</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="square-minus"></nts-icon>
+                    <span>square-minus</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="square-check"></nts-icon>
+                    <span>square-check</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="circle"></nts-icon>
+                    <span>circle</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="circle-check"></nts-icon>
+                    <span>circle-check</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="delete"></nts-icon>
+                    <span>delete</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="drag"></nts-icon>
+                    <span>drag</span>
+                </span>
+                <span class="icon-wrap">
+                    <nts-icon class="icon" icon="more-v"></nts-icon>
+                    <span>more-v</span>
+                </span>
+            </ng-container>
+        </div>+
     </nts-body>
 </nts-layout>

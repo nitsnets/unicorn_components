@@ -1,0 +1,7 @@
+nts-datagrid-cell {
+    padding: $basic-padding / 4;
+    display: table-cell;
+    flex-basis: 0;
+
+    &:hover { background-color: $alpha-black-lighter; }
+}

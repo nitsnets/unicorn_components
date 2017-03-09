@@ -1,0 +1,6 @@
+
+    <nts-datagrid-cell *ngIf="selectable" width="0">
+        <nts-checkbox [(ntsModel)]="selected" (ntsModelChange)="selectedChange.emit($event)"></nts-checkbox>
+    </nts-datagrid-cell>
+    <ng-content></ng-content>
+

@@ -3,7 +3,7 @@ $black: #333;
 $color-primary: #48b0f7;
 $color-primary-medium: lighten($color-primary, 20%);
 $color-primary-light: lighten($color-primary, 30%);
-$color-primary-lighter: lighten($color-primary, 40%);
+$color-primary-lighter: lighten($color-primary, 35%);
 $color-primary-dark: darken($color-primary, 20%);
 
 $color-error: #f55753;
@@ -33,6 +33,7 @@ $color-grey-dark: #626262;
 $alpha-black: rgba(0,0,0,0.25);
 $alpha-black-medium: rgba(0,0,0,0.1);
 $alpha-black-light: rgba(0,0,0,0.07);
+$alpha-black-lighter: rgba(0,0,0,0.03);
 $alpha-black-dark: rgba(0,0,0,0.5);
 
 $alpha-white: rgba(255, 255, 255, 0.3);

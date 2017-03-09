@@ -12,12 +12,12 @@ import 'core-js/es6/regexp';
 import 'core-js/es6/map';
 import 'core-js/es6/set';
 import 'core-js/es6/reflect';
-
 import 'core-js/es7/reflect';
 import 'zone.js/dist/zone';
 
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { DemoModule } from './demo.module';
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-
+enableProdMode();
 platformBrowserDynamic().bootstrapModule(DemoModule);
