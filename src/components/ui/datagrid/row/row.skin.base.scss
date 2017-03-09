@@ -2,7 +2,15 @@ nts-datagrid-row {
     overflow: hidden;
     display: flex;
     align-items: stretch;
+    transition: 200ms ease background-color;
 
-    &:hover { background-color: $color-grey-lighter; }
-    &.selected { background-color: $color-primary-light; }
+    &:hover {
+        background-color: $color-grey-lighter;
+    }
+    &.selected {
+        background-color: $color-primary-light;
+        .select-cell {
+            color: $color-primary;
+        }
+    }
 }

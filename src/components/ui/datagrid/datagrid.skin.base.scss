@@ -5,17 +5,25 @@ nts-datagrid {
         color: $alpha-black;
         min-height: $input-height;
 
+        span {
+            top: 50%;
+            margin-top: - $input-height / 2;
+            height: $input-height;
+            position: absolute;
+            line-height: $input-height;
+        }
+
         &.sortable{
             cursor: pointer;
             user-select: none;
-            &:hover {
-                color: $alpha-black-dark;
-            }
+
             &:after {
                 @include pseudo();
                 background-image: url('../assets/img/sort_both.png');
                 background-position: center;
                 background-repeat: no-repeat;
+                top: 50%;
+                margin-top: - $input-height / 2;
                 height: $input-height;
                 width: $input-height;
                 right: $basic-padding / 4;
@@ -34,14 +42,5 @@ nts-datagrid {
                 }
             }
         }
-    }
-    .header-item {
-        padding: $basic-padding / 4;
-        flex-basis: 0;
-    }
-    .progress-cell {
-        display: inline-block;
-        vertical-align: middle;
-        width: 100%;
     }
 }

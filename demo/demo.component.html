@@ -445,7 +445,7 @@
                 </nts-datagrid>
 
                 <h5>Custom cells</h5>
-                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)">
+                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)" [highlight]="true">
                     <nts-datagrid-column field="img" format="image" [sortable]="false" width="0.2"></nts-datagrid-column>
                     <nts-datagrid-column title="First name" field="name">
                         <nts-datagrid-cell *cellVariables="let user">
@@ -454,7 +454,7 @@
                         </nts-datagrid-cell>
                     </nts-datagrid-column>
                     <nts-datagrid-column title="Date of birth" field="birth">
-                        <nts-datagrid-cell *cellVariables="let user">
+                        <nts-datagrid-cell *cellVariables="let user" [highlight]="false">
                             <nts-icon icon="calendar"></nts-icon>
                             <span>{{user.birth | formatDate : 'ddd DD MMM, YYYY'}}</span>
                         </nts-datagrid-cell>
@@ -465,7 +465,7 @@
 
                 <h5>Selectable datagrids</h5>
                 <nts-datagrid [data]="data" (cellClick)="onCellClick($event)" [selectable]="true">
-                    <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>
+                    <nts-datagrid-column title="First name" field="name" [highlight]="true"></nts-datagrid-column>
                     <nts-datagrid-column title="Date of birth" field="birth"></nts-datagrid-column>
                     <nts-datagrid-column title="Progress" field="progress" format="percentage"></nts-datagrid-column>
                     <nts-datagrid-column title="Alerts" field="alerts" [sortable]="false"></nts-datagrid-column>

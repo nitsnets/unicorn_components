@@ -25,6 +25,7 @@ export class NtsDatagridComponent implements AfterContentInit {
     @Input() data: NtsDataArray = null;
     @Output() dataChange = new EventEmitter<NtsDataArray>();
 
+    @Input() highlight = false;
     @Input() selectable = false;
     @Input() sortable = true;
     @Input() orderLocal = true;
