@@ -35,11 +35,11 @@
                 <h5>h5 Heading</h5>
 
                 <h5>Paragraph</h5>
-                <p>Lorem ipsum dolor sit amet, <span class="u-text-bold">consectetur adipiscing elit</span>. Nunc condimentum metus
-                    sem, ut tincidunt arcu convallis ut. Etiam lacinia sem vestibulum sapien feugiat laoreet. Duis id sodales
-                    lacus. Nulla euismod mollis luctus. Pellentesque vel ligula euismod, aliquam turpis mattis, faucibus sem.
-                    Integer et rutrum lacus. Proin pulvinar ac odio sed interdum. Etiam iaculis dolor massa, sed commodo lectus
-                    malesuada non. Morbi vehicula ante facilisis dignissim sodales.</p>
+                <p>Lorem ipsum dolor sit amet, <span class="u-text-bold">consectetur adipiscing elit</span>. Nunc condimentum
+                    metus sem, ut tincidunt arcu convallis ut. Etiam lacinia sem vestibulum sapien feugiat laoreet. Duis
+                    id sodales lacus. Nulla euismod mollis luctus. Pellentesque vel ligula euismod, aliquam turpis mattis,
+                    faucibus sem. Integer et rutrum lacus. Proin pulvinar ac odio sed interdum. Etiam iaculis dolor massa,
+                    sed commodo lectus malesuada non. Morbi vehicula ante facilisis dignissim sodales.</p>
 
                 <p>For
                     <mark>highlighting a run of text</mark> due to its relevance in another context. Wrap the element in <code>&lt;mark&gt;</code></p>
@@ -453,8 +453,8 @@
                             <p>{{user.birth | formatDate : 'ddd DD MMM, YYYY'}}</p>
                         </nts-datagrid-cell>
                     </nts-datagrid-column>
-                    <nts-datagrid-column title="Date of birth" field="birth">
-                        <nts-datagrid-cell *cellVariables="let user" [highlight]="false">
+                    <nts-datagrid-column title="Date of birth" field="birth" [highlight]="false">
+                        <nts-datagrid-cell *cellVariables="let user">
                             <nts-icon icon="calendar"></nts-icon>
                             <span>{{user.birth | formatDate : 'ddd DD MMM, YYYY'}}</span>
                         </nts-datagrid-cell>
@@ -472,7 +472,7 @@
                 </nts-datagrid>
 
                 <h5>Custom rows</h5>
-                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)">
+                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)" [highlight]="true">
                     <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>
                     <nts-datagrid-column title="Date of birth" field="birth"></nts-datagrid-column>
                     <nts-datagrid-column title="Progress" field="progress"></nts-datagrid-column>
@@ -544,30 +544,10 @@
 
                 <h5>Modal</h5>
                 <div class="flex">
-                    <nts-button
-                        label="Open modal"
-                        icon="open"
-                        color="default"
-                        (click)="openModal({ title: 'Demo Modal' })"
-                    ></nts-button>
-                    <nts-button
-                        label="Open modal without header"
-                        icon="open"
-                        color="default"
-                        (click)="openModal({ 'hideHeader': true })"
-                    ></nts-button>
-                    <nts-button
-                        color="default"
-                        label="Open full-screen modal"
-                        icon="open"
-                        (click)="openModal({ title: 'Demo Modal', type: 'full'})"
-                    ></nts-button>
-                    <nts-button
-                        color="default"
-                        label="Open aside modal"
-                        icon="open"
-                        (click)="openModal({ title: 'Demo Modal', type: 'aside'})"
-                    ></nts-button>
+                    <nts-button label="Open modal" icon="open" color="default" (click)="openModal({ title: 'Demo Modal' })"></nts-button>
+                    <nts-button label="Open modal without header" icon="open" color="default" (click)="openModal({ 'hideHeader': true })"></nts-button>
+                    <nts-button color="default" label="Open full-screen modal" icon="open" (click)="openModal({ title: 'Demo Modal', type: 'full'})"></nts-button>
+                    <nts-button color="default" label="Open aside modal" icon="open" (click)="openModal({ title: 'Demo Modal', type: 'aside'})"></nts-button>
                 </div>
 
                 <h5>Paginator</h5>

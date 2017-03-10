@@ -1,24 +1,31 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import { Component, ElementRef, HostBinding, Input, OnInit, Optional } from '@angular/core';
 
-import { NtsDatagridComponent } from './../datagrid.component';
+import { NtsDatagridComponent } from '../datagrid.component';
+import { removeHostElement } from '../../../../utils';
 
 @Component({
     selector: 'nts-datagrid-cell',
     templateUrl: 'cell.component.html'
 })
-export class NtsDatagridCellComponent {
+export class NtsDatagridCellComponent implements OnInit {
     @Input()
+    @HostBinding('class.highlight')
     highlight;
 
     @Input()
     @HostBinding('style.flex-grow')
     width = 1;
 
-    @HostBinding('class.highlight')
-    get highlightClass(): boolean {
-        return this.highlight === true || this.highlight === undefined && this.datagrid.highlight === true ? true : false;
-    };
+    selectable = false;
 
-    constructor(public datagrid: NtsDatagridComponent) { }
+    constructor(
+        private element: ElementRef,
+        private datagrid: NtsDatagridComponent
+    ) {
+        this.highlight = this.datagrid.highlight;
+    }
+
+    ngOnInit() {
+    }
 
 }

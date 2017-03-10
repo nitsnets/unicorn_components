@@ -5,10 +5,13 @@ nts-datagrid-row {
     transition: 200ms ease background-color;
 
     &:hover {
-        background-color: $color-grey-lighter;
+        background-color: $alpha-black-lighter;
     }
     &.selected {
         background-color: $color-primary-light;
+        &:hover {
+            background-color: darken($color-primary-light, 2.5%);
+        }
         .select-cell {
             color: $color-primary;
         }

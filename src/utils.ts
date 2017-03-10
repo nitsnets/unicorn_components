@@ -2,6 +2,13 @@ import * as moment from 'moment';
 
 import { Subscription } from 'rxjs/Rx';
 
+export function removeHostElement(element: HTMLElement) {
+    const parentElement: HTMLElement = element.parentElement;
+    while (element.firstChild) {
+        parentElement.insertBefore(element.firstChild, element);
+    }
+    parentElement.removeChild(element);
+}
 export function uuid(): string {
     const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
     const uuid = new Array(36);

@@ -1,18 +1,34 @@
-import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
 
-import { NtsDatagridComponent } from './../datagrid.component';
+import { removeHostElement } from '../../../../utils';
 
+/**
+ *
+ * @author Alvaro Yuste
+ *
+ * @export
+ * @class NtsDatagridRowComponent
+ * @implements {OnInit}
+ */
 @Component({
     selector: 'nts-datagrid-row',
     templateUrl: 'row.component.html'
 })
-export class NtsDatagridRowComponent {
+export class NtsDatagridRowComponent implements OnInit {
+
     @HostBinding('class.selected')
     @Input() selected = false;
-    @Output() selectedChange = new EventEmitter();
-    selectable = false;
 
-    constructor(public datagrid: NtsDatagridComponent) {
-        this.selectable = datagrid.selectable;
+    @Output() selectedChange = new EventEmitter();
+    @Input() selectable = false;
+    @Input() box = false;
+
+    constructor(private element: ElementRef) { }
+
+    ngOnInit() {
+        if (!this.box) {
+            removeHostElement(this.element.nativeElement);
+        }
     }
+
 }

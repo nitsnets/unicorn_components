@@ -1,0 +1,65 @@
+nts-datagrid-header {
+    nts-row {
+        &.selected {
+            background-color: $color-primary-light;
+            span {color: $color-primary; }
+        }
+        &.all-selected {
+            background-color: darken($color-primary-light, 5%);
+            nts-checkbox {color: $color-primary; }
+        }
+    }
+    nts-separator.selected {
+        hr {
+            border-color: $color-primary;
+        }
+    }
+    nts-datagrid-cell {
+        font-weight: bold;
+        position: relative;
+        min-height: $input-height;
+
+        span {
+            color: $alpha-black;
+            top: 50%;
+            margin-top: - $input-height / 2;
+            height: $input-height;
+            position: absolute;
+            line-height: $input-height;
+        }
+
+        &.sortable{
+            cursor: pointer;
+            user-select: none;
+
+            &:after {
+                @include pseudo();
+                background-image: url('../assets/img/sort_both.png');
+                background-position: center;
+                background-repeat: no-repeat;
+                top: 50%;
+                margin-top: - $input-height / 2;
+                height: $input-height;
+                width: $input-height;
+                right: $basic-padding / 4;
+                bottom: 0;
+            }
+            &.order-asc {
+                span {
+                    color: $black;
+                }
+                &:after {
+                    background-image: url('../assets/img/sort_asc.png');
+                }
+            }
+            &.order-desc {
+                span {
+                    color: $black;
+                }
+                &:after {
+                    background-image: url('../assets/img/sort_desc.png');
+                }
+            }
+        }
+    }
+}
