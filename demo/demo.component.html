@@ -241,7 +241,7 @@
                 <nts-separator></nts-separator>
 
                 <h5>Single-line inputs</h5>
-                <div class="flex">
+                <div>
                     <nts-input [(ntsModel)]="inputModel" label="Default input"></nts-input>
                     <nts-input [(ntsModel)]="inputModel" label="Input with placeholder" placeholder="Input placeholder"></nts-input>
                     <nts-input [(ntsModel)]="inputModel" label="Input with icon" placeholder="Input placeholder" icon="user"></nts-input>
@@ -249,7 +249,7 @@
                     <nts-input [(ntsModel)]="inputModel" label="Input with error" placeholder="Input placeholder" error="Must be a valid email"></nts-input>
                     <nts-input [(ntsModel)]="inputModel" label="Input with prefix" placeholder="Input placeholder" prefix="http://www."></nts-input>
                 </div>
-                <div class="flex">
+                <div>
                     <nts-input [(ntsModel)]="inputModel" label="Input with counter" counter="true"></nts-input>
                     <nts-input [(ntsModel)]="inputModel" label="Counter and max" max="10" counter="true"></nts-input>
                     <nts-input [(ntsModel)]="inputModel" label="Input with right icon" placeholder="Input placeholder" iconRight="user"></nts-input>
@@ -262,14 +262,14 @@
                 </nts-input>
 
                 <h5>Radio inputs</h5>
-                <div class="flex">
+                <div>
                     <nts-radio [(ntsModel)]="radioModel" value="0" label="Option 1"></nts-radio>
                     <nts-radio [(ntsModel)]="radioModel" value="1" label="Option 2"></nts-radio>
                     <nts-radio [(ntsModel)]="radioModel" value="2" label="Custom <strong>HTML</strong> label"></nts-radio>
                 </div>
 
                 <h5>Checkbox inputs</h5>
-                <div class="flex">
+                <div>
                     <nts-checkbox [(ntsModel)]="checkboxModel"></nts-checkbox>
                     <nts-checkbox [(ntsModel)]="checkboxModel" [partial]="true"></nts-checkbox>
                     <nts-checkbox [(ntsModel)]="checkboxModel" label="Checkbox with label"></nts-checkbox>
@@ -277,17 +277,17 @@
                     <nts-checkbox [(ntsModel)]="checkboxModel" label="Custom <strong>HTML</strong> label"></nts-checkbox>
                 </div>
                 <h5>Toggle inputs</h5>
-                <div class="flex">
+                <div>
                     <nts-toggle [(ntsModel)]="toggleModel" label="Toggle with label"></nts-toggle>
                     <nts-toggle [(ntsModel)]="toggleModel" label="Toggle squared with label" [rounded]="false"></nts-toggle>
                 </div>
-                <div class="flex">
+                <div>
                     <nts-toggle color="primary" [(ntsModel)]="toggleModel"></nts-toggle>
                     <nts-toggle color="success" [(ntsModel)]="toggleModel"></nts-toggle>
                     <nts-toggle color="warning" [(ntsModel)]="toggleModel"></nts-toggle>
                     <nts-toggle color="error" [(ntsModel)]="toggleModel"></nts-toggle>
                 </div>
-                <div class="flex">
+                <div>
                     <nts-toggle class="small" [(ntsModel)]="toggleModel" label="Small toggle with label"></nts-toggle>
                     <nts-toggle class="small" [(ntsModel)]="toggleModel" label="Small toggle squared with label" [rounded]="false"></nts-toggle>
                 </div>
@@ -303,36 +303,36 @@
                     <nts-button-toggle label="Button toggle" color="error" [(ntsModel)]="toggleModel6"></nts-button-toggle>
                 </div>
                 <h5>Date-time picker</h5>
-                <div class="flex">
+                <div>
                     <nts-date-picker label="Date picker"> </nts-date-picker>
                 </div>
-                <div class="flex">
+                <div>
                     <nts-time-picker label="Time picker"> </nts-time-picker>
                 </div>
-                <div class="flex">
+                <div>
                     <nts-date-picker label="Min and max date" minDate="2017-02-01" maxDate="2017-02-26"> </nts-date-picker>
                 </div>
-                <div class="flex">
+                <div>
                     <nts-date-picker label="Inline calendar" [inline]="true"> </nts-date-picker>
                 </div>
-                <div class="flex">
+                <div>
                     <nts-datetime-picker dateLabel="Date picker" timeLabel="With time picker"> </nts-datetime-picker>
                 </div>
 
                 <h5>Daterange picker</h5>
-                <div class="flex">
+                <div>
                     <nts-daterange-picker> </nts-daterange-picker>
                 </div>
-                <div class="flex">
+                <div>
                     <nts-daterange-picker [combo]="true"> </nts-daterange-picker>
                 </div>
-                <div class="flex">
+                <div>
                     <nts-daterange-picker [combo]="true" [showArrows]="true"> </nts-daterange-picker>
                 </div>
 
                 <h5>Select inputs </h5>
 
-                <div class="flex">
+                <div>
                     <nts-select label="Default select" [(ntsModel)]="selectModel" [options]="[
                         {value: 1, label: 'Option 1'},
                         {value: 2, label: 'Option 2'},
@@ -370,13 +370,13 @@
                 </div>
 
                 <h5>Color picker</h5>
-                <div class="flex">
+                <div>
                     <nts-input type="color" label="Color input" [(ntsModel)]="colorSelected"></nts-input>
                     <nts-input type="color" label="Color input with swatch" [(ntsModel)]="colorSelected" [colorSwatch]="true"></nts-input>
                 </div>
 
                 <h5>Image picker</h5>
-                <div class="flex">
+                <div>
                     <nts-image-picker [(ntsModel)]="image"></nts-image-picker>
                 </div>
             </ng-container>
@@ -427,9 +427,9 @@
                 ################################################################## -->
                 <h3>Data</h3>
                 <nts-separator></nts-separator>
-                <!--
+
                 <h5>Simple datagrids</h5>
-                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)">
+                <nts-datagrid [data]="data" (cellClick)="log('Cell clicked', $event)">
                     <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>
                     <nts-datagrid-column title="Date of birth" field="birth"></nts-datagrid-column>
                     <nts-datagrid-column title="Progress" field="progress"></nts-datagrid-column>
@@ -437,7 +437,7 @@
                 </nts-datagrid>
 
                 <h5>Cell formats</h5>
-                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)" [sortable]="false" [highlightRow]="false">
+                <nts-datagrid [data]="data" (cellClick)="log('Cell clicked', $event)" [sortable]="false" [highlightRow]="false">
                     <nts-datagrid-column title="First name" field="name" width="3"></nts-datagrid-column>
                     <nts-datagrid-column title="Date of birth" field="birth" format="date"></nts-datagrid-column>
                     <nts-datagrid-column title="Progress" field="progress" format="progress" [formatOptions]="{total: 1, color: 'success'}"></nts-datagrid-column>
@@ -445,7 +445,7 @@
                 </nts-datagrid>
 
                 <h5>Custom cells</h5>
-                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)" [highlightCell]="true" [highlightRow]="false">
+                <nts-datagrid [data]="data" (cellClick)="log('Cell clicked', $event)" (rowClick)="log('Row clicked', $event)" [highlightCell]="true" [highlightRow]="false">
                     <nts-datagrid-column field="img" format="image" [sortable]="false" width="0.2"></nts-datagrid-column>
                     <nts-datagrid-column title="First name" field="name">
                         <nts-datagrid-cell *cellVariables="let user">
@@ -461,9 +461,15 @@
                     </nts-datagrid-column>
                     <nts-datagrid-column title="Progress" field="progress" format="progress" [formatOptions]="{total: 1, color: 'success'}"></nts-datagrid-column>
                     <nts-datagrid-column title="Alerts" field="alerts" format="badge" [formatOptions]="{color: 'error'}" [sortable]="false" width="0.15"></nts-datagrid-column>
+                    <nts-datagrid-column [sortable]="false" [clickPropagation]="false" [highlightCell]="false">
+                        <nts-row *cellVariables="let user">
+                            <nts-input placeholder="units" [(ntsModel)]="user.units"></nts-input>
+                            <nts-button label="Add to cart" color="primary" size="small" (click)="log('Add to cart', {user: user, units: user['units']})"></nts-button>
+                        </nts-row>
+                    </nts-datagrid-column>
                 </nts-datagrid>
                 <h5>Custom rows</h5>
-                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)" [highlightCell]="true">
+                <nts-datagrid [data]="data" (cellClick)="log('Cell clicked', $event)" [highlightCell]="true">
                     <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>
                     <nts-datagrid-column title="Date of birth" field="birth"></nts-datagrid-column>
                     <nts-datagrid-column title="Progress" field="progress"></nts-datagrid-column>
@@ -479,21 +485,13 @@
                     </nts-datagrid-row>
                 </nts-datagrid>
                 <h5>Selectable datagrids</h5>
-                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)" [selectable]="true">
+                <nts-datagrid [data]="data" (cellClick)="log('Cell clicked', $event)" [selectable]="true">
                     <nts-datagrid-column title="First name" field="name" [highlightCell]="true"></nts-datagrid-column>
                     <nts-datagrid-column title="Date of birth" field="birth"></nts-datagrid-column>
                     <nts-datagrid-column title="Progress" field="progress" format="percentage"></nts-datagrid-column>
                     <nts-datagrid-column title="Alerts" field="alerts" [sortable]="false"></nts-datagrid-column>
                 </nts-datagrid>
--->
-                <h5>Selectable datagrids</h5>
-                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)" (rowClick)="onRowClick($event)" [selectable]="true">
-                    <nts-datagrid-column title="First name" field="name" [highlightCell]="true"></nts-datagrid-column>
-                    <nts-datagrid-column title="Date of birth" field="birth"></nts-datagrid-column>
-                    <nts-datagrid-column title="Progress" field="progress" format="percentage"></nts-datagrid-column>
-                    <nts-datagrid-column title="Alerts" field="alerts" [sortable]="false"></nts-datagrid-column>
-                </nts-datagrid>
-
+                
             </ng-container>
             <ng-container *ngIf="tabSelected === 'other'">
 

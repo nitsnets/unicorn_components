@@ -1,19 +1,10 @@
 
 :host {
-  display: flex;
+  display: inline-block;
 }
 
 .date-container {
-  flex: 1;
   position: relative;
-}
-
-.date-inputs-container {
-  display: flex;
-}
-
-.date-input {
-  flex: 1;
 }
 
 .date-controls-container {

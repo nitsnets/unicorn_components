@@ -1,19 +1,10 @@
 
 :host {
-  display: flex;
+  display: inline-block;
 }
 
 .time-container {
-  flex: 1;
   position: relative;
-}
-
-.time-inputs-container {
-  display: flex;
-}
-
-.time-input {
-  flex: 1;
 }
 
 .time-controls-container {

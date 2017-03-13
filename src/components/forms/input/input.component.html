@@ -13,8 +13,8 @@
       {{ntsModel? ntsModel.length : 0}} <span *ngIf="max>-1">/ {{max}}</span>
     </span>
   </div>
-  <nts-icon [icon]="icon" class="icon"></nts-icon>
-  <nts-icon [icon]="iconRight" class="icon-right"></nts-icon>
+  <nts-icon *ngIf="icon" [icon]="icon" class="icon"></nts-icon>
+  <nts-icon *ngIf="iconRight" [icon]="iconRight" class="icon-right"></nts-icon>
 
   <div class="input-container">
     <span class="prefix" *ngIf="prefix &&  type !== 'color'" [innerHtml]="prefix"></span>

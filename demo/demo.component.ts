@@ -147,4 +147,10 @@ export class DemoComponent {
     onRowClick(row) {
         console.log('Row clicked', row);
     }
+    onAdd(row) {
+        console.log('Row clicked', row);
+    }
+    log(...args) {
+        console.log('', ...args);
+    }
 }

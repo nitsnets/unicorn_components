@@ -25,6 +25,14 @@ export class NtsDatagridColumnComponent implements AfterContentInit {
     ngAfterContentInit() {
         this.customCell = this.customCellDirective ? this.customCellDirective.templateRef : null;
     }
+    /**
+     * 
+     * 
+     * @param {boolean} defaultValue 
+     * @returns {boolean} 
+     * 
+     * @memberOf NtsDatagridColumnComponent
+     */
     isSortable(defaultValue: boolean): boolean {
         return this.sortable === true || this.sortable === undefined && defaultValue === true ? true : false;
     }

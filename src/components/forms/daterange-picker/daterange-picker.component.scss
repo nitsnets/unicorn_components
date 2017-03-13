@@ -1,5 +1,6 @@
 :host {
   position: relative;
+  display: inline-block;
 }
 .pickers-container {
   display: flex;
@@ -8,7 +9,7 @@
   flex: 1;
   position: relative;
 }
-.input-container {
+.daterange-input-container {
   display: flex;
   align-items: flex-end;
 
