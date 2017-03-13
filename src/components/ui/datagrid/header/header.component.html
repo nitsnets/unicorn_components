@@ -3,7 +3,11 @@
     [class.all-selected]="datagrid.allSelected()"
 >
     <nts-datagrid-cell *ngIf="datagrid.selectable" [width]="0" [highlight]="true">
-        <nts-checkbox [ntsModel]="datagrid.allSelected()" (ntsModelChange)="datagrid.selectAll($event)"></nts-checkbox>
+        <nts-checkbox
+            [partial]="datagrid.dataSelected.length > 0"
+            [ntsModel]="datagrid.allSelected()"
+            (ntsModelChange)="datagrid.onSelectAll($event)"
+        ></nts-checkbox>
     </nts-datagrid-cell>
 
     <ng-container *ngIf="!datagrid.dataSelected.length">
@@ -11,13 +15,13 @@
             *ngFor="let column of datagrid.columns"
             [ngClass]="{
                 'sortable': column.isSortable(datagrid.sortable),
-                'order-asc': datagrid.order.field === column.field && datagrid.order.dir === false,
-                'order-desc': datagrid.order.field === column.field && datagrid.order.dir === true
+                'sort-asc': datagrid.sort?.field === column?.field && datagrid.sort.dir === false,
+                'sort-desc': datagrid.sort?.field === column?.field && datagrid.sort.dir === true
             }"
             [width]="column.width || 1"
             [highlight]="column.isSortable(datagrid.sortable) ? true : false"
             [style.text-align]="column.formatOptions?.align || 'left'"
-            (click)="datagrid.onOrderBy(column)"
+            (click)="datagrid.onSortBy(column)"
         >
             <span [innerHtml]="column.title"></span>
         </nts-datagrid-cell>

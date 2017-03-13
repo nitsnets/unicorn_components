@@ -17,24 +17,24 @@ import { NtsDatagridRowDirective } from './row/row-variables.directive';
 
 /**
  *
- * @prop {string} field The key of the filed to order the dataset
+ * @prop {string} field The key of the filed to sort the dataset
  * @prop {boolean} dir True if ascendent, false if descendent
  * @export
- * @interface NtsDataOrder
+ * @interface NtsDataSort
  */
-export interface INtsDataOrder { field: string; dir: boolean; };
+export interface INtsDataSort { field: string; dir: boolean; };
 export interface INtsDataRowEvent { i: number; row: Object; };
 export interface INtsDataCellEvent extends INtsDataRowEvent { j: number; column: Object; cell: any; };
 
 /**
- * Table of contents with specified columns and data. Automates sorting and selection of items
+ * Table of contents with specified columns and data. Automates sorting, selection and pagination of items
  *
  * @author Alvaro Yuste Torregrosa
  *
  * @export
  * @class NtsDatagridComponent
  * @emits dataChange
- * @emits orderChange
+ * @emits sortChange
  * @emits cellClick
  * @emits rowClick
  * @implements {AfterContentInit}
@@ -50,13 +50,16 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     /** @lends NtsDatagridComponent */
 
     /**
-     * Indicates that the datagrid must execute the operations (sort, paginate, delete...)
+     * Indicates that the datagrid must execute the operations (sort, pagination, deletion...)
      * locally with the data provided. Else, the datagrid just emits events to delegate the
-     * responsability of the operations; then just waits for the new input of data.
+     * responsability of the operations to its parent; then just waits for the new input of data.
      * @type boolean
      * @default true
      */
     @Input() local = true;
+
+    localSort = null;
+    localPage = 0;
 
     /**
      * A key-value store for the items, in format: {id1: item1, id2: item3, ...}.
@@ -71,7 +74,7 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     dataSelected: string[] = [];
 
     /**
-     * An ordered list that represents how the items are rendered
+     * An sorted list that represents how the items are rendered
      * @type {string[]}
      */
     dataView: string[] = [];
@@ -111,7 +114,6 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
      */
     @Input() highlightRow = true;
 
-
     /**
      * True if the items can be selected
      * @type boolean
@@ -134,11 +136,18 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     @Input() pageSize = 10;
 
     /**
-     * The active page index
+     * The current page index
      * @type integer
      * @default 0
      */
     @Input() page = 0;
+
+    /**
+     * Emits an event when the user changes the page
+     * @event NtsDatagridComponent#pageChange
+     * @type {number}
+     */
+    @Output() pageChange = new EventEmitter<number>();
 
     /**
      * The number of items in total, to manage with pagination in case that this.local is false
@@ -146,7 +155,6 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
      * @type integer
      */
     @Input() totalItems: number;
-
 
     /**
      * True if the items can be sorted.
@@ -157,21 +165,20 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     @Input() sortable = true;
 
     /**
-     * The current order key
+     * The current sort key
      * @prop field
      * @prop dir
-     * @see {@link NtsDataOrder}
-     * @type {NtsDataOrder}
+     * @see {@link NtsDataSort}
+     * @type {NtsDataSort}
      */
-    @Input() order: INtsDataOrder = { field: null, dir: false };
+    @Input() sort: INtsDataSort = { field: null, dir: false };
 
     /**
      *
-     * @event NtsDatagridComponent#orderChange
-     * @type {INtsDataOrder}
+     * @event NtsDatagridComponent#sortChange
+     * @type {INtsDataSort}
      */
-    @Output() orderChange: EventEmitter<INtsDataOrder> = new EventEmitter<INtsDataOrder>();
-    orderKey = null;
+    @Output() sortChange: EventEmitter<INtsDataSort> = new EventEmitter<INtsDataSort>();
 
     /**
      * Emits an event when a cell is clicked
@@ -195,6 +202,11 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
 
     ngOnChanges(changes) {
         if (changes.data) { this.updateData(); }
+
+        if (changes.local && !this.local) {
+            this.localPage = -1;
+            this.localSort = null;
+        }
     }
     /**
      * Initialize the children elements got from the content
@@ -205,20 +217,27 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     }
 
     /**
-     * @param {any} column The field selected to order the items
+     * @param {any} column The field selected to sort the items
      */
-    onOrderBy(column) {
+    onSortBy(column) {
         if (column.sortable === false || column.sortable === undefined && this.sortable === false) { return; }
-        if (this.order.field === column.field) {
-            this.order.dir = !this.order.dir;
+
+        if (this.sort.field === column.field) {
+            if (this.sort.dir) {
+                this.sort.field = null;
+                this.sort.dir = false;
+            } else {
+                this.sort.dir = true;
+            }
         } else {
-            this.order.field = column.field;
-            this.order.dir = false;
+            this.sort.field = column.field;
+            this.sort.dir = false;
         }
         if (this.local) {
-            this.orderKey = (this.order.dir ? '+' : '-') + this.order.field;
+            this.localSort = this.sort.field ? ((this.sort.dir ? '+' : '-') + this.sort.field) : null;
         }
-        this.orderChange.emit(this.order);
+        this.onPageChange(0);
+        this.sortChange.emit(this.sort);
     }
 
     /**
@@ -229,22 +248,24 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     }
 
     /**
+     * Fired when the user clicks on the checkbox of the header
      * Selects or unselects all the items keeping the consistency of the data stores
      *
      * @param {boolean} value If true: select, else: unselect
      */
-    selectAll(value: boolean) {
+    onSelectAll(value: boolean) {
         this.dataSelected = value ? [...this.dataView] : [];
         this.dataView.forEach(id => this.dataSource[id].selected = value);
     }
 
     /**
+     * Fired when the user clicks on a checkbox of a row
      * Selects or unselects an items keeping the consistency of the data stores
      *
      * @param {string} id The ID o the item to select/unselect
      * @param {boolean} [value=true] If true: select, else: unselect
      */
-    selectItem(id: string, value: boolean = true) {
+    onSelectItem(id: string, value: boolean = true) {
         const index = this.dataSelected.indexOf(id);
         if (value && index === -1) {
             this.dataSelected.push(id);
@@ -252,6 +273,19 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
             this.dataSelected.splice(index, 1);
         }
         this.dataSource[id].selected = value;
+    }
+
+    /**
+     * Fired when the user change the current page through the paginator
+     *
+     * @param {number} page
+     */
+    onPageChange(page: number) {
+        if (this.local) {
+            this.localPage = page;
+        }
+        this.page = page;
+        this.pageChange.emit(page);
     }
 
     /**

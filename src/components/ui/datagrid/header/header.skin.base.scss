@@ -48,7 +48,7 @@ nts-datagrid-header {
                 right: $basic-padding / 4;
                 bottom: 0;
             }
-            &.order-asc {
+            &.sort-asc {
                 span {
                     color: $black;
                 }
@@ -56,7 +56,7 @@ nts-datagrid-header {
                     background-image: url('../assets/img/sort_asc.png');
                 }
             }
-            &.order-desc {
+            &.sort-desc {
                 span {
                     color: $black;
                 }

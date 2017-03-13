@@ -1,12 +1,12 @@
-<nts-datagrid-header [columns]="columns"> </nts-datagrid-header>
+<nts-datagrid-header> </nts-datagrid-header>
 <nts-datagrid-row
-    *ngFor="let row of dataView | fillMap : dataSource | order : orderKey | paginate : pageable ? page : -1 : pageSize ; let i = index;"
+    *ngFor="let row of dataView | fillMap : dataSource | order : localSort | paginate : (pageable ? localPage : -1) : pageSize ; let i = index;"
     [selectable]="selectable"
     [box]="true"
     [selected]="row.selected"
     [highlight]="highlightRow"
-    (selectedChange)="selectItem(row.id, $event)"
-    (click)="rowClick.emit({i: i, row: row})"
+    (selectedChange)="onSelectItem(row.id, $event)"
+    (click)="rowClick.emit({i: i + page * pageSize, row: row})"
 >
     <ng-container *ngIf="!customRow">
         <nts-datagrid-cell
@@ -33,7 +33,8 @@
 <nts-paginator
     *ngIf="pageable && pageSize < (local ? dataView.length : totalItems)"
     [totalElements]="local ? dataView.length : totalItems"
-    [pageSize]="pageSize"
-    [(selected)]="page"
+    [pageSize]="pageSize || (local ? 10 : dataView.length)"
+    [selected]="page"
+    (selectedChange)="onPageChange($event)"
 >
 </nts-paginator>

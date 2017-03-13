@@ -7,11 +7,11 @@ export class NtsOrderPipe implements PipeTransform {
 
     transform(input: any, config: Array<string> | string = '+'): any {
         if (!Array.isArray(input)) { return input; }
-        if (!config || config === '+') { return input.sort(); }
-        if (config === '-') { return input.sort().reverse(); }
+        if (!config || config === '+') { return [...input.sort()]; }
+        if (config === '-') { return [...input.sort().reverse()]; }
 
         if (Array.isArray(config) && config.length > 1) {
-            return input.sort((a, b) => {
+            const orderedInput = input.sort((a, b) => {
                 for (const rawProp of config) {
                     const desc = this.isDesc(rawProp);
                     const prop = this.cleanProp(rawProp);
@@ -21,6 +21,7 @@ export class NtsOrderPipe implements PipeTransform {
                 }
                 return 0;
             });
+            return [...orderedInput];
         }
         const rawProp = !Array.isArray(config) ? config : config[0];
         const desc = this.isDesc(rawProp);

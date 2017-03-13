@@ -1,7 +1,5 @@
 import { Component, ElementRef, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
 
-import { removeHostElement } from '../../../../utils';
-
 /**
  *
  * @author Alvaro Yuste
@@ -19,9 +17,11 @@ export class NtsDatagridRowComponent implements OnInit {
     @HostBinding('class.selected')
     @Input() selected = false;
 
+    @HostBinding('class.box')
+    @Input() box = false;
+
     @Output() selectedChange = new EventEmitter();
     @Input() selectable = false;
-    @Input() box = false;
 
     @Input()
     @HostBinding('class.highlight')
@@ -30,9 +30,6 @@ export class NtsDatagridRowComponent implements OnInit {
     constructor(private element: ElementRef) { }
 
     ngOnInit() {
-        if (!this.box) {
-            removeHostElement(this.element.nativeElement);
-        }
     }
 
 }

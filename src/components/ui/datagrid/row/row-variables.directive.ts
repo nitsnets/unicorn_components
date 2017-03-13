@@ -11,7 +11,5 @@ export class NtsDatagridRowDirective implements AfterViewInit {
 
     constructor(public templateRef: TemplateRef<any>) { }
 
-    ngAfterViewInit() {
-        console.log(this.rowView);
-    }
+    ngAfterViewInit() { }
 }

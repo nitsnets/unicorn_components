@@ -1,9 +1,14 @@
 nts-datagrid-row {
     overflow: hidden;
-    display: flex;
     align-items: stretch;
     transition: 200ms ease background-color;
 
+    display: flex;
+    flex: 1;
+
+    &.box {
+        flex: initial;
+    }
     &.highlight:hover {
         background-color: $alpha-black-lighter;
     }
