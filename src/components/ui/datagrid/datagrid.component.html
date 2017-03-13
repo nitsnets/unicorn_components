@@ -1,6 +1,6 @@
 <nts-datagrid-header [columns]="columns"> </nts-datagrid-header>
 <nts-datagrid-row
-    *ngFor="let row of dataView | fillMap : dataSource | order : orderKey; let i = index;"
+    *ngFor="let row of dataView | fillMap : dataSource | order : orderKey | paginate : pageable ? page : -1 : pageSize ; let i = index;"
     [selectable]="selectable"
     [box]="true"
     [selected]="row.selected"
@@ -27,3 +27,13 @@
         <template [ngTemplateOutlet]="customRow" [ngOutletContext]="{ $implicit: row, i: i }"> </template>
     </ng-container>
 </nts-datagrid-row>
+
+<nts-separator></nts-separator>
+
+<nts-paginator
+    *ngIf="pageable && pageSize < (local ? dataView.length : totalItems)"
+    [totalElements]="local ? dataView.length : totalItems"
+    [pageSize]="pageSize"
+    [(selected)]="page"
+>
+</nts-paginator>

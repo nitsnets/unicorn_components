@@ -120,6 +120,35 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     @Input() selectable = false;
 
     /**
+     * True if the items can be divided in pages
+     * @type boolean
+     * @default false
+     */
+    @Input() pageable = false;
+
+    /**
+     * The number of items per page
+     * @type integer
+     * @default 10
+     */
+    @Input() pageSize = 10;
+
+    /**
+     * The active page index
+     * @type integer
+     * @default 0
+     */
+    @Input() page = 0;
+
+    /**
+     * The number of items in total, to manage with pagination in case that this.local is false
+     * @see {@link this.local}
+     * @type integer
+     */
+    @Input() totalItems: number;
+
+
+    /**
      * True if the items can be sorted.
      * This can be overriden at column level.
      * @type boolean

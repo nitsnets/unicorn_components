@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 
-const pagesToShow = 4;
+const pagesWindow = 4;
 
 @Component({
     selector: 'nts-paginator',
@@ -9,9 +9,9 @@ const pagesToShow = 4;
 })
 export class NtsPaginatorComponent implements OnChanges {
     @Input() totalElements: number;
-    @Input() pageSize: number = 10;
+    @Input() pageSize = 10;
 
-    @Input() selected: number = 0;
+    @Input() selected = 0;
     @Output() selectedChange = new EventEmitter<number>();
 
     min = Math.min;
@@ -39,27 +39,26 @@ export class NtsPaginatorComponent implements OnChanges {
         this.selectPage(this.selected - 1);
     }
     private refreshPagesToShow() {
-        let pages = [];
-        let begin = 0;
-        let end = this.pagesCount - 1;
+        const pages = [];
+        const begin = 0;
+        const end = this.pagesCount - 1;
+
         // The window of middle pages is bounded by:
-        let first = Math.max(begin, Math.min(this.pagesCount - pagesToShow, this.selected - Math.ceil((pagesToShow - 1) / 2)));
-        let last = Math.min(end, first + pagesToShow - 1);
+        const first = Math.max(begin, Math.min(this.pagesCount - pagesWindow - 2, this.selected - Math.ceil((pagesWindow - 1) / 2)));
+        const last = Math.min(end, Math.max(begin + pagesWindow + 1, first + pagesWindow - 1));
 
         // Add to array the first page, the null (...),
-        if (first > begin + 1) {
-            pages.push(begin, null);
-        } else if (first > begin) {
-            pages.push(begin);
-        }
+        if (first > begin) { pages.push(begin); }
+        if (first > begin + 2) { pages.push(null); }
+        if (first === begin + 2) { pages.push(begin + 1); }
+
         // the window of middle pages,
         for (let i = first; i <= last; i++) { pages.push(i); }
+
         // the null (...) and the last page
-        if (last < end - 1) {
-            pages.push(null, end);
-        } else if (last < end) {
-            pages.push(end);
-        }
+        if (last === end - 2) { pages.push(end - 1); }
+        if (last < end - 2) { pages.push(null); }
+        if (last < end) { pages.push(end); }
 
         this.pages = pages;
     }

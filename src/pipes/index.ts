@@ -6,9 +6,10 @@ import { FormatTimePipe } from './format-time.pipe';
 import { HighlightPipe } from './highlight.pipe';
 import { NtsFillMapPipe } from './fill-map.pipe';
 import { NtsOrderPipe } from './order.pipe';
+import { NtsPaginatePipe } from './paginate.pipe';
 import { ObjToArrayPipe } from './obj-to-array.pipe';
 
 export const NTS_PIPES = [
     FilterPipe, HighlightPipe, ObjToArrayPipe, FormatDatePipe, FormatTimePipe, FormatDaterangePipe,
-    FormatPipe, NtsOrderPipe, NtsFillMapPipe
+    FormatPipe, NtsOrderPipe, NtsFillMapPipe, NtsPaginatePipe
 ];

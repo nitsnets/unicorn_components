@@ -1,5 +1,7 @@
 nts-paginator {
   .container {
+    justify-content: center;
+
     @include mq($from: sm) {
       justify-content: space-between;
     }
@@ -20,6 +22,7 @@ nts-paginator {
   }
 
   .paginator-icon {
+    cursor: pointer;
     padding: $basic-padding / 3;
     opacity: 0.35;
 
@@ -28,6 +31,10 @@ nts-paginator {
     }
   }
   .counter {
+    display: none;
+    text-align: left;
+    margin: 0;
+
     @include mq($from: sm) {
       display: inline-block;
     }

@@ -1,24 +1,20 @@
-:host {
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .pages {
+.container {
     display: flex;
     align-items: center;
-  }
+}
+.pages {
+    display: flex;
+    align-items: center;
+}
 
-  .page {
+.page {
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    user-select: none;
+}
 
-  }
-
-  .counter {
-    display: none;
-    text-align: left;
-  }
+.paginator-icon {
+    cursor: pointer;
 }
