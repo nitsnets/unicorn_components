@@ -11,13 +11,13 @@
             *ngFor="let column of datagrid.columns"
             [ngClass]="{
                 'sortable': column.isSortable(datagrid.sortable),
-                'order-asc': order.field === column.field && order.dir === false,
-                'order-desc': order.field === column.field && order.dir === true
+                'order-asc': datagrid.order.field === column.field && datagrid.order.dir === false,
+                'order-desc': datagrid.order.field === column.field && datagrid.order.dir === true
             }"
             [width]="column.width || 1"
             [highlight]="column.isSortable(datagrid.sortable) ? true : false"
             [style.text-align]="column.formatOptions?.align || 'left'"
-            (click)="orderChange.emit(column)"
+            (click)="datagrid.onOrderBy(column)"
         >
             <span [innerHtml]="column.title"></span>
         </nts-datagrid-cell>

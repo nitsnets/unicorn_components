@@ -23,6 +23,10 @@ export class NtsDatagridRowComponent implements OnInit {
     @Input() selectable = false;
     @Input() box = false;
 
+    @Input()
+    @HostBinding('class.highlight')
+    highlight;
+
     constructor(private element: ElementRef) { }
 
     ngOnInit() {

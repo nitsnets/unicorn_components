@@ -68,6 +68,27 @@ export class DemoComponent {
             progress: 0.75,
             alerts: 1,
             img: 'http://placekitten.com/g/65/65'
+        },
+        {
+            name: 'Beatriz',
+            birth: '1963-04-24',
+            progress: 0.80,
+            alerts: 0,
+            img: 'http://placekitten.com/g/65/65'
+        },
+        {
+            name: 'Alicia',
+            birth: '1992-03-24',
+            progress: 0.15,
+            alerts: 6,
+            img: 'http://placekitten.com/g/65/65'
+        },
+        {
+            name: 'Concha',
+            birth: '1978-12-07',
+            progress: 0.40,
+            alerts: 1,
+            img: 'http://placekitten.com/g/65/65'
         }
     ];
 
@@ -122,5 +143,8 @@ export class DemoComponent {
 
     onCellClick(cell) {
         console.log('Cell clicked', cell);
+    }
+    onRowClick(row) {
+        console.log('Row clicked', row);
     }
 }

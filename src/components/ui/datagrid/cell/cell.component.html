@@ -1,1 +1,33 @@
-<ng-content></ng-content>
+<ng-container *ngIf="!customCell">
+    <ng-container *ngIf="value" [ngSwitch]="format">
+        <ng-container *ngSwitchCase="'text'">
+            {{value}}
+        </ng-container>
+        <ng-container *ngSwitchCase="'html'">
+            <div [innerHtml]="value"></div>
+        </ng-container>
+        <ng-container *ngSwitchCase="'image'">
+            <img [src]="value">
+        </ng-container>
+        <ng-container *ngSwitchCase="'progress'">
+            <nts-progress [value]="value" [color]="options?.color" [total]="options?.total"></nts-progress>
+        </ng-container>
+        <ng-container *ngSwitchCase="'badge'">
+            <nts-badge [label]="value" [color]="options?.color"></nts-badge>
+        </ng-container>
+        <!-- You can add a new format cases here
+        <ng-container *ngSwitchCase="'yourCase'">
+            The content of your custom cell.
+            The value of the cell is at {{value}} and the options at {{options}}
+        </ng-container>
+        -->
+
+        <ng-container *ngSwitchDefault>
+            {{value | format: format}}
+        </ng-container>
+    </ng-container>
+    <ng-content *ngIf="!value"></ng-content>
+</ng-container>
+<ng-container *ngIf="customCell">
+    <template [ngTemplateOutlet]="customCell" [ngOutletContext]="context"> </template>
+</ng-container>

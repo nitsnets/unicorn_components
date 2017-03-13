@@ -1,7 +1,7 @@
-import { Component, ElementRef, HostBinding, Input, OnInit, Optional } from '@angular/core';
+import { Component, ElementRef, HostBinding, HostListener, Input, OnInit, Optional } from '@angular/core';
 
+import { NtsDatagridColumnComponent } from './../column/column.component';
 import { NtsDatagridComponent } from '../datagrid.component';
-import { removeHostElement } from '../../../../utils';
 
 @Component({
     selector: 'nts-datagrid-cell',
@@ -16,13 +16,32 @@ export class NtsDatagridCellComponent implements OnInit {
     @HostBinding('style.flex-grow')
     width = 1;
 
+    @Input() clickPropagation: boolean;
+
+    @Input() customCell;
+    @Input() format;
+    @Input() options;
+    @Input() value;
+    @Input() context;
+
     selectable = false;
+
+    @HostListener('click', ['$event'])
+    onCellClicked(event: MouseEvent) {
+        this.datagrid.cellClick.emit(this.context);
+        if (this.clickPropagation === false) {
+            event.stopPropagation();
+        }
+    }
 
     constructor(
         private element: ElementRef,
-        private datagrid: NtsDatagridComponent
+        private datagrid: NtsDatagridComponent,
+
+        // If not null indicates that it is custom cell inside a column
+        @Optional() private column: NtsDatagridColumnComponent
     ) {
-        this.highlight = this.datagrid.highlight;
+        this.highlight = column ? false : this.datagrid.highlightCell;
     }
 
     ngOnInit() {

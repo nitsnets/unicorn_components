@@ -427,7 +427,7 @@
                 ################################################################## -->
                 <h3>Data</h3>
                 <nts-separator></nts-separator>
-
+                <!--
                 <h5>Simple datagrids</h5>
                 <nts-datagrid [data]="data" (cellClick)="onCellClick($event)">
                     <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>
@@ -437,7 +437,7 @@
                 </nts-datagrid>
 
                 <h5>Cell formats</h5>
-                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)" [sortable]="false">
+                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)" [sortable]="false" [highlightRow]="false">
                     <nts-datagrid-column title="First name" field="name" width="3"></nts-datagrid-column>
                     <nts-datagrid-column title="Date of birth" field="birth" format="date"></nts-datagrid-column>
                     <nts-datagrid-column title="Progress" field="progress" format="progress" [formatOptions]="{total: 1, color: 'success'}"></nts-datagrid-column>
@@ -445,7 +445,7 @@
                 </nts-datagrid>
 
                 <h5>Custom cells</h5>
-                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)" [highlight]="true">
+                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)" [highlightCell]="true" [highlightRow]="false">
                     <nts-datagrid-column field="img" format="image" [sortable]="false" width="0.2"></nts-datagrid-column>
                     <nts-datagrid-column title="First name" field="name">
                         <nts-datagrid-cell *cellVariables="let user">
@@ -453,7 +453,7 @@
                             <p>{{user.birth | formatDate : 'ddd DD MMM, YYYY'}}</p>
                         </nts-datagrid-cell>
                     </nts-datagrid-column>
-                    <nts-datagrid-column title="Date of birth" field="birth" [highlight]="false">
+                    <nts-datagrid-column title="Date of birth" field="birth" [highlightCell]="false" [clickPropagation]="false">
                         <nts-datagrid-cell *cellVariables="let user">
                             <nts-icon icon="calendar"></nts-icon>
                             <span>{{user.birth | formatDate : 'ddd DD MMM, YYYY'}}</span>
@@ -462,17 +462,8 @@
                     <nts-datagrid-column title="Progress" field="progress" format="progress" [formatOptions]="{total: 1, color: 'success'}"></nts-datagrid-column>
                     <nts-datagrid-column title="Alerts" field="alerts" format="badge" [formatOptions]="{color: 'error'}" [sortable]="false" width="0.15"></nts-datagrid-column>
                 </nts-datagrid>
-
-                <h5>Selectable datagrids</h5>
-                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)" [selectable]="true">
-                    <nts-datagrid-column title="First name" field="name" [highlight]="true"></nts-datagrid-column>
-                    <nts-datagrid-column title="Date of birth" field="birth"></nts-datagrid-column>
-                    <nts-datagrid-column title="Progress" field="progress" format="percentage"></nts-datagrid-column>
-                    <nts-datagrid-column title="Alerts" field="alerts" [sortable]="false"></nts-datagrid-column>
-                </nts-datagrid>
-
                 <h5>Custom rows</h5>
-                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)" [highlight]="true">
+                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)" [highlightCell]="true">
                     <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>
                     <nts-datagrid-column title="Date of birth" field="birth"></nts-datagrid-column>
                     <nts-datagrid-column title="Progress" field="progress"></nts-datagrid-column>
@@ -487,6 +478,22 @@
                         </nts-datagrid-cell>
                     </nts-datagrid-row>
                 </nts-datagrid>
+                <h5>Selectable datagrids</h5>
+                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)" [selectable]="true">
+                    <nts-datagrid-column title="First name" field="name" [highlightCell]="true"></nts-datagrid-column>
+                    <nts-datagrid-column title="Date of birth" field="birth"></nts-datagrid-column>
+                    <nts-datagrid-column title="Progress" field="progress" format="percentage"></nts-datagrid-column>
+                    <nts-datagrid-column title="Alerts" field="alerts" [sortable]="false"></nts-datagrid-column>
+                </nts-datagrid>
+-->
+                <h5>Selectable datagrids</h5>
+                <nts-datagrid [data]="data" (cellClick)="onCellClick($event)" (rowClick)="onRowClick($event)" [selectable]="true">
+                    <nts-datagrid-column title="First name" field="name" [highlightCell]="true"></nts-datagrid-column>
+                    <nts-datagrid-column title="Date of birth" field="birth"></nts-datagrid-column>
+                    <nts-datagrid-column title="Progress" field="progress" format="percentage"></nts-datagrid-column>
+                    <nts-datagrid-column title="Alerts" field="alerts" [sortable]="false"></nts-datagrid-column>
+                </nts-datagrid>
+
             </ng-container>
             <ng-container *ngIf="tabSelected === 'other'">
 

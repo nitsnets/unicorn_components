@@ -1,5 +1,9 @@
 nts-datagrid-header {
+    display: block;
+
     nts-row {
+        transition: 200ms ease background-color;
+
         &.selected {
             background-color: $color-primary-light;
             span {color: $color-primary; }

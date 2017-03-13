@@ -11,9 +11,10 @@ export class NtsDatagridColumnComponent implements AfterContentInit {
     @Input() field: string = null;
     @Input() width = 1;
     @Input() sortable;
-    @Input() highlight;
+    @Input() highlightCell;
     @Input() format = 'text';
     @Input() formatOptions: Object = null;
+    @Input() clickPropagation = true;
 
     @ContentChild(NtsDatagridCellDirective) customCellDirective: NtsDatagridCellDirective = null;
 

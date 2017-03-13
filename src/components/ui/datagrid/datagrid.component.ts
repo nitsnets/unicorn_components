@@ -77,6 +77,13 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     dataView: string[] = [];
 
     /**
+     * True if any item has a random generated id
+     * @type {boolean}
+     * @default false
+     */
+    randomIds = false;
+
+    /**
      * The input where de items get into the component
      * @type {Array<object>}
      */
@@ -90,12 +97,20 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     @Output() dataChange = new EventEmitter<Array<Object>>();
 
     /**
-     * Specifies if the cells must highlight on hover.
+     * Specifies if the cells must Cell on hover.
      * This can be overriden at column or cell level.
      * @type boolean
      * @default false
      */
-    @Input() highlight = false;
+    @Input() highlightCell = false;
+
+    /**
+     * Specifies if the cells must Cell on hover.
+     * @type boolean
+     * @default true
+     */
+    @Input() highlightRow = true;
+
 
     /**
      * True if the items can be selected
@@ -218,6 +233,7 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     private updateData() {
         const dataSource = {};
         const dataView = [];
+        this.randomIds = false;
 
         if (this.data && this.data.length) {
             this.data.forEach(el => {
@@ -225,6 +241,7 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
                 if (!el['id']) {
                     el['id'] = id;
                     el['randomId'] = true;
+                    this.randomIds = true;
                 }
                 dataView.push(id);
                 dataSource[id] = deepClone(el);

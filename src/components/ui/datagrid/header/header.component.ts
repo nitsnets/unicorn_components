@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { INtsDataOrder, NtsDatagridComponent } from './../datagrid.component';
 
 import { NtsDatagridColumnComponent } from '../column/column.component';
+import { NtsDatagridComponent } from './../datagrid.component';
 
 @Component({
     selector: 'nts-datagrid-header',
@@ -9,8 +9,7 @@ import { NtsDatagridColumnComponent } from '../column/column.component';
 })
 export class NtsDatagridHeaderComponent implements OnInit {
     @Input() columns: NtsDatagridColumnComponent[];
-    @Input() order: INtsDataOrder = { field: null, dir: false };
-    @Output() orderChange = new EventEmitter<INtsDataOrder>();
+    @Output() orderChange = new EventEmitter();
 
     constructor(private datagrid: NtsDatagridComponent) { }
 

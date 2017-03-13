@@ -4,12 +4,12 @@ nts-datagrid-row {
     align-items: stretch;
     transition: 200ms ease background-color;
 
-    &:hover {
+    &.highlight:hover {
         background-color: $alpha-black-lighter;
     }
     &.selected {
         background-color: $color-primary-light;
-        &:hover {
+        &.highlight:hover {
             background-color: darken($color-primary-light, 2.5%);
         }
         .select-cell {
