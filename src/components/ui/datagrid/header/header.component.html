@@ -20,7 +20,6 @@
             }"
             [width]="column.width || 1"
             [highlight]="column.isSortable(datagrid.sortable) ? true : false"
-            [style.text-align]="column.formatOptions?.align || 'left'"
             (click)="datagrid.onSortBy(column)"
         >
             <span [innerHtml]="column.title"></span>

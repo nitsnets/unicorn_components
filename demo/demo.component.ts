@@ -52,6 +52,8 @@ export class DemoComponent {
         { name: 'Suso', birth: '1985-09-07', progress: 0.75, alerts: '1', img: 'http://placekitten.com/g/65/65' },
         { name: 'Beatriz', birth: '1963-04-24', progress: 0.80, alerts: '0', img: 'http://placekitten.com/g/65/65' }
     ];
+
+    // try benchmark with 15K items: http://alberto.servidorbeta.com/productos.json
     longData = [
         { name: 'Alfredo', birth: '1992-12-17', progress: 0.25, alerts: '2', img: 'http://placekitten.com/g/65/65' },
         { name: 'Rafael', birth: '1995-06-28', progress: 0.5, alerts: '3', img: 'http://placekitten.com/g/65/65' },

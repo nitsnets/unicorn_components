@@ -421,10 +421,10 @@
                 </div>
             </ng-container>
             <ng-container *ngIf="tabSelected === 'data'">
-
                 <!-- ##################################################################
                 #############################  Data  ############################
                 ################################################################## -->
+<!--
                 <h3>Data</h3>
                 <nts-separator></nts-separator>
 
@@ -485,6 +485,7 @@
                         </nts-datagrid-cell>
                     </nts-datagrid-row>
                 </nts-datagrid>
+
                 <h5>Selectable and pageable datagrids</h5>
                 <nts-datagrid [data]="longData" (cellClick)="log('Cell clicked', $event)" [selectable]="true" [pageable]="true" [pageSize]="6">
                     <nts-datagrid-column title="First name" field="name" [highlightCell]="true"></nts-datagrid-column>
@@ -492,9 +493,16 @@
                     <nts-datagrid-column title="Progress" field="progress" format="percentage"></nts-datagrid-column>
                     <nts-datagrid-column title="Alerts" field="alerts" [sortable]="false"></nts-datagrid-column>
                 </nts-datagrid>
+-->
+                <h5>Datagrids with filters</h5>
 
-                <h5>Pageable datagrids</h5>
-                <nts-datagrid [data]="data" (cellClick)="log('Cell clicked', $event)" [pageable]="true" [local]="false" [totalItems]="600" (pageChange)="log('Page change', $event)">
+                <nts-filters>
+                        <nts-input></nts-input>
+                        <nts-input></nts-input>
+                        <nts-input></nts-input>
+                        <nts-select></nts-select>
+                </nts-filters>
+                <nts-datagrid [data]="longData" [pageable]="true" [selectable]="true" pageSize="8">
                     <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>
                     <nts-datagrid-column title="Date of birth" field="birth" format="date"></nts-datagrid-column>
                     <nts-datagrid-column title="Progress" field="progress" format="percentage"></nts-datagrid-column>

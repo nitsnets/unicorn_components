@@ -30,6 +30,10 @@ import { NtsDatePickerComponent } from './forms/date-picker/date-picker.componen
 import { NtsDaterangePickerComponent } from './forms/daterange-picker/daterange-picker.component';
 import { NtsDatetimePickerComponent } from './forms/datetime-picker/datetime-picker.component';
 import { NtsFaceComponent } from './utils/face/face.component';
+import { NtsFilterInputComponent } from './ui/filters/filter-input/filter-input.component';
+import { NtsFiltersAdvancedComponent } from './ui/filters/filters-advanced/filters-advanced.component';
+import { NtsFiltersComponent } from './ui/filters/filters.component';
+import { NtsFiltersMainComponent } from './ui/filters/filters-main/filters-main.component';
 import { NtsHeaderComponent } from './containers/header/header.component';
 import { NtsIconComponent } from './utils/icon/icon.component';
 import { NtsImagePickerComponent } from './forms/image-picker/image-picker.component';
@@ -54,7 +58,6 @@ import { NtsToggleComponent } from './forms/toggle/toggle.component';
 // import { CodeEditorComponent } from './forms/code/code.component';
 
 
-
 export const NTS_COMPONENTS = [
     NtsPopupComponent, NtsPopupTriggerDirective, NtsPopupContainerComponent, NtsMenuComponent, NtsMenuTriggerDirective,
     NtsMenuContainerComponent, NtsMenuItemComponent, NtsInputComponent, NtsCheckboxComponent, NtsRadioComponent,
@@ -65,5 +68,6 @@ export const NTS_COMPONENTS = [
     NtsTabsComponent, NtsChartComponent, NtsChartLegendComponent, NtsChartTooltipComponent, NtsRowSpacerComponent, NtsToggleComponent,
     NtsDatePickerComponent, NtsTimePickerComponent, NtsButtonMenuComponent, NtsButtonPopupComponent, NtsButtonFileComponent,
     NtsButtonHeaderComponent, NtsDatagridComponent, NtsDatagridColumnComponent, NtsDatagridRowComponent, NtsDatagridRowDirective,
-    NtsDatagridCellComponent, NtsDatagridCellDirective, NtsDatagridHeaderComponent // CodeEditorComponent
+    NtsDatagridCellComponent, NtsDatagridCellDirective, NtsDatagridHeaderComponent, NtsFiltersComponent, NtsFiltersAdvancedComponent,
+    NtsFiltersMainComponent, NtsFilterInputComponent // CodeEditorComponent
 ];

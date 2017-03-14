@@ -1,6 +1,6 @@
 <nts-datagrid-header> </nts-datagrid-header>
 <nts-datagrid-row
-    *ngFor="let row of dataView | fillMap : dataSource | order : localSort | paginate : (pageable ? localPage : -1) : pageSize ; let i = index;"
+    *ngFor="let row of dataView | fillMap : dataSource | sort : localSort | paginate : (pageable ? localPage : -1) : pageSize ; let i = index;"
     [selectable]="selectable"
     [box]="true"
     [selected]="row.selected"

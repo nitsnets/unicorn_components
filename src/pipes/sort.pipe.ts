@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name: 'order'
+    name: 'sort'
 })
-export class NtsOrderPipe implements PipeTransform {
+export class NtsSortPipe implements PipeTransform {
 
     transform(input: any, config: Array<string> | string = '+'): any {
         if (!Array.isArray(input)) { return input; }
@@ -11,7 +11,7 @@ export class NtsOrderPipe implements PipeTransform {
         if (config === '-') { return [...input.sort().reverse()]; }
 
         if (Array.isArray(config) && config.length > 1) {
-            const orderedInput = input.sort((a, b) => {
+            const sortedInput = input.sort((a, b) => {
                 for (const rawProp of config) {
                     const desc = this.isDesc(rawProp);
                     const prop = this.cleanProp(rawProp);
@@ -21,15 +21,15 @@ export class NtsOrderPipe implements PipeTransform {
                 }
                 return 0;
             });
-            return [...orderedInput];
+            return [...sortedInput];
         }
         const rawProp = !Array.isArray(config) ? config : config[0];
         const desc = this.isDesc(rawProp);
         const prop: string = this.cleanProp(rawProp);
-        const orderedInput = input.sort((a, b) => {
+        const sortedInput = input.sort((a, b) => {
             return this.compare(a[prop], b[prop], desc);
         });
-        return [...orderedInput];
+        return [...sortedInput];
     }
     private cleanProp(key: string) {
         return key.startsWith('+') || key.startsWith('-') ? key.substr(1) : key;

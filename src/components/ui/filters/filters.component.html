@@ -1,0 +1,11 @@
+<ng-container *ngIf="!advFilters">
+    <ng-content *ngIf="!advFilters"></ng-content>
+</ng-container>
+<ng-container *ngIf="advFilters">
+    <nts-row>
+        <ng-content select="nts-filters-main" *ngIf="advFilters"> </ng-content>
+    </nts-row>
+    <nts-row>
+        <ng-content select="nts-filters-advanced" *ngIf="advFilters"> </ng-content>
+    </nts-row>
+</ng-container>

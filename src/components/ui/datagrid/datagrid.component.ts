@@ -100,21 +100,6 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     @Output() dataChange = new EventEmitter<Array<Object>>();
 
     /**
-     * Specifies if the cells must Cell on hover.
-     * This can be overriden at column or cell level.
-     * @type boolean
-     * @default false
-     */
-    @Input() highlightCell = false;
-
-    /**
-     * Specifies if the cells must Cell on hover.
-     * @type boolean
-     * @default true
-     */
-    @Input() highlightRow = true;
-
-    /**
      * True if the items can be selected
      * @type boolean
      * @default false
@@ -179,6 +164,21 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
      * @type {INtsDataSort}
      */
     @Output() sortChange: EventEmitter<INtsDataSort> = new EventEmitter<INtsDataSort>();
+
+    /**
+     * Specifies if the cells must Cell on hover.
+     * This can be overriden at column or cell level.
+     * @type boolean
+     * @default false
+     */
+    @Input() highlightCell = false;
+
+    /**
+     * Specifies if the cells must Cell on hover.
+     * @type boolean
+     * @default true
+     */
+    @Input() highlightRow = true;
 
     /**
      * Emits an event when a cell is clicked
