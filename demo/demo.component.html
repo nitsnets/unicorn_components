@@ -494,13 +494,26 @@
                     <nts-datagrid-column title="Alerts" field="alerts" [sortable]="false"></nts-datagrid-column>
                 </nts-datagrid>
 -->
-                <h5>Datagrids with filters</h5>
-
-                <nts-filters>
-                        <nts-input></nts-input>
-                        <nts-input></nts-input>
-                        <nts-input></nts-input>
-                        <nts-select></nts-select>
+                <nts-filters persistent="myuniquekey">
+                    <nts-filters-main>
+                        <nts-input name="name" placeholder="First name" debounce="300"></nts-input>
+                        <nts-date-picker name="birth" placeholder="Date of birth"></nts-date-picker>
+                        <nts-select name="progress" placeholder="Progress" [options]="[
+                            {value: '0-24', label: '0 - 24%'},
+                            {value: '25-49', label: '25 - 49%'},
+                            {value: '50-74', label: '50 - 74%'},
+                            {value: '75-100', label: '75 - 100%'}
+                        ]" value="0-24"></nts-select>
+                        <nts-checkbox name="alerts" label="With alerts"></nts-checkbox>
+                    </nts-filters-main>
+                    <nts-filters-advanced>
+                        <nts-input name="extra1" placeholder="Extra filter 1" debounce="300"></nts-input>
+                        <nts-input name="extra2" placeholder="Extra filter 2" debounce="300"></nts-input>
+                        <nts-input name="extra3" placeholder="Extra filter 3" debounce="300"></nts-input>
+                        <nts-input name="extra4" placeholder="Extra filter 4" debounce="300"></nts-input>
+                        <nts-input name="extra5" placeholder="Extra filter 5" debounce="300"></nts-input>
+                        <nts-input name="extra6" placeholder="Extra filter 6" debounce="300"></nts-input>
+                    </nts-filters-advanced>
                 </nts-filters>
                 <nts-datagrid [data]="longData" [pageable]="true" [selectable]="true" pageSize="8">
                     <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>

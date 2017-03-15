@@ -2,6 +2,9 @@ nts-date-picker {
 
   .spacing { margin-right: $basic-padding / 2;}
 
+  .date-input-container {
+    line-height: $input-height;
+  }
   .date-controls-container {
     margin-top: $basic-padding / 2;
 

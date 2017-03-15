@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, ContentChild, ContentChildren, Input, QueryList } from '@angular/core';
+import { AfterContentInit, Component, ContentChild, ContentChildren, EventEmitter, Input, OnChanges, Output, QueryList } from '@angular/core';
 
 import { NtsButtonToggleComponent } from './../../forms/button-toggle/button-toggle.component';
 import { NtsCheckboxComponent } from './../../forms/checkbox/checkbox.component';
@@ -11,59 +11,167 @@ import { NtsRadioComponent } from '../../forms/radio/radio.component';
 import { NtsSelectComponent } from '../../forms/select/select.component';
 import { NtsTimePickerComponent } from './../../forms/time-picker/time-picker.component';
 import { NtsToggleComponent } from './../../forms/toggle/toggle.component';
+import { objEmpty } from '../../../utils';
 
 @Component({
     selector: 'nts-filters',
     templateUrl: './filters.component.html',
     styleUrls: ['./filters.component.scss']
 })
-export class NtsFiltersComponent implements AfterContentInit {
+export class NtsFiltersComponent implements AfterContentInit, OnChanges {
 
-    @Input() autofilter: 'onChange' | 'onBlur' | false = false;
+    @Input() autoFilter: 'onChange' | 'onBlur' | false = false;
     @Input() persistent: string = null;
     @Input() savable = false;
-    @Input() clearable = false;
+    @Input() clearable = true;
+
+    @Input() button: boolean;
+    @Input() buttonColor = 'primary';
+    @Input() buttonLabel = 'Apply';
+    @Input() buttonIcon = null;
 
     @ContentChild(NtsFiltersAdvancedComponent) advFiltersComp: NtsFiltersAdvancedComponent;
     @ContentChild(NtsFiltersMainComponent) mainFiltersComp: NtsFiltersMainComponent;
 
-    @ContentChildren(NtsInputComponent) inputsList: QueryList<NtsInputBaseComponent>;
-    @ContentChildren(NtsSelectComponent) selectsList: QueryList<NtsInputBaseComponent>;
-    @ContentChildren(NtsCheckboxComponent) checkboxList: QueryList<NtsInputBaseComponent>;
-    @ContentChildren(NtsButtonToggleComponent) btnToggleList: QueryList<NtsInputBaseComponent>;
-    @ContentChildren(NtsDatePickerComponent) datepickerList: QueryList<NtsInputBaseComponent>;
-    @ContentChildren(NtsRadioComponent) radioList: QueryList<NtsInputBaseComponent>;
-    @ContentChildren(NtsToggleComponent) toggleList: QueryList<NtsInputBaseComponent>;
-    @ContentChildren(NtsTimePickerComponent) timepickerList: QueryList<NtsInputBaseComponent>;
+    @ContentChildren(NtsInputComponent, { descendants: true }) inputsList: QueryList<NtsInputBaseComponent>;
+    @ContentChildren(NtsSelectComponent, { descendants: true }) selectsList: QueryList<NtsInputBaseComponent>;
+    @ContentChildren(NtsCheckboxComponent, { descendants: true }) checkboxList: QueryList<NtsInputBaseComponent>;
+    @ContentChildren(NtsButtonToggleComponent, { descendants: true }) btnToggleList: QueryList<NtsInputBaseComponent>;
+    @ContentChildren(NtsDatePickerComponent, { descendants: true }) datepickerList: QueryList<NtsInputBaseComponent>;
+    @ContentChildren(NtsRadioComponent, { descendants: true }) radioList: QueryList<NtsInputBaseComponent>;
+    @ContentChildren(NtsToggleComponent, { descendants: true }) toggleList: QueryList<NtsInputBaseComponent>;
+    @ContentChildren(NtsTimePickerComponent, { descendants: true }) timepickerList: QueryList<NtsInputBaseComponent>;
 
     mainFilters: NtsInputBaseComponent[];
     advFilters: NtsInputBaseComponent[];
+    filters: NtsInputBaseComponent[];
+
+    showButton = true;
+    showAdvanced = false;
+
+    _filter: { [key: string]: any } = {};
+
+    get filter(): { [key: string]: any } {
+        return this._filter;
+    }
+    @Input('filter')
+    set filter(value: { [key: string]: any }) {
+        this._filter = value;
+        this.updateNtsModels();
+    }
+
+    @Output() filterChange = new EventEmitter();
+
+    /**
+     * The number of button on the right side of the filters
+     *
+     * @type number
+     * @default 2
+     */
+    optionsCount = 2;
 
     ngAfterContentInit() {
-        /*
-        if (this.advFiltersComp && !this.mainFiltersComp) {
-            return console.warn('When using <nts-filters-advanced> you must include <nts-filters-main> beside it');
-        }
-        if (this.mainFiltersComp && this.filterInputsList.length) {
-            return console.warn('When using <nts-filters-main> you cannot include <nts-filter-input> at root');
-        }
-        */
-        const inputs = [
+
+        this.filters = [
+            ...this.radioList.toArray(),
+            ...this.toggleList.toArray(),
             ...this.inputsList.toArray(),
             ...this.selectsList.toArray(),
             ...this.checkboxList.toArray(),
             ...this.btnToggleList.toArray(),
             ...this.datepickerList.toArray(),
-            ...this.radioList.toArray(),
-            ...this.toggleList.toArray(),
             ...this.timepickerList.toArray()
         ];
+        this.mainFilters = this.mainFiltersComp ? this.mainFiltersComp.filters : null;
+        this.advFilters = this.advFiltersComp ? this.advFiltersComp.filters : null;
 
-        this.mainFilters = this.mainFiltersComp ? this.mainFiltersComp.inputs : inputs;
-        this.advFilters = this.advFiltersComp ? this.advFiltersComp.inputs : null;
+        if (this.advFilters && this.advFilters.length && (!this.mainFilters || !this.mainFilters.length)) {
+            return console.error('When using <nts-filters-advanced> you must include <nts-filters-main> beside it');
+        }
+        if (this.advFilters && this.advFilters.length && this.mainFilters.length + this.advFilters.length !== this.filters.length) {
+            return console.error('When using <nts-filters-main> & <nts-filters-advanced> you cannot include inputs at <nts-filters> root');
+        }
 
-        console.log(this.mainFilters);
-        console.log(this.advFilters);
+        this.filters.forEach(f => {
+            f.ntsModelChange.subscribe(value => this.onNtsModelChange(f.name, value, f.constructor.name));
+            f.ntsBlur.subscribe(() => this.onFilterBlur(f.name, f.constructor.name));
+        });
 
+        if (this.persistent) {
+            this.restoreFilter();
+        }
+
+    }
+
+    ngOnChanges(changes) {
+        if (changes.persistent && this.persistent && this.filters) {
+            this.restoreFilter();
+        }
+        if (changes.autoFilter || changes.clearable || changes.savable || this.showButton) {
+            let options = 0;
+            if (this.autoFilter === false && this.showButton !== false) { options++; }
+            if (this.clearable === true) { options++; }
+            if (this.savable === true) { options++; }
+            this.optionsCount = options;
+        }
+        if (changes.autoFilter && this.button === undefined) {
+            this.showButton = this.autoFilter === false ? true : false;
+        }
+    }
+
+    onFilterBlur(field: string, componentName: string) {
+        if (this.autoFilter === 'onBlur') {
+            this.doFilter();
+        }
+    }
+    onClear() {
+        this.filter = {};
+        this.doFilter();
+    }
+    onSave() {
+        this.filter = {};
+        this.doFilter();
+    }
+
+    isEmpty(): boolean {
+        return objEmpty(this.filter);
+    }
+
+    doFilter() {
+        this.filterChange.emit(this.filter);
+        if (this.persistent) { this.storeFilter(); }
+        console.log('Do filter', this.filter);
+    }
+    private storeFilter() {
+        localStorage.setItem(this.persistent, JSON.stringify(this.filter));
+    }
+    private restoreFilter() {
+        this.filter = JSON.parse(localStorage.getItem(this.persistent) || '{}');
+    }
+    private onNtsModelChange(field: string, value: any, type: string) {
+        this.filter[field] = value;
+        if (this.autoFilter === 'onChange') {
+            this.doFilter();
+        }
+    }
+    private setFilterField(field: string, value: any) {
+        const fil: NtsInputBaseComponent = this.filters.find(f => f.name === field);
+        if (!fil) { return; }
+        this.filter[field] = value;
+        fil.ntsModel = value;
+    }
+
+    private updateNtsModels() {
+        if (this.filters && (!this.advFilters || !this.advFilters.length) && (!this.mainFilters || !this.mainFilters.length)) {
+            this.filters.forEach(f => f.ntsModel = this.filter[f.name]);
+        } else if (this.advFilters && this.mainFilters) {
+            let anyAdvanced = false;
+            this.advFilters.forEach(f => {
+                f.ntsModel = this.filter[f.name];
+                if (this.filter[f.name]) { anyAdvanced = true; }
+            });
+            this.mainFilters.forEach(f => f.ntsModel = this.filter[f.name]);
+            this.showAdvanced = anyAdvanced;
+        }
     }
 }

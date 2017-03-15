@@ -1,20 +1,46 @@
 <div (clickOutside)="onClickOutside()">
-    <nts-input iconRight="caret" [placeholder]="placeholder" [name]="name" [icon]="icon" [label]="label" [clear]="clear" (keydown)="onKeyDown($event)"
-        (ntsFocus)="onFocus($event)" (ntsBlur)="onBlur($event)" [(ntsModel)]="search" (ntsModelChange)="onFilter($event)">
-    </nts-input>
+    <nts-input iconRight="caret"
+        [placeholder]="placeholder"
+        [name]="name"
+        [icon]="icon"
+        [label]="label"
+        [clear]="clear"
+        (keydown)="onKeyDown($event)"
+        (ntsFocus)="onFocus($event)"
+        (ntsBlur)="onBlur($event)"
+        [(ntsModel)]="search"
+        (ntsModelChange)="onFilter($event)"
+    > </nts-input>
 
     <ul class="options nospacing" *ngIf="areOptionsVisible">
-        <li *ngIf="multiple && !search" class="option" (click)="onSelectAll()" (mousedown)="onSelectingOption(true)" (mouseup)="onSelectingOption(false)">
+        <li *ngIf="multiple && !search"
+            class="option"
+            (click)="onSelectAll()"
+            (mousedown)="onSelectingOption(true)"
+            (mouseup)="onSelectingOption(false)"
+        >
             Select all
         </li>
-        <li *ngIf="multiple && !search" class="option" (click)="onSelect(null)" (mousedown)="onSelectingOption(true)" (mouseup)="onSelectingOption(false)">
+        <li *ngIf="multiple && !search"
+            class="option"
+            (click)="onSelect(null)"
+            (mousedown)="onSelectingOption(true)"
+            (mouseup)="onSelectingOption(false)"
+        >
             Select none
         </li>
 
         <nts-separator *ngIf="multiple && !search"></nts-separator>
 
-        <li class="option" *ngFor="let option of optionsFiltered; let i = index;" [class.selected]="isOptionSelected(option)" [class.pointed]="isOptionPointed(i)"
-            (click)="onSelect(option)" (mouseover)="onHoverOption(i)" (mousedown)="onSelectingOption(true)" (mouseup)="onSelectingOption(false)">
+        <li class="option"
+            *ngFor="let option of optionsFiltered; let i = index;"
+            [class.selected]="isOptionSelected(option)"
+            [class.pointed]="isOptionPointed(i)"
+            (click)="onSelect(option)"
+            (mouseover)="onHoverOption(i)"
+            (mousedown)="onSelectingOption(true)"
+            (mouseup)="onSelectingOption(false)"
+        >
 
             <nts-icon *ngIf="multiple" class="icon" [icon]="isOptionSelected(option) ? 'square-check' : 'square'"></nts-icon>
             <span [innerHtml]="(option.label | highlight:search) || '(Unlabeled)'"></span>

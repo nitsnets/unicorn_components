@@ -187,6 +187,9 @@ export function deepClone(object: Object): Object {
 export function objEquals(obj1: Object, obj2: Object): boolean {
     return JSON.stringify(obj1) === JSON.stringify(obj2);
 }
+export function objEmpty(obj: Object): boolean {
+    return Object.keys(obj).length === 0 && obj.constructor === Object;
+}
 export function sideOfScreen(element): 'left' | 'right' {
     let windowWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     let elementLeft = (element.offsetLeft - element.scrollLeft + element.clientLeft);

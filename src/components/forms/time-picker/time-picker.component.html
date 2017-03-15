@@ -8,7 +8,8 @@
       [clear]="true"
       [ntsModel]="ntsModel"
       (ntsModelChange)="onTimeChanges($event)"
-      (ntsFocus)="opened = true"
+      (ntsFocus)="onFocus()"
+      (ntsBlur)="onBlur()"
       (ntsKeypress)="onKeyPress($event, 'time')"
     > </nts-input>
   </div>

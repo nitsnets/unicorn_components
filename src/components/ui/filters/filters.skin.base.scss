@@ -1,0 +1,25 @@
+nts-filters {
+    margin-bottom: $basic-padding / 2;
+
+    .apply {
+        margin-right: auto;
+    }
+    .clear {
+        margin-left: auto;
+    }
+    .options-container {
+        padding-left: $basic-padding;
+        align-items: flex-end;
+
+        &.three-options { min-width: 300px; }
+        &.two-options { min-width: 200px; }
+        &.one-option { min-width: 100px; }
+    }
+    .filters-advanced {
+        margin-top: $basic-padding / 2;
+    }
+    nts-filters-advanced,
+    nts-filters-main {
+        display: block;
+    }
+}

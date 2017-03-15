@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 
 import { FilterPipe } from '../../../pipes/filter.pipe';
+import { NtsInputBaseComponent } from '../../base/input-base.component';
 import { NtsOption } from '../../../models/option';
 
 export enum SelectTypes { text, number, email, password }
@@ -10,14 +11,9 @@ export enum SelectTypes { text, number, email, password }
     templateUrl: 'select.component.html',
     styleUrls: ['select.component.scss']
 })
-export class NtsSelectComponent implements OnInit, OnChanges {
-    @Input() ntsModel;
-    @Output() ntsModelChange = new EventEmitter();
+export class NtsSelectComponent extends NtsInputBaseComponent implements OnInit, OnChanges {
 
-    @Input() name = '';
-    @Input() label = '';
     @Input() placeholder = '';
-    @Input() value = '';
     @Input() icon: string;
     @Input() multiple = false;
     @Input() clear = false;
@@ -26,7 +22,6 @@ export class NtsSelectComponent implements OnInit, OnChanges {
     @Input() excludedOptions: string[];
     @Input() multipleptions: NtsOption[] = [];
 
-
     areOptionsVisible = false;
     optionsFiltered: NtsOption[] = [];
     optionsSelected: NtsOption[] = [];
@@ -34,9 +29,15 @@ export class NtsSelectComponent implements OnInit, OnChanges {
     selecting = false;
     search = null;
 
-    constructor() { }
-
-    ngOnInit() { }
+    ngOnInit() {
+        if (this.value && !this.ntsModel) {
+            this.ntsModel = this.value;
+            this.updateOptionsSelectedByModel();
+            if (!this.areOptionsVisible) {
+                this.updateSearchByOptionsSelected();
+            }
+        }
+    }
     ngOnChanges(changes) {
         if (changes.options || changes.ntsExcludedOptions) {
             this.excludeOptions();
@@ -73,6 +74,7 @@ export class NtsSelectComponent implements OnInit, OnChanges {
     }
     onFocus($event) {
         this.showOptions();
+        this.ntsFocus.emit($event);
     }
     // Manage non desirable closing
     onBlur($event) {
@@ -90,7 +92,7 @@ export class NtsSelectComponent implements OnInit, OnChanges {
         if (option === null) {
             this.optionsSelected = [];
         } else if (this.multiple) {
-            let index = this.optionsSelected.indexOf(option);
+            const index = this.optionsSelected.indexOf(option);
             if (index > -1) {
                 this.optionsSelected.splice(index, 1);
             } else {
@@ -119,7 +121,7 @@ export class NtsSelectComponent implements OnInit, OnChanges {
 
     /* PRIVATE METHODS */
     private updatePointedIndex(inc = 0) {
-        let newIndex = this.pointedIndex + inc;
+        const newIndex = this.pointedIndex + inc;
         if (newIndex < 0) {
             this.pointedIndex = 0;
         } else if (newIndex >= this.optionsFiltered.length) {
@@ -136,7 +138,7 @@ export class NtsSelectComponent implements OnInit, OnChanges {
     private updateOptionsSelectedByModel() {
         this.optionsSelected = [];
         if (!this.options || !this.ntsModel) { return; }
-        for (let option of this.options) {
+        for (const option of this.options) {
             if (!this.multiple && option.value === this.ntsModel ||
                 this.multiple && this.ntsModel.includes(option.value)) {
                 this.optionsSelected.push(option);
@@ -158,6 +160,7 @@ export class NtsSelectComponent implements OnInit, OnChanges {
         }
         this.ntsModel = newModel;
         this.ntsModelChange.emit(newModel);
+        this.ntsBlur.emit();
     }
     private updateSearchByOptionsSelected() {
         if (!this.optionsSelected || !this.optionsSelected.length) {
@@ -180,7 +183,7 @@ export class NtsSelectComponent implements OnInit, OnChanges {
         this.onFilter();
     }
     private selectPointedOption() {
-        let pointedOption = this.optionsFiltered[this.pointedIndex];
+        const pointedOption = this.optionsFiltered[this.pointedIndex];
         this.onSelect(pointedOption);
     }
 

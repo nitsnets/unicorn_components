@@ -23,7 +23,14 @@ export class NtsTimePickerComponent extends NtsInputBaseComponent {
     get opened() { return this._opened; }
 
     constructor(private elementRef: ElementRef) { super(); }
-
+    
+    onFocus($event) {
+        this.opened = true;
+        this.ntsFocus.emit($event);
+    }
+    onBlur($event) {
+        this.ntsBlur.emit($event);
+    }
     onKeyPress(ev: KeyboardEvent, open: boolean) {
         if (ev.code === 'Enter' || ev.key === 'Enter') {
             this.opened = false;

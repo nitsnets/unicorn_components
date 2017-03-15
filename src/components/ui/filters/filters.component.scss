@@ -1,0 +1,12 @@
+:host {
+    display: block;
+}
+
+form,
+.options-container {
+    display: flex;
+}
+
+.options-container {
+    flex: 1;
+}

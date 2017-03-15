@@ -1,5 +1,5 @@
 <div class="date-container" (clickOutside)="opened = (inline ? opened : false)">
-  <div class="date-inputs-container">
+  <div class="date-input-container">
     <nts-input
       type="date"
       icon="calendar"
@@ -10,7 +10,8 @@
       [clear]="true"
       [ntsModel]="ntsModel"
       (ntsModelChange)="onDateChanges($event)"
-      (ntsFocus)="opened = true"
+      (ntsFocus)="onFocus()"
+      (ntsBlur)="onBlur()"
       (ntsKeypress)="onKeyPress($event, true)"
     > </nts-input>
   </div>

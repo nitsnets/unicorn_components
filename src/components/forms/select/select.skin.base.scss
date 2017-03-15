@@ -1,31 +1,32 @@
 nts-select {
+    line-height: $input-height;
 
-  .options{
-    background-color: white;
-    max-height: $input-height * 8;
-    overflow-y: auto;
-    @include border($border-width);
-  }
-  .option{
-    font-size: $font-small;
-    padding: $basic-padding/4;
-    line-height: $input-height/2;
-    min-height: $input-height;
-
-    &.selected {
-      background-color: $color-grey-medium;
-
-      .icon {
-        opacity: 1;
-      }
+    .options{
+        background-color: white;
+        max-height: $input-height * 8;
+        overflow-y: auto;
+        @include border($border-width);
     }
-    &.pointed {
-      background-color: $color-grey-light;
-    }
+    .option{
+        font-size: $font-small;
+        padding: $basic-padding/4;
+        line-height: $input-height/2;
+        min-height: $input-height;
 
-    .icon {
-      margin-right: $basic-padding / 4;
-      opacity: 0.25;
+        &.selected {
+            background-color: $color-grey-medium;
+
+            .icon {
+                opacity: 1;
+            }
+        }
+        &.pointed {
+            background-color: $color-grey-light;
+        }
+
+        .icon {
+            margin-right: $basic-padding / 4;
+            opacity: 0.25;
+        }
     }
-  }
 }

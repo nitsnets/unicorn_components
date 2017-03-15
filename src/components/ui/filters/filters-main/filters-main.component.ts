@@ -16,20 +16,20 @@ import { NtsToggleComponent } from '../../../forms/toggle/toggle.component';
 })
 export class NtsFiltersMainComponent implements AfterContentInit {
 
-    @ContentChildren(NtsInputComponent) inputsList: QueryList<NtsInputBaseComponent>;
-    @ContentChildren(NtsSelectComponent) selectsList: QueryList<NtsInputBaseComponent>;
-    @ContentChildren(NtsCheckboxComponent) checkboxList: QueryList<NtsInputBaseComponent>;
-    @ContentChildren(NtsButtonToggleComponent) btnToggleList: QueryList<NtsInputBaseComponent>;
-    @ContentChildren(NtsDatePickerComponent) datepickerList: QueryList<NtsInputBaseComponent>;
-    @ContentChildren(NtsRadioComponent) radioList: QueryList<NtsInputBaseComponent>;
-    @ContentChildren(NtsToggleComponent) toggleList: QueryList<NtsInputBaseComponent>;
-    @ContentChildren(NtsTimePickerComponent) timepickerList: QueryList<NtsInputBaseComponent>;
+    @ContentChildren(NtsInputComponent, { descendants: true }) inputsList: QueryList<NtsInputBaseComponent>;
+    @ContentChildren(NtsSelectComponent, { descendants: true }) selectsList: QueryList<NtsInputBaseComponent>;
+    @ContentChildren(NtsCheckboxComponent, { descendants: true }) checkboxList: QueryList<NtsInputBaseComponent>;
+    @ContentChildren(NtsButtonToggleComponent, { descendants: true }) btnToggleList: QueryList<NtsInputBaseComponent>;
+    @ContentChildren(NtsDatePickerComponent, { descendants: true }) datepickerList: QueryList<NtsInputBaseComponent>;
+    @ContentChildren(NtsRadioComponent, { descendants: true }) radioList: QueryList<NtsInputBaseComponent>;
+    @ContentChildren(NtsToggleComponent, { descendants: true }) toggleList: QueryList<NtsInputBaseComponent>;
+    @ContentChildren(NtsTimePickerComponent, { descendants: true }) timepickerList: QueryList<NtsInputBaseComponent>;
 
-    inputs;
+    filters: NtsInputBaseComponent[];
 
     ngAfterContentInit() {
 
-        this.inputs = [
+        this.filters = [
             ...this.inputsList.toArray(),
             ...this.selectsList.toArray(),
             ...this.checkboxList.toArray(),

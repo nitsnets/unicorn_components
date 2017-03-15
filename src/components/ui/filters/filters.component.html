@@ -1,11 +1,25 @@
-<ng-container *ngIf="!advFilters">
-    <ng-content *ngIf="!advFilters"></ng-content>
-</ng-container>
-<ng-container *ngIf="advFilters">
-    <nts-row>
-        <ng-content select="nts-filters-main" *ngIf="advFilters"> </ng-content>
-    </nts-row>
-    <nts-row>
-        <ng-content select="nts-filters-advanced" *ngIf="advFilters"> </ng-content>
-    </nts-row>
-</ng-container>
+<form (ngSubmit)="doFilter()">
+    <div class="filters-container">
+        <ng-container *ngIf="!advFilters">
+            <ng-content *ngIf="!advFilters"></ng-content>
+        </ng-container>
+        <ng-container *ngIf="advFilters">
+            <div>
+                <ng-content select="nts-filters-main" *ngIf="advFilters"> </ng-content>
+            </div>
+            <div class="filters-advanced" *ngIf="showAdvanced">
+                <ng-content select="nts-filters-advanced" *ngIf="advFilters"> </ng-content>
+            </div>
+        </ng-container>
+    </div>
+    <div class="options-container" [ngClass]="{
+        'three-options': optionsCount === 3,
+        'two-options': optionsCount === 2,
+        'one-option': optionsCount === 1
+    }">
+        <nts-button class="apply" *ngIf="showButton" type="submit" [label]="buttonLabel" [color]="buttonColor" [icon]="buttonIcon"></nts-button>
+        <nts-button class="clear" *ngIf="clearable && !isEmpty()" label="clear" icon="close" size="small" (click)="onClear()"></nts-button>
+        <nts-button class="save" *ngIf="savable && !isEmpty()" label="save" icon="plus" size="small" (click)="onSave()"></nts-button>
+    </div>
+</form>
+<nts-button *ngIf="!showAdvanced" icon="arrow-down" label="more filters" size="small" (click)="showAdvanced = true"></nts-button>

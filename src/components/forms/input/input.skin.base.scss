@@ -1,5 +1,6 @@
 nts-input{
     display: flex;
+    line-height: $input-height;
 
     input, textarea{
         height: $input-height;
@@ -24,7 +25,6 @@ nts-input{
 
     .icon, .icon-right{
         opacity: 0.5;
-        margin-top: ($input-height - $input-padding*2) / 2;
     }
     .icon{
         left: ($input-height - $input-padding*2) / 2;
@@ -38,8 +38,9 @@ nts-input{
     .with-two-icon-right input{ padding-right: 40px; }
     .with-prefix input{ border-radius: 0 $border-radius $border-radius 0; }
 
-    .label, .prefix{
+    .label, .prefix, .error, .hint{
         font-weight: 300;
+        line-height: $label-height;
         font-size: $font-small;
         color: $color-grey-dark;
         margin: 0 $input-padding/4;
@@ -89,14 +90,12 @@ nts-input{
     }
 
     .hint{
-        font-style: italic;
-        font-size: $font-small;
         color: $color-grey;
+        font-style: italic;
     }
     .error{
-        font-style: italic;
-        font-size: $font-small;
         color: $color-error;
+        font-weight: 400;
     }
 
 
