@@ -13,9 +13,6 @@ export enum SelectTypes { text, number, email, password }
 })
 export class NtsSelectComponent extends NtsInputBaseComponent implements OnInit, OnChanges {
 
-    _ntsModel;
-    @Input() set ntsModel();
-
     @Input() placeholder = '';
     @Input() icon: string;
     @Input() multiple = false;
