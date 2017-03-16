@@ -5,29 +5,31 @@
   },
   "apps": [
     {
-      "root": "demo",
-      "outDir": "demo-dist",
-      "assets": [
+        "root": "demo",
+        "outDir": "demo-dist",
+        "assets": [
         "favicon.ico",
         "logo.png"
-      ],
-      "index": "index.html",
-      "main": "index.ts",
-      "test": "",
-      "tsconfig": "tsconfig.json",
-      "prefix": "nts",
-      "mobile": false,
-      "styles": [
-        "styles.scss"
-      ],
-      "scripts": [
-        "./../node_modules/chart.js/dist/Chart.min.js"
-      ],
-      "environmentSource": "environment.ts",
-      "environments": {
-        "dev": "environment.ts",
-        "prod": "environment.ts"
-      }
+        ],
+        "index": "index.html",
+        "main": "index.ts",
+        "test": "",
+        "tsconfig": "tsconfig.json",
+        "prefix": "nts",
+        "mobile": false,
+        "styles": [
+            "styles.scss",
+            "../node_modules/flickity/dist/flickity.min.css"
+        ],
+        "scripts": [
+            "../node_modules/flickity/dist/flickity.pkgd.js",
+            "../node_modules/chart.js/dist/Chart.min.js"
+        ],
+        "environmentSource": "environment.ts",
+        "environments": {
+            "dev": "environment.ts",
+            "prod": "environment.ts"
+        }
     }
   ],
   "addons": [],

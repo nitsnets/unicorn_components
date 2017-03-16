@@ -13,6 +13,7 @@ import { NtsButtonMenuComponent } from './ui/button-menu/button-menu.component';
 import { NtsButtonPopupComponent } from './ui/button-popup/button-popup.component';
 import { NtsButtonToggleComponent } from './forms/button-toggle/button-toggle.component';
 import { NtsCalendarComponent } from './ui/calendar/calendar.component';
+import { NtsCarouselDirective } from './ui/carousel/carousel.directive';
 import { NtsChartComponent } from './charts/chart/chart.component';
 import { NtsChartLegendComponent } from './charts/chart-legend/chart-legend.component';
 import { NtsChartTooltipComponent } from './charts/chart-tooltip/chart-tooltip.component';
@@ -68,5 +69,5 @@ export const NTS_COMPONENTS = [
     NtsDatePickerComponent, NtsTimePickerComponent, NtsButtonMenuComponent, NtsButtonPopupComponent, NtsButtonFileComponent,
     NtsButtonHeaderComponent, NtsDatagridComponent, NtsDatagridColumnComponent, NtsDatagridRowComponent, NtsDatagridRowDirective,
     NtsDatagridCellComponent, NtsDatagridCellDirective, NtsDatagridHeaderComponent, NtsFiltersComponent, NtsFiltersAdvancedComponent,
-    NtsFiltersMainComponent, // CodeEditorComponent
+    NtsFiltersMainComponent, NtsCarouselDirective// CodeEditorComponent
 ];

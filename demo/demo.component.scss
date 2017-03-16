@@ -34,6 +34,16 @@ nts-face {
 .chart-quarter {
   width: 25%;
 }
+div[ntsCarousel] {
+    position: relative;
+}
+
+div[ntsCarouselCell] {
+    width: 50px;
+    height: 50px;
+    background-color: lightblue;
+    margin: 5px;
+}
 .icon-wrap {
   display: inline-block;
   width: 100px;

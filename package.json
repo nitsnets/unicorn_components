@@ -29,6 +29,7 @@
     "angular2-text-mask": "^6.1.0",
     "chart.js": "^2.4.0",
     "core-js": "^2.4.1",
+    "flickity": "^2.0.5",
     "moment": "^2.15.2",
     "ng2-interceptors": "^1.2.1",
     "rxjs": "^5.1.0",
