@@ -30,7 +30,6 @@ import { NtsDatePickerComponent } from './forms/date-picker/date-picker.componen
 import { NtsDaterangePickerComponent } from './forms/daterange-picker/daterange-picker.component';
 import { NtsDatetimePickerComponent } from './forms/datetime-picker/datetime-picker.component';
 import { NtsFaceComponent } from './utils/face/face.component';
-import { NtsFilterInputComponent } from './ui/filters/filter-input/filter-input.component';
 import { NtsFiltersAdvancedComponent } from './ui/filters/filters-advanced/filters-advanced.component';
 import { NtsFiltersComponent } from './ui/filters/filters.component';
 import { NtsFiltersMainComponent } from './ui/filters/filters-main/filters-main.component';
@@ -69,5 +68,5 @@ export const NTS_COMPONENTS = [
     NtsDatePickerComponent, NtsTimePickerComponent, NtsButtonMenuComponent, NtsButtonPopupComponent, NtsButtonFileComponent,
     NtsButtonHeaderComponent, NtsDatagridComponent, NtsDatagridColumnComponent, NtsDatagridRowComponent, NtsDatagridRowDirective,
     NtsDatagridCellComponent, NtsDatagridCellDirective, NtsDatagridHeaderComponent, NtsFiltersComponent, NtsFiltersAdvancedComponent,
-    NtsFiltersMainComponent, NtsFilterInputComponent // CodeEditorComponent
+    NtsFiltersMainComponent, // CodeEditorComponent
 ];
