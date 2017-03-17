@@ -6,6 +6,7 @@ import { NTS_COMPONENTS } from './components/';
 import { NTS_DIRECTIVES } from './directives/';
 import { NTS_PIPES } from './pipes/';
 import { NgModule } from '@angular/core';
+import { SortablejsModule } from 'angular-sortablejs';
 import { TextMaskModule } from 'angular2-text-mask';
 
 @NgModule({
@@ -14,6 +15,7 @@ import { TextMaskModule } from 'angular2-text-mask';
         FormsModule,
         TextMaskModule,
         ColorPickerModule,
+        SortablejsModule,
         BrowserModule
     ],
     declarations: [

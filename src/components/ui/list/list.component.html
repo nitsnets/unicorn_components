@@ -1,24 +1,37 @@
-<div class="items" *ngIf="items && items.length">
-  <ul>
-    <li *ngFor="let item of items; let i = index">
-      <div class="item highlight-hover" 
-        *ngIf="!item.editing" 
-        (click)="onClickItem(item)" 
-        (dblclick)="onDoubleclickItem(item)"
-      >
-        <span [class.selected]="isitemSelected(item)">{{item.name || '(Untitled)'}}</span>
-        <nts-button class="pull-right delete" icon="delete" (click)="onDeleteItem(i, $event)"></nts-button>
-      </div>
-      <form class="item" *ngIf="item.editing === true" (submit)="onEditItem(item)">
-        <nts-input
-          floating="true"
-          [(ntsModel)]="item.newname"
-          [placeholder]="placeholder"
-        >
-        </nts-input>
-        <nts-button class="pull-right" icon="close" (click)="item.editing = false"></nts-button>
-        <nts-button icon="check" type="submit"></nts-button>
-      </form>
+{{sortableOptions | json}}
+
+<ul *ngIf="data && data.length" [(sortablejs)]="data" [sortablejsOptions]="sortableOptions">
+
+    <li *ngFor="let item of data; let i = index" class="item">
+
+        <nts-icon class="drag-handle show-hover"
+            *ngIf="sortable"
+            icon="drag"
+        ></nts-icon>
+
+        <ng-container *ngIf="!item.editing">
+            <span
+                (click)="onClick(item)"
+                (dblclick)="onDoubleclick(item)"
+                [class.selected]="isSelected(item)"
+            >
+                {{item.name || '(Untitled)'}}
+            </span>
+            <nts-button class="delete show-hover"
+                *ngIf="deletable"
+                icon="delete"
+                (click)="onDelete(i, item, $event)"
+            ></nts-button>
+        </ng-container>
+
+        <form *ngIf="item.editing === true" (submit)="onEdit(i, item)">
+            <nts-input floating="true"
+                [autofocus]="true"
+                [(ntsModel)]="item.newname"
+                [placeholder]="placeholder || ''"
+                (ntsBlur)="item.editing = false"
+            ></nts-input>
+        </form>
+
     </li>
-  </ul>
-</div>
+</ul>

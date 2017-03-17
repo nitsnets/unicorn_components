@@ -1,40 +1,49 @@
 nts-icon {
 
-  i {
-    font-size: $font-regular;
-
-    &.small {
-      padding: $font-regular / 4;
-      font-size: $font-regular / 2;
-    }
-
-    &.large {
-      font-size: $font-regular;
-
-      @include mq($from: sm) {
-        font-size: $font-largest;
-      }
-    }
-
-    &::before {
-      font-family: "nts-icon";
-      font-size: 1em;
-      margin-right: .2em;
-      line-height: 1em;
-      margin-left: .2em;
-    }
-
-    &.caret {
-      font-size: $font-large / 2;
-    }
-    &.drag {
-      cursor: move;
-    }
-  }
-  &.paginator-icon {
     i {
-      font-size: $font-small;
+        font-size: $font-regular;
+
+        &.small {
+            padding: $font-regular / 4;
+            font-size: $font-regular / 2;
+        }
+
+        &.large {
+            font-size: $font-regular;
+
+            @include mq($from: sm) {
+            font-size: $font-largest;
+            }
+        }
+
+        &::before {
+            font-family: "nts-icon";
+            font-size: 1em;
+            margin-right: .2em;
+            line-height: 1em;
+            margin-left: .2em;
+        }
+
+        &.caret {
+            font-size: $font-large / 2;
+        }
+
+        &.drag {
+            cursor: move;
+            cursor: grab;
+            cursor: -moz-grab;
+            cursor: -webkit-grab;
+        }
+        &.drag:active {
+            cursor: grabbing;
+            cursor: -moz-grabbing;
+            cursor: -webkit-grabbing;
+        }
     }
-  }
+    &.paginator-icon {
+        i {
+            font-size: $font-small;
+        }
+    }
 }
 

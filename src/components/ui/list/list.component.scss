@@ -1,30 +1,28 @@
-.items {
-  display: flex;
-
-  ul {
+ul {
     list-style: none;
     width: 100%;
-  }
+}
 
-  li .item {
+li {
     align-items: center;
     cursor: default;
     display: flex;
 
     span {
-      user-select: none;
+        user-select: none;
     }
 
-    .delete {
-      visibility: hidden;
+    .show-hover {
+        visibility: hidden;
     }
 
     .pull-right {
-      margin-left: auto;
+        margin-left: auto;
     }
 
-    &.highlight-hover:hover {
-      nts-icon, .delete {visibility: visible}
+    &:hover {
+        .show-hover {
+            visibility: visible;
+        }
     }
-  }
 }

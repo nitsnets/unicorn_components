@@ -43,7 +43,6 @@ export class NtsInputComponent extends NtsInputBaseComponent implements OnInit, 
     focused = false;
     _mask: MaskArray = null;
 
-
     ngOnChanges(changes) {
         if (changes.mask && this.mask) {
             this.parseMask();
@@ -51,15 +50,6 @@ export class NtsInputComponent extends NtsInputBaseComponent implements OnInit, 
         if (changes.ntsModel) {
             this.applyMask();
         }
-    }
-    ngOnInit() {
-        if (!this.ntsModel) {
-            this.ntsModel = this.value;
-        } else {
-            this.value = this.ntsModel;
-        }
-        this.ntsModelChange.subscribe(val => {
-        });
     }
     onInputFocus(ev) {
         this.focused = true;

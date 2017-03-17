@@ -1,19 +1,28 @@
 nts-list {
-  ul {
-    margin-top: $basic-padding;
-  }
-
-  li .item {
-    min-height: $input-height;
-    padding-left: $basic-padding;
-
-    span {
-      padding: $basic-padding / 6 0;
-
-      &.selected{
-        color: $color-primary;
-      }
+    ul {
+        margin-top: $basic-padding;
     }
 
-  }
+    li {
+        min-height: $input-height;
+        padding-left: $basic-padding / 4;
+
+        span {
+            padding: $basic-padding / 6 0;
+
+            &.selected{
+                color: $color-primary;
+            }
+        }
+
+    }
+    .drag-handle {
+        margin-right: $basic-padding / 4;
+    }
+    .show-hover {
+        opacity: 0.5;
+        &:hover {
+            opacity: 1;
+        }
+    }
 }

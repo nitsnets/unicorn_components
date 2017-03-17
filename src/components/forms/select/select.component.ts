@@ -13,6 +13,16 @@ export enum SelectTypes { text, number, email, password }
 })
 export class NtsSelectComponent extends NtsInputBaseComponent implements OnInit, OnChanges {
 
+    private _ntsModel;
+    @Input() set ntsModel(value) {
+        this._ntsModel = value;
+        this.updateOptionsSelectedByModel();
+        if (!this.areOptionsVisible) {
+            this.updateSearchByOptionsSelected();
+        }
+    };
+    get ntsModel() { return this._ntsModel; }
+
     @Input() placeholder = '';
     @Input() icon: string;
     @Input() multiple = false;
@@ -29,34 +39,22 @@ export class NtsSelectComponent extends NtsInputBaseComponent implements OnInit,
     selecting = false;
     search = null;
 
-    ngOnInit() {
-        if (this.value && !this.ntsModel) {
-            this.ntsModel = this.value;
-            this.updateOptionsSelectedByModel();
-            if (!this.areOptionsVisible) {
-                this.updateSearchByOptionsSelected();
-            }
-        }
-    }
     ngOnChanges(changes) {
         if (changes.options || changes.ntsExcludedOptions) {
             this.excludeOptions();
         }
-        if (changes.options || changes.ntsModel) {
+        if (changes.options) {
             this.updateOptionsSelectedByModel();
             if (!this.areOptionsVisible) {
                 this.updateSearchByOptionsSelected();
             }
-        }
-        if (changes.options) {
             this.onFilter();
         }
     }
     onKeyDown(e: KeyboardEvent) {
         switch (e.key) {
             case 'Escape': this.hideOptions(); break;
-            case 'Enter': this.selectPointedOption();
-                break;
+            case 'Enter': this.selectPointedOption(); break;
             case 'ArrowDown': this.areOptionsVisible ? this.updatePointedIndex(1) : this.showOptions(); e.preventDefault(); break;
             case 'ArrowUp': this.updatePointedIndex(-1); e.preventDefault(); break;
         }
@@ -159,7 +157,6 @@ export class NtsSelectComponent extends NtsInputBaseComponent implements OnInit,
             }
         }
         this.ntsModel = newModel;
-        this.ntsModelChange.emit(newModel);
         this.ntsBlur.emit();
     }
     private updateSearchByOptionsSelected() {

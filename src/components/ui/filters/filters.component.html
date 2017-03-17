@@ -18,7 +18,7 @@
         'one-option': optionsCount === 1
     }">
         <nts-button class="apply" *ngIf="showButton" type="submit" [label]="buttonLabel" [color]="buttonColor" [icon]="buttonIcon"></nts-button>
-        <nts-button class="clear" *ngIf="clearable && !isEmpty()" label="clear" icon="close" size="small" (click)="onClear()"></nts-button>
+        <nts-button class="clear" *ngIf="clearable && !isDefault()" label="clear" icon="close" size="small" (click)="onClear()"></nts-button>
         <nts-button class="save" *ngIf="savable && !isEmpty()" label="save" icon="plus" size="small" (click)="onSave()"></nts-button>
     </div>
 </form>

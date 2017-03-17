@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 
+import { ListItem } from './list.component';
 import { objEquals } from '../../../utils';
 
 export interface ListItem { name: String; }
@@ -9,15 +10,26 @@ export interface ListItem { name: String; }
     templateUrl: 'list.component.html',
     styleUrls: ['list.component.scss']
 })
-export class NtsListComponent implements OnInit {
+export class NtsListComponent implements OnChanges {
+    @Input() local = true;
+
+    @Input() sortable: any;
+    @Input() selectable = false;
+    @Input() deletable = false;
+
     @Input() placeholder: string;
+    defaultSortableOptions = {
+        handle: 'inactive',
+        onSort: (evt) => this.onSort(evt),
+    };
+    sortableOptions = this.defaultSortableOptions;
 
     @Input() itemActive: ListItem;
     @Output() itemActiveChange = new EventEmitter<ListItem>();
 
-    @Input() items: ListItem[];
-    @Output() deleteItem = new EventEmitter<number>();
-    @Output() editItem = new EventEmitter<ListItem>();
+    @Input() data: ListItem[];
+    @Output() delete = new EventEmitter<{ index: number, item: ListItem }>();
+    @Output() edit = new EventEmitter<{ index: number, item: ListItem }>();
 
     // Double click handlers
     preventDoubleclick = false;
@@ -25,11 +37,25 @@ export class NtsListComponent implements OnInit {
     timer: NodeJS.Timer;
     delay = 300;
 
-    constructor() { }
-    ngOnInit() { }
-
-    onClickItem(item: ListItem) {
+    ngOnChanges(changes) {
+        if (changes.sortable) {
+            if (this.sortable) {
+                this.sortableOptions = Object.assign(this.sortableOptions, this.sortable === true ? {} : this.sortable);
+                this.sortableOptions.handle = '.drag-handle';
+            } else {
+                this.sortableOptions = this.defaultSortableOptions;
+            }
+        }
+    }
+    onSort(event) {
+        console.log('sort', event, this.data.map(i => i.name));
+    }
+    onClick(item: ListItem) {
         this.preventDoubleclick = false;
+        if (!this.selectable) { return; }
+        if (this.local) {
+            this.itemActive = item;
+        }
         this.timer = setTimeout(
             _ => {
                 if (!this.preventClick) {
@@ -39,26 +65,34 @@ export class NtsListComponent implements OnInit {
             }, this.delay
         );
     }
-    onDoubleclickItem(item: ListItem) {
+    onDoubleclick(item: ListItem) {
+        console.log('dblclick');
+
         if (this.preventDoubleclick) { return false; }
         clearTimeout(this.timer);
         this.preventClick = true;
-        this.items.map(s => s['editing'] = false);
+        this.data.map(s => s['editing'] = false);
         item['editing'] = true;
         item['newname'] = item.name;
     }
-    onEditItem(item: ListItem) {
+    onEdit(index: number, item: ListItem) {
         item.name = item['newname'];
         item['editing'] = false;
 
-        this.editItem.emit(item);
+        this.edit.emit({ index, item });
     }
-    onDeleteItem(i: number, e: MouseEvent) {
+    onDelete(index: number, item: ListItem, e: MouseEvent) {
+        if (!this.deletable) { return; }
+
         e.stopPropagation();
         this.preventDoubleclick = true;
-        this.deleteItem.emit(i);
+        if (this.local) {
+            this.data.splice(index, 1);
+        }
+        this.delete.emit({ index, item });
     }
-    isitemSelected(item: ListItem): boolean {
+    isSelected(item: ListItem): boolean {
+        if (!this.itemActive) { return false; }
         if (item['id'] && this.itemActive['id'] && item['id'] === this.itemActive['id']) { return true; }
         return objEquals(this.itemActive, item);
     }

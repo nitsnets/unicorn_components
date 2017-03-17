@@ -17,8 +17,9 @@ export abstract class NtsInputBaseComponent extends NtsBaseComponent implements 
     debounceTimer;
 
     ngOnInit() {
-        if (!this.ntsModel) {
-            this.ntsModel = this.value;
+
+        if (!this.ntsModel && this.value) {
+            this.onNgModelChange(this.value);
         } else {
             this.value = this.ntsModel;
         }

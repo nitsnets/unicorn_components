@@ -1,4 +1,5 @@
 import { AfterContentInit, Component, ContentChild, ContentChildren, EventEmitter, Input, OnChanges, Output, QueryList } from '@angular/core';
+import { deepClone, objEmpty, objEquals } from '../../../utils';
 
 import { NtsButtonToggleComponent } from './../../forms/button-toggle/button-toggle.component';
 import { NtsCheckboxComponent } from './../../forms/checkbox/checkbox.component';
@@ -11,7 +12,6 @@ import { NtsRadioComponent } from '../../forms/radio/radio.component';
 import { NtsSelectComponent } from '../../forms/select/select.component';
 import { NtsTimePickerComponent } from './../../forms/time-picker/time-picker.component';
 import { NtsToggleComponent } from './../../forms/toggle/toggle.component';
-import { objEmpty } from '../../../utils';
 
 @Component({
     selector: 'nts-filters',
@@ -49,6 +49,7 @@ export class NtsFiltersComponent implements AfterContentInit, OnChanges {
     showButton = true;
     showAdvanced = false;
 
+    defaultFilter: { [key: string]: any } = {};
     _filter: { [key: string]: any } = {};
 
     get filter(): { [key: string]: any } {
@@ -61,6 +62,7 @@ export class NtsFiltersComponent implements AfterContentInit, OnChanges {
     }
 
     @Output() filterChange = new EventEmitter();
+    @Output() save = new EventEmitter();
 
     /**
      * The number of button on the right side of the filters
@@ -95,14 +97,17 @@ export class NtsFiltersComponent implements AfterContentInit, OnChanges {
         this.filters.forEach(f => {
             f.ntsModelChange.subscribe(value => this.onNtsModelChange(f.name, value, f.constructor.name));
             f.ntsBlur.subscribe(() => this.onFilterBlur(f.name, f.constructor.name));
+            if (f.value) {
+                this.defaultFilter[f.name] = f.value;
+            }
         });
+
+        this.applyDefault();
 
         if (this.persistent) {
             this.restoreFilter();
         }
-
     }
-
     ngOnChanges(changes) {
         if (changes.persistent && this.persistent && this.filters) {
             this.restoreFilter();
@@ -118,35 +123,41 @@ export class NtsFiltersComponent implements AfterContentInit, OnChanges {
             this.showButton = this.autoFilter === false ? true : false;
         }
     }
-
     onFilterBlur(field: string, componentName: string) {
         if (this.autoFilter === 'onBlur') {
             this.doFilter();
         }
     }
     onClear() {
-        this.filter = {};
+        this.applyDefault();
         this.doFilter();
     }
     onSave() {
-        this.filter = {};
-        this.doFilter();
+        this.save.emit(this.filter);
     }
-
+    isDefault(): boolean {
+        return objEquals(this.filter, this.defaultFilter);
+    }
     isEmpty(): boolean {
         return objEmpty(this.filter);
     }
-
     doFilter() {
         this.filterChange.emit(this.filter);
         if (this.persistent) { this.storeFilter(); }
         console.log('Do filter', this.filter);
     }
+
+    private applyDefault() {
+        this.filter = deepClone(this.defaultFilter);
+    }
     private storeFilter() {
         localStorage.setItem(this.persistent, JSON.stringify(this.filter));
     }
     private restoreFilter() {
-        this.filter = JSON.parse(localStorage.getItem(this.persistent) || '{}');
+        const restored = localStorage.getItem(this.persistent);
+        if (restored) {
+            this.filter = JSON.parse(restored);
+        }
     }
     private onNtsModelChange(field: string, value: any, type: string) {
         this.filter[field] = value;
@@ -160,7 +171,6 @@ export class NtsFiltersComponent implements AfterContentInit, OnChanges {
         this.filter[field] = value;
         fil.ntsModel = value;
     }
-
     private updateNtsModels() {
         if (this.filters && (!this.advFilters || !this.advFilters.length) && (!this.mainFilters || !this.mainFilters.length)) {
             this.filters.forEach(f => f.ntsModel = this.filter[f.name]);

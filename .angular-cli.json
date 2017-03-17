@@ -23,7 +23,9 @@
         ],
         "scripts": [
             "../node_modules/flickity/dist/flickity.pkgd.js",
-            "../node_modules/chart.js/dist/Chart.min.js"
+            "../node_modules/chart.js/dist/Chart.min.js",
+            "../node_modules/sortablejs/Sortable.js",
+            "../node_modules/angular-sortablejs"
         ],
         "environmentSource": "environment.ts",
         "environments": {
