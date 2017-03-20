@@ -213,16 +213,32 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
      */
     ngAfterContentInit() {
         this.columns = this.columnsComponents.toArray();
+
+        // Sort by the default column
+        let sort = null;
+        this.columns.forEach(c => {
+            if (c.sort === 'asc' || c.sort === 'desc') {
+                sort = { column: c, dir: c.sort };
+            }
+        });
+        console.log(this.columns, sort);
+        if (sort) { this.onSortBy(sort.column, sort.dir); }
+
         this.customRow = this.customRowDirective ? this.customRowDirective.templateRef : null;
     }
 
     /**
      * @param {any} column The field selected to sort the items
      */
-    onSortBy(column) {
-        if (column.sortable === false || column.sortable === undefined && this.sortable === false) { return; }
+    onSortBy(column: NtsDatagridColumnComponent, dir: boolean | 'asc' | 'desc' = null) {
+        if (!column || column.sortable === false || column.sortable === undefined && this.sortable === false) { return; }
 
-        if (this.sort.field === column.field) {
+        if (dir !== null) {
+            this.sort = {
+                field: column.field,
+                dir: dir === 'desc' ? true : dir === 'asc' ? false : dir
+            };
+        } else if (this.sort.field === column.field) {
             if (this.sort.dir) {
                 this.sort.field = null;
                 this.sort.dir = false;
@@ -230,8 +246,10 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
                 this.sort.dir = true;
             }
         } else {
-            this.sort.field = column.field;
-            this.sort.dir = false;
+            this.sort = {
+                field: column.field,
+                dir: false
+            };
         }
         if (this.local) {
             this.localSort = this.sort.field ? ((this.sort.dir ? '+' : '-') + this.sort.field) : null;

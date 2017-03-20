@@ -7,6 +7,9 @@ nts-list {
         min-height: $input-height;
         padding-left: $basic-padding / 4;
 
+        &.sortable-ghost {
+            opacity: 0.5;
+        }
         span {
             padding: $basic-padding / 6 0;
 
@@ -14,7 +17,6 @@ nts-list {
                 color: $color-primary;
             }
         }
-
     }
     .drag-handle {
         margin-right: $basic-padding / 4;

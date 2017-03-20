@@ -426,7 +426,6 @@
                 #############################  Data  ############################
                 ################################################################## -->
 
-            <!--
                 <h3>Datagrids</h3>
                 <nts-separator></nts-separator>
 
@@ -449,7 +448,7 @@
                 <h5>Custom cells</h5>
                 <nts-datagrid [data]="data" (cellClick)="log('Cell clicked', $event)" (rowClick)="log('Row clicked', $event)" [highlightCell]="true" [highlightRow]="false">
                     <nts-datagrid-column field="img" format="image" [sortable]="false" width="0.2"></nts-datagrid-column>
-                    <nts-datagrid-column title="First name" field="name">
+                    <nts-datagrid-column title="First name" field="name" sort="asc">
                         <nts-datagrid-cell *cellVariables="let user">
                             <strong>{{user.name}}</strong>
                             <p>{{user.birth | formatDate : 'ddd DD MMM, YYYY'}}</p>
@@ -516,7 +515,6 @@
                     <nts-datagrid-column title="Progress" field="progress" format="percentage"></nts-datagrid-column>
                     <nts-datagrid-column title="Alerts" field="alerts" [sortable]="false"></nts-datagrid-column>
                 </nts-datagrid>
-            -->
 
                 <h3>Lists</h3>
                 <nts-list [data]="data"

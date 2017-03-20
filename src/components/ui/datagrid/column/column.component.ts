@@ -11,6 +11,7 @@ export class NtsDatagridColumnComponent implements AfterContentInit {
     @Input() field: string = null;
     @Input() width = 1;
     @Input() sortable;
+    @Input() sort: 'asc' | 'desc';
     @Input() highlightCell;
     @Input() format = 'text';
     @Input() formatOptions: Object = null;
@@ -26,11 +27,11 @@ export class NtsDatagridColumnComponent implements AfterContentInit {
         this.customCell = this.customCellDirective ? this.customCellDirective.templateRef : null;
     }
     /**
-     * 
-     * 
-     * @param {boolean} defaultValue 
-     * @returns {boolean} 
-     * 
+     *
+     *
+     * @param {boolean} defaultValue
+     * @returns {boolean}
+     *
      * @memberOf NtsDatagridColumnComponent
      */
     isSortable(defaultValue: boolean): boolean {
