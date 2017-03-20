@@ -178,7 +178,7 @@ export class NtsFiltersComponent implements AfterContentInit, OnChanges {
             let anyAdvanced = false;
             this.advFilters.forEach(f => {
                 f.ntsModel = this.filter[f.name];
-                if (this.filter[f.name]) { anyAdvanced = true; }
+                if (this.filter[f.name] !== f.value) { anyAdvanced = true; }
             });
             this.mainFilters.forEach(f => f.ntsModel = this.filter[f.name]);
             this.showAdvanced = anyAdvanced;

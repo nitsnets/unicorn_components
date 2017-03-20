@@ -471,7 +471,7 @@
                 </nts-datagrid>
 
                 <h5>Custom rows</h5>
-                <nts-datagrid [data]="data" [highlightCell]="true" [pageable]="true" [pageSize]="5" [deletable]="true" [deleteConfirm]="modal">
+                <nts-datagrid [data]="data" [highlightCell]="true" [pageable]="true" [pageSize]="5" [deletable]="true" deleteConfirm="modal">
                     <nts-datagrid-column title="First name" field="name"></nts-datagrid-column>
                     <nts-datagrid-column title="Date of birth" field="birth"></nts-datagrid-column>
                     <nts-datagrid-column title="Progress" field="progress"></nts-datagrid-column>
@@ -488,7 +488,7 @@
                 </nts-datagrid>
 
                 <h5>Selectable, pageable and filterable datagrids</h5>
-                <nts-filters>
+                <nts-filters [savable]="true" (save)="log('save', $event)">
                     <nts-filters-main>
                         <nts-input name="name" placeholder="First name" debounce="300" value="Default value"></nts-input>
                         <nts-date-picker name="birth" placeholder="Date of birth"></nts-date-picker>
@@ -501,7 +501,7 @@
                         <nts-checkbox name="alerts" label="With alerts"></nts-checkbox>
                     </nts-filters-main>
                     <nts-filters-advanced>
-                        <nts-input name="extra1" placeholder="Extra filter 1" debounce="300"></nts-input>
+                        <nts-input name="extra1" placeholder="Extra filter 1" debounce="300" value="Default extra value"></nts-input>
                         <nts-input name="extra2" placeholder="Extra filter 2" debounce="300"></nts-input>
                         <nts-input name="extra3" placeholder="Extra filter 3" debounce="300"></nts-input>
                         <nts-input name="extra4" placeholder="Extra filter 4" debounce="300"></nts-input>

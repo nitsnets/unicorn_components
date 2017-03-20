@@ -157,6 +157,7 @@ export class NtsSelectComponent extends NtsInputBaseComponent implements OnInit,
             }
         }
         this.ntsModel = newModel;
+        this.ntsModelChange.emit(this.ntsModel);
         this.ntsBlur.emit();
     }
     private updateSearchByOptionsSelected() {

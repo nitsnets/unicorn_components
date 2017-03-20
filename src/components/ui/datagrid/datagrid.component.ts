@@ -177,6 +177,14 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
      * @type integer
      */
     @Input() totalItems: number;
+    /**
+     * Returns the last page index
+     *
+     * @readonly
+     */
+    get lastPage() {
+        return Math.ceil((this.local ? this.dataView.length : this.totalItems) / this.pageSize) - 1;
+    }
 
     /***************** SORTING *****************/
     /**
@@ -401,6 +409,12 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
             delete this.dataSource[id];
         });
         this.dataView = [...this.dataView];
+        this.checkLocalPage();
+    }
+    private checkLocalPage() {
+        if (this.localPage > this.lastPage) {
+            this.onPageChange(this.lastPage);
+        }
     }
     /**
      * From an ID or an array of IDs returns the object or the array of objects
