@@ -2,6 +2,7 @@ nts-datagrid-row {
     overflow: hidden;
     align-items: stretch;
     transition: 200ms ease background-color;
+    position: relative;
 
     display: flex;
     flex: 1;
@@ -17,8 +18,65 @@ nts-datagrid-row {
         &.highlight:hover {
             background-color: darken($color-primary-light, 2.5%);
         }
+        &.deleting-selection {
+            font-weight: bold;
+            background-color: $color-error-light;
+            color: $color-error;
+
+            &.highlight:hover {
+                background-color: darken($color-error-light, 2.5%);
+            }
+            .select-cell {
+                color: $color-error;
+            }
+        }
         .select-cell {
+            visibility: visible;
             color: $color-primary;
+        }
+    }
+    &.any-selected {
+        .delete-cell {
+            visibility: hidden !important;
+        }
+        .select-cell {
+            visibility: visible;
+        }
+    }
+    &:hover {
+        .show-hover {
+            visibility: visible;
+        }
+    }
+    .show-hover {
+        visibility: hidden;
+    }
+    &.deleting {
+        font-weight: bold;
+        background-color: $color-error-light;
+        color: $color-error;
+        align-items: center;
+
+
+        &.highlight:hover {
+            background-color: darken($color-error-light, 2.5%);
+        }
+        .select-cell {
+            color: $color-error;
+        }
+
+        .delete-cell {
+            visibility: hidden !important;
+        }
+        .deleting-cell {
+            display: flex;
+            align-items: center;
+            span {
+                flex: 1;
+            }
+            nts-button {
+                margin-left: $basic-padding / 4;
+            }
         }
     }
 }

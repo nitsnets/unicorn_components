@@ -1,5 +1,10 @@
 nts-datagrid-header {
     display: block;
+    position: relative;
+
+    .delete-cell{
+        visibility: hidden;
+    }
 
     nts-row {
         transition: 200ms ease background-color;
@@ -7,17 +12,21 @@ nts-datagrid-header {
         &.selected {
             background-color: $color-primary-light;
             span {color: $color-primary; }
+            .delete-cell{ visibility: visible; }
+            & + nts-separator hr { border-color: $color-primary; }
+        }
+        &.deleting {
+            background-color: $color-error-light;
+            span {color: $color-error; }
+            .delete-cell{ visibility: hidden; }
+            & + nts-separator hr { border-color: $color-error; }
         }
         &.all-selected {
-            background-color: darken($color-primary-light, 5%);
-            nts-checkbox {color: $color-primary; }
+            &.selected { background-color: darken($color-primary-light, 5%); nts-checkbox {color: $color-primary; } }
+            &.deleting { background-color: darken($color-error-light, 5%); nts-checkbox {color: $color-error; } }
         }
     }
-    nts-separator.selected {
-        hr {
-            border-color: $color-primary;
-        }
-    }
+
     nts-datagrid-cell {
         font-weight: bold;
         position: relative;
@@ -30,6 +39,12 @@ nts-datagrid-header {
             height: $input-height;
             position: absolute;
             line-height: $input-height;
+        }
+
+        &.deleting {
+            display: flex;
+            span { position: relative; flex: 1; }
+            nts-button { margin-left: $basic-padding / 4; }
         }
 
         &.sortable{

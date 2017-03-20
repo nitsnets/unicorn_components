@@ -1,11 +1,15 @@
 <nts-datagrid-header> </nts-datagrid-header>
 <nts-datagrid-row
     *ngFor="let row of dataView | fillMap : dataSource | sort : localSort | paginate : (pageable ? localPage : -1) : pageSize ; let i = index;"
+    [anySelected]="selected.length ? true : false"
     [selectable]="selectable"
+    [deletingSelection]="deletingSelection"
+    [deletable]="deletable"
     [box]="true"
     [selected]="row.selected"
     [highlight]="highlightRow"
     (selectedChange)="onSelectItem(row.id, $event)"
+    (delete)="onDeleteItem(row.id)"
     (click)="rowClick.emit({i: i + page * pageSize, row: row})"
 >
     <ng-container *ngIf="!customRow">

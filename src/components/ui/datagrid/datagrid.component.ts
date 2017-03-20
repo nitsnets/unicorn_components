@@ -68,17 +68,10 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     dataSource: { [key: string]: any } = {};
 
     /**
-     * A list of the selected items ID's
-     * @type {string[]}
-     */
-    dataSelected: string[] = [];
-
-    /**
      * An sorted list that represents how the items are rendered
      * @type {string[]}
      */
     dataView: string[] = [];
-
     /**
      * True if any item has a random generated id
      * @type {boolean}
@@ -87,11 +80,17 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     randomIds = false;
 
     /**
+     * The field with the unique ID to manage selection and deletion
+     *
+     * @type {string}
+     * @default 'id'
+     */
+    @Input() idField = 'id';
+    /**
      * The input where de items get into the component
      * @type {Array<object>}
      */
     @Input() data: Array<Object> = null;
-
     /**
      * The output where changes in the items emitted
      * @event NtsDatagridComponent#dataChange
@@ -99,41 +98,69 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
      */
     @Output() dataChange = new EventEmitter<Array<Object>>();
 
+    /***************** SELECTING *****************/
     /**
      * True if the items can be selected
      * @type boolean
      * @default false
      */
     @Input() selectable = false;
+    /**
+     * A list of the selected items ID's
+     * @type {string[]}
+     */
+    @Input() selected: string[] = [];
+    /**
+     * Fired when the selected items change
+     * @event
+     * @type {string[]}
+     */
+    @Output() selectedChange = new EventEmitter<string[]>();
 
+    /***************** DELETING *****************/
+    /**
+     * True if the items can be deleted
+     * @type boolean
+     * @default false
+     */
+    @Input() deletable = false;
+    /**
+     * Fired when the some items are deleted
+     * @event
+     * @type {string[]}
+     */
+    @Output() delete = new EventEmitter<string[]>();
+    /**
+     * True when the items selected are trying to be deleted
+     */
+    deletingSelection = false;
+
+    /***************** PAGING *****************/
+    // SORTING
     /**
      * True if the items can be divided in pages
      * @type boolean
      * @default false
      */
     @Input() pageable = false;
-
     /**
      * The number of items per page
      * @type integer
      * @default 10
      */
     @Input() pageSize = 10;
-
     /**
      * The current page index
      * @type integer
      * @default 0
      */
     @Input() page = 0;
-
     /**
      * Emits an event when the user changes the page
      * @event NtsDatagridComponent#pageChange
      * @type {number}
      */
     @Output() pageChange = new EventEmitter<number>();
-
     /**
      * The number of items in total, to manage with pagination in case that this.local is false
      * @see {@link this.local}
@@ -141,6 +168,7 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
      */
     @Input() totalItems: number;
 
+    /***************** SORTING *****************/
     /**
      * True if the items can be sorted.
      * This can be overriden at column level.
@@ -148,7 +176,6 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
      * @default true
      */
     @Input() sortable = true;
-
     /**
      * The current sort key
      * @prop field
@@ -157,7 +184,6 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
      * @type {NtsDataSort}
      */
     @Input() sort: INtsDataSort = { field: null, dir: false };
-
     /**
      *
      * @event NtsDatagridComponent#sortChange
@@ -172,7 +198,6 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
      * @default false
      */
     @Input() highlightCell = false;
-
     /**
      * Specifies if the cells must Cell on hover.
      * @type boolean
@@ -187,7 +212,6 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
      * @type {INtsDataCellEvent}
      */
     @Output() cellClick: EventEmitter<INtsDataCellEvent> = new EventEmitter<INtsDataCellEvent>();
-
     /**
      * Emits an event when a row is clicked
      * @event NtsDatagridComponent#rowClick
@@ -213,20 +237,23 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
      */
     ngAfterContentInit() {
         this.columns = this.columnsComponents.toArray();
-
-        // Sort by the default column
+        this.customRow = this.customRowDirective ? this.customRowDirective.templateRef : null;
+        this.sortBydefault();
+    }
+    /**
+     * Apply the sort based on the column.sort value
+     * *
+     * If more than one column specified: the last one will be taken
+     */
+    sortBydefault() {
         let sort = null;
         this.columns.forEach(c => {
             if (c.sort === 'asc' || c.sort === 'desc') {
                 sort = { column: c, dir: c.sort };
             }
         });
-        console.log(this.columns, sort);
         if (sort) { this.onSortBy(sort.column, sort.dir); }
-
-        this.customRow = this.customRowDirective ? this.customRowDirective.templateRef : null;
     }
-
     /**
      * @param {any} column The field selected to sort the items
      */
@@ -254,6 +281,9 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
         if (this.local) {
             this.localSort = this.sort.field ? ((this.sort.dir ? '+' : '-') + this.sort.field) : null;
         }
+        if (!this.sort.field) {
+            this.dataView = [...this.dataView];
+        }
         this.onPageChange(0);
         this.sortChange.emit(this.sort);
     }
@@ -262,9 +292,8 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
      * @returns {boolean} True if all the items are selected
      */
     allSelected(): boolean {
-        return this.dataSelected.length === this.dataView.length;
+        return this.selected.length === this.dataView.length;
     }
-
     /**
      * Fired when the user clicks on the checkbox of the header
      * Selects or unselects all the items keeping the consistency of the data stores
@@ -272,10 +301,9 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
      * @param {boolean} value If true: select, else: unselect
      */
     onSelectAll(value: boolean) {
-        this.dataSelected = value ? [...this.dataView] : [];
+        this.selected = value ? [...this.dataView] : [];
         this.dataView.forEach(id => this.dataSource[id].selected = value);
     }
-
     /**
      * Fired when the user clicks on a checkbox of a row
      * Selects or unselects an items keeping the consistency of the data stores
@@ -284,13 +312,19 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
      * @param {boolean} [value=true] If true: select, else: unselect
      */
     onSelectItem(id: string, value: boolean = true) {
-        const index = this.dataSelected.indexOf(id);
+        const index = this.selected.indexOf(id);
         if (value && index === -1) {
-            this.dataSelected.push(id);
+            this.selected.push(id);
         } else if (!value && index !== -1) {
-            this.dataSelected.splice(index, 1);
+            this.selected.splice(index, 1);
         }
         this.dataSource[id].selected = value;
+        if (!this.selected.length) {
+            this.deletingSelection = false;
+        }
+        if (this.randomIds) {
+            this.selectedChange.emit(this.fillIds(this.selected));
+        } else { this.selectedChange.emit(this.selected); }
     }
 
     /**
@@ -306,8 +340,49 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
         this.pageChange.emit(page);
     }
 
+    onDeleteItem(id: string) {
+        if (this.randomIds) {
+            this.delete.emit([this.fillIds(id)]);
+        } else { this.delete.emit([id]); }
+        if (this.local) {
+            this.deleteLocally([id]);
+        }
+    }
+    onDeleteSelection() {
+        if (!this.deletable || !this.selectable || !this.selected || !this.selected.length) { return; }
+
+        if (this.randomIds) {
+            this.delete.emit(this.fillIds(this.selected));
+        } else { this.delete.emit(this.selected); }
+
+        if (this.local) {
+            this.deleteLocally(this.selected);
+            this.deletingSelection = false;
+            this.selected = [];
+        }
+    }
+    private deleteLocally(ids: string[]) {
+        ids.forEach(id => {
+            this.dataView.splice(this.dataView.indexOf(id), 1);
+            delete this.dataSource[id];
+        });
+        this.dataView = [...this.dataView];
+    }
     /**
-     * Fills the auxiliar data stores (dataView, dataSource and dataSelected) from the variable 'data'.
+     * From an ID or an array of IDs returns the object or the array of objects
+     *
+     * @private
+     * @param {(string | string[])} ids
+     * @returns {(any | any[])}
+     */
+    private fillIds(ids: string | string[]): any | any[] {
+        if (!ids || !ids.length) { return []; }
+        if (Array.isArray(ids)) {
+            return ids.map(id => this.dataSource[id]);
+        } else { return this.dataSource[ids]; }
+    }
+    /**
+     * Fills the auxiliar data stores (dataView, dataSource and selected) from the variable 'data'.
      *
      * @private
      */
@@ -318,9 +393,9 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
 
         if (this.data && this.data.length) {
             this.data.forEach(el => {
-                const id = el['id'] || uuid();
-                if (!el['id']) {
-                    el['id'] = id;
+                const id = el[this.idField] || uuid();
+                if (!el[this.idField]) {
+                    el[this.idField] = id;
                     el['randomId'] = true;
                     this.randomIds = true;
                 }
@@ -329,7 +404,7 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
             });
         }
 
-        this.dataSelected = [];
+        this.selected = [];
         this.dataSource = dataSource;
         this.dataView = dataView;
     }

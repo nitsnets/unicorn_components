@@ -1,16 +1,17 @@
 <nts-row
-    [class.selected]="datagrid.dataSelected.length"
+    [class.selected]="datagrid.selected.length && datagrid.deletingSelection !== true"
+    [class.deleting]="datagrid.selected.length && datagrid.deletingSelection === true"
     [class.all-selected]="datagrid.allSelected()"
 >
     <nts-datagrid-cell *ngIf="datagrid.selectable" [width]="0" [highlight]="true">
         <nts-checkbox
-            [partial]="datagrid.dataSelected.length > 0"
+            [partial]="datagrid.selected.length > 0"
             [ntsModel]="datagrid.allSelected()"
             (ntsModelChange)="datagrid.onSelectAll($event)"
         ></nts-checkbox>
     </nts-datagrid-cell>
 
-    <ng-container *ngIf="!datagrid.dataSelected.length">
+    <ng-container *ngIf="!datagrid.selected.length">
         <nts-datagrid-cell
             *ngFor="let column of datagrid.columns"
             [ngClass]="{
@@ -25,10 +26,29 @@
             <span [innerHtml]="column.title"></span>
         </nts-datagrid-cell>
     </ng-container>
-    <ng-container *ngIf="datagrid.dataSelected.length">
+    <ng-container *ngIf="datagrid.selected.length && datagrid.deletingSelection !== true">
         <nts-datagrid-cell>
-            <span>{{datagrid.dataSelected.length}} item(s) selected</span>
+            <span>{{datagrid.selected.length}} item(s) selected</span>
         </nts-datagrid-cell>
     </ng-container>
+
+    <ng-container *ngIf="datagrid.selected.length && datagrid.deletingSelection === true">
+        <nts-datagrid-cell class="deleting">
+            <span>Are you sure you want to delete {{datagrid.selected.length}} item(s)?</span>
+            <nts-button label="Delete" color="error" (click)="datagrid.onDeleteSelection()"></nts-button>
+            <nts-button label="Cancel" color="default" (click)="datagrid.deletingSelection = false"></nts-button>
+        </nts-datagrid-cell>
+    </ng-container>
+
+    <nts-datagrid-cell
+        class="delete-cell"
+        width="0"
+        *ngIf="datagrid.deletable"
+        [highlight]="true"
+    >
+        <nts-button icon="delete" (click)="datagrid.deletingSelection = true"></nts-button>
+    </nts-datagrid-cell>
+
 </nts-row>
-<nts-separator [class.selected]="datagrid.dataSelected.length"></nts-separator>
+
+<nts-separator [class.selected]="datagrid.selected.length"></nts-separator>

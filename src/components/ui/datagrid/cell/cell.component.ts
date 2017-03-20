@@ -28,7 +28,7 @@ export class NtsDatagridCellComponent implements OnInit {
 
     @HostListener('click', ['$event'])
     onCellClicked(event: MouseEvent) {
-        if(this.context) {
+        if (this.context) {
             this.datagrid.cellClick.emit(this.context);
         }
         if (this.clickPropagation === false) {
