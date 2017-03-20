@@ -19,6 +19,7 @@ export class NtsListComponent implements OnChanges {
 
     @Input() placeholder: string;
     defaultSortableOptions = {
+        animation: 150,
         handle: 'inactive',
         onSort: (evt) => this.onSort(evt),
     };

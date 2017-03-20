@@ -8,7 +8,7 @@ nts-list {
         padding-left: $basic-padding / 4;
 
         &.sortable-ghost {
-            opacity: 0.5;
+            background-color: $color-grey-light;
         }
         span {
             padding: $basic-padding / 6 0;

@@ -1,8 +1,6 @@
-{{sortableOptions | json}}
-
 <ul *ngIf="data && data.length" [(sortablejs)]="data" [sortablejsOptions]="sortableOptions">
 
-    <li *ngFor="let item of data; let i = index" class="item">
+    <li *ngFor="let item of data; let i = index">
 
         <nts-icon class="drag-handle show-hover"
             *ngIf="sortable"
