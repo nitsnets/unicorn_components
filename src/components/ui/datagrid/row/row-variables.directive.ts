@@ -1,15 +1,8 @@
-import { AfterViewInit, Directive, TemplateRef, ViewChild } from '@angular/core';
-
-import { NtsDatagridRowComponent } from './row.component';
+import { Directive, TemplateRef } from '@angular/core';
 
 @Directive({
     selector: '[rowVariables]'
 })
-export class NtsDatagridRowDirective implements AfterViewInit {
-
-    @ViewChild(NtsDatagridRowComponent) rowView = NtsDatagridRowComponent;
-
+export class NtsDatagridRowDirective {
     constructor(public templateRef: TemplateRef<any>) { }
-
-    ngAfterViewInit() { }
 }

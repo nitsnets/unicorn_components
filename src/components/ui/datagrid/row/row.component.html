@@ -1,7 +1,7 @@
 <nts-datagrid-cell
     class="select-cell show-hover"
     width="0"
-    *ngIf="selectable"
+    *ngIf="box && datagrid.selectable"
     [highlight]="true"
 >
     <nts-checkbox [ntsModel]="selected" (ntsModelChange)="selectedChange.emit($event)"></nts-checkbox>
@@ -17,8 +17,8 @@
 <nts-datagrid-cell
     class="delete-cell show-hover"
     width="0"
-    *ngIf="deletable"
+    *ngIf="box && datagrid.deletable"
     [highlight]="true"
 >
-    <nts-button icon="delete" (click)="deleting = true"></nts-button>
+    <nts-button icon="delete" (click)="onDeleteAttempt()"></nts-button>
 </nts-datagrid-cell>

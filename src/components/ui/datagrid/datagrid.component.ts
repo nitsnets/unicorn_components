@@ -12,8 +12,12 @@ import {
 } from '@angular/core';
 import { deepClone, uuid } from '../../../utils';
 
+import { ModalService } from './../../containers/modal/modal.service';
 import { NtsDatagridColumnComponent } from './column/column.component';
+import { NtsDatagridDeleteComponent } from './delete/delete.component';
 import { NtsDatagridRowDirective } from './row/row-variables.directive';
+import { Observable } from 'rxjs/Rx';
+import { ViewContainerRef } from '@angular/core';
 
 /**
  *
@@ -125,6 +129,12 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
      */
     @Input() deletable = false;
     /**
+     * Specifies how a deletion must be confirmed
+     *
+     * @type {('inline' | 'modal')}
+     */
+    @Input() deleteConfirm: 'inline' | 'modal' = 'inline';
+    /**
      * Fired when the some items are deleted
      * @event
      * @type {string[]}
@@ -224,6 +234,11 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     columns: NtsDatagridColumnComponent[];
     customRow: TemplateRef<Object>;
 
+    constructor(
+        private modalService: ModalService,
+        private viewContainerRef: ViewContainerRef
+    ) { }
+
     ngOnChanges(changes) {
         if (changes.data) { this.updateData(); }
 
@@ -303,6 +318,9 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     onSelectAll(value: boolean) {
         this.selected = value ? [...this.dataView] : [];
         this.dataView.forEach(id => this.dataSource[id].selected = value);
+        if (!this.selected.length) {
+            this.deletingSelection = false;
+        }
     }
     /**
      * Fired when the user clicks on a checkbox of a row
@@ -319,6 +337,7 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
             this.selected.splice(index, 1);
         }
         this.dataSource[id].selected = value;
+
         if (!this.selected.length) {
             this.deletingSelection = false;
         }
@@ -339,7 +358,13 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
         this.page = page;
         this.pageChange.emit(page);
     }
-
+    openDeleteModal(itemsCount: number = 1): Observable<any> {
+        return this.modalService.createModal(NtsDatagridDeleteComponent, { hideHeader: true, itemsCount }, this.viewContainerRef);
+    }
+    /**
+     * Fired when an item selection is confirmed (at the row)
+     * @param {string} id
+     */
     onDeleteItem(id: string) {
         if (this.randomIds) {
             this.delete.emit([this.fillIds(id)]);
@@ -348,6 +373,9 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
             this.deleteLocally([id]);
         }
     }
+    /**
+     * Fired when the bulk deletion is confirmed (at the header)
+     */
     onDeleteSelection() {
         if (!this.deletable || !this.selectable || !this.selected || !this.selected.length) { return; }
 
@@ -361,6 +389,12 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
             this.selected = [];
         }
     }
+    /**
+     * Delete items locally by a given array of IDS
+     *
+     * @private
+     * @param {string[]} ids
+     */
     private deleteLocally(ids: string[]) {
         ids.forEach(id => {
             this.dataView.splice(this.dataView.indexOf(id), 1);

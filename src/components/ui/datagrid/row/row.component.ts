@@ -1,7 +1,9 @@
-import { Component, ElementRef, EventEmitter, HostBinding, Input, OnChanges, Output } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, OnChanges, Output } from '@angular/core';
+
+import { ModalService } from '../../../containers/modal/modal.service';
+import { NtsDatagridComponent } from '../datagrid.component';
 
 /**
- *
  * @author Alvaro Yuste
  *
  * @export
@@ -26,12 +28,6 @@ export class NtsDatagridRowComponent implements OnChanges {
     @HostBinding('class.deleting-selection')
     @Input() deletingSelection = false;
 
-    @Input() selectable = false;
-    @Output() selectedChange = new EventEmitter();
-
-    @Input() deletable = false;
-    @Output() delete = new EventEmitter();
-
     @Input()
     @HostBinding('class.highlight')
     highlight;
@@ -39,11 +35,27 @@ export class NtsDatagridRowComponent implements OnChanges {
     @HostBinding('class.deleting')
     deleting = false;
 
-    constructor(private element: ElementRef) { }
+    @Output() selectedChange = new EventEmitter();
+
+    @Output() delete = new EventEmitter();
+
+    constructor(
+        private datagrid: NtsDatagridComponent,
+    ) { }
 
     ngOnChanges(changes) {
         if (changes.anySelected && this.anySelected) {
             this.deleting = false;
+        }
+    }
+    onDeleteAttempt() {
+        if (this.datagrid.deleteConfirm === 'inline') {
+            this.deleting = true;
+        } else {
+            this.datagrid.openDeleteModal().subscribe(
+                () => this.delete.emit(),
+                () => { }
+            );
         }
     }
 

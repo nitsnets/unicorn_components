@@ -46,7 +46,7 @@
         *ngIf="datagrid.deletable"
         [highlight]="true"
     >
-        <nts-button icon="delete" (click)="datagrid.deletingSelection = true"></nts-button>
+        <nts-button icon="delete" (click)="onDeleteAttempt()"></nts-button>
     </nts-datagrid-cell>
 
 </nts-row>

@@ -24,6 +24,7 @@ import { NtsDatagridCellComponent } from './ui/datagrid/cell/cell.component';
 import { NtsDatagridCellDirective } from './ui/datagrid/cell/cell-variables.directive';
 import { NtsDatagridColumnComponent } from './ui/datagrid/column/column.component';
 import { NtsDatagridComponent } from './ui/datagrid/datagrid.component';
+import { NtsDatagridDeleteComponent } from './ui/datagrid/delete/delete.component';
 import { NtsDatagridHeaderComponent } from './ui/datagrid/header/header.component';
 import { NtsDatagridRowComponent } from './ui/datagrid/row/row.component';
 import { NtsDatagridRowDirective } from './ui/datagrid/row/row-variables.directive';
@@ -58,6 +59,7 @@ import { NtsToggleComponent } from './forms/toggle/toggle.component';
 // import { CodeEditorComponent } from './forms/code/code.component';
 
 
+
 export const NTS_COMPONENTS = [
     NtsPopupComponent, NtsPopupTriggerDirective, NtsPopupContainerComponent, NtsMenuComponent, NtsMenuTriggerDirective,
     NtsMenuContainerComponent, NtsMenuItemComponent, NtsInputComponent, NtsCheckboxComponent, NtsRadioComponent,
@@ -69,5 +71,5 @@ export const NTS_COMPONENTS = [
     NtsDatePickerComponent, NtsTimePickerComponent, NtsButtonMenuComponent, NtsButtonPopupComponent, NtsButtonFileComponent,
     NtsButtonHeaderComponent, NtsDatagridComponent, NtsDatagridColumnComponent, NtsDatagridRowComponent, NtsDatagridRowDirective,
     NtsDatagridCellComponent, NtsDatagridCellDirective, NtsDatagridHeaderComponent, NtsFiltersComponent, NtsFiltersAdvancedComponent,
-    NtsFiltersMainComponent, NtsCarouselDirective// CodeEditorComponent
+    NtsFiltersMainComponent, NtsCarouselDirective, NtsDatagridDeleteComponent// CodeEditorComponent
 ];

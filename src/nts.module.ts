@@ -6,6 +6,7 @@ import { NTS_COMPONENTS } from './components/';
 import { NTS_DIRECTIVES } from './directives/';
 import { NTS_PIPES } from './pipes/';
 import { NgModule } from '@angular/core';
+import { NtsDatagridDeleteComponent } from './components/ui/datagrid/delete/delete.component';
 import { SortablejsModule } from 'angular-sortablejs';
 import { TextMaskModule } from 'angular2-text-mask';
 
@@ -29,6 +30,9 @@ import { TextMaskModule } from 'angular2-text-mask';
         NTS_PIPES,
         ColorPickerModule,
         BrowserModule
+    ],
+    entryComponents: [
+        NtsDatagridDeleteComponent
     ]
 })
 export class NtsModule { }
