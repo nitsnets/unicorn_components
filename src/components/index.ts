@@ -1,6 +1,7 @@
 import { NtsMenuComponent, NtsMenuTriggerDirective } from './ui/menu/menu.component';
 import { NtsPopupComponent, NtsPopupTriggerDirective } from './containers/popup/popup.component';
 
+import { FilteredDatagridComponent } from './views/filtered-datagrid/filtered-datagrid.component';
 import { NtsAccordionComponent } from './containers/accordion/accordion.component';
 import { NtsAsideComponent } from './containers/aside/aside.component';
 import { NtsBadgeComponent } from './utils/badge/badge.component';
@@ -34,6 +35,7 @@ import { NtsDatetimePickerComponent } from './forms/datetime-picker/datetime-pic
 import { NtsFaceComponent } from './utils/face/face.component';
 import { NtsFiltersAdvancedComponent } from './ui/filters/filters-advanced/filters-advanced.component';
 import { NtsFiltersComponent } from './ui/filters/filters.component';
+import { NtsFiltersListComponent } from './ui/filters-list/filters-list.component';
 import { NtsFiltersMainComponent } from './ui/filters/filters-main/filters-main.component';
 import { NtsHeaderComponent } from './containers/header/header.component';
 import { NtsIconComponent } from './utils/icon/icon.component';
@@ -56,10 +58,6 @@ import { NtsTabsComponent } from './containers/tabs/tabs.component';
 import { NtsTimePickerComponent } from './forms/time-picker/time-picker.component';
 import { NtsToggleComponent } from './forms/toggle/toggle.component';
 
-// import { CodeEditorComponent } from './forms/code/code.component';
-
-
-
 export const NTS_COMPONENTS = [
     NtsPopupComponent, NtsPopupTriggerDirective, NtsPopupContainerComponent, NtsMenuComponent, NtsMenuTriggerDirective,
     NtsMenuContainerComponent, NtsMenuItemComponent, NtsInputComponent, NtsCheckboxComponent, NtsRadioComponent,
@@ -71,5 +69,5 @@ export const NTS_COMPONENTS = [
     NtsDatePickerComponent, NtsTimePickerComponent, NtsButtonMenuComponent, NtsButtonPopupComponent, NtsButtonFileComponent,
     NtsButtonHeaderComponent, NtsDatagridComponent, NtsDatagridColumnComponent, NtsDatagridRowComponent, NtsDatagridRowDirective,
     NtsDatagridCellComponent, NtsDatagridCellDirective, NtsDatagridHeaderComponent, NtsFiltersComponent, NtsFiltersAdvancedComponent,
-    NtsFiltersMainComponent, NtsCarouselDirective, NtsDatagridDeleteComponent// CodeEditorComponent
+    NtsFiltersMainComponent, NtsCarouselDirective, NtsDatagridDeleteComponent, FilteredDatagridComponent, NtsFiltersListComponent
 ];

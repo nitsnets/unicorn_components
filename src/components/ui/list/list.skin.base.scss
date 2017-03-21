@@ -5,13 +5,14 @@ nts-list {
 
     li {
         min-height: $input-height;
-        padding-left: $basic-padding / 4;
+        padding-left: $basic-padding;
 
         &.sortable-ghost {
             background-color: $color-grey-light;
         }
         span {
             padding: $basic-padding / 6 0;
+            margin-right: auto;
 
             &.selected{
                 color: $color-primary;
@@ -19,7 +20,8 @@ nts-list {
         }
     }
     .drag-handle {
-        margin-right: $basic-padding / 4;
+        position: absolute;
+        left: $basic-padding / 4;
     }
     .show-hover {
         opacity: 0.5;

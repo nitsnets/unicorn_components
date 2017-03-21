@@ -434,7 +434,7 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
      *
      * @private
      */
-    private updateData() {
+    updateData() {
         const dataSource = {};
         const dataView = [];
         this.randomIds = false;

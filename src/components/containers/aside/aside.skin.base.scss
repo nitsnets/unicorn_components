@@ -9,13 +9,9 @@ nts-aside {
     }
     .aside{
         height: 100%;
-        width: $input-height + $basic-padding;
+        width: $aside-width;
 
         @include transition(all, 200ms, ease);
-
-        @include md() {
-            width: $aside-width;
-        }
     }
     &.has-header {
         .body-container {
@@ -27,12 +23,17 @@ nts-aside {
             height: calc(100% - #{$header-height * 2});
         }
     }
-    &.collapsed{
-        .aside {
-            margin-left: - ($input-height + $basic-padding);
-        }
-    }
     &.aside-left{
+        &.collapsed{
+            .aside {
+                margin-left: - ($input-height + $basic-padding);
+            }
+        }
+        &.hidden{
+            .aside {
+                margin-left: - $aside-width;
+            }
+        }
         @include border-right();
     }
     &.aside-right{

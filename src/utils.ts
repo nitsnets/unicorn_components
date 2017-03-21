@@ -122,7 +122,7 @@ export function deepMerge(target, src) {
 
     return dst;
 }
-function findByPath(object: Object, path: Array<string | number>, cb: Function) {
+export function findByPath(object: Object, path: Array<string | number>, cb: Function = null) {
     let index = -1, length = path.length, lastIndex = length - 1, nested = object;
 
     while (nested != null && ++index < length) {
@@ -135,7 +135,8 @@ function findByPath(object: Object, path: Array<string | number>, cb: Function) 
                 nested = nested[key]; // Keep digging into the object
             } else {
                 nested[key] = nested[key] || []; // Initialize as array if null
-                cb(nested[key]);
+                if (cb) { cb(nested[key]); }
+                return nested[key];
             }
 
         }

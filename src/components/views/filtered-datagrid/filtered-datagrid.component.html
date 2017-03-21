@@ -1,0 +1,9 @@
+<nts-layout>
+    <nts-aside class="aside-left" [class.hidden]="filtersList?.isEmpty">
+        <ng-content select="nts-filters-list"></ng-content>
+    </nts-aside>
+    <nts-body>
+        <ng-content select="nts-filters"></ng-content>
+        <ng-content select="nts-datagrid"></ng-content>
+    </nts-body>
+</nts-layout>

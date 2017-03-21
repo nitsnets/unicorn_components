@@ -22,4 +22,4 @@
         <nts-button class="save" *ngIf="savable && !isEmpty()" label="save" icon="plus" size="small" (click)="onSave()"></nts-button>
     </div>
 </form>
-<nts-button *ngIf="!showAdvanced" icon="arrow-down" label="more filters" size="small" (click)="showAdvanced = true"></nts-button>
+<nts-button *ngIf="advFilters && !showAdvanced" icon="arrow-down" label="more filters" size="small" (click)="showAdvanced = true"></nts-button>

@@ -30,7 +30,7 @@ export class NtsSelectComponent extends NtsInputBaseComponent implements OnInit,
 
     @Input() options: NtsOption[] = [];
     @Input() excludedOptions: string[];
-    @Input() multipleptions: NtsOption[] = [];
+    @Input() multipleOptions: NtsOption[] = [];
 
     areOptionsVisible = false;
     optionsFiltered: NtsOption[] = [];

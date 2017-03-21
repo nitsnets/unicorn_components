@@ -1,0 +1,21 @@
+<ng-container *ngIf="mainFilters">
+    <h3 *ngIf="mainTitle">{{mainTitle}}</h3>
+    <nts-list
+        [selectable]="true"
+        [data]="mainFilters"
+        [itemSelected]="filterSelected"
+        (itemSelectedChange)="onFilterSelected($event)"
+    ></nts-list>
+</ng-container>
+
+<ng-container *ngIf="customFilters">
+    <h3 *ngIf="customTitle">{{customTitle}}</h3>
+    <nts-list
+        [selectable]="true"
+        [sortable]="true"
+        [deletable]="true"
+        [data]="customFilters"
+        [itemSelected]="filterSelected"
+        (itemSelectedChange)="onFilterSelected($event)"
+    ></nts-list>
+</ng-container>

@@ -18,7 +18,7 @@
             [style.text-align]="column.formatOptions?.align || 'left'"
             [customCell]="column.customCell"
             [clickPropagation]="column.clickPropagation"
-            [value]="row[column.field]"
+            [value]="column.getValue(row)"
             [format]="column.format"
             [options]="column.formatOptions"
             [context]="{$implicit: row, i: i, j: j, row: row, column: column, cell: row[column.field]}"

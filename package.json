@@ -38,10 +38,10 @@
     "zone.js": "^0.7.6"
   },
   "devDependencies": {
+    "@angular/cli": "1.0.0-rc.0",
     "@types/chartjs": "0.0.29",
     "@types/jasmine": "^2.5.38",
-    "@types/node": "^6.0.60",
-    "@angular/cli": "1.0.0-rc.0",
+    "@types/node": "^6.0.65",
     "autoprefixer": "^6.7.2",
     "codelyzer": "~2.0.0",
     "postcss": "^5.2.12",

@@ -1,9 +1,12 @@
 import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 
-import { ListItem } from './list.component';
+import { NtsListItem } from './list.component';
 import { objEquals } from '../../../utils';
 
-export interface ListItem { name: String; }
+export interface NtsListItem {
+    name: string;
+    icon: string;
+}
 
 @Component({
     selector: 'nts-list',
@@ -25,12 +28,13 @@ export class NtsListComponent implements OnChanges {
     };
     sortableOptions = this.defaultSortableOptions;
 
-    @Input() itemActive: ListItem;
-    @Output() itemActiveChange = new EventEmitter<ListItem>();
+    @Input() itemSelected: NtsListItem;
+    @Output() itemSelectedChange = new EventEmitter<NtsListItem>();
 
-    @Input() data: ListItem[];
-    @Output() delete = new EventEmitter<{ index: number, item: ListItem }>();
-    @Output() edit = new EventEmitter<{ index: number, item: ListItem }>();
+    @Input() data: NtsListItem[];
+    @Output() delete = new EventEmitter<{ index: number, item: NtsListItem }>();
+    @Output() edit = new EventEmitter<{ index: number, item: NtsListItem }>();
+    @Output() sort = new EventEmitter<NtsListItem[]>();
 
     // Double click handlers
     preventDoubleclick = false;
@@ -49,26 +53,27 @@ export class NtsListComponent implements OnChanges {
         }
     }
     onSort(event) {
-        console.log('sort', event, this.data.map(i => i.name));
+        this.sort.emit(this.data);
     }
-    onClick(item: ListItem) {
+    onClick(item: NtsListItem) {
         this.preventDoubleclick = false;
+        const lastSelected = this.itemSelected;
         if (!this.selectable) { return; }
         if (this.local) {
-            this.itemActive = item;
+            this.itemSelected = item;
         }
         this.timer = setTimeout(
             _ => {
                 if (!this.preventClick) {
-                    this.itemActiveChange.emit(item);
+                    this.itemSelectedChange.emit(item);
+                } else {
+                    this.itemSelected = lastSelected;
                 }
                 this.preventClick = false;
             }, this.delay
         );
     }
-    onDoubleclick(item: ListItem) {
-        console.log('dblclick');
-
+    onDoubleclick(item: NtsListItem) {
         if (this.preventDoubleclick) { return false; }
         clearTimeout(this.timer);
         this.preventClick = true;
@@ -76,13 +81,13 @@ export class NtsListComponent implements OnChanges {
         item['editing'] = true;
         item['newname'] = item.name;
     }
-    onEdit(index: number, item: ListItem) {
+    onEdit(index: number, item: NtsListItem) {
         item.name = item['newname'];
         item['editing'] = false;
 
         this.edit.emit({ index, item });
     }
-    onDelete(index: number, item: ListItem, e: MouseEvent) {
+    onDelete(index: number, item: NtsListItem, e: MouseEvent) {
         if (!this.deletable) { return; }
 
         e.stopPropagation();
@@ -92,9 +97,9 @@ export class NtsListComponent implements OnChanges {
         }
         this.delete.emit({ index, item });
     }
-    isSelected(item: ListItem): boolean {
-        if (!this.itemActive) { return false; }
-        if (item['id'] && this.itemActive['id'] && item['id'] === this.itemActive['id']) { return true; }
-        return objEquals(this.itemActive, item);
+    isSelected(item: NtsListItem): boolean {
+        if (!this.itemSelected) { return false; }
+        if (item['id'] && this.itemSelected['id'] && item['id'] === this.itemSelected['id']) { return true; }
+        return objEquals(this.itemSelected, item);
     }
 }

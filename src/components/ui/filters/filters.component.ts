@@ -13,6 +13,8 @@ import { NtsSelectComponent } from '../../forms/select/select.component';
 import { NtsTimePickerComponent } from './../../forms/time-picker/time-picker.component';
 import { NtsToggleComponent } from './../../forms/toggle/toggle.component';
 
+export type NtsFilter = { [key: string]: any };
+
 @Component({
     selector: 'nts-filters',
     templateUrl: './filters.component.html',
@@ -49,20 +51,20 @@ export class NtsFiltersComponent implements AfterContentInit, OnChanges {
     showButton = true;
     showAdvanced = false;
 
-    defaultFilter: { [key: string]: any } = {};
-    _filter: { [key: string]: any } = {};
+    defaultFilter: NtsFilter = {};
 
-    get filter(): { [key: string]: any } {
+    private _filter: NtsFilter = {};
+    get filter(): NtsFilter {
         return this._filter;
     }
     @Input('filter')
-    set filter(value: { [key: string]: any }) {
+    set filter(value: NtsFilter) {
         this._filter = value;
         this.updateNtsModels();
     }
 
-    @Output() filterChange = new EventEmitter();
-    @Output() save = new EventEmitter();
+    @Output() filterChange: EventEmitter<NtsFilter> = new EventEmitter();
+    @Output() save: EventEmitter<NtsFilter> = new EventEmitter();
 
     /**
      * The number of button on the right side of the filters

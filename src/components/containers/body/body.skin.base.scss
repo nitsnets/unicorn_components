@@ -1,8 +1,13 @@
 nts-body {
-  .body {
-    max-width: 1080px;
-  }
-  &.grey {
-    background-color: $color-grey-light;
-  }
+    padding: $basic-padding;
+
+    .body {
+        max-width: 1080px;
+    }
+    &.grey {
+        background-color: $color-grey-light;
+    }
+    &.nopadding {
+        padding: 0;
+    }
 }

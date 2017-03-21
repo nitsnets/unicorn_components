@@ -15,7 +15,7 @@
             >
                 {{item.name || '(Untitled)'}}
             </span>
-            <nts-button class="delete show-hover"
+            <nts-button class="show-hover"
                 *ngIf="deletable"
                 icon="delete"
                 (click)="onDelete(i, item, $event)"
