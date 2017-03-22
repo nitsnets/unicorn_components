@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, ContentChild, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterContentInit, Component, ContentChild, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 
 import { NtsDatagridComponent } from './../../ui/datagrid/datagrid.component';
 import { NtsFilter } from '../../ui/filters/filters.component';
@@ -11,7 +11,7 @@ import { deepClone } from '../../../utils';
     selector: 'nts-filtered-datagrid',
     templateUrl: './filtered-datagrid.component.html'
 })
-export class FilteredDatagridComponent implements OnInit, AfterContentInit {
+export class FilteredDatagridComponent implements AfterContentInit, OnChanges {
 
     @ContentChild(NtsDatagridComponent) datagrid: NtsDatagridComponent;
     @ContentChild(NtsFiltersComponent) filters: NtsFiltersComponent;
@@ -24,7 +24,10 @@ export class FilteredDatagridComponent implements OnInit, AfterContentInit {
 
     constructor() { }
 
-    ngOnInit() {
+    ngOnChanges(changes) {
+        if (changes.filterFn && this.datagrid) {
+            this.datagrid.filterFn = this.filterFn;
+        }
     }
 
     ngAfterContentInit() {
@@ -32,6 +35,8 @@ export class FilteredDatagridComponent implements OnInit, AfterContentInit {
     }
 
     private initListeners() {
+        this.datagrid.filterable = true;
+        this.datagrid.filterFn = this.filterFn;
         this.filters.save.subscribe(f => this.onSaveFilter(f));
         this.filters.filterChange.subscribe(f => this.onAppliedFilter(f));
         this.filtersList.filterSelectedChange.subscribe(f => this.onSelectFilter(f));
@@ -53,9 +58,7 @@ export class FilteredDatagridComponent implements OnInit, AfterContentInit {
     }
     private onAppliedFilter(filter: NtsFilter) {
         if (this.filterFn) {
-            this.datagrid.data = this.filterFn(this.datagrid.data, filter);
-            this.datagrid.updateData();
-            console.log(this.datagrid.data);
+            this.datagrid.applyFilter(filter);
         }
     }
 }

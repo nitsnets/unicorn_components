@@ -16,6 +16,7 @@ import { ModalService } from './../../containers/modal/modal.service';
 import { NtsDatagridColumnComponent } from './column/column.component';
 import { NtsDatagridDeleteComponent } from './delete/delete.component';
 import { NtsDatagridRowDirective } from './row/row-variables.directive';
+import { NtsFilter } from '../filters/filters.component';
 import { Observable } from 'rxjs/Rx';
 import { ViewContainerRef } from '@angular/core';
 
@@ -146,7 +147,6 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     deletingSelection = false;
 
     /***************** PAGING *****************/
-    // SORTING
     /**
      * True if the items can be divided in pages
      * @type boolean
@@ -208,6 +208,14 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
      * @type {INtsDataSort}
      */
     @Output() sortChange: EventEmitter<INtsDataSort> = new EventEmitter<INtsDataSort>();
+
+    /***************** FILTERING *****************/
+    /**
+     *
+     */
+    @Input() filterable = false;
+    @Input() filter: NtsFilter;
+    @Input() filterFn: Function;
 
     /**
      * Specifies if the cells must Cell on hover.
@@ -397,6 +405,10 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
             this.selected = [];
         }
     }
+    applyFilter(filter: NtsFilter) {
+        this.filter = filter;
+        this.updateData();
+    }
     /**
      * Delete items locally by a given array of IDS
      *
@@ -434,21 +446,25 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
      *
      * @private
      */
-    updateData() {
+    private updateData(data: Object[] = this.data) {
         const dataSource = {};
         const dataView = [];
         this.randomIds = false;
 
-        if (this.data && this.data.length) {
-            this.data.forEach(el => {
+        if (data && data.length) {
+            data.filter(el => {
+                if (this.filterable && this.filterFn && this.filter) {
+                    return this.filterFn(el, this.filter);
+                } else { return true; }
+            }).forEach(el => {
                 const id = el[this.idField] || uuid();
                 if (!el[this.idField]) {
                     el[this.idField] = id;
                     el['randomId'] = true;
                     this.randomIds = true;
                 }
-                dataView.push(id);
-                dataSource[id] = deepClone(el);
+                dataView.push(el['id']);
+                dataSource[el['id']] = deepClone(el);
             });
         }
 
