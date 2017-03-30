@@ -10,6 +10,7 @@ import { findByPath } from '../../../../utils';
 export class NtsDatagridColumnComponent implements AfterContentInit, OnChanges {
     @Input() title: string = null;
     @Input() field: string = null;
+    @Input() cellClass: string = null;
     @Input() width = 1;
     @Input() sortable;
     @Input() sort: 'asc' | 'desc';
