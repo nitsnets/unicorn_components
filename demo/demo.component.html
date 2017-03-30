@@ -449,7 +449,7 @@
                 <nts-datagrid [data]="data" (cellClick)="log('Cell clicked', $event)" (rowClick)="log('Row clicked', $event)" [highlightCell]="true" [highlightRow]="false">
                     <nts-datagrid-column field="img" format="image" [sortable]="false" width="0.2"></nts-datagrid-column>
                     <nts-datagrid-column title="First name" field="name" sort="asc">
-                        <nts-datagrid-cell *cellVariables="let user">
+                        <nts-datagrid-cell *cellVariables="let user;">
                             <strong>{{user.name}}</strong>
                             <p>{{user.birth | formatDate : 'ddd DD MMM, YYYY'}}</p>
                         </nts-datagrid-cell>
@@ -463,10 +463,13 @@
                     <nts-datagrid-column title="Progress" field="progress" format="progress" [formatOptions]="{total: 1, color: 'success'}"></nts-datagrid-column>
                     <nts-datagrid-column title="Alerts" field="alerts" format="badge" [formatOptions]="{color: 'error'}" [sortable]="false" width="0.15"></nts-datagrid-column>
                     <nts-datagrid-column [sortable]="false" [clickPropagation]="false" [highlightCell]="false">
-                        <nts-row *cellVariables="let user">
-                            <nts-input placeholder="units" [(ntsModel)]="user.units"></nts-input>
-                            <nts-button label="Add to cart" color="primary" size="small" (click)="log('Add to cart', {user: user, units: user['units']})"></nts-button>
-                        </nts-row>
+                        <nts-datagrid-cell *cellVariables="let user">
+                            <nts-row>
+                                <nts-input placeholder="units" [(ntsModel)]="user.units"></nts-input>
+                                <nts-button label="Add to cart" color="primary" size="small" (click)="log('Add to cart', {user: user, units: user['units']})"></nts-button>
+                            </nts-row>
+                        </nts-datagrid-cell>
+
                     </nts-datagrid-column>
                 </nts-datagrid>
 
