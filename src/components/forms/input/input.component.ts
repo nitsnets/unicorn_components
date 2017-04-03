@@ -68,6 +68,12 @@ export class NtsInputComponent extends NtsInputBaseComponent implements OnInit, 
         }
         this.ntsBlur.emit(ev);
     }
+    onNgModelChange(ev) {
+        if (this.type === 'number') {
+            ev = parseFloat(ev.replace(',', '.'));
+        }
+        super.onNgModelChange(ev);
+    }
     private applyMask() {
         if (!this._mask || !this.ntsModel) { return; }
         console.log(conformToMask(this.ntsModel, this._mask, {}).conformedValue);
