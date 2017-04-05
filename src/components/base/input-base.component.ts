@@ -1,4 +1,5 @@
 import { EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Observable, Subscription } from 'rxjs/Rx';
 
 import { NtsBaseComponent } from './base.component';
 
@@ -14,7 +15,7 @@ export abstract class NtsInputBaseComponent extends NtsBaseComponent implements 
     @Input() required = false;
     @Input() debounce = 0;
 
-    debounceTimer;
+    debounceSubs: Subscription;
 
     ngOnInit() {
 
@@ -24,13 +25,17 @@ export abstract class NtsInputBaseComponent extends NtsBaseComponent implements 
             this.value = this.ntsModel;
         }
     }
-    onNgModelChange(ev) {
-        clearTimeout(this.debounceTimer);
-        this.debounceTimer = setTimeout(
-            _ => {
-                this.ntsModel = ev;
-                this.ntsModelChange.emit(ev);
-            }, this.debounce || 0
-        );
+    onNgModelChange(ev): Observable<any> {
+        if (this.debounceSubs && !this.debounceSubs.closed) {
+            this.debounceSubs.unsubscribe();
+        }
+        const observable = Observable.timer(this.debounce || 0).share();
+        this.debounceSubs = observable.subscribe(_ => {
+            this.ntsModel = ev;
+            this.ntsModelChange.emit(ev);
+            console.log('debounce internal');
+        });
+        return observable;
+
     }
 }

@@ -5,7 +5,7 @@
 >
   <div class="daterange-input-container"
     *ngIf="combo"
-    [class.filled]="toModel && fromModel"
+    [class.filled]="ntsModel?.to && ntsModel?.from"
     [class.with-arrows]="showArrows"
   >
     <nts-input
@@ -31,22 +31,22 @@
       <nts-date-picker
         class="picker spacing"
         (ntsModelChange)="onFromChanges($event)"
-        [ntsModel]="fromModel"
+        [ntsModel]="ntsModel?.from"
         [label]="fromLabel || (toLabel ? ' ' : '')"
         [inline]="combo"
-        [maxDate]="toModel || maxDate"
+        [maxDate]="ntsModel?.to || maxDate"
         [minDate]="minDate"
-        [rangeTo]="toModel"
+        [rangeTo]="ntsModel?.to"
       > </nts-date-picker>
       <nts-date-picker
         class="picker"
         (ntsModelChange)="onToChanges($event)"
-        [ntsModel]="toModel"
+        [ntsModel]="ntsModel?.to"
         [label]="toLabel || (fromLabel ? ' ' : '')"
         [inline]="combo"
         [maxDate]="maxDate"
-        [minDate]="fromModel || minDate"
-        [rangeFrom]="fromModel"
+        [minDate]="ntsModel?.from || minDate"
+        [rangeFrom]="ntsModel?.from"
     > </nts-date-picker>
     </div>
     <div class="buttons-container" *ngIf="combo && comboOpened">

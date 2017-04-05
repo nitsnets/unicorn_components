@@ -3,6 +3,9 @@ import * as moment from 'moment';
 import { Component, ElementRef, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 import { abbrDateRange, sideOfScreen } from '../../../utils';
 
+import { NtsInputBaseComponent } from '../../base/input-base.component';
+import { Observable } from 'rxjs/Rx';
+
 moment.locale('es', { week: { dow: 1, doy: 4 } });
 
 const nameFromType = t => t === 'd' ? 'day' : t === 'w' ? 'week' : t === 'M' ? 'month' : 'year';
@@ -33,28 +36,24 @@ const presets = {
     templateUrl: 'daterange-picker.component.html',
     styleUrls: ['daterange-picker.component.scss']
 })
-export class NtsDaterangePickerComponent implements OnChanges {
+export class NtsDaterangePickerComponent extends NtsInputBaseComponent {
 
     @Input() combo = false;
     @Input() showArrows = false;
-    @Input() comboLabel: string = 'Date range';
+    @Input() comboLabel = 'Date range';
 
-    @Input() fromModel: string; // 'YYYY-MM-DD'
-    @Input() fromLabel: string = 'from';
-    @Output() fromChange = new EventEmitter<string>();
-
-    @Input() toModel: string; // 'YYYY-MM-DD'
-    @Input() toLabel: string = 'to';
-    @Output() toChange = new EventEmitter<String>();
+    @Input() fromLabel = 'from';
+    @Input() toLabel = 'to';
 
     clickingInside = false;
     comboOpened = false;
     comboModel = '';
     side = 'left';
 
-    constructor(private elementRef: ElementRef) { }
+    constructor(private elementRef: ElementRef) {
+        super();
+    }
 
-    ngOnChanges(changes) { }
 
     openCombo() {
         this.comboOpened = true;
@@ -67,10 +66,11 @@ export class NtsDaterangePickerComponent implements OnChanges {
     }
 
     loadPreset(name: string) {
-        let preset = presets[name];
-        this.comboModel = preset.label;
-        this.onFromChanges(preset.from);
-        this.onToChanges(preset.to);
+        const preset = presets[name];
+        this.onNgModelChange({
+            from: preset.from,
+            to: preset.to
+        });
     }
     onMouseDown() {
         this.clickingInside = true;
@@ -79,32 +79,42 @@ export class NtsDaterangePickerComponent implements OnChanges {
         setTimeout(_ => this.clickingInside = false, 100);
     }
 
-    onFromChanges(date: string) {
-        this.fromModel = date;
-        this.fromChange.emit(date);
-        this.setComboModel();
+    onNgModelChange(newModel: { from: string, to: string }): Observable<any> {
+        const obs = super.onNgModelChange(newModel);
+        obs.subscribe(_ => {
+            this.setComboModel();
+        });
+        return obs;
     }
-    onToChanges(time: string) {
-        this.toModel = time;
-        this.toChange.emit(time);
-        this.setComboModel();
+    onFromChanges(date: string) {
+        const newModel = this.ntsModel || {};
+        newModel['from'] = date;
+        this.onNgModelChange(newModel);
+    }
+    onToChanges(date: string) {
+        const newModel = this.ntsModel || {};
+        newModel['to'] = date;
+        this.onNgModelChange(newModel);
     }
     clear() {
-        this.onFromChanges(null);
-        this.onToChanges(null);
+        this.onNgModelChange({ from: null, to: null });
     }
 
     prevRange() {
-        let {from, to} = this.getFromToMoment();
-        let mgnt = this.rangeMagnitude(from, to);
-        this.onFromChanges(from.subtract(1, mgnt).format('YYYY-MM-DD'));
-        this.onToChanges(to.subtract(1, mgnt).format('YYYY-MM-DD'));
+        const { from, to } = this.getFromToMoment();
+        const mgnt = this.rangeMagnitude(from, to);
+        this.onNgModelChange({
+            from: from.subtract(1, mgnt).format('YYYY-MM-DD'),
+            to: to.subtract(1, mgnt).format('YYYY-MM-DD')
+        });
     }
     nextRange() {
-        let {from, to} = this.getFromToMoment();
-        let mgnt = this.rangeMagnitude(from, to);
-        this.onFromChanges(from.add(1, mgnt).format('YYYY-MM-DD'));
-        this.onToChanges(to.add(1, mgnt).format('YYYY-MM-DD'));
+        const { from, to } = this.getFromToMoment();
+        const mgnt = this.rangeMagnitude(from, to);
+        this.onNgModelChange({
+            from: from.add(1, mgnt).format('YYYY-MM-DD'),
+            to: to.add(1, mgnt).format('YYYY-MM-DD')
+        });
     }
     private rangeMagnitude(from, to): 'd' | 'w' | 'M' | 'y' {
         if (to.diff(from, 'months') > 0) {
@@ -120,19 +130,19 @@ export class NtsDaterangePickerComponent implements OnChanges {
     }
     private getFromToMoment(): { from: moment.Moment, to: moment.Moment } {
         return {
-            from: moment(this.fromModel, 'YYYY-MM-DD'),
-            to: moment(this.toModel, 'YYYY-MM-DD')
+            from: moment(this.ntsModel['from'], 'YYYY-MM-DD'),
+            to: moment(this.ntsModel['to'], 'YYYY-MM-DD')
         };
     }
     private setComboModel() {
-        let presetKey = Object.keys(presets).find(key =>
-            presets[key].from === this.fromModel &&
-            presets[key].to === this.toModel
+        const presetKey = Object.keys(presets).find(key =>
+            presets[key].from === this.ntsModel['from'] &&
+            presets[key].to === this.ntsModel['to']
         );
         if (presetKey) {
             this.comboModel = presets[presetKey].label;
         } else {
-            this.comboModel = abbrDateRange(this.fromModel, this.toModel);
+            this.comboModel = abbrDateRange(this.ntsModel['from'], this.ntsModel['to']);
         }
     }
 }
