@@ -1,7 +1,7 @@
 import { FilterPipe } from './filter.pipe';
 import { FormatDatePipe } from './format-date.pipe';
 import { FormatDaterangePipe } from './format-daterange.pipe';
-import { FormatPipe } from './format';
+import { FormatPipe } from './format.pipe';
 import { FormatTimePipe } from './format-time.pipe';
 import { HighlightPipe } from './highlight.pipe';
 import { NtsFillMapPipe } from './fill-map.pipe';

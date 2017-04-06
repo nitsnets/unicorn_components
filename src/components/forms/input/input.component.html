@@ -36,13 +36,13 @@
       (focus)="onInputFocus($event)"
       (keypress)="ntsKeypress.emit($event)"
     />
-    <nts-button
+    <nts-icon
       class="clear-btn"
       icon="close"
       size="small"
       *ngIf="!multiline && clear && ntsModel && ntsModel.length"
       (click)="onNgModelChange(null)"
-    > </nts-button>
+    > </nts-icon>
 
     <textarea
       *ngIf="multiline && type !== 'color'"

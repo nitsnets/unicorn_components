@@ -12,7 +12,7 @@ import { TooltipService } from '../src/components/utils/tooltip/tooltip.service'
     styleUrls: ['./demo.component.scss']
 })
 export class DemoComponent {
-    tabSelected = 'data';
+    tabSelected = 'inputs';
 
     manyOptions: NtsOption[] = [
         new NtsOption({ value: 1, label: 'Option 1' }),

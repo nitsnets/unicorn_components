@@ -83,6 +83,10 @@ nts-input{
 
     .clear-btn{
         margin-left: - $input-height;
+        height: $input-height;
+        width: $input-height;
+        line-height: 4;
+        cursor: pointer;
     }
 
     .with-two-icon-right {
