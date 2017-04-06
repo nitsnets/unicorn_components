@@ -1,5 +1,6 @@
+import { ANALYZE_FOR_ENTRY_COMPONENTS, ModuleWithProviders, NgModule, Type } from '@angular/core';
+
 import { ModalService } from './modal.service';
-import { NgModule } from '@angular/core';
 import { NtsModalComponent } from './modal.component';
 import { NtsModule } from '../../../nts.module';
 
@@ -17,4 +18,13 @@ import { NtsModule } from '../../../nts.module';
         NtsModalComponent,
     ]
 })
-export class ModalModule { }
+export class ModalModule {
+    static withComponents(entryComponents: Array<Type<any> | any[]>): ModuleWithProviders {
+        return {
+            ngModule: ModalModule,
+            providers: [
+                { provide: ANALYZE_FOR_ENTRY_COMPONENTS, useValue: entryComponents, multi: true }
+            ]
+        }
+    }
+}

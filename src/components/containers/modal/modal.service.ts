@@ -1,28 +1,19 @@
-import { ApplicationRef, ComponentFactoryResolver, ElementRef, Injectable, Injector, Type, ViewContainerRef } from '@angular/core';
+import { ComponentFactoryResolver, ComponentRef, Injectable, Type, ViewContainerRef } from '@angular/core';
 import { Observable, Subject } from 'rxjs/Rx';
 
+import { DynamicContainerService } from '../../base/dynamic-container.service';
 import { NtsModalComponent } from './modal.component';
 
 @Injectable()
-export class ModalService {
-    appElementRef: ElementRef;
+export class ModalService extends DynamicContainerService {
+    constructor(cmpFactoryResolver: ComponentFactoryResolver) { super(cmpFactoryResolver); }
 
-    constructor(
-        private appRef: ApplicationRef,
-        private injector: Injector,
-        private cmpFactoryResolver: ComponentFactoryResolver
-    ) { }
+    createModal(component: Type<any>, options = {}, viewContainerRef: ViewContainerRef = this.defaultContainer): Observable<any> {
 
-
-    createModal(component: Type<any>, options: {}, viewContainer: any): Observable<any> {
-        const modalSub = new Subject();
-
-        const modalRef = viewContainer.createComponent(
-            this.cmpFactoryResolver.resolveComponentFactory(NtsModalComponent),
-            viewContainer.length, this.injector, null
-        );
+        const modalRef: ComponentRef<NtsModalComponent> = this.attachComponent(NtsModalComponent, viewContainerRef);
         modalRef.instance.initContent(component, options);
 
+        const modalSub = new Subject();
         modalRef.instance.cancel.subscribe(
             ev => { modalSub.error(ev); modalRef.destroy(); }
         );

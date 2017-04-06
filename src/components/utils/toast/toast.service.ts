@@ -1,17 +1,15 @@
-import { Injectable, ApplicationRef, ViewContainerRef, ComponentFactoryResolver, ElementRef, Injector } from '@angular/core';
-import { Subject } from 'rxjs/Rx';
+import { ApplicationRef, ComponentFactoryResolver, ElementRef, Injectable, Injector, ViewContainerRef } from '@angular/core';
+
 import { NtsToastComponent } from './toast.component';
+import { Subject } from 'rxjs/Rx';
 
 @Injectable()
 export class ToastService {
-    // appElementRef: ElementRef;
     toastRef;
     toastSub;
     intervalClose;
 
     constructor(
-        private appRef: ApplicationRef,
-        private injector: Injector,
         private cmpFactoryResolver: ComponentFactoryResolver
     ) { }
 
@@ -21,8 +19,7 @@ export class ToastService {
             this.toastSub = new Subject();
 
             this.toastRef = viewContainer.createComponent(
-                this.cmpFactoryResolver.resolveComponentFactory(NtsToastComponent),
-                viewContainer.length, this.injector, null
+                this.cmpFactoryResolver.resolveComponentFactory(NtsToastComponent)
             );
             this.toastRef.instance.setMessage(msg);
             this.toastRef.instance.initContent(options);

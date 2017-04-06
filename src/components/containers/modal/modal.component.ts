@@ -16,10 +16,10 @@ import {
     styleUrls: ['modal.component.scss']
 })
 export class NtsModalComponent implements AfterContentInit {
-    contentComponent: Type<any>;
-    contentComponentRef: ComponentRef<any>;
+    component: Type<any>;
+    componentRef: ComponentRef<any>;
 
-    @Input() modalOptions = {};
+    @Input() options = {};
 
     @Output() loaded = new EventEmitter();
     @Output() cancel = new EventEmitter();
@@ -27,7 +27,7 @@ export class NtsModalComponent implements AfterContentInit {
 
     leaving = false;
 
-    @HostListener('keyup', ['$event']) onKeyup(e: KeyboardEvent) {
+    @HostListener('document:keyup', ['$event']) onKeyup(e: KeyboardEvent) {
         if (e.key === 'Escape') { this.onCancel(); }
     }
 
@@ -35,19 +35,19 @@ export class NtsModalComponent implements AfterContentInit {
 
     ngAfterContentInit() { }
     initContent(component: Type<any>, options) {
-        this.contentComponent = component;
-        this.modalOptions = options;
+        this.component = component;
+        this.options = options;
     }
     componentLoaded(componentRef: ComponentRef<any>) {
-        this.contentComponentRef = componentRef;
-        if (this.contentComponentRef.instance.submitModal) {
-            this.contentComponentRef.instance.submitModal.subscribe(ev => this.onSubmit(ev));
+        this.componentRef = componentRef;
+        if (this.componentRef.instance.submitModal) {
+            this.componentRef.instance.submitModal.subscribe(ev => this.onSubmit(ev));
         }
-        if (this.contentComponentRef.instance.cancelModal) {
-            this.contentComponentRef.instance.cancelModal.subscribe(ev => this.onCancel());
+        if (this.componentRef.instance.cancelModal) {
+            this.componentRef.instance.cancelModal.subscribe(ev => this.onCancel());
         }
-        if (this.contentComponentRef.instance.initModalOptions) {
-            this.contentComponentRef.instance.initModalOptions(this.modalOptions);
+        if (this.componentRef.instance.initModalOptions) {
+            this.componentRef.instance.initModalOptions(this.options);
         }
     }
     onCancel() {

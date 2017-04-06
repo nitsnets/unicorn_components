@@ -139,7 +139,9 @@ export class DemoComponent {
         private toastService: ToastService,
         private tooltipService: TooltipService,
         private modalService: ModalService
-    ) { }
+    ) {
+        this.modalService.setDefaultContainer(this.viewContainerRef);
+    }
 
     openToast() {
         this.toastService.createToast('Esto es el mensaje', { showClose: true, time: 3000 }, this.viewContainerRef).subscribe(
@@ -148,7 +150,7 @@ export class DemoComponent {
     }
 
     openModal(options = {}) {
-        this.modalService.createModal(NtsDemoModalContentComponent, options, this.viewContainerRef).subscribe(
+        this.modalService.createModal(NtsDemoModalContentComponent, options).subscribe(
             param => { console.log('ok: ', param); }, _ => { console.log('ko'); }
         );
     }

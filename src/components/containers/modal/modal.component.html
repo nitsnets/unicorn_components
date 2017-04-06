@@ -1,14 +1,14 @@
 <div class="modal-bg" [ngClass]="{
-  full: modalOptions['type'] === 'full',
-  aside: modalOptions['type'] === 'aside',
-  large: modalOptions['size'] === 'large',
+  full: options['type'] === 'full',
+  aside: options['type'] === 'aside',
+  large: options['size'] === 'large',
   leaving: leaving
 }">
   <div class="modal-container" (clickOutside)="onClickOutside($event)" [class.leaving]="leaving">
-    <nts-header *ngIf="modalOptions['hideHeader'] !== true">
-      <h3>{{modalOptions['title']}}</h3>
+    <nts-header *ngIf="options['hideHeader'] !== true">
+      <h3>{{options['title']}}</h3>
     </nts-header>
     <nts-icon class="close-button" icon="close" (click)="onCancel()"></nts-icon>
-    <div [ntsComponentLoader]="contentComponent" (ntsComponentLoaded)="componentLoaded($event)"></div>
+    <div [ntsComponentLoader]="component" (ntsComponentLoaded)="componentLoaded($event)"></div>
   </div>
 </div>
