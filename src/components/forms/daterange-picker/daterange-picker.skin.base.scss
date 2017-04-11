@@ -2,9 +2,6 @@ nts-daterange-picker {
   .spacing { margin-right: $basic-padding / 2;}
 
   .daterange-input-container {
-    @include border;
-    @include border-radius;
-
     nts-input {
       width: 228px;
     }

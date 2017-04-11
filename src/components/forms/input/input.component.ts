@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 import { NtsInputBaseComponent } from '../../base/input-base.component';
+import { Observable } from 'rxjs/Rx';
 import { conformToMask } from 'angular2-text-mask';
 
 // https://github.com/text-mask/text-mask/tree/master/angular2
@@ -68,11 +69,11 @@ export class NtsInputComponent extends NtsInputBaseComponent implements OnInit, 
         }
         this.ntsBlur.emit(ev);
     }
-    onNgModelChange(ev) {
+    onNgModelChange(ev): Observable<any> {
         if (this.type === 'number') {
             ev = parseFloat(ev.replace(',', '.'));
         }
-        super.onNgModelChange(ev);
+        return super.onNgModelChange(ev);
     }
     private applyMask() {
         if (!this._mask || !this.ntsModel) { return; }

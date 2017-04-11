@@ -49,6 +49,7 @@ export class NtsModalComponent implements AfterContentInit {
         if (this.componentRef.instance.initModalOptions) {
             this.componentRef.instance.initModalOptions(this.options);
         }
+        this.loaded.emit();
     }
     onCancel() {
         this.leaving = true;
