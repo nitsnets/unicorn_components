@@ -593,7 +593,7 @@
 
                 <h5>Modal</h5>
                 <div class="flex">
-                    <nts-button label="Open modal" icon="open" color="default" (click)="openModal({ title: 'Demo Modal' })"></nts-button>
+                    <nts-button label="Open modal" icon="open" color="default" (click)="openModal({ title: 'Demo Modal', class: 'custom-class' })"></nts-button>
                     <nts-button label="Open modal without header" icon="open" color="default" (click)="openModal({ 'hideHeader': true })"></nts-button>
                     <nts-button color="default" label="Open full-screen modal" icon="open" (click)="openModal({ title: 'Demo Modal', type: 'full'})"></nts-button>
                     <nts-button color="default" label="Open aside modal" icon="open" (click)="openModal({ title: 'Demo Modal', type: 'aside'})"></nts-button>

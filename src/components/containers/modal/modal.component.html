@@ -1,4 +1,4 @@
-<div class="modal-bg" [ngClass]="{
+<div [class]="'modal-bg ' + (options['class'] || '')" [ngClass]="{
   full: options['type'] === 'full',
   aside: options['type'] === 'aside',
   large: options['size'] === 'large',
