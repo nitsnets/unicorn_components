@@ -8,19 +8,19 @@
         <ng-container *ngSwitchCase="'h3'"> <h3>{{value}}</h3> </ng-container>
         <ng-container *ngSwitchCase="'h4'"> <h4>{{value}}</h4> </ng-container>
         <ng-container *ngSwitchCase="'html'"> <div [innerHtml]="value"></div> </ng-container>
-        <ng-container *ngSwitchCase="'image'"> <img [src]="value"> </ng-container>
+        <ng-container *ngSwitchCase="'image'"> <img [src]="value" alt="Cell image"> </ng-container>
         <ng-container *ngSwitchCase="'progress'">
             <nts-progress [value]="value" [color]="options?.color" [total]="options?.total"></nts-progress>
         </ng-container>
         <ng-container *ngSwitchCase="'badge'">
             <nts-badge [label]="value" [color]="options?.color"></nts-badge>
         </ng-container>
-        <!-- You can add a new format cases here
-        <ng-container *ngSwitchCase="'yourCase'">
+        <!-- You can add a new format case this way: -->
+        <ng-container *ngSwitchCase="'yourCustomCase'">
             The content of your custom cell.
             The value of the cell is at {{value}} and the options at {{options}}
         </ng-container>
-        -->
+        <!---->
         <ng-container *ngSwitchDefault>
             {{value | format: format}}
         </ng-container>

@@ -17,9 +17,31 @@
         'two-options': optionsCount === 2,
         'one-option': optionsCount === 1
     }">
-        <nts-button class="apply" *ngIf="showButton" type="submit" [label]="buttonLabel" [color]="buttonColor" [icon]="buttonIcon"></nts-button>
-        <nts-button class="clear" *ngIf="clearable && !isDefault()" label="clear" icon="close" size="small" (click)="onClear()"></nts-button>
-        <nts-button class="save" *ngIf="savable && !isEmpty()" label="save" icon="plus" size="small" (click)="onSave()"></nts-button>
+        <nts-button class="apply"
+            *ngIf="showButton" type="submit"
+            [label]="buttonLabel"
+            [color]="buttonColor"
+            [icon]="buttonIcon"
+        ></nts-button>
+        <nts-button class="clear"
+            *ngIf="clearable && !isDefault()"
+            label="clear"
+            icon="close"
+            size="small"
+            (click)="onClear()"
+        ></nts-button>
+        <nts-button class="save"
+            *ngIf="savable && !isEmpty()"
+            label="save"
+            icon="plus"
+            size="small"
+            (click)="onSave()"
+        ></nts-button>
     </div>
 </form>
-<nts-button *ngIf="advFilters && !showAdvanced" icon="arrow-down" label="more filters" size="small" (click)="showAdvanced = true"></nts-button>
+<nts-button *ngIf="advFilters && !showAdvanced"
+    icon="arrow-down"
+    label="more filters"
+    size="small"
+    (click)="showAdvanced = true"
+></nts-button>

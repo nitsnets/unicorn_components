@@ -1,5 +1,5 @@
 <ng-container *ngIf="mainFilters">
-    <h3 *ngIf="mainTitle">{{mainTitle}}</h3>
+    <p class="title3" *ngIf="mainTitle">{{mainTitle}}</p>
     <nts-list
         [selectable]="true"
         [data]="mainFilters"
@@ -9,7 +9,7 @@
 </ng-container>
 
 <ng-container *ngIf="customFilters">
-    <h3 *ngIf="customTitle">{{customTitle}}</h3>
+    <p class="title3" *ngIf="customTitle">{{customTitle}}</p>
     <nts-list
         [selectable]="true"
         [sortable]="true"

@@ -1,11 +1,16 @@
 <div class="container">
 
   <p class="counter">
-    <strong>{{selected * pageSize + 1}} - {{min(totalElements, (selected + 1) * pageSize)}}</strong> of {{totalElements}} items
+    <strong>{{selected * pageSize + 1}} - {{min(totalElements, (selected + 1) * pageSize)}}</strong>
+    of {{totalElements}} items
   </p>
 
   <div class="pages">
-    <nts-icon class="paginator-icon" icon="arrow-left" (click)="prevPage()" [class.disabled]="page === 0"></nts-icon>
+    <nts-icon class="paginator-icon"
+        icon="arrow-left"
+        (click)="prevPage()"
+        [class.disabled]="page === 0"
+    ></nts-icon>
     <span class="page"
       *ngFor="let page of pages"
       [class.selectable]="page !== selected && page !== null"
@@ -15,6 +20,10 @@
     >
       {{page === null ? '...' : page+1}}
     </span>
-    <nts-icon class="paginator-icon" icon="arrow-right" (click)="nextPage()" [class.disabled]="page === pagesCount - 1"></nts-icon>
+    <nts-icon class="paginator-icon"
+        icon="arrow-right"
+        (click)="nextPage()"
+        [class.disabled]="page === pagesCount - 1"
+    ></nts-icon>
   </div>
 </div>

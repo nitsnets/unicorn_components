@@ -1,16 +1,22 @@
-<label class="img-picker" droppable="true" (ntsDragenter)="onDragEnter($event)" (dragover)="onDragOver($event)" (ntsDragleave)="onDragLeave($event)"
-  (drop)="onDrop($event)" [ngClass]="{dragging: dragging}">
+<label class="img-picker"
+    droppable="true"
+    (ntsDragenter)="onDragEnter($event)"
+    (dragover)="onDragOver($event)"
+    (ntsDragleave)="onDragLeave($event)"
+    (drop)="onDrop($event)"
+    [ngClass]="{dragging: dragging}"
+>
 
-  <div class="placeholder" *ngIf="!imageData">
-    <nts-icon class="icon" icon="image" size="large"></nts-icon>
-    <p class="label">
-      Click or drop an image to upload <br> ({{width}} x {{height}})
-    </p>
-  </div>
-  <div class="preview" *ngIf="imageData">
-    <img class="image" [src]="imageData" alt="Image picker">
-  </div>
-  <input #inputFile type="file" accept="image/*" (change)="onImagePicked($event)" [style.display]="'none'">
+    <div class="placeholder" *ngIf="!imageData">
+        <nts-icon class="icon" icon="image" size="large"></nts-icon>
+        <p class="label">
+            Click or drop an image to upload <br> ({{width}} x {{height}})
+        </p>
+    </div>
+    <div class="preview" *ngIf="imageData">
+        <img class="image" [src]="imageData" alt="Image picker">
+    </div>
+    <input #inputFile type="file" accept="image/*" (change)="onImagePicked($event)" [style.display]="'none'">
 
 </label>
 <nts-button class="delete" *ngIf="imageData" icon="delete" (click)="clear()"></nts-button>

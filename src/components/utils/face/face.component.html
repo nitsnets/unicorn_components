@@ -4,7 +4,7 @@
         initial: user && !user.image
     }" [style.background-image]="user?.image ? 'url('+user?.image+')' : ''">
 
-    <h4 class="letter" *ngIf="user && !user.image">{{user.name?.charAt(0) | uppercase}}</h4>
+    <p class="title4 letter" *ngIf="user && !user.image">{{user.name?.charAt(0) | uppercase}}</p>
 
     <nts-icon class="icon" [icon]="icon" *ngIf="!user"></nts-icon>
 
