@@ -2,7 +2,11 @@
     <nts-datagrid-header> </nts-datagrid-header>
     <div class="datagrid-body">
         <nts-datagrid-row
-            *ngFor="let row of dataView | fillMap : dataSource | sort : localSort | paginate : (pageable ? localPage : -1) : pageSize ; let i = index;"
+            *ngFor="let row of dataView |
+                fillMap : dataSource |
+                sort : localSort |
+                paginate : (pageable ? localPage : -1) : pageSize;
+                let i = index;"
             [anySelected]="selected.length ? true : false"
             [box]="true"
             [selected]="row.selected"
@@ -25,8 +29,7 @@
                     [class]="column.cellClass"
                     [options]="column.formatOptions"
                     [context]="{$implicit: row, i: i, j: j, row: row, column: column, cell: row[column.field]}"
-                >
-                </nts-datagrid-cell>
+                ></nts-datagrid-cell>
             </ng-container>
             <ng-container *ngIf="customRow">
                 <template [ngTemplateOutlet]="customRow" [ngOutletContext]="{ $implicit: row, i: i }"> </template>
