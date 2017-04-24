@@ -1,4 +1,9 @@
-<div class="toast-container" [ngClass]="{'animate-in': animateIn, 'animate-out': animateOut}" >    
-    <p>{{msg}}</p>    
-    <nts-icon *ngIf="toastOptions.showClose"  class="remove" size="small" icon="close" (click)="clickClose()"></nts-icon>
+<div class="toast-container" [ngClass]="{'animate-in': animateIn, 'animate-out': animateOut}" >
+    <p>{{msg}}</p>
+    <nts-icon class="remove"
+        *ngIf="toastOptions.showClose"
+        size="small"
+        icon="close"
+        (click)="clickClose()"
+    ></nts-icon>
 </div>
