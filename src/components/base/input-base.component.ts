@@ -33,7 +33,6 @@ export abstract class NtsInputBaseComponent extends NtsBaseComponent implements 
         this.debounceSubs = observable.subscribe(_ => {
             this.ntsModel = ev;
             this.ntsModelChange.emit(ev);
-            console.log('debounce internal');
         });
         return observable;
 

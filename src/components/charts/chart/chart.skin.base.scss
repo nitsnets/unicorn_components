@@ -1,6 +1,12 @@
 nts-chart {
-  .chart-tiny { height: $chart-tiny; }
-  .chart-small { height: $chart-small; }
-  .chart-medium { height: $chart-medium; }
-  .chart-large { height: $chart-large; }
+
+    .chart-title {
+        font-size: $font-xlarge;
+        font-weight: 300;
+    }
+
+    .chart-tiny { height: $chart-tiny; }
+    .chart-small { height: $chart-small; }
+    .chart-medium { height: $chart-medium; }
+    .chart-large { height: $chart-large; }
 }

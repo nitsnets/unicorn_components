@@ -6,7 +6,7 @@
 }">
   <div class="modal-container" (clickOutside)="onClickOutside($event)" [class.leaving]="leaving">
     <nts-header *ngIf="options['hideHeader'] !== true">
-      <h3>{{options['title']}}</h3>
+      <p class="modal-title">{{options['title']}}</p>
     </nts-header>
     <nts-icon class="close-button" icon="close" (click)="onCancel()"></nts-icon>
     <div [ntsComponentLoader]="component" (ntsComponentLoaded)="componentLoaded($event)"></div>

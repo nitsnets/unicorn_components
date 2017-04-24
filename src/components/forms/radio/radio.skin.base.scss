@@ -27,6 +27,8 @@ nts-radio {
       .icon{ opacity: 1; }
     }
 
-    span{margin-left: $input-height / 2 - $input-padding}
+    span.label {
+        margin-left: $input-height / 2 - $input-padding;
+    }
   }
 }

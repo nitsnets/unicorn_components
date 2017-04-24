@@ -5,6 +5,13 @@ $modal-animation-time: 200ms;
 @include keyframes(aside-leave) { from {transform: translateX(0);} to {transform: translateX(100%);} }
 
 nts-modal {
+
+    .modal-title {
+        font-size: $font-xlarge;
+        font-weight: 300;
+        margin-bottom: 0;
+    }
+
     .modal-bg{
         background-color: $modal-bg;
         padding: 5%;

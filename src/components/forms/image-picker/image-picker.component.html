@@ -8,7 +8,7 @@
     </p>
   </div>
   <div class="preview" *ngIf="imageData">
-    <img class="image" [src]="imageData">
+    <img class="image" [src]="imageData" alt="Image picker">
   </div>
   <input #inputFile type="file" accept="image/*" (change)="onImagePicked($event)" [style.display]="'none'">
 

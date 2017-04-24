@@ -1,7 +1,7 @@
 nts-checkbox {
   height: $input-height;
 
-  label{
+  label {
     min-width: 100%;
     height: $input-height;
     line-height: 1;
@@ -28,6 +28,7 @@ nts-checkbox {
       .icon{ opacity: 1; }
     }
 
-    span{margin-left: $input-height / 2 - $input-padding}
-  }
+    span.label {
+        margin-left: $input-height / 2 - $input-padding}
+    }
 }

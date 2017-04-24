@@ -1,19 +1,19 @@
 .modal-bg{
-  position: fixed;
-  z-index: 1;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  overflow-y: auto;
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;
 
-  &.aside {
-    padding: 0;
-    justify-content: flex-end;
-    overflow-x: hidden;
-  }
+    &.aside {
+        padding: 0;
+        justify-content: flex-end;
+        overflow-x: hidden;
+    }
 
 }
