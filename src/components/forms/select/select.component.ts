@@ -135,7 +135,7 @@ export class NtsSelectComponent extends NtsInputBaseComponent implements OnInit,
     }
     private updateOptionsSelectedByModel() {
         this.optionsSelected = [];
-        if (!this.options || !this.ntsModel) { return; }
+        if (!this.options || !this.ntsModel) { this.optionsSelected = []; return; }
         for (const option of this.options) {
             if (!this.multiple && option.value === this.ntsModel ||
                 this.multiple && this.ntsModel.includes(option.value)) {
