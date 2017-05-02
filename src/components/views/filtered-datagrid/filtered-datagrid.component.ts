@@ -1,7 +1,7 @@
 import { AfterContentInit, Component, ContentChild, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 
 import { NtsDatagridComponent } from './../../ui/datagrid/datagrid.component';
-import { NtsFilter } from '../../ui/filters/filters.component';
+import { NtsFilter } from './../../../models/filter';
 import { NtsFilterItem } from '../../ui/filters-list/filters-list.component';
 import { NtsFiltersComponent } from './../../ui/filters/filters.component';
 import { NtsFiltersListComponent } from './../../ui/filters-list/filters-list.component';

@@ -1,30 +1,29 @@
 <ng-container *ngIf="!customCell">
     <span class="datagrid-cell-label" *ngIf="showLabels">{{label}}:</span>
     <ng-container *ngIf="value" [ngSwitch]="format">
-        <ng-container *ngSwitchCase="'text'"> {{value}} </ng-container>
-        <ng-container *ngSwitchCase="'strong'"> <strong>{{value}}</strong> </ng-container>
-        <ng-container *ngSwitchCase="'p'"> <p>{{value}}</p> </ng-container>
-        <ng-container *ngSwitchCase="'h1'"> <h1>{{value}}</h1> </ng-container>
-        <ng-container *ngSwitchCase="'h2'"> <h2>{{value}}</h2> </ng-container>
-        <ng-container *ngSwitchCase="'h3'"> <h3>{{value}}</h3> </ng-container>
-        <ng-container *ngSwitchCase="'h4'"> <h4>{{value}}</h4> </ng-container>
-        <ng-container *ngSwitchCase="'html'"> <div [innerHtml]="value"></div> </ng-container>
-        <ng-container *ngSwitchCase="'image'"> <img [src]="value" alt="Cell image"> </ng-container>
-        <ng-container *ngSwitchCase="'progress'">
-            <nts-progress [value]="value" [color]="options?.color" [total]="options?.total"></nts-progress>
-        </ng-container>
-        <ng-container *ngSwitchCase="'badge'">
-            <nts-badge [label]="value" [color]="options?.color"></nts-badge>
-        </ng-container>
+        <ng-container   *ngSwitchCase="'void'"> {{value}} </ng-container>
+        <strong         class="datagrid-cell-value" *ngSwitchCase="'strong'">{{value}}</strong>
+        <span           class="datagrid-cell-value" *ngSwitchCase="'span'">{{value}}</span>
+        <p              class="datagrid-cell-value" *ngSwitchCase="'p'">{{value}}</p>
+        <h1             class="datagrid-cell-value" *ngSwitchCase="'h1'">{{value}}</h1>
+        <h2             class="datagrid-cell-value" *ngSwitchCase="'h2'">{{value}}</h2>
+        <h3             class="datagrid-cell-value" *ngSwitchCase="'h3'">{{value}}</h3>
+        <h4             class="datagrid-cell-value" *ngSwitchCase="'h4'">{{value}}</h4>
+        <div            class="datagrid-cell-value" *ngSwitchCase="'html'" [innerHtml]="value"></div>
+        <img            class="datagrid-cell-value" *ngSwitchCase="'image'" [src]="value" alt="Cell image">
+        <nts-progress   class="datagrid-cell-value" *ngSwitchCase="'progress'" [value]="value" [color]="options?.color" [total]="options?.total"></nts-progress>
+        <nts-badge      class="datagrid-cell-value" *ngSwitchCase="'badge'" [label]="value" [color]="options?.color"></nts-badge>
+
         <!-- You can add a new format case this way: -->
         <ng-container *ngSwitchCase="'yourCustomCase'">
             The content of your custom cell.
             The value of the cell is at {{value}} and the options at {{options}}
         </ng-container>
         <!---->
-        <ng-container *ngSwitchDefault>
-            {{value | format: format}}
-        </ng-container>
+
+        <span class="datagrid-cell-value" *ngSwitchDefault>
+            default {{value | format: format}}
+        </span>
     </ng-container>
     <ng-content *ngIf="!value"></ng-content>
 </ng-container>
