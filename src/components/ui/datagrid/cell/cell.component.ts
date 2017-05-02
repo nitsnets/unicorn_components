@@ -21,8 +21,10 @@ export class NtsDatagridCellComponent implements OnInit {
     @Input() customCell;
     @Input() format;
     @Input() options;
+    @Input() label;
     @Input() value;
     @Input() context;
+    @Input() showLabels;
 
     selectable = false;
 

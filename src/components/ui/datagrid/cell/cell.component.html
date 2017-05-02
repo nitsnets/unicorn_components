@@ -1,4 +1,5 @@
 <ng-container *ngIf="!customCell">
+    <span class="datagrid-cell-label" *ngIf="showLabels">{{label}}:</span>
     <ng-container *ngIf="value" [ngSwitch]="format">
         <ng-container *ngSwitchCase="'text'"> {{value}} </ng-container>
         <ng-container *ngSwitchCase="'strong'"> <strong>{{value}}</strong> </ng-container>

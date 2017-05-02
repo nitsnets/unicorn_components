@@ -217,19 +217,27 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     @Input() filter: NtsFilter;
     @Input() filterFn: Function;
 
+    /***************** VISUALIZATION *****************/
     /**
-     * Specifies if the cells must Cell on hover.
+     * Specifies if the cells must highlight on hover.
      * This can be overriden at column or cell level.
      * @type boolean
      * @default false
      */
     @Input() highlightCell = false;
     /**
-     * Specifies if the cells must Cell on hover.
+     * Specifies if the rows must highlight on hover.
      * @type boolean
      * @default true
      */
     @Input() highlightRow = true;
+    /**
+     * Specifies if the cells must show column labels.
+     * This can be overriden at column or cell level.
+     * @type boolean
+     * @default false
+     */
+    @Input() showLabels = false;
 
     /**
      * Emits an event when a cell is clicked

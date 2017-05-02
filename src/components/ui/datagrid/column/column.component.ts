@@ -15,6 +15,7 @@ export class NtsDatagridColumnComponent implements AfterContentInit, OnChanges {
     @Input() sortable;
     @Input() sort: 'asc' | 'desc';
     @Input() highlightCell;
+    @Input() showLabels;
     @Input() format = 'text';
     @Input() formatOptions: Object = null;
     @Input() clickPropagation = true;
