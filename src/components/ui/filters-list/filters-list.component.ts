@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-import { NtsFilter } from '../filters/filters.component';
+import { NtsFilter } from './../../../models/filter';
 import { NtsListItem } from './../list/list.component';
 
 export interface NtsFilterItem extends NtsListItem {

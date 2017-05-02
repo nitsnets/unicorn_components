@@ -4,6 +4,7 @@ import { deepClone, objEmpty, objEquals } from '../../../utils';
 import { NtsButtonToggleComponent } from './../../forms/button-toggle/button-toggle.component';
 import { NtsCheckboxComponent } from './../../forms/checkbox/checkbox.component';
 import { NtsDatePickerComponent } from '../../forms/date-picker/date-picker.component';
+import { NtsFilter } from '../../../models/filter';
 import { NtsFiltersAdvancedComponent } from './filters-advanced/filters-advanced.component';
 import { NtsFiltersMainComponent } from './filters-main/filters-main.component';
 import { NtsInputBaseComponent } from '../../base/input-base.component';
@@ -12,8 +13,6 @@ import { NtsRadioComponent } from '../../forms/radio/radio.component';
 import { NtsSelectComponent } from '../../forms/select/select.component';
 import { NtsTimePickerComponent } from './../../forms/time-picker/time-picker.component';
 import { NtsToggleComponent } from './../../forms/toggle/toggle.component';
-
-export type NtsFilter = { [key: string]: any };
 
 @Component({
     selector: 'nts-filters',

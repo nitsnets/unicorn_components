@@ -16,7 +16,7 @@ import { ModalService } from './../../containers/modal/modal.service';
 import { NtsDatagridColumnComponent } from './column/column.component';
 import { NtsDatagridDeleteComponent } from './delete/delete.component';
 import { NtsDatagridRowDirective } from './row/row-variables.directive';
-import { NtsFilter } from '../filters/filters.component';
+import { NtsFilter } from './../../../models/filter';
 import { Observable } from 'rxjs/Rx';
 import { ViewContainerRef } from '@angular/core';
 
