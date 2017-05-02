@@ -12,7 +12,7 @@ import { TooltipService } from '../src/components/utils/tooltip/tooltip.service'
     styleUrls: ['./demo.component.scss']
 })
 export class DemoComponent {
-    tabSelected = 'inputs';
+    tabSelected = 'other';
 
     manyOptions: NtsOption[] = [
         new NtsOption({ value: 1, label: 'Option 1' }),
@@ -141,6 +141,7 @@ export class DemoComponent {
         private modalService: ModalService
     ) {
         this.modalService.setDefaultContainer(this.viewContainerRef);
+        this.tooltipService.setDefaultContainer(this.viewContainerRef);
     }
 
     openToast() {
@@ -153,19 +154,6 @@ export class DemoComponent {
         this.modalService.createModal(NtsDemoModalContentComponent, options).subscribe(
             param => { console.log('ok: ', param); }, _ => { console.log('ko'); }
         );
-    }
-
-    openTooltip(event) {
-        this.tooltipService.createTooltip('Esto es el mensaje del tooltip informativo', {
-            x: event.clientX,
-            y: event.clientY
-        }, this.viewContainerRef).subscribe(
-            _ => { console.log('accept'); }
-            );
-    }
-
-    closeTooltip() {
-        this.tooltipService.close();
     }
     log(...args) {
         console.log('', ...args);

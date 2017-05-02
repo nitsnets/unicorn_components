@@ -447,7 +447,8 @@
                 </nts-datagrid>
 
                 <h5>Custom cells</h5>
-                <nts-datagrid [data]="data" (cellClick)="log('Cell clicked', $event)" (rowClick)="log('Row clicked', $event)" [highlightCell]="true" [highlightRow]="false">
+                <nts-datagrid [data]="data" (cellClick)="log('Cell clicked', $event)" (rowClick)="log('Row clicked', $event)" [highlightCell]="true"
+                    [highlightRow]="false">
                     <nts-datagrid-column field="img" format="image" [sortable]="false" width="0.2"></nts-datagrid-column>
                     <nts-datagrid-column title="First name" field="name" sort="asc">
                         <nts-datagrid-cell *cellVariables="let user;">
@@ -501,7 +502,7 @@
                             {value: '25-49', label: '25 - 49%'},
                             {value: '50-74', label: '50 - 74%'},
                             {value: '75-100', label: '75 - 100%'}
-                        ]" ></nts-select>
+                        ]"></nts-select>
                         <nts-checkbox name="alerts" label="With alerts"></nts-checkbox>
                     </nts-filters-main>
                     <nts-filters-advanced>
@@ -514,14 +515,7 @@
                     </nts-filters-advanced>
                 </nts-filters>
 
-                <nts-datagrid
-                    [data]="longData"
-                    [selectable]="true"
-                    [pageable]="true"
-                    [pageSize]="6"
-                    [deletable]="true"
-                    (delete)="log('Delete', $event)"
-                >
+                <nts-datagrid [data]="longData" [selectable]="true" [pageable]="true" [pageSize]="6" [deletable]="true" (delete)="log('Delete', $event)">
                     <nts-datagrid-column title="First name" field="name" [highlightCell]="true"></nts-datagrid-column>
                     <nts-datagrid-column title="Date of birth" field="birth"></nts-datagrid-column>
                     <nts-datagrid-column title="Progress" field="progress" format="percentage"></nts-datagrid-column>
@@ -529,12 +523,7 @@
                 </nts-datagrid>
 
                 <h3>Lists</h3>
-                <nts-list [data]="data"
-                    [sortable]="true"
-                    [selectable]="true"
-                    [deletable]="true"
-                    (delete)="log('delete', $event)"
-                ></nts-list>
+                <nts-list [data]="data" [sortable]="true" [selectable]="true" [deletable]="true" (delete)="log('delete', $event)"></nts-list>
 
             </ng-container>
             <ng-container *ngIf="tabSelected === 'other'">
@@ -582,14 +571,26 @@
                 </div>
 
                 <h5>Tooltip</h5>
-                <div class="flex">
-                    <nts-button label="Open Tooltip" icon="open" class="btn-default" (mouseover)="openTooltip($event)" (mouseout)="closeTooltip()"></nts-button>
-                </div>
-
+                <nts-button
+                    label="Open Tooltip right"
+                    color="default"
+                    ntsTooltip="Esto es el mensaje del tooltip informativo"
+                    orientation="right"
+                ></nts-button>
+                <nts-button
+                    label="Open Tooltip bottom"
+                    color="default"
+                    ntsTooltip="Esto es el mensaje del tooltip informativo"
+                    orientation="bottom"
+                ></nts-button>
+                <nts-button
+                    label="Open Tooltip left"
+                    color="default"
+                    ntsTooltip="Esto es el mensaje del tooltip informativo"
+                    orientation="left"
+                ></nts-button>
                 <h5>Toast</h5>
-                <div class="flex">
-                    <nts-button label="Open toast" icon="open" class="btn-default" (click)="openToast()"></nts-button>
-                </div>
+                <nts-button label="Open toast" icon="open" class="btn-default" (click)="openToast()"></nts-button>
 
                 <h5>Modal</h5>
                 <div class="flex">

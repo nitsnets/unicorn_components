@@ -1,4 +1,4 @@
-import { ComponentFactoryResolver, Type, ViewContainerRef } from '@angular/core';
+import { ComponentFactoryResolver, ComponentRef, Type, ViewContainerRef } from '@angular/core';
 
 /**
  * Used to attach dynamic components to a container.
@@ -17,7 +17,7 @@ export abstract class DynamicContainerService {
         this.defaultContainer = viewContainerRef;
     }
 
-    protected attachComponent(component: Type<any>, viewContainerRef: ViewContainerRef = this.defaultContainer) {
+    protected attachComponent(component: Type<any>, viewContainerRef: ViewContainerRef = this.defaultContainer): ComponentRef<any> {
         if (!viewContainerRef) {
             throw new Error(`No container set.
                 You can set one by default using modalService.setDefaultContainer(ViewContainerRef),

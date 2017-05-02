@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { NtsModule } from '../../../nts.module';
 import { NtsTooltipComponent } from './tooltip.component';
+import { NtsTooltipDirective } from './tooltip.directive';
 import { TooltipService } from './tooltip.service';
 
 @NgModule({
@@ -8,13 +9,14 @@ import { TooltipService } from './tooltip.service';
         NtsModule
     ],
     declarations: [
-        NtsTooltipComponent
+        NtsTooltipComponent,
+        NtsTooltipDirective
     ],
     providers: [
         TooltipService
     ],
     exports: [
-        NtsTooltipComponent
+        NtsTooltipDirective
     ]
 })
 export class TooltipModule { }

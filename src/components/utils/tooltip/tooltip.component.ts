@@ -1,16 +1,11 @@
-import {
-    Component, Output, EventEmitter, ElementRef, AfterContentInit
-} from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output } from '@angular/core';
 
 @Component({
     selector: 'nts-tooltip',
     templateUrl: 'tooltip.component.html',
     styleUrls: ['tooltip.component.scss'],
 })
-export class NtsTooltipComponent implements AfterContentInit {
-
-    animateIn = false;
-    animateOut = false;
+export class NtsTooltipComponent {
 
     tooltipOptions = {};
     msg = '';
@@ -18,15 +13,6 @@ export class NtsTooltipComponent implements AfterContentInit {
     @Output() accept = new EventEmitter();
 
     constructor(private elementRef: ElementRef) { }
-
-    ngAfterContentInit() {
-        this.animateIn = false;
-        setTimeout(() => this.onEndAnimateOpen(), 50);
-    }
-
-    onEndAnimateOpen() {
-        this.animateIn = true;
-    }
 
     initContent(options) {
         this.tooltipOptions = options;
@@ -36,14 +22,7 @@ export class NtsTooltipComponent implements AfterContentInit {
         this.msg = msg;
     }
 
-    clickClose() {
-        this.accept.emit(true);
-    }
 
-    close() {
-        this.animateIn = false;
-        this.animateOut = true;
-    }
 
 
 }

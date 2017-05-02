@@ -1,9 +1,8 @@
 nts-tooltip {
 
     .tooltip-container {
-        transition: all 0.5s ease 0s;
+        transition: all 200ms ease 0s;
         width: 225px;
-        opacity : 0;
 
         font-size: $font-regular;
         background: $color-grey-light;
@@ -12,18 +11,10 @@ nts-tooltip {
         padding: $basic-padding/2;
         border-radius: $border-radius;
 
-        opacity: 0.5;
         &:hover {
             opacity: 1;
         }
     }
 
-    .animate-in {
-        opacity : 1;
-    }
-
-    .animate-out {
-        opacity : 0;
-    }
 }
 
