@@ -571,24 +571,11 @@
                 </div>
 
                 <h5>Tooltip</h5>
-                <nts-button
-                    label="Open Tooltip right"
-                    color="default"
-                    ntsTooltip="Esto es el mensaje del tooltip informativo"
-                    orientation="right"
-                ></nts-button>
-                <nts-button
-                    label="Open Tooltip bottom"
-                    color="default"
-                    ntsTooltip="Esto es el mensaje del tooltip informativo"
-                    orientation="bottom"
-                ></nts-button>
-                <nts-button
-                    label="Open Tooltip left"
-                    color="default"
-                    ntsTooltip="Esto es el mensaje del tooltip informativo"
-                    orientation="left"
-                ></nts-button>
+                <nts-button label="Open Tooltip right" color="default" ntsTooltip="Esto es el mensaje del tooltip a la derecha" orientation="right" ></nts-button>
+                <nts-button label="Open Tooltip bottom" color="default" ntsTooltip="Esto es el mensaje del tooltip abajo" orientation="bottom" ></nts-button>
+                <nts-button label="Open Tooltip left" color="default" ntsTooltip="Esto es el mensaje del tooltip a la izquierda" orientation="left" ></nts-button>
+
+                <nts-button label="Open Tooltip manually" color="default" (mouseover)="openTooltip($event)" (mouseout)="closeTooltip()" ></nts-button>
                 <h5>Toast</h5>
                 <nts-button label="Open toast" icon="open" class="btn-default" (click)="openToast()"></nts-button>
 

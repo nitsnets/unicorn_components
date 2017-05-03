@@ -7,22 +7,36 @@ import { Component, ElementRef, EventEmitter, Output } from '@angular/core';
 })
 export class NtsTooltipComponent {
 
-    tooltipOptions = {};
-    msg = '';
+    options = {};
+    message = '';
 
     @Output() accept = new EventEmitter();
 
     constructor(private elementRef: ElementRef) { }
 
-    initContent(options) {
-        this.tooltipOptions = options;
+    setOptions(options) {
+        if ((options.left || options.right) && (options.top || options.bottom)) {
+            return this.options = options;
+        }
+        if (options.element && options.orientation) {
+            return this.options = this.calculatePosition(options.element, options.orientation);
+        }
     }
 
     setMessage(msg) {
-        this.msg = msg;
+        this.message = msg;
     }
 
+    private calculatePosition(element: HTMLElement, orientation: 'left' | 'right' | 'bottom'): any {
+        if (!element.getBoundingClientRect) { return {}; }
 
+        const rect = element.getBoundingClientRect();
 
-
+        switch (orientation) {
+            case 'right': return { left: rect.right + 10, top: rect.top };
+            case 'bottom': return { left: rect.left, top: rect.bottom + 10 };
+            case 'left': return { left: rect.left - 225 - 10, top: rect.top };
+            default: return {};
+        }
+    }
 }

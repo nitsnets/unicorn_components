@@ -12,7 +12,7 @@ export class TooltipService extends DynamicContainerService {
         const tooltipRef: ComponentRef<NtsTooltipComponent> = this.attachComponent(NtsTooltipComponent, viewContainerRef);
 
         tooltipRef.instance.setMessage(msg);
-        tooltipRef.instance.initContent(options);
+        tooltipRef.instance.setOptions(options);
         return tooltipRef;
     }
 

@@ -11,7 +11,6 @@ const tooltipMargin = 10;
 export class NtsTooltipDirective implements AfterViewInit {
     private tooltipRef: ComponentRef<NtsTooltipComponent> = null;
     private element: HTMLElement = null;
-    private position: { top?: number, right?: number, bottom?: number, left?: number };
 
     @Input() ntsTooltip = '';
     @Input() orientation: 'right' | 'bottom' | 'left' = 'right';
@@ -27,24 +26,13 @@ export class NtsTooltipDirective implements AfterViewInit {
 
     ngAfterViewInit() {
         this.element = this.elementRef.nativeElement;
-        this.calculatePosition();
     }
 
     openTooltip() {
-        this.calculatePosition();
-        this.tooltipRef = this.tooltipService.createTooltip('Esto es el mensaje del tooltip informativo', this.position);
-    }
-
-    calculatePosition() {
-        const rect = this.element.getBoundingClientRect();
-
-        console.log(rect);
-
-        switch (this.orientation) {
-            case 'right': this.position = { left: rect.right + tooltipMargin, top: rect.top }; break;
-            case 'bottom': this.position = { left: rect.left, top: rect.bottom + tooltipMargin }; break;
-            case 'left': this.position = { left: rect.left - 225 - tooltipMargin, top: rect.top }; break;
-        }
+        this.tooltipRef = this.tooltipService.createTooltip(this.ntsTooltip, {
+            element: this.element,
+            orientation: this.orientation
+        });
     }
 
     closeTooltip() {

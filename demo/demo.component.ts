@@ -1,8 +1,9 @@
-import { Component, ViewContainerRef } from '@angular/core';
+import { Component, ComponentRef, ViewContainerRef } from '@angular/core';
 
 import { ModalService } from '../src/components/containers/modal/modal.service';
 import { NtsDemoModalContentComponent } from './demo-modal-content/demo-modal-content.component';
 import { NtsOption } from './../src/models/option';
+import { NtsTooltipComponent } from '../src/components/utils/tooltip/tooltip.component';
 import { ToastService } from '../src/components/utils/toast/toast.service';
 import { TooltipService } from '../src/components/utils/tooltip/tooltip.service';
 
@@ -134,6 +135,8 @@ export class DemoComponent {
     ];
     stackOptions = { scales: { xAxes: [{ stacked: true }], yAxes: [{ stacked: true }] } };
 
+    tooltipRef: ComponentRef<NtsTooltipComponent>;
+
     constructor(
         private viewContainerRef: ViewContainerRef,
         private toastService: ToastService,
@@ -154,6 +157,18 @@ export class DemoComponent {
         this.modalService.createModal(NtsDemoModalContentComponent, options).subscribe(
             param => { console.log('ok: ', param); }, _ => { console.log('ko'); }
         );
+    }
+    openTooltip(event) {
+        this.tooltipRef = this.tooltipService.createTooltip('Esto es el mensaje del tooltip abierto manualmente', {
+            element: event.target,
+            orientation: 'left'
+        });
+    }
+
+    closeTooltip() {
+        if (this.tooltipRef) {
+            this.tooltipRef.destroy();
+        }
     }
     log(...args) {
         console.log('', ...args);
