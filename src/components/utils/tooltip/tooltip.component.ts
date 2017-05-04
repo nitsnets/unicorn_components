@@ -1,4 +1,6 @@
-import { Component, ElementRef, EventEmitter, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Inject, Output } from '@angular/core';
+
+import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
     selector: 'nts-tooltip',
@@ -12,11 +14,14 @@ export class NtsTooltipComponent {
 
     @Output() accept = new EventEmitter();
 
-    constructor(private elementRef: ElementRef) { }
+    constructor(
+        private elementRef: ElementRef,
+        @Inject(DOCUMENT) private document: HTMLElement
+    ) { }
 
     setOptions(options) {
         if ((options.left || options.right) && (options.top || options.bottom)) {
-            return this.options = options;
+            return this.options = options
         }
         if (options.element && options.orientation) {
             return this.options = this.calculatePosition(options.element, options.orientation);
@@ -27,7 +32,7 @@ export class NtsTooltipComponent {
         this.message = msg;
     }
 
-    private calculatePosition(element: HTMLElement, orientation: 'left' | 'right' | 'bottom'): any {
+    private calculatePosition(element: HTMLElement, orientation: 'left' | 'right' | 'bottom', container: HTMLElement = this.document): any {
         if (!element.getBoundingClientRect) { return {}; }
 
         const rect = element.getBoundingClientRect();
