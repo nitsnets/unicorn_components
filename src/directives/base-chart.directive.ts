@@ -1,4 +1,14 @@
-import { Directive, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+    Directive,
+    ElementRef,
+    EventEmitter,
+    Input,
+    OnChanges,
+    OnDestroy,
+    OnInit,
+    Output,
+    SimpleChanges,
+} from '@angular/core';
 
 declare var Chart: any;
 
@@ -51,7 +61,11 @@ export class NtsBaseChartDirective implements OnDestroy, OnChanges, OnInit {
     public ngOnChanges(changes: SimpleChanges): any {
         if (this.initFlag) {
             // Check if the changes are in the data or datasets
-            if (changes.hasOwnProperty('data') || changes.hasOwnProperty('datasets') || changes.hasOwnProperty('labels')) {
+            if (
+                changes.hasOwnProperty('data')
+                || changes.hasOwnProperty('datasets')
+                || changes.hasOwnProperty('labels')
+            ) {
                 this.chart.data.datasets = this.getDatasets();
                 this.chart.data.labels = this.labels;
                 this.chart.update();

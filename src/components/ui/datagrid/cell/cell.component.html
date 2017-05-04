@@ -11,8 +11,18 @@
         <h4             class="datagrid-cell-value" *ngSwitchCase="'h4'">{{value}}</h4>
         <div            class="datagrid-cell-value" *ngSwitchCase="'html'" [innerHtml]="value"></div>
         <img            class="datagrid-cell-value" *ngSwitchCase="'image'" [src]="value" alt="Cell image">
-        <nts-progress   class="datagrid-cell-value" *ngSwitchCase="'progress'" [value]="value" [color]="options?.color" [total]="options?.total"></nts-progress>
-        <nts-badge      class="datagrid-cell-value" *ngSwitchCase="'badge'" [label]="value" [color]="options?.color"></nts-badge>
+        <nts-progress
+            class="datagrid-cell-value"
+            *ngSwitchCase="'progress'"
+            [value]="value"
+            [color]="options?.color"
+            [total]="options?.total"
+        ></nts-progress>
+        <nts-badge class="datagrid-cell-value"
+            *ngSwitchCase="'badge'"
+            [label]="value"
+            [color]="options?.color"
+        ></nts-badge>
 
         <!-- You can add a new format case this way: -->
         <ng-container *ngSwitchCase="'yourCustomCase'">

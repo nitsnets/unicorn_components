@@ -32,12 +32,12 @@ export class NtsTooltipComponent {
         this.message = msg;
     }
 
-    private calculatePosition(element: HTMLElement, orientation: 'left' | 'right' | 'bottom', container: HTMLElement = this.document): any {
-        if (!element.getBoundingClientRect) { return {}; }
+    private calculatePosition(el: HTMLElement, orient: 'left' | 'right' | 'bottom', cont: HTMLElement = this.document) {
+        if (!el.getBoundingClientRect) { return {}; }
 
-        const rect = element.getBoundingClientRect();
+        const rect = el.getBoundingClientRect();
 
-        switch (orientation) {
+        switch (orient) {
             case 'right': return { left: rect.right + 10, top: rect.top };
             case 'bottom': return { left: rect.left, top: rect.bottom + 10 };
             case 'left': return { left: rect.left - 225 - 10, top: rect.top };

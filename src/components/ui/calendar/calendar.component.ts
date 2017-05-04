@@ -39,7 +39,11 @@ export class NtsCalendarComponent implements OnChanges {
     };
 
     select(day) {
-        if (this.maxDate && day.date.isAfter(this.maxDate) || this.minDate && day.date.isBefore(this.minDate)) { return; }
+        if (
+            this.maxDate
+            && day.date.isAfter(this.maxDate)
+            || this.minDate && day.date.isBefore(this.minDate)
+        ) { return; }
 
         this.selected = day.date;
         const newDate = this.selected.format('YYYY-MM-DD');
@@ -96,7 +100,9 @@ export class NtsCalendarComponent implements OnChanges {
                 isRangeMiddle: this.rangeTo ? date.isBetween(this.selected, this.rangeTo, 'day') :
                     this.rangeFrom ? date.isBetween(this.rangeFrom, this.selected, 'day') : false,
                 isRangeTo: this.rangeTo ? date.isSame(this.rangeTo, 'day') : false,
-                isUnavailable: this.maxDate && date.isAfter(this.maxDate) || this.minDate && date.isBefore(this.minDate),
+                isUnavailable:
+                (this.maxDate && date.isAfter(this.maxDate)) ||
+                (this.minDate && date.isBefore(this.minDate)),
                 date: date
             });
             date = date.clone();

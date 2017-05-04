@@ -101,8 +101,12 @@ export class NtsFiltersComponent implements AfterContentInit, OnChanges {
         if (this.advFilters && this.advFilters.length && (!this.mainFilters || !this.mainFilters.length)) {
             return console.error('When using <nts-filters-advanced> you must include <nts-filters-main> beside it');
         }
-        if (this.advFilters && this.advFilters.length && this.mainFilters.length + this.advFilters.length !== this.filters.length) {
-            return console.error('When using <nts-filters-main> & <nts-filters-advanced> you cannot include inputs at <nts-filters> root');
+        if (
+            this.advFilters
+            && this.advFilters.length
+            && this.mainFilters.length + this.advFilters.length !== this.filters.length
+        ) {
+            return console.error('You cannot include inputs at <nts-filters> root when using mainand advanced filters');
         }
 
         this.filters.forEach(f => {
@@ -177,7 +181,16 @@ export class NtsFiltersComponent implements AfterContentInit, OnChanges {
         }
     }
     private updateNtsModels() {
-        if (this.filters && (!this.advFilters || !this.advFilters.length) && (!this.mainFilters || !this.mainFilters.length)) {
+        if (
+            this.filters
+            && (
+                !this.advFilters
+                || !this.advFilters.length
+            ) && (
+                !this.mainFilters
+                || !this.mainFilters.length
+            )
+        ) {
             this.filters.forEach(f => f.ntsModel = this.filter[f.name]);
         } else if (this.advFilters && this.mainFilters) {
             let anyAdvanced = false;
