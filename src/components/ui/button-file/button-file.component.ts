@@ -14,7 +14,7 @@ export class NtsButtonFileComponent extends NtsButtonBaseComponent {
 
     onClick() {
         if (!this.disabled && this.inputElement && document.createEvent) {
-            let evt = document.createEvent('MouseEvents');
+            const evt = document.createEvent('MouseEvents');
             evt.initEvent('click', true, false);
             this.inputElement.nativeElement.dispatchEvent(evt);
         }

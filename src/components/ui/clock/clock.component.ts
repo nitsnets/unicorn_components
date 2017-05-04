@@ -47,17 +47,17 @@ export class NtsClockComponent implements OnChanges {
         this.hourDegrees = 30 * (this.hour % 12) + this.minuteDegrees / 12;
     }
     private applyValue() {
-        let hourStr = this.hours[this.hourIndex];
-        let minuteStr = this.minutes[this.minuteIndex];
+        const hourStr = this.hours[this.hourIndex];
+        const minuteStr = this.minutes[this.minuteIndex];
         this.hour = +hourStr;
         this.minute = +minuteStr;
         this.ntsModelChange.emit(hourStr + ':' + minuteStr);
     }
     private updateValue() {
         // Get hour and minute string from input hh:mm
-        let timeSplitted = this.ntsModel.split(':');
-        let hour = timeSplitted[0];
-        let minute = timeSplitted[1];
+        const timeSplitted = this.ntsModel.split(':');
+        const hour = timeSplitted[0];
+        const minute = timeSplitted[1];
         // Set the clock hours and minutes as integers
         this.hour = +hour;
         this.minute = +minute;

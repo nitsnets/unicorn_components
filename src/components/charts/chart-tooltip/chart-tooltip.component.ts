@@ -1,4 +1,4 @@
-import { Component, OnChanges, Input } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 
 @Component({
     selector: 'nts-chart-tooltip',
@@ -23,9 +23,9 @@ export class NtsChartTooltipComponent implements OnChanges {
 
         this.tooltipTitles = this.tooltip.title || [];
         this.tooltipSeries = [];
-        let lines = this.tooltip.body.map(b => b.lines);
+        const lines = this.tooltip.body.map(b => b.lines);
         lines.forEach((line, i) => {
-            let serie = this.tooltip.labelColors[i];
+            const serie = this.tooltip.labelColors[i];
             serie.label = line;
             this.tooltipSeries.push(serie);
         });

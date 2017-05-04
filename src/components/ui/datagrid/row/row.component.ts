@@ -1,6 +1,5 @@
 import { Component, EventEmitter, HostBinding, Input, OnChanges, Output } from '@angular/core';
 
-import { ModalService } from '../../../containers/modal/modal.service';
 import { NtsDatagridComponent } from '../datagrid.component';
 
 /**
@@ -40,7 +39,7 @@ export class NtsDatagridRowComponent implements OnChanges {
     @Output() delete = new EventEmitter();
 
     constructor(
-        private datagrid: NtsDatagridComponent,
+        public datagrid: NtsDatagridComponent,
     ) { }
 
     ngOnChanges(changes) {

@@ -1,8 +1,19 @@
 import {
-    Component, Directive, Input, Output, EventEmitter, ElementRef,
-    ContentChild, Host, HostListener, OnDestroy, AfterViewInit
+    AfterViewInit,
+    Component,
+    ContentChild,
+    Directive,
+    ElementRef,
+    EventEmitter,
+    Host,
+    HostListener,
+    Input,
+    OnDestroy,
+    Output,
 } from '@angular/core';
+
 import { NtsPopupContainerComponent } from './container/container.component';
+
 export type NtsPopupPosition = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right';
 
 @Component({
@@ -13,7 +24,7 @@ export type NtsPopupPosition = 'bottom-left' | 'bottom-right' | 'top-left' | 'to
 export class NtsPopupComponent implements AfterViewInit {
     @Input() toggle = false;
     @Input() keepOpen = true;
-    @Input() opened: boolean = false;
+    @Input() opened = false;
     @Output() openedChange = new EventEmitter();
     @Input() position: NtsPopupPosition = null;
     calculatedPosition: NtsPopupPosition = null;
@@ -23,7 +34,7 @@ export class NtsPopupComponent implements AfterViewInit {
     constructor(private elementRef: ElementRef) { }
 
     ngAfterViewInit() {
-        this.popupScope.close.subscribe(_ => this.close())
+        this.popupScope.close.subscribe(_ => this.close());
     }
 
     open(x = null) {
@@ -47,7 +58,7 @@ export class NtsPopupComponent implements AfterViewInit {
     selector: '[ntsPopupTrigger]'
 })
 export class NtsPopupTriggerDirective implements OnDestroy {
-    private openedByFocus: boolean = false;
+    private openedByFocus = false;
     private closePopupOnOutsideClick = (event: MouseEvent) => this.close(event);
 
     constructor( @Host() public popup: NtsPopupComponent, private elementRef: ElementRef) { }

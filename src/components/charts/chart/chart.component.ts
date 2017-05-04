@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, ViewContainerRef } from '@angular/core';
 
 import { Color } from './../../../directives/base-chart.directive';
 

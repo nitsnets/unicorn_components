@@ -1,6 +1,6 @@
 import * as moment from 'moment';
 
-import { Component, ElementRef, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 import { abbrDateRange, sideOfScreen } from '../../../utils';
 
 import { NtsInputBaseComponent } from '../../base/input-base.component';
@@ -15,7 +15,7 @@ const range = (type: 'd' | 'w' | 'M' | 'y', side: 'from' | 'to', adj: 'prev' | '
     ref = side === 'from' ? ref.startOf(<moment.unitOfTime.StartOf>nameFromType(type)) :
         side === 'to' ? ref.endOf(<moment.unitOfTime.StartOf>nameFromType(type)) : ref;
     return ref.format('YYYY-MM-DD');
-}
+};
 
 const presets = {
     today: { from: range('d', 'from'), to: range('d', 'to'), label: 'Today' },

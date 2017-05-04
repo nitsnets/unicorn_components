@@ -8,9 +8,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class NtsSearchHeaderComponent implements OnInit {
     @Input() ntsModel;
     @Output() ntsModelChange = new EventEmitter();
-    @Input() placeholder: string = '';
-    @Input() value: string = '';
-    @Input() debounce: number = 0;
+    @Input() placeholder = '';
+    @Input() value = '';
+    @Input() debounce = 0;
 
     constructor() { }
 

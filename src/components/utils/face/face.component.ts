@@ -8,8 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class NtsFaceComponent implements OnInit {
     @Input() size: 'small' | 'big';
     @Input() user: { name: string, image: string };
-    @Input() icon: string = 'user';
-    @Input() badge: number = 0;
+    @Input() icon = 'user';
+    @Input() badge = 0;
 
     constructor() { }
 

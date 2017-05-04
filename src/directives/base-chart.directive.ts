@@ -31,7 +31,7 @@ export class NtsBaseChartDirective implements OnDestroy, OnChanges, OnInit {
     public ctx: any;
     public chart: any;
     private cvs: any;
-    private initFlag: boolean = false;
+    private initFlag = false;
 
     private element: ElementRef;
 
@@ -68,10 +68,10 @@ export class NtsBaseChartDirective implements OnDestroy, OnChanges, OnInit {
         }
     }
 
-    public getChartBuilder(ctx: any/*, data:Array<any>, options:any*/): any {
-        let datasets: any = this.getDatasets();
+    public getChartBuilder(ctx/*, data:Array<any>, options:any*/) {
+        const datasets = this.getDatasets();
+        const options = Object.assign({}, this.options);
 
-        let options: any = Object.assign({}, this.options);
         if (this.legend === false) {
             options.legend = { display: false };
         }
@@ -87,12 +87,12 @@ export class NtsBaseChartDirective implements OnDestroy, OnChanges, OnInit {
         }
 
         if (!options.onClick) {
-            options.onClick = (event: any, active: Array<any>) => {
+            options.onClick = (event, active: Array<any>) => {
                 this.chartClick.emit({ event, active });
             };
         }
 
-        let opts = {
+        const opts = {
             type: this.chartType,
             data: {
                 labels: this.labels,
@@ -125,7 +125,7 @@ export class NtsBaseChartDirective implements OnDestroy, OnChanges, OnInit {
             (datasets && datasets.length)) {
             datasets = (this.datasets || datasets)
                 .map((elm: number, index: number) => {
-                    let newElm: any = Object.assign({}, elm);
+                    const newElm: any = Object.assign({}, elm);
                     if (this.colors && this.colors.length) {
                         Object.assign(newElm, this.colors[index]);
                     } else {
@@ -194,7 +194,7 @@ export interface Colors extends Color {
  * @returns {Colors}
  */
 export function generateColors(count: number): Array<number[]> {
-    let colorsArr: Array<number[]> = new Array(count);
+    const colorsArr: Array<number[]> = new Array(count);
     for (let i = 0; i < count; i++) {
         colorsArr[i] = CHART_COLORS[i] || getRandomColor();
     }

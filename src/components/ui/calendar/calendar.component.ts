@@ -42,17 +42,17 @@ export class NtsCalendarComponent implements OnChanges {
         if (this.maxDate && day.date.isAfter(this.maxDate) || this.minDate && day.date.isBefore(this.minDate)) { return; }
 
         this.selected = day.date;
-        let newDate = this.selected.format('YYYY-MM-DD');
+        const newDate = this.selected.format('YYYY-MM-DD');
         this.ntsModelChange.emit(newDate);
     };
 
     next() {
-        let next = this.beginOfNextMonth(this.month);
+        const next = this.beginOfNextMonth(this.month);
         this.month.add(1, 'months');
         this.buildMonth(next);
     };
     previous() {
-        let previous = this.beginOfPreviousMonth(this.month);
+        const previous = this.beginOfPreviousMonth(this.month);
         this.month.subtract(1, 'months');
         this.buildMonth(previous);
     };
@@ -74,7 +74,8 @@ export class NtsCalendarComponent implements OnChanges {
 
     private buildMonth(start: moment.Moment) {
         this.weeks = [];
-        let done = false, date = start.clone(), monthIndex = date.month(), count = 0;
+        const date = start.clone();
+        let done = false, monthIndex = date.month(), count = 0;
         while (!done) {
             this.weeks.push({ days: this.buildWeek(date.clone()) });
             date.add(1, 'w');
@@ -84,7 +85,7 @@ export class NtsCalendarComponent implements OnChanges {
     }
 
     private buildWeek(date: moment.Moment): Array<any> {
-        let days = [];
+        const days = [];
         for (let i = 0; i < 7; i++) {
             days.push({
                 name: date.format('dd').substring(0, 1),

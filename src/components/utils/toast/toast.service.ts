@@ -1,4 +1,4 @@
-import { ApplicationRef, ComponentFactoryResolver, ElementRef, Injectable, Injector, ViewContainerRef } from '@angular/core';
+import { ComponentFactoryResolver, Injectable } from '@angular/core';
 
 import { NtsToastComponent } from './toast.component';
 import { Subject } from 'rxjs/Rx';
@@ -38,8 +38,6 @@ export class ToastService {
         this.intervalClose = setTimeout(() => { this.close(); }, options.time ? options.time : 2000);
 
         return this.toastSub.asObservable();
-
-
     }
 
     close() {

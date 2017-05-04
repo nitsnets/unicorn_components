@@ -1,18 +1,23 @@
-import { Directive, ElementRef, Input, Renderer } from '@angular/core';
+import { Directive, ElementRef, Input, OnInit, Renderer } from '@angular/core';
 
 @Directive({
     selector: '[autofocus]'
 })
-export class NtsAutofocusDirective {
+export class NtsAutofocusDirective implements OnInit {
     @Input() autofocus = false;
-    constructor(private elementRef: ElementRef, private renderer: Renderer) {
-    }
+
+    constructor(
+        private elementRef: ElementRef,
+        private renderer: Renderer
+    ) { }
+
     ngOnInit() {
-        let elm = this.elementRef.nativeElement;
+        const elm = this.elementRef.nativeElement;
         if (this.autofocus) {
             this.renderer.invokeElementMethod(elm, 'focus', []);
-            /* Trick to prevent Firefox put the cursor at the beggining of the input */
-            let value = elm.value;
+
+            /* Hack to prevent Firefox put the cursor at the beggining of the input */
+            const value = elm.value;
             elm.value = '';
             elm.value = value;
         }

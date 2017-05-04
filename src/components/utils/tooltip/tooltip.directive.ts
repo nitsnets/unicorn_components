@@ -3,8 +3,6 @@ import { AfterViewInit, ComponentRef, Directive, ElementRef, HostListener, Input
 import { NtsTooltipComponent } from './tooltip.component';
 import { TooltipService } from './tooltip.service';
 
-const tooltipMargin = 10;
-
 @Directive({
     selector: '[ntsTooltip]',
 })

@@ -25,6 +25,6 @@ export class ModalModule {
             providers: [
                 { provide: ANALYZE_FOR_ENTRY_COMPONENTS, useValue: entryComponents, multi: true }
             ]
-        }
+        };
     }
 }

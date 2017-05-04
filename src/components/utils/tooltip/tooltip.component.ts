@@ -21,7 +21,7 @@ export class NtsTooltipComponent {
 
     setOptions(options) {
         if ((options.left || options.right) && (options.top || options.bottom)) {
-            return this.options = options
+            return this.options = options;
         }
         if (options.element && options.orientation) {
             return this.options = this.calculatePosition(options.element, options.orientation);

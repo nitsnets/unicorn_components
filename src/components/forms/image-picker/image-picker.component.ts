@@ -21,7 +21,7 @@ export class NtsImagePickerComponent extends NtsInputBaseComponent implements On
     ngOnChanges(changes) {
         if (changes.ntsModel) {
             if (this.ntsModel && this.ntsModel instanceof Blob) {
-                let reader = new FileReader();
+                const reader = new FileReader();
 
                 reader.readAsDataURL(this.ntsModel);
                 reader.onload = (e: any) => {

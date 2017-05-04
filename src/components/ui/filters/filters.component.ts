@@ -1,4 +1,14 @@
-import { AfterContentInit, Component, ContentChild, ContentChildren, EventEmitter, Input, OnChanges, Output, QueryList } from '@angular/core';
+import {
+    AfterContentInit,
+    Component,
+    ContentChild,
+    ContentChildren,
+    EventEmitter,
+    Input,
+    OnChanges,
+    Output,
+    QueryList,
+} from '@angular/core';
 import { deepClone, objEmpty, objEquals } from '../../../utils';
 
 import { NtsButtonToggleComponent } from './../../forms/button-toggle/button-toggle.component';
@@ -66,7 +76,7 @@ export class NtsFiltersComponent implements AfterContentInit, OnChanges {
     @Output() save: EventEmitter<NtsFilter> = new EventEmitter();
 
     /**
-     * The number of button on the right side of the filters
+     * The number of buttonn on the right side of the filters
      *
      * @type number
      * @default 2
@@ -165,12 +175,6 @@ export class NtsFiltersComponent implements AfterContentInit, OnChanges {
         if (this.autoFilter === 'onChange') {
             this.doFilter();
         }
-    }
-    private setFilterField(field: string, value: any) {
-        const fil: NtsInputBaseComponent = this.filters.find(f => f.name === field);
-        if (!fil) { return; }
-        this.filter[field] = value;
-        fil.ntsModel = value;
     }
     private updateNtsModels() {
         if (this.filters && (!this.advFilters || !this.advFilters.length) && (!this.mainFilters || !this.mainFilters.length)) {

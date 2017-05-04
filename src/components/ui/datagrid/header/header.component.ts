@@ -8,7 +8,7 @@ import { NtsDatagridComponent } from './../datagrid.component';
 })
 export class NtsDatagridHeaderComponent {
     constructor(
-        private datagrid: NtsDatagridComponent,
+        public datagrid: NtsDatagridComponent,
         private modalService: ModalService
     ) { }
 

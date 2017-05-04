@@ -20,7 +20,7 @@ export function uuid(): string {
         } else if (i === 14) {
             uuid[i] = '4';
         } else {
-            if (rnd <= 0x02) { rnd = 0x2000000 + (Math.random() * 0x1000000) | 0 };
+            if (rnd <= 0x02) { rnd = 0x2000000 + (Math.random() * 0x1000000) | 0; }
             r = rnd & 0xf;
             rnd = rnd >> 4;
             uuid[i] = chars[(i === 19) ? (r & 0x3) | 0x8 : r];
@@ -52,8 +52,8 @@ export function toggleClass(el: any, name: string) {
 }
 export function objectToArray(obj: Object): Array<Object> {
     if (!obj) { return null; }
-    let keys = Object.keys(obj);
-    let res = [];
+    const keys = Object.keys(obj);
+    const res = [];
     for (let i = 0; i < keys.length; i++) {
         res[i] = { key: keys[i], value: obj[keys[i]] };
     }
@@ -61,7 +61,7 @@ export function objectToArray(obj: Object): Array<Object> {
 }
 export function removeAccents(input: string): string {
     if (!input) { return ''; }
-    var rExps = [
+    const rExps = [
         { re: /[\xC0-\xC6]/g, ch: 'A' },
         { re: /[\xE0-\xE6]/g, ch: 'a' },
         { re: /[\xC8-\xCB]/g, ch: 'E' },
@@ -75,7 +75,8 @@ export function removeAccents(input: string): string {
         { re: /[\xD1]/g, ch: 'N' },
         { re: /[\xF1]/g, ch: 'n' }
     ];
-    for (var i = 0, len = rExps.length; i < len; i++) {
+    const len = rExps.length;
+    for (let i = 0; i < len; i++) {
         input = ('' + input).replace(rExps[i].re, rExps[i].ch);
     }
     return input;
@@ -84,8 +85,8 @@ export function searchString(input: string, term: string): boolean {
     return removeAccents(input).toLowerCase().indexOf(removeAccents(term).toLowerCase()) > -1;
 }
 export function deepMerge(target, src) {
-    var isArray = Array.isArray(src);
-    var dst: any = isArray ? [] : {};
+    const isArray = Array.isArray(src);
+    let dst: any = isArray ? [] : {};
 
     if (isArray) {
         target = target || [];
@@ -123,12 +124,13 @@ export function deepMerge(target, src) {
     return dst;
 }
 export function findByPath(object: Object, path: Array<string | number>, cb: Function = null) {
-    let index = -1, length = path.length, lastIndex = length - 1, nested = object;
+    let index = -1, nested = object;
+    const length = path.length, lastIndex = length - 1;
 
     while (nested != null && ++index < length) {
-        var key = path[index];
-        if (typeof nested == 'object') {
-            if (index != lastIndex) {
+        const key = path[index];
+        if (typeof nested === 'object') {
+            if (index !== lastIndex) {
                 if (nested[key] == null) { // Initialize, in case of unset object
                     nested[key] = (typeof path[index + 1] === 'number' ? [] : {});
                 }
@@ -144,14 +146,15 @@ export function findByPath(object: Object, path: Array<string | number>, cb: Fun
 
 }
 export function setByPath(object: Object, path: Array<string | number>, value: any) {
-    let index = -1, length = path.length, lastIndex = length - 1, nested = object;
+    let index = -1, nested = object;
+    const length = path.length, lastIndex = length - 1;
 
     while (nested != null && ++index < length) {
-        var key = path[index];
-        if (typeof nested == 'object') {
-            var newValue = value;
-            if (index != lastIndex) {
-                var objValue = nested[key];
+        const key = path[index];
+        if (typeof nested === 'object') {
+            let newValue = value;
+            if (index !== lastIndex) {
+                const objValue = nested[key];
                 newValue = objValue == null // Initialize, in case of unset object
                     ? (typeof path[index + 1] === 'number' ? [] : {})
                     : objValue;
@@ -169,7 +172,7 @@ export function pushByPath(object: Object, path: Array<string | number>, value: 
     });
 }
 export function pullByPath(object: Object, path: Array<string | number>) {
-    let index = path.pop();
+    const index = path.pop();
     findByPath(object, path, function (found) {
         if (Object.prototype.toString.call(found) === '[object Array]') {
             found.splice(index, 1); // Pull de value
@@ -192,14 +195,14 @@ export function objEmpty(obj: Object): boolean {
     return Object.keys(obj).length === 0 && obj.constructor === Object;
 }
 export function sideOfScreen(element): 'left' | 'right' {
-    let windowWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    let elementLeft = (element.offsetLeft - element.scrollLeft + element.clientLeft);
+    const windowWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    const elementLeft = (element.offsetLeft - element.scrollLeft + element.clientLeft);
     return elementLeft < (windowWidth / 2) ? 'left' : 'right';
 }
 
 export function abbrDateRange(from: string = null, to: string = null): string {
-    let frM = from ? moment(from, 'YYYY-MM-DD') : null;
-    let toM = to ? moment(to, 'YYYY-MM-DD') : null;
+    const frM = from ? moment(from, 'YYYY-MM-DD') : null;
+    const toM = to ? moment(to, 'YYYY-MM-DD') : null;
     if (!frM && !toM) { return ''; }
     if (!toM) { return `from ${frM.format('MMM D, YYYY')}`; }
     if (!frM) { return `until ${toM.format('MMM D, YYYY')}`; }
