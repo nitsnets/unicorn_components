@@ -10,7 +10,12 @@
         <h3             class="datagrid-cell-value" *ngSwitchCase="'h3'">{{value}}</h3>
         <h4             class="datagrid-cell-value" *ngSwitchCase="'h4'">{{value}}</h4>
         <div            class="datagrid-cell-value" *ngSwitchCase="'html'" [innerHtml]="value"></div>
-        <img            class="datagrid-cell-value" *ngSwitchCase="'image'" [src]="value" alt="Cell image">
+        <img
+            class="datagrid-cell-value"
+            alt="Cell image"
+            *ngSwitchCase="'image'"
+            [src]="value"
+        >
         <nts-progress
             class="datagrid-cell-value"
             *ngSwitchCase="'progress'"

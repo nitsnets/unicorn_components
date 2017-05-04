@@ -297,7 +297,12 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
      * @param {any} column The field selected to sort the items
      */
     onSortBy(column: NtsDatagridColumnComponent, dir: boolean | 'asc' | 'desc' = null) {
-        if (!column || column.sortable === false || column.sortable === undefined && this.sortable === false) { return; }
+        if (
+            !column
+            || column.sortable === false
+            || column.sortable === undefined
+            && this.sortable === false
+        ) { return; }
 
         if (dir !== null) {
             this.sort = {
@@ -383,7 +388,11 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
         this.pageChange.emit(page);
     }
     openDeleteModal(itemsCount: number = 1): Observable<any> {
-        return this.modalService.createModal(NtsDatagridDeleteComponent, { hideHeader: true, itemsCount }, this.viewContainerRef);
+        return this.modalService.createModal(
+            NtsDatagridDeleteComponent,
+            { hideHeader: true, itemsCount },
+            this.viewContainerRef
+        );
     }
     /**
      * Fired when an item selection is confirmed (at the row)

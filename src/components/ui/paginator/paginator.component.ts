@@ -44,7 +44,11 @@ export class NtsPaginatorComponent implements OnChanges {
         const end = this.pagesCount - 1;
 
         // The window of middle pages is bounded by:
-        const first = Math.max(begin, Math.min(this.pagesCount - pagesWindow - 2, this.selected - Math.ceil((pagesWindow - 1) / 2)));
+        const first = Math.max(
+            begin, Math.min(
+                this.pagesCount - pagesWindow - 2, this.selected - Math.ceil((pagesWindow - 1) / 2)
+            )
+        );
         const last = Math.min(end, Math.max(begin + pagesWindow + 1, first + pagesWindow - 1));
 
         // Add to array the first page, the null (...),

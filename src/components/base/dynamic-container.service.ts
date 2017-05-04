@@ -17,7 +17,11 @@ export abstract class DynamicContainerService {
         this.defaultContainer = viewContainerRef;
     }
 
-    protected attachComponent(component: Type<any>, viewContainerRef: ViewContainerRef = this.defaultContainer): ComponentRef<any> {
+    protected attachComponent(
+        component: Type<any>,
+        viewContainerRef: ViewContainerRef = this.defaultContainer
+    ): ComponentRef<any> {
+
         if (!viewContainerRef) {
             throw new Error(`No container set.
                 You can set one by default using modalService.setDefaultContainer(ViewContainerRef),

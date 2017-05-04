@@ -61,13 +61,15 @@ import { NtsToggleComponent } from './forms/toggle/toggle.component';
 export const NTS_COMPONENTS = [
     NtsPopupComponent, NtsPopupTriggerDirective, NtsPopupContainerComponent, NtsMenuComponent, NtsMenuTriggerDirective,
     NtsMenuContainerComponent, NtsMenuItemComponent, NtsInputComponent, NtsCheckboxComponent, NtsRadioComponent,
-    NtsButtonComponent, NtsHeaderComponent, NtsSelectComponent, NtsSeparatorComponent, NtsBodyComponent, NtsDatetimePickerComponent,
-    NtsClockComponent, NtsIconComponent, NtsCalendarComponent, NtsAsideComponent, NtsLayoutComponent, NtsSearchHeaderComponent,
-    NtsAccordionComponent, NtsImagePickerComponent, NtsListComponent, NtsBoxComponent, NtsRowComponent, NtsButtonToggleComponent,
-    NtsChipComponent, NtsProgressComponent, NtsFaceComponent, NtsBadgeComponent, NtsPaginatorComponent, NtsDaterangePickerComponent,
-    NtsTabsComponent, NtsChartComponent, NtsChartLegendComponent, NtsChartTooltipComponent, NtsRowSpacerComponent, NtsToggleComponent,
-    NtsDatePickerComponent, NtsTimePickerComponent, NtsButtonMenuComponent, NtsButtonPopupComponent, NtsButtonFileComponent,
-    NtsButtonHeaderComponent, NtsDatagridComponent, NtsDatagridColumnComponent, NtsDatagridRowComponent, NtsDatagridRowDirective,
-    NtsDatagridCellComponent, NtsDatagridCellDirective, NtsDatagridHeaderComponent, NtsFiltersComponent, NtsFiltersAdvancedComponent,
-    NtsFiltersMainComponent, NtsCarouselDirective, NtsDatagridDeleteComponent, FilteredDatagridComponent, NtsFiltersListComponent
+    NtsButtonComponent, NtsHeaderComponent, NtsSelectComponent, NtsSeparatorComponent, NtsBodyComponent,
+    NtsDatetimePickerComponent, NtsClockComponent, NtsIconComponent, NtsCalendarComponent, NtsAsideComponent,
+    NtsLayoutComponent, NtsSearchHeaderComponent, NtsAccordionComponent, NtsImagePickerComponent, NtsListComponent,
+    NtsBoxComponent, NtsRowComponent, NtsButtonToggleComponent, NtsChipComponent, NtsProgressComponent,
+    NtsFaceComponent, NtsBadgeComponent, NtsPaginatorComponent, NtsDaterangePickerComponent, NtsTabsComponent,
+    NtsChartComponent, NtsChartLegendComponent, NtsChartTooltipComponent, NtsRowSpacerComponent, NtsToggleComponent,
+    NtsDatePickerComponent, NtsTimePickerComponent, NtsButtonMenuComponent, NtsButtonPopupComponent,
+    NtsButtonFileComponent, NtsButtonHeaderComponent, NtsDatagridComponent, NtsDatagridColumnComponent,
+    NtsDatagridRowComponent, NtsDatagridRowDirective, NtsDatagridCellComponent, NtsDatagridCellDirective,
+    NtsDatagridHeaderComponent, NtsFiltersComponent, NtsFiltersAdvancedComponent, NtsFiltersMainComponent,
+    NtsCarouselDirective, NtsDatagridDeleteComponent, FilteredDatagridComponent, NtsFiltersListComponent
 ];

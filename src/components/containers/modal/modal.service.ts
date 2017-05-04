@@ -8,7 +8,11 @@ import { NtsModalComponent } from './modal.component';
 export class ModalService extends DynamicContainerService {
     constructor(cmpFactoryResolver: ComponentFactoryResolver) { super(cmpFactoryResolver); }
 
-    createModal(component: Type<any>, options = {}, viewContainerRef: ViewContainerRef = this.defaultContainer): Observable<any> {
+    createModal(
+        component: Type<any>,
+        options = {},
+        viewContainerRef: ViewContainerRef = this.defaultContainer
+    ): Observable<any> {
 
         const modalRef: ComponentRef<NtsModalComponent> = this.attachComponent(NtsModalComponent, viewContainerRef);
         modalRef.instance.initContent(component, options);

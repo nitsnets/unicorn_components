@@ -55,8 +55,16 @@ export class NtsSelectComponent extends NtsInputBaseComponent implements OnInit,
         switch (e.key) {
             case 'Escape': this.hideOptions(); break;
             case 'Enter': this.selectPointedOption(); break;
-            case 'ArrowDown': this.areOptionsVisible ? this.updatePointedIndex(1) : this.showOptions(); e.preventDefault(); break;
-            case 'ArrowUp': this.updatePointedIndex(-1); e.preventDefault(); break;
+            case 'ArrowDown':
+                this.areOptionsVisible ?
+                    this.updatePointedIndex(1) :
+                    this.showOptions();
+                e.preventDefault();
+                break;
+            case 'ArrowUp':
+                this.updatePointedIndex(-1);
+                e.preventDefault();
+                break;
         }
     }
     isOptionSelected(option: NtsOption): boolean {
