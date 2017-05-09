@@ -32,7 +32,11 @@ export class NtsTooltipComponent {
         this.message = msg;
     }
 
-    private calculatePosition(el: HTMLElement, orient: 'left' | 'right' | 'bottom', cont: HTMLElement = this.document) {
+    private calculatePosition(
+        el: HTMLElement,
+        orient: 'left' | 'right' | 'bottom',
+        cont: HTMLElement = this.document
+    ): any {
         if (!el.getBoundingClientRect) { return {}; }
 
         const rect = el.getBoundingClientRect();
