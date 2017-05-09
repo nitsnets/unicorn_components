@@ -9,6 +9,7 @@
         (ntsFocus)="onFocus($event)"
         (ntsBlur)="onBlur($event)"
         [(ntsModel)]="search"
+        [readonly]="!filterable"
         (ntsModelChange)="onFilter($event)"
     > </nts-input>
 

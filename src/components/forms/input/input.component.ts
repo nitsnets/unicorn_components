@@ -32,6 +32,7 @@ export class NtsInputComponent extends NtsInputBaseComponent implements OnInit, 
     @Input() maxValue: number = null;
     @Input() minValue: number = null;
 
+    @Input() readonly = false;
     @Input() floating = false;
     @Input() multiline = false;
     @Input() autofocus = false;

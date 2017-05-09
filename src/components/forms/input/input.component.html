@@ -27,6 +27,7 @@
       [attr.min]="minValue"
       [name]="name || 'inputName'"
       [placeholder]="placeholder"
+      [readonly]="readonly"
       [value]="value"
       [autofocus]="autofocus"
       [required]="required"
@@ -50,6 +51,7 @@
       [attr.maxlength]="max"
       [name]="name"
       [placeholder]="placeholder"
+      [readonly]="readonly"
       [value]="value"
       [ngModel]="ntsModel"
       (ngModelChange)="onNgModelChange($event)"
@@ -60,6 +62,7 @@
 
     <input
       *ngIf="type === 'color' && !multiline"
+      [readonly]="readonly"
       [colorPicker]="ntsModel"
       (colorPickerChange)="onNgModelChange($event)"
       [cpPosition]="'bottom'"

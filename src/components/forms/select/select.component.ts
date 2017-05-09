@@ -27,6 +27,7 @@ export class NtsSelectComponent extends NtsInputBaseComponent implements OnInit,
     @Input() icon: string;
     @Input() multiple = false;
     @Input() clear = false;
+    @Input() filterable = true;
 
     @Input() options: NtsOption[] = [];
     @Input() excludedOptions: string[];
