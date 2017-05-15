@@ -60,7 +60,7 @@
       (keypress)="ntsKeypress.emit($event)">
     </textarea>
 
-    <input
+    <!--input
       *ngIf="type === 'color' && !multiline"
       [readonly]="readonly"
       [colorPicker]="ntsModel"
@@ -70,7 +70,7 @@
       [cpSaveClickOutside]="true"
       [cpAlphaChannel]="'disabled'"
       [cpDialogDisplay]="'popup'"
-      [value]="ntsModel"/>
+      [value]="ntsModel"/-->
 
   </div>
   <small *ngIf="hint" class="hint">{{hint}}</small>

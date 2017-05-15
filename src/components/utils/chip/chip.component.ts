@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class NtsChipComponent {
 
     @Input() removable = false;
+    @Input() icon = null;
     @Input() label = '';
 
     @Output() remove = new EventEmitter();

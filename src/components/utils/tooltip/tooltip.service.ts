@@ -8,7 +8,7 @@ export class TooltipService extends DynamicContainerService {
 
     constructor(cmpFactoryResolver: ComponentFactoryResolver) { super(cmpFactoryResolver); }
 
-    createTooltip(msg: string, options = {}, viewContainerRef: ViewContainerRef = this.defaultContainer) {
+    createTooltip(msg: string, options:any, viewContainerRef: ViewContainerRef = this.defaultContainer) {
         const tooltipRef: ComponentRef<NtsTooltipComponent> =
             this.attachComponent(NtsTooltipComponent, viewContainerRef);
 

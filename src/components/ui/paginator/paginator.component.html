@@ -9,7 +9,7 @@
     <nts-icon class="paginator-icon"
         icon="arrow-left"
         (click)="prevPage()"
-        [class.disabled]="page === 0"
+        [class.disabled]="selected === 0"
     ></nts-icon>
     <span class="page"
       *ngFor="let page of pages"
@@ -23,7 +23,7 @@
     <nts-icon class="paginator-icon"
         icon="arrow-right"
         (click)="nextPage()"
-        [class.disabled]="page === pagesCount - 1"
+        [class.disabled]="selected === pagesCount - 1"
     ></nts-icon>
   </div>
 </div>

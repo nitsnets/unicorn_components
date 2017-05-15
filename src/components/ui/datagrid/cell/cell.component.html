@@ -43,5 +43,5 @@
     <ng-content *ngIf="!value"></ng-content>
 </ng-container>
 <ng-container *ngIf="customCell">
-    <template [ngTemplateOutlet]="customCell" [ngOutletContext]="context"> </template>
+    <ng-template [ngTemplateOutlet]="customCell" [ngOutletContext]="context"> </ng-template>
 </ng-container>

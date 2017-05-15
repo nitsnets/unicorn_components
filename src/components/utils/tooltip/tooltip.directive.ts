@@ -8,10 +8,10 @@ import { TooltipService } from './tooltip.service';
 })
 export class NtsTooltipDirective implements AfterViewInit {
     private tooltipRef: ComponentRef<NtsTooltipComponent> = null;
-    private element: HTMLElement = null;
+    private element: any = null;
 
     @Input() ntsTooltip = '';
-    @Input() orientation: 'right' | 'bottom' | 'left' = 'right';
+    @Input() orientation: 'right' | 'top' | 'bottom' | 'left' = 'right';
 
     @HostListener('mouseover') onMouseover() { this.openTooltip(); }
     @HostListener('mouseout') onMouseout() { this.closeTooltip(); }

@@ -34,7 +34,7 @@
                 ></nts-datagrid-cell>
             </ng-container>
             <ng-container *ngIf="customRow">
-                <template [ngTemplateOutlet]="customRow" [ngOutletContext]="{ $implicit: row, i: i }"> </template>
+                <ng-template [ngTemplateOutlet]="customRow" [ngOutletContext]="{ $implicit: row, i: i }"> </ng-template>
             </ng-container>
         </nts-datagrid-row>
     </div>
