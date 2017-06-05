@@ -10,7 +10,7 @@ import { Color } from './../../../directives/base-chart.directive';
 export class NtsChartComponent implements OnChanges {
 
     @Input() chartTitle: string;
-    @Input() size: 'small' | 'medium' | 'large' = 'medium';
+    @Input() size: 'tiny' | 'small' | 'medium' | 'large' = 'medium';
     @Input() type: 'line' | 'bar' | 'pie' | 'radar' | 'doughnut' | 'polarArea' | 'horizontalBar';
 
     @Input() series: Array<{ label: string, data: [number], color: Color }> = [];

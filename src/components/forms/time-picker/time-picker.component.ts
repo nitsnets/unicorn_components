@@ -31,10 +31,10 @@ export class NtsTimePickerComponent extends NtsInputBaseComponent {
     onBlur($event) {
         this.ntsBlur.emit($event);
     }
-    onKeyPress(ev: KeyboardEvent, open: boolean) {
+    onKeyPress(ev: KeyboardEvent) {
         if (ev.code === 'Enter' || ev.key === 'Enter') {
             this.opened = false;
-        } else { this.opened = open; }
+        } else { this.opened = true; }
     }
     onTimeChanges(date) {
         this.ntsModel = date;

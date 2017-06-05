@@ -1,5 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ColorPickerModule } from 'angular2-color-picker';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NTS_COMPONENTS } from './components/';
@@ -15,7 +14,6 @@ import { TextMaskModule } from 'angular2-text-mask';
         CommonModule,
         FormsModule,
         TextMaskModule,
-        ColorPickerModule,
         SortablejsModule,
         BrowserModule
     ],
@@ -28,7 +26,6 @@ import { TextMaskModule } from 'angular2-text-mask';
         NTS_COMPONENTS,
         NTS_DIRECTIVES,
         NTS_PIPES,
-        ColorPickerModule,
         BrowserModule
     ],
     entryComponents: [

@@ -9,17 +9,17 @@ import { DOCUMENT } from '@angular/platform-browser';
 })
 export class NtsTooltipComponent {
 
-    options = {};
+    options:any = {};
     message = '';
 
     @Output() accept = new EventEmitter();
 
     constructor(
         private elementRef: ElementRef,
-        @Inject(DOCUMENT) private document: HTMLElement
+        @Inject(DOCUMENT) private document: any
     ) { }
 
-    setOptions(options) {
+    setOptions(options:any) {
         if ((options.left || options.right) && (options.top || options.bottom)) {
             return this.options = options;
         }
@@ -34,7 +34,7 @@ export class NtsTooltipComponent {
 
     private calculatePosition(
         el: HTMLElement,
-        orient: 'left' | 'right' | 'bottom',
+        orient: 'left' | 'right' | 'bottom' | 'top',
         cont: HTMLElement = this.document
     ): any {
         if (!el.getBoundingClientRect) { return {}; }

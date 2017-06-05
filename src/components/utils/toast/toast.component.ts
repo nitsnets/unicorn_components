@@ -2,6 +2,7 @@ import {
     Component, Output, EventEmitter, ElementRef, AfterContentInit
 } from '@angular/core';
 
+export interface ToastOptions {showClose: boolean;}
 @Component({
     selector: 'nts-toast',
     templateUrl: 'toast.component.html',
@@ -11,7 +12,7 @@ export class NtsToastComponent implements AfterContentInit {
 
     animateIn = false;
     animateOut = false;
-    toastOptions = {};
+    toastOptions:ToastOptions = null;
     msg = '';
 
     @Output() accept = new EventEmitter();
@@ -27,11 +28,11 @@ export class NtsToastComponent implements AfterContentInit {
         this.animateIn = true;
     }
 
-    initContent(options) {
+    initContent(options: ToastOptions) {
         this.toastOptions = options;
     }
 
-    setMessage(msg) {
+    setMessage(msg: string) {
         this.msg = msg;
     }
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NtsButtonBaseComponent } from '../../base/button-base.component';
 
 @Component({
@@ -7,4 +7,5 @@ import { NtsButtonBaseComponent } from '../../base/button-base.component';
     styleUrls: ['button-header.component.scss'],
 })
 export class NtsButtonHeaderComponent extends NtsButtonBaseComponent {
+    @Input() type: string;
 }

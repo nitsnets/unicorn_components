@@ -8,9 +8,9 @@
       [clear]="true"
       [ntsModel]="ntsModel"
       (ntsModelChange)="onTimeChanges($event)"
-      (ntsFocus)="onFocus()"
-      (ntsBlur)="onBlur()"
-      (ntsKeypress)="onKeyPress($event, 'time')"
+      (ntsFocus)="onFocus($event)"
+      (ntsBlur)="onBlur($event)"
+      (ntsKeypress)="onKeyPress($event)"
     > </nts-input>
   </div>
   <div *ngIf="opened || inline"

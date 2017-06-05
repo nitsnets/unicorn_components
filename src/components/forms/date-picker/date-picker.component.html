@@ -10,8 +10,8 @@
       [clear]="true"
       [ntsModel]="ntsModel"
       (ntsModelChange)="onDateChanges($event)"
-      (ntsFocus)="onFocus()"
-      (ntsBlur)="onBlur()"
+      (ntsFocus)="onFocus($event)"
+      (ntsBlur)="onBlur($event)"
       (ntsKeypress)="onKeyPress($event, true)"
     > </nts-input>
   </div>
