@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'nts-row',
+    selector: 'uni-row',
     templateUrl: 'row.component.html',
     styleUrls: ['row.component.scss'],
 })
-export class NtsRowComponent {
+export class UniRowComponent {
     constructor() { }
 }

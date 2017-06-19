@@ -1,6 +1,6 @@
 <div class="time-container" (clickOutside)="opened = (inline ? opened : false)">
   <div class="time-inputs-container">
-    <nts-input
+    <uni-input
       type="time"
       icon="clock"
       class="time-input clear-webkit-controls"
@@ -11,7 +11,7 @@
       (ntsFocus)="onFocus($event)"
       (ntsBlur)="onBlur($event)"
       (ntsKeypress)="onKeyPress($event)"
-    > </nts-input>
+    > </uni-input>
   </div>
   <div *ngIf="opened || inline"
     class="time-controls-container"
@@ -19,9 +19,9 @@
     [class.align-left]="side === 'left'"
     [class.align-right]="side === 'right'"
   >
-    <nts-clock
+    <uni-clock
       [ntsModel]="ntsModel"
       (ntsModelChange)="onTimeChanges($event)">
-    </nts-clock>
+    </uni-clock>
   </div>
 </div>

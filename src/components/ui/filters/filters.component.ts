@@ -11,25 +11,25 @@ import {
 } from '@angular/core';
 import { deepClone, objEmpty, objEquals } from '../../../utils';
 
-import { NtsButtonToggleComponent } from './../../forms/button-toggle/button-toggle.component';
-import { NtsCheckboxComponent } from './../../forms/checkbox/checkbox.component';
-import { NtsDatePickerComponent } from '../../forms/date-picker/date-picker.component';
-import { NtsFilter } from '../../../models/filter';
-import { NtsFiltersAdvancedComponent } from './filters-advanced/filters-advanced.component';
-import { NtsFiltersMainComponent } from './filters-main/filters-main.component';
-import { NtsInputBaseComponent } from '../../base/input-base.component';
-import { NtsInputComponent } from '../../forms/input/input.component';
-import { NtsRadioComponent } from '../../forms/radio/radio.component';
-import { NtsSelectComponent } from '../../forms/select/select.component';
-import { NtsTimePickerComponent } from './../../forms/time-picker/time-picker.component';
-import { NtsToggleComponent } from './../../forms/toggle/toggle.component';
+import { UniButtonToggleComponent } from './../../forms/button-toggle/button-toggle.component';
+import { UniCheckboxComponent } from './../../forms/checkbox/checkbox.component';
+import { UniDatePickerComponent } from '../../forms/date-picker/date-picker.component';
+import { UniFilter } from '../../../models/filter';
+import { UniFiltersAdvancedComponent } from './filters-advanced/filters-advanced.component';
+import { UniFiltersMainComponent } from './filters-main/filters-main.component';
+import { UniInputBaseComponent } from '../../base/input-base.component';
+import { UniInputComponent } from '../../forms/input/input.component';
+import { UniRadioComponent } from '../../forms/radio/radio.component';
+import { UniSelectComponent } from '../../forms/select/select.component';
+import { UniTimePickerComponent } from './../../forms/time-picker/time-picker.component';
+import { UniToggleComponent } from './../../forms/toggle/toggle.component';
 
 @Component({
-    selector: 'nts-filters',
+    selector: 'uni-filters',
     templateUrl: './filters.component.html',
     styleUrls: ['./filters.component.scss']
 })
-export class NtsFiltersComponent implements AfterContentInit, OnChanges {
+export class UniFiltersComponent implements AfterContentInit, OnChanges {
 
     @Input() autoFilter: 'onChange' | 'onBlur' | false = false;
     @Input() persistent: string = null;
@@ -41,39 +41,39 @@ export class NtsFiltersComponent implements AfterContentInit, OnChanges {
     @Input() buttonLabel = 'Apply';
     @Input() buttonIcon = null;
 
-    @ContentChild(NtsFiltersAdvancedComponent) advFiltersComp: NtsFiltersAdvancedComponent;
-    @ContentChild(NtsFiltersMainComponent) mainFiltersComp: NtsFiltersMainComponent;
+    @ContentChild(UniFiltersAdvancedComponent) advFiltersComp: UniFiltersAdvancedComponent;
+    @ContentChild(UniFiltersMainComponent) mainFiltersComp: UniFiltersMainComponent;
 
-    @ContentChildren(NtsInputComponent, { descendants: true }) inputsList: QueryList<NtsInputBaseComponent>;
-    @ContentChildren(NtsSelectComponent, { descendants: true }) selectsList: QueryList<NtsInputBaseComponent>;
-    @ContentChildren(NtsCheckboxComponent, { descendants: true }) checkboxList: QueryList<NtsInputBaseComponent>;
-    @ContentChildren(NtsButtonToggleComponent, { descendants: true }) btnToggleList: QueryList<NtsInputBaseComponent>;
-    @ContentChildren(NtsDatePickerComponent, { descendants: true }) datepickerList: QueryList<NtsInputBaseComponent>;
-    @ContentChildren(NtsRadioComponent, { descendants: true }) radioList: QueryList<NtsInputBaseComponent>;
-    @ContentChildren(NtsToggleComponent, { descendants: true }) toggleList: QueryList<NtsInputBaseComponent>;
-    @ContentChildren(NtsTimePickerComponent, { descendants: true }) timepickerList: QueryList<NtsInputBaseComponent>;
+    @ContentChildren(UniInputComponent, { descendants: true }) inputsList: QueryList<UniInputBaseComponent>;
+    @ContentChildren(UniSelectComponent, { descendants: true }) selectsList: QueryList<UniInputBaseComponent>;
+    @ContentChildren(UniCheckboxComponent, { descendants: true }) checkboxList: QueryList<UniInputBaseComponent>;
+    @ContentChildren(UniButtonToggleComponent, { descendants: true }) btnToggleList: QueryList<UniInputBaseComponent>;
+    @ContentChildren(UniDatePickerComponent, { descendants: true }) datepickerList: QueryList<UniInputBaseComponent>;
+    @ContentChildren(UniRadioComponent, { descendants: true }) radioList: QueryList<UniInputBaseComponent>;
+    @ContentChildren(UniToggleComponent, { descendants: true }) toggleList: QueryList<UniInputBaseComponent>;
+    @ContentChildren(UniTimePickerComponent, { descendants: true }) timepickerList: QueryList<UniInputBaseComponent>;
 
-    mainFilters: NtsInputBaseComponent[];
-    advFilters: NtsInputBaseComponent[];
-    filters: NtsInputBaseComponent[];
+    mainFilters: UniInputBaseComponent[];
+    advFilters: UniInputBaseComponent[];
+    filters: UniInputBaseComponent[];
 
     showButton = true;
     showAdvanced = false;
 
-    defaultFilter: NtsFilter = {};
+    defaultFilter: UniFilter = {};
 
-    private _filter: NtsFilter = {};
-    get filter(): NtsFilter {
+    private _filter: UniFilter = {};
+    get filter(): UniFilter {
         return this._filter;
     }
     @Input('filter')
-    set filter(value: NtsFilter) {
+    set filter(value: UniFilter) {
         this._filter = value;
-        this.updateNtsModels();
+        this.updateUniModels();
     }
 
-    @Output() filterChange: EventEmitter<NtsFilter> = new EventEmitter();
-    @Output() save: EventEmitter<NtsFilter> = new EventEmitter();
+    @Output() filterChange: EventEmitter<UniFilter> = new EventEmitter();
+    @Output() save: EventEmitter<UniFilter> = new EventEmitter();
 
     /**
      * The number of buttonn on the right side of the filters
@@ -99,18 +99,18 @@ export class NtsFiltersComponent implements AfterContentInit, OnChanges {
         this.advFilters = this.advFiltersComp ? this.advFiltersComp.filters : null;
 
         if (this.advFilters && this.advFilters.length && (!this.mainFilters || !this.mainFilters.length)) {
-            return console.error('When using <nts-filters-advanced> you must include <nts-filters-main> beside it');
+            return console.error('When using <uni-filters-advanced> you must include <uni-filters-main> beside it');
         }
         if (
             this.advFilters
             && this.advFilters.length
             && this.mainFilters.length + this.advFilters.length !== this.filters.length
         ) {
-            return console.error('You cannot include inputs at <nts-filters> root when using mainand advanced filters');
+            return console.error('You cannot include inputs at <uni-filters> root when using mainand advanced filters');
         }
 
         this.filters.forEach(f => {
-            f.ntsModelChange.subscribe(value => this.onNtsModelChange(f.name, value, f.constructor.name));
+            f.ntsModelChange.subscribe(value => this.onUniModelChange(f.name, value, f.constructor.name));
             f.ntsBlur.subscribe(() => this.onFilterBlur(f.name, f.constructor.name));
             if (f.value) {
                 this.defaultFilter[f.name] = f.value;
@@ -174,13 +174,13 @@ export class NtsFiltersComponent implements AfterContentInit, OnChanges {
             this.filter = JSON.parse(restored);
         }
     }
-    private onNtsModelChange(field: string, value: any, type: string) {
+    private onUniModelChange(field: string, value: any, type: string) {
         this.filter[field] = value;
         if (this.autoFilter === 'onChange') {
             this.doFilter();
         }
     }
-    private updateNtsModels() {
+    private updateUniModels() {
         if (
             this.filters
             && (

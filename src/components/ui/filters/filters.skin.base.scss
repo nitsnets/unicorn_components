@@ -1,4 +1,4 @@
-nts-filters {
+uni-filters {
     margin-bottom: $basic-padding / 2;
 
     .apply {
@@ -18,8 +18,8 @@ nts-filters {
     .filters-advanced {
         margin-top: $basic-padding / 2;
     }
-    nts-filters-advanced,
-    nts-filters-main {
+    uni-filters-advanced,
+    uni-filters-main {
         display: block;
     }
 }

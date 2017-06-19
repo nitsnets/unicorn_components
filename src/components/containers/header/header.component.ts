@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'nts-header',
+    selector: 'uni-header',
     templateUrl: 'header.component.html',
     styleUrls: ['header.component.scss'],
 })
-export class NtsHeaderComponent implements OnInit {
+export class UniHeaderComponent implements OnInit {
 
     @Input() ntsVisible = true;
     @Input() ntsSize = null;

@@ -1,19 +1,19 @@
 import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 
-import { NtsListItem } from './list.component';
+import { UniListItem } from './list.component';
 import { objEquals } from '../../../utils';
 
-export interface NtsListItem {
+export interface UniListItem {
     name: string;
     icon: string;
 }
 
 @Component({
-    selector: 'nts-list',
+    selector: 'uni-list',
     templateUrl: 'list.component.html',
     styleUrls: ['list.component.scss']
 })
-export class NtsListComponent implements OnChanges {
+export class UniListComponent implements OnChanges {
     @Input() local = true;
 
     @Input() sortable: any;
@@ -28,13 +28,13 @@ export class NtsListComponent implements OnChanges {
     };
     sortableOptions = this.defaultSortableOptions;
 
-    @Input() itemSelected: NtsListItem;
-    @Output() itemSelectedChange = new EventEmitter<NtsListItem>();
+    @Input() itemSelected: UniListItem;
+    @Output() itemSelectedChange = new EventEmitter<UniListItem>();
 
-    @Input() data: NtsListItem[];
-    @Output() delete = new EventEmitter<{ index: number, item: NtsListItem }>();
-    @Output() edit = new EventEmitter<{ index: number, item: NtsListItem }>();
-    @Output() sort = new EventEmitter<NtsListItem[]>();
+    @Input() data: UniListItem[];
+    @Output() delete = new EventEmitter<{ index: number, item: UniListItem }>();
+    @Output() edit = new EventEmitter<{ index: number, item: UniListItem }>();
+    @Output() sort = new EventEmitter<UniListItem[]>();
 
     // Double click handlers
     preventDoubleclick = false;
@@ -55,7 +55,7 @@ export class NtsListComponent implements OnChanges {
     onSort(event) {
         this.sort.emit(this.data);
     }
-    onClick(item: NtsListItem) {
+    onClick(item: UniListItem) {
         this.preventDoubleclick = false;
         const lastSelected = this.itemSelected;
         if (!this.selectable) { return; }
@@ -73,7 +73,7 @@ export class NtsListComponent implements OnChanges {
             }, this.delay
         );
     }
-    onDoubleclick(item: NtsListItem) {
+    onDoubleclick(item: UniListItem) {
         if (this.preventDoubleclick) { return false; }
         clearTimeout(this.timer);
         this.preventClick = true;
@@ -81,13 +81,13 @@ export class NtsListComponent implements OnChanges {
         item['editing'] = true;
         item['newname'] = item.name;
     }
-    onEdit(index: number, item: NtsListItem) {
+    onEdit(index: number, item: UniListItem) {
         item.name = item['newname'];
         item['editing'] = false;
 
         this.edit.emit({ index, item });
     }
-    onDelete(index: number, item: NtsListItem, e: MouseEvent) {
+    onDelete(index: number, item: UniListItem, e: MouseEvent) {
         if (!this.deletable) { return; }
 
         e.stopPropagation();
@@ -97,7 +97,7 @@ export class NtsListComponent implements OnChanges {
         }
         this.delete.emit({ index, item });
     }
-    isSelected(item: NtsListItem): boolean {
+    isSelected(item: UniListItem): boolean {
         if (!this.itemSelected) { return false; }
         if (item['id'] && this.itemSelected['id'] && item['id'] === this.itemSelected['id']) { return true; }
         return objEquals(this.itemSelected, item);

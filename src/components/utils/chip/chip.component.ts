@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-    selector: 'nts-chip',
+    selector: 'uni-chip',
     templateUrl: 'chip.component.html',
     styleUrls: ['chip.component.scss'],
 })
-export class NtsChipComponent {
+export class UniChipComponent {
 
     @Input() removable = false;
     @Input() icon = null;

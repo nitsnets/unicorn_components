@@ -25,7 +25,7 @@ export const CHART_COLORS: Array<number[]> = [
 ];
 /* tslint:disable-next-line */
 @Directive({ selector: 'canvas[baseChart]', exportAs: 'base-chart' })
-export class NtsBaseChartDirective implements OnDestroy, OnChanges, OnInit {
+export class UniBaseChartDirective implements OnDestroy, OnChanges, OnInit {
 
     @Input() public data: number[] | Array<number[]>;
     @Input() public datasets: any[];

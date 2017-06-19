@@ -1,2 +1,2 @@
-export type NtsColor = 'default' | 'primary' | 'success' | 'info' | 'light' | 'warning' | 'error';
-export type NtsPosition = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right';
+export type UniColor = 'default' | 'primary' | 'success' | 'info' | 'light' | 'warning' | 'error';
+export type UniPosition = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right';

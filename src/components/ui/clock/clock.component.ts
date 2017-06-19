@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 
 @Component({
-    selector: 'nts-clock',
+    selector: 'uni-clock',
     templateUrl: 'clock.component.html',
     styleUrls: ['clock.component.scss'],
 })
-export class NtsClockComponent implements OnChanges {
+export class UniClockComponent implements OnChanges {
     @Input() ntsModel;
     @Output() ntsModelChange = new EventEmitter();
 

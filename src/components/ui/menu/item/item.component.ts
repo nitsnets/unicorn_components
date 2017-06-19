@@ -1,11 +1,11 @@
 import { Component, ElementRef, Input } from '@angular/core';
 
 @Component({
-    selector: 'nts-menu-item',
+    selector: 'uni-menu-item',
     templateUrl: 'item.component.html',
     styleUrls: ['item.component.scss'],
 })
-export class NtsMenuItemComponent {
+export class UniMenuItemComponent {
     @Input() icon = '';
 
     constructor(public elementRef: ElementRef) { }

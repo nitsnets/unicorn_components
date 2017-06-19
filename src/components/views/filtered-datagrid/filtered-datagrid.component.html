@@ -1,9 +1,9 @@
-<nts-layout>
-    <nts-aside class="aside-left" [class.hidden]="filtersList?.isEmpty">
-        <ng-content select="nts-filters-list"></ng-content>
-    </nts-aside>
-    <nts-body>
-        <ng-content select="nts-filters"></ng-content>
-        <ng-content select="nts-datagrid"></ng-content>
-    </nts-body>
-</nts-layout>
+<uni-layout>
+    <uni-aside class="aside-left" [class.hidden]="filtersList?.isEmpty">
+        <ng-content select="uni-filters-list"></ng-content>
+    </uni-aside>
+    <uni-body>
+        <ng-content select="uni-filters"></ng-content>
+        <ng-content select="uni-datagrid"></ng-content>
+    </uni-body>
+</uni-layout>

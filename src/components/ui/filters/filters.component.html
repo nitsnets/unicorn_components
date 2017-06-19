@@ -5,10 +5,10 @@
         </ng-container>
         <ng-container *ngIf="advFilters">
             <div>
-                <ng-content select="nts-filters-main" *ngIf="advFilters"> </ng-content>
+                <ng-content select="uni-filters-main" *ngIf="advFilters"> </ng-content>
             </div>
             <div class="filters-advanced" *ngIf="showAdvanced">
-                <ng-content select="nts-filters-advanced" *ngIf="advFilters"> </ng-content>
+                <ng-content select="uni-filters-advanced" *ngIf="advFilters"> </ng-content>
             </div>
         </ng-container>
     </div>
@@ -17,31 +17,31 @@
         'two-options': optionsCount === 2,
         'one-option': optionsCount === 1
     }">
-        <nts-button class="apply"
+        <uni-button class="apply"
             *ngIf="showButton" type="submit"
             [label]="buttonLabel"
             [color]="buttonColor"
             [icon]="buttonIcon"
-        ></nts-button>
-        <nts-button class="clear"
+        ></uni-button>
+        <uni-button class="clear"
             *ngIf="clearable && !isDefault()"
             label="clear"
             icon="close"
             size="small"
             (click)="onClear()"
-        ></nts-button>
-        <nts-button class="save"
+        ></uni-button>
+        <uni-button class="save"
             *ngIf="savable && !isEmpty()"
             label="save"
             icon="plus"
             size="small"
             (click)="onSave()"
-        ></nts-button>
+        ></uni-button>
     </div>
 </form>
-<nts-button *ngIf="advFilters && !showAdvanced"
+<uni-button *ngIf="advFilters && !showAdvanced"
     icon="arrow-down"
     label="more filters"
     size="small"
     (click)="showAdvanced = true"
-></nts-button>
+></uni-button>

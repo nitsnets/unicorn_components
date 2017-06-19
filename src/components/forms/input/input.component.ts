@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 
-import { NtsInputBaseComponent } from '../../base/input-base.component';
 import { Observable } from 'rxjs/Rx';
+import { UniInputBaseComponent } from '../../base/input-base.component';
 import { conformToMask } from 'angular2-text-mask';
 
 // https://github.com/text-mask/text-mask/tree/master/angular2
@@ -9,11 +9,11 @@ import { conformToMask } from 'angular2-text-mask';
 export type InputType = 'text' | 'number' | 'email' | 'password' | 'color';
 export type MaskArray = (string | RegExp)[];
 @Component({
-    selector: 'nts-input',
+    selector: 'uni-input',
     templateUrl: 'input.component.html',
     styleUrls: ['input.component.scss'],
 })
-export class NtsInputComponent extends NtsInputBaseComponent implements OnInit, OnChanges {
+export class UniInputComponent extends UniInputBaseComponent implements OnInit, OnChanges {
 
     @Input() type: InputType = 'text';
     @Input() max = -1;

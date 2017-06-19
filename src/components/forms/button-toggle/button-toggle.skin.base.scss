@@ -1,5 +1,5 @@
-nts-button-toggle {
-    nts-button.pressed button {
+uni-button-toggle {
+    uni-button.pressed button {
         box-shadow: rgba(0,0,0,0.1) 1px 1px 2px inset;
         background-color: $alpha-black-medium;
         &.primary{ background-color: darken($color-primary, 10%); }

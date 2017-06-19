@@ -3,7 +3,7 @@ import { Directive, ElementRef, Input, OnInit, Renderer } from '@angular/core';
 @Directive({
     selector: '[autofocus]'
 })
-export class NtsAutofocusDirective implements OnInit {
+export class UniAutofocusDirective implements OnInit {
     @Input() autofocus = false;
 
     constructor(

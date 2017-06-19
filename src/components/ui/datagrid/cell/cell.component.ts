@@ -1,13 +1,13 @@
 import { Component, ElementRef, HostBinding, HostListener, Input, OnInit, Optional } from '@angular/core';
 
-import { NtsDatagridColumnComponent } from './../column/column.component';
-import { NtsDatagridComponent } from '../datagrid.component';
+import { UniDatagridColumnComponent } from './../column/column.component';
+import { UniDatagridComponent } from '../datagrid.component';
 
 @Component({
-    selector: 'nts-datagrid-cell',
+    selector: 'uni-datagrid-cell',
     templateUrl: 'cell.component.html'
 })
-export class NtsDatagridCellComponent implements OnInit {
+export class UniDatagridCellComponent implements OnInit {
     @Input()
     @HostBinding('class.highlight')
     highlight;
@@ -40,10 +40,10 @@ export class NtsDatagridCellComponent implements OnInit {
 
     constructor(
         private element: ElementRef,
-        private datagrid: NtsDatagridComponent,
+        private datagrid: UniDatagridComponent,
 
         // If not null indicates that it is custom cell inside a column
-        @Optional() private column: NtsDatagridColumnComponent
+        @Optional() private column: UniDatagridColumnComponent
     ) {
         this.highlight = column ? false : this.datagrid.highlightCell;
     }

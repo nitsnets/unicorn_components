@@ -3,11 +3,11 @@ import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core
 const pagesWindow = 4;
 
 @Component({
-    selector: 'nts-paginator',
+    selector: 'uni-paginator',
     templateUrl: 'paginator.component.html',
     styleUrls: ['paginator.component.scss'],
 })
-export class NtsPaginatorComponent implements OnChanges {
+export class UniPaginatorComponent implements OnChanges {
     @Input() totalElements: number;
     @Input() pageSize = 10;
 

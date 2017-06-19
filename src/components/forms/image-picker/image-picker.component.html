@@ -8,7 +8,7 @@
 >
 
     <div class="placeholder" *ngIf="!imageData">
-        <nts-icon class="icon" icon="image" size="large"></nts-icon>
+        <uni-icon class="icon" icon="image" size="large"></uni-icon>
         <p class="label">
             Click or drop an image to upload <br> ({{width}} x {{height}})
         </p>
@@ -19,4 +19,4 @@
     <input #inputFile type="file" accept="image/*" (change)="onImagePicked($event)" [style.display]="'none'">
 
 </label>
-<nts-button class="delete" *ngIf="imageData" icon="delete" (click)="clear()"></nts-button>
+<uni-button class="delete" *ngIf="imageData" icon="delete" (click)="clear()"></uni-button>

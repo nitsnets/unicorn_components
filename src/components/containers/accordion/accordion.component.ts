@@ -1,11 +1,11 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-    selector: 'nts-accordion',
+    selector: 'uni-accordion',
     templateUrl: 'accordion.component.html',
     styleUrls: ['accordion.component.scss'],
 })
-export class NtsAccordionComponent {
+export class UniAccordionComponent {
     @Input() name = '';
     @Input() options = false;
 

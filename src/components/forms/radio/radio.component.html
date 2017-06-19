@@ -2,9 +2,9 @@
   checked: ntsModel == value,
   'only-icon': !label || !label.length
 }">
-  <nts-icon class="icon" [icon]="
+  <uni-icon class="icon" [icon]="
     ntsModel == value ? 'circle-check' : 'circle'"
-  ></nts-icon>
+  ></uni-icon>
   <input type="checkbox" [name]="name" [ngModel]="ntsModel == value" (ngModelChange)="onNgModelChange(this.value)">
   <span class="label" *ngIf="label" [innerHtml]="label"></span>
 </label>

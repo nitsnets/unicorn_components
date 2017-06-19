@@ -1,7 +1,7 @@
 import { ComponentFactoryResolver, Injectable } from '@angular/core';
 
-import { NtsToastComponent } from './toast.component';
 import { Subject } from 'rxjs/Rx';
+import { UniToastComponent } from './toast.component';
 
 @Injectable()
 export class ToastService {
@@ -19,7 +19,7 @@ export class ToastService {
             this.toastSub = new Subject();
 
             this.toastRef = viewContainer.createComponent(
-                this.cmpFactoryResolver.resolveComponentFactory(NtsToastComponent)
+                this.cmpFactoryResolver.resolveComponentFactory(UniToastComponent)
             );
             this.toastRef.instance.setMessage(msg);
             this.toastRef.instance.initContent(options);

@@ -2,10 +2,10 @@
 
     <li *ngFor="let item of data; let i = index">
 
-        <nts-icon class="drag-handle show-hover"
+        <uni-icon class="drag-handle show-hover"
             *ngIf="sortable"
             icon="drag"
-        ></nts-icon>
+        ></uni-icon>
 
         <ng-container *ngIf="!item.editing">
             <span
@@ -15,20 +15,20 @@
             >
                 {{item.name || '(Untitled)'}}
             </span>
-            <nts-button class="show-hover"
+            <uni-button class="show-hover"
                 *ngIf="deletable"
                 icon="delete"
                 (click)="onDelete(i, item, $event)"
-            ></nts-button>
+            ></uni-button>
         </ng-container>
 
         <form *ngIf="item.editing === true" (submit)="onEdit(i, item)">
-            <nts-input floating="true"
+            <uni-input floating="true"
                 [autofocus]="true"
                 [(ntsModel)]="item.newname"
                 [placeholder]="placeholder || ''"
                 (ntsBlur)="item.editing = false"
-            ></nts-input>
+            ></uni-input>
         </form>
 
     </li>

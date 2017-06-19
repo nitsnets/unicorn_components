@@ -1,16 +1,16 @@
 import { Component, Input } from '@angular/core';
 
-import { NtsInputBaseComponent } from '../../base/input-base.component';
+import { UniInputBaseComponent } from '../../base/input-base.component';
 
 @Component({
-    selector: 'nts-checkbox',
+    selector: 'uni-checkbox',
     templateUrl: 'checkbox.component.html',
     styleUrls: ['checkbox.component.scss'],
 })
-export class NtsCheckboxComponent extends NtsInputBaseComponent {
+export class UniCheckboxComponent extends UniInputBaseComponent {
     @Input() partial = false;
 
-    toggleNtsModel() {
+    toggleUniModel() {
         this.onNgModelChange(this.ntsModel ? false : true);
     }
 }

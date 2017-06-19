@@ -1,6 +1,6 @@
 ## Button menu
 
-```ui / nts-button-menu```
+```ui / uni-button-menu```
 
 parent:  ``` base / base-button```
 
@@ -12,7 +12,7 @@ Botón con menu
 Parent contract: 
 ```typescript
 //INPUTS
-color: NtsColor;
+color: UniColor;
 icon: string;
 iconRight: string;
 label: string;
@@ -23,15 +23,15 @@ disabled: boolean = false;
 Extended contract: 
 ```typescript
 //INPUTS
-position: NtsPosition = 'bottom-left';
+position: UniPosition = 'bottom-left';
 ```
 ### Usage
 ```html
-<nts-button-menu label="Default button" color="primary">
-    <nts-menu-item icon="close">Option 1</nts-menu-item>
-    <nts-separator></nts-separator>
-    <nts-menu-item icon="check">Option 2</nts-menu-item>
-</nts-button-menu>
+<uni-button-menu label="Default button" color="primary">
+    <uni-menu-item icon="close">Option 1</uni-menu-item>
+    <uni-separator></uni-separator>
+    <uni-menu-item icon="check">Option 2</uni-menu-item>
+</uni-button-menu>
 ```
 
 ### Known issues

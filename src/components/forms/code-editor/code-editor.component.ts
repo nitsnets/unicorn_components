@@ -11,7 +11,7 @@ import * as Ace from 'brace';
 import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
-    selector: 'nts-code',
+    selector: 'uni-code',
     templateUrl: 'code.component.html',
     styleUrls: ['code.component.scss']
 })

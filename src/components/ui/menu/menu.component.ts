@@ -11,22 +11,22 @@ import {
     Output,
 } from '@angular/core';
 
-import { NtsMenuContainerComponent } from './container/container.component';
-import { NtsPosition } from '../../../models/types';
+import { UniMenuContainerComponent } from './container/container.component';
+import { UniPosition } from '../../../models/types';
 
 @Component({
-    selector: 'nts-menu',
+    selector: 'uni-menu',
     templateUrl: 'menu.component.html',
     styleUrls: ['menu.component.scss'],
 })
-export class NtsMenuComponent {
+export class UniMenuComponent {
     @Input() toggle = false;
     @Input() keepOpen = false;
     @Output() openedChange = new EventEmitter();
-    @Input() position: NtsPosition = null;
-    calculatedPosition: NtsPosition = null;
+    @Input() position: UniPosition = null;
+    calculatedPosition: UniPosition = null;
 
-    @ContentChild(NtsMenuContainerComponent) menuScope: NtsMenuContainerComponent;
+    @ContentChild(UniMenuContainerComponent) menuScope: UniMenuContainerComponent;
 
     opened = false;
 
@@ -52,11 +52,11 @@ export class NtsMenuComponent {
 @Directive({
     selector: '[ntsMenuTrigger]'
 })
-export class NtsMenuTriggerDirective implements OnDestroy {
+export class UniMenuTriggerDirective implements OnDestroy {
     private openedByFocus = false;
     private closeMenuOnOutsideClick = (event: MouseEvent) => this.close(event);
 
-    constructor( @Host() public menu: NtsMenuComponent, private elementRef: ElementRef) { }
+    constructor( @Host() public menu: UniMenuComponent, private elementRef: ElementRef) { }
 
     @HostListener('click', ['$event']) openMenu(ev: MouseEvent) {
         if (this.openedByFocus) {

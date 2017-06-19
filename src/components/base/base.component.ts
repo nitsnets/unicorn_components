@@ -1,8 +1,8 @@
 import { Input } from '@angular/core';
-import { NtsColor } from '../../models/types';
+import { UniColor } from '../../models/types';
 
-export abstract class NtsBaseComponent {
-    @Input() color: NtsColor;
+export abstract class UniBaseComponent {
+    @Input() color: UniColor;
     @Input() label: string;
     @Input() disabled = false;
 }

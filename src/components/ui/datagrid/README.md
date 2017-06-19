@@ -1,5 +1,5 @@
 # Datagrid
-`ui / nts-datagrid`
+`ui / uni-datagrid`
 
 ---
 Vista de tabla compleja
@@ -11,15 +11,15 @@ Vista de tabla compleja
 
 ### Usage
 ```html
-<nts-datagrid>
-    <nts-datagrid-column field="name"></nts-datagrid-column>
-    <nts-datagrid-column field="date" fieldFormat="date"></nts-datagrid-column>
-    <nts-datagrid-column field="progress" fieldFormat="custom">
+<uni-datagrid>
+    <uni-datagrid-column field="name"></uni-datagrid-column>
+    <uni-datagrid-column field="date" fieldFormat="date"></uni-datagrid-column>
+    <uni-datagrid-column field="progress" fieldFormat="custom">
         <template let-cellvalue>
-            <nts-progress [value]="cellvalue"></nts-progress>
+            <uni-progress [value]="cellvalue"></uni-progress>
         </template>
-    </nts-datagrid-column>
-</nts-datagrid>
+    </uni-datagrid-column>
+</uni-datagrid>
 ```
 
 ### Known Issues

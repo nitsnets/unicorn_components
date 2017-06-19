@@ -1,4 +1,4 @@
-export class NtsOption {
+export class UniOption {
     value;
     label;
     sublabel;

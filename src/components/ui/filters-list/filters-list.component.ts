@@ -1,29 +1,29 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-import { NtsFilter } from './../../../models/filter';
-import { NtsListItem } from './../list/list.component';
+import { UniFilter } from './../../../models/filter';
+import { UniListItem } from './../list/list.component';
 
-export interface NtsFilterItem extends NtsListItem {
-    filter: NtsFilter;
+export interface UniFilterItem extends UniListItem {
+    filter: UniFilter;
 };
 
 @Component({
-    selector: 'nts-filters-list',
+    selector: 'uni-filters-list',
     templateUrl: './filters-list.component.html',
     styleUrls: ['./filters-list.component.scss']
 })
-export class NtsFiltersListComponent implements OnInit {
+export class UniFiltersListComponent implements OnInit {
 
     @Input() mainTitle: string;
-    @Input() mainFilters: NtsFilterItem[];
-    @Output() mainFiltersChange: EventEmitter<NtsFilterItem[]> = new EventEmitter();
+    @Input() mainFilters: UniFilterItem[];
+    @Output() mainFiltersChange: EventEmitter<UniFilterItem[]> = new EventEmitter();
 
     @Input() customTitle: string;
-    @Input() customFilters: NtsFilterItem[];
-    @Output() customFiltersChange: EventEmitter<NtsFilterItem[]> = new EventEmitter();
+    @Input() customFilters: UniFilterItem[];
+    @Output() customFiltersChange: EventEmitter<UniFilterItem[]> = new EventEmitter();
 
-    @Input() filterSelected: NtsFilter;
-    @Output() filterSelectedChange: EventEmitter<NtsFilter> = new EventEmitter();
+    @Input() filterSelected: UniFilter;
+    @Output() filterSelectedChange: EventEmitter<UniFilter> = new EventEmitter();
 
     get isEmpty() {
         return (!this.mainFilters || this.mainFilters.length === 0) &&
@@ -36,11 +36,11 @@ export class NtsFiltersListComponent implements OnInit {
 
     }
 
-    onFilterSelected(filterItem: NtsFilterItem) {
+    onFilterSelected(filterItem: UniFilterItem) {
         this.filterSelected = filterItem;
         this.filterSelectedChange.emit(filterItem.filter);
     }
-    addCustomFilter(filterItem: NtsFilterItem) {
+    addCustomFilter(filterItem: UniFilterItem) {
         this.customFilters = this.customFilters || [];
         this.customFilters = [...this.customFilters, filterItem];
         this.customFiltersChange.emit(this.customFilters);

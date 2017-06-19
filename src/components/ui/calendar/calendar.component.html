@@ -3,9 +3,9 @@
   'rangeToActive': isRangeToActive()
 }">
   <div class="month-name">
-      <nts-button icon="chevron-left" size="small" (click)="previous()"></nts-button>
+      <uni-button icon="chevron-left" size="small" (click)="previous()"></uni-button>
       <p>{{month.format("MMMM YYYY")}}</p>
-      <nts-button icon="chevron-right" size="small" (click)="next()"></nts-button>
+      <uni-button icon="chevron-right" size="small" (click)="next()"></uni-button>
   </div>
   <div class="days-name">
       <p *ngFor="let dayName of dayNames">{{dayName}}</p>

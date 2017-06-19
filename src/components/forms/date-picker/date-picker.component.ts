@@ -1,14 +1,14 @@
 import { Component, ElementRef, Input } from '@angular/core';
 
-import { NtsInputBaseComponent } from '../../base/input-base.component';
+import { UniInputBaseComponent } from '../../base/input-base.component';
 import { sideOfScreen } from '../../../utils';
 
 @Component({
-    selector: 'nts-date-picker',
+    selector: 'uni-date-picker',
     templateUrl: 'date-picker.component.html',
     styleUrls: ['date-picker.component.scss'],
 })
-export class NtsDatePickerComponent extends NtsInputBaseComponent {
+export class UniDatePickerComponent extends UniInputBaseComponent {
 
     @Input() inline = false;
 

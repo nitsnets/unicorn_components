@@ -11,11 +11,11 @@ import {
 } from '@angular/core';
 
 @Component({
-    selector: 'nts-modal',
+    selector: 'uni-modal',
     templateUrl: 'modal.component.html',
     styleUrls: ['modal.component.scss']
 })
-export class NtsModalComponent implements AfterContentInit {
+export class UniModalComponent implements AfterContentInit {
     component: Type<any>;
     componentRef: ComponentRef<any>;
 

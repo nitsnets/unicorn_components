@@ -1,13 +1,13 @@
 import { AfterContentInit, Component, ContentChild, Input, OnChanges, TemplateRef } from '@angular/core';
 
-import { NtsDatagridCellDirective } from '../cell/cell-variables.directive';
+import { UniDatagridCellDirective } from '../cell/cell-variables.directive';
 import { findByPath } from '../../../../utils';
 
 @Component({
-    selector: 'nts-datagrid-column',
+    selector: 'uni-datagrid-column',
     template: '',
 })
-export class NtsDatagridColumnComponent implements AfterContentInit, OnChanges {
+export class UniDatagridColumnComponent implements AfterContentInit, OnChanges {
     @Input() title: string = null;
     @Input() field: string = null;
     @Input() cellClass: string = null;
@@ -20,7 +20,7 @@ export class NtsDatagridColumnComponent implements AfterContentInit, OnChanges {
     @Input() formatOptions: Object = null;
     @Input() clickPropagation = true;
 
-    @ContentChild(NtsDatagridCellDirective) customCellDirective: NtsDatagridCellDirective = null;
+    @ContentChild(UniDatagridCellDirective) customCellDirective: UniDatagridCellDirective = null;
 
     customCell: TemplateRef<any> = null;
     path: string[];
@@ -48,7 +48,7 @@ export class NtsDatagridColumnComponent implements AfterContentInit, OnChanges {
      * @param {boolean} defaultValue
      * @returns {boolean}
      *
-     * @memberOf NtsDatagridColumnComponent
+     * @memberOf UniDatagridColumnComponent
      */
     isSortable(defaultValue: boolean): boolean {
         return this.sortable === true || this.sortable === undefined && defaultValue === true ? true : false;

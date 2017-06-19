@@ -3,7 +3,7 @@ $toggle-width: $input-height * 2 - $input-padding;
 $toggle-slide-size: $toggle-width - $toggle-height;
 $toggle-padding: $input-padding / 2;
 
-nts-toggle {
+uni-toggle {
     .toggle-container {
         position: relative;
         display: inline-block;

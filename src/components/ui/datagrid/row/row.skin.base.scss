@@ -1,4 +1,4 @@
-nts-datagrid-row {
+uni-datagrid-row {
     overflow: hidden;
     align-items: stretch;
     transition: 200ms ease background-color;
@@ -74,7 +74,7 @@ nts-datagrid-row {
             span {
                 flex: 1;
             }
-            nts-button {
+            uni-button {
                 margin-left: $basic-padding / 4;
             }
         }

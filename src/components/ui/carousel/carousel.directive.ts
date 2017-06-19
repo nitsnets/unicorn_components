@@ -20,7 +20,7 @@ const defaultOptions = {
 @Directive({
     selector: '[ntsCarousel]',
 })
-export class NtsCarouselDirective implements AfterContentInit, OnChanges {
+export class UniCarouselDirective implements AfterContentInit, OnChanges {
     @HostBinding('style.outline') outline = 'none';
 
     @ContentChildren('[ntsCarouselCell]') cells: QueryList<any>;

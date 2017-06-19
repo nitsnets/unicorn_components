@@ -3,14 +3,14 @@
     partial: partial == true,
     'only-icon': !label || !label.length
 }">
-    <nts-icon class="icon" [icon]="
+    <uni-icon class="icon" [icon]="
         ntsModel == true ? 'square-check' :
         partial == true ? 'square-minus' : 'square'"
-    ></nts-icon>
+    ></uni-icon>
     <input type="checkbox"
         [name]="name"
         [ngModel]="ntsModel"
-        (ngModelChange)="toggleNtsModel()"
+        (ngModelChange)="toggleUniModel()"
     >
     <span class="label" *ngIf="label" [innerHtml]="label"></span>
 </label>

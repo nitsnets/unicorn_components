@@ -1,6 +1,6 @@
 # Button popup
 
-```ui / nts-button-popup```
+```ui / uni-button-popup```
 
 parent:  ``` base / base-button```
 
@@ -12,7 +12,7 @@ Botón con popup
 Parent contract: 
 ```typescript
 //INPUTS
-color: NtsColor;
+color: UniColor;
 icon: string;
 iconRight: string;
 label: string;
@@ -23,13 +23,13 @@ disabled: boolean = false;
 Extended contract: 
 ```typescript
 //INPUTS
-position: NtsPosition = 'bottom-left';
+position: UniPosition = 'bottom-left';
 ```
 ## Usage
 ```html
-<nts-button-popup label="Default button" color="primary">
+<uni-button-popup label="Default button" color="primary">
     Content of the closable popup
-</nts-button-popup>
+</uni-button-popup>
 ```
 
 ## Known issues

@@ -1,5 +1,5 @@
 # Alert
-`ui / nts-alert`
+`ui / uni-alert`
 
 ---
 Bloque de alerta para resaltar contenido
@@ -11,9 +11,9 @@ Bloque de alerta para resaltar contenido
 
 ### Usage
 ```html
-<nts-alert color="error">
+<uni-alert color="error">
     <p> Esse culpa sint voluptate dolore consectetur eiusmod labore incididunt excepteur veniam. </p>
-</nts-alert>
+</uni-alert>
 ```
 
 ### Known Issues

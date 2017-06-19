@@ -1,6 +1,6 @@
 <div class="date-container" (clickOutside)="opened = (inline ? opened : false)">
   <div class="date-input-container">
-    <nts-input
+    <uni-input
       type="date"
       icon="calendar"
       class="date-input clear-webkit-controls"
@@ -13,7 +13,7 @@
       (ntsFocus)="onFocus($event)"
       (ntsBlur)="onBlur($event)"
       (ntsKeypress)="onKeyPress($event, true)"
-    > </nts-input>
+    > </uni-input>
   </div>
   <div *ngIf="opened || inline"
     class="date-controls-container"
@@ -21,13 +21,13 @@
     [class.align-left]="side === 'left'"
     [class.align-right]="side === 'right'"
   >
-    <nts-calendar
+    <uni-calendar
       [maxDate]="maxDate"
       [minDate]="minDate"
       [rangeFrom]="rangeFrom"
       [rangeTo]="rangeTo"
       [ntsModel]="ntsModel"
       (ntsModelChange)="onDateChanges($event)">
-    </nts-calendar>
+    </uni-calendar>
   </div>
 </div>

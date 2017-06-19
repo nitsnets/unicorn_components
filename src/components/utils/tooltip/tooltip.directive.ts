@@ -1,13 +1,13 @@
 import { AfterViewInit, ComponentRef, Directive, ElementRef, HostListener, Input } from '@angular/core';
 
-import { NtsTooltipComponent } from './tooltip.component';
 import { TooltipService } from './tooltip.service';
+import { UniTooltipComponent } from './tooltip.component';
 
 @Directive({
     selector: '[ntsTooltip]',
 })
-export class NtsTooltipDirective implements AfterViewInit {
-    private tooltipRef: ComponentRef<NtsTooltipComponent> = null;
+export class UniTooltipDirective implements AfterViewInit {
+    private tooltipRef: ComponentRef<UniTooltipComponent> = null;
     private element: any = null;
 
     @Input() ntsTooltip = '';

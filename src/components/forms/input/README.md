@@ -1,5 +1,5 @@
 # Input
-`forms / nts-input`
+`forms / uni-input`
 
 ---
 Input para introducción de texto con opciones avanzadas
@@ -12,7 +12,7 @@ Parent contract:
 label: string;
 ntsModel: boolean;
 name: string = '';
-color: NtsColor;
+color: UniColor;
 disabled: boolean = false;
 value: string = '';
 required: boolean = false;
@@ -57,7 +57,7 @@ ntsKeypress: EventEmitter;
 
 ## Usage
 ```html
-<nts-button-toggle label="Toggle button" [(ntsModel)]="model"></nts-button-toggle>
+<uni-button-toggle label="Toggle button" [(ntsModel)]="model"></uni-button-toggle>
 ```
 
 ## Known Issues

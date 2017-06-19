@@ -17,7 +17,7 @@
     &:after{ margin-left: 2 * $width + 2 * $spacing; }
 }
 
-nts-spinner {
+uni-spinner {
     &.circle {
         display:block;
         border-style: solid;
@@ -44,7 +44,6 @@ nts-spinner {
         animation: spin-dots 1s ease infinite;
         position: relative;
 
-        @include dots($label-height);
 
         &:before, &:after{
             content: '';
@@ -64,6 +63,7 @@ nts-spinner {
         &.error { background: $color-error; }
         &.light { background: $alpha-white-light; }
 
+        @include dots($label-height);
 
         &.small { @include dots($font-regular); }
         &.big { @include dots($input-height); }

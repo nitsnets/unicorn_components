@@ -1,13 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NTS_COMPONENTS } from './components/';
-import { NTS_DIRECTIVES } from './directives/';
-import { NTS_PIPES } from './pipes/';
 import { NgModule } from '@angular/core';
-import { NtsDatagridDeleteComponent } from './components/ui/datagrid/delete/delete.component';
 import { SortablejsModule } from 'angular-sortablejs';
 import { TextMaskModule } from 'angular2-text-mask';
+import { UNI_COMPONENTS } from './components/';
+import { UNI_DIRECTIVES } from './directives/';
+import { UNI_PIPES } from './pipes/';
+import { UniDatagridDeleteComponent } from './components/ui/datagrid/delete/delete.component';
 
 @NgModule({
     imports: [
@@ -18,19 +18,19 @@ import { TextMaskModule } from 'angular2-text-mask';
         BrowserModule
     ],
     declarations: [
-        NTS_COMPONENTS,
-        NTS_DIRECTIVES,
-        NTS_PIPES
+        UNI_COMPONENTS,
+        UNI_DIRECTIVES,
+        UNI_PIPES
     ],
     exports: [
-        NTS_COMPONENTS,
-        NTS_DIRECTIVES,
-        NTS_PIPES,
+        UNI_COMPONENTS,
+        UNI_DIRECTIVES,
+        UNI_PIPES,
         BrowserModule
     ],
     entryComponents: [
-        NtsDatagridDeleteComponent
+        UniDatagridDeleteComponent
     ]
 })
-export class NtsModule { }
+export class UnicornModule { }
 

@@ -3,7 +3,7 @@ import { Directive, ElementRef, EventEmitter, HostListener, OnInit, Output } fro
 @Directive({
     selector: '[droppable]'
 })
-export class NtsDroppableDirective implements OnInit {
+export class UniDroppableDirective implements OnInit {
     @HostListener('dragenter', ['$event']) dragenter = this.onDragEnter;
     @HostListener('dragleave', ['$event']) dragleave = this.onDragLeave;
 

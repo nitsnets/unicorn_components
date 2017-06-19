@@ -4,7 +4,7 @@ $modal-animation-time: 200ms;
 @include keyframes(aside-enter) { from {transform: translateX(100%);} to {transform: translateX(0);} }
 @include keyframes(aside-leave) { from {transform: translateX(0);} to {transform: translateX(100%);} }
 
-nts-modal {
+uni-modal {
 
     .modal-title {
         font-size: $font-xlarge;

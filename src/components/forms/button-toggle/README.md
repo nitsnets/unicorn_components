@@ -1,5 +1,5 @@
 # Button toggle
-```forms / nts-button-toggle```
+```forms / uni-button-toggle```
 
 ---
 Botón con estado activo / desactivo.
@@ -13,7 +13,7 @@ Parent contract:
 label: string;
 ntsModel: boolean;
 name: string = '';
-color: NtsColor;
+color: UniColor;
 disabled: boolean = false;
 value: string = '';
 required: boolean = false;
@@ -28,5 +28,5 @@ ntsBlur: EventEmitter<Event>;
 
 ## Usage
 ```html
-<nts-button-toggle label="Toggle button" [(ntsModel)]="model"></nts-button-toggle>
+<uni-button-toggle label="Toggle button" [(ntsModel)]="model"></uni-button-toggle>
 ```

@@ -12,24 +12,24 @@ import {
     Output,
 } from '@angular/core';
 
-import { NtsPopupContainerComponent } from './container/container.component';
+import { UniPopupContainerComponent } from './container/container.component';
 
-export type NtsPopupPosition = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right';
+export type UniPopupPosition = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right';
 
 @Component({
-    selector: 'nts-popup',
+    selector: 'uni-popup',
     templateUrl: 'popup.component.html',
     styleUrls: ['popup.component.scss'],
 })
-export class NtsPopupComponent implements AfterViewInit {
+export class UniPopupComponent implements AfterViewInit {
     @Input() toggle = false;
     @Input() keepOpen = true;
     @Input() opened = false;
     @Output() openedChange = new EventEmitter();
-    @Input() position: NtsPopupPosition = null;
-    calculatedPosition: NtsPopupPosition = null;
+    @Input() position: UniPopupPosition = null;
+    calculatedPosition: UniPopupPosition = null;
 
-    @ContentChild(NtsPopupContainerComponent) popupScope: NtsPopupContainerComponent;
+    @ContentChild(UniPopupContainerComponent) popupScope: UniPopupContainerComponent;
 
     constructor(private elementRef: ElementRef) { }
 
@@ -57,11 +57,11 @@ export class NtsPopupComponent implements AfterViewInit {
 @Directive({
     selector: '[ntsPopupTrigger]'
 })
-export class NtsPopupTriggerDirective implements OnDestroy {
+export class UniPopupTriggerDirective implements OnDestroy {
     private openedByFocus = false;
     private closePopupOnOutsideClick = (event: MouseEvent) => this.close(event);
 
-    constructor( @Host() public popup: NtsPopupComponent, private elementRef: ElementRef) { }
+    constructor( @Host() public popup: UniPopupComponent, private elementRef: ElementRef) { }
 
     @HostListener('click', ['$event']) openPopup(ev: MouseEvent) {
         if (this.openedByFocus) {

@@ -13,8 +13,8 @@
       {{ntsModel? ntsModel.length : 0}} <span *ngIf="max>-1">/ {{max}}</span>
     </span>
   </div>
-  <nts-icon *ngIf="icon" [icon]="icon" class="icon"></nts-icon>
-  <nts-icon *ngIf="iconRight" [icon]="iconRight" class="icon-right"></nts-icon>
+  <uni-icon *ngIf="icon" [icon]="icon" class="icon"></uni-icon>
+  <uni-icon *ngIf="iconRight" [icon]="iconRight" class="icon-right"></uni-icon>
 
   <div class="input-container">
     <span class="prefix" *ngIf="prefix &&  type !== 'color'" [innerHtml]="prefix"></span>
@@ -37,13 +37,13 @@
       (focus)="onInputFocus($event)"
       (keypress)="ntsKeypress.emit($event)"
     />
-    <nts-icon
+    <uni-icon
       class="clear-btn"
       icon="close"
       size="small"
       *ngIf="!multiline && clear && ntsModel && ntsModel.length"
       (click)="onNgModelChange(null)"
-    > </nts-icon>
+    > </uni-icon>
 
     <textarea
       *ngIf="multiline && type !== 'color'"

@@ -3,8 +3,8 @@ import * as moment from 'moment';
 import { Component, ElementRef, Input } from '@angular/core';
 import { abbrDateRange, sideOfScreen } from '../../../utils';
 
-import { NtsInputBaseComponent } from '../../base/input-base.component';
 import { Observable } from 'rxjs/Rx';
+import { UniInputBaseComponent } from '../../base/input-base.component';
 
 moment.locale('es', { week: { dow: 1, doy: 4 } });
 
@@ -32,11 +32,11 @@ const presets = {
     n_year: { from: range('y', 'from', 'next'), to: range('y', 'to', 'next'), label: 'Next year' },
 };
 @Component({
-    selector: 'nts-daterange-picker',
+    selector: 'uni-daterange-picker',
     templateUrl: 'daterange-picker.component.html',
     styleUrls: ['daterange-picker.component.scss']
 })
-export class NtsDaterangePickerComponent extends NtsInputBaseComponent {
+export class UniDaterangePickerComponent extends UniInputBaseComponent {
 
     @Input() combo = false;
     @Input() showArrows = false;

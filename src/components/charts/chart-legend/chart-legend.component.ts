@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core
 import { arrToRgba, generateColors } from './../../../directives/base-chart.directive';
 
 @Component({
-    selector: 'nts-chart-legend',
+    selector: 'uni-chart-legend',
     templateUrl: 'chart-legend.component.html',
     styleUrls: ['chart-legend.component.scss'],
 })
-export class NtsChartLegendComponent implements OnChanges {
+export class UniChartLegendComponent implements OnChanges {
 
     @Input() editable = true;
 

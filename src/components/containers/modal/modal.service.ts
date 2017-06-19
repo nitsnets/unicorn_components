@@ -2,7 +2,7 @@ import { ComponentFactoryResolver, ComponentRef, Injectable, Type, ViewContainer
 import { Observable, Subject } from 'rxjs/Rx';
 
 import { DynamicContainerService } from '../../base/dynamic-container.service';
-import { NtsModalComponent } from './modal.component';
+import { UniModalComponent } from './modal.component';
 
 @Injectable()
 export class ModalService extends DynamicContainerService {
@@ -14,7 +14,7 @@ export class ModalService extends DynamicContainerService {
         viewContainerRef: ViewContainerRef = this.defaultContainer
     ): Observable<any> {
 
-        const modalRef: ComponentRef<NtsModalComponent> = this.attachComponent(NtsModalComponent, viewContainerRef);
+        const modalRef: ComponentRef<UniModalComponent> = this.attachComponent(UniModalComponent, viewContainerRef);
         modalRef.instance.initContent(component, options);
 
         const modalSub = new Subject();

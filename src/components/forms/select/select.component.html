@@ -1,5 +1,5 @@
 <div (clickOutside)="onClickOutside()">
-    <nts-input iconRight="caret"
+    <uni-input iconRight="caret"
         [placeholder]="placeholder"
         [name]="name"
         [icon]="icon"
@@ -11,7 +11,7 @@
         [(ntsModel)]="search"
         [readonly]="!filterable"
         (ntsModelChange)="onFilter($event)"
-    > </nts-input>
+    > </uni-input>
 
     <ul class="options nospacing" *ngIf="areOptionsVisible">
         <li *ngIf="multiple && !search"
@@ -31,7 +31,7 @@
             Select none
         </li>
 
-        <nts-separator *ngIf="multiple && !search"></nts-separator>
+        <uni-separator *ngIf="multiple && !search"></uni-separator>
 
         <li class="option"
             *ngFor="let option of optionsFiltered; let i = index;"
@@ -43,12 +43,12 @@
             (mouseup)="onSelectingOption(false)"
         >
 
-            <nts-icon
+            <uni-icon
                 *ngIf="multiple"
                 class="icon"
                 [icon]="isOptionSelected(option) ? 'square-check' : 'square'"
             >
-            </nts-icon>
+            </uni-icon>
             <span [innerHtml]="(option.label | highlight:search) || '(Unlabeled)'"></span>
         </li>
     </ul>

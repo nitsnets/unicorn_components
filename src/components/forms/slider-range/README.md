@@ -1,5 +1,5 @@
 # Slider
-`ui / nts-slider`
+`ui / uni-slider`
 
 ---
 Selector mediante barra deslizante
@@ -11,7 +11,7 @@ Selector mediante barra deslizante
 
 ### Usage
 ```html
-<nts-slider-range></nts-slider-range>
+<uni-slider-range></uni-slider-range>
 ```
 
 ### Known Issues

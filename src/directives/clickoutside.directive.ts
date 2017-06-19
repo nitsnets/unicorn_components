@@ -3,7 +3,7 @@ import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angu
 @Directive({
     selector: '[clickOutside]'
 })
-export class NtsClickOutsideDirective {
+export class UniClickOutsideDirective {
     @Output() public clickOutside = new EventEmitter();
 
     constructor(private elementRef: ElementRef) { }

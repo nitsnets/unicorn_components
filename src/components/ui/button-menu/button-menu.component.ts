@@ -1,13 +1,13 @@
 import { Component, Input } from '@angular/core';
 
-import { NtsButtonBaseComponent } from '../../base/button-base.component';
-import { NtsPosition } from '../../../models/types';
+import { UniButtonBaseComponent } from '../../base/button-base.component';
+import { UniPosition } from '../../../models/types';
 
 @Component({
-    selector: 'nts-button-menu',
+    selector: 'uni-button-menu',
     templateUrl: 'button-menu.component.html',
     styleUrls: ['button-menu.component.scss'],
 })
-export class NtsButtonMenuComponent extends NtsButtonBaseComponent {
-    @Input() position: NtsPosition = 'bottom-left';
+export class UniButtonMenuComponent extends UniButtonBaseComponent {
+    @Input() position: UniPosition = 'bottom-left';
 }

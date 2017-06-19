@@ -1,18 +1,18 @@
-<nts-row
+<uni-row
     [class.selected]="datagrid.selected.length && datagrid.deletingSelection !== true"
     [class.deleting]="datagrid.selected.length && datagrid.deletingSelection === true"
     [class.all-selected]="datagrid.allSelected()"
 >
-    <nts-datagrid-cell *ngIf="datagrid.selectable" [width]="0" [highlight]="true">
-        <nts-checkbox
+    <uni-datagrid-cell *ngIf="datagrid.selectable" [width]="0" [highlight]="true">
+        <uni-checkbox
             [partial]="datagrid.selected.length > 0"
             [ntsModel]="datagrid.allSelected()"
             (ntsModelChange)="datagrid.onSelectAll($event)"
-        ></nts-checkbox>
-    </nts-datagrid-cell>
+        ></uni-checkbox>
+    </uni-datagrid-cell>
 
     <ng-container *ngIf="!datagrid.selected.length">
-        <nts-datagrid-cell
+        <uni-datagrid-cell
             *ngFor="let column of datagrid.columns"
             [ngClass]="{
                 'sortable': column.isSortable(datagrid.sortable),
@@ -24,31 +24,31 @@
             (click)="datagrid.onSortBy(column)"
         >
             <span [innerHtml]="column.title"></span>
-        </nts-datagrid-cell>
+        </uni-datagrid-cell>
     </ng-container>
     <ng-container *ngIf="datagrid.selected.length && datagrid.deletingSelection !== true">
-        <nts-datagrid-cell>
+        <uni-datagrid-cell>
             <span>{{datagrid.selected.length}} item(s) selected</span>
-        </nts-datagrid-cell>
+        </uni-datagrid-cell>
     </ng-container>
 
     <ng-container *ngIf="datagrid.selected.length && datagrid.deletingSelection === true">
-        <nts-datagrid-cell class="deleting">
+        <uni-datagrid-cell class="deleting">
             <span>Are you sure you want to delete {{datagrid.selected.length}} item(s)?</span>
-            <nts-button label="Delete" color="error" (click)="datagrid.onDeleteSelection()"></nts-button>
-            <nts-button label="Cancel" color="default" (click)="datagrid.deletingSelection = false"></nts-button>
-        </nts-datagrid-cell>
+            <uni-button label="Delete" color="error" (click)="datagrid.onDeleteSelection()"></uni-button>
+            <uni-button label="Cancel" color="default" (click)="datagrid.deletingSelection = false"></uni-button>
+        </uni-datagrid-cell>
     </ng-container>
 
-    <nts-datagrid-cell
+    <uni-datagrid-cell
         class="delete-cell"
         width="0"
         *ngIf="datagrid.deletable"
         [highlight]="true"
     >
-        <nts-button icon="delete" (click)="onDeleteAttempt()"></nts-button>
-    </nts-datagrid-cell>
+        <uni-button icon="delete" (click)="onDeleteAttempt()"></uni-button>
+    </uni-datagrid-cell>
 
-</nts-row>
+</uni-row>
 
-<nts-separator [class.selected]="datagrid.selected.length"></nts-separator>
+<uni-separator [class.selected]="datagrid.selected.length"></uni-separator>

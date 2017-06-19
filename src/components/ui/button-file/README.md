@@ -1,5 +1,5 @@
 # Button file
-```ui / nts-button-file```
+```ui / uni-button-file```
 
 ---
 Botón con file picker
@@ -9,7 +9,7 @@ Parent contract:
 
 ```typescript
 //INPUTS
-color: NtsColor;
+color: UniColor;
 icon: string;
 iconRight: string;
 label: string;
@@ -29,7 +29,7 @@ fileChanged: EventEmitter;
 
 ## Usage
 ```html
-<nts-button-file label="Default button" color="primary">
+<uni-button-file label="Default button" color="primary">
     Content of the closable popup
-</nts-button-file>
+</uni-button-file>
 ```

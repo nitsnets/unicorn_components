@@ -1,19 +1,19 @@
 import { Component, Input } from '@angular/core';
 
-import { NtsColor } from '../../../models/types';
+import { UniColor } from '../../../models/types';
 
 @Component({
-    selector: 'nts-progress',
+    selector: 'uni-progress',
     templateUrl: 'progress.component.html',
     styleUrls: ['progress.component.scss'],
 })
-export class NtsProgressComponent {
+export class UniProgressComponent {
 
     @Input() value = 0;
     @Input() total = 100;
     @Input() showPercentage = false;
     @Input() showCount = false;
-    @Input() color: NtsColor;
+    @Input() color: UniColor;
 
     constructor() { }
 }

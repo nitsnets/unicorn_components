@@ -1,14 +1,14 @@
 import { Component, ElementRef, Input } from '@angular/core';
 
-import { NtsInputBaseComponent } from '../../base/input-base.component';
+import { UniInputBaseComponent } from '../../base/input-base.component';
 import { sideOfScreen } from '../../../utils';
 
 @Component({
-    selector: 'nts-time-picker',
+    selector: 'uni-time-picker',
     templateUrl: 'time-picker.component.html',
     styleUrls: ['time-picker.component.scss'],
 })
-export class NtsTimePickerComponent extends NtsInputBaseComponent {
+export class UniTimePickerComponent extends UniInputBaseComponent {
 
     @Input() inline = false;
 

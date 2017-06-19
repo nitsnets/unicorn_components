@@ -1,9 +1,9 @@
 import { EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Observable, Subscription } from 'rxjs/Rx';
 
-import { NtsBaseComponent } from './base.component';
+import { UniBaseComponent } from './base.component';
 
-export abstract class NtsInputBaseComponent extends NtsBaseComponent implements OnInit {
+export abstract class UniInputBaseComponent extends UniBaseComponent implements OnInit {
 
     @Input() ntsModel;
     @Output() ntsModelChange = new EventEmitter();

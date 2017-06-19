@@ -1,13 +1,13 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 
-import { NtsButtonBaseComponent } from '../../base/button-base.component';
+import { UniButtonBaseComponent } from '../../base/button-base.component';
 
 @Component({
-    selector: 'nts-button-file',
+    selector: 'uni-button-file',
     templateUrl: 'button-file.component.html',
     styleUrls: ['button-file.component.scss'],
 })
-export class NtsButtonFileComponent extends NtsButtonBaseComponent {
+export class UniButtonFileComponent extends UniButtonBaseComponent {
     @Input() fileType: string;
     @Output() fileChanged = new EventEmitter();
     @ViewChild('input') inputElement: ElementRef;

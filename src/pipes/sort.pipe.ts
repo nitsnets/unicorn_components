@@ -3,7 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
     name: 'sort'
 })
-export class NtsSortPipe implements PipeTransform {
+export class UniSortPipe implements PipeTransform {
 
     transform(input: any, config: Array<string> | string = '+'): any {
         if (!Array.isArray(input)) { return input; }

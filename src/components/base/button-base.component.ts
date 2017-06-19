@@ -1,7 +1,7 @@
 import { Input } from '@angular/core';
-import { NtsBaseComponent } from './base.component';
+import { UniBaseComponent } from './base.component';
 
-export abstract class NtsButtonBaseComponent extends NtsBaseComponent {
+export abstract class UniButtonBaseComponent extends UniBaseComponent {
     @Input() icon: string;
     @Input() iconRight: string;
     @Input() sublabel: string;

@@ -15,7 +15,7 @@ import {
 } from '@angular/core';
 
 @Directive({ selector: '[ntsComponentLoader]' })
-export class NtsComponentLoaderDirective implements OnChanges {
+export class UniComponentLoaderDirective implements OnChanges {
     @Input() ntsComponentLoader: Type<any>;
     @Input() ntsComponentLoaderInjector: Injector;
     @Input() ntsComponentLoaderProviders: Provider[];

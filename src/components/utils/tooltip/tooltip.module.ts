@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
-import { NtsModule } from '../../../nts.module';
-import { NtsTooltipComponent } from './tooltip.component';
-import { NtsTooltipDirective } from './tooltip.directive';
 import { TooltipService } from './tooltip.service';
+import { UniTooltipComponent } from './tooltip.component';
+import { UniTooltipDirective } from './tooltip.directive';
+import { UnicornModule } from '../../../unicorn.module';
 
 @NgModule({
     imports: [
-        NtsModule
+        UnicornModule
     ],
     declarations: [
-        NtsTooltipComponent,
-        NtsTooltipDirective
+        UniTooltipComponent,
+        UniTooltipDirective
     ],
     providers: [
         TooltipService
     ],
     exports: [
-        NtsTooltipDirective
+        UniTooltipDirective
     ]
 })
 export class TooltipModule { }

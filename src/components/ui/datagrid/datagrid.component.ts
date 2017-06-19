@@ -13,11 +13,11 @@ import {
 import { deepClone, uuid } from '../../../utils';
 
 import { ModalService } from './../../containers/modal/modal.service';
-import { NtsDatagridColumnComponent } from './column/column.component';
-import { NtsDatagridDeleteComponent } from './delete/delete.component';
-import { NtsDatagridRowDirective } from './row/row-variables.directive';
-import { NtsFilter } from './../../../models/filter';
 import { Observable } from 'rxjs/Rx';
+import { UniDatagridColumnComponent } from './column/column.component';
+import { UniDatagridDeleteComponent } from './delete/delete.component';
+import { UniDatagridRowDirective } from './row/row-variables.directive';
+import { UniFilter } from './../../../models/filter';
 import { ViewContainerRef } from '@angular/core';
 
 /**
@@ -25,11 +25,11 @@ import { ViewContainerRef } from '@angular/core';
  * @prop {string} field The key of the filed to sort the dataset
  * @prop {boolean} dir True if ascendent, false if descendent
  * @export
- * @interface NtsDataSort
+ * @interface UniDataSort
  */
-export interface INtsDataSort { field: string; dir: boolean; };
-export interface INtsDataRowEvent { i: number; row: Object; };
-export interface INtsDataCellEvent extends INtsDataRowEvent { j: number; column: Object; cell: any; };
+export interface IUniDataSort { field: string; dir: boolean; };
+export interface IUniDataRowEvent { i: number; row: Object; };
+export interface IUniDataCellEvent extends IUniDataRowEvent { j: number; column: Object; cell: any; };
 
 /**
  * Table of contents with specified columns and data. Automates sorting, selection and pagination of items
@@ -37,7 +37,7 @@ export interface INtsDataCellEvent extends INtsDataRowEvent { j: number; column:
  * @author Alvaro Yuste Torregrosa
  *
  * @export
- * @class NtsDatagridComponent
+ * @class UniDatagridComponent
  * @emits dataChange
  * @emits sortChange
  * @emits cellClick
@@ -48,11 +48,11 @@ export interface INtsDataCellEvent extends INtsDataRowEvent { j: number; column:
  * @copyright NITSNETS
  */
 @Component({
-    selector: 'nts-datagrid',
+    selector: 'uni-datagrid',
     templateUrl: './datagrid.component.html'
 })
-export class NtsDatagridComponent implements AfterContentInit, OnChanges {
-    /** @lends NtsDatagridComponent */
+export class UniDatagridComponent implements AfterContentInit, OnChanges {
+    /** @lends UniDatagridComponent */
 
     /**
      * Indicates that the datagrid must execute the operations (sort, pagination, deletion...)
@@ -98,7 +98,7 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     @Input() data: Array<Object> = null;
     /**
      * The output where changes in the items emitted
-     * @event NtsDatagridComponent#dataChange
+     * @event UniDatagridComponent#dataChange
      * @type {Array<object>}
      */
     @Output() dataChange = new EventEmitter<Array<Object>>();
@@ -167,7 +167,7 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     @Input() page = 0;
     /**
      * Emits an event when the user changes the page
-     * @event NtsDatagridComponent#pageChange
+     * @event UniDatagridComponent#pageChange
      * @type {number}
      */
     @Output() pageChange = new EventEmitter<number>();
@@ -198,23 +198,23 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
      * The current sort key
      * @prop field
      * @prop dir
-     * @see {@link NtsDataSort}
-     * @type {NtsDataSort}
+     * @see {@link UniDataSort}
+     * @type {UniDataSort}
      */
-    @Input() sort: INtsDataSort = { field: null, dir: false };
+    @Input() sort: IUniDataSort = { field: null, dir: false };
     /**
      *
-     * @event NtsDatagridComponent#sortChange
-     * @type {INtsDataSort}
+     * @event UniDatagridComponent#sortChange
+     * @type {IUniDataSort}
      */
-    @Output() sortChange: EventEmitter<INtsDataSort> = new EventEmitter<INtsDataSort>();
+    @Output() sortChange: EventEmitter<IUniDataSort> = new EventEmitter<IUniDataSort>();
 
     /***************** FILTERING *****************/
     /**
      *
      */
     @Input() filterable = false;
-    @Input() filter: NtsFilter;
+    @Input() filter: UniFilter;
     @Input() filterFn: Function;
 
     /***************** VISUALIZATION *****************/
@@ -242,20 +242,20 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     /**
      * Emits an event when a cell is clicked
      *
-     * @event NtsDatagridComponent#cellClick
-     * @type {INtsDataCellEvent}
+     * @event UniDatagridComponent#cellClick
+     * @type {IUniDataCellEvent}
      */
-    @Output() cellClick: EventEmitter<INtsDataCellEvent> = new EventEmitter<INtsDataCellEvent>();
+    @Output() cellClick: EventEmitter<IUniDataCellEvent> = new EventEmitter<IUniDataCellEvent>();
     /**
      * Emits an event when a row is clicked
-     * @event NtsDatagridComponent#rowClick
-     * @type {INtsDataRowEvent}
+     * @event UniDatagridComponent#rowClick
+     * @type {IUniDataRowEvent}
      */
-    @Output() rowClick: EventEmitter<INtsDataRowEvent> = new EventEmitter<INtsDataRowEvent>();
+    @Output() rowClick: EventEmitter<IUniDataRowEvent> = new EventEmitter<IUniDataRowEvent>();
 
-    @ContentChildren(NtsDatagridColumnComponent) columnsComponents: QueryList<NtsDatagridColumnComponent> = null;
-    @ContentChild(NtsDatagridRowDirective) customRowDirective: NtsDatagridRowDirective = null;
-    columns: NtsDatagridColumnComponent[];
+    @ContentChildren(UniDatagridColumnComponent) columnsComponents: QueryList<UniDatagridColumnComponent> = null;
+    @ContentChild(UniDatagridRowDirective) customRowDirective: UniDatagridRowDirective = null;
+    columns: UniDatagridColumnComponent[];
     customRow: TemplateRef<Object>;
 
     constructor(
@@ -296,7 +296,7 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     /**
      * @param {any} column The field selected to sort the items
      */
-    onSortBy(column: NtsDatagridColumnComponent, dir: boolean | 'asc' | 'desc' = null) {
+    onSortBy(column: UniDatagridColumnComponent, dir: boolean | 'asc' | 'desc' = null) {
         if (
             !column
             || column.sortable === false
@@ -389,7 +389,7 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
     }
     openDeleteModal(itemsCount: number = 1): Observable<any> {
         return this.modalService.createModal(
-            NtsDatagridDeleteComponent,
+            UniDatagridDeleteComponent,
             { hideHeader: true, itemsCount },
             this.viewContainerRef
         );
@@ -422,7 +422,7 @@ export class NtsDatagridComponent implements AfterContentInit, OnChanges {
             this.selected = [];
         }
     }
-    applyFilter(filter: NtsFilter) {
+    applyFilter(filter: UniFilter) {
         this.filter = filter;
         this.updateData();
     }

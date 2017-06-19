@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NtsInputBaseComponent } from '../../base/input-base.component';
+import { UniInputBaseComponent } from '../../base/input-base.component';
 
 @Component({
-    selector: 'nts-radio',
+    selector: 'uni-radio',
     templateUrl: 'radio.component.html',
     styleUrls: ['radio.component.scss'],
 })
-export class NtsRadioComponent extends NtsInputBaseComponent implements OnInit {
+export class UniRadioComponent extends UniInputBaseComponent implements OnInit {
 
     // @Override
     ngOnInit() { }

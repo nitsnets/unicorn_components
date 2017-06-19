@@ -1,21 +1,21 @@
 import { AfterContentInit, Component, ContentChild, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 
-import { NtsDatagridComponent } from './../../ui/datagrid/datagrid.component';
-import { NtsFilter } from './../../../models/filter';
-import { NtsFilterItem } from '../../ui/filters-list/filters-list.component';
-import { NtsFiltersComponent } from './../../ui/filters/filters.component';
-import { NtsFiltersListComponent } from './../../ui/filters-list/filters-list.component';
+import { UniDatagridComponent } from './../../ui/datagrid/datagrid.component';
+import { UniFilter } from './../../../models/filter';
+import { UniFilterItem } from '../../ui/filters-list/filters-list.component';
+import { UniFiltersComponent } from './../../ui/filters/filters.component';
+import { UniFiltersListComponent } from './../../ui/filters-list/filters-list.component';
 import { deepClone } from '../../../utils';
 
 @Component({
-    selector: 'nts-filtered-datagrid',
+    selector: 'uni-filtered-datagrid',
     templateUrl: './filtered-datagrid.component.html'
 })
 export class FilteredDatagridComponent implements AfterContentInit, OnChanges {
 
-    @ContentChild(NtsDatagridComponent) datagrid: NtsDatagridComponent;
-    @ContentChild(NtsFiltersComponent) filters: NtsFiltersComponent;
-    @ContentChild(NtsFiltersListComponent) filtersList: NtsFiltersListComponent;
+    @ContentChild(UniDatagridComponent) datagrid: UniDatagridComponent;
+    @ContentChild(UniFiltersComponent) filters: UniFiltersComponent;
+    @ContentChild(UniFiltersListComponent) filtersList: UniFiltersListComponent;
 
     @Input() filterNameFn: Function;
     @Input() filterFn: Function;
@@ -41,8 +41,8 @@ export class FilteredDatagridComponent implements AfterContentInit, OnChanges {
         this.filters.filterChange.subscribe(f => this.onAppliedFilter(f));
         this.filtersList.filterSelectedChange.subscribe(f => this.onSelectFilter(f));
     }
-    private onSaveFilter(filter: NtsFilter) {
-        const filterItem: NtsFilterItem = {
+    private onSaveFilter(filter: UniFilter) {
+        const filterItem: UniFilterItem = {
             name: '',
             icon: '',
             filter: deepClone(filter)
@@ -52,11 +52,11 @@ export class FilteredDatagridComponent implements AfterContentInit, OnChanges {
         }
         this.filtersList.addCustomFilter(filterItem);
     }
-    private onSelectFilter(filter: NtsFilter) {
+    private onSelectFilter(filter: UniFilter) {
         this.filters.filter = deepClone(filter);
         this.filters.doFilter();
     }
-    private onAppliedFilter(filter: NtsFilter) {
+    private onAppliedFilter(filter: UniFilter) {
         if (this.filterFn) {
             this.datagrid.applyFilter(filter);
         }

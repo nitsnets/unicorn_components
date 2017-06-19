@@ -8,16 +8,16 @@
     [class.filled]="ntsModel?.to && ntsModel?.from"
     [class.with-arrows]="showArrows"
   >
-    <nts-input
+    <uni-input
       icon="calendar"
       [ntsModel]="comboModel"
       [placeholder]="comboLabel"
 
       (ntsFocus)="openCombo()"
     >
-    </nts-input>
-    <nts-button class="arrow-btn left" *ngIf="showArrows" icon="arrow-left" (click)="prevRange()"></nts-button>
-    <nts-button class="arrow-btn right" *ngIf="showArrows" icon="arrow-right" (click)="nextRange()"></nts-button>
+    </uni-input>
+    <uni-button class="arrow-btn left" *ngIf="showArrows" icon="arrow-left" (click)="prevRange()"></uni-button>
+    <uni-button class="arrow-btn right" *ngIf="showArrows" icon="arrow-right" (click)="nextRange()"></uni-button>
   </div>
 
   <div class="main-container"
@@ -27,7 +27,7 @@
     [class.align-right]="side === 'right'"
   >
     <div class="pickers-container">
-      <nts-date-picker
+      <uni-date-picker
         class="picker spacing"
         (ntsModelChange)="onFromChanges($event)"
         [ntsModel]="ntsModel?.from"
@@ -36,8 +36,8 @@
         [maxDate]="ntsModel?.to || maxDate"
         [minDate]="minDate"
         [rangeTo]="ntsModel?.to"
-      > </nts-date-picker>
-      <nts-date-picker
+      > </uni-date-picker>
+      <uni-date-picker
         class="picker"
         (ntsModelChange)="onToChanges($event)"
         [ntsModel]="ntsModel?.to"
@@ -46,21 +46,21 @@
         [maxDate]="maxDate"
         [minDate]="ntsModel?.from || minDate"
         [rangeFrom]="ntsModel?.from"
-    > </nts-date-picker>
+    > </uni-date-picker>
     </div>
     <div class="buttons-container" *ngIf="combo && comboOpened">
-      <nts-row>
-        <nts-button label="Today" (click)="loadPreset('today')"></nts-button>
-        <nts-button label="This week" (click)="loadPreset('week')"></nts-button>
-        <nts-button label="This month" (click)="loadPreset('month')"></nts-button>
-        <nts-button label="This year" (click)="loadPreset('year')"></nts-button>
-      </nts-row>
-      <nts-row>
-        <nts-button label="Yesterday" (click)="loadPreset('yesterday')"></nts-button>
-        <nts-button label="Last week" (click)="loadPreset('l_week')"></nts-button>
-        <nts-button label="Last month" (click)="loadPreset('l_month')"></nts-button>
-        <nts-button label="Last year" (click)="loadPreset('l_year')"></nts-button>
-      </nts-row>
+      <uni-row>
+        <uni-button label="Today" (click)="loadPreset('today')"></uni-button>
+        <uni-button label="This week" (click)="loadPreset('week')"></uni-button>
+        <uni-button label="This month" (click)="loadPreset('month')"></uni-button>
+        <uni-button label="This year" (click)="loadPreset('year')"></uni-button>
+      </uni-row>
+      <uni-row>
+        <uni-button label="Yesterday" (click)="loadPreset('yesterday')"></uni-button>
+        <uni-button label="Last week" (click)="loadPreset('l_week')"></uni-button>
+        <uni-button label="Last month" (click)="loadPreset('l_month')"></uni-button>
+        <uni-button label="Last year" (click)="loadPreset('l_year')"></uni-button>
+      </uni-row>
     </div>
   </div>
 </div>

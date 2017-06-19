@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { ModalService } from './../../../containers/modal/modal.service';
-import { NtsDatagridComponent } from './../datagrid.component';
+import { UniDatagridComponent } from './../datagrid.component';
 
 @Component({
-    selector: 'nts-datagrid-header',
+    selector: 'uni-datagrid-header',
     templateUrl: './header.component.html'
 })
-export class NtsDatagridHeaderComponent {
+export class UniDatagridHeaderComponent {
     constructor(
-        public datagrid: NtsDatagridComponent,
+        public datagrid: UniDatagridComponent,
         private modalService: ModalService
     ) { }
 

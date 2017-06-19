@@ -1,10 +1,10 @@
-import { NtsAutofocusDirective } from './autofocus.directive';
-import { NtsBaseChartDirective } from './base-chart.directive';
-import { NtsClickOutsideDirective } from './clickoutside.directive';
-import { NtsComponentLoaderDirective } from './component-loader.directive';
-import { NtsDroppableDirective } from './droppable.directive';
+import { UniAutofocusDirective } from './autofocus.directive';
+import { UniBaseChartDirective } from './base-chart.directive';
+import { UniClickOutsideDirective } from './clickoutside.directive';
+import { UniComponentLoaderDirective } from './component-loader.directive';
+import { UniDroppableDirective } from './droppable.directive';
 
-export const NTS_DIRECTIVES = [
-    NtsAutofocusDirective, NtsClickOutsideDirective, NtsDroppableDirective,
-    NtsComponentLoaderDirective, NtsBaseChartDirective
+export const UNI_DIRECTIVES = [
+    UniAutofocusDirective, UniClickOutsideDirective, UniDroppableDirective,
+    UniComponentLoaderDirective, UniBaseChartDirective
 ];

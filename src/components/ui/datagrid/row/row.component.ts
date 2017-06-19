@@ -1,19 +1,19 @@
 import { Component, EventEmitter, HostBinding, Input, OnChanges, Output } from '@angular/core';
 
-import { NtsDatagridComponent } from '../datagrid.component';
+import { UniDatagridComponent } from '../datagrid.component';
 
 /**
  * @author Alvaro Yuste
  *
  * @export
- * @class NtsDatagridRowComponent
+ * @class UniDatagridRowComponent
  * @implements {OnInit}
  */
 @Component({
-    selector: 'nts-datagrid-row',
+    selector: 'uni-datagrid-row',
     templateUrl: 'row.component.html'
 })
-export class NtsDatagridRowComponent implements OnChanges {
+export class UniDatagridRowComponent implements OnChanges {
 
     @HostBinding('class.selected')
     @Input() selected = false;
@@ -39,7 +39,7 @@ export class NtsDatagridRowComponent implements OnChanges {
     @Output() delete = new EventEmitter();
 
     constructor(
-        public datagrid: NtsDatagridComponent,
+        public datagrid: UniDatagridComponent,
     ) { }
 
     ngOnChanges(changes) {

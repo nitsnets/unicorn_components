@@ -1,11 +1,11 @@
 import { Component, Input, OnChanges } from '@angular/core';
 
 @Component({
-    selector: 'nts-chart-tooltip',
+    selector: 'uni-chart-tooltip',
     templateUrl: 'chart-tooltip.component.html',
     styleUrls: ['chart-tooltip.component.scss'],
 })
-export class NtsChartTooltipComponent implements OnChanges {
+export class UniChartTooltipComponent implements OnChanges {
 
     @Input() tooltip;
 

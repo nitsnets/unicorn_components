@@ -1,6 +1,6 @@
 ## Button
 
-``` ui / nts-button ```
+``` ui / uni-button ```
 
 parent:  ``` base / button-base```
 
@@ -14,7 +14,7 @@ Botón simple
 Parent contract:
 ```typescript
 //INPUTS
-color: NtsColor;
+color: UniColor;
 icon: string;
 iconRight: string;
 label: string;
@@ -24,12 +24,12 @@ disabled: boolean = false;
 ```
 ### Usage
 ```html
-<nts-button
+<uni-button
     color="primary"
     icon="close"
     iconRight="caret"
     label="My example button"
     sublabel="My mublabel"
 >
-</nts-button>
+</uni-button>
 ```

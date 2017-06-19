@@ -1,11 +1,11 @@
 import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-    selector: 'nts-datetime-picker',
+    selector: 'uni-datetime-picker',
     templateUrl: 'datetime-picker.component.html',
     styleUrls: ['datetime-picker.component.scss'],
 })
-export class NtsDatetimePickerComponent {
+export class UniDatetimePickerComponent {
 
     @Input() dateModel: String; // 'YYYY-MM-DD'
     @Input() dateLabel: String;

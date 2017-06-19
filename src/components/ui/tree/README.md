@@ -1,5 +1,5 @@
 # Tree
-`ui / nts-tree`
+`ui / uni-tree`
 
 ---
 Vista de árbol
@@ -11,7 +11,7 @@ Vista de árbol
 
 ### Usage
 ```html
-<nts-tree></nts-tree>
+<uni-tree></uni-tree>
 ```
 
 ### Known Issues

@@ -1,9 +1,9 @@
 <div class="toast-container" [ngClass]="{'animate-in': animateIn, 'animate-out': animateOut}" >
     <p>{{msg}}</p>
-    <nts-icon class="remove"
+    <uni-icon class="remove"
         *ngIf="toastOptions.showClose"
         size="small"
         icon="close"
         (click)="clickClose()"
-    ></nts-icon>
+    ></uni-icon>
 </div>

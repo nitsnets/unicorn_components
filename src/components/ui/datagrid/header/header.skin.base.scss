@@ -1,4 +1,4 @@
-nts-datagrid-header {
+uni-datagrid-header {
     display: block;
     position: relative;
 
@@ -6,28 +6,28 @@ nts-datagrid-header {
         visibility: hidden;
     }
 
-    nts-row {
+    uni-row {
         transition: 200ms ease background-color;
 
         &.selected {
             background-color: $color-primary-light;
             span {color: $color-primary; }
             .delete-cell{ visibility: visible; }
-            & + nts-separator hr { border-color: $color-primary; }
+            & + uni-separator hr { border-color: $color-primary; }
         }
         &.deleting {
             background-color: $color-error-light;
             span {color: $color-error; }
             .delete-cell{ visibility: hidden; }
-            & + nts-separator hr { border-color: $color-error; }
+            & + uni-separator hr { border-color: $color-error; }
         }
         &.all-selected {
-            &.selected { background-color: darken($color-primary-light, 5%); nts-checkbox {color: $color-primary; } }
-            &.deleting { background-color: darken($color-error-light, 5%); nts-checkbox {color: $color-error; } }
+            &.selected { background-color: darken($color-primary-light, 5%); uni-checkbox {color: $color-primary; } }
+            &.deleting { background-color: darken($color-error-light, 5%); uni-checkbox {color: $color-error; } }
         }
     }
 
-    nts-datagrid-cell {
+    uni-datagrid-cell {
         font-weight: bold;
         position: relative;
         min-height: $input-height;
@@ -44,7 +44,7 @@ nts-datagrid-header {
         &.deleting {
             display: flex;
             span { position: relative; flex: 1; }
-            nts-button { margin-left: $basic-padding / 4; }
+            uni-button { margin-left: $basic-padding / 4; }
         }
 
         &.sortable{

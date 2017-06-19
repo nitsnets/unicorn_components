@@ -3,11 +3,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { IModalContent } from '../../../containers/modal/modal.interface';
 
 @Component({
-    selector: 'nts-datagrid-delete',
+    selector: 'uni-datagrid-delete',
     templateUrl: './delete.component.html',
     styleUrls: ['./delete.component.scss']
 })
-export class NtsDatagridDeleteComponent implements IModalContent {
+export class UniDatagridDeleteComponent implements IModalContent {
 
     @Output() submitModal = new EventEmitter();
     @Output() cancelModal = new EventEmitter();

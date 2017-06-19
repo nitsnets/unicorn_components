@@ -1,13 +1,13 @@
 import { Component, ElementRef, EventEmitter, Input, OnChanges, Output, ViewChild } from '@angular/core';
 
-import { NtsInputBaseComponent } from '../../base/input-base.component';
+import { UniInputBaseComponent } from '../../base/input-base.component';
 
 @Component({
-    selector: 'nts-image-picker',
+    selector: 'uni-image-picker',
     templateUrl: 'image-picker.component.html',
     styleUrls: ['image-picker.component.scss'],
 })
-export class NtsImagePickerComponent extends NtsInputBaseComponent implements OnChanges {
+export class UniImagePickerComponent extends UniInputBaseComponent implements OnChanges {
     @ViewChild('inputFile') inputFile: ElementRef;
 
     @Input() width = 150;

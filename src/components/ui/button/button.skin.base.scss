@@ -11,7 +11,7 @@
     @if $inverse { @include inverse-content; }
 }
 
-nts-button {
+uni-button {
     button {
         min-height: $input-xs-height;
         font-size: $font-regular;

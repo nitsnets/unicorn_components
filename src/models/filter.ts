@@ -1,1 +1,1 @@
-export interface NtsFilter { [key: string]: any; };
+export interface UniFilter { [key: string]: any; };

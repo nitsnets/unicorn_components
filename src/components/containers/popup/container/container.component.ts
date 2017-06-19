@@ -1,11 +1,11 @@
-import { Component, ElementRef, Output, EventEmitter, Input } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-    selector: 'nts-popup-container',
+    selector: 'uni-popup-container',
     templateUrl: 'container.component.html',
     styleUrls: ['container.component.scss'],
 })
-export class NtsPopupContainerComponent {
+export class UniPopupContainerComponent {
     @Input() closeBtn = true;
     @Output() close = new EventEmitter();
 

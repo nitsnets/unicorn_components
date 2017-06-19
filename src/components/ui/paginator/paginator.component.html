@@ -6,11 +6,11 @@
   </p>
 
   <div class="pages">
-    <nts-icon class="paginator-icon"
+    <uni-icon class="paginator-icon"
         icon="arrow-left"
         (click)="prevPage()"
         [class.disabled]="selected === 0"
-    ></nts-icon>
+    ></uni-icon>
     <span class="page"
       *ngFor="let page of pages"
       [class.selectable]="page !== selected && page !== null"
@@ -20,10 +20,10 @@
     >
       {{page === null ? '...' : page+1}}
     </span>
-    <nts-icon class="paginator-icon"
+    <uni-icon class="paginator-icon"
         icon="arrow-right"
         (click)="nextPage()"
         [class.disabled]="selected === pagesCount - 1"
-    ></nts-icon>
+    ></uni-icon>
   </div>
 </div>

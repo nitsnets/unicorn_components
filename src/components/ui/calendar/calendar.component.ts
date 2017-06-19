@@ -3,11 +3,11 @@ import * as moment from 'moment';
 import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 
 @Component({
-    selector: 'nts-calendar',
+    selector: 'uni-calendar',
     templateUrl: 'calendar.component.html',
     styleUrls: ['calendar.component.scss'],
 })
-export class NtsCalendarComponent implements OnChanges {
+export class UniCalendarComponent implements OnChanges {
     @Input() ntsModel;
     @Output() ntsModelChange = new EventEmitter();
 

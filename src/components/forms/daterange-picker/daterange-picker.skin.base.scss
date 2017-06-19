@@ -1,12 +1,12 @@
-nts-daterange-picker {
+uni-daterange-picker {
   .spacing { margin-right: $basic-padding / 2;}
 
   .daterange-input-container {
-    nts-input {
+    uni-input {
       width: 228px;
     }
     &.with-arrows {
-      nts-input {
+      uni-input {
         width: 228px + $input-height * 2;
       }
     }

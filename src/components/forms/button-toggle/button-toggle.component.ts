@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { NtsCheckboxComponent } from '../checkbox/checkbox.component';
+import { UniCheckboxComponent } from '../checkbox/checkbox.component';
 
 @Component({
-    selector: 'nts-button-toggle',
+    selector: 'uni-button-toggle',
     templateUrl: 'button-toggle.component.html',
     styleUrls: ['button-toggle.component.scss'],
 })
-export class NtsButtonToggleComponent extends NtsCheckboxComponent {
+export class UniButtonToggleComponent extends UniCheckboxComponent {
 
 }

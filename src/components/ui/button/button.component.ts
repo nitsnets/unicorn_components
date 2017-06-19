@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
 
-import { NtsButtonBaseComponent } from '../../base/button-base.component';
+import { UniButtonBaseComponent } from '../../base/button-base.component';
 
 @Component({
-    selector: 'nts-button',
+    selector: 'uni-button',
     templateUrl: 'button.component.html',
     styleUrls: ['button.component.scss'],
 })
-export class NtsButtonComponent extends NtsButtonBaseComponent {
+export class UniButtonComponent extends UniButtonBaseComponent {
     @Input() type: string;
 }

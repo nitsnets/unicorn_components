@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'nts-body',
+    selector: 'uni-body',
     templateUrl: 'body.component.html',
     styleUrls: ['body.component.scss'],
 })
-export class NtsBodyComponent {
+export class UniBodyComponent {
     constructor() { }
 }

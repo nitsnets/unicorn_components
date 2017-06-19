@@ -16,18 +16,18 @@
             *ngSwitchCase="'image'"
             [src]="value"
         >
-        <nts-progress
+        <uni-progress
             class="datagrid-cell-value"
             *ngSwitchCase="'progress'"
             [value]="value"
             [color]="options?.color"
             [total]="options?.total"
-        ></nts-progress>
-        <nts-badge class="datagrid-cell-value"
+        ></uni-progress>
+        <uni-badge class="datagrid-cell-value"
             *ngSwitchCase="'badge'"
             [label]="value"
             [color]="options?.color"
-        ></nts-badge>
+        ></uni-badge>
 
         <!-- You can add a new format case this way: -->
         <ng-container *ngSwitchCase="'yourCustomCase'">

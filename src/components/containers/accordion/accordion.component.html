@@ -1,7 +1,7 @@
 <div class="acc-container">
   <div class="acc-header">
-    <nts-button class="acc-caret" icon="caret" [ngClass]="{collapsed: collapsed}" (click)="collapsed = !collapsed">
-    </nts-button>
+    <uni-button class="acc-caret" icon="caret" [ngClass]="{collapsed: collapsed}" (click)="collapsed = !collapsed">
+    </uni-button>
 
     <span class="acc-title" (click)="collapsed = !collapsed">
       {{name}}
@@ -11,12 +11,12 @@
       <ng-content select=".accordion-buttons"></ng-content>
     </div>
 
-    <nts-menu class="acc-options" *ngIf="options">
-      <nts-button class="acc-options-trigger" icon="more-v" ntsMenuTrigger></nts-button>
-      <nts-menu-container>
+    <uni-menu class="acc-options" *ngIf="options">
+      <uni-button class="acc-options-trigger" icon="more-v" ntsMenuTrigger></uni-button>
+      <uni-menu-container>
         <ng-content select=".accordion-options"></ng-content>
-      </nts-menu-container>
-    </nts-menu>
+      </uni-menu-container>
+    </uni-menu>
   </div>
   <div class="acc-content" *ngIf="!collapsed">
     <ng-content select=".accordion-content"></ng-content>

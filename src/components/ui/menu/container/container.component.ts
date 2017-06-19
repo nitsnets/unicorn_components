@@ -1,10 +1,10 @@
 import { Component, ElementRef } from '@angular/core';
 
 @Component({
-    selector: 'nts-menu-container',
+    selector: 'uni-menu-container',
     templateUrl: 'container.component.html',
     styleUrls: ['container.component.scss'],
 })
-export class NtsMenuContainerComponent {
+export class UniMenuContainerComponent {
     constructor(public elementRef: ElementRef) { }
 }

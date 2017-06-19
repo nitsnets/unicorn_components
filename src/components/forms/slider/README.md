@@ -1,5 +1,5 @@
 # Slider
-`ui / nts-slider`
+`ui / uni-slider`
 
 ---
 Selector mediante barra deslizante
@@ -13,7 +13,7 @@ Parent contract:
 label: string;
 ntsModel: boolean;
 name: string = '';
-color: NtsColor;
+color: UniColor;
 disabled: boolean = false;
 value: string = '';
 required: boolean = false;
@@ -26,6 +26,6 @@ ntsBlur: EventEmitter<Event>;
 ```
 ### Usage
 ```html
-<nts-slider [(ntsModel)]="myModel"></nts-slider>
+<uni-slider [(ntsModel)]="myModel"></uni-slider>
 ```
 ### Known Issues

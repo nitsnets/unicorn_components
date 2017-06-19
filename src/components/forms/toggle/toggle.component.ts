@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
 
-import { NtsCheckboxComponent } from './../checkbox/checkbox.component';
+import { UniCheckboxComponent } from './../checkbox/checkbox.component';
 
 @Component({
-    selector: 'nts-toggle',
+    selector: 'uni-toggle',
     templateUrl: 'toggle.component.html',
     styleUrls: ['toggle.component.scss'],
 })
-export class NtsToggleComponent extends NtsCheckboxComponent {
+export class UniToggleComponent extends UniCheckboxComponent {
     @Input() rounded = true;
 }

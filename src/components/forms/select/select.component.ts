@@ -1,17 +1,17 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 
 import { FilterPipe } from '../../../pipes/filter.pipe';
-import { NtsInputBaseComponent } from '../../base/input-base.component';
-import { NtsOption } from '../../../models/option';
+import { UniInputBaseComponent } from '../../base/input-base.component';
+import { UniOption } from '../../../models/option';
 
 export enum SelectTypes { text, number, email, password }
 
 @Component({
-    selector: 'nts-select',
+    selector: 'uni-select',
     templateUrl: 'select.component.html',
     styleUrls: ['select.component.scss']
 })
-export class NtsSelectComponent extends NtsInputBaseComponent implements OnInit, OnChanges {
+export class UniSelectComponent extends UniInputBaseComponent implements OnInit, OnChanges {
 
     private _ntsModel;
     @Input() set ntsModel(value) {
@@ -29,13 +29,13 @@ export class NtsSelectComponent extends NtsInputBaseComponent implements OnInit,
     @Input() clear = false;
     @Input() filterable = true;
 
-    @Input() options: NtsOption[] = [];
+    @Input() options: UniOption[] = [];
     @Input() excludedOptions: string[];
-    @Input() multipleOptions: NtsOption[] = [];
+    @Input() multipleOptions: UniOption[] = [];
 
     areOptionsVisible = false;
-    optionsFiltered: NtsOption[] = [];
-    optionsSelected: NtsOption[] = [];
+    optionsFiltered: UniOption[] = [];
+    optionsSelected: UniOption[] = [];
     pointedIndex = 0;
     selecting = false;
     search = null;
@@ -68,7 +68,7 @@ export class NtsSelectComponent extends NtsInputBaseComponent implements OnInit,
                 break;
         }
     }
-    isOptionSelected(option: NtsOption): boolean {
+    isOptionSelected(option: UniOption): boolean {
         return this.optionsSelected &&
             this.optionsSelected.length &&
             this.optionsSelected.indexOf(option) !== -1;
@@ -95,7 +95,7 @@ export class NtsSelectComponent extends NtsInputBaseComponent implements OnInit,
         this.pointedIndex = index;
     }
 
-    onSelect(option: NtsOption) {
+    onSelect(option: UniOption) {
         if (option === null) {
             this.optionsSelected = [];
         } else if (this.multiple) {

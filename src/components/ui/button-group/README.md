@@ -1,5 +1,5 @@
 # Button group
-`ui / nts-button-group`
+`ui / uni-button-group`
 
 ---
 Agrupación de botones
@@ -11,11 +11,11 @@ Agrupación de botones
 
 ### Usage
 ```html
-<nts-button-group>
-    <nts-button label="1"></nts-button>
-    <nts-button label="2"></nts-button>
-    <nts-button label="3"></nts-button>
-</nts-button-group>
+<uni-button-group>
+    <uni-button label="1"></uni-button>
+    <uni-button label="2"></uni-button>
+    <uni-button label="3"></uni-button>
+</uni-button-group>
 ```
 
 ### Known Issues

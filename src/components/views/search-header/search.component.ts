@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-    selector: 'nts-search-header',
+    selector: 'uni-search-header',
     templateUrl: 'search.component.html',
     styleUrls: ['search.component.scss'],
 })
-export class NtsSearchHeaderComponent implements OnInit {
+export class UniSearchHeaderComponent implements OnInit {
     @Input() ntsModel;
     @Output() ntsModelChange = new EventEmitter();
     @Input() placeholder = '';
@@ -15,7 +15,7 @@ export class NtsSearchHeaderComponent implements OnInit {
     constructor() { }
 
     ngOnInit() { }
-    onNtsModelChange(event) {
+    onUniModelChange(event) {
         this.ntsModel = event;
         this.ntsModelChange.emit(event);
     }

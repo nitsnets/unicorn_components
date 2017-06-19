@@ -3,11 +3,11 @@ import { Component, EventEmitter, Input, OnChanges, Output, ViewContainerRef } f
 import { Color } from './../../../directives/base-chart.directive';
 
 @Component({
-    selector: 'nts-chart',
+    selector: 'uni-chart',
     templateUrl: 'chart.component.html',
     styleUrls: ['chart.component.scss'],
 })
-export class NtsChartComponent implements OnChanges {
+export class UniChartComponent implements OnChanges {
 
     @Input() chartTitle: string;
     @Input() size: 'tiny' | 'small' | 'medium' | 'large' = 'medium';

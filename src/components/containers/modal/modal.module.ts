@@ -1,21 +1,21 @@
 import { ANALYZE_FOR_ENTRY_COMPONENTS, ModuleWithProviders, NgModule, Type } from '@angular/core';
 
 import { ModalService } from './modal.service';
-import { NtsModalComponent } from './modal.component';
-import { NtsModule } from '../../../nts.module';
+import { UniModalComponent } from './modal.component';
+import { UnicornModule } from '../../../unicorn.module';
 
 @NgModule({
     imports: [
-        NtsModule
+        UnicornModule
     ],
     declarations: [
-        NtsModalComponent,
+        UniModalComponent,
     ],
     providers: [
         ModalService
     ],
     exports: [
-        NtsModalComponent,
+        UniModalComponent,
     ]
 })
 export class ModalModule {

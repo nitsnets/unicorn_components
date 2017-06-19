@@ -1,5 +1,5 @@
-<nts-menu [position]="position">
-    <nts-button ntsMenuTrigger
+<uni-menu [position]="position">
+    <uni-button ntsMenuTrigger
         [iconRight]="iconRight || 'caret'"
         [color]="color"
         [icon]="icon"
@@ -7,8 +7,8 @@
         [sublabel]="sublabel"
         [size]="size"
         [disabled]="disabled"
-    ></nts-button>
-    <nts-menu-container>
+    ></uni-button>
+    <uni-menu-container>
         <ng-content></ng-content>
-    </nts-menu-container>
-</nts-menu>
+    </uni-menu-container>
+</uni-menu>

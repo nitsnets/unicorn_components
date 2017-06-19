@@ -3,11 +3,11 @@ import { Component, ElementRef, EventEmitter, Inject, Output } from '@angular/co
 import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
-    selector: 'nts-tooltip',
+    selector: 'uni-tooltip',
     templateUrl: 'tooltip.component.html',
     styleUrls: ['tooltip.component.scss'],
 })
-export class NtsTooltipComponent {
+export class UniTooltipComponent {
 
     options:any = {};
     message = '';

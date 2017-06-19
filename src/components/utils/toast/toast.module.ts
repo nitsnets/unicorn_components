@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
-import { NtsModule } from '../../../nts.module';
-import { NtsToastComponent } from './toast.component';
 import { ToastService } from './toast.service';
+import { UniToastComponent } from './toast.component';
+import { UnicornModule } from '../../../unicorn.module';
 
 @NgModule({
     imports: [
-        NtsModule
+        UnicornModule
     ],
     declarations: [
-        NtsToastComponent
+        UniToastComponent
     ],
     providers: [
         ToastService
     ],
     exports: [
-        NtsToastComponent
+        UniToastComponent
     ]
 })
 export class ToastModule { }

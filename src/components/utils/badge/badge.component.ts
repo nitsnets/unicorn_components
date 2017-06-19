@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { NtsBaseComponent } from '../../base/base.component';
+import { UniBaseComponent } from '../../base/base.component';
 
 @Component({
-    selector: 'nts-badge',
+    selector: 'uni-badge',
     templateUrl: './badge.component.html',
     styleUrls: ['./badge.component.scss']
 })
-export class NtsBadgeComponent extends NtsBaseComponent {
+export class UniBadgeComponent extends UniBaseComponent {
 
 }

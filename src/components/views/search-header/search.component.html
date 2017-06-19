@@ -1,13 +1,13 @@
-<nts-header ntsSize="medium">
-  <nts-input
+<uni-header ntsSize="medium">
+  <uni-input
     icon="search"
     [value]="value"
     [placeholder]="placeholder"
     [ntsModel]="ntsModel"
-    (ntsModelChange)="onNtsModelChange($event)"
+    (ntsModelChange)="onUniModelChange($event)"
     [debounce]="debounce"
     [floating]="true">
-  </nts-input>
-  <nts-button class="btn-header-md" icon="close" (click)="clear()" *ngIf="ntsModel"></nts-button>
+  </uni-input>
+  <uni-button class="btn-header-md" icon="close" (click)="clear()" *ngIf="ntsModel"></uni-button>
   
-</nts-header>
+</uni-header>

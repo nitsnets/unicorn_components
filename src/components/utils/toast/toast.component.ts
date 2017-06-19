@@ -1,14 +1,18 @@
 import {
-    Component, Output, EventEmitter, ElementRef, AfterContentInit
+    AfterContentInit,
+    Component,
+    ElementRef,
+    EventEmitter,
+    Output,
 } from '@angular/core';
 
 export interface ToastOptions {showClose: boolean;}
 @Component({
-    selector: 'nts-toast',
+    selector: 'uni-toast',
     templateUrl: 'toast.component.html',
     styleUrls: ['toast.component.scss'],
 })
-export class NtsToastComponent implements AfterContentInit {
+export class UniToastComponent implements AfterContentInit {
 
     animateIn = false;
     animateOut = false;

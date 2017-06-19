@@ -1,13 +1,13 @@
 # BADGE
-## ui / ??? / nts-badge
+## ui / ??? / uni-badge
 ---
 Badge de notificación simple
  - ___empaquetamos los de visualización de algún modo___
 
-<nts-badge value="1" class="primary"> </nts-badge>
-        <nts-badge value="1" class="success"> </nts-badge>
-        <nts-badge value="1" class="error"> </nts-badge>
-        <nts-badge value="1" class="warning"> </nts-badge>
+<uni-badge value="1" class="primary"> </uni-badge>
+        <uni-badge value="1" class="success"> </uni-badge>
+        <uni-badge value="1" class="error"> </uni-badge>
+        <uni-badge value="1" class="warning"> </uni-badge>
 
 ### Properties
 - show : boolean / default = true / visible o no
