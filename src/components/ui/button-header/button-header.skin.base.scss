@@ -19,9 +19,6 @@ nts-button-header {
         i {
             font-size: $font-large;
         }
-        span{
-            padding-right: $header-height/4;
-        }
 
         @include mq($from: sm) {
             min-width: $header-height;

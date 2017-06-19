@@ -54,6 +54,7 @@ import { NtsRowSpacerComponent } from './containers/row-spacer/row-spacer.compon
 import { NtsSearchHeaderComponent } from './views/search-header/search.component';
 import { NtsSelectComponent } from './forms/select/select.component';
 import { NtsSeparatorComponent } from './utils/separator/separator.component';
+import { NtsSpinnerComponent } from './utils/spinner/spinner.component';
 import { NtsTabsComponent } from './containers/tabs/tabs.component';
 import { NtsTimePickerComponent } from './forms/time-picker/time-picker.component';
 import { NtsToggleComponent } from './forms/toggle/toggle.component';
@@ -71,5 +72,6 @@ export const NTS_COMPONENTS = [
     NtsButtonFileComponent, NtsButtonHeaderComponent, NtsDatagridComponent, NtsDatagridColumnComponent,
     NtsDatagridRowComponent, NtsDatagridRowDirective, NtsDatagridCellComponent, NtsDatagridCellDirective,
     NtsDatagridHeaderComponent, NtsFiltersComponent, NtsFiltersAdvancedComponent, NtsFiltersMainComponent,
-    NtsCarouselDirective, NtsDatagridDeleteComponent, FilteredDatagridComponent, NtsFiltersListComponent
+    NtsCarouselDirective, NtsDatagridDeleteComponent, FilteredDatagridComponent, NtsFiltersListComponent,
+    NtsSpinnerComponent
 ];
