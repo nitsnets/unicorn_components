@@ -2,11 +2,11 @@ import { ANALYZE_FOR_ENTRY_COMPONENTS, ModuleWithProviders, NgModule, Type } fro
 
 import { ModalService } from './modal.service';
 import { UniModalComponent } from './modal.component';
-import { UnicornModule } from '../../../unicorn.module';
+import { UnicornComponentsModule } from '../../../unicorn.module';
 
 @NgModule({
     imports: [
-        UnicornModule
+        UnicornComponentsModule
     ],
     declarations: [
         UniModalComponent,

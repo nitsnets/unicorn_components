@@ -32,5 +32,5 @@ import { UniDatagridDeleteComponent } from './components/ui/datagrid/delete/dele
         UniDatagridDeleteComponent
     ]
 })
-export class UnicornModule { }
+export class UnicornComponentsModule { }
 

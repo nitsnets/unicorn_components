@@ -59,19 +59,6 @@
       (focus)="ntsFocus.emit($event)"
       (keypress)="ntsKeypress.emit($event)">
     </textarea>
-
-    <!--input
-      *ngIf="type === 'color' && !multiline"
-      [readonly]="readonly"
-      [colorPicker]="ntsModel"
-      (colorPickerChange)="onNgModelChange($event)"
-      [cpPosition]="'bottom'"
-      [cpOutputFormat]="'hex'"
-      [cpSaveClickOutside]="true"
-      [cpAlphaChannel]="'disabled'"
-      [cpDialogDisplay]="'popup'"
-      [value]="ntsModel"/-->
-
   </div>
   <small *ngIf="hint" class="hint">{{hint}}</small>
   <small *ngIf="error" class="error">{{error}}</small>

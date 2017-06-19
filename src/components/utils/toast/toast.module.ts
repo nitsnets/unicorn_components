@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { ToastService } from './toast.service';
 import { UniToastComponent } from './toast.component';
-import { UnicornModule } from '../../../unicorn.module';
+import { UnicornComponentsModule } from '../../../unicorn.module';
 
 @NgModule({
     imports: [
-        UnicornModule
+        UnicornComponentsModule
     ],
     declarations: [
         UniToastComponent
