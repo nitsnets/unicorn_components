@@ -43,7 +43,7 @@ http://components.servidorbeta.com
 | **Charts**     | Chart             | `<uni-chart>`             | :blue_circle:       | [+ Info](src/components/charts/chart)
 | "              | Legend            | `<uni-chart-legend>`      | :blue_circle:       | [+ Info](src/components/charts/chart-legend)
 | "              | Tooltip           | `<uni-chart-tooltip>`     | :blue_circle:       | [+ Info](src/components/charts/chart-tooltip)
-| **Containers** | Accordion         | `<uni-accordion>`         | :white_check_mark:  | [+ Info](src/components/containers/accordion)
+| **Containers** | Accordion         | `<uni-accordion>`         | :red_circle:        | [+ Info](src/components/containers/accordion)
 | "              | Aside             | `<uni-aside>`             | :white_check_mark:  | [+ Info](src/components/containers/aside)
 | "              | Body              | `<uni-body>`              | :white_check_mark:  | [+ Info](src/components/containers/body)
 | "              | Box               | `<uni-box>`               | :white_check_mark:  | [+ Info](src/components/containers/box)
