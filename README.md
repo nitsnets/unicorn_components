@@ -12,11 +12,11 @@ npm install unicorn-components --save
 ## Uso
 En el módulo principal:
 ```typescript
-import { UnicornModule } from 'unicorn-components/unicorn-components';
+import { UnicornComponentsModule } from 'unicorn-components/unicorn-components';
 
 @NgModule({
   imports: [
-    UnicornModule
+    UnicornComponentsModule
   ],
   ...
 })
