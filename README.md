@@ -40,7 +40,7 @@ http://components.servidorbeta.com
 
 | Grupo          | Componente        | Nomenclatura              | Estado              | + Info 
 | -------------- | ----------------- | ------------------------- | ------------------- | ------- 
-| **Charts**     | Chart             | `<uni-chart>`             | :large_blue_circle: | + Info
+| **Charts**     | Chart             | `<uni-chart>`             | :blue_circle:       | + Info
 | "              | Legend            | `<uni-chart-legend>`      | :large_blue_circle: | + Info
 | "              | Tooltip           | `<uni-chart-tooltip>`     | :large_blue_circle: | + Info
 | **Containers** | Accordion         | `<uni-accordion>`         | :white_check_mark:  | + Info
