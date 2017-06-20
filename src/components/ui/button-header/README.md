@@ -28,9 +28,9 @@ position: UniPosition = 'bottom-left';
 ### Usage
 ```html
 <uni-button-menu label="Default button" color="primary">
-    <uni-menu-item icon="close">Option 1</uni-menu-item>
+    <uni-menu-item icon="close" label="Option 1"></uni-menu-item>
     <uni-separator></uni-separator>
-    <uni-menu-item icon="check">Option 2</uni-menu-item>
+    <uni-menu-item icon="check" label="Option 2"></uni-menu-item>
 </uni-button-menu>
 ```
 

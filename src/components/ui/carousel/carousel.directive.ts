@@ -14,19 +14,19 @@ import {
 declare const Flickity: any;
 
 const defaultOptions = {
-    cellSelector: '[ntsCarouselCell]'
+    cellSelector: '[uniCarouselCell]'
 };
 
 @Directive({
-    selector: '[ntsCarousel]',
+    selector: '[uniCarousel]',
 })
 export class UniCarouselDirective implements AfterContentInit, OnChanges {
     @HostBinding('style.outline') outline = 'none';
 
-    @ContentChildren('[ntsCarouselCell]') cells: QueryList<any>;
+    @ContentChildren('[uniCarouselCell]') cells: QueryList<any>;
 
     //  Options of flickity
-    @Input() ntsCarousel = {};
+    @Input() uniCarousel = {};
 
     @Output() select = new EventEmitter();
     @Output() settle = new EventEmitter();
@@ -53,14 +53,14 @@ export class UniCarouselDirective implements AfterContentInit, OnChanges {
     }
 
     ngOnChanges(changes) {
-        if (changes.ntsCarousel && this.cells) {
+        if (changes.uniCarousel && this.cells) {
             this.initCarousel();
         }
     }
 
     private initCarousel() {
         if (this.flickity) { this.flickity.destroy(); }
-        this.flickity = new Flickity(this.element.nativeElement, Object.assign(defaultOptions, this.ntsCarousel));
+        this.flickity = new Flickity(this.element.nativeElement, Object.assign(defaultOptions, this.uniCarousel));
 
         this.flickity.on('select', () => {
             this.select.emit(this.flickity.selectedIndex);

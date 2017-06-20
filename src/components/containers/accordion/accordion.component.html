@@ -1,24 +1,23 @@
 <div class="acc-container">
-  <div class="acc-header">
-    <uni-button class="acc-caret" icon="caret" [ngClass]="{collapsed: collapsed}" (click)="collapsed = !collapsed">
-    </uni-button>
+    <div class="acc-header">
+        <uni-button class="acc-caret" icon="caret" (click)="collapsed = !collapsed">
+        </uni-button>
 
-    <span class="acc-title" (click)="collapsed = !collapsed">
-      {{name}}
-    </span>
+        <span class="acc-title" (click)="collapsed = !collapsed" [innerHtml]="label"> </span>
 
-    <div class="acc-options" *ngIf="!options">
-      <ng-content select=".accordion-buttons"></ng-content>
+        <div class="acc-options" *ngIf="!options">
+            <ng-content select=".accordion-buttons"></ng-content>
+        </div>
+
+        <uni-menu class="acc-options" *ngIf="options">
+            <uni-button class="acc-options-trigger" icon="more-v" ntsMenuTrigger></uni-button>
+            <uni-menu-container>
+                <ng-content select="[uni-accordion-options]"></ng-content>
+            </uni-menu-container>
+        </uni-menu>
     </div>
-
-    <uni-menu class="acc-options" *ngIf="options">
-      <uni-button class="acc-options-trigger" icon="more-v" ntsMenuTrigger></uni-button>
-      <uni-menu-container>
-        <ng-content select=".accordion-options"></ng-content>
-      </uni-menu-container>
-    </uni-menu>
-  </div>
-  <div class="acc-content" *ngIf="!collapsed">
-    <ng-content select=".accordion-content"></ng-content>
-  </div>
+    <div class="acc-content" *ngIf="!collapsed">
+        <ng-content *ngIf="options" select="[uni-accordion-content]"></ng-content>
+        <ng-content *ngIf="!options"></ng-content>
+    </div>
 </div>

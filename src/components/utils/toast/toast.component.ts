@@ -6,7 +6,7 @@ import {
     Output,
 } from '@angular/core';
 
-export interface ToastOptions {showClose: boolean;}
+export interface ToastOptions { showClose: boolean; }
 @Component({
     selector: 'uni-toast',
     templateUrl: 'toast.component.html',
@@ -16,7 +16,7 @@ export class UniToastComponent implements AfterContentInit {
 
     animateIn = false;
     animateOut = false;
-    toastOptions:ToastOptions = null;
+    toastOptions: ToastOptions = null;
     msg = '';
 
     @Output() accept = new EventEmitter();

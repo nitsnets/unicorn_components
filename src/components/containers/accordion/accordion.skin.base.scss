@@ -1,25 +1,34 @@
 uni-accordion {
-  
-  .acc-container {
-    @include border-bottom;
-  }
 
-  .acc-header {
-    height: $header-md-height;
-    @include border-bottom;
-    padding: 0 $basic-padding / 4;
-  }
+    .acc-container {
+        @include border-bottom;
+    }
 
-  .acc-title {
-    margin-left: $basic-padding / 6;
-  }
-  .acc-caret {
-    @include transition(transform, $fast, ease);
-    &.collapsed { @include rotate(-90); }
-  }
+    .acc-header {
+        height: $header-md-height;
+        @include border-bottom;
+        padding: 0 $basic-padding / 4;
+    }
 
-.acc-content {
-  /* @include v-grow-animation; */
-}
+    .acc-title {
+        margin-left: $basic-padding / 6;
+    }
+    .acc-caret {
+        @include transition(transform, $fast, ease);
+        &.collapsed { @include rotate(-90); }
+    }
+
+    .acc-content {
+        /* @include v-grow-animation; */
+    }
+
+    &.collapsed {
+        .acc-caret {
+            @include rotate(-90);
+        }
+        .acc-header {
+            border-bottom-color: transparent;
+        }
+    }
 }
 

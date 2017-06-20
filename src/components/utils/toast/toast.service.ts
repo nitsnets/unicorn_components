@@ -1,25 +1,31 @@
-import { ComponentFactoryResolver, Injectable } from '@angular/core';
+import { ComponentFactoryResolver, Injectable, ViewContainerRef } from '@angular/core';
+import { Observable, Subject } from 'rxjs/Rx';
 
-import { Subject } from 'rxjs/Rx';
+import { DynamicContainerService } from '../../base/dynamic-container.service';
 import { UniToastComponent } from './toast.component';
 
 @Injectable()
-export class ToastService {
+export class ToastService extends DynamicContainerService {
     toastRef;
     toastSub;
     intervalClose;
 
-    constructor(
-        private cmpFactoryResolver: ComponentFactoryResolver
-    ) { }
+    constructor(cmpFactoryResolver: ComponentFactoryResolver) {
+        super(cmpFactoryResolver);
+    }
 
-    createToast(msg: string, options, viewContainer: any) {
+    createToast(
+        msg: string,
+        options = {},
+        viewContainerRef: ViewContainerRef = this.defaultContainer
+    ): Observable<any> {
+
         if (!this.toastRef) {
-
             this.toastSub = new Subject();
 
-            this.toastRef = viewContainer.createComponent(
-                this.cmpFactoryResolver.resolveComponentFactory(UniToastComponent)
+            this.toastRef = this.attachComponent(
+                UniToastComponent,
+                viewContainerRef
             );
             this.toastRef.instance.setMessage(msg);
             this.toastRef.instance.initContent(options);
@@ -35,7 +41,10 @@ export class ToastService {
         }
 
         clearTimeout(this.intervalClose);
-        this.intervalClose = setTimeout(() => { this.close(); }, options.time ? options.time : 2000);
+        this.intervalClose = setTimeout(
+            () => { this.close(); },
+            options['duration'] ? options['duration'] : 2000
+        );
 
         return this.toastSub.asObservable();
     }
@@ -44,7 +53,6 @@ export class ToastService {
         if (this.intervalClose) {
             clearTimeout(this.intervalClose);
         }
-
         this.toastRef.instance.close();
         setTimeout(() => { this.clear(); }, 500);
     }

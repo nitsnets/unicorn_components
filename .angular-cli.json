@@ -1,50 +1,50 @@
 {
-  "project": {
-    "version": "1.0.0-beta.19-3",
-    "name": "angular2-seed"
-  },
-  "apps": [
-    {
-        "root": "demo",
-        "outDir": "demo-dist",
-        "assets": [
-        "favicon.ico",
-        "logo.png"
-        ],
-        "index": "index.html",
-        "main": "index.ts",
-        "test": "",
-        "tsconfig": "tsconfig.json",
-        "prefix": "nts",
-        "mobile": false,
-        "styles": [
-            "styles.scss",
-            "../node_modules/flickity/dist/flickity.min.css"
-        ],
-        "scripts": [
-            "../node_modules/flickity/dist/flickity.pkgd.js",
-            "../node_modules/chart.js/dist/Chart.min.js",
-            "../node_modules/sortablejs/Sortable.js",
-            "../node_modules/angular-sortablejs"
-        ],
-        "environmentSource": "environment.ts",
-        "environments": {
-            "dev": "environment.ts",
-            "prod": "environment.ts"
+    "project": {
+        "version": "1.0.0-beta.19-3",
+        "name": "angular2-seed"
+    },
+    "apps": [
+        {
+            "root": "demo",
+            "outDir": "demo-dist",
+            "assets": [
+                "favicon.ico",
+                "logo.png"
+            ],
+            "index": "index.html",
+            "main": "index.ts",
+            "test": "",
+            "tsconfig": "tsconfig.json",
+            "prefix": "uni",
+            "mobile": false,
+            "styles": [
+                "styles.scss",
+                "../node_modules/flickity/dist/flickity.min.css"
+            ],
+            "scripts": [
+                "../node_modules/flickity/dist/flickity.pkgd.js",
+                "../node_modules/chart.js/dist/Chart.min.js",
+                "../node_modules/sortablejs/Sortable.js",
+                "../node_modules/angular-sortablejs"
+            ],
+            "environmentSource": "environment.ts",
+            "environments": {
+                "dev": "environment.ts",
+                "prod": "environment.ts"
+            }
+        }
+    ],
+    "addons": [],
+    "packages": [],
+    "e2e": {},
+    "test": {},
+    "defaults": {
+        "styleExt": "scss",
+        "prefixInterfaces": true,
+        "component": {
+            "inlineTemplate": false,
+            "inlineStyle": false,
+            "spec": false
         }
     }
-  ],
-  "addons": [],
-  "packages": [],
-  "e2e": {  },
-  "test": {  },
-  "defaults": {
-    "styleExt": "scss",
-    "prefixInterfaces": true,
-    "component": {
-        "inlineTemplate": false,
-        "inlineStyle": false,
-        "spec": false
-    }
-  }
 }
