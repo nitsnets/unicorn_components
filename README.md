@@ -53,7 +53,7 @@ http://components.servidorbeta.com
 | "              | Popup             | `<uni-popup>`             | :white_check_mark:  | [+ Info](src/components/containers/popup)
 | "              | Row               | `<uni-row>`               | :white_check_mark:  | [+ Info](src/components/containers/row)
 | "              | Row Spacer        | `<uni-row-spacer>`        | :white_check_mark:  | [+ Info](src/components/containers/row-spacer)
-| "              | Tabs              | `<uni-tabs>`              | :white_check_mark:  | [+ Info](src/components/containers/tabs)
+| "              | Tabs              | `<uni-tabs>`              | :red_circle:        | [+ Info](src/components/containers/tabs)
 | **Forms**      | Button toggle     | `<uni-button-toggle>`     | :white_check_mark:  | [+ Info](src/components/forms/button-toggle)
 | "              | Checkbox          | `<uni-checkbox>`          | :white_check_mark:  | [+ Info](src/components/forms/checkbox)
 | "              | Code Editor       | `<uni-code-editor>`       | :red_circle:        | [+ Info](src/components/forms/code-editor)
