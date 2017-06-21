@@ -40,7 +40,10 @@
         "no-duplicate-variable": true,
         "no-empty": false,
         "no-eval": true,
-        "no-inferrable-types": [true, "ignore-params"],
+        "no-inferrable-types": [
+            true,
+            "ignore-params"
+        ],
         "no-shadowed-variable": true,
         "no-string-literal": false,
         "no-switch-case-fall-through": true,
@@ -89,13 +92,30 @@
             "check-separator",
             "check-type"
         ],
-
-        "directive-selector-prefix": [true, "nts"],
-        "component-selector-prefix": [true, "nts"],
-        "directive-selector-name": [true, "camelCase"],
-        "component-selector-name": [true, "kebab-case"],
-        "directive-selector-type": [true, "attribute"],
-        "component-selector-type": [true, "element"],
+        "directive-selector-prefix": [
+            true,
+            "uni"
+        ],
+        "component-selector-prefix": [
+            true,
+            "uni"
+        ],
+        "directive-selector-name": [
+            true,
+            "camelCase"
+        ],
+        "component-selector-name": [
+            true,
+            "kebab-case"
+        ],
+        "directive-selector-type": [
+            true,
+            "attribute"
+        ],
+        "component-selector-type": [
+            true,
+            "element"
+        ],
         "use-input-property-decorator": true,
         "use-output-property-decorator": true,
         "use-host-property-decorator": true,
@@ -108,16 +128,26 @@
         "templates-use-public": true,
         "invoke-injectable": true,
         "callable-types": true,
-        "import-blacklist": [true, "rxjs"],
+        "import-blacklist": [
+            true,
+            "rxjs"
+        ],
         "import-spacing": true,
         "interface-over-type-literal": true,
         "no-empty-interface": true,
         "no-string-throw": true,
         "typeof-compare": true,
         "unified-signatures": true,
-        "prefer-const": [true, {"destructuring": "all"}]
+        "prefer-const": [
+            true,
+            {
+                "destructuring": "all"
+            }
+        ]
     },
     "jsRules": {
-        "max-line-length": [120]
+        "max-line-length": [
+            120
+        ]
     }
 }

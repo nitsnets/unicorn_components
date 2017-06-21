@@ -4,7 +4,7 @@
     *ngIf="box && datagrid.selectable"
     [highlight]="true"
 >
-    <uni-checkbox [ntsModel]="selected" (ntsModelChange)="selectedChange.emit($event)"></uni-checkbox>
+    <uni-checkbox [uniModel]="selected" (uniModelChange)="selectedChange.emit($event)"></uni-checkbox>
 </uni-datagrid-cell>
 
 <ng-content *ngIf="!deleting"></ng-content>

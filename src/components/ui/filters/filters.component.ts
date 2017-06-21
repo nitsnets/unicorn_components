@@ -110,8 +110,8 @@ export class UniFiltersComponent implements AfterContentInit, OnChanges {
         }
 
         this.filters.forEach(f => {
-            f.ntsModelChange.subscribe(value => this.onUniModelChange(f.name, value, f.constructor.name));
-            f.ntsBlur.subscribe(() => this.onFilterBlur(f.name, f.constructor.name));
+            f.uniModelChange.subscribe(value => this.onUniModelChange(f.name, value, f.constructor.name));
+            f.uniBlur.subscribe(() => this.onFilterBlur(f.name, f.constructor.name));
             if (f.value) {
                 this.defaultFilter[f.name] = f.value;
             }
@@ -191,14 +191,14 @@ export class UniFiltersComponent implements AfterContentInit, OnChanges {
                 || !this.mainFilters.length
             )
         ) {
-            this.filters.forEach(f => f.ntsModel = this.filter[f.name]);
+            this.filters.forEach(f => f.uniModel = this.filter[f.name]);
         } else if (this.advFilters && this.mainFilters) {
             let anyAdvanced = false;
             this.advFilters.forEach(f => {
-                f.ntsModel = this.filter[f.name];
+                f.uniModel = this.filter[f.name];
                 if (this.filter[f.name] !== f.value) { anyAdvanced = true; }
             });
-            this.mainFilters.forEach(f => f.ntsModel = this.filter[f.name]);
+            this.mainFilters.forEach(f => f.uniModel = this.filter[f.name]);
             this.showAdvanced = anyAdvanced;
         }
     }

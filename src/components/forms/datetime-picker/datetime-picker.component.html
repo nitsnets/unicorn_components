@@ -1,15 +1,15 @@
 <div class="datetime-container">
     <uni-date-picker class="spacing"
-        [ntsModel]="dateModel"
-        (ntsModelChange)="onDateChanges($event)"
+        [uniModel]="dateModel"
+        (uniModelChange)="onDateChanges($event)"
         [label]="dateLabel || (timeLabel ? ' ' : '')"
         [maxDate]="maxDate"
         [minDate]="minDate"
         [inline]="inline"
     ></uni-date-picker>
     <uni-time-picker
-        [ntsModel]="timeModel"
-        (ntsModelChange)="onTimeChanges($event)"
+        [uniModel]="timeModel"
+        (uniModelChange)="onTimeChanges($event)"
         [label]="timeLabel || (dateLabel ? ' ' : '')"
         [inline]="inline"
     ></uni-time-picker>

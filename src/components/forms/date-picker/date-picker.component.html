@@ -1,33 +1,12 @@
 <div class="date-container" (clickOutside)="opened = (inline ? opened : false)">
-  <div class="date-input-container">
-    <uni-input
-      type="date"
-      icon="calendar"
-      class="date-input clear-webkit-controls"
-      [maxValue]="maxDate"
-      [minValue]="minDate"
-      [label]="label"
-      [clear]="true"
-      [ntsModel]="ntsModel"
-      (ntsModelChange)="onDateChanges($event)"
-      (ntsFocus)="onFocus($event)"
-      (ntsBlur)="onBlur($event)"
-      (ntsKeypress)="onKeyPress($event, true)"
-    > </uni-input>
-  </div>
-  <div *ngIf="opened || inline"
-    class="date-controls-container"
-    [class.floating]="!inline"
-    [class.align-left]="side === 'left'"
-    [class.align-right]="side === 'right'"
-  >
-    <uni-calendar
-      [maxDate]="maxDate"
-      [minDate]="minDate"
-      [rangeFrom]="rangeFrom"
-      [rangeTo]="rangeTo"
-      [ntsModel]="ntsModel"
-      (ntsModelChange)="onDateChanges($event)">
-    </uni-calendar>
-  </div>
+    <div class="date-input-container">
+        <uni-input type="date" icon="calendar" class="date-input clear-webkit-controls" [maxValue]="maxDate" [minValue]="minDate"
+            [label]="label" [clear]="true" [uniModel]="uniModel" (uniModelChange)="onDateChanges($event)" (uniFocus)="onFocus($event)"
+            (uniBlur)="onBlur($event)" (uniKeypress)="onKeyPress($event, true)"> </uni-input>
+    </div>
+    <div *ngIf="opened || inline" class="date-controls-container" [class.floating]="!inline" [class.align-left]="side === 'left'"
+        [class.align-right]="side === 'right'">
+        <uni-calendar [maxDate]="maxDate" [minDate]="minDate" [rangeFrom]="rangeFrom" [rangeTo]="rangeTo" [uniModel]="uniModel" (uniModelChange)="onDateChanges($event)">
+        </uni-calendar>
+    </div>
 </div>

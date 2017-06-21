@@ -4,13 +4,13 @@ import { TooltipService } from './tooltip.service';
 import { UniTooltipComponent } from './tooltip.component';
 
 @Directive({
-    selector: '[ntsTooltip]',
+    selector: '[uniTooltip]',
 })
 export class UniTooltipDirective implements AfterViewInit {
     private tooltipRef: ComponentRef<UniTooltipComponent> = null;
     private element: any = null;
 
-    @Input() ntsTooltip = '';
+    @Input() uniTooltip = '';
     @Input() orientation: 'right' | 'top' | 'bottom' | 'left' = 'right';
 
     @HostListener('mouseover') onMouseover() { this.openTooltip(); }
@@ -27,7 +27,7 @@ export class UniTooltipDirective implements AfterViewInit {
     }
 
     openTooltip() {
-        this.tooltipRef = this.tooltipService.createTooltip(this.ntsTooltip, {
+        this.tooltipRef = this.tooltipService.createTooltip(this.uniTooltip, {
             element: this.element,
             orientation: this.orientation
         });

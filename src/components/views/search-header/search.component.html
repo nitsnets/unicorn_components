@@ -3,11 +3,11 @@
     icon="search"
     [value]="value"
     [placeholder]="placeholder"
-    [ntsModel]="ntsModel"
-    (ntsModelChange)="onUniModelChange($event)"
+    [uniModel]="uniModel"
+    (uniModelChange)="onUniModelChange($event)"
     [debounce]="debounce"
     [floating]="true">
   </uni-input>
-  <uni-button class="btn-header-md" icon="close" (click)="clear()" *ngIf="ntsModel"></uni-button>
+  <uni-button class="btn-header-md" icon="close" (click)="clear()" *ngIf="uniModel"></uni-button>
   
 </uni-header>

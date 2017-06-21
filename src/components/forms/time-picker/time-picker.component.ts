@@ -26,10 +26,10 @@ export class UniTimePickerComponent extends UniInputBaseComponent {
 
     onFocus($event) {
         this.opened = true;
-        this.ntsFocus.emit($event);
+        this.uniFocus.emit($event);
     }
     onBlur($event) {
-        this.ntsBlur.emit($event);
+        this.uniBlur.emit($event);
     }
     onKeyPress(ev: KeyboardEvent) {
         if (ev.code === 'Enter' || ev.key === 'Enter') {
@@ -37,7 +37,7 @@ export class UniTimePickerComponent extends UniInputBaseComponent {
         } else { this.opened = true; }
     }
     onTimeChanges(date) {
-        this.ntsModel = date;
+        this.uniModel = date;
         this.onNgModelChange(date);
     }
     clear() {

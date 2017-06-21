@@ -19,11 +19,11 @@ export class UniImagePickerComponent extends UniInputBaseComponent implements On
     dragging = false;
 
     ngOnChanges(changes) {
-        if (changes.ntsModel) {
-            if (this.ntsModel && this.ntsModel instanceof Blob) {
+        if (changes.uniModel) {
+            if (this.uniModel && this.uniModel instanceof Blob) {
                 const reader = new FileReader();
 
-                reader.readAsDataURL(this.ntsModel);
+                reader.readAsDataURL(this.uniModel);
                 reader.onload = (e: any) => {
                     this.imageData = e.target.result;
                     this.imageDataChange.emit(this.imageData);
@@ -36,7 +36,7 @@ export class UniImagePickerComponent extends UniInputBaseComponent implements On
     }
     onImagePicked(event) {
         if (!event.target.files || !event.target.files.length) { return false; }
-        this.ntsModelChange.emit(event.target.files[0]);
+        this.uniModelChange.emit(event.target.files[0]);
     }
     onDragEnter(event) {
         this.dragging = true;
@@ -51,11 +51,11 @@ export class UniImagePickerComponent extends UniInputBaseComponent implements On
     onDrop(event) {
         this.dragging = false;
         if (!event.dataTransfer.files || !event.dataTransfer.files.length) { return false; }
-        this.ntsModelChange.emit(event.dataTransfer.files[0]);
+        this.uniModelChange.emit(event.dataTransfer.files[0]);
         event.preventDefault();
     }
     clear() {
-        this.ntsModelChange.emit(null);
+        this.uniModelChange.emit(null);
         this.imageDataChange.emit('');
     }
 }

@@ -1,13 +1,6 @@
 <uni-menu [position]="position">
-    <uni-button ntsMenuTrigger
-        [iconRight]="iconRight || 'caret'"
-        [color]="color"
-        [icon]="icon"
-        [label]="label"
-        [sublabel]="sublabel"
-        [size]="size"
-        [disabled]="disabled"
-    ></uni-button>
+    <uni-button uniMenuTrigger [iconRight]="iconRight || 'caret'" [color]="color" [icon]="icon" [label]="label" [sublabel]="sublabel"
+        [size]="size" [disabled]="disabled"></uni-button>
     <uni-menu-container>
         <ng-content></ng-content>
     </uni-menu-container>

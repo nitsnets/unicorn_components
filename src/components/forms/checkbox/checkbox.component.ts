@@ -11,6 +11,6 @@ export class UniCheckboxComponent extends UniInputBaseComponent {
     @Input() partial = false;
 
     toggleUniModel() {
-        this.onNgModelChange(this.ntsModel ? false : true);
+        this.onNgModelChange(this.uniModel ? false : true);
     }
 }

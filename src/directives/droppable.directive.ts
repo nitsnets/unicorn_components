@@ -7,8 +7,8 @@ export class UniDroppableDirective implements OnInit {
     @HostListener('dragenter', ['$event']) dragenter = this.onDragEnter;
     @HostListener('dragleave', ['$event']) dragleave = this.onDragLeave;
 
-    @Output() ntsDragenter = new EventEmitter();
-    @Output() ntsDragleave = new EventEmitter();
+    @Output() uniDragenter = new EventEmitter();
+    @Output() uniDragleave = new EventEmitter();
 
     first = false;
     second = false;
@@ -23,7 +23,7 @@ export class UniDroppableDirective implements OnInit {
             return this.second = true;
         } else {
             this.first = true;
-            this.ntsDragenter.emit({
+            this.uniDragenter.emit({
                 dataTransfer: e.dataTransfer,
                 sourceEvent: e
             });
@@ -36,7 +36,7 @@ export class UniDroppableDirective implements OnInit {
             this.first = false;
         }
         if (!this.first && !this.second) {
-            this.ntsDragleave.emit({
+            this.uniDragleave.emit({
                 dataTransfer: e.dataTransfer,
                 sourceEvent: e
             });

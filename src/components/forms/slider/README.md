@@ -11,7 +11,7 @@ Parent contract:
 ```typescript
 //INPUTS
 label: string;
-ntsModel: boolean;
+uniModel: boolean;
 name: string = '';
 color: UniColor;
 disabled: boolean = false;
@@ -20,12 +20,12 @@ required: boolean = false;
 debounce: number = 0;
 
 //OUTPUTS
-ntsModelChange: EventEmitter<boolean>;
-ntsFocus: EventEmitter<Event>;
-ntsBlur: EventEmitter<Event>;
+uniModelChange: EventEmitter<boolean>;
+uniFocus: EventEmitter<Event>;
+uniBlur: EventEmitter<Event>;
 ```
 ### Usage
 ```html
-<uni-slider [(ntsModel)]="myModel"></uni-slider>
+<uni-slider [(uniModel)]="myModel"></uni-slider>
 ```
 ### Known Issues

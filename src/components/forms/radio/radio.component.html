@@ -1,10 +1,10 @@
-<label #ntsChk [ngClass]="{
-  checked: ntsModel == value,
+<label [ngClass]="{
+  checked: uniModel == value,
   'only-icon': !label || !label.length
 }">
   <uni-icon class="icon" [icon]="
-    ntsModel == value ? 'circle-check' : 'circle'"
+    uniModel == value ? 'circle-check' : 'circle'"
   ></uni-icon>
-  <input type="checkbox" [name]="name" [ngModel]="ntsModel == value" (ngModelChange)="onNgModelChange(this.value)">
+  <input type="checkbox" [name]="name" [ngModel]="uniModel == value" (ngModelChange)="onNgModelChange(this.value)">
   <span class="label" *ngIf="label" [innerHtml]="label"></span>
 </label>

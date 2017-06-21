@@ -1,5 +1,5 @@
 <label [ngClass]="{
-  'has-content': ntsModel && ntsModel.length,
+  'has-content': uniModel && uniModel.length,
   'focused': focused,
   'floating': floating,
   'with-prefix': prefix || type === 'color',
@@ -10,7 +10,7 @@
   <div class="label" *ngIf="label || counter">
     <span *ngIf="label">{{label}}</span>
     <span *ngIf="counter">
-      {{ntsModel? ntsModel.length : 0}} <span *ngIf="max>-1">/ {{max}}</span>
+      {{uniModel? uniModel.length : 0}} <span *ngIf="max>-1">/ {{max}}</span>
     </span>
   </div>
   <uni-icon *ngIf="icon" [icon]="icon" class="icon"></uni-icon>
@@ -18,7 +18,7 @@
 
   <div class="input-container">
     <span class="prefix" *ngIf="prefix &&  type !== 'color'" [innerHtml]="prefix"></span>
-    <span class="prefix" *ngIf="type === 'color' && colorSwatch" [style.backgroundColor]="ntsModel"></span>
+    <span class="prefix" *ngIf="type === 'color' && colorSwatch" [style.backgroundColor]="uniModel"></span>
     <input
       *ngIf="!multiline && type !== 'color'"
       [type]="type"
@@ -31,17 +31,17 @@
       [value]="value"
       [autofocus]="autofocus"
       [required]="required"
-      [ngModel]="ntsModel"
+      [ngModel]="uniModel"
       (ngModelChange)="onNgModelChange($event)"
       (blur)="onInputBlur($event)"
       (focus)="onInputFocus($event)"
-      (keypress)="ntsKeypress.emit($event)"
+      (keypress)="uniKeypress.emit($event)"
     />
     <uni-icon
       class="clear-btn"
       icon="close"
       size="small"
-      *ngIf="!multiline && clear && ntsModel && ntsModel.length"
+      *ngIf="!multiline && clear && uniModel && uniModel.length"
       (click)="onNgModelChange(null)"
     > </uni-icon>
 
@@ -53,11 +53,11 @@
       [placeholder]="placeholder"
       [readonly]="readonly"
       [value]="value"
-      [ngModel]="ntsModel"
+      [ngModel]="uniModel"
       (ngModelChange)="onNgModelChange($event)"
-      (blur)="ntsBlur.emit($event)"
-      (focus)="ntsFocus.emit($event)"
-      (keypress)="ntsKeypress.emit($event)">
+      (blur)="uniBlur.emit($event)"
+      (focus)="uniFocus.emit($event)"
+      (keypress)="uniKeypress.emit($event)">
     </textarea>
   </div>
   <small *ngIf="hint" class="hint">{{hint}}</small>

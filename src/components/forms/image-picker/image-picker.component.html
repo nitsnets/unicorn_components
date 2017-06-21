@@ -1,11 +1,5 @@
-<label class="img-picker"
-    droppable="true"
-    (ntsDragenter)="onDragEnter($event)"
-    (dragover)="onDragOver($event)"
-    (ntsDragleave)="onDragLeave($event)"
-    (drop)="onDrop($event)"
-    [ngClass]="{dragging: dragging}"
->
+<label class="img-picker" droppable="true" (uniDragenter)="onDragEnter($event)" (dragover)="onDragOver($event)" (uniDragleave)="onDragLeave($event)"
+    (drop)="onDrop($event)" [ngClass]="{dragging: dragging}">
 
     <div class="placeholder" *ngIf="!imageData">
         <uni-icon class="icon" icon="image" size="large"></uni-icon>

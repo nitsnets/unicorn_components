@@ -40,7 +40,7 @@ export class UniInputComponent extends UniInputBaseComponent implements OnInit, 
     @Input() colorSwatch = false;
     @Input() caret = false;
 
-    @Output() ntsKeypress = new EventEmitter();
+    @Output() uniKeypress = new EventEmitter();
 
     focused = false;
     _mask: MaskArray = null;
@@ -49,26 +49,26 @@ export class UniInputComponent extends UniInputBaseComponent implements OnInit, 
         if (changes.mask && this.mask) {
             this.parseMask();
         }
-        if (changes.ntsModel) {
+        if (changes.uniModel) {
             this.applyMask();
         }
     }
     onInputFocus(ev) {
         this.focused = true;
-        this.ntsFocus.emit(ev);
+        this.uniFocus.emit(ev);
     }
     onInputBlur(ev) {
         this.focused = false;
 
-        if (this.maxValue && this.ntsModel > this.maxValue) {
-            this.ntsModel = this.maxValue;
-            this.ntsModelChange.emit(this.ntsModel);
+        if (this.maxValue && this.uniModel > this.maxValue) {
+            this.uniModel = this.maxValue;
+            this.uniModelChange.emit(this.uniModel);
 
-        } else if (this.minValue && this.ntsModel < this.minValue) {
-            this.ntsModel = this.minValue;
-            this.ntsModelChange.emit(this.ntsModel);
+        } else if (this.minValue && this.uniModel < this.minValue) {
+            this.uniModel = this.minValue;
+            this.uniModelChange.emit(this.uniModel);
         }
-        this.ntsBlur.emit(ev);
+        this.uniBlur.emit(ev);
     }
     onNgModelChange(ev): Observable<any> {
         if (this.type === 'number') {
@@ -77,9 +77,9 @@ export class UniInputComponent extends UniInputBaseComponent implements OnInit, 
         return super.onNgModelChange(ev);
     }
     private applyMask() {
-        if (!this._mask || !this.ntsModel) { return; }
-        console.log(conformToMask(this.ntsModel, this._mask, {}).conformedValue);
-        // this.ntsModel = conformToMask(this.ntsModel, this._mask, {}).conformedValue;
+        if (!this._mask || !this.uniModel) { return; }
+        console.log(conformToMask(this.uniModel, this._mask, {}).conformedValue);
+        // this.uniModel = conformToMask(this.uniModel, this._mask, {}).conformedValue;
     }
     private parseMask(): MaskArray {
         if (typeof this.mask !== 'string') { return this.mask; }

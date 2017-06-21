@@ -1,6 +1,6 @@
-<label [class]="color || ''" [class.checked]="ntsModel">
+<label [class]="color || ''" [class.checked]="uniModel">
     <div class="toggle-container">
-        <input type="checkbox" [name]="name" [ngModel]="ntsModel" (ngModelChange)="toggleUniModel()">
+        <input type="checkbox" [name]="name" [ngModel]="uniModel" (ngModelChange)="toggleUniModel()">
         <div class="toggle-slider" [class.round]="rounded"></div>
     </div>
     <span class="toggle-label" *ngIf="label">{{label}}</span>

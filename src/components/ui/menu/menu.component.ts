@@ -50,7 +50,7 @@ export class UniMenuComponent {
 }
 
 @Directive({
-    selector: '[ntsMenuTrigger]'
+    selector: '[uniMenuTrigger]'
 })
 export class UniMenuTriggerDirective implements OnDestroy {
     private openedByFocus = false;

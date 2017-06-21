@@ -13,15 +13,15 @@ export enum SelectTypes { text, number, email, password }
 })
 export class UniSelectComponent extends UniInputBaseComponent implements OnInit, OnChanges {
 
-    private _ntsModel;
-    @Input() set ntsModel(value) {
-        this._ntsModel = value;
+    private _uniModel;
+    @Input() set uniModel(value) {
+        this._uniModel = value;
         this.updateOptionsSelectedByModel();
         if (!this.areOptionsVisible) {
             this.updateSearchByOptionsSelected();
         }
     };
-    get ntsModel() { return this._ntsModel; }
+    get uniModel() { return this._uniModel; }
 
     @Input() placeholder = '';
     @Input() icon: string;
@@ -41,7 +41,7 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
     search = null;
 
     ngOnChanges(changes) {
-        if (changes.options || changes.ntsExcludedOptions) {
+        if (changes.options || changes.uniExcludedOptions) {
             this.excludeOptions();
         }
         if (changes.options) {
@@ -81,7 +81,7 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
     }
     onFocus($event) {
         this.showOptions();
-        this.ntsFocus.emit($event);
+        this.uniFocus.emit($event);
     }
     // Manage non desirable closing
     onBlur($event) {
@@ -144,10 +144,10 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
     }
     private updateOptionsSelectedByModel() {
         this.optionsSelected = [];
-        if (!this.options || !this.ntsModel) { this.optionsSelected = []; return; }
+        if (!this.options || !this.uniModel) { this.optionsSelected = []; return; }
         for (const option of this.options) {
-            if (!this.multiple && option.value === this.ntsModel ||
-                this.multiple && this.ntsModel.includes(option.value)) {
+            if (!this.multiple && option.value === this.uniModel ||
+                this.multiple && this.uniModel.includes(option.value)) {
                 this.optionsSelected.push(option);
             }
         }
@@ -165,9 +165,9 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
                 newModel = this.optionsSelected[0].value;
             }
         }
-        this.ntsModel = newModel;
-        this.ntsModelChange.emit(this.ntsModel);
-        this.ntsBlur.emit();
+        this.uniModel = newModel;
+        this.uniModelChange.emit(this.uniModel);
+        this.uniBlur.emit();
     }
     private updateSearchByOptionsSelected() {
         if (!this.optionsSelected || !this.optionsSelected.length) {

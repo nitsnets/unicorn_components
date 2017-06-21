@@ -10,7 +10,7 @@ Parent contract:
 ```typescript
 //INPUTS
 label: string;
-ntsModel: boolean;
+uniModel: boolean;
 name: string = '';
 color: UniColor;
 disabled: boolean = false;
@@ -19,9 +19,9 @@ required: boolean = false;
 debounce: number = 0;
 
 //OUTPUTS
-ntsModelChange: EventEmitter<boolean>;
-ntsFocus: EventEmitter<Event>;
-ntsBlur: EventEmitter<Event>;
+uniModelChange: EventEmitter<boolean>;
+uniFocus: EventEmitter<Event>;
+uniBlur: EventEmitter<Event>;
 ```
 
 Extended contract:
@@ -52,12 +52,12 @@ caret: boolean = false;
 counter: boolean = false;
 
 //OUTPUTS
-ntsKeypress: EventEmitter;
+uniKeypress: EventEmitter;
 ```
 
 ## Usage
 ```html
-<uni-button-toggle label="Toggle button" [(ntsModel)]="model"></uni-button-toggle>
+<uni-button-toggle label="Toggle button" [(uniModel)]="model"></uni-button-toggle>
 ```
 
 ## Known Issues

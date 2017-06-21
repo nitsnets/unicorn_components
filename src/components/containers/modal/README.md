@@ -77,4 +77,4 @@ El método de creación de modal es un Observable que recibe eventos cuando la m
 ## Mejoras previstas (TODO)
 
 - Implementación de los parámetros `size=small` y `color`.
-- Renombrar este componente a `uni-accordion-item` y crear un `uni-acordion` que gestiones los grupos de items para, por ejemplo: que solo pueda haber uno abierto.
+- Posibilitar la invocación de la modal sin el servicio, directamente con un `<uni-modal>``desde HTML.
