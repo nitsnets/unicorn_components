@@ -2,7 +2,7 @@ Tabs
 ===================
 `uni-tabs`
 ---
-<p align=right>:white_check_mark: Estable</p>
+:white_check_mark: Estable
 
 Conjunto de solapas seleccionables de manera excluyente.
 

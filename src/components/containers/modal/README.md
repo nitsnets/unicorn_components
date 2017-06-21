@@ -2,7 +2,7 @@ Modal
 ===================
 `uni-modal`
 ---
-<p align=right>:white_check_mark: Estable</p>
+:white_check_mark: Estable
 
 Contenedor flotante que se abre sobre todo el contendido.
 

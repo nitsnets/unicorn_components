@@ -2,7 +2,7 @@ Header
 ===================
 `uni-header`
 ---
-<p align=right>:white_check_mark: Estable</p>
+:white_check_mark: Estable
 
 Contenedor que funciona como cabecera. Es combinable con un `<uni-layout>`.
 

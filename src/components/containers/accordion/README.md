@@ -2,7 +2,7 @@ Accordion
 ===================
 `uni-accordion`
 ---
-<p align=right>:red_circle: Inestable</p>
+:red_circle: Inestable
 
 Elementos con cabecera y cuerpo. El cuerpo puede mostrarse u ocultarse a elección del usuario.
 

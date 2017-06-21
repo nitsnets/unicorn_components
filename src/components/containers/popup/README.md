@@ -2,7 +2,7 @@ Popup
 ===================
 `uni-popup`
 ---
-<p align=right>:white_check_mark: Estable</p>
+:white_check_mark: Estable
 
 Contenedor flotante auxiliar anclado a un elemento que llamamos *trigger*.
 

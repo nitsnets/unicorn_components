@@ -2,7 +2,7 @@ Body
 ===================
 `uni-body`
 ---
-<p align=right>:white_check_mark: Estable</p>
+:white_check_mark: Estable
 
 Contenedor principal de una página. Debe situarse dentro de un `<uni-layout>`.
 

@@ -2,7 +2,7 @@ Aside
 ===================
 `uni-aside`
 ---
-<p align=right>:white_check_mark: Estable</p>
+:white_check_mark: Estable
 
 Contenedor situado en los laterales de una página. Debe situarse dentro de un `<uni-layout>` y combinarse con un `<uni-body>`.
 

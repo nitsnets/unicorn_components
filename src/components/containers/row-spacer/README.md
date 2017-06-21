@@ -2,7 +2,7 @@ Row
 ===================
 `uni-row-spacer`
 ---
-<p align=right>:white_check_mark: Estable</p>
+:white_check_mark: Estable
 
 Usado dentro de un `<uni-row>` genera un espaciado ocupando todo el espacio posible entre dos items.
 

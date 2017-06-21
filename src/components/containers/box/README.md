@@ -2,7 +2,7 @@ Box
 ===================
 `uni-box`
 ---
-<p align=right>:white_check_mark: Estable</p>
+:white_check_mark: Estable
 
 Contenedor auxiliar con borde.
 

@@ -2,7 +2,7 @@ Layout
 ===================
 `uni-layout`
 ---
-<p align=right>:white_check_mark: Estable</p>
+:white_check_mark: Estable
 
 Contenedor para organizar interfaces. Es combinable con un `<uni-layout>`.
 

@@ -2,7 +2,7 @@ Row
 ===================
 `uni-row`
 ---
-<p align=right>:white_check_mark: Estable</p>
+:white_check_mark: Estable
 
 Contenedor que dispone todo su contenido de manera horizontal uno al lado de otro, o vertical, uno encima del otro.
 
