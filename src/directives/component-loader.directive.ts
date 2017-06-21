@@ -14,14 +14,14 @@ import {
     ViewContainerRef,
 } from '@angular/core';
 
-@Directive({ selector: '[ntsComponentLoader]' })
+@Directive({ selector: '[uniComponentLoader]' })
 export class UniComponentLoaderDirective implements OnChanges {
-    @Input() ntsComponentLoader: Type<any>;
-    @Input() ntsComponentLoaderInjector: Injector;
-    @Input() ntsComponentLoaderProviders: Provider[];
-    @Input() ntsComponentLoaderProjectableNodes: any[][];
+    @Input() uniComponentLoader: Type<any>;
+    @Input() uniComponentLoaderInjector: Injector;
+    @Input() uniComponentLoaderProviders: Provider[];
+    @Input() uniComponentLoaderProjectableNodes: any[][];
 
-    @Output() ntsComponentLoaded = new EventEmitter<ComponentRef<any>>(false);
+    @Output() uniComponentLoaded = new EventEmitter<ComponentRef<any>>(false);
 
     constructor(
         private _cmpFactoryResolver: ComponentFactoryResolver,
@@ -30,22 +30,22 @@ export class UniComponentLoaderDirective implements OnChanges {
 
     ngOnChanges(changes: SimpleChanges) {
 
-        if (changes.hasOwnProperty('ntsComponentLoader')) {
+        if (changes.hasOwnProperty('uniComponentLoader')) {
             this._viewContainerRef.clear();
 
-            if (this.ntsComponentLoader) {
-                let injector = this.ntsComponentLoaderInjector || this._viewContainerRef.parentInjector;
+            if (this.uniComponentLoader) {
+                let injector = this.uniComponentLoaderInjector || this._viewContainerRef.parentInjector;
 
-                if (Array.isArray(this.ntsComponentLoaderProviders) && this.ntsComponentLoaderProviders.length > 0) {
-                    injector = ReflectiveInjector.resolveAndCreate(this.ntsComponentLoaderProviders, injector);
+                if (Array.isArray(this.uniComponentLoaderProviders) && this.uniComponentLoaderProviders.length > 0) {
+                    injector = ReflectiveInjector.resolveAndCreate(this.uniComponentLoaderProviders, injector);
                 }
 
                 const cmpRef = this._viewContainerRef.createComponent(
-                    this._cmpFactoryResolver.resolveComponentFactory(this.ntsComponentLoader),
-                    this._viewContainerRef.length, injector, this.ntsComponentLoaderProjectableNodes
+                    this._cmpFactoryResolver.resolveComponentFactory(this.uniComponentLoader),
+                    this._viewContainerRef.length, injector, this.uniComponentLoaderProjectableNodes
                 );
 
-                this.ntsComponentLoaded.emit(cmpRef);
+                this.uniComponentLoaded.emit(cmpRef);
             }
         }
     }

@@ -1,9 +1,6 @@
-<header
-  [class]="ntsBg"
-  [ngClass]="{
-    'hidden': !ntsVisible,
-    'medium': ntsSize == 'medium'
-  }"
->
-  <ng-content></ng-content>
+<header [class]="color" [ngClass]="{
+    'hidden': !visible,
+    'medium': size == 'medium'
+  }">
+    <ng-content></ng-content>
 </header>

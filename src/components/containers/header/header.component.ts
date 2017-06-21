@@ -1,20 +1,18 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+import { UniColor } from '../../../models/types';
+
 @Component({
     selector: 'uni-header',
     templateUrl: 'header.component.html',
     styleUrls: ['header.component.scss'],
 })
-export class UniHeaderComponent implements OnInit {
+export class UniHeaderComponent {
 
-    @Input() ntsVisible = true;
-    @Input() ntsSize = null;
-    @Input() ntsBg = null;
-    @Input() ntsWithIcon = false;
+    @Input() visible = true;
+    @Input() size: '' | 'medium' = null;
+    @Input() color: UniColor = null;
 
     constructor() { }
-
-    ngOnInit() {
-    }
 
 }

@@ -3,6 +3,6 @@
   display: flex;
 }
 
-:host.vertical {
+:host.vertical, :host[vertical] {
   flex-direction: column;
 }

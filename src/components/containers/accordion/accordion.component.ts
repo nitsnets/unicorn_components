@@ -8,7 +8,7 @@ import { UniBaseComponent } from '../../base/base.component';
     styleUrls: ['accordion.component.scss'],
 })
 export class UniAccordionComponent extends UniBaseComponent {
-    @Input() options = false;
+    @Input() menu = false;
 
     @HostBinding('class.collapsed')
     @Input() collapsed = true;

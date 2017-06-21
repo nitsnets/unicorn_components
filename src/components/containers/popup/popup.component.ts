@@ -55,7 +55,7 @@ export class UniPopupComponent implements AfterViewInit {
 }
 
 @Directive({
-    selector: '[ntsPopupTrigger]'
+    selector: '[uniPopupTrigger]'
 })
 export class UniPopupTriggerDirective implements OnDestroy {
     private openedByFocus = false;

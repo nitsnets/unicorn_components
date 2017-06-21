@@ -1,15 +1,8 @@
 <uni-popup [position]="position">
-  <uni-button ntsPopupTrigger
-    [iconRight]="iconRight"
-    [color]="color"
-    [icon]="icon"
-    [label]="label"
-    [sublabel]="sublabel"
-    [size]="size"
-    [disabled]="disabled"
-  >
-  </uni-button>
-  <uni-popup-container >
-    <ng-content></ng-content>
-  </uni-popup-container>
+    <uni-button uniPopupTrigger [iconRight]="iconRight" [color]="color" [icon]="icon" [label]="label" [sublabel]="sublabel" [size]="size"
+        [disabled]="disabled">
+    </uni-button>
+    <uni-popup-container>
+        <ng-content></ng-content>
+    </uni-popup-container>
 </uni-popup>

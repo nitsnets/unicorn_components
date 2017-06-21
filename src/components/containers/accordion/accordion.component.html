@@ -5,19 +5,19 @@
 
         <span class="acc-title" (click)="collapsed = !collapsed" [innerHtml]="label"> </span>
 
-        <div class="acc-options" *ngIf="!options">
+        <div class="acc-menu" *ngIf="!menu">
             <ng-content select=".accordion-buttons"></ng-content>
         </div>
 
-        <uni-menu class="acc-options" *ngIf="options">
-            <uni-button class="acc-options-trigger" icon="more-v" ntsMenuTrigger></uni-button>
+        <uni-menu class="acc-menu" *ngIf="menu">
+            <uni-button class="acc-menu-trigger" icon="more-v" ntsMenuTrigger></uni-button>
             <uni-menu-container>
-                <ng-content select="[uni-accordion-options]"></ng-content>
+                <ng-content select="[uni-accordion-menu]"></ng-content>
             </uni-menu-container>
         </uni-menu>
     </div>
     <div class="acc-content" *ngIf="!collapsed">
-        <ng-content *ngIf="options" select="[uni-accordion-content]"></ng-content>
-        <ng-content *ngIf="!options"></ng-content>
+        <ng-content *ngIf="menu" select="[uni-accordion-content]"></ng-content>
+        <ng-content *ngIf="!menu"></ng-content>
     </div>
 </div>

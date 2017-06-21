@@ -99,8 +99,12 @@ http://components.servidorbeta.com
 
 **Leyenda**:
 
-- :white_circle: **Previsto**: Su desarrollo está previsto para el futuro
-- :blue_circle: **Inicial**: Está desarrollado pero no se ha probado lo suficiente
-- :white_check_mark: **Estable**: Desarrollado, probado y sin cambios relevantes previstos
-- :red_circle: **Inestable**: Con fallos conocidos o con cambios relevantes previstos
-- :black_circle: **Obsoleto**: Soporte y desarrollo descontinuados
+:white_circle: **Previsto**: Su desarrollo está previsto para el futuro
+
+:blue_circle: **Inicial**: Está desarrollado pero no se ha probado lo suficiente
+
+:white_check_mark: **Estable**: Desarrollado, probado y sin cambios relevantes previstos
+
+:red_circle: **Inestable**: Con fallos conocidos o con cambios relevantes previstos
+
+:black_circle: **Obsoleto**: Soporte y desarrollo descontinuados

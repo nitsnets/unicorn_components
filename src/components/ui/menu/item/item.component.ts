@@ -10,5 +10,7 @@ import { UniBaseComponent } from '../../../base/base.component';
 export class UniMenuItemComponent extends UniBaseComponent {
     @Input() icon = '';
 
-    constructor(public elementRef: ElementRef) { }
+    constructor(public elementRef: ElementRef) {
+        super();
+    }
 }

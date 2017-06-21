@@ -8,11 +8,11 @@
   user-select: none;
 }
 
-.acc-options-trigger { visibility: hidden; }
+.acc-menu-trigger { visibility: hidden; }
 :host:hover {
-  .acc-options-trigger { visibility: visible; }
+  .acc-menu-trigger { visibility: visible; }
 }
-.acc-options {
+.acc-menu {
   margin-left: auto;
 }
 

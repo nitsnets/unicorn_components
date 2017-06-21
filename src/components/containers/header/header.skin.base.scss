@@ -5,8 +5,8 @@
   transition: all ease $slow;
 
   &.hidden{ margin-top:-$height; }
-  &.grey{ background-color: $alpha-black-light; }
-  &.red{
+  &.light{ background-color: $alpha-black-light; }
+  &.error{
     background-color: $color-error-light;
     border-color: $color-error-medium !important;
     color: $color-error;
