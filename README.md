@@ -60,7 +60,7 @@ http://components.servidorbeta.com
 | "              | Date Picker       | `<uni-date-picker>`       | :white_check_mark:  | [+ Info](src/components/forms/date-picker)
 | "              | Date Range Picker | `<uni-daterange-picker>`  | :white_check_mark:  | [+ Info](src/components/forms/daterange-picker)
 | "              | Date Time Picker  | `<uni-datetime-picker>`   | :white_check_mark:  | [+ Info](src/components/forms/datetime-picker)
-| "              | Image Picker      | `<uni-image-picker>`      | :red_circle:        | [+ Info](src/components/forms/image-picker)
+| "              | Image Picker      | `<uni-image-picker>`      | :blue_circle:       | [+ Info](src/components/forms/image-picker)
 | "              | Input             | `<uni-input>`             | :white_check_mark:  | [+ Info](src/components/forms/input)
 | "              | Radio             | `<uni-radio>`             | :white_check_mark:  | [+ Info](src/components/forms/radio)
 | "              | Select            | `<uni-select>`            | :white_check_mark:  | [+ Info](src/components/forms/select)
