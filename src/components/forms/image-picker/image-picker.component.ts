@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, OnChanges, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostBinding, Input, OnChanges, Output, ViewChild } from '@angular/core';
 
 import { UniInputBaseComponent } from '../../base/input-base.component';
 
@@ -10,8 +10,13 @@ import { UniInputBaseComponent } from '../../base/input-base.component';
 export class UniImagePickerComponent extends UniInputBaseComponent implements OnChanges {
     @ViewChild('inputFile') inputFile: ElementRef;
 
-    @Input() width = 150;
-    @Input() height = 30;
+    @HostBinding('style.width.px')
+    @Input() width = 300;
+    @HostBinding('style.height.px')
+    @Input() height = 150;
+
+    @Input() imageWidth = this.width;
+    @Input() imageHeight = this.height;
 
     @Input() imageData = null;
     @Output() imageDataChange = new EventEmitter();
@@ -19,6 +24,12 @@ export class UniImagePickerComponent extends UniInputBaseComponent implements On
     dragging = false;
 
     ngOnChanges(changes) {
+        if (!this.imageWidth && (changes.width || changes.imageWidth)) {
+            this.imageWidth = this.width;
+        }
+        if (!this.imageHeight && (changes.height || changes.imageHeight)) {
+            this.imageHeight = this.width;
+        }
         if (changes.uniModel) {
             if (this.uniModel && this.uniModel instanceof Blob) {
                 const reader = new FileReader();
@@ -34,6 +45,7 @@ export class UniImagePickerComponent extends UniInputBaseComponent implements On
             }
         }
     }
+
     onImagePicked(event) {
         if (!event.target.files || !event.target.files.length) { return false; }
         this.uniModelChange.emit(event.target.files[0]);

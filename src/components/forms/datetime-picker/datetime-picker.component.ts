@@ -1,19 +1,16 @@
 import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
 
+import { UniInputBaseComponent } from '../../base/input-base.component';
+
 @Component({
     selector: 'uni-datetime-picker',
     templateUrl: 'datetime-picker.component.html',
     styleUrls: ['datetime-picker.component.scss'],
 })
-export class UniDatetimePickerComponent {
+export class UniDatetimePickerComponent extends UniInputBaseComponent {
 
-    @Input() dateModel: String; // 'YYYY-MM-DD'
-    @Input() dateLabel: String;
-    @Output() dateChange = new EventEmitter();
-
-    @Input() timeModel: String; // 'HH:MM'
     @Input() timeLabel: String;
-    @Output() timeChange = new EventEmitter();
+    @Input() dateLabel: String;
 
     @Input() inline = false;
 
@@ -23,15 +20,19 @@ export class UniDatetimePickerComponent {
     @Input() rangeFrom;
     @Input() rangeTo;
 
-    constructor(private elementRef: ElementRef) { }
+    constructor(private elementRef: ElementRef) {
+        super();
+    }
 
     onDateChanges(date) {
-        this.dateModel = date;
-        this.dateChange.emit(date);
+        const newModel = this.uniModel || {};
+        newModel['date'] = date;
+        this.uniModelChange.emit(newModel);
     }
     onTimeChanges(time) {
-        this.timeModel = time;
-        this.timeChange.emit(time);
+        const newModel = this.uniModel || {};
+        newModel['time'] = time;
+        this.uniModelChange.emit(newModel);
     }
     clear() {
         this.onDateChanges(null);

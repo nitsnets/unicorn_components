@@ -4,7 +4,7 @@
     <div class="placeholder" *ngIf="!imageData">
         <uni-icon class="icon" icon="image" size="large"></uni-icon>
         <p class="label">
-            Click or drop an image to upload <br> ({{width}} x {{height}})
+            {{label || 'Click or drop an image to upload'}} <br> ({{width}} x {{height}})
         </p>
     </div>
     <div class="preview" *ngIf="imageData">

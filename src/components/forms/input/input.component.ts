@@ -17,7 +17,6 @@ export class UniInputComponent extends UniInputBaseComponent implements OnInit, 
 
     @Input() type: InputType = 'text';
     @Input() max = -1;
-    @Input() step = 1;
 
     @Input() icon: string;
     @Input() iconRight: string;

@@ -1,4 +1,5 @@
 <label [ngClass]="{
+    disabled: disabled == true,
     checked: uniModel == true,
     partial: partial == true,
     'only-icon': !label || !label.length
@@ -10,6 +11,7 @@
     <input type="checkbox"
         [name]="name"
         [ngModel]="uniModel"
+        [disabled]="disabled"
         (ngModelChange)="toggleUniModel()"
     >
     <span class="label" *ngIf="label" [innerHtml]="label"></span>
