@@ -1,4 +1,4 @@
-eInput
+Input
 ===================
 `uni-input`
 ---
