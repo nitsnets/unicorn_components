@@ -37,7 +37,7 @@ Campo de texto básico pero vitaminado.
 | uniModel    | `boolean`   | `false`     | Valor introducido en el campo
 | value       | `boolean`   | `false`     | Valor por defecto del campo
 | debounce    | `number`    | `0`         | Tiempo que debe permanecer el campo sin cambios tras un cambio dado para que este se propague
-| type        | `InputType` | `''`        | Puede versar entre `'text' \| 'number' \| 'email' \| 'password' \| 'color'`
+| type        | `InputType` | `''`        | Puede versar entre `'text' &#124; 'number' &#124; 'email' &#124; 'password' &#124; 'color'`
 | max         | `number`    | `''`        | Longitud máxima del texto a introducir
 | icon        | `string`    | `''`        | Icono a colocar el la parte izquierda interior del campo
 | iconRight   | `string`    | `''`        | Icono a colocar el la parte derecha interior del campo
