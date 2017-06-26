@@ -81,7 +81,7 @@ http://components.servidorbeta.com
 | "              | Filters           | `<uni-filters>`           | :blue_circle:       | [+ Info](src/components/ui/filters)
 | "              | Filters List      | `<uni-filters-list>`      | :blue_circle:       | [+ Info](src/components/ui/filters-list)
 | "              | List              | `<uni-list>`              | :blue_circle:       | [+ Info](src/components/ui/list)
-| "              | Menu              | `<uni-menu>`              | :blue_circle:       | [+ Info](src/components/ui/menu)
+| "              | Menu              | `<uni-menu>`              | :white_check_mark:  | [+ Info](src/components/ui/menu)
 | "              | Paginator         | `<uni-paginator>`         | :white_check_mark:  | [+ Info](src/components/ui/paginator)
 | "              | Tree              | `<uni-tree>`              | :white_circle:      | [+ Info](src/components/ui/tree)
 | **Utils**      | Alert             | `<uni-alert>`             | :white_circle:      | [+ Info](src/components/utils/alert)
