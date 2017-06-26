@@ -12,18 +12,18 @@ Campo de texto básico pero vitaminado.
 
 ```html
 <uni-input [(uniModel)]="inputModel" label="Default input"></uni-input>
-<uni-input [(uniModel)]="inputModel" label="Input with placeholder" placeholder="Input placeholder"></uni-input>
-<uni-input [(uniModel)]="inputModel" label="Input with icon" icon="user"></uni-input>
-<uni-input [(uniModel)]="inputModel" label="Input with hint" hint="i.e: user@domain.com"></uni-input>
-<uni-input [(uniModel)]="inputModel" label="Input with error" error="Must be a valid email"></uni-input>
-<uni-input [(uniModel)]="inputModel" label="Input with prefix" prefix="http://www."></uni-input>
-<uni-input [(uniModel)]="inputModel" label="Input with counter" counter="true"></uni-input>
-<uni-input [(uniModel)]="inputModel" label="Counter and max" max="10" counter="true"></uni-input>
-<uni-input [(uniModel)]="inputModel" label="Input with right icon" iconRight="user"></uni-input>
-<uni-input [(uniModel)]="inputModel" label="Floating label" floating="true"></uni-input>
-<uni-input [(uniModel)]="inputModel" label="Input with mask (alpha)" mask="(999) 999-999"></uni-input>
-<uni-input [(uniModel)]="inputModel" label="Input with debounce" [debounce]="200"></uni-input>
-<uni-input [(uniModel)]="inputModel" label="Multiline input" multiline="true"></uni-input>
+<uni-input label="Input with placeholder" placeholder="Input placeholder"></uni-input>
+<uni-input label="Input with icon" icon="user"></uni-input>
+<uni-input label="Input with hint" hint="i.e: user@domain.com"></uni-input>
+<uni-input label="Input with error" error="Must be a valid email"></uni-input>
+<uni-input label="Input with prefix" prefix="http://www."></uni-input>
+<uni-input label="Input with counter" counter="true"></uni-input>
+<uni-input label="Counter and max" max="10" counter="true"></uni-input>
+<uni-input label="Input with right icon" iconRight="user"></uni-input>
+<uni-input label="Floating label" floating="true"></uni-input>
+<uni-input label="Input with mask (alpha)" mask="(999) 999-999"></uni-input>
+<uni-input label="Input with debounce" [debounce]="200"></uni-input>
+<uni-input label="Multiline input" multiline="true"></uni-input>
 ```
 
 ### Atributos de entrada

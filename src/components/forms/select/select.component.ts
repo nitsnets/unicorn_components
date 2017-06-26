@@ -31,7 +31,6 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
 
     @Input() options: UniOption[] = [];
     @Input() excludedOptions: string[];
-    @Input() multipleOptions: UniOption[] = [];
 
     areOptionsVisible = false;
     optionsFiltered: UniOption[] = [];

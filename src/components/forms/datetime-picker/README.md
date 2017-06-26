@@ -1,6 +1,6 @@
 Date time picker
 ===================
-`uni-date-time-picker`
+`uni-datetime-picker`
 ---
 :white_check_mark: Estable
 
@@ -11,7 +11,7 @@ Selector de fecha y hora con calendario y reloj auxiliares.
 ### Ejemplo
 
 ```html
-<uni-datepicker label="Etiqueta del botón" ([uniModel])="checked"></uni-checkbox>
+<uni-datetime-picker label="Etiqueta del botón" ([uniModel])="checked"></uni-datetime-picker>
 ```
 
 ### Atributos de entrada

@@ -11,7 +11,7 @@ Selector de fecha con calendario auxiliar.
 ### Ejemplo
 
 ```html
-<uni-datepicker label="Etiqueta del botón" ([uniModel])="checked"></uni-checkbox>
+<uni-date-picker label="Etiqueta del botón" ([uniModel])="checked"></uni-date-picker>
 ```
 
 ### Atributos de entrada

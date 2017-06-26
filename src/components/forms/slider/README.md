@@ -1,31 +1,41 @@
-# Slider
-`ui / uni-slider`
-
+Slider
+===================
+`uni-slider`
 ---
+:white_circle: Previsto
+
 Selector mediante barra deslizante
 
-### Contract
+## Uso
 
-Parent contract:
+### Ejemplo
 
-```typescript
-//INPUTS
-label: string;
-uniModel: boolean;
-name: string = '';
-color: UniColor;
-disabled: boolean = false;
-value: string = '';
-required: boolean = false;
-debounce: number = 0;
-
-//OUTPUTS
-uniModelChange: EventEmitter<boolean>;
-uniFocus: EventEmitter<Event>;
-uniBlur: EventEmitter<Event>;
-```
-### Usage
 ```html
 <uni-slider [(uniModel)]="myModel"></uni-slider>
 ```
-### Known Issues
+
+### Atributos de entrada
+
+| Nombre   | Tipo        | Por defecto | Descripción 
+| -------- | ----------- | ----------- | -----------
+| name     | `string`    | `''`        | Nombre del input de cara a usarse en formularios
+| label    | `string`    | `''`        | Etiqueta textual del input
+| color    | `UniColor`  | `''`        | Color del fondo y del contenido
+| disabled | `boolean`   | `false`     | Estado deshabilitado que impide la manipulación del input
+| uniModel | `number`    | `false`     | Valor introducido en el input
+| value    | `boolean`   | `false`     | Valor por defecto del input
+| debounce | `number`    | `0`         | Tiempo que debe permanecer el input sin cambios tras un cambio dado para que este se propague
+| min      | `number`    | `0`         | Valor mínimo seleccionable por el input
+| max      | `boolean`   | `10`        | Valor máximo seleccionable por el input
+
+### Eventos de salida
+
+| Nombre          | Tipo      | Descripción
+| --------------- | --------- | -----------
+| uniModelChange  | `boolean` | Notifica cuando ha habido un cambio de valor en el input
+| uniFocus        | `Event`   | Notifica cuando se ha hecho puesto el foco en el input
+| uniBlur         | `Event`   | Notifica cuándo se ha quitado el foco del input
+
+## Mejoras previstas (TODO)
+
+- Desarrollo del componente

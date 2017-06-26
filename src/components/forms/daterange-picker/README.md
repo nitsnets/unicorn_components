@@ -11,7 +11,7 @@ Botón con estado: *pulsado* o *no pulsado*.
 ### Ejemplo
 
 ```html
-<uni-datepicker label="Etiqueta del botón" ([uniModel])="checked"></uni-checkbox>
+<uni-daterange-picker label="Etiqueta del botón" ([uniModel])="checked"></uni-daterange-picker>
 ```
 
 ### Atributos de entrada
