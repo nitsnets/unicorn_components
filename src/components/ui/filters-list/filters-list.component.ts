@@ -16,7 +16,6 @@ export class UniFiltersListComponent implements OnInit {
 
     @Input() mainTitle: string;
     @Input() mainFilters: UniFilterItem[];
-    @Output() mainFiltersChange: EventEmitter<UniFilterItem[]> = new EventEmitter();
 
     @Input() customTitle: string;
     @Input() customFilters: UniFilterItem[];

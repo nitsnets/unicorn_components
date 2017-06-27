@@ -1,14 +1,3 @@
-<uni-button (click)="onClick()"
-    [iconRight]="iconRight"
-    [color]="color"
-    [icon]="icon"
-    [label]="label"
-    [sublabel]="sublabel"
-    [size]="size"
-    [disabled]="disabled"
-></uni-button>
-<input
-  type="file"
-  (change)="fileChanged.emit($event.target.value)"
-  [accept]="fileType || null"
->
+<uni-button (click)="onClick()" [iconRight]="iconRight" [color]="color" [icon]="icon" [label]="label" [sublabel]="sublabel"
+    [size]="size" [disabled]="disabled"></uni-button>
+<input type="file" (change)="fileChange.emit($event.target.value)" [accept]="fileType || null">

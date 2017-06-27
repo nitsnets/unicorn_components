@@ -23,7 +23,7 @@ const defaultOptions = {
 export class UniCarouselDirective implements AfterContentInit, OnChanges {
     @HostBinding('style.outline') outline = 'none';
 
-    @ContentChildren('[uniCarouselCell]') cells: QueryList<any>;
+    @ContentChildren(defaultOptions.cellSelector) cells: QueryList<any>;
 
     //  Options of flickity
     @Input() uniCarousel = {};

@@ -92,7 +92,7 @@ export class UniDatagridComponent implements AfterContentInit, OnChanges {
      */
     @Input() idField = 'id';
     /**
-     * The input where de items get into the component
+     * The input where the items get into the component
      * @type {Array<object>}
      */
     @Input() data: Array<Object> = null;

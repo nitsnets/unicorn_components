@@ -1,15 +1,15 @@
-# Button group
-`ui / uni-button-group`
-
+Button group
+===================
+`uni-button-group`
 ---
-Agrupación de botones
+:white_circle: Previsto
 
-### Contract
+Agrupación visual de botones
 
-```typescript
-```
+## Uso
 
-### Usage
+### Ejemplo
+
 ```html
 <uni-button-group>
     <uni-button label="1"></uni-button>
@@ -18,4 +18,6 @@ Agrupación de botones
 </uni-button-group>
 ```
 
-### Known Issues
+## Mejoras previstas (TODO)
+
+- Desarrollo del componente

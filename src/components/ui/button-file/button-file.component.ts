@@ -9,7 +9,7 @@ import { UniButtonBaseComponent } from '../../base/button-base.component';
 })
 export class UniButtonFileComponent extends UniButtonBaseComponent {
     @Input() fileType: string;
-    @Output() fileChanged = new EventEmitter();
+    @Output() fileChange = new EventEmitter();
     @ViewChild('input') inputElement: ElementRef;
 
     onClick() {

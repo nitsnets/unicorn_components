@@ -76,7 +76,7 @@ export class UniFiltersComponent implements AfterContentInit, OnChanges {
     @Output() save: EventEmitter<UniFilter> = new EventEmitter();
 
     /**
-     * The number of buttonn on the right side of the filters
+     * The number of buttons on the right side of the filters
      *
      * @type number
      * @default 2

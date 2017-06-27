@@ -64,3 +64,4 @@ Selector de opciones vitaminado.
 - Visual del estado `disabled`.
 - Implementación el comportamiento de `color`
 - Convertir en personalizables y ampliables las opciones de grupo "Select all" y "Select none"
+- Habilitar la selección múltiple con `<uni-chip>`.

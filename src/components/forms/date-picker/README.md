@@ -33,12 +33,13 @@ Selector de fecha con calendario auxiliar.
 
 ### Eventos de salida
 
-| Nombre          | Tipo      | Descripción
-| --------------- | --------- | -----------
-| uniModelChange  | `boolean` | Notifica cuando ha habido un cambio de valor en el input
-| uniFocus        | `Event`   | Notifica cuando se ha hecho puesto el foco en el input
-| uniBlur         | `Event`   | Notifica cuándo se ha quitado el foco del input
+| Nombre          | Tipo                  | Descripción
+| --------------- | --------------------- | -----------
+| uniModelChange  | `string` (YYYY-MM-DD) | Notifica cuando ha habido un cambio de valor en el input
+| uniFocus        | `Event`               | Notifica cuando se ha hecho puesto el foco en el input
+| uniBlur         | `Event`               | Notifica cuándo se ha quitado el foco del input
 
 ## Mejoras previstas (TODO)
 
 - Implementación el comportamiento de `disabled` y de `color`
+- Habilitar la selección de semanas y meses
