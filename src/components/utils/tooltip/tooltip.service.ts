@@ -8,7 +8,7 @@ export class TooltipService extends DynamicContainerService {
 
     constructor(cmpFactoryResolver: ComponentFactoryResolver) { super(cmpFactoryResolver); }
 
-    createTooltip(msg: string, options:any, viewContainerRef: ViewContainerRef = this.defaultContainer) {
+    createTooltip(msg: string, options: any, viewContainerRef: ViewContainerRef = this.defaultContainer) {
         const tooltipRef: ComponentRef<UniTooltipComponent> =
             this.attachComponent(UniTooltipComponent, viewContainerRef);
 
@@ -16,5 +16,4 @@ export class TooltipService extends DynamicContainerService {
         tooltipRef.instance.setOptions(options);
         return tooltipRef;
     }
-
 }

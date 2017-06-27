@@ -50,6 +50,7 @@ export class FilteredDatagridComponent implements AfterContentInit, OnChanges {
         if (this.filterNameFn) {
             filterItem.name = this.filterNameFn(filter);
         }
+        this.filterSave.emit(filterItem);
         this.filtersList.addCustomFilter(filterItem);
     }
     private onSelectFilter(filter: UniFilter) {

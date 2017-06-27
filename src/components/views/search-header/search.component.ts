@@ -1,26 +1,19 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
+import { UniInputBaseComponent } from '../../base/input-base.component';
+
 @Component({
     selector: 'uni-search-header',
     templateUrl: 'search.component.html',
     styleUrls: ['search.component.scss'],
 })
-export class UniSearchHeaderComponent implements OnInit {
-    @Input() uniModel;
-    @Output() uniModelChange = new EventEmitter();
+export class UniSearchHeaderComponent extends UniInputBaseComponent {
     @Input() placeholder = '';
-    @Input() value = '';
-    @Input() debounce = 0;
 
-    constructor() { }
+    constructor() { super(); }
 
-    ngOnInit() { }
-    onUniModelChange(event) {
-        this.uniModel = event;
-        this.uniModelChange.emit(event);
-    }
+
     clear() {
-        this.uniModel = '';
-        this.uniModelChange.emit(this.uniModel);
+        this.onNgModelChange('');
     }
 }

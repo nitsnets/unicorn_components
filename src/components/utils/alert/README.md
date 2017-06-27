@@ -1,19 +1,26 @@
-# Alert
-`ui / uni-alert`
-
+Alert
+===================
+`uni-alert`
 ---
-Bloque de alerta para resaltar contenido
+:white_circle: Previsto
 
-### Contract
+Contenedor enfatizado para resaltar mensajes
 
-```typescript
-```
+## Uso
 
-### Usage
+## Ejemplo simple
+
 ```html
-<uni-alert color="error">
-    <p> Esse culpa sint voluptate dolore consectetur eiusmod labore incididunt excepteur veniam. </p>
+<uni-alert icon="check" label="Contenido de la alerta <strong>enriquecido</strong>">
 </uni-alert>
+
 ```
 
-### Known Issues
+### Atributos de entrada
+
+| Nombre   | Tipo         | Por defecto | Descripción 
+| -------- | ------------ | ----------- | -----------
+| icon     | `string`     | `undefined` | Icono que encabeza la alerta
+| label    | `string`     | `undefined` | Contendio textual eneiquecido de la alerta
+| color    | `UniColor`   | `undefined` | Color aplicado al fondo y texto de la alerta
+| closable | `boolean`    | `false`     | Indica si la alerta se puede cerrar

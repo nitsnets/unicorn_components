@@ -4,7 +4,7 @@ Paginator
 ---
 :white_circle: Previsto
 
-Visualización en árbol de jerarquías, reordenables arrastrando
+Visualización de jerarquías en árbol, reordenables arrastrando
 
 ## Uso
 
@@ -22,12 +22,18 @@ Visualización en árbol de jerarquías, reordenables arrastrando
 
 | Nombre      | Tipo         | Por defecto | Descripción 
 | ----------- | ------------ | ----------- | -----------
-| data        | `number`     | `undefined` | El número total de elementos para calcular el número de páginas respecto a `pageSize`
-| pageSize       | `number`     | `10`        | El tamaño de página para calcular el número de páginas repecto a `totalElements`
-| selected       | `number`     | `0`         | La página seleccionada
+| data        | `any[]`      | `[]`        | Array de objetos de cualquier naturaleza. Para dar lugar a jerarquías se deberá emplear el atributo `children`
+| selected    | `string[]`   | `[]`        | Array de identificadores de los ítems seleccionados
+| sortable    | `boolean`    | `false`     | Habilita el árbol para ser reordenable por el usuario
+| selectable  | `boolean`    | `false`     | Habilita los items para ser seleccionados
+| deletable   | `boolean`    | `false`     | Habilita los ítems para ser borrados
+| editable    | `boolean`    | `false`     | Habilita los ítems para ser editables
 
 ### Eventos de salidas
 
-| Nombre         | Tipo           | Descripción
-| -------------- | -------------- | -----------
-| selectedChange | `number`       | Notifica cuando se ha cambiado la página seleccionada
+| Nombre          | Tipo           | Descripción
+| --------------- | -------------- | -----------
+| orderChange     | `any[]`        | Notifica cuando se han reordenado los elementos devolviendo la nueva disposición
+| selectedChange  | `string[]`     | Notifica cuando se ha seleccionado un item con la selección total en listado de ID
+| delete          | `string`       | Notifica cuando se ha borrado un item con su ID
+| edit            | `string`       | Notifica cuando se ha editado un item con su ID

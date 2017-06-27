@@ -19,6 +19,59 @@ Tabla de contenidos compleja
 </uni-datagrid>
 ```
 
+### Ejemplo de formatos personalizados
+
+```html
+<uni-datagrid [data]="data" (cellClick)="log('Cell clicked', $event)" [sortable]="false" [highlightRow]="false">
+    <uni-datagrid-column title="First name" field="name" width="3"></uni-datagrid-column>
+    <uni-datagrid-column title="Date of birth" field="birth" format="date"></uni-datagrid-column>
+    <uni-datagrid-column title="Progress" field="progress" format="progress" [formatOptions]="{total: 1, color: 'success'}"></uni-datagrid-column>
+    <uni-datagrid-column title="Alerts" field="alerts" format="badge" [formatOptions]="{color: 'error', align: 'center'}"></uni-datagrid-column>
+</uni-datagrid>
+```
+
+### Ejemplo de celdas personalizadas
+
+```html
+<uni-datagrid [data]="data" (cellClick)="log('Cell clicked', $event)" (rowClick)="log('Row clicked', $event)" [highlightCell]="true" [highlightRow]="false">
+    <uni-datagrid-column field="img" format="image" [sortable]="false" width="0.2"></uni-datagrid-column>
+    <uni-datagrid-column title="First name" field="name" sort="asc">
+        <uni-datagrid-cell *cellVariables="let user;">
+            <strong>{{user.name}}</strong>
+            <p>{{user.birth | formatDate : 'ddd DD MMM, YYYY'}}</p>
+        </uni-datagrid-cell>
+    </uni-datagrid-column>
+    <uni-datagrid-column [sortable]="false" [clickPropagation]="false" [highlightCell]="false">
+        <uni-datagrid-cell *cellVariables="let user">
+            <uni-row>
+                <uni-input placeholder="units" [(uniModel)]="user.units"></uni-input>
+                <uni-button label="Add to cart" color="primary" size="small" (click)="log('Add to cart', {user: user, units: user['units']})"></uni-button>
+            </uni-row>
+        </uni-datagrid-cell>
+    </uni-datagrid-column>
+</uni-datagrid>
+```
+
+### Ejemplo de filas personalizadas
+
+```html
+<uni-datagrid [data]="data" [highlightCell]="true" [pageable]="true" [pageSize]="5" [deletable]="true" deleteConfirm="modal">
+    <uni-datagrid-column title="First name" field="name"></uni-datagrid-column>
+    <uni-datagrid-column title="Date of birth" field="birth"></uni-datagrid-column>
+    <uni-datagrid-column title="Progress" field="progress"></uni-datagrid-column>
+    <uni-datagrid-column title="Alerts" field="alerts"></uni-datagrid-column>
+
+    <uni-datagrid-row *rowVariables="let user; let i = i">
+        <uni-datagrid-cell>
+            <h3>{{i+1}}. {{user?.name}}</h3>
+        </uni-datagrid-cell>
+        <uni-datagrid-cell width="3">
+            <p>{{user?.birth | formatDate : 'ddd DD MMM, YYYY'}}</p>
+        </uni-datagrid-cell>
+    </uni-datagrid-row>
+</uni-datagrid>
+```
+
 ### Atributos de entrada
 
 | Nombre        | Tipo                        | Por defecto                 | Descripción 
@@ -38,7 +91,7 @@ Tabla de contenidos compleja
 | sort          | `IUniDataSort`              | `{field: null, dir: false}` | El campo y la dirección por la que se deben ordenar los ítems
 | filterable    | `boolean`                   | `false`                     | Indica si los ítems se pueden filtrar en base a una función o no
 | filter        | `UniFilter`                 | `undefined`                 | Filtro actual aplicado a los ítems en formato clave-valor
-| filterFn      | `(elem, filter) => boolean` | `undefined`                 | Función ejecutada para filtrar los ítems en local (`local = true`), que recibe
+| filterFn      | `(item, filter) => boolean` | `undefined`                 | Función ejecutada para filtrar los ítems en local (`local = true`), que recibe los elementos uno a uno junto con el filtro. Y devuelve un booleano si el elemnto supera el filtro
 | highlightCell | `boolean`                   | `false`                     | Indica si la celda debe resaltarse al pasar el ratón sobre ella
 | highlightRow  | `boolean`                   | `true`                      | Indica si la fila debe resaltarse al pasar el ratón sobre ella
 | showLabels    | `boolean`                   | `false`                     | Indica si se deben mostrar las etiquetas junto a los valores en las celdas. Útil para visualizaciones no tabuilares.
