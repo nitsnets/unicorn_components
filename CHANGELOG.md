@@ -11,9 +11,9 @@ Las versiones *beta* se nombrarán con la versión en la que acabarán estabiliz
 
 ### [Código inédito][unreleased]
 
-## **`1.0.1`** - [\[☰\]][1.0.1-src] [\[♻\]][1.0.1-diff] [\[⬇\]][1.0.1-zip] - 17/07/2017
+## **1.0.1** - [\[☰\]][1.0.1-src] [\[♻\]][1.0.1-diff] [\[⬇\]][1.0.1-zip] - 17/07/2017
 
-## **`1.0.0`** - [\[☰\]][1.0.0-src] [\[⬇\]][1.0.0-zip] - 10/07/2017
+## **1.0.0** - [\[☰\]][1.0.0-src] [\[⬇\]][1.0.0-zip] - 10/07/2017
 
 [unreleased]: https://bitbucket.org/nitsnetsstudios-ondemand/unicorn_components_library/branches/compare/HEAD..v0.9.1
 [1.0.1-zip]: https://bitbucket.org/nitsnetsstudios-ondemand/unicorn_components_library/get/v1.0.1.zip "Decargar v1.0.1"
