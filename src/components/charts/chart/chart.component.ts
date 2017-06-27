@@ -23,6 +23,7 @@ export class UniChartComponent implements OnChanges {
     tooltip: any = {};
 
     defaultOptions = {
+        responsive: false,
         maintainAspectRatio: false,
         tooltips: { enabled: false, custom: tooltip => this.tooltip = tooltip }
     };
