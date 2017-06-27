@@ -11,7 +11,7 @@ Las versiones *beta* se nombrarán con la versión en la que acabarán estabiliz
 
 ### [Código inédito][unreleased]
 
-## 1.0.1 - [:notepad_spiral: Código][1.0.1-src] - [:recycle: Cambios][1.0.1-diff] - [:arrow_down: Descargar][1.0.1-zip] - 17/07/2017
+## 1.0.1 - [:notepad_spiral: Código][1.0.1-src] - :recycle:[Cambios][1.0.1-diff] - [:arrow_down: Descargar][1.0.1-zip] - 17/07/2017
 
 ## 1.0.0 - [:notepad_spiral: Código][1.0.0-src] - [:arrow_down: Descargar][1.0.0-zip] - 10/07/2017
 
