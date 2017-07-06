@@ -6,8 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class NtsSortPipe implements PipeTransform {
 
     transform(input: any, config: Array<string> | string = '+'): any {
-        if (!Array.isArray(input)) { return input; }
-        if (!config || config === '+') { return [...input.sort()]; }
+        if (!Array.isArray(input) || !config) { return input; }
+        if (config === '+') { return [...input.sort()]; }
         if (config === '-') { return [...input.sort().reverse()]; }
 
         if (Array.isArray(config) && config.length > 1) {
