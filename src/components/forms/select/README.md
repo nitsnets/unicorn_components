@@ -65,3 +65,4 @@ Selector de opciones vitaminado.
 - Implementación el comportamiento de `color`
 - Convertir en personalizables y ampliables las opciones de grupo "Select all" y "Select none"
 - Habilitar la selección múltiple con `<uni-chip>`.
+- Implementar parámetro `local` que filtra las opciones en local o emite eventos para su petición asíncrona

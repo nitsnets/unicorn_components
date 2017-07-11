@@ -5,9 +5,7 @@
         <uni-icon class="drag-handle show-hover" *ngIf="sortable" icon="drag"></uni-icon>
 
         <ng-container *ngIf="!item.editing">
-            <span (click)="onClick(item)" (dblclick)="onDoubleclick(item)" [class.selected]="isSelected(item)">
-                {{item.name || '(Untitled)'}}
-            </span>
+            <span (click)="onClick(item)" (dblclick)="onDoubleclick(item)" [class.selected]="isSelected(item)" [innerHtml]="item.name || '(Untitled)'"> </span>
             <uni-button class="show-hover" *ngIf="deletable" icon="delete" (click)="onDelete(i, item, $event)"></uni-button>
         </ng-container>
 

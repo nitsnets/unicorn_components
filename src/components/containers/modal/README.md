@@ -77,4 +77,4 @@ El método de creación de modal es un Observable que recibe eventos cuando la m
 ## Mejoras previstas (TODO)
 
 - Implementación de los parámetros `size=small` y `color`.
-- Posibilitar la invocación de la modal sin el servicio, directamente con un `<uni-modal>``desde HTML.
+- Posibilitar la invocación de la modal sin el servicio, directamente con un `<uni-modal>` desde HTML.

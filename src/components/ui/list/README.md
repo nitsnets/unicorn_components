@@ -41,3 +41,4 @@ Listado simple con funciones de ordenado, selección y borrado de elementos
 | delete                | `{index: number, item: UniLIstItem}` | Notifica cuando se borra un item
 | edit                  | `{index: number, item: UniLIstItem}` | Notifica cuando se edita un item
 | sort                  | `UniLIstItem[]`                      | Notifica cuando se reordenan los items
+

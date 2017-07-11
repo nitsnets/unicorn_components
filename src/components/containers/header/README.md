@@ -34,4 +34,3 @@ Contenedor que funciona como cabecera. Es combinable con un `<uni-layout>`.
 ## Mejoras previstas (TODO)
 
 - Implementar los casos para `size="small"` y `size="large"`
-- Implementar una forma de invocar una modal sin usar el servicio, en HTML simplemente

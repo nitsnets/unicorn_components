@@ -123,3 +123,4 @@ Sólo tienen sentido usados dentro de un datagrid.
 ## Mejoras previstas (TODO)
 
 - Hacer traducible el texto del paginador
+- Configurable el ancho de las columnas

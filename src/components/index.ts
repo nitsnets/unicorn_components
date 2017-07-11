@@ -3,6 +3,7 @@ import { UniPopupComponent, UniPopupTriggerDirective } from './containers/popup/
 
 import { FilteredDatagridComponent } from './views/filtered-datagrid/filtered-datagrid.component';
 import { UniAccordionComponent } from './containers/accordion/accordion.component';
+import { UniAccordionItemComponent } from './containers/accordion/item/item.component';
 import { UniAsideComponent } from './containers/aside/aside.component';
 import { UniBadgeComponent } from './utils/badge/badge.component';
 import { UniBodyComponent } from './containers/body/body.component';
@@ -73,5 +74,5 @@ export const UNI_COMPONENTS = [
     UniDatagridRowComponent, UniDatagridRowDirective, UniDatagridCellComponent, UniDatagridCellDirective,
     UniDatagridHeaderComponent, UniFiltersComponent, UniFiltersAdvancedComponent, UniFiltersMainComponent,
     UniCarouselDirective, UniDatagridDeleteComponent, FilteredDatagridComponent, UniFiltersListComponent,
-    UniSpinnerComponent
+    UniSpinnerComponent, UniAccordionItemComponent
 ];
