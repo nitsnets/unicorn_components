@@ -30,9 +30,3 @@ Agrupación visual de botones
     </uni-button-menu>
 </uni-button-group>
 ```
-
-### Eventos de salida
-
-| Nombre      | Tipo        | Descripción
-| ----------- | ----------- | -----------
-| buttonClick | `number`    | Notifica cuando se ha clicado uno de los botones, e indica su índica
