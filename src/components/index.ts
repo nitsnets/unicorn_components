@@ -15,6 +15,7 @@ import { UniButtonHeaderComponent } from './ui/button-header/button-header.compo
 import { UniButtonMenuComponent } from './ui/button-menu/button-menu.component';
 import { UniButtonPopupComponent } from './ui/button-popup/button-popup.component';
 import { UniButtonToggleComponent } from './forms/button-toggle/button-toggle.component';
+import { UniButtonToggleGroupComponent } from './forms/button-toggle-group/button-toggle-group.component';
 import { UniCalendarComponent } from './ui/calendar/calendar.component';
 import { UniCarouselDirective } from './ui/carousel/carousel.directive';
 import { UniChartComponent } from './charts/chart/chart.component';
@@ -76,5 +77,6 @@ export const UNI_COMPONENTS = [
     UniDatagridRowComponent, UniDatagridRowDirective, UniDatagridCellComponent, UniDatagridCellDirective,
     UniDatagridHeaderComponent, UniFiltersComponent, UniFiltersAdvancedComponent, UniFiltersMainComponent,
     UniCarouselDirective, UniDatagridDeleteComponent, FilteredDatagridComponent, UniFiltersListComponent,
-    UniSpinnerComponent, UniAccordionItemComponent, UniButtonGroupComponent, UniRadioGroupComponent
+    UniSpinnerComponent, UniAccordionItemComponent, UniButtonGroupComponent, UniRadioGroupComponent,
+    UniButtonToggleGroupComponent
 ];
