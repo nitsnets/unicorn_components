@@ -1,19 +1,21 @@
-Radio
+Radio group
 ===================
-`uni-radio`
+`uni-radio-group`
 ---
 :white_check_mark: Estable
 
-Casillas que pueden marcarse o desmarcarse de manera excluyente.
+Grupo de casillas que pueden marcarse o desmarcarse de manera excluyente.
 
 ## Uso
 
 ### Ejemplo
 
 ```html
-<uni-radio label="Etiqueta radio 1" ([uniModel])="radio" value="1"></uni-radio>
-<uni-radio label="Etiqueta radio 2" ([uniModel])="radio" value="2"></uni-radio>
-<uni-radio label="Etiqueta radio 3" ([uniModel])="radio" value="3"></uni-radio>
+<uni-radio-group ([uniModel])="radioModel" debounce>
+    <uni-radio label="Etiqueta radio 1" value="1"></uni-radio>
+    <uni-radio label="Etiqueta radio 2" value="2"></uni-radio>
+    <uni-radio label="Etiqueta radio 3" value="3"></uni-radio>
+</uni-radio-group>
 ```
 
 ### Atributos de entrada
@@ -21,7 +23,6 @@ Casillas que pueden marcarse o desmarcarse de manera excluyente.
 | Nombre      | Tipo        | Por defecto | Descripción 
 | ----------- | ----------- | ----------- | -----------
 | name        | `string`    | `''`        | Nombre del input de cara a usarse en formularios
-| label       | `string`    | `''`        | Etiqueta textual del input
 | color       | `UniColor`  | `''`        | Color del fondo y del contenido
 | disabled    | `boolean`   | `false`     | Estado deshabilitado que impide la manipulación del input
 | uniModel    | `boolean`   | `false`     | Valor introducido en el input

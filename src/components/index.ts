@@ -51,6 +51,7 @@ import { UniPaginatorComponent } from './ui/paginator/paginator.component';
 import { UniPopupContainerComponent } from './containers/popup/container/container.component';
 import { UniProgressComponent } from './utils/progress/progress.component';
 import { UniRadioComponent } from './forms/radio/radio.component';
+import { UniRadioGroupComponent } from './forms/radio-group/radio-group.component';
 import { UniRowComponent } from './containers/row/row.component';
 import { UniRowSpacerComponent } from './containers/row-spacer/row-spacer.component';
 import { UniSearchHeaderComponent } from './views/search-header/search.component';
@@ -75,5 +76,5 @@ export const UNI_COMPONENTS = [
     UniDatagridRowComponent, UniDatagridRowDirective, UniDatagridCellComponent, UniDatagridCellDirective,
     UniDatagridHeaderComponent, UniFiltersComponent, UniFiltersAdvancedComponent, UniFiltersMainComponent,
     UniCarouselDirective, UniDatagridDeleteComponent, FilteredDatagridComponent, UniFiltersListComponent,
-    UniSpinnerComponent, UniAccordionItemComponent, UniButtonGroupComponent
+    UniSpinnerComponent, UniAccordionItemComponent, UniButtonGroupComponent, UniRadioGroupComponent
 ];
