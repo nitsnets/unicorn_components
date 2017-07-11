@@ -85,6 +85,7 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
     // Manage non desirable closing
     onBlur($event) {
         if (!this.selecting) { this.hideOptions(); }
+        this.uniBlur.emit($event);
     }
     onSelectingOption(value) {
         this.selecting = value;
