@@ -47,6 +47,11 @@ uni-button {
         padding: $input-padding / 4;
         border-radius:$input-height / 2;
     }
+    .only-icon-right{
+        width: $input-height;
+        padding: 0;
+        .iconRight { margin-left: 0; }
+    }
     .sublabel{
         opacity: 0.75;
     }

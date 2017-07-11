@@ -10,8 +10,8 @@ import { UniBaseComponent } from '../../base/base.component';
 export class UniChipComponent extends UniBaseComponent {
 
     @Input() icon = null;
-    @Input() closable = false;
-    @Output() close = new EventEmitter();
+    @Input() removable = false;
+    @Output() remove = new EventEmitter();
 
 
     constructor() { super(); }

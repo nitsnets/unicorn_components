@@ -1,11 +1,8 @@
-<button
-  [disabled]="disabled || false"
-  [type]="type || 'button'"
-  [class]="color || ''"
-  [ngClass]="{
+<button [disabled]="disabled || false" [type]="type || 'button'" [class]="color || ''" [ngClass]="{
     'with-icon': icon,
     'with-icon-right': iconRight,
-    'only-icon': icon && (!label || !label.length),
+    'only-icon': icon && !iconRight && (!label || !label.length),
+    'only-icon-right': iconRight && !icon && (!label || !label.length),
     'btn-large': size === 'large',
     'btn-small': size === 'small'
   }">

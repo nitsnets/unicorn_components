@@ -10,6 +10,7 @@ import { UniBodyComponent } from './containers/body/body.component';
 import { UniBoxComponent } from './containers/box/box.component';
 import { UniButtonComponent } from './ui/button/button.component';
 import { UniButtonFileComponent } from './ui/button-file/button-file.component';
+import { UniButtonGroupComponent } from './ui/button-group/button-group.component';
 import { UniButtonHeaderComponent } from './ui/button-header/button-header.component';
 import { UniButtonMenuComponent } from './ui/button-menu/button-menu.component';
 import { UniButtonPopupComponent } from './ui/button-popup/button-popup.component';
@@ -74,5 +75,5 @@ export const UNI_COMPONENTS = [
     UniDatagridRowComponent, UniDatagridRowDirective, UniDatagridCellComponent, UniDatagridCellDirective,
     UniDatagridHeaderComponent, UniFiltersComponent, UniFiltersAdvancedComponent, UniFiltersMainComponent,
     UniCarouselDirective, UniDatagridDeleteComponent, FilteredDatagridComponent, UniFiltersListComponent,
-    UniSpinnerComponent, UniAccordionItemComponent
+    UniSpinnerComponent, UniAccordionItemComponent, UniButtonGroupComponent
 ];

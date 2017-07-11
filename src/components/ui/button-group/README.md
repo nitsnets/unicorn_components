@@ -18,6 +18,9 @@ Agrupación visual de botones
 </uni-button-group>
 ```
 
-## Mejoras previstas (TODO)
 
-- Desarrollo del componente
+### Eventos de salida
+
+| Nombre      | Tipo        | Descripción
+| ----------- | ----------- | -----------
+| buttonClick | `number`    | Notifica cuando se ha clicado uno de los botones, e indica su índica
