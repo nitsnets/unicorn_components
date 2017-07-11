@@ -8,7 +8,7 @@ Agrupación visual de botones
 
 ## Uso
 
-### Ejemplo
+### Ejemplo básico
 
 ```html
 <uni-button-group>
@@ -18,6 +18,18 @@ Agrupación visual de botones
 </uni-button-group>
 ```
 
+### Ejemplo con menú
+
+```html
+<uni-button-group>
+    <uni-button label="Button and menu" color="light"></uni-button>
+    <uni-button-menu color="light">
+        <uni-menu-item label="Option 1"></uni-menu-item>
+        <uni-menu-item label="Option 2"></uni-menu-item>
+        <uni-menu-item label="Option 3"></uni-menu-item>
+    </uni-button-menu>
+</uni-button-group>
+```
 
 ### Eventos de salida
 
