@@ -58,6 +58,7 @@ import { UniRowSpacerComponent } from './containers/row-spacer/row-spacer.compon
 import { UniSearchHeaderComponent } from './views/search-header/search.component';
 import { UniSelectComponent } from './forms/select/select.component';
 import { UniSeparatorComponent } from './utils/separator/separator.component';
+import { UniSliderComponent } from './forms/slider/slider.component';
 import { UniSpinnerComponent } from './utils/spinner/spinner.component';
 import { UniTabsComponent } from './containers/tabs/tabs.component';
 import { UniTimePickerComponent } from './forms/time-picker/time-picker.component';
@@ -78,5 +79,5 @@ export const UNI_COMPONENTS = [
     UniDatagridHeaderComponent, UniFiltersComponent, UniFiltersAdvancedComponent, UniFiltersMainComponent,
     UniCarouselDirective, UniDatagridDeleteComponent, FilteredDatagridComponent, UniFiltersListComponent,
     UniSpinnerComponent, UniAccordionItemComponent, UniButtonGroupComponent, UniRadioGroupComponent,
-    UniButtonToggleGroupComponent
+    UniButtonToggleGroupComponent, UniSliderComponent
 ];

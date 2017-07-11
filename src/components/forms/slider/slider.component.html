@@ -1,0 +1,7 @@
+<div class="slider">
+    <div class="slider__ticks" *ngIf="showTicks">
+        <div class="slider__ticks__item" *ngFor="let tick of ticks"></div>
+    </div>
+    <div class="slider__track" [ngStyle]="trackStyle"> </div>
+    <div #thumb class="slider__thumb" [ngStyle]="thumbStyle"> </div>
+</div>

@@ -1,0 +1,29 @@
+uni-slider{
+    height: $input-height;
+    width: $input-height * 5 ;
+    position: relative;
+    display: inline-block;
+
+    .slider {
+        @include border;
+        height: $input-height / 7;
+
+        &__track {
+            position: absolute;
+            height: $input-height / 7;
+        }
+        &__thumb {
+            border-radius: 50%;
+            position: absolute;
+            background-color: white;
+            @include border;
+        }
+        &__ticks {
+            display: flex;
+            justify-content: space-between;
+            &__item {
+                flex: 1;
+            }
+        }
+    }
+}
