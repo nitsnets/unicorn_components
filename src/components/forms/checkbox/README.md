@@ -38,4 +38,5 @@ Casilla que puede marcarse o desmarcarse.
 ## Mejoras previstas (TODO)
 
 - Visual del estado `disabled`.
+- Implementación los eventos `uniFocus` y `uniBlur`.
 - Implementación el comportamiento de `color`

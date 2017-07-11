@@ -40,4 +40,5 @@ Casillas que pueden marcarse o desmarcarse de manera excluyente.
 
 - Visual del estado `disabled`.
 - Implementación el comportamiento de `color`
+- Implementación los eventos `uniFocus` y `uniBlur`.
 - Creación de un componente `<uni-radio-group>` que gestione el estado del conjunto de radios
