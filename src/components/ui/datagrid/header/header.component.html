@@ -16,8 +16,8 @@
             *ngFor="let column of datagrid.columns"
             [ngClass]="{
                 'sortable': column.isSortable(datagrid.sortable),
-                'sort-asc': datagrid.sort?.field === column?.field && datagrid.sort.dir === false,
-                'sort-desc': datagrid.sort?.field === column?.field && datagrid.sort.dir === true
+                'sort-asc': datagrid.sort?.field && datagrid.sort?.field === column?.field && datagrid.sort.dir === false,
+                'sort-desc': datagrid.sort?.field && datagrid.sort?.field === column?.field && datagrid.sort.dir === true
             }"
             [width]="column.width || 1"
             [highlight]="column.isSortable(datagrid.sortable) ? true : false"
