@@ -64,7 +64,7 @@ http://components.servidorbeta.com
 | "              | Input             | `<uni-input>`             | :white_check_mark:  | [+ Info](src/components/forms/input)
 | "              | Radio             | `<uni-radio>`             | :white_check_mark:  | [+ Info](src/components/forms/radio)
 | "              | Select            | `<uni-select>`            | :white_check_mark:  | [+ Info](src/components/forms/select)
-| "              | Slider            | `<uni-slider>`            | :white_circle:      | [+ Info](src/components/forms/slider)
+| "              | Slider            | `<uni-slider>`            | :blue_circle:       | [+ Info](src/components/forms/slider)
 | "              | Slider Range      | `<uni-slider-range>`      | :white_circle:      | [+ Info](src/components/forms/slider-range)
 | "              | Time Picker       | `<uni-time-picker>`       | :white_check_mark:  | [+ Info](src/components/forms/time-picker)
 | "              | Toggle            | `<uni-radio>`             | :white_check_mark:  | [+ Info](src/components/forms/radio)
