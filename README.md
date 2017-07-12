@@ -69,7 +69,7 @@ http://components.servidorbeta.com
 | "              | Time Picker       | `<uni-time-picker>`       | :white_check_mark:  | [+ Info](src/components/forms/time-picker)
 | "              | Toggle            | `<uni-radio>`             | :white_check_mark:  | [+ Info](src/components/forms/radio)
 | **UI**         | Button            | `<uni-button>`            | :white_check_mark:  | [+ Info](src/components/ui/button)
-| "              | Button File       | `<uni-button>`            | :blue_circle:       | [+ Info](src/components/ui/button)
+| "              | Button File       | `<uni-button-file>`       | :blue_circle:       | [+ Info](src/components/ui/button)
 | "              | Button Group      | `<uni-button-group>`      | :white_circle:      | [+ Info](src/components/ui/button-group)
 | "              | Button Header     | `<uni-button-header>`     | :white_check_mark:  | [+ Info](src/components/ui/button-header)
 | "              | Button Menu       | `<uni-button-menu>`       | :white_check_mark:  | [+ Info](src/components/ui/button-menu)
