@@ -8,19 +8,28 @@ Conjunto de solapas seleccionables de manera excluyente.
 
 ## Uso
 
-### Ejemplo
+### Ejemplo con atributo
 
 ```html
 <uni-tabs
-    [tabSelected]="tabSelected"
-    (tabSelectedChange)="onTabSelected($event)"
-    [tabs]="[
-      {label: 'Tab 1', value: 'tab1'},
-      {label: 'Tab 2', value: 'tab2'},
-      {label: 'Tab 3', value: 'tab3'},
-    ]">
+  [tabSelected]="tabSelected"
+  (tabSelectedChange)="onTabSelected($event)"
+  [tabs]="[
+    {label: 'Tab 1', value: 'tab1'},
+    {label: 'Tab 2', value: 'tab2'},
+    {label: 'Tab 3', value: 'tab3'},
+  ]">
 </uni-tabs>
 
+```
+### Ejemplo con sub componentes
+
+```html
+<uni-tabs [(tabSelected)]="tabSelected">
+  <uni-tabs-item label="Tab small 1"></uni-tabs-item>
+  <uni-tabs-item label="Tab small 2"></uni-tabs-item>
+  <uni-tabs-item label="Tab small 3"></uni-tabs-item>
+</uni-tabs>
 ```
 
 ### Atributos de entrada
@@ -38,6 +47,14 @@ Conjunto de solapas seleccionables de manera excluyente.
 | ----------------- | --------- | -----------
 | tabSelectedChange | `string`  | Notifica cuándo cambia el tab seleccionado devolviendo su clave
 
+## Subcomponentes
+
+Sólo tienen sentido usados dentro de un datagrid.
+
+| Componente          | Nomenclatura              | Estado               | + Info 
+| ------------------- | ------------------------- | -------------------- | ------- 
+| Tabs item           | `<uni-tabs-item>`         | :white_check_marck:  | [+ Info](item)
+
 ## Mejoras previstas (TODO)
 
-- Posibilitar el uso del componente **también** sin el parábetro `[tabs]`, indicando el contendido con un nuevo componente `<ui-tab-item label="" value="">`.
+- Posibilitar la introducción de contenido dentro de los `<uni-tabs-item>`, que se visualice al seleccionar cada uno.
