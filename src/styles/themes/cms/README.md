@@ -1,0 +1,1 @@
+Same folder structure as default theme with import inside them.
