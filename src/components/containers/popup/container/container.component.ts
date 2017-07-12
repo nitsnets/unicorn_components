@@ -9,7 +9,7 @@ import { UniPopupComponent } from '../popup.component';
 })
 export class UniPopupContainerComponent {
     public close = new EventEmitter();
-    public closeBtn = true;
+    public closable = true;
 
     constructor(public elementRef: ElementRef, ) { }
 }

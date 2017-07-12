@@ -26,7 +26,7 @@ export class UniPopupComponent implements AfterViewInit, OnChanges {
     @Input() toggle = false;
     @Input() keepOpen = true;
     @Input() opened = false;
-    @Input() closeBtn = true;
+    @Input() closable = true;
     @Output() openedChange = new EventEmitter();
     @Input() position: UniPopupPosition = null;
     calculatedPosition: UniPopupPosition = null;
@@ -36,12 +36,12 @@ export class UniPopupComponent implements AfterViewInit, OnChanges {
     constructor(private elementRef: ElementRef) { }
 
     ngOnChanges(changes) {
-        if (changes['closeBtn']) {
-            this.popupScope.closeBtn = this.closeBtn;
+        if (changes['closable']) {
+            this.popupScope.closable = this.closable;
         }
     }
     ngAfterContentInit() {
-        this.popupScope.closeBtn = this.closeBtn;
+        this.popupScope.closable = this.closable;
         this.popupScope.close.subscribe(_ => this.close());
     }
 

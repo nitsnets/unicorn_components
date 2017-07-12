@@ -1,4 +1,4 @@
-<div class="popup-content" [class.padding]="closeBtn">
+<div class="popup-content" [class.padding]="closable">
     <ng-content></ng-content>
 </div>
-<uni-button *ngIf="closeBtn" icon="close" (click)="close.emit()" class="close-button"></uni-button>
+<uni-button *ngIf="closable" icon="close" (click)="close.emit()" class="close-button"></uni-button>
