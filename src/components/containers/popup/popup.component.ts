@@ -12,6 +12,7 @@ import {
     Output,
 } from '@angular/core';
 
+import { OnChanges } from '@angular/core';
 import { UniPopupContainerComponent } from './container/container.component';
 
 export type UniPopupPosition = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right';
@@ -21,10 +22,11 @@ export type UniPopupPosition = 'bottom-left' | 'bottom-right' | 'top-left' | 'to
     templateUrl: 'popup.component.html',
     styleUrls: ['popup.component.scss'],
 })
-export class UniPopupComponent implements AfterViewInit {
+export class UniPopupComponent implements AfterViewInit, OnChanges {
     @Input() toggle = false;
     @Input() keepOpen = true;
     @Input() opened = false;
+    @Input() closeBtn = true;
     @Output() openedChange = new EventEmitter();
     @Input() position: UniPopupPosition = null;
     calculatedPosition: UniPopupPosition = null;
@@ -33,7 +35,13 @@ export class UniPopupComponent implements AfterViewInit {
 
     constructor(private elementRef: ElementRef) { }
 
-    ngAfterViewInit() {
+    ngOnChanges(changes) {
+        if (changes['closeBtn']) {
+            this.popupScope.closeBtn = this.closeBtn;
+        }
+    }
+    ngAfterContentInit() {
+        this.popupScope.closeBtn = this.closeBtn;
         this.popupScope.close.subscribe(_ => this.close());
     }
 

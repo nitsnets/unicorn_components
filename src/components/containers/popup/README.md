@@ -53,6 +53,5 @@ Contenedor flotante auxiliar anclado a un elemento que llamamos *trigger*.
 
 ## Mejoras previstas (TODO)
 
-- Mover el parámetro de entrada `closeBtn` del `<uni-popup-container>` al `<uni-popup>`.
 - Controlar la apertura en esquinas, con redimensión y scroll
 - Controlar la visualización en mobile
