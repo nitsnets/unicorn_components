@@ -1,38 +1,27 @@
-import { Component, ElementRef, HostListener, Input } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnChanges } from '@angular/core';
 
-import { UniInputBaseComponent } from '../../base/input-base.component'
+import { UniColor } from '../../../models/types';
+import { UniInputBaseComponent } from '../../base/input-base.component';
 
 @Component({
     selector: 'uni-slider',
     templateUrl: 'slider.component.html',
     styleUrls: ['slider.component.scss']
 })
-export class UniSliderComponent extends UniInputBaseComponent {
+export class UniSliderComponent extends UniInputBaseComponent implements OnChanges {
 
-    private _uniModel;
-    @Input() set uniModel(value) {
-        this._uniModel = value;
-    }
-    get uniModel() { return this._uniModel; }
-
-    private _min;
-    @Input() set min(value) {
-        this._min = value;
-    }
-    get min() { return this._min; }
-
-    private _max;
-    @Input() set max(value) {
-        this._max = value;
-    }
-    get max() { return this._max; }
+    @Input() min = 0;
+    @Input() max = 100;
 
     @HostListener('pan', ['$event'])
+    @HostListener('tap', ['$event'])
+    @HostListener('press', ['$event'])
     onSlide(event) {
         const rect = this.elementRef.nativeElement.getBoundingClientRect();
         const width = rect.right - rect.left;
         const sliding = Math.max(rect.left, Math.min(rect.right, event.center.x)) - rect.left;
         this.percent = sliding / width;
+        this.updateModelByPercent();
     }
     get thumbStyle(): { [key: string]: string } {
         const container = this.elementRef.nativeElement;
@@ -45,18 +34,36 @@ export class UniSliderComponent extends UniInputBaseComponent {
         };
     };
     get trackStyle(): { [key: string]: string } {
+        const width = this.elementRef.nativeElement.clientWidth;
         return {
-
+            width: `${this.percent * width}px`
         }
     };
+    private percent = 0;
 
-    private percent;
-
-    private updatePercentByModel() {
-
+    ngOnChanges(changes) {
+        if (changes['uniModel'] || changes['max'] || changes['min']) {
+            this.updatePercentByModel();
+        }
     }
-
     constructor(
         private elementRef: ElementRef
     ) { super(); }
+
+    private updatePercentByModel() {
+        if (this.max < this.min) { return this.percent = this.percent = 0; }
+        if (this.max === this.min) { return this.percent = this.max; }
+        if (this.uniModel <= this.min) { return this.percent = 0; }
+        if (this.uniModel >= this.max) { return this.percent = 1; }
+        this.percent = this.uniModel / (this.max - this.min);
+    }
+    private updateModelByPercent() {
+        if (this.percent >= 1) {
+            this.onNgModelChange(this.max);
+        } else if (this.percent <= 0) {
+            this.onNgModelChange(this.min);
+        } else {
+            this.onNgModelChange(this.percent * (this.max - this.min));
+        }
+    }
 }

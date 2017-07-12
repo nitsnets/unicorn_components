@@ -1,22 +1,42 @@
+$slider-height: $input-height;
+$slider-width: $input-height * 5;
+$slider-thumb-height: $slider-height / 2;
+$slider-track-height: $slider-height / 8;
+
 uni-slider{
-    height: $input-height;
-    width: $input-height * 5 ;
+    height: $slider-height;
+    width: $slider-width;
     position: relative;
     display: inline-block;
+    user-select: none;
+    cursor: pointer;
 
     .slider {
-        @include border;
-        height: $input-height / 7;
 
-        &__track {
+        &__track, &__track-fill {
             position: absolute;
-            height: $input-height / 7;
+            height: $slider-track-height;
+            margin-top: ($slider-height - $slider-track-height) / 2;
+            @include border;
         }
+        &__track {
+            width: $slider-width;
+        }
+        &__track-fill {
+            background-color: $color-grey;
+        }
+        &.primary .slider__track-fill { background-color: $color-primary; }
+        &.success .slider__track-fill { background-color: $color-success; }
+        &.warning .slider__track-fill { background-color: $color-warning; }
+        &.error .slider__track-fill { background-color: $color-error; }
+        &.light .slider__track-fill { background-color: $color-grey-light; }
+
         &__thumb {
             border-radius: 50%;
             position: absolute;
             background-color: white;
             @include border;
+            margin-top: ($slider-height - $slider-thumb-height) / 2;
         }
         &__ticks {
             display: flex;
