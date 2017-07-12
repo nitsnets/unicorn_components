@@ -1,0 +1,5 @@
+<uni-icon class="alert__icon" [icon]="icon"></uni-icon>
+<div class="alert__content" [class.with-icon]="icon">
+    <ng-content></ng-content>
+</div>
+<uni-icon class="alert__close" *ngIf="closable" icon="close"></uni-icon>

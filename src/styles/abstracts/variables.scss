@@ -4,25 +4,25 @@ $color-primary: #48b0f7;
 $color-primary-medium: lighten($color-primary, 20%);
 $color-primary-light: lighten($color-primary, 30%);
 $color-primary-lighter: lighten($color-primary, 35%);
-$color-primary-dark: darken($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 30%);
 
 $color-error: #f55753;
 $color-error-medium: lighten($color-error, 20%);
-$color-error-light: lighten($color-error, 30%);
-$color-error-lighter: lighten($color-error, 40%);
+$color-error-light: lighten($color-error, 27.5%);
+$color-error-lighter: lighten($color-error, 32%);
 $color-error-dark: darken($color-error, 30%);
 
 $color-warning: #f8d053;
 $color-warning-medium: lighten($color-warning, 10%);
 $color-warning-light: lighten($color-warning, 27.5%);
-$color-warning-lighter: lighten($color-warning, 35%);
+$color-warning-lighter: lighten($color-warning, 30%);
 $color-warning-dark: darken($color-warning, 27.5%);
 
 $color-success: #10cfbd;
 $color-success-medium: lighten($color-success, 40%);
 $color-success-light: lighten($color-success, 60%);
-$color-success-lighter: lighten($color-success, 70%);
-$color-success-dark: darken($color-success, 60%);
+$color-success-lighter: lighten($color-success, 50%);
+$color-success-dark: darken($color-success, 20%);
 
 $color-grey: #919191;
 $color-grey-medium: #e6e6e6;

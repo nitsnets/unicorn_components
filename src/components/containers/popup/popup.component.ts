@@ -1,5 +1,5 @@
 import {
-    AfterViewInit,
+    AfterContentInit,
     Component,
     ContentChild,
     Directive,
@@ -22,7 +22,7 @@ export type UniPopupPosition = 'bottom-left' | 'bottom-right' | 'top-left' | 'to
     templateUrl: 'popup.component.html',
     styleUrls: ['popup.component.scss'],
 })
-export class UniPopupComponent implements AfterViewInit, OnChanges {
+export class UniPopupComponent implements AfterContentInit, OnChanges {
     @Input() toggle = false;
     @Input() keepOpen = true;
     @Input() opened = false;

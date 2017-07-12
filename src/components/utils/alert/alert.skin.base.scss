@@ -1,0 +1,29 @@
+uni-alert {
+    padding: $basic-padding / 2;
+    background-color: $color-grey-lighter;
+    color: $color-grey-dark;
+    position: relative;
+
+    &.primary { background-color: $color-primary-lighter; color: $color-primary-dark; }
+    &.warning { background-color: $color-warning-lighter; color: $color-warning-dark; }
+    &.success { background-color: $color-success-lighter; color: $color-success-dark; }
+    &.error { background-color: $color-error-lighter; color: $color-error-dark; }
+
+    .alert{
+        &__close {
+            position: absolute;
+            right: $basic-padding / 4;
+            top: $basic-padding / 4;
+        }
+        &__icon {
+            position: absolute;
+            left: $basic-padding / 2;
+            top: $basic-padding / 2;
+        }
+        &__content {
+            &.with-icon {
+                padding-left: $basic-padding;
+            }
+        }
+    }
+}
