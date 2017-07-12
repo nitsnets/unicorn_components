@@ -38,4 +38,6 @@ Selector mediante barra deslizante
 
 ## Mejoras previstas (TODO)
 
-- Desarrollo del componente
+- Implementar la opción de añadir ticks con steps
+- Implementar la opción de mostrar el valor actual en un label
+- Implementar el comportamiento de disabled
