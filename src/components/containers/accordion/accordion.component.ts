@@ -13,7 +13,6 @@ export class UniAccordionComponent implements AfterViewInit {
     @ContentChildren(UniAccordionItemComponent) items: QueryList<UniAccordionItemComponent>;
 
     ngAfterViewInit() {
-        console.log('init', this.items);
         this.initItems();
         this.items.changes.subscribe(
             () => this.initItems()
