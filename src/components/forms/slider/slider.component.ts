@@ -22,23 +22,15 @@ export class UniSliderComponent extends UniInputBaseComponent implements OnChang
         const sliding = Math.max(rect.left, Math.min(rect.right, event.center.x)) - rect.left;
         this.percent = sliding / width;
         this.updateModelByPercent();
+        event.preventDefault();
     }
-    get thumbStyle(): { [key: string]: string } {
-        const container = this.elementRef.nativeElement;
-        const height = container.clientHeight / 2;
-        const width = height;
-        return {
-            height: `${height}px`,
-            width: `${width}px`,
-            transform: `translateX(${this.percent * container.clientWidth - width / 2}px)`
-        };
-    };
-    get trackStyle(): { [key: string]: string } {
-        const width = this.elementRef.nativeElement.clientWidth;
-        return {
-            width: `${this.percent * width}px`
-        }
-    };
+    @HostListener('panstart') onStartSlide() { this.sliding = true; }
+    @HostListener('panend') onEndSlide() { this.sliding = false; }
+
+    get thumbStyle() { return { transform: `translateX(${this.percent * this.elementRef.nativeElement.clientWidth}px)` }; };
+    get trackStyle() { return { width: `${this.percent * this.elementRef.nativeElement.clientWidth}px` } };
+
+    public sliding = false;
     private percent = 0;
 
     ngOnChanges(changes) {
