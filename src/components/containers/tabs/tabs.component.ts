@@ -1,13 +1,14 @@
-import { Component, ElementRef, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { AfterContentInit, Component, ContentChildren, ElementRef, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 
 import { UniOption } from '../../../models/option';
+import { UniTabsItemComponent } from './item/item.component';
 
 @Component({
     selector: 'uni-tabs',
     templateUrl: 'tabs.component.html',
     styleUrls: ['tabs.component.scss'],
 })
-export class UniTabsComponent implements OnChanges {
+export class UniTabsComponent implements OnChanges, AfterContentInit {
 
     @Input() size: 'small';
 
@@ -15,10 +16,17 @@ export class UniTabsComponent implements OnChanges {
     @Input() tabSelected: string | number;
     @Output() tabSelectedChange = new EventEmitter<string | number>();
 
+    @ContentChildren(UniTabsItemComponent) tabsElements: QueryLIst<UniTabsItemComponent>;
+
     constructor(private elementRef: ElementRef) { }
 
     ngOnChanges(changes) {
         this.applySelected();
+    }
+    ngAfterContentInit() {
+        if (this.tabsElements.length) {
+            this.tabs = this.tabsElements.map(t => new UniOption({ label: t.label, value: t.value }));
+        }
     }
     applySelected() {
         if (!this.tabs || !this.tabs.length) { this.selectTab(null, -1); return; }

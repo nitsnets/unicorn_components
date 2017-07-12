@@ -1,9 +1,11 @@
-<div class="tabs-container" *ngIf="tabs && tabs.length">
-  <div class="tab"
-    *ngFor="let tab of tabs; let i = index;"
-    [class.small]="size === 'small'"
-    [class.selected]="tab.value ? tab.value === tabSelected : i === tabSelected"
-    (click)="selectTab(tab, i)">
-    {{tab.label}}
-  </div>
+<div class="tabs-container" *ngIf="tabs">
+    <uni-tabs-item class="tab"
+        [selected]="tab.value ? tab.value === tabSelected : i === tabSelected"
+        *ngFor="let tab of tabs; let i = index;"
+        (select)="selectTab(tab, i)"
+        [size]="size"
+        [label]="tab.label"
+        [value]="tab.value"
+    >
+    </uni-tabs-item>
 </div>
