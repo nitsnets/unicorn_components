@@ -6,7 +6,7 @@ import { UniOption } from '../../../../models/option';
     selector: 'uni-tabs-item',
     template: '',
 })
-export class UniTabsItemComponent implements OnChanges {
+export class UniTabsItemComponent {
 
     @Input() size: 'small';
 
@@ -20,7 +20,7 @@ export class UniTabsItemComponent implements OnChanges {
     @Output() select = new EventEmitter<void>();
 
     @HostBinding('class.small') get isSmall(): boolean { return this.size === 'small'; }
-    @HostBinding('innerHtml') get tabLabel(): boolean { return this.label; }
+    @HostBinding('innerHtml') get tabLabel(): string { return this.label; }
     @HostListener('click') onClick() { this.select.emit(this.value); }
 
     constructor() { }

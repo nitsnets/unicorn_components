@@ -34,7 +34,7 @@ export class UniSliderComponent extends UniInputBaseComponent implements OnChang
     private percent = 0;
 
     ngOnChanges(changes) {
-        if (changes['uniModel'] || changes['max'] || changes['min']) {
+        if (changes['model'] || changes['max'] || changes['min']) {
             this.updatePercentByModel();
         }
     }
@@ -45,9 +45,9 @@ export class UniSliderComponent extends UniInputBaseComponent implements OnChang
     private updatePercentByModel() {
         if (this.max < this.min) { return this.percent = this.percent = 0; }
         if (this.max === this.min) { return this.percent = this.max; }
-        if (this.uniModel <= this.min) { return this.percent = 0; }
-        if (this.uniModel >= this.max) { return this.percent = 1; }
-        this.percent = this.uniModel / (this.max - this.min);
+        if (this.model <= this.min) { return this.percent = 0; }
+        if (this.model >= this.max) { return this.percent = 1; }
+        this.percent = this.model / (this.max - this.min);
     }
     private updateModelByPercent() {
         if (this.percent >= 1) {

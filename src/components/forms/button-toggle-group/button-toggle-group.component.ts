@@ -8,12 +8,12 @@ import { UniInputBaseComponent } from '../../base/input-base.component';
     templateUrl: 'button-toggle-group.component.html',
 })
 export class UniButtonToggleGroupComponent extends UniInputBaseComponent {
-    private _uniModel;
-    @Input() set uniModel(value) {
-        this._uniModel = value;
+    private _model;
+    @Input() set model(value) {
+        this._model = value;
         this.initButtonsModels();
     }
-    get uniModel() { return this._uniModel; }
+    get model() { return this._model; }
 
     @ContentChildren(UniButtonToggleComponent) buttons: QueryList<UniButtonToggleComponent>;
 
@@ -27,15 +27,15 @@ export class UniButtonToggleGroupComponent extends UniInputBaseComponent {
     }
     private initButtonsModels() {
         if (!this.buttons) { return; }
-        this.buttons.forEach(item => item.uniModel = item.value === this.uniModel ? true : false);
+        this.buttons.forEach(item => item.model = item.value === this.model ? true : false);
     }
     private initButtonsListeners() {
         this.buttons.forEach(
-            item => item.uniModelChange.filter(
+            item => item.modelChange.filter(
                 value => !!value,
             ).subscribe(
                 value => {
-                    this.uniModel = item.value;
+                    this.model = item.value;
                     this.onNgModelChange(item.value);
                 },
             )

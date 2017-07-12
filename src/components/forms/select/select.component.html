@@ -1,6 +1,6 @@
 <div (clickOutside)="onClickOutside()">
     <uni-input iconRight="caret" [placeholder]="placeholder" [name]="name" [icon]="icon" [label]="label" [clear]="clear" (keydown)="onKeyDown($event)"
-        (uniFocus)="onFocus($event)" (uniBlur)="onBlur($event)" [(uniModel)]="search" [readonly]="!filterable" (uniModelChange)="onFilter($event)">
+        (uniFocus)="onFocus($event)" (uniBlur)="onBlur($event)" [(model)]="search" [readonly]="!filterable" (modelChange)="onFilter($event)">
     </uni-input>
 
     <ul class="options nospacing" *ngIf="areOptionsVisible">

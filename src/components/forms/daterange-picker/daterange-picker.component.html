@@ -1,6 +1,6 @@
 <div (mousedown)="onMouseDown()" (mouseup)="onMouseUp()" (clickOutside)="closeCombo()">
-  <div class="daterange-input-container" *ngIf="combo" [class.filled]="uniModel?.to && uniModel?.from" [class.with-arrows]="showArrows">
-    <uni-input icon="calendar" [uniModel]="comboModel" [placeholder]="comboLabel" (uniFocus)="openCombo()">
+  <div class="daterange-input-container" *ngIf="combo" [class.filled]="model?.to && model?.from" [class.with-arrows]="showArrows">
+    <uni-input icon="calendar" [model]="comboModel" [placeholder]="comboLabel" (uniFocus)="openCombo()">
     </uni-input>
     <uni-button class="arrow-btn left" *ngIf="showArrows" icon="arrow-left" (click)="prevRange()"></uni-button>
     <uni-button class="arrow-btn right" *ngIf="showArrows" icon="arrow-right" (click)="nextRange()"></uni-button>
@@ -8,10 +8,10 @@
 
   <div class="main-container" *ngIf="!combo || comboOpened" [class.floating]="combo" [class.align-left]="side === 'left'" [class.align-right]="side === 'right'">
     <div class="pickers-container">
-      <uni-date-picker class="picker spacing" (uniModelChange)="onFromChanges($event)" [uniModel]="uniModel?.from" [label]="fromLabel || (toLabel ? ' ' : '')"
-        [inline]="combo" [maxDate]="uniModel?.to || maxDate" [minDate]="minDate" [rangeTo]="uniModel?.to"> </uni-date-picker>
-      <uni-date-picker class="picker" (uniModelChange)="onToChanges($event)" [uniModel]="uniModel?.to" [label]="toLabel || (fromLabel ? ' ' : '')"
-        [inline]="combo" [maxDate]="maxDate" [minDate]="uniModel?.from || minDate" [rangeFrom]="uniModel?.from"> </uni-date-picker>
+      <uni-date-picker class="picker spacing" (modelChange)="onFromChanges($event)" [model]="model?.from" [label]="fromLabel || (toLabel ? ' ' : '')"
+        [inline]="combo" [maxDate]="model?.to || maxDate" [minDate]="minDate" [rangeTo]="model?.to"> </uni-date-picker>
+      <uni-date-picker class="picker" (modelChange)="onToChanges($event)" [model]="model?.to" [label]="toLabel || (fromLabel ? ' ' : '')"
+        [inline]="combo" [maxDate]="maxDate" [minDate]="model?.from || minDate" [rangeFrom]="model?.from"> </uni-date-picker>
     </div>
     <div class="buttons-container" *ngIf="combo && comboOpened">
       <uni-row>

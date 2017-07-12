@@ -11,7 +11,7 @@ Campo de texto básico pero vitaminado.
 ### Ejemplos
 
 ```html
-<uni-input [(uniModel)]="inputModel" label="Default input"></uni-input>
+<uni-input [(model)]="inputModel" label="Default input"></uni-input>
 <uni-input label="Input with placeholder" placeholder="Input placeholder"></uni-input>
 <uni-input label="Input with icon" icon="user"></uni-input>
 <uni-input label="Input with hint" hint="i.e: user@domain.com"></uni-input>
@@ -34,7 +34,7 @@ Campo de texto básico pero vitaminado.
 | label       | `string`    | `''`        | Etiqueta textual del botón
 | color       | `UniColor`  | `''`        | Color del fondo y del contenido
 | disabled    | `boolean`   | `false`     | Estado deshabilitado que impide la manipulación del campo
-| uniModel    | `boolean`   | `false`     | Valor introducido en el campo
+| model    | `boolean`   | `false`     | Valor introducido en el campo
 | value       | `boolean`   | `false`     | Valor por defecto del campo
 | debounce    | `number`    | `0`         | Tiempo que debe permanecer el campo sin cambios tras un cambio dado para que este se propague
 | type        | `InputType` | `''`        | Puede versar entre `'text' ⎮ 'number' ⎮ 'email' ⎮ 'password' ⎮ 'color'`
@@ -61,7 +61,7 @@ Campo de texto básico pero vitaminado.
 
 | Nombre          | Tipo      | Descripción
 | --------------- | --------- | -----------
-| uniModelChange  | `boolean` | Notifica cuando ha habido un cambio de valor en el input
+| modelChange  | `boolean` | Notifica cuando ha habido un cambio de valor en el input
 | uniFocus        | `Event`   | Notifica cuando se ha hecho puesto el foco en el input
 | uniBlur         | `Event`   | Notifica cuándo se ha quitado el foco del input
 | uniKeypress     | `Event`   | Notifica cuándo se pulsa una tecla dentro del input

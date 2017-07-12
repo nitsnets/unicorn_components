@@ -48,7 +48,7 @@ export class UniInputComponent extends UniInputBaseComponent implements OnInit, 
         if (changes.mask && this.mask) {
             this.parseMask();
         }
-        if (changes.uniModel) {
+        if (changes.model) {
             this.applyMask();
         }
     }
@@ -59,13 +59,13 @@ export class UniInputComponent extends UniInputBaseComponent implements OnInit, 
     onInputBlur(ev) {
         this.focused = false;
 
-        if (this.maxValue && this.uniModel > this.maxValue) {
-            this.uniModel = this.maxValue;
-            this.uniModelChange.emit(this.uniModel);
+        if (this.maxValue && this.model > this.maxValue) {
+            this.model = this.maxValue;
+            this.modelChange.emit(this.model);
 
-        } else if (this.minValue && this.uniModel < this.minValue) {
-            this.uniModel = this.minValue;
-            this.uniModelChange.emit(this.uniModel);
+        } else if (this.minValue && this.model < this.minValue) {
+            this.model = this.minValue;
+            this.modelChange.emit(this.model);
         }
         this.uniBlur.emit(ev);
     }
@@ -76,9 +76,9 @@ export class UniInputComponent extends UniInputBaseComponent implements OnInit, 
         return super.onNgModelChange(ev);
     }
     private applyMask() {
-        if (!this._mask || !this.uniModel) { return; }
-        console.log(conformToMask(this.uniModel, this._mask, {}).conformedValue);
-        // this.uniModel = conformToMask(this.uniModel, this._mask, {}).conformedValue;
+        if (!this._mask || !this.model) { return; }
+        console.log(conformToMask(this.model, this._mask, {}).conformedValue);
+        // this.model = conformToMask(this.model, this._mask, {}).conformedValue;
     }
     private parseMask(): MaskArray {
         if (typeof this.mask !== 'string') { return this.mask; }

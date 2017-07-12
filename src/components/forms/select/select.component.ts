@@ -13,15 +13,15 @@ export enum SelectTypes { text, number, email, password }
 })
 export class UniSelectComponent extends UniInputBaseComponent implements OnInit, OnChanges {
 
-    private _uniModel;
-    @Input() set uniModel(value) {
-        this._uniModel = value;
+    private _model;
+    @Input() set model(value) {
+        this._model = value;
         this.updateOptionsSelectedByModel();
         if (!this.areOptionsVisible) {
             this.updateSearchByOptionsSelected();
         }
     };
-    get uniModel() { return this._uniModel; }
+    get model() { return this._model; }
 
     @Input() placeholder = '';
     @Input() icon: string;
@@ -144,10 +144,10 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
     }
     private updateOptionsSelectedByModel() {
         this.optionsSelected = [];
-        if (!this.options || !this.uniModel) { this.optionsSelected = []; return; }
+        if (!this.options || !this.model) { this.optionsSelected = []; return; }
         for (const option of this.options) {
-            if (!this.multiple && option.value === this.uniModel ||
-                this.multiple && this.uniModel.includes(option.value)) {
+            if (!this.multiple && option.value === this.model ||
+                this.multiple && this.model.includes(option.value)) {
                 this.optionsSelected.push(option);
             }
         }
@@ -165,8 +165,8 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
                 newModel = this.optionsSelected[0].value;
             }
         }
-        this.uniModel = newModel;
-        this.uniModelChange.emit(this.uniModel);
+        this.model = newModel;
+        this.modelChange.emit(this.model);
         this.uniBlur.emit();
     }
     private updateSearchByOptionsSelected() {

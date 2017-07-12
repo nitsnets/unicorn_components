@@ -8,8 +8,8 @@ import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core
     styleUrls: ['calendar.component.scss'],
 })
 export class UniCalendarComponent implements OnChanges {
-    @Input() uniModel;
-    @Output() uniModelChange = new EventEmitter();
+    @Input() model;
+    @Output() modelChange = new EventEmitter();
 
     @Input() maxDate;
     @Input() minDate;
@@ -25,8 +25,8 @@ export class UniCalendarComponent implements OnChanges {
     constructor() { }
 
     ngOnChanges(changes) {
-        if (this.uniModel) {
-            this.selected = this.normalizeDate(moment(this.uniModel, 'YYYY-MM-DD'));
+        if (this.model) {
+            this.selected = this.normalizeDate(moment(this.model, 'YYYY-MM-DD'));
             this.month = this.selected.clone();
         } else {
             this.selected = null;
@@ -47,7 +47,7 @@ export class UniCalendarComponent implements OnChanges {
 
         this.selected = day.date;
         const newDate = this.selected.format('YYYY-MM-DD');
-        this.uniModelChange.emit(newDate);
+        this.modelChange.emit(newDate);
     };
 
     next() {

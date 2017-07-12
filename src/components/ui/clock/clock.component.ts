@@ -6,8 +6,8 @@ import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core
     styleUrls: ['clock.component.scss'],
 })
 export class UniClockComponent implements OnChanges {
-    @Input() uniModel;
-    @Output() uniModelChange = new EventEmitter();
+    @Input() model;
+    @Output() modelChange = new EventEmitter();
 
     mode: String;
     hoursModes = {
@@ -28,7 +28,7 @@ export class UniClockComponent implements OnChanges {
 
     constructor() { this.initValue(); }
 
-    ngOnChanges(changes) { if (this.uniModel) { this.updateValue(); } else { this.initValue(); } }
+    ngOnChanges(changes) { if (this.model) { this.updateValue(); } else { this.initValue(); } }
 
     selectMode(mode) { this.setMode(mode); this.applyValue(); }
     selectHour(hour) { this.hourIndex = hour; this.apply(); }
@@ -51,11 +51,11 @@ export class UniClockComponent implements OnChanges {
         const minuteStr = this.minutes[this.minuteIndex];
         this.hour = +hourStr;
         this.minute = +minuteStr;
-        this.uniModelChange.emit(hourStr + ':' + minuteStr);
+        this.modelChange.emit(hourStr + ':' + minuteStr);
     }
     private updateValue() {
         // Get hour and minute string from input hh:mm
-        const timeSplitted = this.uniModel.split(':');
+        const timeSplitted = this.model.split(':');
         const hour = timeSplitted[0];
         const minute = timeSplitted[1];
         // Set the clock hours and minutes as integers

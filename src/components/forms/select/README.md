@@ -11,7 +11,7 @@ Selector de opciones vitaminado.
 ### Ejemplo básico
 
 ```html
-<uni-select label="Default select" [(uniModel)]="selectModel" [options]="[
+<uni-select label="Default select" [(model)]="selectModel" [options]="[
     {value: 1, label: 'Option 1'},
     {value: 2, label: 'Option 2'},
     {value: 3, label: 'Option 3'},
@@ -23,7 +23,7 @@ Selector de opciones vitaminado.
 ### Ejemplo de selección múltiple
 
 ```html
-<uni-select label="Select multiple" [(uniModel)]="selectModel" [multiple]="true" [options]="[
+<uni-select label="Select multiple" [(model)]="selectModel" [multiple]="true" [options]="[
     {value: 1, label: 'Option 1'},
     {value: 2, label: 'Option 2'},
     {value: 3, label: 'Option 3'},
@@ -40,7 +40,7 @@ Selector de opciones vitaminado.
 | label           | `string`      | `''`        | Etiqueta textual del input
 | color           | `UniColor`    | `''`        | Color del fondo y del contenido
 | disabled        | `boolean`     | `false`     | Estado deshabilitado que impide la manipulación del input
-| uniModel        | `any`         | `false`     | Valor introducido en el input
+| model        | `any`         | `false`     | Valor introducido en el input
 | value           | `any`         | `false`     | Valor por defecto del input
 | debounce        | `number`      | `0`         | Tiempo que debe permanecer el input sin cambios tras un cambio dado para que este se propague
 | placeholder     | `string`      | `''`        | Contenido del input cuando no tiene un valor seleccionado
@@ -55,7 +55,7 @@ Selector de opciones vitaminado.
 
 | Nombre          | Tipo      | Descripción
 | --------------- | --------- | -----------
-| uniModelChange  | `boolean` | Notifica cuando ha habido un cambio de valor en el input
+| modelChange  | `boolean` | Notifica cuando ha habido un cambio de valor en el input
 | uniFocus        | `Event`   | Notifica cuando se ha hecho puesto el foco en el input
 | uniBlur         | `Event`   | Notifica cuándo se ha quitado el foco del input
 

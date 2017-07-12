@@ -87,12 +87,12 @@ export class UniDaterangePickerComponent extends UniInputBaseComponent {
         return obs;
     }
     onFromChanges(date: string) {
-        const newModel = this.uniModel || {};
+        const newModel = this.model || {};
         newModel['from'] = date;
         this.onNgModelChange(newModel);
     }
     onToChanges(date: string) {
-        const newModel = this.uniModel || {};
+        const newModel = this.model || {};
         newModel['to'] = date;
         this.onNgModelChange(newModel);
     }
@@ -130,19 +130,19 @@ export class UniDaterangePickerComponent extends UniInputBaseComponent {
     }
     private getFromToMoment(): { from: moment.Moment, to: moment.Moment } {
         return {
-            from: moment(this.uniModel['from'], 'YYYY-MM-DD'),
-            to: moment(this.uniModel['to'], 'YYYY-MM-DD')
+            from: moment(this.model['from'], 'YYYY-MM-DD'),
+            to: moment(this.model['to'], 'YYYY-MM-DD')
         };
     }
     private setComboModel() {
         const presetKey = Object.keys(presets).find(key =>
-            presets[key].from === this.uniModel['from'] &&
-            presets[key].to === this.uniModel['to']
+            presets[key].from === this.model['from'] &&
+            presets[key].to === this.model['to']
         );
         if (presetKey) {
             this.comboModel = presets[presetKey].label;
         } else {
-            this.comboModel = abbrDateRange(this.uniModel['from'], this.uniModel['to']);
+            this.comboModel = abbrDateRange(this.model['from'], this.model['to']);
         }
     }
 }

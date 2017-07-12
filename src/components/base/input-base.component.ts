@@ -5,8 +5,8 @@ import { UniBaseComponent } from './base.component';
 
 export abstract class UniInputBaseComponent extends UniBaseComponent implements OnInit {
 
-    @Input() uniModel;
-    @Output() uniModelChange = new EventEmitter();
+    @Input() model;
+    @Output() modelChange = new EventEmitter();
     @Output() uniFocus = new EventEmitter();
     @Output() uniBlur = new EventEmitter();
 
@@ -19,10 +19,10 @@ export abstract class UniInputBaseComponent extends UniBaseComponent implements 
 
     ngOnInit() {
 
-        if (!this.uniModel && this.value) {
+        if (!this.model && this.value) {
             this.onNgModelChange(this.value);
         } else {
-            this.value = this.uniModel;
+            this.value = this.model;
         }
     }
     onNgModelChange(ev): Observable<any> {
@@ -31,8 +31,8 @@ export abstract class UniInputBaseComponent extends UniBaseComponent implements 
         }
         const observable = Observable.timer(this.debounce || 0).share();
         this.debounceSubs = observable.subscribe(_ => {
-            this.uniModel = ev;
-            this.uniModelChange.emit(ev);
+            this.model = ev;
+            this.modelChange.emit(ev);
         });
         return observable;
 

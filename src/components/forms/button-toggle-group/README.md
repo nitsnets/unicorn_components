@@ -11,7 +11,7 @@ Grupo de botones con estado: *pulsado* o *no pulsado*. Solo puede haber uno puls
 ### Ejemplo
 
 ```html
-<uni-button-toggle-group [(uniModel)]="radioModel">
+<uni-button-toggle-group [(model)]="radioModel">
     <uni-button-toggle label="Button toggle 2" value="0"></uni-button-toggle>
     <uni-button-toggle label="Button toggle 3" value="1"></uni-button-toggle>
     <uni-button-toggle label="Button toggle 4" value="2"></uni-button-toggle>
@@ -24,7 +24,7 @@ Grupo de botones con estado: *pulsado* o *no pulsado*. Solo puede haber uno puls
 | ----------- | ----------- | ----------- | -----------
 | name        | `string`    | `''`        | Nombre del input de cara a usarse en formularios
 | disabled    | `boolean`   | `false`     | Estado deshabilitado que impide la manipulación del input
-| uniModel    | `boolean`   | `false`     | Valor introducido en el input
+| model    | `boolean`   | `false`     | Valor introducido en el input
 | value       | `boolean`   | `false`     | Valor por defecto del input
 | debounce    | `number`    | `0`         | Tiempo que debe permanecer el input sin cambios tras un cambio dado para que este se propague
 
@@ -32,7 +32,7 @@ Grupo de botones con estado: *pulsado* o *no pulsado*. Solo puede haber uno puls
 
 | Nombre          | Tipo      | Descripción
 | --------------- | --------- | -----------
-| uniModelChange  | `boolean` | Notifica cuando ha habido un cambio de valor en el input
+| modelChange  | `boolean` | Notifica cuando ha habido un cambio de valor en el input
 | uniFocus        | `Event`   | Notifica cuando se ha hecho puesto el foco en el input
 | uniBlur         | `Event`   | Notifica cuándo se ha quitado el foco del input
 

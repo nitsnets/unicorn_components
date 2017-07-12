@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, ContentChildren, ElementRef, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { AfterContentInit, Component, ContentChildren, ElementRef, EventEmitter, Input, OnChanges, Output, QueryList } from '@angular/core';
 
 import { UniOption } from '../../../models/option';
 import { UniTabsItemComponent } from './item/item.component';
@@ -16,7 +16,7 @@ export class UniTabsComponent implements OnChanges, AfterContentInit {
     @Input() tabSelected: string | number;
     @Output() tabSelectedChange = new EventEmitter<string | number>();
 
-    @ContentChildren(UniTabsItemComponent) tabsElements: QueryLIst<UniTabsItemComponent>;
+    @ContentChildren(UniTabsItemComponent) tabsElements: QueryList<UniTabsItemComponent>;
 
     constructor(private elementRef: ElementRef) { }
 

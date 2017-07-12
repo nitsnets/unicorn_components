@@ -1,5 +1,5 @@
 <label [ngClass]="{
-  'has-content': uniModel && uniModel.length,
+  'has-content': model && model.length,
   'focused': focused,
   'floating': floating,
   'with-prefix': prefix || type === 'color',
@@ -10,7 +10,7 @@
   <div class="label" *ngIf="label || counter">
     <span *ngIf="label" [innerHtml]="label"></span>
     <span *ngIf="counter">
-      {{uniModel? uniModel.length : 0}} <span *ngIf="max>-1">/ {{max}}</span>
+      {{model? model.length : 0}} <span *ngIf="max>-1">/ {{max}}</span>
     </span>
   </div>
   <uni-icon *ngIf="icon" [icon]="icon" class="icon"></uni-icon>
@@ -18,7 +18,7 @@
 
   <div class="input-container">
     <span class="prefix" *ngIf="prefix &&  type !== 'color'" [innerHtml]="prefix"></span>
-    <span class="prefix" *ngIf="type === 'color' && colorSwatch" [style.backgroundColor]="uniModel"></span>
+    <span class="prefix" *ngIf="type === 'color' && colorSwatch" [style.backgroundColor]="model"></span>
     <input
       *ngIf="!multiline && type !== 'color'"
       [type]="type"
@@ -31,7 +31,7 @@
       [value]="value"
       [autofocus]="autofocus"
       [required]="required"
-      [ngModel]="uniModel"
+      [ngModel]="model"
       (ngModelChange)="onNgModelChange($event)"
       (blur)="onInputBlur($event)"
       (focus)="onInputFocus($event)"
@@ -41,7 +41,7 @@
       class="clear-btn"
       icon="close"
       size="small"
-      *ngIf="!multiline && clear && uniModel && uniModel.length"
+      *ngIf="!multiline && clear && model && model.length"
       (click)="onNgModelChange(null)"
     > </uni-icon>
 
@@ -53,7 +53,7 @@
       [placeholder]="placeholder"
       [readonly]="readonly"
       [value]="value"
-      [ngModel]="uniModel"
+      [ngModel]="model"
       (ngModelChange)="onNgModelChange($event)"
       (blur)="uniBlur.emit($event)"
       (focus)="uniFocus.emit($event)"

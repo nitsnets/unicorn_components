@@ -37,7 +37,7 @@ export class UniTimePickerComponent extends UniInputBaseComponent {
         } else { this.opened = true; }
     }
     onTimeChanges(date) {
-        this.uniModel = date;
+        this.model = date;
         this.onNgModelChange(date);
     }
     clear() {

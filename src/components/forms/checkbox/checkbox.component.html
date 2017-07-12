@@ -1,16 +1,16 @@
 <label [ngClass]="{
     disabled: disabled == true,
-    checked: uniModel == true,
+    checked: model == true,
     partial: partial == true,
     'only-icon': !label || !label.length
 }">
     <uni-icon class="icon" [icon]="
-        uniModel == true ? 'square-check' :
+        model == true ? 'square-check' :
         partial == true ? 'square-minus' : 'square'"
     ></uni-icon>
     <input type="checkbox"
         [name]="name"
-        [ngModel]="uniModel"
+        [ngModel]="model"
         [disabled]="disabled"
         (ngModelChange)="toggleUniModel()"
     >

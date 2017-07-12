@@ -30,11 +30,11 @@ export class UniImagePickerComponent extends UniInputBaseComponent implements On
         if (!this.imageHeight && (changes.height || changes.imageHeight)) {
             this.imageHeight = this.width;
         }
-        if (changes.uniModel) {
-            if (this.uniModel && this.uniModel instanceof Blob) {
+        if (changes.model) {
+            if (this.model && this.model instanceof Blob) {
                 const reader = new FileReader();
 
-                reader.readAsDataURL(this.uniModel);
+                reader.readAsDataURL(this.model);
                 reader.onload = (e: any) => {
                     this.imageData = e.target.result;
                     this.imageDataChange.emit(this.imageData);
@@ -48,7 +48,7 @@ export class UniImagePickerComponent extends UniInputBaseComponent implements On
 
     onImagePicked(event) {
         if (!event.target.files || !event.target.files.length) { return false; }
-        this.uniModelChange.emit(event.target.files[0]);
+        this.modelChange.emit(event.target.files[0]);
     }
     onDragEnter(event) {
         this.dragging = true;
@@ -63,11 +63,11 @@ export class UniImagePickerComponent extends UniInputBaseComponent implements On
     onDrop(event) {
         this.dragging = false;
         if (!event.dataTransfer.files || !event.dataTransfer.files.length) { return false; }
-        this.uniModelChange.emit(event.dataTransfer.files[0]);
+        this.modelChange.emit(event.dataTransfer.files[0]);
         event.preventDefault();
     }
     clear() {
-        this.uniModelChange.emit(null);
+        this.modelChange.emit(null);
         this.imageDataChange.emit('');
     }
 }
