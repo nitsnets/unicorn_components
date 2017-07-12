@@ -8,7 +8,7 @@
   'with-two-icon-right': iconRight && clear
 }">
   <div class="label" *ngIf="label || counter">
-    <span *ngIf="label">{{label}}</span>
+    <span *ngIf="label" [innerHtml]="label"></span>
     <span *ngIf="counter">
       {{uniModel? uniModel.length : 0}} <span *ngIf="max>-1">/ {{max}}</span>
     </span>
