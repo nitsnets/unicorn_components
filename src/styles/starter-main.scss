@@ -1,75 +1,78 @@
 @charset 'UTF-8';
 
 // UNI Core variables, functions and mixins
-@import './src/styles/themes/default/abstracts/variables';
-@import './src/styles/themes/default/abstracts/mixins';
-@import './src/styles/themes/default/abstracts/functions';
+@import
+    './src/styles/themes/default/abstracts/variables',
+    './src/styles/themes/default/abstracts/mixins',
+    './src/styles/themes/default/abstracts/functions';
 
 // UNI Reset and dependencies
 // TODO
 
 // UNI Core CSS
-@import './src/styles/themes/default/base/fonts';
-@import './src/styles/themes/default/base/base';
+@import
+    './src/styles/themes/default/base/fonts',
+    './src/styles/themes/default/base/base';
 
 // UNI Components
-@import './src/styles/themes/default/components/containers/popup/popup';
-@import './src/styles/themes/default/components/containers/popup/container/container';
-@import './src/styles/themes/default/components/containers/modal/modal';
-@import './src/styles/themes/default/components/containers/box/box';
-@import './src/styles/themes/default/components/containers/row/row';
-@import './src/styles/themes/default/components/containers/accordion/item/item';
-@import './src/styles/themes/default/components/containers/layout/layout';
-@import './src/styles/themes/default/components/containers/aside/aside';
-@import './src/styles/themes/default/components/containers/header/header';
-@import './src/styles/themes/default/components/containers/body/body';
-@import './src/styles/themes/default/components/containers/tabs/tabs';
+@import
+    './src/styles/themes/default/components/containers/popup/popup',
+    './src/styles/themes/default/components/containers/popup/container/container',
+    './src/styles/themes/default/components/containers/modal/modal',
+    './src/styles/themes/default/components/containers/box/box',
+    './src/styles/themes/default/components/containers/row/row',
+    './src/styles/themes/default/components/containers/accordion/item/item',
+    './src/styles/themes/default/components/containers/layout/layout',
+    './src/styles/themes/default/components/containers/aside/aside',
+    './src/styles/themes/default/components/containers/header/header',
+    './src/styles/themes/default/components/containers/body/body',
+    './src/styles/themes/default/components/containers/tabs/tabs',
 
-@import './src/styles/themes/default/components/ui/menu/menu';
-@import './src/styles/themes/default/components/ui/menu/container/container';
-@import './src/styles/themes/default/components/ui/menu/item/item';
-@import './src/styles/themes/default/components/ui/button/button';
-@import './src/styles/themes/default/components/ui/button-group/button-group';
-@import './src/styles/themes/default/components/ui/button-header/button-header';
-@import './src/styles/themes/default/components/ui/list/list';
-@import './src/styles/themes/default/components/ui/clock/clock';
-@import './src/styles/themes/default/components/ui/calendar/calendar';
-@import './src/styles/themes/default/components/ui/datagrid/datagrid';
-@import './src/styles/themes/default/components/ui/datagrid/row/row';
-@import './src/styles/themes/default/components/ui/datagrid/cell/cell';
-@import './src/styles/themes/default/components/ui/datagrid/header/header';
-@import './src/styles/themes/default/components/ui/filters/filters';
-@import './src/styles/themes/default/components/ui/paginator/paginator';
+    './src/styles/themes/default/components/ui/menu/menu',
+    './src/styles/themes/default/components/ui/menu/container/container',
+    './src/styles/themes/default/components/ui/menu/item/item',
+    './src/styles/themes/default/components/ui/button/button',
+    './src/styles/themes/default/components/ui/button-group/button-group',
+    './src/styles/themes/default/components/ui/button-header/button-header',
+    './src/styles/themes/default/components/ui/list/list',
+    './src/styles/themes/default/components/ui/clock/clock',
+    './src/styles/themes/default/components/ui/calendar/calendar',
+    './src/styles/themes/default/components/ui/datagrid/datagrid',
+    './src/styles/themes/default/components/ui/datagrid/row/row',
+    './src/styles/themes/default/components/ui/datagrid/cell/cell',
+    './src/styles/themes/default/components/ui/datagrid/header/header',
+    './src/styles/themes/default/components/ui/filters/filters',
+    './src/styles/themes/default/components/ui/paginator/paginator',
 
-@import './src/styles/themes/default/components/utils/face/face';
-@import './src/styles/themes/default/components/utils/chip/chip';
-@import './src/styles/themes/default/components/utils/progress/progress';
-@import './src/styles/themes/default/components/utils/badge/badge';
-@import './src/styles/themes/default/components/utils/separator/separator';
-@import './src/styles/themes/default/components/utils/spinner/spinner';
-@import './src/styles/themes/default/components/utils/icon/icon';
-@import './src/styles/themes/default/components/utils/toast/toast';
-@import './src/styles/themes/default/components/utils/tooltip/tooltip';
+    './src/styles/themes/default/components/utils/face/face',
+    './src/styles/themes/default/components/utils/chip/chip',
+    './src/styles/themes/default/components/utils/progress/progress',
+    './src/styles/themes/default/components/utils/badge/badge',
+    './src/styles/themes/default/components/utils/separator/separator',
+    './src/styles/themes/default/components/utils/spinner/spinner',
+    './src/styles/themes/default/components/utils/icon/icon',
+    './src/styles/themes/default/components/utils/toast/toast',
+    './src/styles/themes/default/components/utils/tooltip/tooltip',
 
-@import './src/styles/themes/default/components/forms/input/input';
-@import './src/styles/themes/default/components/forms/checkbox/checkbox';
-@import './src/styles/themes/default/components/forms/radio/radio';
-@import './src/styles/themes/default/components/forms/select/select';
-@import './src/styles/themes/default/components/forms/date-picker/date-picker';
-@import './src/styles/themes/default/components/forms/time-picker/time-picker';
-@import './src/styles/themes/default/components/forms/datetime-picker/datetime-picker';
-@import './src/styles/themes/default/components/forms/image-picker/image-picker';
-@import './src/styles/themes/default/components/forms/daterange-picker/daterange-picker';
-@import './src/styles/themes/default/components/forms/code-editor/code-editor';
-@import './src/styles/themes/default/components/forms/toggle/toggle';
-@import './src/styles/themes/default/components/forms/slider/slider';
-@import './src/styles/themes/default/components/forms/button-toggle/button-toggle';
+    './src/styles/themes/default/components/forms/input/input',
+    './src/styles/themes/default/components/forms/checkbox/checkbox',
+    './src/styles/themes/default/components/forms/radio/radio',
+    './src/styles/themes/default/components/forms/select/select',
+    './src/styles/themes/default/components/forms/date-picker/date-picker',
+    './src/styles/themes/default/components/forms/time-picker/time-picker',
+    './src/styles/themes/default/components/forms/datetime-picker/datetime-picker',
+    './src/styles/themes/default/components/forms/image-picker/image-picker',
+    './src/styles/themes/default/components/forms/daterange-picker/daterange-picker',
+    './src/styles/themes/default/components/forms/code-editor/code-editor',
+    './src/styles/themes/default/components/forms/toggle/toggle',
+    './src/styles/themes/default/components/forms/slider/slider',
+    './src/styles/themes/default/components/forms/button-toggle/button-toggle',
 
-@import './src/styles/themes/default/components/charts/chart-tooltip/chart-tooltip';
-@import './src/styles/themes/default/components/charts/chart/chart';
-@import './src/styles/themes/default/components/charts/chart-legend/chart-legend';
+    './src/styles/themes/default/components/charts/chart-tooltip/chart-tooltip',
+    './src/styles/themes/default/components/charts/chart/chart',
+    './src/styles/themes/default/components/charts/chart-legend/chart-legend',
 
-@import './src/styles/themes/default/components/views/search-header/search';
+    './src/styles/themes/default/components/views/search-header/search';
 
 // UNI Utility classes
 @import './src/styles/themes/default/utilities/utilities';
