@@ -51,6 +51,7 @@ Selector de opciones vitaminado.
 | options         | `UniOption[]` | `[]`        | El `array` de opciones seleccionables 
 | excludedOptions | `any[]`       | `[]`        | Un `array` con las claves de las opciones que no deben mostrarse
 | filterable      | `boolean`     | `true`      | Indica si las opciones se pueden filtrar mediante búsqueda textual
+| chips           | `boolean`     | `false`     | Indica si las opciones seleccionadas aparecen como chips en el input
 
 ### Eventos de salida
 
