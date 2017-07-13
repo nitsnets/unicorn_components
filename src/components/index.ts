@@ -65,6 +65,7 @@ import { UniTabsComponent } from './containers/tabs/tabs.component';
 import { UniTabsItemComponent } from './containers/tabs/item/item.component';
 import { UniTimePickerComponent } from './forms/time-picker/time-picker.component';
 import { UniToggleComponent } from './forms/toggle/toggle.component';
+import { UniTextareaComponent } from './forms/textarea/textarea.component';
 
 export const UNI_COMPONENTS = [
     UniPopupComponent, UniPopupTriggerDirective, UniPopupContainerComponent, UniMenuComponent, UniMenuTriggerDirective,
@@ -81,5 +82,5 @@ export const UNI_COMPONENTS = [
     UniDatagridHeaderComponent, UniFiltersComponent, UniFiltersAdvancedComponent, UniFiltersMainComponent,
     UniCarouselDirective, UniDatagridDeleteComponent, FilteredDatagridComponent, UniFiltersListComponent,
     UniSpinnerComponent, UniAccordionItemComponent, UniButtonGroupComponent, UniRadioGroupComponent,
-    UniButtonToggleGroupComponent, UniSliderComponent, UniAlertComponent, UniTabsItemComponent
+    UniButtonToggleGroupComponent, UniSliderComponent, UniAlertComponent, UniTabsItemComponent, UniTextareaComponent
 ];
