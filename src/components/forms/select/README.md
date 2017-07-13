@@ -36,6 +36,7 @@ Selector de opciones vitaminado.
 
 | Nombre          | Tipo          | Por defecto | Descripción 
 | --------------- | ------------- | ----------- | -----------
+| local           | `boolean`     | `true`      | Indica si el filtrado de las opciones se debe realizar de manera interna (`true`) o delegarlo en el padre (`false`)
 | name            | `string`      | `''`        | Nombre del input de cara a usarse en formularios
 | label           | `string`      | `''`        | Etiqueta textual del input
 | color           | `UniColor`    | `''`        | Color del fondo y del contenido
@@ -55,9 +56,10 @@ Selector de opciones vitaminado.
 
 | Nombre          | Tipo      | Descripción
 | --------------- | --------- | -----------
-| modelChange  | `boolean` | Notifica cuando ha habido un cambio de valor en el input
+| modelChange     | `boolean` | Notifica cuando ha habido un cambio de valor en el input
 | uniFocus        | `Event`   | Notifica cuando se ha hecho puesto el foco en el input
 | uniBlur         | `Event`   | Notifica cuándo se ha quitado el foco del input
+| search          | `string`  | Notifica cuándo el usuario intenta filtrar las opciones
 
 ## Mejoras previstas (TODO)
 

@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 import { FilterPipe } from '../../../pipes/filter.pipe';
 import { UniInputBaseComponent } from '../../base/input-base.component';
@@ -23,6 +23,7 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
     };
     get model() { return this._model; }
 
+    @Input() local = true;
     @Input() placeholder = '';
     @Input() icon: string;
     @Input() multiple = false;
@@ -32,12 +33,14 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
     @Input() options: UniOption[] = [];
     @Input() excludedOptions: string[];
 
+    @Output() search = new EventEmitter();
+
     areOptionsVisible = false;
     optionsFiltered: UniOption[] = [];
     optionsSelected: UniOption[] = [];
     pointedIndex = 0;
     selecting = false;
-    search = null;
+    searchModel = null;
 
     ngOnChanges(changes) {
         if (changes.options || changes.uniExcludedOptions) {
@@ -117,7 +120,11 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
         Object.assign(this.optionsSelected, this.options);
         this.updateModelByOptionsSelected();
     }
-    onFilter(value = this.search) {
+    onFilter(value = this.searchModel) {
+        this.search.emit(value);
+        if (!this.local) {
+            return;
+        }
         this.optionsFiltered = new FilterPipe().transform(this.options, 'label', value);
         this.updatePointedIndex();
         if (value === null) {
@@ -171,12 +178,12 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
     }
     private updateSearchByOptionsSelected() {
         if (!this.optionsSelected || !this.optionsSelected.length) {
-            this.search = '';
+            this.searchModel = '';
         } else {
             if (this.multiple) {
-                this.search = this.optionsSelected.map(o => o.label).join();
+                this.searchModel = this.optionsSelected.map(o => o.label).join();
             } else {
-                this.search = this.optionsSelected[0].label;
+                this.searchModel = this.optionsSelected[0].label;
             }
         }
     }
@@ -186,7 +193,7 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
     }
     private showOptions() {
         this.areOptionsVisible = true;
-        this.search = '';
+        this.searchModel = '';
         this.onFilter();
     }
     private selectPointedOption() {

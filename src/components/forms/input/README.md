@@ -17,6 +17,7 @@ Campo de texto básico pero vitaminado.
 <uni-input label="Input with hint" hint="i.e: user@domain.com"></uni-input>
 <uni-input label="Input with error" error="Must be a valid email"></uni-input>
 <uni-input label="Input with prefix" prefix="http://www."></uni-input>
+<uni-input label="Input with prefix" suffix=".com"></uni-input>
 <uni-input label="Input with counter" counter="true"></uni-input>
 <uni-input label="Counter and max" max="10" counter="true"></uni-input>
 <uni-input label="Input with right icon" iconRight="user"></uni-input>
