@@ -15,4 +15,10 @@ export class UniChipComponent extends UniBaseComponent {
 
 
     constructor() { super(); }
+
+    onRemove(event) {
+        event.stopPropagation();
+        event.preventDefault();
+        this.remove.emit(event);
+    }
 }

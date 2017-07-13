@@ -2,7 +2,9 @@
   'has-content': model && model.length,
   'focused': focused,
   'floating': floating,
-  'with-prefix': prefix || type === 'color',
+  'with-prefix': prefix || prefixIcon || type === 'color',
+  'with-suffix': suffix || suffixIcon,
+  'with-chips': chips && chips.length,
   'with-icon': icon,
   'with-icon-right': iconRight || clear,
   'with-two-icon-right': iconRight && clear
@@ -20,6 +22,9 @@
     <div class="prefix" *ngIf="(prefix || prefixIcon) && type !== 'color'">
         <uni-icon *ngIf="prefixIcon" [icon]="prefixIcon"></uni-icon>
         <span [innerHtml]="prefix"></span>
+    </div>
+    <div class="chips" *ngIf="chips && chips.length">
+        <uni-chip class="chip" *ngFor="let chip of chips; let i = index" [label]="chip.label || chip" [removable]="true" (remove)="onRemoveChip(i)"></uni-chip>
     </div>
     <span class="prefix" *ngIf="type === 'color' && colorSwatch" [style.backgroundColor]="model"></span>
     <input

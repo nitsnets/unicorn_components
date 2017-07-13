@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 import { FilterPipe } from '../../../pipes/filter.pipe';
 import { UniInputBaseComponent } from '../../base/input-base.component';
@@ -29,6 +29,7 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
     @Input() multiple = false;
     @Input() clear = false;
     @Input() filterable = true;
+    @Input() chips = false;
 
     @Input() options: UniOption[] = [];
     @Input() excludedOptions: string[];
@@ -54,6 +55,7 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
             this.onFilter();
         }
     }
+    @HostListener('keydown', ['$event'])
     onKeyDown(e: KeyboardEvent) {
         switch (e.key) {
             case 'Escape': this.hideOptions(); break;
@@ -63,10 +65,12 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
                     this.updatePointedIndex(1) :
                     this.showOptions();
                 e.preventDefault();
+                e.stopPropagation();
                 break;
             case 'ArrowUp':
                 this.updatePointedIndex(-1);
                 e.preventDefault();
+                e.stopPropagation();
                 break;
         }
     }
@@ -177,7 +181,7 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
         this.uniBlur.emit();
     }
     private updateSearchByOptionsSelected() {
-        if (!this.optionsSelected || !this.optionsSelected.length) {
+        if (!this.optionsSelected || !this.optionsSelected.length || this.chips) {
             this.searchModel = '';
         } else {
             if (this.multiple) {

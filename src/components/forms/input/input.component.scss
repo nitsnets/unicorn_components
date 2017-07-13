@@ -18,9 +18,12 @@ label{
   display: flex;
   justify-content: space-between;
 }
-.prefix, .suffix{
+.prefix, .suffix, .chips{
   display: flex;
   align-items: center;
+}
+.chips {
+    flex-shrink: 0;
 }
 input, textarea{
     width: 100%;

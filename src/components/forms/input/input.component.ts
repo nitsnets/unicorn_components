@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angu
 
 import { Observable } from 'rxjs/Rx';
 import { UniInputBaseComponent } from '../../base/input-base.component';
+import { UniOption } from './../../../models/option';
 import { conformToMask } from 'angular2-text-mask';
 
 // https://github.com/text-mask/text-mask/tree/master/angular2
@@ -42,6 +43,10 @@ export class UniInputComponent extends UniInputBaseComponent implements OnInit, 
     @Input() colorSwatch = false;
     @Input() caret = false;
 
+    @Input() chips: string[] | UniOption[];
+    @Input() chipsChange = new EventEmitter<string[] | UniOption[]>();
+    @Input() deleteChip = new EventEmitter<number>();
+
     @Output() uniKeypress = new EventEmitter();
 
     focused = false;
@@ -77,6 +82,12 @@ export class UniInputComponent extends UniInputBaseComponent implements OnInit, 
             ev = parseFloat(ev.replace(',', '.'));
         }
         return super.onNgModelChange(ev);
+    }
+    onRemoveChip(index: number) {
+        if (index < 0 || index >= this.chips.length) { return; }
+        this.chips.splice(index, 1);
+        this.chipsChange.emit(this.chips);
+        this.deleteChip.emit(index);
     }
     private applyMask() {
         if (!this._mask || !this.model) { return; }
