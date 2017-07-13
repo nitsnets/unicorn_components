@@ -22,7 +22,7 @@ Botón con estado: *pulsado* o *no pulsado*.
 | label       | `string`                                          | `''`        | Etiqueta textual del input
 | color       | `UniColor`                                        | `''`        | Color del fondo y del contenido
 | disabled    | `boolean`                                         | `false`     | Estado deshabilitado que impide la manipulación del input
-| model    | `{from: string, to: string}` (ambos YYYY-MM-DD)   | `undefined` | Valor introducido en el input
+| model       | `{from: string, to: string}` (ambos YYYY-MM-DD)   | `undefined` | Valor introducido en el input
 | value       | `{from: string, to: string}` (ambos YYYY-MM-DD)   | `undefined` | Valor por defecto del input0
 | debounce    | `number`                                          | `0`         | Tiempo que debe permanecer el input sin cambios tras un cambio dado para que este se propague
 | combo       | `boolean`                                         | `false`     | Mostrar los inputs de `from` y `to` en un popup flotante
@@ -35,7 +35,7 @@ Botón con estado: *pulsado* o *no pulsado*.
 
 | Nombre          | Tipo                                            | Descripción
 | --------------- | ----------------------------------------------- | -----------
-| modelChange  | `{from: string, to: string}` (ambos YYYY-MM-DD) | Notifica cuando ha habido un cambio de valor en el input
+| modelChange     | `{from: string, to: string}` (ambos YYYY-MM-DD) | Notifica cuando ha habido un cambio de valor en el input
 | uniFocus        | `Event`                                         | Notifica cuando se ha hecho puesto el foco en el input
 | uniBlur         | `Event`                                         | Notifica cuándo se ha quitado el foco del input
 

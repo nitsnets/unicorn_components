@@ -22,7 +22,7 @@ Area donde colocar una imagen para ser subida. Se puede colocar arrastrandolsa o
 | label       | `string`             | `''`            | Etiqueta textual del input
 | color       | `UniColor`           | `''`            | Color del fondo y del contenido
 | disabled    | `boolean`            | `false`         | Estado deshabilitado que impide la manipulación del input
-| model    | `string`             | `false`         | Valor introducido en el input
+| model       | `string`             | `false`         | Valor introducido en el input
 | value       | `string`             | `false`         | Valor por defecto del input
 | debounce    | `number`             | `0`             | Tiempo que debe permanecer el input sin cambios tras un cambio dado para que este se propague
 | width       | `number`             | `300`           | Ancho del area contenedora
@@ -35,7 +35,7 @@ Area donde colocar una imagen para ser subida. Se puede colocar arrastrandolsa o
 
 | Nombre          | Tipo                | Descripción
 | --------------- | ------------------- | -----------
-| modelChange  | `boolean`           | Notifica cuando ha habido un cambio de valor en el input
+| modelChange     | `boolean`           | Notifica cuando ha habido un cambio de valor en el input
 | uniFocus        | `Event`             | Notifica cuando se ha hecho puesto el foco en el input
 | uniBlur         | `Event`             | Notifica cuándo se ha quitado el foco del input
 | imageDataChange | `string` (base64)   | Notifica cuándo ha cambiado la imagen contenedora

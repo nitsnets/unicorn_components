@@ -22,7 +22,7 @@ Carousel básico con navegación pinchando y arrastrando. Encapsula la librería
 
 | Nombre      | Tipo     | Por defecto | Descripción 
 | ----------- | -------- | ----------- | -----------
-| model    | `Object` | `{}`        | Opciones de configuración de Flickity
+| uniCarousel | `Object` | `{}`        | Opciones de configuración de Flickity
 
 ### Eventos de salida
 

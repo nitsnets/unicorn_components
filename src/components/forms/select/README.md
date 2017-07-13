@@ -41,7 +41,7 @@ Selector de opciones vitaminado.
 | label           | `string`      | `''`        | Etiqueta textual del input
 | color           | `UniColor`    | `''`        | Color del fondo y del contenido
 | disabled        | `boolean`     | `false`     | Estado deshabilitado que impide la manipulación del input
-| model        | `any`         | `false`     | Valor introducido en el input
+| model           | `any`         | `false`     | Valor introducido en el input
 | value           | `any`         | `false`     | Valor por defecto del input
 | debounce        | `number`      | `0`         | Tiempo que debe permanecer el input sin cambios tras un cambio dado para que este se propague
 | placeholder     | `string`      | `''`        | Contenido del input cuando no tiene un valor seleccionado

@@ -18,13 +18,13 @@ Reloj para la selección de horas y minutos
 
 | Nombre      | Tipo             | Por defecto | Descripción 
 | ----------- | ---------------- | ----------- | -----------
-| model    | `string` (hh:mm) | `undefined` | Valor introducido en el input
+| model       | `string` (hh:mm) | `undefined` | Valor introducido en el input
 
 ### Eventos de salida
 
 | Nombre         | Tipo             | Descripción
 | -------------- | ---------------- | -----------
-| modelChange | `string` (hh:mm) | Notifica cuando se ha seleccionado un fichero exitosamente
+| modelChange    | `string` (hh:mm) | Notifica cuando se ha seleccionado un fichero exitosamente
 
 
 ## Mejoras previstas (TODO)

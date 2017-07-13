@@ -22,7 +22,7 @@ Selector de fecha con calendario auxiliar.
 | label       | `string`                | `''`        | Etiqueta textual del input
 | color       | `UniColor`              | `''`        | Color del fondo y del contenido
 | disabled    | `boolean`               | `false`     | Estado deshabilitado que impide la manipulación del input
-| model    | `string` (YYYY-MM-DD)   | `undefined` | Valor introducido en el input
+| model       | `string` (YYYY-MM-DD)   | `undefined` | Valor introducido en el input
 | value       | `string` (YYYY-MM-DD)   | `undefined` | Valor por defecto del input
 | debounce    | `number`                | `0`         | Tiempo que debe permanecer el input sin cambios tras un cambio dado para que este se propague
 | inline      | `boolean`               | `false`     | Colocar el calendario flotante (`false`) o en linea a continuación del input (`true`)
@@ -35,7 +35,7 @@ Selector de fecha con calendario auxiliar.
 
 | Nombre          | Tipo                  | Descripción
 | --------------- | --------------------- | -----------
-| modelChange  | `string` (YYYY-MM-DD) | Notifica cuando ha habido un cambio de valor en el input
+| modelChange     | `string` (YYYY-MM-DD) | Notifica cuando ha habido un cambio de valor en el input
 | uniFocus        | `Event`               | Notifica cuando se ha hecho puesto el foco en el input
 | uniBlur         | `Event`               | Notifica cuándo se ha quitado el foco del input
 
