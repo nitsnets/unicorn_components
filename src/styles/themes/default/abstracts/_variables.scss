@@ -1,82 +1,82 @@
-$black: #333;
+$black: #333 !default;
 
-$color-primary: #48b0f7;
-$color-primary-medium: lighten($color-primary, 20%);
-$color-primary-light: lighten($color-primary, 30%);
-$color-primary-lighter: lighten($color-primary, 35%);
-$color-primary-dark: darken($color-primary, 20%);
+$color-primary: #48b0f7 !default;
+$color-primary-medium: lighten($color-primary, 20%) !default;
+$color-primary-light: lighten($color-primary, 30%) !default;
+$color-primary-lighter: lighten($color-primary, 35%) !default;
+$color-primary-dark: darken($color-primary, 20%) !default;
 
-$color-error: #f55753;
-$color-error-medium: lighten($color-error, 20%);
-$color-error-light: lighten($color-error, 30%);
-$color-error-lighter: lighten($color-error, 40%);
-$color-error-dark: darken($color-error, 30%);
+$color-error: #f55753 !default;
+$color-error-medium: lighten($color-error, 20%) !default;
+$color-error-light: lighten($color-error, 30%) !default;
+$color-error-lighter: lighten($color-error, 40%) !default;
+$color-error-dark: darken($color-error, 30%) !default;
 
-$color-warning: #f8d053;
-$color-warning-medium: lighten($color-warning, 10%);
-$color-warning-light: lighten($color-warning, 27.5%);
-$color-warning-lighter: lighten($color-warning, 35%);
-$color-warning-dark: darken($color-warning, 27.5%);
+$color-warning: #f8d053 !default;
+$color-warning-medium: lighten($color-warning, 10%) !default;
+$color-warning-light: lighten($color-warning, 27.5%) !default;
+$color-warning-lighter: lighten($color-warning, 35%) !default;
+$color-warning-dark: darken($color-warning, 27.5%) !default;
 
-$color-success: #10cfbd;
-$color-success-medium: lighten($color-success, 40%);
-$color-success-light: lighten($color-success, 60%);
-$color-success-lighter: lighten($color-success, 70%);
-$color-success-dark: darken($color-success, 60%);
+$color-success: #10cfbd !default;
+$color-success-medium: lighten($color-success, 40%) !default;
+$color-success-light: lighten($color-success, 60%) !default;
+$color-success-lighter: lighten($color-success, 70%) !default;
+$color-success-dark: darken($color-success, 60%) !default;
 
-$color-grey: #919191;
-$color-grey-medium: #e6e6e6;
-$color-grey-light: #f5f5f5;
-$color-grey-lighter: #fafafa;
-$color-grey-dark: #626262;
+$color-grey: #919191 !default;
+$color-grey-medium: #e6e6e6 !default;
+$color-grey-light: #f5f5f5 !default;
+$color-grey-lighter: #fafafa !default;
+$color-grey-dark: #626262 !default;
 
-$alpha-black: rgba(0,0,0,0.25);
-$alpha-black-medium: rgba(0,0,0,0.1);
-$alpha-black-light: rgba(0,0,0,0.07);
-$alpha-black-lighter: rgba(0,0,0,0.03);
-$alpha-black-dark: rgba(0,0,0,0.5);
+$alpha-black: rgba(0,0,0,0.25) !default;
+$alpha-black-medium: rgba(0,0,0,0.1) !default;
+$alpha-black-light: rgba(0,0,0,0.07) !default;
+$alpha-black-lighter: rgba(0,0,0,0.03) !default;
+$alpha-black-dark: rgba(0,0,0,0.5) !default;
 
-$alpha-white: rgba(255, 255, 255, 0.3);
-$alpha-white-medium: rgba(255, 255, 255, 0.75);
-$alpha-white-light: rgba(255, 255, 255, 0.9);
-$alpha-white-dark: rgba(255, 255, 255, 0.1);
+$alpha-white: rgba(255, 255, 255, 0.3) !default;
+$alpha-white-medium: rgba(255, 255, 255, 0.75) !default;
+$alpha-white-light: rgba(255, 255, 255, 0.9) !default;
+$alpha-white-dark: rgba(255, 255, 255, 0.1) !default;
 
-$modal-bg-full: $alpha-white-light;
-$modal-bg: $alpha-black;
-$modal-bg-light: $alpha-white;
+$modal-bg-full: $alpha-white-light !default;
+$modal-bg: $alpha-black !default;
+$modal-bg-light: $alpha-white !default;
 
-$border-width: 1px;
-$border-radius: 3px;
+$border-width: 1px !default;
+$border-radius: 3px !default;
 
-$font-giant: 72px;
-$font-largest: 24px;
-$font-xlarge: 18px;
-$font-large: 16px;
-$font-regular: 14px;
-$font-small: 12px;
-$font-smallest: 10px;
+$font-giant: 72px !default;
+$font-largest: 24px !default;
+$font-xlarge: 18px !default;
+$font-large: 16px !default;
+$font-regular: 14px !default;
+$font-small: 12px !default;
+$font-smallest: 10px !default;
 
-$basic-padding: 30px;
+$basic-padding: 30px !default;
 
-$header-height: 60px;
-$header-md-height: 50px;
-$header-xs-height: 40px;
+$header-height: 60px !default;
+$header-md-height: 50px !default;
+$header-xs-height: 40px !default;
 
-$aside-width: 300px;
-$calendar-size: 251px;
+$aside-width: 300px !default;
+$calendar-size: 251px !default;
 
-$input-xs-height: 28px;
-$input-height: 35px;
-$label-height: 20px;
-$input-padding: 10px;
+$input-xs-height: 28px !default;
+$input-height: 35px !default;
+$label-height: 20px !default;
+$input-padding: 10px !default;
 
-$chart-tiny: 150px;
-$chart-small: 200px;
-$chart-medium: 300px;
-$chart-large: 600px;
+$chart-tiny: 150px !default;
+$chart-small: 200px !default;
+$chart-medium: 300px !default;
+$chart-large: 600px !default;
 
-$slow: 500ms;
-$fast: 200ms;
+$slow: 500ms !default;
+$fast: 200ms !default;
 
 
 
