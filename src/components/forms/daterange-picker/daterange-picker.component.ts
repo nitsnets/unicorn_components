@@ -42,6 +42,9 @@ export class UniDaterangePickerComponent extends UniInputBaseComponent {
     @Input() showArrows = false;
     @Input() comboLabel = 'Date range';
 
+    @Input() maxDate: string;
+    @Input() minDate: string;
+
     @Input() fromLabel = 'from';
     @Input() toLabel = 'to';
 
@@ -53,7 +56,6 @@ export class UniDaterangePickerComponent extends UniInputBaseComponent {
     constructor(private elementRef: ElementRef) {
         super();
     }
-
 
     openCombo() {
         this.comboOpened = true;
