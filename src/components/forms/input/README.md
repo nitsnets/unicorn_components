@@ -73,5 +73,5 @@ Campo de texto básico pero vitaminado.
 - Flexibilizar los iconos para poder introducir una url personalizada
 - Añadir el input `hintIcon`
 - Añadir el input `prefixIcon`
-- Añadir los input `subfix` y `subfixIcon` al estilo de `prefix`
+- Añadir los input `suffix` y `suffixIcon` al estilo de `prefix`
 - Separar el input `[multiline]="true"` a otro componente

@@ -23,6 +23,9 @@ export class UniInputComponent extends UniInputBaseComponent implements OnInit, 
 
     @Input() placeholder = '';
     @Input() prefix = '';
+    @Input() prefixIcon = '';
+    @Input() suffix = '';
+    @Input() suffixIcon = '';
     @Input() hint = '';
     @Input() mask = '';
     @Input() error = '';

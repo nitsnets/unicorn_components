@@ -14,11 +14,11 @@ label{
 .icon, .icon-right{
     position: absolute;
 }
-.label, .prefix{
+.label, .prefix, .suffix{
   display: flex;
   justify-content: space-between;
 }
-.prefix{
+.prefix, .suffix{
   display: flex;
   align-items: center;
 }
