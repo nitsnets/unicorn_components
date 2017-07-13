@@ -2,7 +2,7 @@ Alert
 ===================
 `uni-alert`
 ---
-:white_circle: Previsto
+:white_check_marck: Estable
 
 Contenedor enfatizado para resaltar mensajes
 
@@ -24,3 +24,9 @@ Contenedor enfatizado para resaltar mensajes
 | icon     | `string`     | `undefined` | Icono que encabeza la alerta
 | color    | `UniColor`   | `undefined` | Color aplicado al fondo y texto de la alerta
 | closable | `boolean`    | `false`     | Indica si la alerta se puede cerrar
+
+### Eventos de salida
+
+| Nombre          | Tipo      | Descripción
+| --------------- | --------- | -----------
+| close           | `void`    | Notifica cuando la alerta se ha cerrado

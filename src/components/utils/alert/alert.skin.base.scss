@@ -3,6 +3,8 @@ uni-alert {
     background-color: $color-grey-lighter;
     color: $color-grey-dark;
     position: relative;
+    transition: opacity ease 200ms;
+    opacity: 1;
 
     &.primary { background-color: $color-primary-lighter; color: $color-primary-dark; }
     &.warning { background-color: $color-warning-lighter; color: $color-warning-dark; }
@@ -14,6 +16,7 @@ uni-alert {
             position: absolute;
             right: $basic-padding / 4;
             top: $basic-padding / 4;
+            cursor: pointer;
         }
         &__icon {
             position: absolute;
@@ -23,6 +26,9 @@ uni-alert {
         &__content {
             &.with-icon {
                 padding-left: $basic-padding;
+            }
+            &.closable {
+                padding-right: $basic-padding;
             }
         }
     }

@@ -1,5 +1,6 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 
+import { Observable } from 'rxjs/Rx';
 import { UniBaseComponent } from '../../base/base.component';
 
 @Component({
@@ -10,6 +11,7 @@ import { UniBaseComponent } from '../../base/base.component';
 export class UniAlertComponent extends UniBaseComponent {
     @Input() icon: string;
     @Input() closable = true;
+    @Output() close = new EventEmitter();
 
     @HostBinding('class.light') get isLight() { return this.color === 'light'; }
     @HostBinding('class.default') get isDefault() { return this.color === 'default'; }
@@ -17,4 +19,13 @@ export class UniAlertComponent extends UniBaseComponent {
     @HostBinding('class.success') get isSuccess() { return this.color === 'success'; }
     @HostBinding('class.warning') get isWarning() { return this.color === 'warning'; }
     @HostBinding('class.error') get isError() { return this.color === 'error'; }
+
+    @HostBinding('style.opacity') opacity = 1;
+    @HostBinding('style.display') display = 'block';
+
+    onClose() {
+        this.close.emit();
+        this.opacity = 0;
+        setTimeout(() => this.display = 'none', 200);
+    }
 }

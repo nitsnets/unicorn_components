@@ -84,7 +84,7 @@ http://components.servidorbeta.com
 | "              | Menu              | `<uni-menu>`              | :white_check_mark:  | [+ Info](src/components/ui/menu)
 | "              | Paginator         | `<uni-paginator>`         | :white_check_mark:  | [+ Info](src/components/ui/paginator)
 | "              | Tree              | `<uni-tree>`              | :white_circle:      | [+ Info](src/components/ui/tree)
-| **Utils**      | Alert             | `<uni-alert>`             | :white_circle:      | [+ Info](src/components/utils/alert)
+| **Utils**      | Alert             | `<uni-alert>`             | :white_check_mark:  | [+ Info](src/components/utils/alert)
 | "              | Badge             | `<uni-badge>`             | :white_check_mark:  | [+ Info](src/components/utils/badge)
 | "              | Chip              | `<uni-chip>`              | :blue_circle:       | [+ Info](src/components/utils/chip)
 | "              | Face              | `<uni-face>`              | :white_check_mark:  | [+ Info](src/components/utils/face)
