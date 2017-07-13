@@ -1,20 +1,20 @@
 @charset 'UTF-8';
 
-// UNI Core variables, functions and mixins
+// UNI-COMPONENTS Core variables, functions and mixins
 @import
     './src/styles/themes/default/abstracts/variables',
     './src/styles/themes/default/abstracts/mixins',
     './src/styles/themes/default/abstracts/functions';
 
-// UNI Reset and dependencies
+// UNI-COMPONENTS Reset and dependencies
 // TODO
 
-// UNI Core CSS
+// UNI-COMPONENTS Core CSS
 @import
     './src/styles/themes/default/base/fonts',
     './src/styles/themes/default/base/base';
 
-// UNI Components
+// UNI-COMPONENTS Components
 @import
     './src/styles/themes/default/components/containers/popup/popup',
     './src/styles/themes/default/components/containers/popup/container/container',
@@ -74,7 +74,7 @@
 
     './src/styles/themes/default/components/views/search-header/search';
 
-// UNI Utility classes
+// UNI-COMPONENTS Utility classes
 @import './src/styles/themes/default/utilities/utilities';
 
 
