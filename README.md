@@ -70,7 +70,7 @@ http://components.servidorbeta.com
 | "              | Toggle            | `<uni-radio>`             | :white_check_mark:  | [+ Info](src/components/forms/radio)
 | **UI**         | Button            | `<uni-button>`            | :white_check_mark:  | [+ Info](src/components/ui/button)
 | "              | Button File       | `<uni-button-file>`       | :blue_circle:       | [+ Info](src/components/ui/button)
-| "              | Button Group      | `<uni-button-group>`      | :white_circle:      | [+ Info](src/components/ui/button-group)
+| "              | Button Group      | `<uni-button-group>`      | :white_check_mark:  | [+ Info](src/components/ui/button-group)
 | "              | Button Header     | `<uni-button-header>`     | :white_check_mark:  | [+ Info](src/components/ui/button-header)
 | "              | Button Menu       | `<uni-button-menu>`       | :white_check_mark:  | [+ Info](src/components/ui/button-menu)
 | "              | Button Popup      | `<uni-button-popup>`      | :white_check_mark:  | [+ Info](src/components/ui/button-popup)
