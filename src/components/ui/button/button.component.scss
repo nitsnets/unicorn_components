@@ -1,9 +1,12 @@
-uni-button {
+:host {
     position: relative;
     display: inline-block;
     flex-shrink: 0;
+}
 
-    button{
+.uni-button {
+
+    &__inner {
         display: block;
         overflow: hidden;
         position: relative;
@@ -20,3 +23,5 @@ uni-button {
         }
     }
 }
+
+.uni-button__inner {}

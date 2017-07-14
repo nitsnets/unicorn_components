@@ -29,14 +29,14 @@ uni-button {
             min-height: $input-height;
             padding: 0 $input-padding * 2;
         }
-        &.default{
+        &.uni-button__inner--default{
             border: solid $border-width $alpha-black-medium;
         }
-        &.primary{ @include button-background($color-primary, true); }
-        &.error{ @include button-background($color-error, true); }
-        &.warning{ @include button-background($color-warning, true); }
-        &.success{ @include button-background($color-success, true); }
-        &.light{
+        &.uni-button__inner--primary{ @include button-background($color-primary, true); }
+        &.uni-button__inner--error{ @include button-background($color-error, true); }
+        &.uni-button__inner--warning{ @include button-background($color-warning, true); }
+        &.uni-button__inner--success{ @include button-background($color-success, true); }
+        &.uni-button__inner--light{
             color: $black;
             @include button-background($color-grey-medium);
             .sublabel{color: $black}

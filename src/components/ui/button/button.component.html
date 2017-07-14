@@ -1,4 +1,4 @@
-<button [disabled]="disabled || false" [type]="type || 'button'" [class]="color || ''" [ngClass]="{
+<button class="uni-button__inner" [disabled]="disabled || false" [type]="type || 'button'" [class]="color ? 'uni-button__inner--' + color : ''" [ngClass]="{
     'with-icon': icon,
     'with-icon-right': iconRight,
     'only-icon': icon && !iconRight && (!label || !label.length),
