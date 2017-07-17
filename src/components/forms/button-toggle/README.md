@@ -11,7 +11,7 @@ Botón con estado: *pulsado* o *no pulsado*.
 ### Ejemplo
 
 ```html
-<uni-button-toggle label="Etiqueta del botón" ([model])="checked"></uni-button-toggle>
+<uni-button-toggle label="Etiqueta del botón" [(model)]="checked"></uni-button-toggle>
 ```
 
 ### Atributos de entrada
