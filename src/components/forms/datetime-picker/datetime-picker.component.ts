@@ -25,14 +25,14 @@ export class UniDatetimePickerComponent extends UniInputBaseComponent {
     }
 
     onDateChanges(date) {
-        const newModel = this.uniModel || {};
+        const newModel = this.model || {};
         newModel['date'] = date;
-        this.uniModelChange.emit(newModel);
+        this.modelChange.emit(newModel);
     }
     onTimeChanges(time) {
-        const newModel = this.uniModel || {};
+        const newModel = this.model || {};
         newModel['time'] = time;
-        this.uniModelChange.emit(newModel);
+        this.modelChange.emit(newModel);
     }
     clear() {
         this.onDateChanges(null);

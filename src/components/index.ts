@@ -4,6 +4,7 @@ import { UniPopupComponent, UniPopupTriggerDirective } from './containers/popup/
 import { FilteredDatagridComponent } from './views/filtered-datagrid/filtered-datagrid.component';
 import { UniAccordionComponent } from './containers/accordion/accordion.component';
 import { UniAccordionItemComponent } from './containers/accordion/item/item.component';
+import { UniAlertComponent } from './utils/alert/alert.component';
 import { UniAsideComponent } from './containers/aside/aside.component';
 import { UniBadgeComponent } from './utils/badge/badge.component';
 import { UniBodyComponent } from './containers/body/body.component';
@@ -61,8 +62,10 @@ import { UniSeparatorComponent } from './utils/separator/separator.component';
 import { UniSliderComponent } from './forms/slider/slider.component';
 import { UniSpinnerComponent } from './utils/spinner/spinner.component';
 import { UniTabsComponent } from './containers/tabs/tabs.component';
+import { UniTabsItemComponent } from './containers/tabs/item/item.component';
 import { UniTimePickerComponent } from './forms/time-picker/time-picker.component';
 import { UniToggleComponent } from './forms/toggle/toggle.component';
+import { UniTextareaComponent } from './forms/textarea/textarea.component';
 
 export const UNI_COMPONENTS = [
     UniPopupComponent, UniPopupTriggerDirective, UniPopupContainerComponent, UniMenuComponent, UniMenuTriggerDirective,
@@ -79,5 +82,5 @@ export const UNI_COMPONENTS = [
     UniDatagridHeaderComponent, UniFiltersComponent, UniFiltersAdvancedComponent, UniFiltersMainComponent,
     UniCarouselDirective, UniDatagridDeleteComponent, FilteredDatagridComponent, UniFiltersListComponent,
     UniSpinnerComponent, UniAccordionItemComponent, UniButtonGroupComponent, UniRadioGroupComponent,
-    UniButtonToggleGroupComponent, UniSliderComponent
+    UniButtonToggleGroupComponent, UniSliderComponent, UniAlertComponent, UniTabsItemComponent, UniTextareaComponent
 ];

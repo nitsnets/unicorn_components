@@ -1,12 +1,12 @@
 <div class="time-container" (clickOutside)="opened = (inline ? opened : false)">
-  <div class="time-inputs-container">
-    <uni-input type="time" icon="clock" class="time-input clear-webkit-controls" [label]="label" [clear]="true" [uniModel]="uniModel"
-      (uniModelChange)="onTimeChanges($event)" (uniFocus)="onFocus($event)" (uniBlur)="onBlur($event)" (uniKeypress)="onKeyPress($event)">
-    </uni-input>
-  </div>
-  <div *ngIf="opened || inline" class="time-controls-container" [class.floating]="!inline" [class.align-left]="side === 'left'"
-    [class.align-right]="side === 'right'">
-    <uni-clock [uniModel]="uniModel" (uniModelChange)="onTimeChanges($event)">
-    </uni-clock>
-  </div>
+    <div class="time-inputs-container">
+        <uni-input type="time" icon="clock" class="time-input clear-webkit-controls" [maxValue]="max" [minValue]="min" [label]="label" [clear]="true" [model]="model"
+            (modelChange)="onTimeChanges($event)" (uniFocus)="onFocus($event)" (uniBlur)="onBlur($event)" (uniKeypress)="onKeyPress($event)">
+        </uni-input>
+    </div>
+    <div *ngIf="opened || inline" class="time-controls-container" [class.floating]="!inline" [class.align-left]="side === 'left'"
+        [class.align-right]="side === 'right'">
+        <uni-clock [min]="min" [max]="max" [model]="model" (modelChange)="onTimeChanges($event)">
+        </uni-clock>
+    </div>
 </div>

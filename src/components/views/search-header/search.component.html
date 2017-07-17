@@ -3,11 +3,11 @@
     icon="search"
     [value]="value"
     [placeholder]="placeholder"
-    [uniModel]="uniModel"
-    (uniModelChange)="onUniModelChange($event)"
+    [model]="model"
+    (modelChange)="onUniModelChange($event)"
     [debounce]="debounce"
     [floating]="true">
   </uni-input>
-  <uni-button class="btn-header-md" icon="close" (click)="clear()" *ngIf="uniModel"></uni-button>
+  <uni-button class="btn-header-md" icon="close" (click)="clear()" *ngIf="model"></uni-button>
   
 </uni-header>

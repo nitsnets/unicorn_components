@@ -4,14 +4,14 @@ $slider-thumb-height: $slider-height / 2;
 $slider-track-height: $slider-height / 8;
 
 uni-slider{
-    height: $slider-height;
-    width: $slider-width;
-    position: relative;
     display: inline-block;
     user-select: none;
-    cursor: pointer;
 
     .slider {
+        height: $slider-height;
+        width: $slider-width;
+        position: relative;
+        cursor: pointer;
 
         &__track, &__track-fill {
             position: absolute;
@@ -31,13 +31,27 @@ uni-slider{
         &.error .slider__track-fill { background-color: $color-error; }
         &.light .slider__track-fill { background-color: $color-grey-light; }
 
+
         &__thumb {
             border-radius: 50%;
             position: absolute;
             background-color: white;
-            @include border;
             margin-top: ($slider-height - $slider-thumb-height) / 2;
+            @include border(2px);
+            transition: border-color ease 200ms;
+            height: $slider-thumb-height;
+            width: $slider-thumb-height;
+            margin-left: - $slider-thumb-height / 2;
+
         }
+        &:hover > .slider__thumb { border-color: $color-grey; }
+
+        &.primary.sliding .slider__thumb { border-color: $color-primary; }
+        &.success.sliding .slider__thumb { border-color: $color-success; }
+        &.warning.sliding .slider__thumb { border-color: $color-warning; }
+        &.error.sliding .slider__thumb { border-color: $color-error; }
+        &.light.sliding .slider__thumb { border-color: $color-grey; }
+
         &__ticks {
             display: flex;
             justify-content: space-between;
@@ -46,4 +60,12 @@ uni-slider{
             }
         }
     }
+    .label {
+        font-weight: 300;
+        line-height: $label-height;
+        font-size: $font-small;
+        color: $color-grey-dark;
+        margin: 0 $input-padding/4;
+        height: $label-height;
+    };
 }

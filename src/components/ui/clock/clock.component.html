@@ -1,31 +1,35 @@
 <div class="clock-container">
 
-  <div class="clock-mode clock-am" [ngClass]="{'selected': mode === 'AM'}" (click)="selectMode('AM')"> AM </div>
-  <div class="clock-mode clock-pm" [ngClass]="{'selected': mode === 'PM'}" (click)="selectMode('PM')"> PM </div>
+    <div class="clock-mode clock-am" [ngClass]="{
+        'selected': mode === 'AM',
+        'unavailable': !modeAvailability['AM']
+    }" (click)="selectMode('AM')"> AM </div>
+    <div class="clock-mode clock-pm" [ngClass]="{
+        'selected': mode === 'PM',
+        'unavailable': !modeAvailability['PM']
+    }" (click)="selectMode('PM')"> PM </div>
 
-  <div class="clock-circle">
-    <div class="clock-hour-tick" [style.transform]="'rotate('+hourDegrees+'deg)'"> </div>
+    <div class="clock-circle">
+        <div class="clock-hour-tick" [style.transform]="'rotate('+hourDegrees+'deg)'"> </div>
 
-    <div class="clock-minute-tick" [style.transform]="'rotate('+minuteDegrees+'deg)'"> </div>
-    <div class="clock-center"> </div>
+        <div class="clock-minute-tick" [style.transform]="'rotate('+minuteDegrees+'deg)'"> </div>
+        <div class="clock-center"> </div>
 
-    <div class="clock-hours">
-      <span *ngFor="let hour of hours; let i = index"
-        [class]="'clock-number clock-hour clock-hour-' + i"
-        [ngClass]="{'selected': hourIndex === i}"
-        (click)="selectHour(i)"
-      >
-        {{hour}}
-      </span>
+        <div class="clock-hours">
+            <span *ngFor="let hour of hours; let i = index" [class]="'clock-number clock-hour clock-hour-' + i" [ngClass]="{
+                'selected': hourIndex === i,
+                'unavailable': !hoursAvailable[i]
+            }" (click)="selectHour(i)">
+                {{hour}}
+            </span>
+        </div>
+        <div class="clock-minutes">
+            <span *ngFor="let minute of minutes; let i = index" [class]=" 'clock-number clock-minute clock-minute-' + i" [ngClass]="{
+                'selected': minuteIndex === i,
+                'unavailable': !minutesAvailable[i]
+            }" (click)="selectMinute(i)">
+                {{minute}}
+            </span>
+        </div>
     </div>
-    <div class="clock-minutes">
-      <span *ngFor="let minute of minutes; let i = index"
-        [class]=" 'clock-number clock-minute clock-minute-' + i"
-        [ngClass]="{'selected': minuteIndex === i}"
-        (click)="selectMinute(i)"
-      >
-        {{minute}}
-      </span>
-    </div>
-  </div>
 </div>

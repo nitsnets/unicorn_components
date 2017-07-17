@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 import { FilterPipe } from '../../../pipes/filter.pipe';
 import { UniInputBaseComponent } from '../../base/input-base.component';
@@ -13,31 +13,35 @@ export enum SelectTypes { text, number, email, password }
 })
 export class UniSelectComponent extends UniInputBaseComponent implements OnInit, OnChanges {
 
-    private _uniModel;
-    @Input() set uniModel(value) {
-        this._uniModel = value;
+    private _model;
+    @Input() set model(value) {
+        this._model = value;
         this.updateOptionsSelectedByModel();
         if (!this.areOptionsVisible) {
             this.updateSearchByOptionsSelected();
         }
     };
-    get uniModel() { return this._uniModel; }
+    get model() { return this._model; }
 
+    @Input() local = true;
     @Input() placeholder = '';
     @Input() icon: string;
     @Input() multiple = false;
     @Input() clear = false;
     @Input() filterable = true;
+    @Input() chips = false;
 
     @Input() options: UniOption[] = [];
     @Input() excludedOptions: string[];
+
+    @Output() search = new EventEmitter();
 
     areOptionsVisible = false;
     optionsFiltered: UniOption[] = [];
     optionsSelected: UniOption[] = [];
     pointedIndex = 0;
     selecting = false;
-    search = null;
+    searchModel = null;
 
     ngOnChanges(changes) {
         if (changes.options || changes.uniExcludedOptions) {
@@ -51,6 +55,7 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
             this.onFilter();
         }
     }
+    @HostListener('keydown', ['$event'])
     onKeyDown(e: KeyboardEvent) {
         switch (e.key) {
             case 'Escape': this.hideOptions(); break;
@@ -60,10 +65,12 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
                     this.updatePointedIndex(1) :
                     this.showOptions();
                 e.preventDefault();
+                e.stopPropagation();
                 break;
             case 'ArrowUp':
                 this.updatePointedIndex(-1);
                 e.preventDefault();
+                e.stopPropagation();
                 break;
         }
     }
@@ -117,7 +124,11 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
         Object.assign(this.optionsSelected, this.options);
         this.updateModelByOptionsSelected();
     }
-    onFilter(value = this.search) {
+    onFilter(value = this.searchModel) {
+        this.search.emit(value);
+        if (!this.local) {
+            return;
+        }
         this.optionsFiltered = new FilterPipe().transform(this.options, 'label', value);
         this.updatePointedIndex();
         if (value === null) {
@@ -144,10 +155,10 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
     }
     private updateOptionsSelectedByModel() {
         this.optionsSelected = [];
-        if (!this.options || !this.uniModel) { this.optionsSelected = []; return; }
+        if (!this.options || !this.model) { this.optionsSelected = []; return; }
         for (const option of this.options) {
-            if (!this.multiple && option.value === this.uniModel ||
-                this.multiple && this.uniModel.includes(option.value)) {
+            if (!this.multiple && option.value === this.model ||
+                this.multiple && this.model.includes(option.value)) {
                 this.optionsSelected.push(option);
             }
         }
@@ -165,18 +176,18 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
                 newModel = this.optionsSelected[0].value;
             }
         }
-        this.uniModel = newModel;
-        this.uniModelChange.emit(this.uniModel);
+        this.model = newModel;
+        this.modelChange.emit(this.model);
         this.uniBlur.emit();
     }
     private updateSearchByOptionsSelected() {
-        if (!this.optionsSelected || !this.optionsSelected.length) {
-            this.search = '';
+        if (!this.optionsSelected || !this.optionsSelected.length || this.chips) {
+            this.searchModel = '';
         } else {
             if (this.multiple) {
-                this.search = this.optionsSelected.map(o => o.label).join();
+                this.searchModel = this.optionsSelected.map(o => o.label).join();
             } else {
-                this.search = this.optionsSelected[0].label;
+                this.searchModel = this.optionsSelected[0].label;
             }
         }
     }
@@ -186,7 +197,7 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
     }
     private showOptions() {
         this.areOptionsVisible = true;
-        this.search = '';
+        this.searchModel = '';
         this.onFilter();
     }
     private selectPointedOption() {

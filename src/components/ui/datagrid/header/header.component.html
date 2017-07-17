@@ -6,8 +6,8 @@
     <uni-datagrid-cell *ngIf="datagrid.selectable" [width]="0" [highlight]="true">
         <uni-checkbox
             [partial]="datagrid.selected.length > 0"
-            [uniModel]="datagrid.allSelected()"
-            (uniModelChange)="datagrid.onSelectAll($event)"
+            [model]="datagrid.allSelected()"
+            (modelChange)="datagrid.onSelectAll($event)"
         ></uni-checkbox>
     </uni-datagrid-cell>
 

@@ -44,7 +44,7 @@ Tabla de contenidos compleja
     <uni-datagrid-column [sortable]="false" [clickPropagation]="false" [highlightCell]="false">
         <uni-datagrid-cell *cellVariables="let user">
             <uni-row>
-                <uni-input placeholder="units" [(uniModel)]="user.units"></uni-input>
+                <uni-input placeholder="units" [(model)]="user.units"></uni-input>
                 <uni-button label="Add to cart" color="primary" size="small" (click)="log('Add to cart', {user: user, units: user['units']})"></uni-button>
             </uni-row>
         </uni-datagrid-cell>

@@ -43,7 +43,7 @@ export class UniDatePickerComponent extends UniInputBaseComponent {
         } else { this.opened = open; }
     }
     onDateChanges(date) {
-        this.uniModel = date;
+        this.model = date;
         this.onNgModelChange(date);
     }
     clear() {

@@ -28,7 +28,7 @@ Contenedor flotante auxiliar anclado a un elemento que llamamos *trigger*.
     <span uniPopupTrigger>
         Clica para abri el popup
     </span>
-    <uni-popup-container closeBtn>
+    <uni-popup-container closable>
         Contenido del popup
     </uni-popup-container>
 </uni-popup>
@@ -43,7 +43,7 @@ Contenedor flotante auxiliar anclado a un elemento que llamamos *trigger*.
 | toggle      | `boolean`            | `false`     | Indica si un clic en el trigger cierra el popup cuando este está abierto (`true`) o no (`false`)
 | keepOpen    | `boolean`            | `true`      | Indica si al clicar dentro del popup se debe cerrar (`false`) o no (`true`)
 | position    | `UniPopupPosition`   | `false`     | La posición hacia la que se abre el popup respecto al trigger
-| closeBtn    | `boolean`            | `true`      | Si debe aparecer el botón de cerrar (`true`) o no (`false`)
+| closable    | `boolean`            | `true`      | Si debe aparecer el botón de cerrar (`true`) o no (`false`)
 
 ### Eventos de salida
 
@@ -53,6 +53,5 @@ Contenedor flotante auxiliar anclado a un elemento que llamamos *trigger*.
 
 ## Mejoras previstas (TODO)
 
-- Mover el parámetro de entrada `closeBtn` del `<uni-popup-container>` al `<uni-popup>`.
 - Controlar la apertura en esquinas, con redimensión y scroll
 - Controlar la visualización en mobile

@@ -10,7 +10,7 @@
         </ng-container>
 
         <form *ngIf="item.editing === true" (submit)="onEdit(i, item)">
-            <uni-input floating="true" [autofocus]="true" [(uniModel)]="item.newname" [placeholder]="placeholder || ''" (uniBlur)="item.editing = false"></uni-input>
+            <uni-input floating="true" [autofocus]="true" [(model)]="item.newname" [placeholder]="placeholder || ''" (uniBlur)="item.editing = false"></uni-input>
         </form>
 
     </li>

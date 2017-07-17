@@ -1,6 +1,6 @@
 <div class="datetime-container">
-    <uni-date-picker class="spacing" [uniModel]="dateModel" (uniModelChange)="onDateChanges($event)" [label]="dateLabel || (timeLabel ? ' ' : '')"
+    <uni-date-picker class="spacing" [model]="dateModel" (modelChange)="onDateChanges($event)" [label]="dateLabel || (timeLabel ? ' ' : '')"
         [maxDate]="maxDate" [minDate]="minDate" [inline]="inline" (uniFocus)="uniFocus.emit($event)" (uniBlur)="uniBlur.emit($event)"></uni-date-picker>
-    <uni-time-picker [uniModel]="timeModel" (uniModelChange)="onTimeChanges($event)" [label]="timeLabel || (dateLabel ? ' ' : '')"
+    <uni-time-picker [model]="timeModel" (modelChange)="onTimeChanges($event)" [label]="timeLabel || (dateLabel ? ' ' : '')"
         [inline]="inline" (uniFocus)="uniFocus.emit($event)" (uniBlur)="uniBlur.emit($event)"></uni-time-picker>
 </div>

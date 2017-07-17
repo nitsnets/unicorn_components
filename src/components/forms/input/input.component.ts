@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angu
 
 import { Observable } from 'rxjs/Rx';
 import { UniInputBaseComponent } from '../../base/input-base.component';
+import { UniOption } from './../../../models/option';
 import { conformToMask } from 'angular2-text-mask';
 
 // https://github.com/text-mask/text-mask/tree/master/angular2
@@ -23,6 +24,9 @@ export class UniInputComponent extends UniInputBaseComponent implements OnInit, 
 
     @Input() placeholder = '';
     @Input() prefix = '';
+    @Input() prefixIcon = '';
+    @Input() suffix = '';
+    @Input() suffixIcon = '';
     @Input() hint = '';
     @Input() mask = '';
     @Input() error = '';
@@ -39,6 +43,10 @@ export class UniInputComponent extends UniInputBaseComponent implements OnInit, 
     @Input() colorSwatch = false;
     @Input() caret = false;
 
+    @Input() chips: string[] | UniOption[];
+    @Input() chipsChange = new EventEmitter<string[] | UniOption[]>();
+    @Input() deleteChip = new EventEmitter<number>();
+
     @Output() uniKeypress = new EventEmitter();
 
     focused = false;
@@ -48,7 +56,7 @@ export class UniInputComponent extends UniInputBaseComponent implements OnInit, 
         if (changes.mask && this.mask) {
             this.parseMask();
         }
-        if (changes.uniModel) {
+        if (changes.model) {
             this.applyMask();
         }
     }
@@ -59,13 +67,13 @@ export class UniInputComponent extends UniInputBaseComponent implements OnInit, 
     onInputBlur(ev) {
         this.focused = false;
 
-        if (this.maxValue && this.uniModel > this.maxValue) {
-            this.uniModel = this.maxValue;
-            this.uniModelChange.emit(this.uniModel);
+        if (this.maxValue && this.model > this.maxValue) {
+            this.model = this.maxValue;
+            this.modelChange.emit(this.model);
 
-        } else if (this.minValue && this.uniModel < this.minValue) {
-            this.uniModel = this.minValue;
-            this.uniModelChange.emit(this.uniModel);
+        } else if (this.minValue && this.model < this.minValue) {
+            this.model = this.minValue;
+            this.modelChange.emit(this.model);
         }
         this.uniBlur.emit(ev);
     }
@@ -75,10 +83,16 @@ export class UniInputComponent extends UniInputBaseComponent implements OnInit, 
         }
         return super.onNgModelChange(ev);
     }
+    onRemoveChip(index: number) {
+        if (index < 0 || index >= this.chips.length) { return; }
+        this.chips.splice(index, 1);
+        this.chipsChange.emit(this.chips);
+        this.deleteChip.emit(index);
+    }
     private applyMask() {
-        if (!this._mask || !this.uniModel) { return; }
-        console.log(conformToMask(this.uniModel, this._mask, {}).conformedValue);
-        // this.uniModel = conformToMask(this.uniModel, this._mask, {}).conformedValue;
+        if (!this._mask || !this.model) { return; }
+        console.log(conformToMask(this.model, this._mask, {}).conformedValue);
+        // this.model = conformToMask(this.model, this._mask, {}).conformedValue;
     }
     private parseMask(): MaskArray {
         if (typeof this.mask !== 'string') { return this.mask; }

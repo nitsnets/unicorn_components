@@ -11,7 +11,7 @@ Selector mediante barra deslizante
 ### Ejemplo
 
 ```html
-<uni-slider [(uniModel)]="myModel"></uni-slider>
+<uni-slider [(model)]="myModel"></uni-slider>
 ```
 
 ### Atributos de entrada
@@ -22,7 +22,7 @@ Selector mediante barra deslizante
 | label    | `string`    | `''`        | Etiqueta textual del input
 | color    | `UniColor`  | `''`        | Color del fondo y del contenido
 | disabled | `boolean`   | `false`     | Estado deshabilitado que impide la manipulación del input
-| uniModel | `number`    | `false`     | Valor introducido en el input
+| model    | `number`    | `false`     | Valor introducido en el input
 | value    | `boolean`   | `false`     | Valor por defecto del input
 | debounce | `number`    | `0`         | Tiempo que debe permanecer el input sin cambios tras un cambio dado para que este se propague
 | min      | `number`    | `0`         | Valor mínimo seleccionable por el input
@@ -32,10 +32,12 @@ Selector mediante barra deslizante
 
 | Nombre          | Tipo      | Descripción
 | --------------- | --------- | -----------
-| uniModelChange  | `boolean` | Notifica cuando ha habido un cambio de valor en el input
+| modelChange     | `boolean` | Notifica cuando ha habido un cambio de valor en el input
 | uniFocus        | `Event`   | Notifica cuando se ha hecho puesto el foco en el input
 | uniBlur         | `Event`   | Notifica cuándo se ha quitado el foco del input
 
 ## Mejoras previstas (TODO)
 
-- Desarrollo del componente
+- Implementar la opción de añadir ticks con steps
+- Implementar la opción de mostrar el valor actual en un label
+- Implementar el comportamiento de disabled

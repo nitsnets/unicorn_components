@@ -9,12 +9,12 @@ import { UniRadioComponent } from '../radio/radio.component';
 })
 export class UniRadioGroupComponent extends UniInputBaseComponent implements AfterContentInit {
 
-    private _uniModel;
-    @Input() set uniModel(value) {
-        this._uniModel = value;
+    private _model;
+    @Input() set model(value) {
+        this._model = value;
         this.initRadiosModels();
     }
-    get uniModel() { return this._uniModel; }
+    get model() { return this._model; }
 
     @ContentChildren(UniRadioComponent) radios: QueryList<UniRadioComponent>;
 
@@ -28,13 +28,13 @@ export class UniRadioGroupComponent extends UniInputBaseComponent implements Aft
     }
     private initRadiosModels() {
         if (!this.radios) { return; }
-        this.radios.forEach(item => item.uniModel = this.uniModel);
+        this.radios.forEach(item => item.model = this.model);
     }
     private initRadiosListeners() {
         this.radios.forEach(
-            item => item.uniModelChange.subscribe(
+            item => item.modelChange.subscribe(
                 value => {
-                    this.uniModel = value;
+                    this.model = value;
                     this.onNgModelChange(value);
                 }
             )
