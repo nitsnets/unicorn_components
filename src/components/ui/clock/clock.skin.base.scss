@@ -28,6 +28,8 @@ $m-radius: $clock-size/2 - $m-padding - $m-size/2;
 .clock-mode{
   padding: 10px;
   font-size: 12px;
+  &.unavailable { opacity: 0.25; }
+
   &.selected{ background-color: $alpha-black-medium; }
   &:not(.selected):hover{ background-color: $alpha-black-light; }
 }
@@ -68,6 +70,7 @@ $m-radius: $clock-size/2 - $m-padding - $m-size/2;
     background-color: $color-primary;
     color: white;
   }
+  &.unavailable { opacity: 0.25; }
 }
 .clock-minute{
   @include calc('left', '50% - #{$m-size/2}');
@@ -79,6 +82,7 @@ $m-radius: $clock-size/2 - $m-padding - $m-size/2;
   &.selected{
     box-shadow: inset 0 0 0 1px $color-primary
   }
+  &.unavailable { opacity: 0.25; }
 }
 
 .clock-hour-1{margin-top: $h-radius - $h-radius*$cos30; margin-left: $h-radius/2;}

@@ -1,5 +1,6 @@
-import { Component, ElementRef, Input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 
+import { UniClockComponent } from './../../ui/clock/clock.component';
 import { UniInputBaseComponent } from '../../base/input-base.component';
 import { sideOfScreen } from '../../../utils';
 
@@ -11,6 +12,10 @@ import { sideOfScreen } from '../../../utils';
 export class UniTimePickerComponent extends UniInputBaseComponent {
 
     @Input() inline = false;
+    @Input() min = '0:00';
+    @Input() max = '23:59';
+
+    @ViewChild(UniClockComponent) clock: UniClockComponent;
 
     side = 'left';
     private _opened = false;
@@ -29,6 +34,7 @@ export class UniTimePickerComponent extends UniInputBaseComponent {
         this.uniFocus.emit($event);
     }
     onBlur($event) {
+        if (this.clock) { this.clock.selectMode(this.clock.mode); }
         this.uniBlur.emit($event);
     }
     onKeyPress(ev: KeyboardEvent) {
