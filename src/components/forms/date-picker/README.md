@@ -26,8 +26,8 @@ Selector de fecha con calendario auxiliar.
 | value       | `string` (YYYY-MM-DD)   | `undefined` | Valor por defecto del input
 | debounce    | `number`                | `0`         | Tiempo que debe permanecer el input sin cambios tras un cambio dado para que este se propague
 | inline      | `boolean`               | `false`     | Colocar el calendario flotante (`false`) o en linea a continuación del input (`true`)
-| maxDate     | `string` (YYYY-MM-DD)   | `undefined` | Fecha máxima que se puede introducir
-| minDate     | `string` (YYYY-MM-DD)   | `undefined` | Fecha mínima que se puede introducir
+| max         | `string` (YYYY-MM-DD)   | `undefined` | Fecha máxima que se puede introducir
+| min         | `string` (YYYY-MM-DD)   | `undefined` | Fecha mínima que se puede introducir
 | rangeFrom   | `string` (YYYY-MM-DD)   | `undefined` | Inicio del rango si procede
 | rangeTo     | `string` (YYYY-MM-DD)   | `undefined` | Final del rango si procede
 

@@ -28,6 +28,8 @@ Botón con estado: *pulsado* o *no pulsado*.
 | combo       | `boolean`                                         | `false`     | Mostrar los inputs de `from` y `to` en un popup flotante
 | showArrows  | `boolean`                                         | `false`     | Mostrar las flechas para navegar intervalos hacia delante o atrás
 | comboLabel  | `string`                                          | `''`        | Etiqueta que acompaña al input del combo. Aplica cuando `combo` es `true`
+| min         | `string`                                          | `''`        | Valor mínimo posible del input en formato `YYYY-MM-DD`
+| max         | `string`                                          | `''`        | Valor máximo posible del input en formato `YYYY-MM-DD`
 | fromLabel   | `string`                                          | `''`        | Etiqueta que acompaña al input de `from`
 | toLabel     | `string`                                          | `''`        | Etiqueta que acompaña al input de `to`
 
@@ -42,4 +44,3 @@ Botón con estado: *pulsado* o *no pulsado*.
 ## Mejoras previstas (TODO)
 
 - Implementación el comportamiento de `disabled` y de `color`
-- Añadir parámetros `maxDate` y `minDate`

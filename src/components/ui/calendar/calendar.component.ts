@@ -11,8 +11,8 @@ export class UniCalendarComponent implements OnChanges {
     @Input() model;
     @Output() modelChange = new EventEmitter();
 
-    @Input() maxDate;
-    @Input() minDate;
+    @Input() max;
+    @Input() min;
 
     @Input() rangeFrom;
     @Input() rangeTo;
@@ -40,9 +40,9 @@ export class UniCalendarComponent implements OnChanges {
 
     select(day) {
         if (
-            this.maxDate
-            && day.date.isAfter(this.maxDate)
-            || this.minDate && day.date.isBefore(this.minDate)
+            this.max
+            && day.date.isAfter(this.max)
+            || this.min && day.date.isBefore(this.min)
         ) { return; }
 
         this.selected = day.date;
@@ -101,8 +101,8 @@ export class UniCalendarComponent implements OnChanges {
                     this.rangeFrom ? date.isBetween(this.rangeFrom, this.selected, 'day') : false,
                 isRangeTo: this.rangeTo ? date.isSame(this.rangeTo, 'day') : false,
                 isUnavailable:
-                (this.maxDate && date.isAfter(this.maxDate)) ||
-                (this.minDate && date.isBefore(this.minDate)),
+                (this.max && date.isAfter(this.max)) ||
+                (this.min && date.isBefore(this.min)),
                 date: date
             });
             date = date.clone();

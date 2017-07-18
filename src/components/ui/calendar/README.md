@@ -19,8 +19,8 @@ Calendario para la selección de días
 | Nombre      | Tipo                  | Por defecto | Descripción 
 | ----------- | --------------------- | ----------- | -----------
 | model       | `string` (YYYY-MM-DD) | `undefined` | Valor introducido en el input
-| maxDate     | `string`              | `''`        | Nombre del campo de cara a usarse en formularios
-| minDate     | `string`              | `''`        | Nombre del campo de cara a usarse en formularios
+| max         | `string`              | `''`        | Nombre del campo de cara a usarse en formularios
+| min         | `string`              | `''`        | Nombre del campo de cara a usarse en formularios
 | rangeFrom   | `string`              | `''`        | Nombre del campo de cara a usarse en formularios
 | rangeTo     | `string`              | `''`        | Nombre del campo de cara a usarse en formularios
 
