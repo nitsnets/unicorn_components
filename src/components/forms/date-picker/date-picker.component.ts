@@ -12,8 +12,8 @@ export class UniDatePickerComponent extends UniInputBaseComponent {
 
     @Input() inline = false;
 
-    @Input() maxDate;
-    @Input() minDate;
+    @Input() max;
+    @Input() min;
 
     @Input() rangeFrom;
     @Input() rangeTo;

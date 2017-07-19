@@ -66,7 +66,7 @@ export class UniClockComponent implements OnChanges {
     minuteMin = 0;
 
     ngOnChanges(changes) {
-        if(changes.model) {
+        if (changes.model) {
             this.updateValueFromModel();
             this.refreshHoursAvailable();
             this.refreshMinutesAvailable();

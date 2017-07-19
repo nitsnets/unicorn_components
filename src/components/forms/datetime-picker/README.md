@@ -30,6 +30,8 @@ Selector de fecha y hora con calendario y reloj auxiliares.
 | minDate     | `string` (YYYY-MM-DD)                               | `undefined` | Fecha mínima que se puede introducir
 | rangeFrom   | `string` (YYYY-MM-DD)                               | `undefined` | Inicio del rango si procede
 | rangeTo     | `string` (YYYY-MM-DD)                               | `undefined` | Final del rango si procede
+| minTime     | `string` (hh:mm)                                    | `undefined` | Hora mínima que se puede introducir
+| minTime     | `string` (hh:mm)                                    | `undefined` | Hora mínima que se puede introducir
 
 ### Eventos de salida
 
