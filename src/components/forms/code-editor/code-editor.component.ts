@@ -8,7 +8,7 @@ import 'brace/ext/beautify';
 
 import * as Ace from 'brace';
 
-import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild, HostBinding } from '@angular/core';
 
 @Component({
     selector: 'uni-code',
@@ -16,6 +16,8 @@ import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Outpu
     styleUrls: ['code.component.scss']
 })
 export class CodeEditorComponent implements OnInit, OnChanges, AfterViewInit {
+
+    @HostBinding('class.uni-code') componentClass = true;
     @Input() code = '';
     @Output() codeChange = new EventEmitter();
 

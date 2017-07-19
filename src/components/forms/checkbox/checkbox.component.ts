@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostBinding } from '@angular/core';
 
 import { UniInputBaseComponent } from '../../base/input-base.component';
 
@@ -8,6 +8,8 @@ import { UniInputBaseComponent } from '../../base/input-base.component';
     styleUrls: ['checkbox.component.scss'],
 })
 export class UniCheckboxComponent extends UniInputBaseComponent {
+
+    @HostBinding('class.uni-checkbox') componentClass = true;
     @Input() partial = false;
 
     toggleUniModel() {

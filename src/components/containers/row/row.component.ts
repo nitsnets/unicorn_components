@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
     selector: 'uni-row',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
     styleUrls: ['row.component.scss'],
 })
 export class UniRowComponent {
+
+    @HostBinding('class.uni-row') componentClass = true;
     constructor() { }
 }

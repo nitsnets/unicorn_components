@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostListener, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnChanges, OnInit, Output, HostBinding } from '@angular/core';
 
 import { FilterPipe } from '../../../pipes/filter.pipe';
 import { UniInputBaseComponent } from '../../base/input-base.component';
@@ -14,6 +14,7 @@ export enum SelectTypes { text, number, email, password }
 export class UniSelectComponent extends UniInputBaseComponent implements OnInit, OnChanges {
 
     private _model;
+    @HostBinding('class.uni-select') componentClass = true;
     @Input() set model(value) {
         this._model = value;
         this.updateOptionsSelectedByModel();

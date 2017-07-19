@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, HostBinding } from '@angular/core';
 import { arrToRgba, generateColors } from './../../../directives/base-chart.directive';
 
 @Component({
@@ -8,6 +8,7 @@ import { arrToRgba, generateColors } from './../../../directives/base-chart.dire
 })
 export class UniChartLegendComponent implements OnChanges {
 
+    @HostBinding('class.uni-chart-legend') componentClass = true;
     @Input() editable = true;
 
     @Input() series: Array<any> = [];

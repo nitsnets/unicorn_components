@@ -8,6 +8,7 @@ import {
     Input,
     Output,
     Type,
+    HostBinding,
 } from '@angular/core';
 
 @Component({
@@ -19,6 +20,7 @@ export class UniModalComponent implements AfterContentInit {
     component: Type<any>;
     componentRef: ComponentRef<any>;
 
+    @HostBinding('class.uni-modal') componentClass = true;
     @Input() options = {};
 
     @Output() loaded = new EventEmitter();

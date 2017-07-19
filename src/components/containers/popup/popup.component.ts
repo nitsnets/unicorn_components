@@ -10,6 +10,7 @@ import {
     Input,
     OnDestroy,
     Output,
+    HostBinding,
 } from '@angular/core';
 
 import { OnChanges } from '@angular/core';
@@ -23,6 +24,8 @@ export type UniPopupPosition = 'bottom-left' | 'bottom-right' | 'top-left' | 'to
     styleUrls: ['popup.component.scss'],
 })
 export class UniPopupComponent implements AfterContentInit, OnChanges {
+
+    @HostBinding('class.uni-popup') componentClass = true;
     @Input() toggle = false;
     @Input() keepOpen = true;
     @Input() opened = false;

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { UniCheckboxComponent } from '../checkbox/checkbox.component';
 
 @Component({
@@ -8,4 +8,5 @@ import { UniCheckboxComponent } from '../checkbox/checkbox.component';
 })
 export class UniButtonToggleComponent extends UniCheckboxComponent {
 
+    @HostBinding('class.uni-button-toggle') componentClass = true;
 }

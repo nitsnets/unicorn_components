@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, Input, OnChanges } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnChanges, HostBinding } from '@angular/core';
 
 import { UniColor } from '../../../models/types';
 import { UniInputBaseComponent } from '../../base/input-base.component';
@@ -10,6 +10,7 @@ import { UniInputBaseComponent } from '../../base/input-base.component';
 })
 export class UniSliderComponent extends UniInputBaseComponent implements OnChanges {
 
+    @HostBinding('class.uni-slider') componentClass = true;
     @Input() min = 0;
     @Input() max = 100;
 

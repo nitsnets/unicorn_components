@@ -1,6 +1,6 @@
 import * as moment from 'moment';
 
-import { Component, ElementRef, Input } from '@angular/core';
+import { Component, ElementRef, Input, HostBinding } from '@angular/core';
 import { abbrDateRange, sideOfScreen } from '../../../utils';
 
 import { Observable } from 'rxjs/Rx';
@@ -38,6 +38,7 @@ const presets = {
 })
 export class UniDaterangePickerComponent extends UniInputBaseComponent {
 
+    @HostBinding('class.uni-daterange-picker') componentClass = true;
     @Input() combo = false;
     @Input() showArrows = false;
     @Input() comboLabel = 'Date range';

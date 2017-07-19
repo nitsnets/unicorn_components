@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostBinding, HostListener, Input, OnChanges, Output } from '@angular/core';
+import { Component, EventEmitter, HostBinding, HostListener, Input, OnChanges, Output, HostBinding } from '@angular/core';
 
 import { UniOption } from '../../../../models/option';
 
@@ -8,6 +8,7 @@ import { UniOption } from '../../../../models/option';
 })
 export class UniTabsItemComponent {
 
+    @HostBinding('class.uni-tabs-item') componentClass = true;
     @Input() size: 'small';
 
     @Input()

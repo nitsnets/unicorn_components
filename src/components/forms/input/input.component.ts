@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, HostBinding } from '@angular/core';
 
 import { Observable } from 'rxjs/Rx';
 import { UniInputBaseComponent } from '../../base/input-base.component';
@@ -16,6 +16,7 @@ export type MaskArray = (string | RegExp)[];
 })
 export class UniInputComponent extends UniInputBaseComponent implements OnInit, OnChanges {
 
+    @HostBinding('class.uni-input') componentClass = true;
     @Input() type: InputType = 'text';
     @Input() max = -1;
 

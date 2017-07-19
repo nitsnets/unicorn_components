@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output, ViewContainerRef } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, ViewContainerRef, HostBinding } from '@angular/core';
 
 import { Color } from './../../../directives/base-chart.directive';
 
@@ -9,6 +9,7 @@ import { Color } from './../../../directives/base-chart.directive';
 })
 export class UniChartComponent implements OnChanges {
 
+    @HostBinding('class.uni-chart') componentClass = true;
     @Input() chartTitle: string;
     @Input() size: 'tiny' | 'small' | 'medium' | 'large' = 'medium';
     @Input() type: 'line' | 'bar' | 'pie' | 'radar' | 'doughnut' | 'polarArea' | 'horizontalBar';

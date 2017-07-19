@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, Output, HostBinding } from '@angular/core';
 
 import { UniBaseComponent } from '../../../base/base.component';
 
@@ -8,6 +8,8 @@ import { UniBaseComponent } from '../../../base/base.component';
     styleUrls: ['item.component.scss'],
 })
 export class UniAccordionItemComponent extends UniBaseComponent {
+
+    @HostBinding('class.uni-accordion-item') componentClass = true;
     @Input() menu = false;
 
     @HostBinding('class.collapsed')

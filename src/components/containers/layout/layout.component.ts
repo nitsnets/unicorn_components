@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
     selector: 'uni-layout',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
     styleUrls: ['layout.component.scss'],
 })
 export class UniLayoutComponent {
+
+    @HostBinding('class.uni-layout') componentClass = true;
     constructor() { }
 }

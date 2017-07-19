@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, HostBinding } from '@angular/core';
 
 import { UniColor } from '../../../models/types';
 
@@ -9,6 +9,7 @@ import { UniColor } from '../../../models/types';
 })
 export class UniHeaderComponent {
 
+    @HostBinding('class.uni-header') componentClass = true;
     @Input() visible = true;
     @Input() size: '' | 'medium' = null;
     @Input() color: UniColor = null;

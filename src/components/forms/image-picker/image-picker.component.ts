@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, HostBinding, Input, OnChanges, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostBinding, Input, OnChanges, Output, ViewChild, HostBinding } from '@angular/core';
 
 import { UniInputBaseComponent } from '../../base/input-base.component';
 
@@ -8,6 +8,8 @@ import { UniInputBaseComponent } from '../../base/input-base.component';
     styleUrls: ['image-picker.component.scss'],
 })
 export class UniImagePickerComponent extends UniInputBaseComponent implements OnChanges {
+
+    @HostBinding('class.uni-image-picker') componentClass = true;
     @ViewChild('inputFile') inputFile: ElementRef;
 
     @HostBinding('style.width.px')
