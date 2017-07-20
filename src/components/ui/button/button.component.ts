@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostBinding } from '@angular/core';
 
 import { UniButtonBaseComponent } from '../../base/button-base.component';
 
@@ -9,4 +9,5 @@ import { UniButtonBaseComponent } from '../../base/button-base.component';
 })
 export class UniButtonComponent extends UniButtonBaseComponent {
     @Input() type: string;
+    @HostBinding('class.uni-button') componentClass = true;
 }

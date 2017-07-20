@@ -1,0 +1,90 @@
+@mixin inverse-content {
+    color: white;
+    .sublabel{ color: white; }
+    .icon{ opacity: 1; color: white; }
+}
+@mixin button-background($color, $inverse: false) {
+    background-color: $color;
+    &:hover{background-color: lighten($color, 5%);}
+    &:focus{background-color: lighten($color, 5%);}
+    &:active{background-color: lighten($color, 8%);}
+    @if $inverse { @include inverse-content; }
+}
+
+uni-button {
+    button {
+        min-height: $input-xs-height;
+        font-size: $font-regular;
+        letter-spacing: 0.01em;
+        line-height: 1;
+
+        border: $border-width solid transparent;
+        padding: 0 $input-padding;
+        border-radius: $border-radius;
+
+        background-color: transparent;
+        color: $color-grey-dark;
+        @include transition(background-color, $fast, ease);
+        @include mq($from: sm) {
+            min-height: $input-height;
+            padding: 0 $input-padding * 2;
+        }
+        &.uni-button__inner--default{
+            border: solid $border-width $alpha-black-medium;
+        }
+        &.uni-button__inner--primary{ @include button-background($color-primary, true); }
+        &.uni-button__inner--error{ @include button-background($color-error, true); }
+        &.uni-button__inner--warning{ @include button-background($color-warning, true); }
+        &.uni-button__inner--success{ @include button-background($color-success, true); }
+        &.uni-button__inner--light{
+            color: $black;
+            @include button-background($color-grey-medium);
+            .sublabel{color: $black}
+        }
+    }
+    .only-icon{
+        width: $input-height;
+        padding: $input-padding / 4;
+        border-radius:$input-height / 2;
+    }
+    .only-icon-right{
+        width: $input-height;
+        padding: 0;
+        .iconRight { margin-left: 0; }
+    }
+    .sublabel{
+        opacity: 0.75;
+    }
+    .iconRight {
+        margin-left: $input-padding / 2;
+    }
+    /* SIZES */
+    .btn-small{
+        font-size: $font-small;
+        color: $color-grey-dark;
+    }
+    .btn-large{
+        height: $input-height*2;
+        padding: 0 $input-height 0 $input-height;
+        text-align: left;
+
+        &.with-icon{
+            padding-left: $input-height*2 - $border-width*2;
+        }
+        &.with-icon-right{
+            padding-right: $input-height*2 - $border-width*2;
+        }
+        .icon, .iconRight{
+            top: $basic-padding/2 - $border-width;
+        }
+        .icon{
+            left: $basic-padding/2 - $border-width;
+        }
+        .iconRight{
+            right: $basic-padding/2 - $border-width;
+        }
+        .sublabel{
+            margin-top: $basic-padding / 4;
+        }
+    }
+}

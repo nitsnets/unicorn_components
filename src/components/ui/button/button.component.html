@@ -1,19 +1,23 @@
-<button [disabled]="disabled || false" [type]="type || 'button'" [class]="color || ''" [ngClass]="{
-    'with-icon': icon,
-    'with-icon-right': iconRight,
-    'only-icon': icon && !iconRight && (!label || !label.length),
-    'only-icon-right': iconRight && !icon && (!label || !label.length),
-    'btn-large': size === 'large',
-    'btn-small': size === 'small'
-  }">
+<button
+    class="uni-button__inner"
+    [disabled]="disabled || false"
+    [type]="type || 'button'"
+    [class]="color ? 'uni-button__inner--' + color : ''"
+    [ngClass]="{
+        'with-icon': icon,
+        'with-icon-right': iconRight,
+        'only-icon': icon && !iconRight && (!label || !label.length),
+        'only-icon-right': iconRight && !icon && (!label || !label.length),
+        'btn-large': size === 'large',
+        'btn-small': size === 'small'
+    }">
 
-  <uni-icon class="icon" *ngIf="icon" [icon]="icon" [size]="size || 'medium'"></uni-icon>
+    <uni-icon class="icon" *ngIf="icon" [icon]="icon" [size]="size || 'medium'"></uni-icon>
 
-  {{label}}
-  <span class="sublabel" *ngIf="sublabel">
-    {{sublabel}}
-  </span>
+    {{label}}
+    <span class="sublabel" *ngIf="sublabel">
+        {{sublabel}}
+    </span>
 
-  <uni-icon class="iconRight" *ngIf="iconRight" [icon]="iconRight" [size]="size || 'medium'"></uni-icon>
-
+    <uni-icon class="iconRight" *ngIf="iconRight" [icon]="iconRight" [size]="size || 'medium'"></uni-icon>
 </button>
