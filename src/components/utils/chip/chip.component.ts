@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, HostBinding } from '@angular/core';
 
 import { UniBaseComponent } from '../../base/base.component';
 
@@ -9,6 +9,7 @@ import { UniBaseComponent } from '../../base/base.component';
 })
 export class UniChipComponent extends UniBaseComponent {
 
+    @HostBinding('class.uni-chip') componentClass = true;
     @Input() icon = null;
     @Input() removable = false;
     @Output() remove = new EventEmitter();

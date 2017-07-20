@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, OnChanges, HostBinding } from '@angular/core';
+import { Component, HostBinding, Input, OnChanges } from '@angular/core';
 
 @Component({
     selector: 'uni-aside',

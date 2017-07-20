@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 @Component({
     selector: 'uni-button-group',
     templateUrl: 'button-group.component.html',
@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
 })
 export class UniButtonGroupComponent {
 
+    @HostBinding('class.uni-button-group') componentClass = true;
 }

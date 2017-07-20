@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { UniBaseComponent } from '../../base/base.component';
 
 @Component({
@@ -8,4 +8,5 @@ import { UniBaseComponent } from '../../base/base.component';
 })
 export class UniBadgeComponent extends UniBaseComponent {
 
+    @HostBinding('class.uni-badge') componentClass = true;
 }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, HostBinding } from '@angular/core';
 
 import { UniFilter } from './../../../models/filter';
 import { UniListItem } from './../list/list.component';
@@ -13,6 +13,8 @@ export interface UniFilterItem extends UniListItem {
     styleUrls: ['./filters-list.component.scss']
 })
 export class UniFiltersListComponent implements OnInit {
+
+    @HostBinding('class.uni-filters-list') componentClass = true;
 
     @Input() mainTitle: string;
     @Input() mainFilters: UniFilterItem[];

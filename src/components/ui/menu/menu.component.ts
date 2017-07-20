@@ -9,6 +9,7 @@ import {
     Input,
     OnDestroy,
     Output,
+    HostBinding,
 } from '@angular/core';
 
 import { UniMenuContainerComponent } from './container/container.component';
@@ -20,6 +21,8 @@ import { UniPosition } from '../../../models/types';
     styleUrls: ['menu.component.scss'],
 })
 export class UniMenuComponent {
+
+    @HostBinding('class.uni-menu') componentClass = true;
     @Input() toggle = false;
     @Input() keepOpen = false;
     @Output() openedChange = new EventEmitter();

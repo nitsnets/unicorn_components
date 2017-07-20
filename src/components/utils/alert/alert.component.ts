@@ -9,6 +9,8 @@ import { UniBaseComponent } from '../../base/base.component';
     styleUrls: ['alert.component.scss']
 })
 export class UniAlertComponent extends UniBaseComponent {
+
+    @HostBinding('class.uni-alert') componentClass = true;
     @Input() icon: string;
     @Input() closable = true;
     @Output() close = new EventEmitter();

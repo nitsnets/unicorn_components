@@ -8,6 +8,8 @@ import { UniDatagridComponent } from '../datagrid.component';
     templateUrl: 'cell.component.html'
 })
 export class UniDatagridCellComponent implements OnInit {
+
+    @HostBinding('class.uni-datagrid-cell') componentClass = true;
     @Input()
     @HostBinding('class.highlight')
     highlight;

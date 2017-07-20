@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, HostBinding } from '@angular/core';
 
 import { IModalContent } from '../../../containers/modal/modal.interface';
 
@@ -9,6 +9,7 @@ import { IModalContent } from '../../../containers/modal/modal.interface';
 })
 export class UniDatagridDeleteComponent implements IModalContent {
 
+    @HostBinding('class.uni-datagrid-delete') componentClass = true;
     @Output() submitModal = new EventEmitter();
     @Output() cancelModal = new EventEmitter();
 

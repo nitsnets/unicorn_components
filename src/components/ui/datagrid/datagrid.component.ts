@@ -9,6 +9,7 @@ import {
     Output,
     QueryList,
     TemplateRef,
+    HostBinding,
 } from '@angular/core';
 import { deepClone, uuid } from '../../../utils';
 
@@ -54,6 +55,7 @@ export interface IUniDataCellEvent extends IUniDataRowEvent { j: number; column:
 export class UniDatagridComponent implements AfterContentInit, OnChanges {
     /** @lends UniDatagridComponent */
 
+    @HostBinding('class.uni-datagrid') componentClass = true;
     /**
      * Indicates that the datagrid must execute the operations (sort, pagination, deletion...)
      * locally with the data provided. Else, the datagrid just emits events to delegate the

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, HostBinding } from '@angular/core';
 
 import { pad } from '../../../utils';
 
@@ -10,6 +10,8 @@ const HOUR_PATTERN = /^(\d|[01]\d|2[0-3]):?([0-5]\d)$/;
     styleUrls: ['clock.component.scss'],
 })
 export class UniClockComponent implements OnChanges {
+
+    @HostBinding('class.uni-clock') componentClass = true;
     @Input() model = '00:00';
     @Output() modelChange = new EventEmitter();
 

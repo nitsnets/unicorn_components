@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, HostBinding } from '@angular/core';
 
 import { UniListItem } from './list.component';
 import { objEquals } from '../../../utils';
@@ -13,7 +13,11 @@ export interface UniListItem {
     templateUrl: 'list.component.html',
     styleUrls: ['list.component.scss']
 })
+
 export class UniListComponent implements OnChanges {
+
+    @HostBinding('class.uni-list') componentClass = true;
+
     @Input() local = true;
 
     @Input() sortable: any;

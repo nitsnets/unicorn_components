@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Inject, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Inject, Output, HostBinding } from '@angular/core';
 
 import { DOCUMENT } from '@angular/platform-browser';
 
@@ -12,6 +12,7 @@ export class UniTooltipComponent {
     options:any = {};
     message = '';
 
+    @HostBinding('class.uni-tooltip') componentClass = true;
     @Output() accept = new EventEmitter();
 
     constructor(

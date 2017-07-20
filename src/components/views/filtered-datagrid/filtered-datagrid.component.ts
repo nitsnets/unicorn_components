@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, ContentChild, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { AfterContentInit, Component, ContentChild, EventEmitter, Input, OnChanges, Output, HostBinding } from '@angular/core';
 
 import { UniDatagridComponent } from './../../ui/datagrid/datagrid.component';
 import { UniFilter } from './../../../models/filter';
@@ -12,6 +12,8 @@ import { deepClone } from '../../../utils';
     templateUrl: './filtered-datagrid.component.html'
 })
 export class FilteredDatagridComponent implements AfterContentInit, OnChanges {
+
+    @HostBinding('class.uni-filtered-datagrid') componentClass = true;
 
     @ContentChild(UniDatagridComponent) datagrid: UniDatagridComponent;
     @ContentChild(UniFiltersComponent) filters: UniFiltersComponent;

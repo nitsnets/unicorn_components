@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostBinding, HostListener, Input, OnChanges, Output, HostBinding } from '@angular/core';
+import { Component, EventEmitter, HostBinding, HostListener, Input, OnChanges, Output } from '@angular/core';
 
 import { UniOption } from '../../../../models/option';
 
