@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostBinding } from '@angular/core';
 
 import { UniButtonBaseComponent } from '../../base/button-base.component';
 import { UniButtonComponent } from './../button/button.component';
@@ -9,4 +9,6 @@ import { UniButtonComponent } from './../button/button.component';
     styleUrls: ['button-header.component.scss'],
 })
 export class UniButtonHeaderComponent extends UniButtonComponent {
+
+    @HostBinding('class.uni-button-header') componentClass = true;
 }

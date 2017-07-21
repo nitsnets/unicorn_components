@@ -8,6 +8,7 @@ import { UniOption } from '../../../../models/option';
 })
 export class UniTabsItemComponent {
 
+    @HostBinding('class.uni-tabs-item') componentClass = true;
     @Input() size: 'small';
 
     @Input()

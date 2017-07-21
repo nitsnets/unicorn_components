@@ -8,6 +8,8 @@ import { UniInputBaseComponent } from '../../base/input-base.component';
     styleUrls: ['image-picker.component.scss'],
 })
 export class UniImagePickerComponent extends UniInputBaseComponent implements OnChanges {
+
+    @HostBinding('class.uni-image-picker') componentClass = true;
     @ViewChild('inputFile') inputFile: ElementRef;
 
     @HostBinding('style.width.px')

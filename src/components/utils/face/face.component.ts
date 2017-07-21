@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, HostBinding } from '@angular/core';
 
 @Component({
     selector: 'uni-face',
@@ -6,6 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
     styleUrls: ['./face.component.scss']
 })
 export class UniFaceComponent implements OnInit {
+
+    @HostBinding('class.uni-face') componentClass = true;
     @Input() size: 'small' | 'big';
     @Input() user: { name: string, image: string };
     @Input() icon = 'user';

@@ -1,4 +1,4 @@
-import { Component, ContentChildren, Input, QueryList } from '@angular/core';
+import { Component, ContentChildren, Input, QueryList, HostBinding } from '@angular/core';
 
 import { UniButtonToggleComponent } from '../button-toggle/button-toggle.component';
 import { UniInputBaseComponent } from '../../base/input-base.component';
@@ -9,6 +9,8 @@ import { UniInputBaseComponent } from '../../base/input-base.component';
 })
 export class UniButtonToggleGroupComponent extends UniInputBaseComponent {
     private _model;
+
+    @HostBinding('class.uni-button-toggle-group') componentClass = true;
     @Input() set model(value) {
         this._model = value;
         this.initButtonsModels();

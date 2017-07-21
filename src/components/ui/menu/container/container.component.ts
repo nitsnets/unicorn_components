@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, HostBinding } from '@angular/core';
 
 @Component({
     selector: 'uni-menu-container',
@@ -6,5 +6,8 @@ import { Component, ElementRef } from '@angular/core';
     styleUrls: ['container.component.scss'],
 })
 export class UniMenuContainerComponent {
+
+    @HostBinding('class.uni-menu-container') componentClass = true;
+
     constructor(public elementRef: ElementRef) { }
 }

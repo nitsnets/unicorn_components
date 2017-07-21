@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, ContentChildren, QueryList } from '@angular/core';
+import { AfterContentInit, Component, ContentChildren, QueryList, HostBinding } from '@angular/core';
 
 import { UniButtonToggleComponent } from '../../../forms/button-toggle/button-toggle.component';
 import { UniCheckboxComponent } from './../../../forms/checkbox/checkbox.component';
@@ -15,6 +15,8 @@ import { UniToggleComponent } from '../../../forms/toggle/toggle.component';
     template: `<ng-content></ng-content>`
 })
 export class UniFiltersMainComponent implements AfterContentInit {
+
+    @HostBinding('class.uni-filters-main') componentClass = true;
 
     @ContentChildren(UniInputComponent, { descendants: true }) inputsList: QueryList<UniInputBaseComponent>;
     @ContentChildren(UniSelectComponent, { descendants: true }) selectsList: QueryList<UniInputBaseComponent>;

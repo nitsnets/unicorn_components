@@ -4,6 +4,7 @@ import {
     ElementRef,
     EventEmitter,
     Output,
+    HostBinding,
 } from '@angular/core';
 
 export interface ToastOptions { showClose: boolean; }
@@ -14,6 +15,7 @@ export interface ToastOptions { showClose: boolean; }
 })
 export class UniToastComponent implements AfterContentInit {
 
+    @HostBinding('class.uni-toast') componentClass = true;
     animateIn = false;
     animateOut = false;
     toastOptions: ToastOptions = null;

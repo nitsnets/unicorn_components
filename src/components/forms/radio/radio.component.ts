@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 
 import { UniInputBaseComponent } from '../../base/input-base.component';
 
@@ -9,6 +9,7 @@ import { UniInputBaseComponent } from '../../base/input-base.component';
 })
 export class UniRadioComponent extends UniInputBaseComponent implements OnInit {
 
+    @HostBinding('class.uni-radio') componentClass = true;
     // @Override
     ngOnInit() { }
 

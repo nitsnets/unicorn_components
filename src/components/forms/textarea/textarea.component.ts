@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, HostBinding } from '@angular/core';
 
 import { Observable } from 'rxjs/Rx';
 import { UniInputComponent } from '../input/input.component';
@@ -9,4 +9,5 @@ import { UniInputComponent } from '../input/input.component';
 })
 export class UniTextareaComponent extends UniInputComponent implements OnInit, OnChanges {
 
+    @HostBinding('class.uni-textarea') componentClass = true;
 }

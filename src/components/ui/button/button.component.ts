@@ -8,6 +8,7 @@ import { UniButtonBaseComponent } from '../../base/button-base.component';
     styleUrls: ['button.component.scss'],
 })
 export class UniButtonComponent extends UniButtonBaseComponent {
-    @Input() type: string;
+
     @HostBinding('class.uni-button') componentClass = true;
+    @Input() type: string;
 }

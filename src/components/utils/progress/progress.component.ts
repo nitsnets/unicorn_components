@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostBinding } from '@angular/core';
 
 import { UniColor } from '../../../models/types';
 
@@ -9,6 +9,7 @@ import { UniColor } from '../../../models/types';
 })
 export class UniProgressComponent {
 
+    @HostBinding('class.uni-progress') componentClass = true;
     @Input() value = 0;
     @Input() total = 100;
     @Input() showPercentage = false;

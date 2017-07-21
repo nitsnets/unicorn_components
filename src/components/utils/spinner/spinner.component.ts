@@ -7,6 +7,8 @@ import { UniColor } from '../../../models/types';
     template: '',
 })
 export class UniSpinnerComponent implements OnChanges {
+
+    @HostBinding('class.uni-spinner') componentClass = true;
     @Input() color: UniColor;
     @Input() size: 'small' | 'big';
     @Input() type: 'circle' | 'dots' = 'circle';

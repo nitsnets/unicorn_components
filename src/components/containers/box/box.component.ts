@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
     selector: 'uni-box',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
     styleUrls: ['box.component.scss'],
 })
 export class UniBoxComponent {
+
+    @HostBinding('class.uni-box') componentClass = true;
     constructor() { }
 }

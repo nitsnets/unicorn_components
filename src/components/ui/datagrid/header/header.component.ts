@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { ModalService } from './../../../containers/modal/modal.service';
 import { UniDatagridComponent } from './../datagrid.component';
 
@@ -7,6 +7,8 @@ import { UniDatagridComponent } from './../datagrid.component';
     templateUrl: './header.component.html'
 })
 export class UniDatagridHeaderComponent {
+
+    @HostBinding('class.uni-datagrid-header') componentClass = true;
     constructor(
         public datagrid: UniDatagridComponent,
         private modalService: ModalService

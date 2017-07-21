@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, ContentChildren, ElementRef, EventEmitter, Input, OnChanges, Output, QueryList } from '@angular/core';
+import { AfterContentInit, Component, ContentChildren, ElementRef, EventEmitter, Input, OnChanges, Output, QueryList, HostBinding } from '@angular/core';
 
 import { UniOption } from '../../../models/option';
 import { UniTabsItemComponent } from './item/item.component';
@@ -10,6 +10,7 @@ import { UniTabsItemComponent } from './item/item.component';
 })
 export class UniTabsComponent implements OnChanges, AfterContentInit {
 
+    @HostBinding('class.uni-tabs') componentClass = true;
     @Input() size: 'small';
 
     @Input() tabs: UniOption[];

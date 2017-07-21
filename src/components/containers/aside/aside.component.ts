@@ -6,8 +6,8 @@ import { Component, HostBinding, Input, OnChanges } from '@angular/core';
     styleUrls: ['aside.component.scss'],
 })
 export class UniAsideComponent implements OnChanges {
-    constructor() { }
 
+    @HostBinding('class.uni-aside') componentClass = true;
     @HostBinding('class.aside-left') left = true;
     @HostBinding('class.aside-right') right = true;
 
@@ -22,4 +22,5 @@ export class UniAsideComponent implements OnChanges {
             this.right = true;
         }
     }
+    constructor() { }
 }

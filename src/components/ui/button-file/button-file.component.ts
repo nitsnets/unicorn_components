@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild, HostBinding } from '@angular/core';
 
 import { UniButtonBaseComponent } from '../../base/button-base.component';
 
@@ -8,6 +8,8 @@ import { UniButtonBaseComponent } from '../../base/button-base.component';
     styleUrls: ['button-file.component.scss'],
 })
 export class UniButtonFileComponent extends UniButtonBaseComponent {
+
+    @HostBinding('class.uni-button-file') componentClass = true;
     @Input() fileType: string;
     @Output() fileChange = new EventEmitter();
     @ViewChild('input') inputElement: ElementRef;

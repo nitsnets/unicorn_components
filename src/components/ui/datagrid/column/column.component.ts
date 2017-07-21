@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, ContentChild, Input, OnChanges, TemplateRef } from '@angular/core';
+import { AfterContentInit, Component, ContentChild, Input, OnChanges, TemplateRef, HostBinding } from '@angular/core';
 
 import { UniDatagridCellDirective } from '../cell/cell-variables.directive';
 import { findByPath } from '../../../../utils';
@@ -8,6 +8,8 @@ import { findByPath } from '../../../../utils';
     template: '',
 })
 export class UniDatagridColumnComponent implements AfterContentInit, OnChanges {
+
+    @HostBinding('class.uni-datagrid-column') componentClass = true;
     @Input() title: string = null;
     @Input() field: string = null;
     @Input() cellClass: string = null;

@@ -15,6 +15,7 @@ import { UniDatagridComponent } from '../datagrid.component';
 })
 export class UniDatagridRowComponent implements OnChanges {
 
+    @HostBinding('class.uni-datagrid-row') componentClass = true;
     @HostBinding('class.selected')
     @Input() selected = false;
 

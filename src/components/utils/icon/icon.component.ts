@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, HostBinding } from '@angular/core';
 
 @Component({
     selector: 'uni-icon',
@@ -6,6 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
     styleUrls: ['icon.component.scss']
 })
 export class UniIconComponent {
+
+    @HostBinding('class.uni-icon') componentClass = true;
     @Input() icon: string;
     @Input() size: string;
 }

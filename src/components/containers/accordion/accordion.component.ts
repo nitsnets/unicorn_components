@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ContentChildren, EventEmitter, Input, Output, QueryList } from '@angular/core';
+import { AfterViewInit, Component, ContentChildren, EventEmitter, Input, Output, QueryList, HostBinding } from '@angular/core';
 
 import { UniAccordionItemComponent } from './item/item.component';
 
@@ -8,6 +8,8 @@ import { UniAccordionItemComponent } from './item/item.component';
     styleUrls: ['accordion.component.scss'],
 })
 export class UniAccordionComponent implements AfterViewInit {
+
+    @HostBinding('class.uni-accordion') componentClass = true;
     @Input() mode: 'single' | 'multiple' | number = 'multiple';
     @Output() collapsedChange = new EventEmitter<{ index: number, value: boolean }>();
     @ContentChildren(UniAccordionItemComponent) items: QueryList<UniAccordionItemComponent>;

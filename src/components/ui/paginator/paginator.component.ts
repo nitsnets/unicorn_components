@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, HostBinding } from '@angular/core';
 
 const pagesWindow = 4;
 
@@ -8,6 +8,8 @@ const pagesWindow = 4;
     styleUrls: ['paginator.component.scss'],
 })
 export class UniPaginatorComponent implements OnChanges {
+
+    @HostBinding('class.uni-paginator') componentClass = true;
     @Input() totalElements: number;
     @Input() pageSize = 10;
 

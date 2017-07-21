@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, HostBinding } from '@angular/core';
 
 import { UniInputBaseComponent } from '../../base/input-base.component';
 
@@ -8,6 +8,8 @@ import { UniInputBaseComponent } from '../../base/input-base.component';
     styleUrls: ['search.component.scss'],
 })
 export class UniSearchHeaderComponent extends UniInputBaseComponent {
+
+    @HostBinding('class.uni-search-header') componentClass = true;
     @Input() placeholder = '';
 
     constructor() { super(); }

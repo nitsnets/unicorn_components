@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, ContentChildren, Input, QueryList } from '@angular/core';
+import { AfterContentInit, Component, ContentChildren, Input, QueryList, HostBinding } from '@angular/core';
 
 import { UniInputBaseComponent } from '../../base/input-base.component';
 import { UniRadioComponent } from '../radio/radio.component';
@@ -10,6 +10,7 @@ import { UniRadioComponent } from '../radio/radio.component';
 export class UniRadioGroupComponent extends UniInputBaseComponent implements AfterContentInit {
 
     private _model;
+    @HostBinding('class.uni-radio-group') componentClass = true;
     @Input() set model(value) {
         this._model = value;
         this.initRadiosModels();

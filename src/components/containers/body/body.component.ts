@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
     selector: 'uni-body',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
     styleUrls: ['body.component.scss'],
 })
 export class UniBodyComponent {
+
+    @HostBinding('class.uni-body') componentClass = true;
     constructor() { }
 }

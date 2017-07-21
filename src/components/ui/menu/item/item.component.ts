@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input } from '@angular/core';
+import { Component, ElementRef, Input, HostBinding } from '@angular/core';
 
 import { UniBaseComponent } from '../../../base/base.component';
 
@@ -8,6 +8,8 @@ import { UniBaseComponent } from '../../../base/base.component';
     styleUrls: ['item.component.scss'],
 })
 export class UniMenuItemComponent extends UniBaseComponent {
+
+    @HostBinding('class.uni-menu-item') componentClass = true;
     @Input() icon = '';
 
     constructor(public elementRef: ElementRef) {

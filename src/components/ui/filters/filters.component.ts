@@ -8,6 +8,7 @@ import {
     OnChanges,
     Output,
     QueryList,
+    HostBinding,
 } from '@angular/core';
 import { deepClone, objEmpty, objEquals } from '../../../utils';
 
@@ -30,6 +31,8 @@ import { UniToggleComponent } from './../../forms/toggle/toggle.component';
     styleUrls: ['./filters.component.scss']
 })
 export class UniFiltersComponent implements AfterContentInit, OnChanges {
+
+    @HostBinding('class.uni-filters') componentClass = true;
 
     @Input() autoFilter: 'onChange' | 'onBlur' | false = false;
     @Input() persistent: string = null;

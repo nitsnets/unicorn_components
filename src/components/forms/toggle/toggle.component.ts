@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostBinding } from '@angular/core';
 
 import { UniCheckboxComponent } from './../checkbox/checkbox.component';
 
@@ -8,5 +8,7 @@ import { UniCheckboxComponent } from './../checkbox/checkbox.component';
     styleUrls: ['toggle.component.scss'],
 })
 export class UniToggleComponent extends UniCheckboxComponent {
+
+    @HostBinding('class.uni-toggle') componentClass = true;
     @Input() rounded = true;
 }

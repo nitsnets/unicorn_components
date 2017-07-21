@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input } from '@angular/core';
+import { Component, ElementRef, Input, HostBinding } from '@angular/core';
 
 import { UniInputBaseComponent } from '../../base/input-base.component';
 import { sideOfScreen } from '../../../utils';
@@ -10,6 +10,7 @@ import { sideOfScreen } from '../../../utils';
 })
 export class UniDatePickerComponent extends UniInputBaseComponent {
 
+    @HostBinding('class.uni-date-picker') componentClass = true;
     @Input() inline = false;
 
     @Input() max;

@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges, HostBinding } from '@angular/core';
 
 @Component({
     selector: 'uni-chart-tooltip',
@@ -7,6 +7,7 @@ import { Component, Input, OnChanges } from '@angular/core';
 })
 export class UniChartTooltipComponent implements OnChanges {
 
+    @HostBinding('class.uni-chart-tooltip') componentClass = true;
     @Input() tooltip;
 
     tooltipStyle: any = {};

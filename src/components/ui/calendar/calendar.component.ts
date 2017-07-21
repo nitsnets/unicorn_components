@@ -1,6 +1,6 @@
 import * as moment from 'moment';
 
-import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, HostBinding } from '@angular/core';
 
 @Component({
     selector: 'uni-calendar',
@@ -8,6 +8,8 @@ import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core
     styleUrls: ['calendar.component.scss'],
 })
 export class UniCalendarComponent implements OnChanges {
+
+    @HostBinding('class.uni-calendar') componentClass = true;
     @Input() model;
     @Output() modelChange = new EventEmitter();
 
