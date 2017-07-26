@@ -3,7 +3,7 @@ $slider-width: $input-height * 5;
 $slider-thumb-height: $slider-height / 2;
 $slider-track-height: $slider-height / 8;
 
-uni-slider{
+uni-slider, uni-slider-range{
     display: inline-block;
     user-select: none;
 
@@ -46,11 +46,11 @@ uni-slider{
         }
         &:hover > .slider__thumb { border-color: $color-grey; }
 
-        &.primary.sliding .slider__thumb { border-color: $color-primary; }
-        &.success.sliding .slider__thumb { border-color: $color-success; }
-        &.warning.sliding .slider__thumb { border-color: $color-warning; }
-        &.error.sliding .slider__thumb { border-color: $color-error; }
-        &.light.sliding .slider__thumb { border-color: $color-grey; }
+        &.primary .slider__thumb.sliding { border-color: $color-primary; }
+        &.success .slider__thumb.sliding { border-color: $color-success; }
+        &.warning .slider__thumb.sliding { border-color: $color-warning; }
+        &.error .slider__thumb.sliding { border-color: $color-error; }
+        &.light .slider__thumb.sliding { border-color: $color-grey; }
 
         &__ticks {
             display: flex;

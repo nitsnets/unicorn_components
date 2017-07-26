@@ -2,7 +2,7 @@ Slider
 ===================
 `uni-slider`
 ---
-:white_circle: Previsto
+:blue_circle: Initial
 
 Selector mediante barra deslizante
 

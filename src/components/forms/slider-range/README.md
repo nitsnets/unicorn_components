@@ -2,7 +2,7 @@ Slider range
 ===================
 `uni-slider-range`
 ---
-:white_circle: Previsto
+:blue_circle: Initial
 
 Selector de rango mediante barra deslizante
 
@@ -22,7 +22,7 @@ Selector de rango mediante barra deslizante
 | label    | `string`    | `''`        | Etiqueta textual del input
 | color    | `UniColor`  | `''`        | Color del fondo y del contenido
 | disabled | `boolean`   | `false`     | Estado deshabilitado que impide la manipulación del input
-| model    | `number[]`  | `false`     | Valor introducido en el input
+| model    | `number`    | `false`     | Valor introducido en el input
 | value    | `boolean`   | `false`     | Valor por defecto del input
 | debounce | `number`    | `0`         | Tiempo que debe permanecer el input sin cambios tras un cambio dado para que este se propague
 | min      | `number`    | `0`         | Valor mínimo seleccionable por el input
@@ -38,4 +38,6 @@ Selector de rango mediante barra deslizante
 
 ## Mejoras previstas (TODO)
 
-- Desarrollo del componente
+- Implementar la opción de añadir ticks con steps
+- Implementar la opción de mostrar el valor actual en un label
+- Implementar el comportamiento de disabled

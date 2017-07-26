@@ -1,0 +1,11 @@
+<span class="label" *ngIf="label" [innerHtml]="label"></span>
+
+<div [class]="'slider ' + color">
+    <div class="slider__ticks" *ngIf="showTicks">
+        <div class="slider__ticks__item" *ngFor="let tick of ticks"></div>
+    </div>
+    <div class="slider__track"> </div>
+    <div class="slider__track-fill" [ngStyle]="trackStyle"> </div>
+    <div class="slider__thumb" [class.sliding]="thumbs.from.sliding" [ngStyle]="thumbFromStyle"> </div>
+    <div class="slider__thumb" [class.sliding]="thumbs.to.sliding" [ngStyle]="thumbToStyle"> </div>
+</div>
