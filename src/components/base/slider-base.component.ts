@@ -28,6 +28,6 @@ export abstract class UniSliderBaseComponent extends UniInputBaseComponent imple
         const sliding = Math.max(rect.left, Math.min(rect.right, x)) - rect.left;
         return sliding / width;
     }
-    protected abstract updatePercentByModel;
-    protected abstract updateModelByPercent;
+    protected abstract updatePercentByModel();
+    protected abstract updateModelByPercent();
 }

@@ -84,10 +84,12 @@ export class UniSliderRangeComponent extends UniSliderBaseComponent implements O
         return 'from';
     }
 
-    private updatePercentByModel() {
 
+    updatePercentByModel() {
+        // TODO: Allow thumbs refresh when external model changes happen
     }
-    private updateModelByPercent() {
+
+    updateModelByPercent() {
         if (this.thumbs.from.percent > this.thumbs.to.percent) {
             if (this.sliding === 'from') {
                 this.thumbs.to.percent = this.thumbs.from.percent;

@@ -41,3 +41,4 @@ Selector de rango mediante barra deslizante
 - Implementar la opción de añadir ticks con steps
 - Implementar la opción de mostrar el valor actual en un label
 - Implementar el comportamiento de disabled
+- Implementar el refresco cuando sucende una actualización externa del modelo

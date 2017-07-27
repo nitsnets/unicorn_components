@@ -38,14 +38,14 @@ export class UniSliderComponent extends UniSliderBaseComponent implements OnChan
 
     constructor(elementRef: ElementRef) { super(elementRef); }
 
-    private updatePercentByModel() {
+    updatePercentByModel() {
         if (this.max < this.min) { return this.percent = 0; }
         if (this.max === this.min) { return this.percent = this.max; }
         if (this.model <= this.min) { return this.percent = 0; }
         if (this.model >= this.max) { return this.percent = 1; }
         this.percent = this.model / (this.max - this.min);
     }
-    private updateModelByPercent() {
+    updateModelByPercent() {
         if (this.percent >= 1) {
             this.percent = 1;
             this.onNgModelChange(this.max);
