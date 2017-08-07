@@ -8,7 +8,7 @@ uni-filters {
         margin-left: auto;
     }
     .options-container {
-        padding-left: $basic-padding;
+        padding-left: $basic-padding / 2;
         align-items: flex-end;
 
         &.three-options { min-width: 300px; }

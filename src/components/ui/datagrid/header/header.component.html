@@ -1,51 +1,42 @@
-<uni-row
-    [class.selected]="datagrid.selected.length && datagrid.deletingSelection !== true"
-    [class.deleting]="datagrid.selected.length && datagrid.deletingSelection === true"
-    [class.all-selected]="datagrid.allSelected()"
+<uni-row class="uni-datagrid-header__row"
+    [class.uni-datagrid-header__row--selected]="datagrid.selected.length && datagrid.deletingSelection !== true"
+    [class.uni-datagrid-header__row--deleting]="datagrid.selected.length && datagrid.deletingSelection === true"
+    [class.uni-datagrid-header__row--all-selected]="datagrid.allSelected()"
 >
-    <uni-datagrid-cell *ngIf="datagrid.selectable" [width]="0" [highlight]="true">
-        <uni-checkbox
-            [partial]="datagrid.selected.length > 0"
-            [model]="datagrid.allSelected()"
-            (modelChange)="datagrid.onSelectAll($event)"
-        ></uni-checkbox>
+    <uni-datagrid-cell class="uni-datagrid-header__cell" *ngIf="datagrid.selectable" [width]="0" [highlight]="true">
+        <uni-checkbox [partial]="datagrid.selected.length > 0" [model]="datagrid.allSelected()" (modelChange)="datagrid.onSelectAll($event)"></uni-checkbox>
     </uni-datagrid-cell>
 
     <ng-container *ngIf="!datagrid.selected.length">
-        <uni-datagrid-cell
+        <uni-datagrid-cell class="uni-datagrid-header__cell"
             *ngFor="let column of datagrid.columns"
             [ngClass]="{
-                'sortable': column.isSortable(datagrid.sortable),
-                'sort-asc': datagrid.sort?.field && datagrid.sort?.field === column?.field && datagrid.sort.dir === false,
-                'sort-desc': datagrid.sort?.field && datagrid.sort?.field === column?.field && datagrid.sort.dir === true
+                'uni-datagrid-header__cell--sortable': column.isSortable(datagrid.sortable),
+                'uni-datagrid-header__cell--sort-asc': datagrid.sort?.field && datagrid.sort?.field === column?.field && datagrid.sort.dir === false,
+                'uni-datagrid-header__cell--sort-desc': datagrid.sort?.field && datagrid.sort?.field === column?.field && datagrid.sort.dir === true
             }"
             [width]="column.width || 1"
             [highlight]="column.isSortable(datagrid.sortable) ? true : false"
             (click)="datagrid.onSortBy(column)"
         >
-            <span [innerHtml]="column.title"></span>
+            <span class="uni-datagrid-header__text" [innerHtml]="column.title"></span>
         </uni-datagrid-cell>
     </ng-container>
     <ng-container *ngIf="datagrid.selected.length && datagrid.deletingSelection !== true">
-        <uni-datagrid-cell>
-            <span>{{datagrid.selected.length}} item(s) selected</span>
+        <uni-datagrid-cell class="uni-datagrid-header__cell">
+            <span class="uni-datagrid-header__text">{{datagrid.selected.length}} item(s) selected</span>
         </uni-datagrid-cell>
     </ng-container>
 
     <ng-container *ngIf="datagrid.selected.length && datagrid.deletingSelection === true">
-        <uni-datagrid-cell class="deleting">
-            <span>Are you sure you want to delete {{datagrid.selected.length}} item(s)?</span>
+        <uni-datagrid-cell class="uni-datagrid-header__cell uni-datagrid-header__cell--deleting">
+            <span class="uni-datagrid-header__text">Are you sure you want to delete {{datagrid.selected.length}} item(s)?</span>
             <uni-button label="Delete" color="error" (click)="datagrid.onDeleteSelection()"></uni-button>
             <uni-button label="Cancel" color="default" (click)="datagrid.deletingSelection = false"></uni-button>
         </uni-datagrid-cell>
     </ng-container>
 
-    <uni-datagrid-cell
-        class="delete-cell"
-        width="0"
-        *ngIf="datagrid.deletable"
-        [highlight]="true"
-    >
+    <uni-datagrid-cell class="uni-datagrid-header__cell uni-datagrid-header__delete-cell" width="0" *ngIf="datagrid.deletable" [highlight]="true">
         <uni-button icon="delete" (click)="onDeleteAttempt()"></uni-button>
     </uni-datagrid-cell>
 

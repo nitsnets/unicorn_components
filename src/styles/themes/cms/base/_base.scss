@@ -84,7 +84,7 @@ a {
     transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s;
 
     @include on-event {
-        color: $color-primary-light;
+        color: lighten($color-primary, 5%);
         outline: 0;
         text-decoration: none;
     }

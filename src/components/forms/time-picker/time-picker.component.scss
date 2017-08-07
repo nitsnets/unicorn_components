@@ -2,22 +2,24 @@
 :host {
   display: inline-block;
 }
+.uni-time-picker {
+    &__container {
+        position: relative;
+    }
 
-.time-container {
-  position: relative;
-}
 
-.time-controls-container {
-  z-index: 1;
+    &__buttons {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
 
-  &.floating {
-    z-index: 2;
-    position: absolute;
-  }
-}
+    &__controls {
+        z-index: 1;
 
-.time-buttons-container {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
+        &.floating {
+            z-index: 2;
+            position: absolute;
+        }
+    }
 }

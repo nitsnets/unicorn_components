@@ -9,8 +9,8 @@
   }
 }
 
-uni-calendar {
-  .calendar-container {
+.uni-calendar {
+  &__container {
     width: $calendar-size;
     height: $calendar-size;
     background-color: #fff;
@@ -55,8 +55,9 @@ uni-calendar {
     width: 30px;
     height: 30px;
   }
-  &.floating {
-    .calendar-container { border: 0; }
+
+  &--bordered &__container {
+      @include border();
   }
 }
 

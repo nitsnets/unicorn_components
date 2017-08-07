@@ -12,7 +12,7 @@ uni-icon {
             font-size: $font-regular;
 
             @include mq($from: sm) {
-            font-size: $font-largest;
+                font-size: $font-largest;
             }
         }
 

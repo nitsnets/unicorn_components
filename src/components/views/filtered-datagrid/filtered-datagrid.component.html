@@ -1,9 +1,17 @@
-<uni-layout>
+<uni-layout [ngClass]="{
+    'has-header': hasHeader,
+    'has-subheader': hasSubheader,
+    'has-subheader-and-tabs': hasSubheaderAndTabs
+}">
     <uni-aside class="aside-left" [class.hidden]="filtersList?.isEmpty">
         <ng-content select="uni-filters-list"></ng-content>
     </uni-aside>
-    <uni-body>
+    <uni-body [class.full-width]="fullWidth">
         <ng-content select="uni-filters"></ng-content>
         <ng-content select="uni-datagrid"></ng-content>
+
+        <div *ngIf="(!datagrid.data || !datagrid.data.length) && !filters.filter.isEmpty()">
+            <ng-content select="div[uni-no-results]"></ng-content>
+        </div>
     </uni-body>
 </uni-layout>

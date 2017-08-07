@@ -67,7 +67,7 @@
       (focus)="uniFocus.emit($event)"
       (keypress)="uniKeypress.emit($event)">
     </textarea>
-    <div class="suffix" *ngIf="suffix || sufixIcon">
+    <div class="suffix" *ngIf="suffix || suffixIcon">
         <uni-icon *ngIf="suffixIcon" [icon]="suffixIcon"></uni-icon>
         <span [innerHtml]="suffix"></span>
     </div>

@@ -35,10 +35,14 @@ Agrupación de filtros con funciones de limpiado y guardado.
 
 ### Atributos de entrada
 
-| Nombre        | Tipo                        | Por defecto | Descripción 
-| ------------- | --------------------------- | ----------- | -----------
-| filterNameFn  | `(item, filter) => boolean` | `undefined` | Función empleada para filtrar los elementos. Los recibe uno a uno y devuelve un booleano si pasan el filtro.
-| filterFn      | `(filter) => string`        | `undefined` | Recibe un filtro activo y devuelve el nombre con el que se debe guardar por defecto
+| Nombre                | Tipo                        | Por defecto | Descripción 
+| ---------------------- | -------------------------- | ----------- | -----------
+| filterNameFn          | `(item, filter) => boolean` | `undefined` | Función empleada para filtrar los elementos. Los recibe uno a uno y devuelve un booleano si pasan el filtro.
+| filterFn              | `(filter) => string`        | `undefined` | Recibe un filtro activo y devuelve el nombre con el que se debe guardar por defecto
+| hasHeader             | `boolean`                   | `false`     | Applies the specified layout
+| hasSubheader          | `boolean`                   | `false`     | Applies the specified layout
+| hasSubheaderAndTabs   | `boolean`                   | `false`     | Applies the specified layout
+| fullWidth             | `boolean`                   | `false`     | Applies the specified layout
 
 ### Eventos de salida
 

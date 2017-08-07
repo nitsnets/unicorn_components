@@ -1,13 +1,7 @@
 <uni-header ntsSize="medium">
-  <uni-input
-    icon="search"
-    [value]="value"
-    [placeholder]="placeholder"
-    [model]="model"
-    (modelChange)="onUniModelChange($event)"
-    [debounce]="debounce"
-    [floating]="true">
-  </uni-input>
-  <uni-button class="btn-header-md" icon="close" (click)="clear()" *ngIf="model"></uni-button>
-  
+    <uni-input icon="search" [value]="value" [placeholder]="placeholder" [model]="model" (modelChange)="onNgModelChange($event)"
+        [debounce]="debounce" [floating]="true">
+    </uni-input>
+    <uni-button class="btn-header-md" icon="close" (click)="clear()" *ngIf="model"></uni-button>
+
 </uni-header>

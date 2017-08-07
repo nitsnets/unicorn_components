@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, HostBinding } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
 
 import { UniInputBaseComponent } from '../../base/input-base.component';
 

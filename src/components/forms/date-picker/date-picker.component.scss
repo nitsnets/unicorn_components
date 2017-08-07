@@ -3,28 +3,14 @@
   display: inline-block;
 }
 
-.date-container {
-  position: relative;
-}
+.uni-date-picker{
 
-.date-controls-container {
-  z-index: 1;
-
-  &.floating {
-    z-index: 2;
-    position: absolute;
-
-    &.align-right {
-      right: 0;
+    &__container {
+        position: relative;
     }
-    &.align-left {
-      left: 0;
+    &__buttons {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
     }
-  }
-}
-
-.date-buttons-container {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
 }

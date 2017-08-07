@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostBinding, HostListener, OnChanges } from '@angular/core';
+import { Component, ElementRef, HostBinding, HostListener, Input, OnChanges } from '@angular/core';
 
 import { UniSliderBaseComponent } from '../../base/slider-base.component';
 
@@ -8,6 +8,8 @@ import { UniSliderBaseComponent } from '../../base/slider-base.component';
     styleUrls: ['slider.component.scss']
 })
 export class UniSliderComponent extends UniSliderBaseComponent implements OnChanges {
+
+    @Input() showTicks = false;
 
     @HostBinding('class.uni-slider') componentClass = true;
 

@@ -4,11 +4,11 @@ import {
     ContentChild,
     ContentChildren,
     EventEmitter,
+    HostBinding,
     Input,
     OnChanges,
     Output,
     QueryList,
-    HostBinding,
 } from '@angular/core';
 import { deepClone, objEmpty, objEquals } from '../../../utils';
 
@@ -65,7 +65,7 @@ export class UniFiltersComponent implements AfterContentInit, OnChanges {
 
     defaultFilter: UniFilter = {};
 
-    private _filter: UniFilter = {};
+    private _filter: UniFilter;
     get filter(): UniFilter {
         return this._filter;
     }
@@ -120,8 +120,11 @@ export class UniFiltersComponent implements AfterContentInit, OnChanges {
             }
         });
 
-        this.applyDefault();
-
+        if (!this.filter) {
+            this.applyDefault();
+        } else {
+            this.updateUniModels();
+        }
         if (this.persistent) {
             this.restoreFilter();
         }
@@ -186,13 +189,8 @@ export class UniFiltersComponent implements AfterContentInit, OnChanges {
     private updateUniModels() {
         if (
             this.filters
-            && (
-                !this.advFilters
-                || !this.advFilters.length
-            ) && (
-                !this.mainFilters
-                || !this.mainFilters.length
-            )
+            && (!this.advFilters || !this.advFilters.length)
+            && (!this.mainFilters || !this.mainFilters.length)
         ) {
             this.filters.forEach(f => f.model = this.filter[f.name]);
         } else if (this.advFilters && this.mainFilters) {

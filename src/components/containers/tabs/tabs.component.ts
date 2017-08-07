@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, ContentChildren, ElementRef, EventEmitter, Input, OnChanges, Output, QueryList, HostBinding } from '@angular/core';
+import { AfterContentInit, Component, ContentChildren, ElementRef, EventEmitter, HostBinding, Input, OnChanges, Output, QueryList } from '@angular/core';
 
 import { UniOption } from '../../../models/option';
 import { UniTabsItemComponent } from './item/item.component';
@@ -19,18 +19,24 @@ export class UniTabsComponent implements OnChanges, AfterContentInit {
 
     @ContentChildren(UniTabsItemComponent) tabsElements: QueryList<UniTabsItemComponent>;
 
+    private inited = false;
     constructor(private elementRef: ElementRef) { }
 
     ngOnChanges(changes) {
         this.applySelected();
     }
     ngAfterContentInit() {
+        this.inited = true;
         if (this.tabsElements.length) {
             this.tabs = this.tabsElements.map(t => new UniOption({ label: t.label, value: t.value }));
         }
+        this.applySelected();
     }
     applySelected() {
-        if (!this.tabs || !this.tabs.length) { this.selectTab(null, -1); return; }
+        if (!this.inited) { return; }
+        if (!this.tabs || !this.tabs.length) {
+            this.selectTab(null, -1); return;
+        }
         let tab: UniOption = null;
         tab = this.tabs.find((t, i) => t.value && t.value === this.tabSelected || !t.value && i === this.tabSelected);
         this.selectTab(tab, this.tabs.indexOf(tab));

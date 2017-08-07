@@ -4,12 +4,12 @@ import {
     ContentChild,
     ContentChildren,
     EventEmitter,
+    HostBinding,
     Input,
     OnChanges,
     Output,
     QueryList,
     TemplateRef,
-    HostBinding,
 } from '@angular/core';
 import { deepClone, uuid } from '../../../utils';
 
@@ -240,6 +240,12 @@ export class UniDatagridComponent implements AfterContentInit, OnChanges {
      * @default false
      */
     @Input() showLabels = false;
+    /**
+     * Specifies the class to be applied to the rows
+     * @type string
+     * @default null
+     */
+    @Input() rowClass: string = null;
 
     /**
      * Emits an event when a cell is clicked

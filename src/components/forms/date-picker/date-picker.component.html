@@ -1,12 +1,12 @@
-<div class="date-container" (clickOutside)="opened = (inline ? opened : false)">
-    <div class="date-input-container">
-        <uni-input type="date" icon="calendar" class="date-input clear-webkit-controls" [maxValue]="max" [minValue]="min"
+<div class="uni-date-picker__container" (clickOutside)="opened = (!floating ? opened : false)">
+    <div class="uni-date-picker__inputs">
+        <uni-input type="date" icon="calendar" class="uni-date-picker__input clear-webkit-controls" [maxValue]="max" [minValue]="min"
             [label]="label" [clear]="true" [model]="model" (modelChange)="onDateChanges($event)" (uniFocus)="onFocus($event)"
             (uniBlur)="onBlur($event)" (uniKeypress)="onKeyPress($event, true)"> </uni-input>
     </div>
-    <div *ngIf="opened || inline" class="date-controls-container" [class.floating]="!inline" [class.align-left]="side === 'left'"
-        [class.align-right]="side === 'right'">
-        <uni-calendar [max]="max" [min]="min" [rangeFrom]="rangeFrom" [rangeTo]="rangeTo" [model]="model" (modelChange)="onDateChanges($event)">
+    <div *ngIf="opened || !floating" class="uni-date-picker__controls" [class.align-left]="side === 'left'" [class.align-right]="side === 'right'">
+        <uni-calendar [bordered]="floating===false" [max]="max" [min]="min" [rangeFrom]="rangeFrom" [rangeTo]="rangeTo" [model]="model"
+            (modelChange)="onDateChanges($event)">
         </uni-calendar>
     </div>
 </div>

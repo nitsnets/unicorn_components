@@ -1,20 +1,17 @@
-<div class="calendar-container" [ngClass]="{
+<div class="uni-calendar__container" [ngClass]="{
   'rangeFromActive': isRangeFromActive(),
   'rangeToActive': isRangeToActive()
 }">
-  <div class="month-name">
-      <uni-button icon="chevron-left" size="small" (click)="previous()"></uni-button>
-      <p>{{month.format("MMMM YYYY")}}</p>
-      <uni-button icon="chevron-right" size="small" (click)="next()"></uni-button>
-  </div>
-  <div class="days-name">
-      <p *ngFor="let dayName of dayNames">{{dayName}}</p>
-  </div>
-  <div class="week-row" *ngFor="let week of weeks"
-    >
-    <p class="day-container"
-      *ngFor="let day of week.days"
-      [ngClass]="{
+    <div class="month-name">
+        <uni-button icon="chevron-left" size="small" (click)="previous()"></uni-button>
+        <p>{{month.format("MMMM YYYY")}}</p>
+        <uni-button icon="chevron-right" size="small" (click)="next()"></uni-button>
+    </div>
+    <div class="days-name">
+        <p *ngFor="let dayName of dayNames">{{dayName}}</p>
+    </div>
+    <div class="week-row" *ngFor="let week of weeks">
+        <p class="day-container" *ngFor="let day of week.days" [ngClass]="{
         'selected': day.date.isSame(selected),
         'rangeMiddle': day.isRangeMiddle,
         'rangeFrom': day.isRangeFrom,
@@ -23,9 +20,9 @@
         'different-month': !day.isCurrentMonth,
         'unavailable': day.isUnavailable
       }">
-      <span class="day" (click)="select(day)">
+            <span class="day" (click)="select(day)">
         {{day.number}}
       </span>
-    </p>
-  </div>
+        </p>
+    </div>
 </div>

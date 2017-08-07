@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostListener, Input, OnChanges, OnInit, Output, HostBinding } from '@angular/core';
+import { Component, EventEmitter, HostBinding, HostListener, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 import { FilterPipe } from '../../../pipes/filter.pipe';
 import { UniInputBaseComponent } from '../../base/input-base.component';
@@ -158,7 +158,7 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
         this.optionsSelected = [];
         if (!this.options || !this.model) { this.optionsSelected = []; return; }
         for (const option of this.options) {
-            if (!this.multiple && option.value === this.model ||
+            if (!this.multiple && option.value == this.model ||
                 this.multiple && this.model.includes(option.value)) {
                 this.optionsSelected.push(option);
             }

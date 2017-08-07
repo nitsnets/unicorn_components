@@ -5,16 +5,16 @@
 .month-name, .days-name, .week-row {
   display: flex;
   align-items: center;
-  p{ 
-    flex:1; 
+  p{
+    flex:1;
     text-align: center;
     margin: 0;
   }
 }
 .week-row {
   flex:1;
-  p{ 
-    display: flex; 
+  p{
+    display: flex;
     justify-content: center;
   }
 }
@@ -28,7 +28,4 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-}
-:host.floating {
-  .calendar-container { border: 0; }
 }

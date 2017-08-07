@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, HostBinding } from '@angular/core';
+import { Component, ElementRef, HostBinding, Input } from '@angular/core';
 
 import { UniInputBaseComponent } from '../../base/input-base.component';
 import { sideOfScreen } from '../../../utils';
@@ -11,7 +11,9 @@ import { sideOfScreen } from '../../../utils';
 export class UniDatePickerComponent extends UniInputBaseComponent {
 
     @HostBinding('class.uni-date-picker') componentClass = true;
-    @Input() inline = false;
+
+    @HostBinding('class.uni-date-picker--floating')
+    @Input() floating = true;
 
     @Input() max;
     @Input() min;
@@ -23,7 +25,7 @@ export class UniDatePickerComponent extends UniInputBaseComponent {
     private _opened = false;
     set opened(value: boolean) {
         this._opened = value;
-        if (value && !this.inline && this.elementRef) {
+        if (value && this.floating && this.elementRef) {
             this.side = sideOfScreen(this.elementRef.nativeElement);
         }
     }

@@ -16,6 +16,7 @@ export class UniSliderRangeComponent extends UniSliderBaseComponent implements O
         to: { sliding: false, percent: 0 }
     }
     @Input() pushable = true;
+    @Input() showTicks = false;
 
     @HostBinding('class.uni-slider') componentClass = true;
 

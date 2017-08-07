@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild, HostBinding } from '@angular/core';
+import { Component, ElementRef, HostBinding, Input, ViewChild } from '@angular/core';
 
 import { UniClockComponent } from './../../ui/clock/clock.component';
 import { UniInputBaseComponent } from '../../base/input-base.component';
@@ -12,7 +12,10 @@ import { sideOfScreen } from '../../../utils';
 export class UniTimePickerComponent extends UniInputBaseComponent {
 
     @HostBinding('class.uni-time-picker') componentClass = true;
-    @Input() inline = false;
+
+    @HostBinding('class.uni-time-picker--floating')
+    @Input() floating = true;
+
     @Input() min = '0:00';
     @Input() max = '23:59';
 
@@ -22,7 +25,7 @@ export class UniTimePickerComponent extends UniInputBaseComponent {
     private _opened = false;
     set opened(value: boolean) {
         this._opened = value;
-        if (value && !this.inline && this.elementRef) {
+        if (value && this.floating && this.elementRef) {
             this.side = sideOfScreen(this.elementRef.nativeElement);
         }
     }

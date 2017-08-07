@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, ContentChild, EventEmitter, Input, OnChanges, Output, HostBinding } from '@angular/core';
+import { AfterContentInit, Component, ContentChild, EventEmitter, HostBinding, Input, OnChanges, Output } from '@angular/core';
 
 import { UniDatagridComponent } from './../../ui/datagrid/datagrid.component';
 import { UniFilter } from './../../../models/filter';
@@ -23,6 +23,11 @@ export class FilteredDatagridComponent implements AfterContentInit, OnChanges {
     @Input() filterFn: Function;
 
     @Output() filterSave = new EventEmitter();
+
+    @Input() hasHeader = false;
+    @Input() hasSubheader = false;
+    @Input() hasSubheaderAndTabs = false;
+    @Input() fullWidth = false;
 
     constructor() { }
 
