@@ -2,7 +2,7 @@
 
     <li *ngFor="let item of data; let i = index">
 
-        <uni-icon class="drag-handle show-hover" *ngIf="sortable" icon="drag"></uni-icon>
+        <uni-icon class="drag-handle show-hover" *ngIf="sortable" icon="drag_handle"></uni-icon>
 
         <ng-container *ngIf="!item.editing">
             <span (click)="onClick(item)" (dblclick)="onDoubleclick(item)" [class.selected]="isSelected(item)" [innerHtml]="item.name || '(Untitled)'"> </span>

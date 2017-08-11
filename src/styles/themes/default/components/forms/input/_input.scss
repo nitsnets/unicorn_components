@@ -25,6 +25,7 @@ uni-input{
 
     .icon, .icon-right{
         opacity: 0.5;
+        line-height: 2.2;
     }
     .icon{
         left: ($input-height - $input-padding*2) / 2;
@@ -106,7 +107,7 @@ uni-input{
         margin-left: - $input-height;
         height: $input-height;
         width: $input-height;
-        line-height: 4;
+        line-height: 2.5;
         cursor: pointer;
     }
 

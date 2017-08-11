@@ -1,15 +1,13 @@
 uni-icon {
 
     span {
-        font-size: $font-regular;
+        font-size: $font-xlarge;
 
         &.small {
-            padding: $font-regular / 4;
-            font-size: $font-regular / 2;
+            font-size: $font-large;
         }
-
         &.large {
-            font-size: $font-regular;
+            font-size: $font-xlarge;
 
             @include mq($from: sm) {
                 font-size: $font-largest;
@@ -17,15 +15,11 @@ uni-icon {
         }
 
         &::before {
-            font-family: "uni-icon";
+            font-family: "material-icons";
             font-size: 1em;
             margin-right: .2em;
             line-height: 1em;
             margin-left: .2em;
-        }
-
-        &.caret {
-            font-size: $font-large / 2;
         }
 
         &.drag {

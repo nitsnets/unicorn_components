@@ -5,8 +5,8 @@
     'only-icon': !label || !label.length
 }">
     <uni-icon class="icon" [icon]="
-        model == true ? 'square-check' :
-        partial == true ? 'square-minus' : 'square'"
+        model == true ? 'check_box' :
+        partial == true ? 'indeterminate_check_box' : 'check_box_outline_blank'"
     ></uni-icon>
     <input type="checkbox"
         [name]="name"

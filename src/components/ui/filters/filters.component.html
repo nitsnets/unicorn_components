@@ -17,31 +17,9 @@
         'two-options': optionsCount === 2,
         'one-option': optionsCount === 1
     }">
-        <uni-button class="apply"
-            *ngIf="showButton" type="submit"
-            [label]="buttonLabel"
-            [color]="buttonColor"
-            [icon]="buttonIcon"
-        ></uni-button>
-        <uni-button class="clear"
-            *ngIf="clearable && !isDefault()"
-            label="clear"
-            icon="close"
-            size="small"
-            (click)="onClear()"
-        ></uni-button>
-        <uni-button class="save"
-            *ngIf="savable && !isEmpty()"
-            label="save"
-            icon="plus"
-            size="small"
-            (click)="onSave()"
-        ></uni-button>
+        <uni-button class="apply" *ngIf="showButton" type="submit" [label]="buttonLabel" [color]="buttonColor" [icon]="buttonIcon"></uni-button>
+        <uni-button class="clear" *ngIf="clearable && !isDefault()" label="clear" icon="close" size="small" (click)="onClear()"></uni-button>
+        <uni-button class="save" *ngIf="savable && !isEmpty()" label="save" icon="add" size="small" (click)="onSave()"></uni-button>
     </div>
 </form>
-<uni-button *ngIf="advFilters && !showAdvanced"
-    icon="arrow-down"
-    label="more filters"
-    size="small"
-    (click)="showAdvanced = true"
-></uni-button>
+<uni-button *ngIf="advFilters && !showAdvanced" icon="keyboard_arrow_down" label="more filters" size="small" (click)="showAdvanced = true"></uni-button>

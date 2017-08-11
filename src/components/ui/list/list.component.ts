@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output, HostBinding } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, OnChanges, Output } from '@angular/core';
 
 import { UniListItem } from './list.component';
 import { objEquals } from '../../../utils';
@@ -102,7 +102,7 @@ export class UniListComponent implements OnChanges {
         this.delete.emit({ index, item });
     }
     isSelected(item: UniListItem): boolean {
-        if (!this.itemSelected) { return false; }
+        if (!this.itemSelected || !this.selectable) { return false; }
         if (item['id'] && this.itemSelected['id'] && item['id'] === this.itemSelected['id']) { return true; }
         return objEquals(this.itemSelected, item);
     }

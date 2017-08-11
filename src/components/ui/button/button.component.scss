@@ -7,7 +7,8 @@
 .uni-button {
 
     &__inner {
-        display: block;
+        display: flex;
+        align-items: center;
         overflow: hidden;
         position: relative;
         cursor: pointer;

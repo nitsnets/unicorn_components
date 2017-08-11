@@ -1,6 +1,6 @@
 <div class="acc-container">
     <div class="acc-header">
-        <uni-button class="acc-caret" icon="caret" (click)="onCollapsedChange(!collapsed)">
+        <uni-button class="acc-caret" icon="arrow_drop_down" (click)="onCollapsedChange(!collapsed)">
         </uni-button>
 
         <span class="acc-title" (click)="onCollapsedChange(!collapsed)" [innerHtml]="label"> </span>
@@ -10,7 +10,7 @@
         </div>
 
         <uni-menu class="acc-menu" *ngIf="menu">
-            <uni-button class="acc-menu-trigger" icon="more-v" uniMenuTrigger></uni-button>
+            <uni-button class="acc-menu-trigger" icon="more_vert" uniMenuTrigger></uni-button>
             <uni-menu-container>
                 <ng-content select="[uni-accordion-menu]"></ng-content>
             </uni-menu-container>

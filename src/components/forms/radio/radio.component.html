@@ -3,7 +3,7 @@
   'only-icon': !label || !label.length
 }">
   <uni-icon class="icon" [icon]="
-    model == value ? 'circle-check' : 'circle'"
+    model == value ? 'radio_button_checked' : 'radio_button_unchecked'"
   ></uni-icon>
   <input type="checkbox" [name]="name" [ngModel]="model == value" (ngModelChange)="onNgModelChange(this.value)">
   <span class="label" *ngIf="label" [innerHtml]="label"></span>

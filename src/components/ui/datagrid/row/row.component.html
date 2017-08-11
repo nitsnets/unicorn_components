@@ -1,9 +1,4 @@
-<uni-datagrid-cell
-    class="select-cell show-hover"
-    width="0"
-    *ngIf="box && datagrid.selectable"
-    [highlight]="true"
->
+<uni-datagrid-cell class="select-cell show-hover" width="0" *ngIf="box && datagrid.selectable" [highlight]="true">
     <uni-checkbox [model]="selected" (modelChange)="selectedChange.emit($event)"></uni-checkbox>
 </uni-datagrid-cell>
 
@@ -14,11 +9,6 @@
     <uni-button label="Cancel" color="default" (click)="deleting = false"></uni-button>
 </uni-datagrid-cell>
 
-<uni-datagrid-cell
-    class="delete-cell show-hover"
-    width="0"
-    *ngIf="box && datagrid.deletable"
-    [highlight]="true"
->
+<uni-datagrid-cell class="delete-cell show-hover" width="0" *ngIf="box && datagrid.deletable" [highlight]="true">
     <uni-button icon="delete" (click)="onDeleteAttempt()"></uni-button>
 </uni-datagrid-cell>

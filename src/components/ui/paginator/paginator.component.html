@@ -1,29 +1,16 @@
 <div class="container">
 
-  <p class="counter">
-    <strong>{{selected * pageSize + 1}} - {{min(totalElements, (selected + 1) * pageSize)}}</strong>
-    of {{totalElements}} items
-  </p>
+    <p class="counter">
+        <strong>{{selected * pageSize + 1}} - {{min(totalElements, (selected + 1) * pageSize)}}</strong> of {{totalElements}}
+        items
+    </p>
 
-  <div class="pages">
-    <uni-icon class="paginator-icon"
-        icon="arrow-left"
-        (click)="prevPage()"
-        [class.disabled]="selected === 0"
-    ></uni-icon>
-    <span class="page"
-      *ngFor="let page of pages"
-      [class.selectable]="page !== selected && page !== null"
-      [class.selected]="page === selected"
-      [class.selected]="page === selected"
-      (click)="selectPage(page)"
-    >
+    <div class="pages">
+        <uni-icon class="paginator-icon" icon="keyboard_arrow_left" (click)="prevPage()" [class.disabled]="selected === 0"></uni-icon>
+        <span class="page" *ngFor="let page of pages" [class.selectable]="page !== selected && page !== null" [class.selected]="page === selected"
+            [class.selected]="page === selected" (click)="selectPage(page)">
       {{page === null ? '...' : page+1}}
     </span>
-    <uni-icon class="paginator-icon"
-        icon="arrow-right"
-        (click)="nextPage()"
-        [class.disabled]="selected === pagesCount - 1"
-    ></uni-icon>
-  </div>
+        <uni-icon class="paginator-icon" icon="keyboard_arrow_right" (click)="nextPage()" [class.disabled]="selected === pagesCount - 1"></uni-icon>
+    </div>
 </div>

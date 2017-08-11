@@ -4,11 +4,11 @@ uni-menu-item {
   line-height: 1;
   color: black;
 
-  .dropdown-item{
+  .menu-item{
     padding-left: $input-padding*2;
     .icon{
-      left: ($input-height - $font-regular) / 2;
-      top: ($input-height - $font-regular) / 2;
+      left: ($input-height - $font-xlarge) / 2;
+      top: ($input-height - $font-xlarge) / 2;
     }
   }
 

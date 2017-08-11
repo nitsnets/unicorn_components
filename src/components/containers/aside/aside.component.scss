@@ -1,8 +1,5 @@
 
 :host{
-  &.has-header, &.has-subheader{ .body-container{ overflow-y: auto; } }
-}
-.aside{
   overflow-y: auto;
   overflow-x: hidden;
 }

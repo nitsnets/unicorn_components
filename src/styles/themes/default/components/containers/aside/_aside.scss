@@ -1,38 +1,26 @@
 uni-aside {
     @include md() {
         &.collapsed{
-            .aside {
-                margin-left: 0;
-                width: $input-height + $basic-padding;
-            }
+            margin-left: 0;
+            width: $input-height + $basic-padding;
         }
     }
-    .aside{
-        height: 100%;
-        width: $aside-width;
+    height: 100%;
+    width: $aside-width;
 
-        @include transition(all, 200ms, ease);
-    }
+    @include transition(all, 200ms, ease);
     &.has-header, &[has-header]{
-        .body-container {
-            height: calc(100% - #{$header-height});
-        }
+        height: calc(100% - #{$header-height});
     }
     &.has-subheader, &[has-subheader] {
-        .body-container {
-            height: calc(100% - #{$header-height * 2});
-        }
+        height: calc(100% - #{$header-height * 2});
     }
     &.aside-left, &[left]{
         &.collapsed{
-            .aside {
                 margin-left: - ($input-height + $basic-padding);
-            }
         }
         &.hidden{
-            .aside {
                 margin-left: - $aside-width;
-            }
         }
         @include border-right();
     }

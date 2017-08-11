@@ -1,9 +1,9 @@
 <div (mousedown)="onMouseDown()" (mouseup)="onMouseUp()" (clickOutside)="closeCombo()">
     <div class="daterange-input-container" *ngIf="combo" [class.filled]="model?.to && model?.from" [class.with-arrows]="showArrows">
-        <uni-input icon="calendar" [model]="comboModel" [placeholder]="comboLabel" (uniFocus)="openCombo()">
+        <uni-input icon="date_range" [model]="comboModel" [placeholder]="comboLabel" (uniFocus)="openCombo()">
         </uni-input>
-        <uni-button class="arrow-btn left" *ngIf="showArrows" icon="arrow-left" (click)="prevRange()"></uni-button>
-        <uni-button class="arrow-btn right" *ngIf="showArrows" icon="arrow-right" (click)="nextRange()"></uni-button>
+        <uni-button class="arrow-btn left" *ngIf="showArrows" icon="keyboard_arrow_left" (click)="prevRange()"></uni-button>
+        <uni-button class="arrow-btn right" *ngIf="showArrows" icon="keyboard_arrow_right" (click)="nextRange()"></uni-button>
     </div>
 
     <div class="main-container" *ngIf="!combo || comboOpened" [class.floating]="combo" [class.align-left]="side === 'left'" [class.align-right]="side === 'right'">

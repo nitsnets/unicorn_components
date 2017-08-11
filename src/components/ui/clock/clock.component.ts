@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output, HostBinding } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, OnChanges, Output } from '@angular/core';
 
 import { pad } from '../../../utils';
 
@@ -16,6 +16,7 @@ export class UniClockComponent implements OnChanges {
     @Output() modelChange = new EventEmitter();
 
     @Input() set min(value: string) {
+        if (!value) { return; }
         if (!HOUR_PATTERN.test(value)) { console.warn(`Invalid hour format: ${value}`); return; }
         const arr = value.split(':');
         this.hourMin = +arr[0];
@@ -29,6 +30,7 @@ export class UniClockComponent implements OnChanges {
 
     };
     @Input() set max(value: string) {
+        if (!value) { return; }
         if (!HOUR_PATTERN.test(value)) { console.warn(`Invalid hour format: ${value}`); return; }
         const arr = value.split(':');
         this.hourMax = +arr[0];

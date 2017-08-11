@@ -2,7 +2,7 @@
     (drop)="onDrop($event)" [ngClass]="{dragging: dragging}">
 
     <div class="placeholder" *ngIf="!imageData">
-        <uni-icon class="icon" icon="image" size="large"></uni-icon>
+        <uni-icon class="icon" icon="photo" size="large"></uni-icon>
         <p class="label">
             {{label || 'Click or drop an image to upload'}} <br> ({{width}} x {{height}})
         </p>

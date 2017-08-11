@@ -1,6 +1,6 @@
 <div class="uni-date-picker__container" (clickOutside)="opened = (!floating ? opened : false)">
     <div class="uni-date-picker__inputs">
-        <uni-input type="date" icon="calendar" class="uni-date-picker__input clear-webkit-controls" [maxValue]="max" [minValue]="min"
+        <uni-input type="date" icon="date_range" class="uni-date-picker__input clear-webkit-controls" [maxValue]="max" [minValue]="min"
             [label]="label" [clear]="true" [model]="model" (modelChange)="onDateChanges($event)" (uniFocus)="onFocus($event)"
             (uniBlur)="onBlur($event)" (uniKeypress)="onKeyPress($event, true)"> </uni-input>
     </div>

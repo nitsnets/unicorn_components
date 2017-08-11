@@ -1,6 +1,6 @@
 <div class="uni-time-picker__container" (clickOutside)="opened = (!floating ? opened : false)">
     <div class="uni-time-picker__inputs">
-        <uni-input type="time" icon="clock" class="uni-time-picker__input clear-webkit-controls" [maxValue]="max" [minValue]="min" [label]="label"
+        <uni-input type="time" icon="alarm" class="uni-time-picker__input clear-webkit-controls" [maxValue]="max" [minValue]="min" [label]="label"
             [clear]="true" [model]="model" (modelChange)="onTimeChanges($event)" (uniFocus)="onFocus($event)" (uniBlur)="onBlur($event)"
             (uniKeypress)="onKeyPress($event)">
         </uni-input>
