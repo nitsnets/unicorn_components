@@ -1,21 +1,10 @@
 <ng-container *ngIf="mainFilters">
     <p class="title3" *ngIf="mainTitle">{{mainTitle}}</p>
-    <uni-list
-        [selectable]="true"
-        [data]="mainFilters"
-        [itemSelected]="filterSelected"
-        (itemSelectedChange)="onFilterSelected($event)"
-    ></uni-list>
+    <uni-list contentField="filter" [selectable]="true" [data]="mainFilters" [itemSelected]="filterSelected" (itemSelectedChange)="onFilterSelected($event)"></uni-list>
 </ng-container>
 
 <ng-container *ngIf="customFilters">
     <p class="title3" *ngIf="customTitle">{{customTitle}}</p>
-    <uni-list
-        [selectable]="true"
-        [sortable]="true"
-        [deletable]="true"
-        [data]="customFilters"
-        [itemSelected]="filterSelected"
-        (itemSelectedChange)="onFilterSelected($event)"
-    ></uni-list>
+    <uni-list contentField="filter" [editable]="true" [selectable]="true" [sortable]="true" [deletable]="true" [data]="customFilters" [itemSelected]="filterSelected"
+        (itemSelectedChange)="onFilterSelected($event)"></uni-list>
 </ng-container>

@@ -1,4 +1,4 @@
-uni-input{
+.uni-input{
     display: flex;
     line-height: $input-height;
 
@@ -8,10 +8,6 @@ uni-input{
         padding-right: $input-padding;
         border-radius: $border-radius;
         @include border($border-width);
-        &:focus{
-            background-color: $alpha-black-light !important;
-            border-color: $alpha-black-medium !important;
-        }
     }
     textarea{
         padding: $input-padding;
@@ -33,13 +29,25 @@ uni-input{
     .icon-right{
         right: ($input-height - $input-padding*2) / 2;
     }
-
-    .with-icon input{ padding-left: $input-height; }
-    .with-icon-right input{ padding-right: $input-height; }
-    .with-two-icon-right input{ padding-right: 40px; }
-    .with-chips input{ border-radius: 0 $border-radius $border-radius 0; border-left-width: 0; }
-    .with-prefix input{ border-radius: 0 $border-radius $border-radius 0; }
-    .with-suffix input{ border-radius: $border-radius 0 0 $border-radius; }
+    /*
+    --has-content
+    --with-prefix
+    --with-suffix
+    --with-chips
+    --with-icon
+    --with-icon-right
+    --with-two-icon-right
+    */
+    &--focused input{
+        background-color: $alpha-black-light;
+        border-color: $alpha-black-medium;
+    }
+    &--with-icon input{ padding-left: $input-height; }
+    &--with-icon-right input{ padding-right: $input-height; }
+    &--with-two-icon-right input{ padding-right: 40px; }
+    &--with-chips input{ border-radius: 0 $border-radius $border-radius 0; border-left-width: 0; }
+    &--with-prefix input{ border-radius: 0 $border-radius $border-radius 0; }
+    &--with-suffix input{ border-radius: $border-radius 0 0 $border-radius; }
 
     .label, .prefix, .suffix, .error, .hint{
         font-weight: 300;
@@ -50,17 +58,8 @@ uni-input{
         height: $label-height;
     };
 
-    .floating {
-        &.focused, &.has-content{
-            span {
-                font-size: $font-small;
-                top: 0;
-                left: 0;
-                line-height: $label-height;
-                cursor: default;
-            }
-        }
-        span {
+    &--floating {
+        span{
             font-size: $font-regular;
             position: absolute;
             top: $label-height;
@@ -73,6 +72,20 @@ uni-input{
             @include border(0);
             background-color: transparent;
         }
+    }
+    &--floating &--focused,
+    &--floating &--has-content{
+        span {
+            font-size: $font-small;
+            top: 0;
+            left: 0;
+            line-height: $label-height;
+            cursor: default;
+        }
+    }
+    &--focused input{
+        background-color: $alpha-black-light;
+        border-color: $alpha-black-medium;
     }
     .prefix, .suffix, .chips {
         height: $input-height;
@@ -100,7 +113,7 @@ uni-input{
             margin-left: $basic-padding / 6;
         }
     }
-    .with-prefix .chips {
+    &--with-prefix .chips {
         border-radius: 0;
     }
     .clear-btn{
@@ -111,7 +124,7 @@ uni-input{
         cursor: pointer;
     }
 
-    .with-two-icon-right {
+    &--with-two-icon-right {
         .clear-btn{  margin-left: - 50px; }
     }
 

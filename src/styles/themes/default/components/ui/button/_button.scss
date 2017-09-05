@@ -11,8 +11,8 @@
     @if $inverse { @include inverse-content; }
 }
 
-uni-button {
-    button {
+.uni-button {
+    &__inner {
         width: 100%;
         min-height: $input-xs-height;
         font-size: $font-regular;
@@ -43,12 +43,12 @@ uni-button {
             .sublabel{color: $black}
         }
     }
-    .only-icon{
+    &--only-icon{
         width: $input-height;
         padding: $input-padding / 4;
         border-radius:$input-height / 2;
     }
-    .only-icon-right{
+    &--only-icon-right{
         width: $input-height;
         padding: 0;
         .iconRight { margin-left: 0; }
@@ -60,22 +60,22 @@ uni-button {
         margin-left: $input-padding / 2;
     }
     /* SIZES */
-    .btn-small{
+    &--small{
         font-size: $font-small;
         color: $color-grey-dark;
     }
-    .btn-large{
+    &--large{
         height: $input-height*2;
         padding: 0 $input-height 0 $input-height;
         text-align: left;
 
-        &.with-icon{
+        .uni-button--with-icon{
             padding-left: $input-height*2 - $border-width*2;
         }
-        &.with-icon-right{
+        .uni-button--with-icon-right{
             padding-right: $input-height*2 - $border-width*2;
         }
-        &.only-icon{
+        .uni-button--only-icon{
             width: $input-height*2;
             padding: $input-padding / 4;
             border-radius: $input-height;

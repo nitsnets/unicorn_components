@@ -1,12 +1,7 @@
 import { Component, EventEmitter, HostBinding, Input, OnChanges, Output } from '@angular/core';
 
-import { UniListItem } from './list.component';
+import { UniListItem } from './../../../models/list-item';
 import { objEquals } from '../../../utils';
-
-export interface UniListItem {
-    name: string;
-    icon: string;
-}
 
 @Component({
     selector: 'uni-list',
@@ -19,10 +14,12 @@ export class UniListComponent implements OnChanges {
     @HostBinding('class.uni-list') componentClass = true;
 
     @Input() local = true;
+    @Input() contentField;
 
     @Input() sortable: any;
     @Input() selectable = false;
     @Input() deletable = false;
+    @Input() editable = false;
 
     @Input() placeholder: string;
     defaultSortableOptions = {
@@ -60,6 +57,7 @@ export class UniListComponent implements OnChanges {
         this.sort.emit(this.data);
     }
     onClick(item: UniListItem) {
+        item = this.contentField ? item[this.contentField] : item;
         this.preventDoubleclick = false;
         const lastSelected = this.itemSelected;
         if (!this.selectable) { return; }
@@ -78,7 +76,7 @@ export class UniListComponent implements OnChanges {
         );
     }
     onDoubleclick(item: UniListItem) {
-        if (this.preventDoubleclick) { return false; }
+        if (this.preventDoubleclick || !this.editable) { return false; }
         clearTimeout(this.timer);
         this.preventClick = true;
         this.data.map(s => s['editing'] = false);
@@ -102,8 +100,10 @@ export class UniListComponent implements OnChanges {
         this.delete.emit({ index, item });
     }
     isSelected(item: UniListItem): boolean {
+        item = this.contentField ? item[this.contentField] : item;
         if (!this.itemSelected || !this.selectable) { return false; }
         if (item['id'] && this.itemSelected['id'] && item['id'] === this.itemSelected['id']) { return true; }
+        if (item['isEqual'] && item['isEqual'].call(item, this.itemSelected) === this.itemSelected['id']) { return true; }
         return objEquals(this.itemSelected, item);
     }
 }

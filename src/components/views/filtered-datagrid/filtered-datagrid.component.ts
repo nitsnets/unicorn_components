@@ -2,7 +2,7 @@ import { AfterContentInit, Component, ContentChild, EventEmitter, HostBinding, I
 
 import { UniDatagridComponent } from './../../ui/datagrid/datagrid.component';
 import { UniFilter } from './../../../models/filter';
-import { UniFilterItem } from '../../ui/filters-list/filters-list.component';
+import { UniFilterItem } from './../../../models/filter-item';
 import { UniFiltersComponent } from './../../ui/filters/filters.component';
 import { UniFiltersListComponent } from './../../ui/filters-list/filters-list.component';
 import { deepClone } from '../../../utils';
@@ -61,6 +61,7 @@ export class FilteredDatagridComponent implements AfterContentInit, OnChanges {
         this.filtersList.addCustomFilter(filterItem);
     }
     private onSelectFilter(filter: UniFilter) {
+        console.log(filter);
         this.filters.filter = deepClone(filter);
         this.filters.doFilter();
     }

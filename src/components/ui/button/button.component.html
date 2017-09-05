@@ -1,15 +1,11 @@
-<button
-    class="uni-button__inner"
-    [disabled]="disabled || false"
-    [type]="type || 'button'"
-    [class]="color ? 'uni-button__inner--' + color : ''"
+<button class="uni-button__inner" [disabled]="disabled || false" [type]="type || 'button'" [class]="color ? 'uni-button__inner--' + color : ''"
     [ngClass]="{
-        'with-icon': icon,
-        'with-icon-right': iconRight,
-        'only-icon': icon && !iconRight && (!label || !label.length),
-        'only-icon-right': iconRight && !icon && (!label || !label.length),
-        'btn-large': size === 'large',
-        'btn-small': size === 'small'
+        'uni-button--with-icon': icon,
+        'uni-button--with-icon-right': iconRight,
+        'uni-button--only-icon': icon && !iconRight && (!label || !label.length),
+        'uni-button--only-icon-right': iconRight && !icon && (!label || !label.length),
+        'uni-button--large': size === 'large',
+        'uni-button--small': size === 'small'
     }">
 
     <uni-icon class="icon" *ngIf="icon && icon !== 'loading'" [icon]="icon" [size]="size || 'medium'"></uni-icon>

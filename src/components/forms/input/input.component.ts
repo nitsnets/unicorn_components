@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, HostBinding } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 import { Observable } from 'rxjs/Rx';
 import { UniInputBaseComponent } from '../../base/input-base.component';
@@ -15,8 +15,18 @@ export type MaskArray = (string | RegExp)[];
     styleUrls: ['input.component.scss'],
 })
 export class UniInputComponent extends UniInputBaseComponent implements OnInit, OnChanges {
-
     @HostBinding('class.uni-input') componentClass = true;
+    @HostBinding('class.uni-input--focused') focused = false;
+    @HostBinding('class.uni-input--has-content') get hasContent() { return this.model && this.model.length; }
+    @HostBinding('class.uni-input--with-prefix') get hasPrefix() { return this.prefix || this.prefixIcon || this.type === 'color'; }
+    @HostBinding('class.uni-input--with-suffix') get hasSuffix() { return this.suffix || this.suffixIcon; }
+    @HostBinding('class.uni-input--with-chips') get hasChips() { return this.chips && this.chips.length; }
+    @HostBinding('class.uni-input--with-icon') get hasIcon() { return this.icon; }
+    @HostBinding('class.uni-input--with-icon-right') get hasIconRight() { return this.iconRight || this.clear; }
+    @HostBinding('class.uni-input--with-two-icon-right') get hasTwoIconRight() { return this.iconRight && this.clear }
+
+    @HostBinding('class.uni-input--floating')
+    @Input() floating = false;
     @Input() type: InputType = 'text';
     @Input() max = -1;
 
@@ -37,7 +47,6 @@ export class UniInputComponent extends UniInputBaseComponent implements OnInit, 
     @Input() minValue: number = null;
 
     @Input() readonly = false;
-    @Input() floating = false;
     @Input() multiline = false;
     @Input() autofocus = false;
     @Input() clear = false;
@@ -50,7 +59,6 @@ export class UniInputComponent extends UniInputBaseComponent implements OnInit, 
 
     @Output() uniKeypress = new EventEmitter();
 
-    focused = false;
     _mask: MaskArray = null;
 
     ngOnChanges(changes) {

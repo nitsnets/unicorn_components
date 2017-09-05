@@ -1,40 +1,42 @@
-@mixin header($height:$header-xs-height, $padding:$basic-padding){
-  @include border-bottom();
-  height: $height;
-  padding: 0 $padding / 2;
-  transition: all ease $slow;
 
-  &.hidden{ margin-top:-$height; }
-  &.grey{ background-color: $alpha-black-light; }
-  &.error{
-    background-color: $color-error-light;
-    border-color: $color-error-medium !important;
-    color: $color-error;
-  }
-
-  @include mq($from: sm) {
-    padding: 0 $padding;
-    height: $header-height;
-  }
-}
-
-uni-header {
-
-  header{
-    @include header();
-  }
-  header.medium{
-    @include header($header-xs-height);
+.uni-header {
+    @include border-bottom();
+    padding: 0 $basic-padding / 2;
+    transition: all ease $slow;
+    height: $header-xs-height;
+    &--hidden{
+        margin-top:-$header-xs-height;
+    }
+    &--grey{
+        background-color: $alpha-black-light;
+    }
+    &--error{
+        background-color: $color-error-light;
+        border-color: $color-error-medium !important;
+        color: $color-error;
+    }
 
     @include mq($from: sm) {
-      height: $header-md-height;
+        padding: 0 $basic-padding;
+        height: $header-height;
+        &--hidden{ margin-top:-$header-height; }
     }
-  }
-  &.less-padding{
-    header{
-      padding: 0 $basic-padding/2;
+
+    &--medium{
+        height: $header-xs-height;
+        @include mq($from: sm) {
+            height: $header-md-height;
+        }
     }
-  }
+    &--medium &--hidden{
+        margin-top:-$header-xs-height;
+        @include mq($from: sm) {
+            margin-top:-$header-md-height;
+        }
+    }
+    &--less-padding{
+        padding: 0 $basic-padding/2;
+    }
 }
 
 

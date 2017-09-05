@@ -1,11 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output, HostBinding } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
 
 import { UniFilter } from './../../../models/filter';
-import { UniListItem } from './../list/list.component';
-
-export interface UniFilterItem extends UniListItem {
-    filter: UniFilter;
-};
+import { UniFilterItem } from './../../../models/filter-item';
 
 @Component({
     selector: 'uni-filters-list',
@@ -30,16 +26,12 @@ export class UniFiltersListComponent implements OnInit {
         return (!this.mainFilters || this.mainFilters.length === 0) &&
             (!this.customFilters || this.customFilters.length === 0);
     }
-
     constructor() { }
-
-    ngOnInit() {
-
-    }
+    ngOnInit() { }
 
     onFilterSelected(filterItem: UniFilterItem) {
         this.filterSelected = filterItem;
-        this.filterSelectedChange.emit(filterItem.filter);
+        this.filterSelectedChange.emit(filterItem);
     }
     addCustomFilter(filterItem: UniFilterItem) {
         this.customFilters = this.customFilters || [];

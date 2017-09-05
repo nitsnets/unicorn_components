@@ -1,6 +1,14 @@
-uni-list {
+.uni-list {
     ul {
         margin-top: $basic-padding;
+    }
+
+    &__icon {
+        margin: 0 $basic-padding/6;
+    }
+    &__separator {
+        display: block;
+        margin: $basic-padding/3 0;
     }
 
     li {

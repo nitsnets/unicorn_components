@@ -1,4 +1,4 @@
-uni-aside {
+.uni-aside {
     @include md() {
         &.collapsed{
             margin-left: 0;
@@ -15,7 +15,7 @@ uni-aside {
     &.has-subheader, &[has-subheader] {
         height: calc(100% - #{$header-height * 2});
     }
-    &.aside-left, &[left]{
+    &--left, &[left]{
         &.collapsed{
                 margin-left: - ($input-height + $basic-padding);
         }
@@ -24,7 +24,7 @@ uni-aside {
         }
         @include border-right();
     }
-    &.aside-right, &[right]{
+    &--right, &[right]{
         @include border-left();
     }
 }
