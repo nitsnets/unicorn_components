@@ -1,4 +1,4 @@
-uni-filters {
+.uni-filters {
     margin-bottom: $basic-padding / 2;
 
     .apply {
@@ -7,13 +7,13 @@ uni-filters {
     .clear {
         margin-left: auto;
     }
-    .options-container {
+    &__container {
         padding-left: $basic-padding / 2;
         align-items: flex-end;
 
-        &.three-options { min-width: 300px; }
-        &.two-options { min-width: 200px; }
-        &.one-option { min-width: 100px; }
+        &--three { min-width: 300px; }
+        &--two { min-width: 200px; }
+        &--one { min-width: 100px; }
     }
     .filters-advanced {
         margin-top: $basic-padding / 2;

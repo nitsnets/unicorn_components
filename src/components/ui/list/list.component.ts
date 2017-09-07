@@ -52,6 +52,9 @@ export class UniListComponent implements OnChanges {
                 this.sortableOptions = this.defaultSortableOptions;
             }
         }
+        if (changes.itemSelected || changes.data) {
+            this.itemSelected = this.data.find(i => i.value === this.itemSelected || i === this.itemSelected);
+        }
     }
     onSort(event) {
         this.sort.emit(this.data);
@@ -102,6 +105,7 @@ export class UniListComponent implements OnChanges {
     isSelected(item: UniListItem): boolean {
         item = this.contentField ? item[this.contentField] : item;
         if (!this.itemSelected || !this.selectable) { return false; }
+        if (this.itemSelected === item) { return true; }
         if (item['id'] && this.itemSelected['id'] && item['id'] === this.itemSelected['id']) { return true; }
         if (item['isEqual'] && item['isEqual'].call(item, this.itemSelected) === this.itemSelected['id']) { return true; }
         return objEquals(this.itemSelected, item);

@@ -241,6 +241,12 @@ export class UniDatagridComponent implements AfterContentInit, OnChanges {
      */
     @Input() showLabels = false;
     /**
+     * Specifies if the header must be visible
+     * @type boolean
+     * @default true
+     */
+    @Input() showHeader = true;
+    /**
      * Specifies the class to be applied to the rows
      * @type string
      * @default null

@@ -35,6 +35,7 @@ export class UniFiltersComponent implements AfterContentInit, OnChanges {
     @HostBinding('class.uni-filters') componentClass = true;
 
     @Input() autoFilter: 'onChange' | 'onBlur' | false = false;
+    @Input() defaultFilter: UniFilter = {};
     @Input() persistent: string = null;
     @Input() savable = false;
     @Input() clearable = true;
@@ -63,7 +64,6 @@ export class UniFiltersComponent implements AfterContentInit, OnChanges {
     showButton = true;
     showAdvanced = false;
 
-    defaultFilter: UniFilter = {};
 
     private _filter: UniFilter;
     get filter(): UniFilter {
@@ -115,7 +115,7 @@ export class UniFiltersComponent implements AfterContentInit, OnChanges {
         this.filters.forEach(f => {
             f.modelChange.subscribe(value => this.onUniModelChange(f.name, value, f.constructor.name));
             f.uniBlur.subscribe(() => this.onFilterBlur(f.name, f.constructor.name));
-            if (f.value) {
+            if (!this.defaultFilter[f.name] && f.value) {
                 this.defaultFilter[f.name] = f.value;
             }
         });

@@ -13,14 +13,15 @@
         position: relative;
         cursor: pointer;
         outline: none;
+    }
+    &--large{
+        display: block;
 
-        &--large{
-            .icon, .iconRight{
-                position: absolute;
-            }
-            .sublabel{
-                display: block;
-            }
+        .icon, .iconRight{
+            position: absolute;
+        }
+        .sublabel{
+            display: block;
         }
     }
 }

@@ -3,10 +3,9 @@
 }
 
 form,
-.options-container {
-    display: flex;
-}
-
-.options-container {
-    flex: 1;
+.uni-filters {
+    &__options-container {
+        display: flex;
+        flex: 1;
+    }
 }

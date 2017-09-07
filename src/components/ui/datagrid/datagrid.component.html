@@ -1,5 +1,5 @@
 <div class="datagrid-container">
-    <uni-datagrid-header> </uni-datagrid-header>
+    <uni-datagrid-header *ngIf="showHeader"> </uni-datagrid-header>
     <div class="datagrid-body">
         <uni-datagrid-row *ngFor="let row of dataView |
                 fillMap : dataSource |
@@ -21,9 +21,9 @@
         </uni-datagrid-row>
     </div>
 </div>
-
-<uni-separator></uni-separator>
-
-<uni-paginator *ngIf="pageable && pageSize < (local ? dataView.length : totalItems)" [totalElements]="local ? dataView.length : totalItems"
-    [pageSize]="pageSize || (local ? 10 : dataView.length)" [selected]="page" (selectedChange)="onPageChange($event)">
-</uni-paginator>
+<ng-container *ngIf="pageable && pageSize < (local ? dataView.length : totalItems)">
+    <uni-separator></uni-separator>
+    <uni-paginator [totalElements]="local ? dataView.length : totalItems" [pageSize]="pageSize || (local ? 10 : dataView.length)"
+        [selected]="page" (selectedChange)="onPageChange($event)">
+    </uni-paginator>
+</ng-container>

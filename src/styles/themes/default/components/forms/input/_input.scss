@@ -1,15 +1,15 @@
 .uni-input{
-    display: flex;
+    display: inline-flex;
     line-height: $input-height;
 
-    input, textarea{
+    &__field {
         height: $input-height;
         padding-left: $input-padding;
         padding-right: $input-padding;
         border-radius: $border-radius;
         @include border($border-width);
     }
-    textarea{
+    textarea {
         padding: $input-padding;
         min-height: $input-height*2;
     }
@@ -19,37 +19,33 @@
         font-weight: 300;
     }
 
-    .icon, .icon-right{
+    &__icon, &__icon-right{
         opacity: 0.5;
         line-height: 2.2;
     }
-    .icon{
+    &__icon{
         left: ($input-height - $input-padding*2) / 2;
     }
-    .icon-right{
+    &__icon-right{
         right: ($input-height - $input-padding*2) / 2;
     }
-    /*
-    --has-content
-    --with-prefix
-    --with-suffix
-    --with-chips
-    --with-icon
-    --with-icon-right
-    --with-two-icon-right
-    */
-    &--focused input{
+
+    &--focused &__field{
         background-color: $alpha-black-light;
         border-color: $alpha-black-medium;
     }
-    &--with-icon input{ padding-left: $input-height; }
-    &--with-icon-right input{ padding-right: $input-height; }
-    &--with-two-icon-right input{ padding-right: 40px; }
-    &--with-chips input{ border-radius: 0 $border-radius $border-radius 0; border-left-width: 0; }
-    &--with-prefix input{ border-radius: 0 $border-radius $border-radius 0; }
-    &--with-suffix input{ border-radius: $border-radius 0 0 $border-radius; }
+    &--with-icon &__field{ padding-left: $input-height; }
+    &--with-icon-right &__field{ padding-right: $input-height; }
+    &--with-two-icon-right &__field{ padding-right: 40px; }
+    &--with-chips &__field{ border-radius: 0 $border-radius $border-radius 0; border-left-width: 0; }
+    &--with-prefix &__field{ border-radius: 0 $border-radius $border-radius 0; }
+    &--with-suffix &__field{ border-radius: $border-radius 0 0 $border-radius; }
 
-    .label, .prefix, .suffix, .error, .hint{
+    &__label,
+    &__prefix,
+    &__suffix,
+    &__error,
+    &__hint{
         font-weight: 300;
         line-height: $label-height;
         font-size: $font-small;
@@ -59,7 +55,8 @@
     };
 
     &--floating {
-        span{
+
+        .uni-input__label{
             font-size: $font-regular;
             position: absolute;
             top: $label-height;
@@ -68,43 +65,51 @@
             cursor: text;
             transition: 100ms ease all;
         }
-        input, textarea{
+        .uni-input__field,
+        .uni-input__prefix,
+        .uni-input__suffix{
             @include border(0);
             background-color: transparent;
+            padding: 0;
         }
-    }
-    &--floating &--focused,
-    &--floating &--has-content{
-        span {
-            font-size: $font-small;
-            top: 0;
-            left: 0;
-            line-height: $label-height;
-            cursor: default;
+        &.uni-input--focused,
+        &.uni-input--has-content {
+            .uni-input__label {
+                font-size: $font-small;
+                top: 0;
+                left: 0;
+                line-height: $label-height;
+                cursor: default;
+            }
         }
+
     }
-    &--focused input{
+    &--focused &__field{
         background-color: $alpha-black-light;
         border-color: $alpha-black-medium;
     }
-    .prefix, .suffix, .chips {
+    &__prefix,
+    &__suffix,
+    &__chips {
         height: $input-height;
         margin:0;
         @include border($border-width);
     }
-    .prefix, .suffix {
+    &__prefix,
+    &__suffix {
         padding: 0 $input-padding;
         background-color: $alpha-black-light;
     }
-    .prefix, .chips{
+    &__prefix,
+    &__chips{
         border-radius: $border-radius 0 0 $border-radius;
         border-right: 0 !important;
     }
-    .suffix{
+    &__suffix{
         border-radius: 0 $border-radius $border-radius 0;
         border-left: 0 !important;
     }
-    .chips {
+    &__chips {
         padding: 0 $input-padding / 2;
 
         line-height: $font-regular;
@@ -113,10 +118,10 @@
             margin-left: $basic-padding / 6;
         }
     }
-    &--with-prefix .chips {
+    &--with-prefix &__chips {
         border-radius: 0;
     }
-    .clear-btn{
+    &__clear-btn{
         margin-left: - $input-height;
         height: $input-height;
         width: $input-height;
@@ -128,38 +133,12 @@
         .clear-btn{  margin-left: - 50px; }
     }
 
-    .hint{
+    &__hint{
         color: $color-grey;
         font-style: italic;
     }
-    .error{
+    &__error{
         color: $color-error;
         font-weight: 400;
-    }
-
-
-    &.input-large{
-        input{
-            height: $input-height + $label-height;
-        }
-        input, textarea{
-            font-size: $font-largest;
-        }
-    }
-    &.input-text-large{
-        input, textarea{
-            font-size: $font-large;
-        }
-    }
-    &.input-text-xlarge{
-        input, textarea{
-            font-size: $font-xlarge;
-        }
-    }
-    &.input-primary{
-        input{
-            color: $color-primary;
-            font-weight: bold;
-        }
     }
 }

@@ -1,35 +1,43 @@
 :host {
-    display: inline-block;
     vertical-align: top;
 }
 label{
   position: relative;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   width: 100%;
   margin-bottom: 0;
 }
-.input-container{
-    display: flex;
-}
-.icon, .icon-right{
-    position: absolute;
-}
-.label, .prefix, .suffix{
-  display: flex;
-  justify-content: space-between;
-}
-.prefix, .suffix, .chips{
-  display: flex;
-  align-items: center;
-}
-.chips {
-    flex-shrink: 0;
-}
-input, textarea{
-    width: 100%;
-    text-overflow:ellipsis;
-    &:focus{
-        outline: none;
+.uni-input {
+    &__container{
+        display: flex;
+    }
+    &__icon,
+    &__icon-right{
+        position: absolute;
+    }
+    &__label,
+    &__prefix,
+    &__suffix{
+      display: flex;
+      justify-content: space-between;
+    }
+    &__prefix,
+    &__suffix,
+    &__chips{
+      display: flex;
+      align-items: center;
+    }
+    &__chips {
+        flex-shrink: 0;
+    }
+    &__field{
+        width: 100%;
+        text-overflow:ellipsis;
+        &:focus{
+            outline: none;
+        }
     }
 }
 textarea{

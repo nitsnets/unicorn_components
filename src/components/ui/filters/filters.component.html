@@ -1,5 +1,5 @@
 <form (ngSubmit)="doFilter()">
-    <div class="filters-container">
+    <div class="uni-filters__container">
         <ng-container *ngIf="!advFilters">
             <ng-content *ngIf="!advFilters"></ng-content>
         </ng-container>
@@ -12,10 +12,10 @@
             </div>
         </ng-container>
     </div>
-    <div class="options-container" [ngClass]="{
-        'three-options': optionsCount === 3,
-        'two-options': optionsCount === 2,
-        'one-option': optionsCount === 1
+    <div class="uni-filters__options" [ngClass]="{
+        'uni-filters__options--three': optionsCount === 3,
+        'uni-filters__options--two': optionsCount === 2,
+        'uni-filters__options--one': optionsCount === 1
     }">
         <uni-button class="apply" *ngIf="showButton" type="submit" [label]="buttonLabel" [color]="buttonColor" [icon]="buttonIcon"></uni-button>
         <uni-button class="clear" *ngIf="clearable && !isDefault()" label="clear" icon="close" size="small" (click)="onClear()"></uni-button>

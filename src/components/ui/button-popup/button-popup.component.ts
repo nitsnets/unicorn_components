@@ -1,4 +1,4 @@
-import { Component, Input, HostBinding } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 
 import { UniButtonBaseComponent } from '../../base/button-base.component';
 import { UniPosition } from '../../../models/types';
@@ -12,4 +12,5 @@ export class UniButtonPopupComponent extends UniButtonBaseComponent {
 
     @HostBinding('class.uni-button-popup') componentClass = true;
     @Input() position: UniPosition = 'bottom-left';
+    @Input() closable: boolean = true;
 }
