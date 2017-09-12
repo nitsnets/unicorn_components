@@ -1,0 +1,29 @@
+.uni-gallery {
+    &__header {
+        height: $input-height;
+        display: flex;
+        align-items: center;
+        margin-bottom: $basic-padding / 2;
+
+        background-color: $color-primary-light;
+        color: $color-primary;
+
+        &--deleting {
+            padding-left: $basic-padding / 2;
+            color: $black;
+            background-color: $color-error-light;
+            strong { color: $color-error; }
+        }
+    }
+    &--deleting &__header {
+    }
+
+    &__container {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    &__item {
+        margin: 0 $basic-padding/4 $basic-padding/4 0;
+    }
+}

@@ -8,10 +8,9 @@
 </uni-row>
 
 <div class="uni-gallery-image__deleting" *ngIf="deleting">
-    Are you sure you want to delete <strong>{{name || '(Untitled)'}}</strong>?
-    <uni-row>
-        <uni-row-spacer></uni-row-spacer>
-        <uni-button label="Delete" color="error" (click)="onDelete()"></uni-button>
-        <uni-button label="Cancel" (click)="onDeleting(false)"></uni-button>
-    </uni-row>
+    <div>Are you sure you want to delete <strong>{{name || '(Untitled)'}}</strong>?</div>
+    <div>
+        <uni-button class="u-fr" label="Cancel" (click)="onDeleting(false)"></uni-button>
+        <uni-button class="u-fr" label="Delete" color="error" (click)="onDelete()"></uni-button>
+    </div>
 </div>

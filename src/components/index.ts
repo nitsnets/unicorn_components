@@ -41,6 +41,7 @@ import { UniFiltersAdvancedComponent } from './ui/filters/filters-advanced/filte
 import { UniFiltersComponent } from './ui/filters/filters.component';
 import { UniFiltersListComponent } from './ui/filters-list/filters-list.component';
 import { UniFiltersMainComponent } from './ui/filters/filters-main/filters-main.component';
+import { UniGalleryComponent } from './ui/gallery/gallery.component';
 import { UniGalleryImageComponent } from './ui/gallery/image/image.component';
 import { UniHeaderComponent } from './containers/header/header.component';
 import { UniIconComponent } from './utils/icon/icon.component';
@@ -86,5 +87,5 @@ export const UNI_COMPONENTS = [
     UniCarouselDirective, UniDatagridDeleteComponent, FilteredDatagridComponent, UniFiltersListComponent,
     UniSpinnerComponent, UniAccordionItemComponent, UniButtonGroupComponent, UniRadioGroupComponent,
     UniButtonToggleGroupComponent, UniSliderComponent, UniAlertComponent, UniTabsItemComponent, UniTextareaComponent,
-    UniSliderRangeComponent, UniImageComponent, UniGalleryImageComponent
+    UniSliderRangeComponent, UniImageComponent, UniGalleryImageComponent, UniGalleryComponent
 ];

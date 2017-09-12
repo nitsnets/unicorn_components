@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 
 import { Image } from '../../../models/image';
 
@@ -7,10 +7,70 @@ import { Image } from '../../../models/image';
     templateUrl: 'gallery.component.html'
 })
 export class UniGalleryComponent {
+    @HostBinding('class.uni-gallery') componentClass = true;
+
     @Input() images: Image[];
 
-    selectedIndexes = [];
-    onSelect(value: boolean, i: number) {
+    _imagesSelected = [];
+    set imagesSelected(value: number[]) {
+        this._imagesSelected = value;
+        if (!this._imagesSelected.length) {
+            this.deletingSelection = false;
+        }
+    };
+    get imagesSelected(): number[] {
+        return this._imagesSelected;
+    };
 
+    @HostBinding('class.uni-gallery--deleting')
+    deletingSelection = false;
+
+    @Output() select = new EventEmitter<Image[]>();
+    @Output() delete = new EventEmitter<Image[]>();
+
+    onSelect(value: boolean, i: number) {
+        const currSelectedIndex = this.imagesSelected.indexOf(i);
+        if (value && currSelectedIndex === -1) {
+            this.imagesSelected.push(i);
+        } else if (!value && currSelectedIndex !== -1) {
+            this.imagesSelected.splice(currSelectedIndex, 1);
+        }
+        this.select.emit(this.imagesSelected.map(index => this.images[index]));
+    }
+    onSelectAll(value: boolean) {
+        if (value) {
+            this.imagesSelected = this.images.map((img, i) => i);
+            this.select.emit(this.images);
+        } else {
+            this.imagesSelected = [];
+            this.select.emit([]);
+        }
+    }
+    onCleanSelected() {
+        this.imagesSelected = [];
+        this.select.emit([]);
+    }
+    isSelected(image: number | Image) {
+        if (typeof image === 'number') {
+            return this.imagesSelected.indexOf(image) !== -1;
+        } else {
+            const index = this.images.indexOf(image);
+            return index === -1 ? false : this.imagesSelected.indexOf(index);
+        }
+    }
+
+    onDelete(i: number, image: Image) {
+        this.delete.emit([image]);
+    }
+    onDeleteSelection() {
+        this.delete.emit(this.imagesSelected.map(index => this.images[index]));
+        this.onCleanSelected();
+    }
+    anySelected() {
+        return this.imagesSelected.length > 0;
+    }
+    areAllSelected() {
+        return this.imagesSelected.length === this.images.length;
     }
 }
+
