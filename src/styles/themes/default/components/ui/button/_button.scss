@@ -12,6 +12,8 @@
 }
 
 .uni-button {
+    display: inline-block;
+
     &__inner {
         width: 100%;
         min-height: $input-xs-height;

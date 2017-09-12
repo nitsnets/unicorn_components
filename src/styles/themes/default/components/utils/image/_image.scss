@@ -1,0 +1,30 @@
+.uni-image {
+    background-color: #D5D5D5;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    margin: 0;
+
+    &__image,
+    &__thumb {
+        left: 0;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: 200ms ease opacity;
+
+        &--loaded {
+            opacity: 1;
+        }
+        &--fill { object-fit: fill; }
+        &--contain { object-fit: contain; }
+        &--cover { object-fit: cover; }
+    }
+    &__thumb {
+        filter: blur(15px);
+        left: auto;
+        position: relative;
+    }
+}

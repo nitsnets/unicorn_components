@@ -12,8 +12,6 @@ export class UniCheckboxComponent extends UniInputBaseComponent {
     @HostBinding('class.uni-checkbox') componentClass = true;
     @Input() partial = false;
 
-    @Input() icon = false;
-
     toggleUniModel() {
         this.onNgModelChange(this.model ? false : true);
     }

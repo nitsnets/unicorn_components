@@ -1,0 +1,17 @@
+<uni-row class="uni-gallery-image__footer">
+    <uni-checkbox class="uni-gallery-image__checkbox" [model]="selected" (modelChange)="onSelect($event)"></uni-checkbox>
+    <div class="uni-gallery-image__text-container">
+        <p class="uni-gallery-image__title">{{name || '(Untitled)'}}</p>
+        <p class="uni-gallery-image__dimensions">{{width}}x{{height}}</p>
+    </div>
+    <uni-button class="uni-gallery-image__delete" (click)="onDeleting(true)" icon="delete"></uni-button>
+</uni-row>
+
+<div class="uni-gallery-image__deleting" *ngIf="deleting">
+    Are you sure you want to delete <strong>{{name || '(Untitled)'}}</strong>?
+    <uni-row>
+        <uni-row-spacer></uni-row-spacer>
+        <uni-button label="Delete" color="error" (click)="onDelete()"></uni-button>
+        <uni-button label="Cancel" (click)="onDeleting(false)"></uni-button>
+    </uni-row>
+</div>
