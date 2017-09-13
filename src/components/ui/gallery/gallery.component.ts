@@ -1,6 +1,16 @@
-import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
+import {
+    Component,
+    ComponentFactoryResolver,
+    ComponentRef,
+    EventEmitter,
+    HostBinding,
+    Input,
+    Output,
+    ViewContainerRef
+} from '@angular/core';
 
 import { Image } from '../../../models/image';
+import { UniGalleryFullImageComponent } from './full-image/full-image.component';
 
 @Component({
     selector: 'uni-gallery',
@@ -27,6 +37,13 @@ export class UniGalleryComponent {
 
     @Output() select = new EventEmitter<Image[]>();
     @Output() delete = new EventEmitter<Image[]>();
+
+    fullImageComponent: ComponentRef<UniGalleryFullImageComponent>;
+
+    constructor(
+        private viewContainerRef: ViewContainerRef,
+        private cmpFactoryResolver: ComponentFactoryResolver
+    ) { }
 
     onSelect(value: boolean, i: number) {
         const currSelectedIndex = this.imagesSelected.indexOf(i);
@@ -71,6 +88,18 @@ export class UniGalleryComponent {
     }
     areAllSelected() {
         return this.imagesSelected.length === this.images.length;
+    }
+    openFullImage(i: number) {
+        if (this.fullImageComponent) {
+            this.fullImageComponent.destroy();
+        }
+        this.fullImageComponent = this.viewContainerRef.createComponent(
+            this.cmpFactoryResolver.resolveComponentFactory(UniGalleryFullImageComponent)
+        );
+        this.fullImageComponent.instance.init(this.images, i);
+        this.fullImageComponent.instance.close.subscribe(
+            () => this.fullImageComponent.destroy()
+        );
     }
 }
 

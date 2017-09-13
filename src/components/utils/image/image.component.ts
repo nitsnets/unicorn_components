@@ -8,17 +8,14 @@ import {
     OnChanges,
     Output
 } from '@angular/core';
-
-import { Observable } from 'rxjs/Observable';
-
 const CLASS_NAME = 'uni-image';
 
 @Component({
     selector: 'uni-image',
-    templateUrl: 'image.component.html'
+    template: ''
 })
 export class UniImageComponent implements AfterViewInit, OnChanges {
-    @HostBinding(`class.${CLASS_NAME}`) className = true;
+    @HostBinding(`class.uni-image`) className = true;
     @Input() @HostBinding(`style.width.px`) width;
     @Input() @HostBinding(`style.height.px`) height;
 
@@ -38,6 +35,8 @@ export class UniImageComponent implements AfterViewInit, OnChanges {
     @Output() imageLoad = new EventEmitter();
     imageLoaded = false;
     image: HTMLImageElement;
+
+    @Output() clickImage = new EventEmitter();
 
     visible = false;
     element: HTMLElement;
@@ -150,7 +149,7 @@ export class UniImageComponent implements AfterViewInit, OnChanges {
                     this.image.classList.add(`${CLASS_NAME}__image--loaded`);
                 }
             };
-
+            this.image.onclick = (event) => this.clickImage.emit(event);
             this.element.appendChild(this.image);
         }
     }

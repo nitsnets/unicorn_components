@@ -1,0 +1,43 @@
+import { Component, HostBinding } from '@angular/core';
+import { EventEmitter, Input, Output } from '@angular/core';
+
+import { Image } from '../../../../models/image';
+
+@Component({
+    selector: 'uni-gallery-full-image',
+    templateUrl: 'full-image.component.html'
+})
+export class UniGalleryFullImageComponent {
+    @HostBinding(`class.uni-gallery-full-image`) subClassName = true;
+
+    @Input() images: Image[] = [];
+    get image(): Image {
+        return this.images && this.index >= 0 ? this.images[this.index] : null;
+    }
+    @Input() index: number;
+    @Output() indexChange = new EventEmitter<number>();
+
+    @Output() close = new EventEmitter<number>();
+    @Output() delete = new EventEmitter<number>();
+
+    infoShown = false;
+    deleting = false;
+
+    init(images: Image[], currentIndex: number) {
+        this.images = images;
+        this.index = currentIndex;
+    }
+    download(image: Image) {
+        if (!image.fullPath) { return; }
+        const save = document.createElement('a');
+        save.href = image.fullPath;
+        save.target = '_blank';
+        save.download = image.name;
+        save.click();
+    }
+    onDelete() {
+        this.delete.emit(this.index);
+    }
+
+}
+

@@ -15,6 +15,8 @@ export * from './src/components/containers/modal/modal.module';
 export * from './src/components/containers/modal/modal.component';
 export * from './src/components/containers/modal/modal.interface';
 
+export * from './src/components/ui/gallery/full-image/full-image.component';
+
 export * from './src/components/utils/tooltip/tooltip.service'
 export * from './src/components/utils/tooltip/tooltip.module'
 export * from './src/components/utils/tooltip/tooltip.component'

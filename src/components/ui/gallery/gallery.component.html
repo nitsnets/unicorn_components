@@ -14,6 +14,6 @@
 <div class="uni-gallery__container" *ngIf="images && images.length">
     <uni-gallery-image class="uni-gallery__item" *ngFor="let image of images, let i = index" [selected]="isSelected(i)" (selectedChange)="onSelect($event, i)"
         [deletingSelection]="deletingSelection" (delete)="onDelete(i, image)" [height]="200" [aspectRatio]="image.aspectRatio"
-        [imagePath]="image.fullPath" [thumbPath]="image.thumbPath">
+        [imagePath]="image.fullPath" [thumbPath]="image.thumbPath" [label]="image.name" (clickImage)="openFullImage(i)">
     </uni-gallery-image>
 </div>

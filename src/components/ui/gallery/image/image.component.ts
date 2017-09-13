@@ -12,29 +12,29 @@ import {
 import { Observable } from 'rxjs/Observable';
 import { UniImageComponent } from '../../../utils/image/image.component'
 
-const CLASS_NAME = 'uni-gallery-image';
-
 @Component({
     selector: 'uni-gallery-image',
     templateUrl: 'image.component.html'
 })
 export class UniGalleryImageComponent extends UniImageComponent implements AfterViewInit, OnChanges {
-    @HostBinding(`class.${CLASS_NAME}`) subClassName = true;
+    @HostBinding(`class.uni-gallery-image`) subClassName = true;
+
+    @Input() label: string;
 
     @Input() originalHeight: number;
     @Input() originalWidth: number;
 
     @Input()
-    @HostBinding(`class.${CLASS_NAME}--selected`)
+    @HostBinding(`class.uni-gallery-image--selected`)
     selected = false;
     @Output() selectedChange = new EventEmitter();
 
     @Input()
-    @HostBinding(`class.${CLASS_NAME}--deleting`)
+    @HostBinding(`class.uni-gallery-image--deleting`)
     deleting = false;
     @Output() delete = new EventEmitter();
 
-    @HostBinding(`class.${CLASS_NAME}--deleting-selection`)
+    @HostBinding(`class.uni-gallery-image--deleting-selection`)
     get isDeleting() {
         return this.selected && this.deletingSelection;
     }
