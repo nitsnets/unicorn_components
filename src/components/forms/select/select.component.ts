@@ -155,7 +155,7 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
     }
     private updateOptionsSelectedByModel() {
         this.optionsSelected = [];
-        if (!this.options || this.model === null) { this.optionsSelected = []; return; }
+        if (!this.options || this.model === null || this.model === undefined) { this.optionsSelected = []; return; }
         for (const option of this.options) {
             if (!this.multiple && option.value == this.model ||
                 this.multiple && this.model.includes(option.value)) {
