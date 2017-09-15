@@ -9,6 +9,7 @@
         border-radius: $border-radius;
         @include border($border-width);
     }
+
     textarea {
         padding: $input-padding;
         min-height: $input-height*2;
@@ -19,33 +20,54 @@
         font-weight: 300;
     }
 
-    &__icon, &__icon-right{
+    &__icon, &__icon-right {
         opacity: 0.5;
         line-height: 2.2;
     }
-    &__icon{
+
+    &__icon {
         left: ($input-height - $input-padding*2) / 2;
     }
-    &__icon-right{
+
+    &__icon-right {
         right: ($input-height - $input-padding*2) / 2;
     }
 
-    &--focused &__field{
+    &--focused &__field {
         background-color: $alpha-black-light;
         border-color: $alpha-black-medium;
     }
-    &--with-icon &__field{ padding-left: $input-height; }
-    &--with-icon-right &__field{ padding-right: $input-height; }
-    &--with-two-icon-right &__field{ padding-right: 40px; }
-    &--with-chips &__field{ border-radius: 0 $border-radius $border-radius 0; border-left-width: 0; }
-    &--with-prefix &__field{ border-radius: 0 $border-radius $border-radius 0; }
-    &--with-suffix &__field{ border-radius: $border-radius 0 0 $border-radius; }
+
+    &--with-icon &__field {
+        padding-left: $input-height;
+    }
+
+    &--with-icon-right &__field {
+        padding-right: $input-height;
+    }
+
+    &--with-two-icon-right &__field {
+        padding-right: 40px;
+    }
+
+    &--with-chips &__field {
+        border-radius: 0 $border-radius $border-radius 0;
+        border-left-width: 0;
+    }
+
+    &--with-prefix &__field {
+        border-radius: 0 $border-radius $border-radius 0;
+    }
+
+    &--with-suffix &__field {
+        border-radius: $border-radius 0 0 $border-radius;
+    }
 
     &__label,
     &__prefix,
     &__suffix,
     &__error,
-    &__hint{
+    &__hint {
         font-weight: 300;
         line-height: $label-height;
         font-size: $font-small;
@@ -67,7 +89,7 @@
         }
         .uni-input__field,
         .uni-input__prefix,
-        .uni-input__suffix{
+        .uni-input__suffix {
             @include border(0);
             background-color: transparent;
             padding: 0;
@@ -84,10 +106,12 @@
         }
 
     }
-    &--focused &__field{
+
+    &--focused &__field {
         background-color: $alpha-black-light;
         border-color: $alpha-black-medium;
     }
+
     &__prefix,
     &__suffix,
     &__chips {
@@ -95,32 +119,39 @@
         margin:0;
         @include border($border-width);
     }
+
     &__prefix,
     &__suffix {
         padding: 0 $input-padding;
         background-color: $alpha-black-light;
     }
+
     &__prefix,
-    &__chips{
+    &__chips {
         border-radius: $border-radius 0 0 $border-radius;
         border-right: 0 !important;
     }
-    &__suffix{
+
+    &__suffix {
         border-radius: 0 $border-radius $border-radius 0;
         border-left: 0 !important;
     }
+
     &__chips {
         padding: 0 $input-padding / 2;
 
         line-height: $font-regular;
         font-size: $font-small;
+
         .chip + .chip {
             margin-left: $basic-padding / 6;
         }
     }
+
     &--with-prefix &__chips {
         border-radius: 0;
     }
+
     &__clear-btn{
         margin-left: - $input-height;
         height: $input-height;
@@ -130,7 +161,10 @@
     }
 
     &--with-two-icon-right {
-        .clear-btn{  margin-left: - 50px; }
+
+        .clear-btn {
+            margin-left: - 50px;
+        }
     }
 
     &__hint{

@@ -1,18 +1,12 @@
-@mixin inverse-content {
-    color: white;
-    .sublabel{ color: white; }
-    .icon{ opacity: 1; color: white; }
-}
-@mixin button-background($color, $inverse: false) {
-    background-color: $color;
-    &:hover{background-color: lighten($color, 5%);}
-    &:focus{background-color: lighten($color, 5%);}
-    &:active{background-color: lighten($color, 8%);}
-    @if $inverse { @include inverse-content; }
-}
-
 .uni-button {
-    display: inline-block;
+
+    &__sublabel {
+        opacity: 0.75;
+    }
+
+    &__icon-right {
+        margin-left: $input-padding / 2;
+    }
 
     &__inner {
         width: 100%;
@@ -28,75 +22,108 @@
         background-color: transparent;
         color: $color-grey-dark;
         @include transition(background-color, $fast, ease);
-        @include mq($from: sm) {
+
+        @include mq(sm) {
             min-height: $input-height;
             padding: 0 $input-padding * 2;
         }
-        &.uni-button__inner--default{
+
+        &--default {
             border: solid $border-width $alpha-black-medium;
         }
-        &.uni-button__inner--primary{ @include button-background($color-primary, true); }
-        &.uni-button__inner--error{ @include button-background($color-error, true); }
-        &.uni-button__inner--warning{ @include button-background($color-warning, true); }
-        &.uni-button__inner--success{ @include button-background($color-success, true); }
-        &.uni-button__inner--light{
+
+        &--primary {
+            @include button-background($color-primary, true);
+        }
+
+        &--error {
+            @include button-background($color-error, true);
+        }
+
+        &--warning {
+            @include button-background($color-warning, true);
+        }
+
+        &--success {
+            @include button-background($color-success, true);
+        }
+
+        &--light {
             color: $black;
             @include button-background($color-grey-medium);
-            .sublabel{color: $black}
-        }
-    }
-    &--only-icon{
-        width: $input-height;
-        padding: $input-padding / 4;
-        border-radius:$input-height / 2;
-        justify-content: center;
-    }
-    &--only-icon-right{
-        width: $input-height;
-        padding: 0;
-        .iconRight { margin-left: 0; }
-    }
-    .sublabel{
-        opacity: 0.75;
-    }
-    .iconRight {
-        margin-left: $input-padding / 2;
-    }
-    /* SIZES */
-    &--small{
-        font-size: $font-small;
-        color: $color-grey-dark;
-    }
-    &--large{
-        height: $input-height*2;
-        padding: 0 $input-height 0 $input-height;
-        text-align: left;
 
-        &.uni-button--with-icon{
-            padding-left: $input-height*2 - $border-width*2;
+            .uni-button__sublabel{
+                color: $black;
+            }
+
         }
-        &.uni-button--with-icon-right{
-            padding-right: $input-height*2 - $border-width*2;
-        }
-        &.uni-button--only-icon{
-            width: $input-height*2;
-            padding: $input-padding / 4;
-            border-radius: $input-height;
-            .icon {
-                top: $input-height - $font-regular;
+
+        &--only-icon {
+            width: $input-height;
+            height: $input-height;
+            padding: 0;
+            border-radius: 50%;
+            justify-content: center;
+
+            .uni-button__icon {
+                position: absolute;
+                @include center(xy);
             }
         }
-        .icon, .iconRight{
-            top: $basic-padding/2 - $border-width;
+
+        &--only-icon-right {
+            width: $input-height;
+            padding: 0;
+
+            .uni-button__icon-right {
+                margin-left: 0;
+            }
         }
-        .icon{
-            left: $basic-padding/2 - $border-width;
+
+        /* SIZES */
+        &--small {
+            font-size: $font-small;
         }
-        .iconRight{
-            right: $basic-padding/2 - $border-width;
-        }
-        .sublabel{
-            margin-top: $basic-padding / 4;
+
+        &--large {
+            height: $input-height*2;
+            padding: 0 $input-height 0 $input-height;
+            text-align: left;
+
+            .uni-button__icon, .uni-button__icon-right {
+                top: $basic-padding/2 - $border-width;
+            }
+
+            .uni-button__icon {
+                left: $basic-padding/2 - $border-width;
+            }
+
+            .uni-button__icon-right {
+                right: $basic-padding/2 - $border-width;
+            }
+
+            .uni-button__sublabel {
+                margin-top: $basic-padding / 4;
+            }
+
+            &.uni-button__inner--with-icon {
+                padding-left: $input-height*2 - $border-width*2;
+            }
+
+            &.uni-button__inner--with-icon-right {
+                padding-right: $input-height*2 - $border-width*2;
+            }
+
+            &.uni-button__inner--only-icon {
+                width: $input-height*2;
+                height: $input-height*2;
+                padding: 0;
+
+                .uni-button__icon {
+                    @include center(xy);
+                    font-size: 25px;
+                }
+            }
         }
     }
 }
