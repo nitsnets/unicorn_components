@@ -37,7 +37,7 @@ components/
 
 The `styles/` are grouped in themes:
 
-```
+```plain
 styles/
 ├── abstracts/             * Define el estilo del código deseado
 ├── themes/                * Define el estilo del código deseado
