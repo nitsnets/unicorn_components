@@ -1,8 +1,11 @@
 {
-    "name": "unicorn-components",
-    "version": "1.0.0-4",
+    "name": "unicorn_components",
+    "version": "1.0.0-5",
     "license": "MIT",
-    "angular-cli": {},
+    "publishConfig": {
+        "registry": "http://modules.getunicorn.io"
+    },
+    "private": false,
     "main": "unicorn-components",
     "scripts": {
         "start": "ng serve --port 4201 --live-reload-port 49153 --host 0.0.0.0",
