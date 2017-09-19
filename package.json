@@ -6,7 +6,7 @@
         "registry": "http://modules.getunicorn.io"
     },
     "private": false,
-    "main": "unicorn-components",
+    "main": "unicorn_components.ts",
     "scripts": {
         "start": "ng serve --port 4201 --live-reload-port 49153 --host 0.0.0.0",
         "build": "ng build",
