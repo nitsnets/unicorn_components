@@ -1,6 +1,16 @@
 .uni-button-header {
     height: 100%;
-    button{
+
+    &__icon {
+
+        // TODO: @alv @andres Revisar juntos este posicionamiento relativo/absoluto, en la demo no tiene efecto
+        @include mq(sm) {
+            top: $header-height/3;
+            left: $header-height/3;
+        }
+    }
+
+    &__inner {
         border: 0;
         border-radius: 0;
         background-color: transparent;
@@ -11,46 +21,56 @@
         letter-spacing: 0.01em;
         line-height: 1;
 
-        &.only-icon { width: $header-xs-height;}
+        @include mq(sm) {
+            min-width: $header-height;
+            min-height: $header-height;
+        }
 
-        &:hover{ background-color: $alpha-black-light }
-        &:active{ background-color: $alpha-black-medium }
+        &:hover{
+            background-color: $alpha-black-light;
+        }
 
+        &:active{
+            background-color: $alpha-black-medium;
+        }
+
+        // TODO: @alv Éste estilo no veo dónde se usa o aplica, si no se usa borrar
         i {
             font-size: $font-large;
         }
+        /////////////
 
-        @include mq($from: sm) {
-            min-width: $header-height;
-            min-height: $header-height;
-            &.only-icon { width: $header-height;}
+        &--only-icon {
+            width: $header-xs-height;
 
-            .icon {
-                top: $header-height/3;
-                left: $header-height/3;
+            @include mq(sm) {
+                width: $header-height;
             }
         }
     }
-    &.btn-header-md{
+
+    // TODO: @alv @andres Revisar juntos este modificador para ver qué comportamiento se quiere. No me encajan los estilos, muchos no se aplican en la demo
+    &--md {
         height: 100%;
-        button{
-            border: 0;
-            border-radius: 0;
+
+        .uni-button-header__icon {
+            height: 20px;
+            width: 20px;
+            top: $header-height/4;
+            left: $header-height/4;
+        }
+
+        .uni-button-header__inner {
             min-width: $header-md-height;
             min-height: $header-md-height;
-            &.only-icon { width: $header-md-height;}
-            &:hover{ background-color: $alpha-black-light }
-            &:active{ background-color: $alpha-black-medium }
-            .icon{
-                height: 20px;
-                width: 20px;
-                top: $header-height/4;
-                left: $header-height/4;
+
+            &--only-icon {
+                width: $header-md-height;
             }
-            span{
+
+            span {
                 padding-right: $header-md-height/4;
             }
         }
     }
-
 }

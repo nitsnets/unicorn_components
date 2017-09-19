@@ -1,11 +1,28 @@
-uni-button-toggle {
-    uni-button.pressed button {
+// TODO: @alv @andres Esto finalmente es un modificador del componente uni-button, ¿sería mejor moverlo al .uni-button? Aunque es un estado del componente button-toggle que modifica al button... lo hablamos
+.uni-button--pressed {
+
+    .uni-button__inner {
         box-shadow: rgba(0,0,0,0.1) 1px 1px 2px inset;
         background-color: $alpha-black-medium;
-        &.primary{ background-color: darken($color-primary, 10%); }
-        &.error{ background-color: darken($color-error, 10%); }
-        &.warning{ background-color: darken($color-warning, 10%); }
-        &.success{ background-color: darken($color-success, 10%); }
-        &.light{ background-color: darken($color-grey-medium, 10%); }
+
+        &--primary {
+            background-color: darken($color-primary, 10%);
+        }
+
+        &--error {
+            background-color: darken($color-error, 10%);
+        }
+
+        &--warning {
+            background-color: darken($color-warning, 10%);
+        }
+
+        &--success {
+            background-color: darken($color-success, 10%);
+        }
+
+        &--light {
+            background-color: darken($color-grey-medium, 10%);
+        }
     }
 }

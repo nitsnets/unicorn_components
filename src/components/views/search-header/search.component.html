@@ -2,6 +2,6 @@
     <uni-input icon="search" [value]="value" [placeholder]="placeholder" [model]="model" (modelChange)="onNgModelChange($event)"
         [debounce]="debounce" [floating]="true">
     </uni-input>
+    <!-- TODO: @alv Revisar este componente, esta clase a cambiado a .uni-button-header--md y pertenece al componente uni-button-header -->
     <uni-button class="btn-header-md" icon="close" (click)="clear()" *ngIf="model"></uni-button>
-
 </uni-header>
