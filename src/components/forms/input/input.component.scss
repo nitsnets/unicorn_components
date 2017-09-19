@@ -42,16 +42,16 @@
 
     &__field {
         width: 100%;
-		text-overflow: ellipsis;
+        text-overflow: ellipsis;
+
+        &--textarea {
+            resize: vertical;
+        }
 
         &:focus {
             outline: none;
         }
     }
-}
-
-textarea {
-    resize: vertical;
 }
 
 input[type=date] {
