@@ -1,34 +1,50 @@
+.uni-radio {
+	display: inline-block;
+	height: $input-height;
 
-uni-radio {
-  height: $input-height;
+	&__icon {
+		opacity: 0.25;
+	}
 
-  label{
-    height: $input-height;
-    font-size: $font-regular;
+	&__label {
+		margin-left: $input-height / 2 - $input-padding;
+	}
 
-    border: 0;
-    padding: 0;
-    padding-left: $input-height / 2 - $input-padding;
-    padding-right: $input-height / 2 - $input-padding;
-    border-radius: $border-radius;
-    background-color: transparent;
+    &__inner {
+        height: $input-height;
 
-    &.only-icon{ border-radius:$input-height/2;}
+        padding: 0;
+        padding-left: $input-height / 2 - $input-padding;
+        padding-right: $input-height / 2 - $input-padding;
+		border: 0;
 
-    &:not(.only-icon) {
-      &:hover {background-color: $alpha-black-light}
-      &:focus{background-color: $alpha-black-medium}
-      &:active{background-color: $alpha-black;}
+		font-size: $font-regular;
+
+        border-radius: $border-radius;
+        background-color: transparent;
+
+        &--only-icon {
+            border-radius: $input-height/2;
+        }
+
+        &:not(.uni-radio__inner--only-icon) {
+
+            &:hover {
+                background-color: $alpha-black-light
+            }
+            &:focus {
+                background-color: $alpha-black-medium
+            }
+            &:active {
+                background-color: $alpha-black;
+            }
+        }
+
+        &--checked {
+
+            .uni-radio__icon {
+                opacity: 1;
+            }
+        }
     }
-
-    .icon{ opacity: 0.25; }
-    &.checked,
-    &.partial {
-      .icon{ opacity: 1; }
-    }
-
-    span.label {
-        margin-left: $input-height / 2 - $input-padding;
-    }
-  }
 }

@@ -1,11 +1,6 @@
 @import "../../default/base/base";
 
 // Add and overwrite styles below
-
-html {
-    font-size: 62.5%;
-}
-
 body {
     font-family: "Segoe UI", Arial, sans-serif;
     font-size: $font-regular;
@@ -14,112 +9,109 @@ body {
     color: $color-grey-dark;
 }
 
-input, textarea {
+input,
+textarea {
     font-family: 'Open Sans', sans-serif;
 }
 
-*, *::before, *::after {
-    box-sizing: inherit;
-}
-
-
 // Headings
-h1, h2, h3, h4, h5, [class^="title"] {
+h1,
+h2,
+h3,
+h4,
+h5,
+[class^="title"] {
     margin: 10px 0;
     font-weight: 300;
     color: $black
 }
-h1, .title1 {
+
+h1,
+.title1 {
     font-size: 33px;
     line-height: 1.3;
     letter-spacing: -0.08px;
 
-    @include mq($from: xlg) {
+    @include mq(xlg) {
         font-size: 44px;
     }
 }
-h2, .title2 {
+
+h2,
+.title2 {
     font-size: 28px;
     line-height: 1.4;
 
-    @include mq($from: xlg) {
+    @include mq(xlg) {
         font-size: 31px;
     }
 }
-h3, .title3 {
+
+h3,
+.title3 {
     font-size: 24px;
     line-height: 1;
 
-    @include mq($from: xlg) {
+    @include mq(xlg) {
         font-size: 27px;
     }
 }
-h4, .title4 {
+
+h4,
+.title4 {
     font-size: 18px;
     line-height: 1.8;
 
-    @include mq($from: xlg) {
+    @include mq(xlg) {
         font-size: 22px;
     }
 }
-h5, .title5 {
+
+h5,
+.title5 {
     font-size: 16px;
     line-height: 1.8;
 
-    @include mq($from: xlg) {
+    @include mq(xlg) {
         font-size: 18px;
     }
 }
+
 h3 small,
 h4 small,
 h5 small {
-  font-weight: 300;
+    font-weight: 300;
 }
 
 // Links
 a {
-    color: inherit;
-    color: $color-primary;
-    text-decoration: none;
-    transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s;
 
     @include on-event {
         color: lighten($color-primary, 5%);
-        outline: 0;
-        text-decoration: none;
     }
 }
-
 
 /**
  * Basic styles for paragraphs
  */
+
 p {
     display: block;
     margin: 0 0 10px 0;
     font-size: $font-small;
-    font-style: normal;
-    white-space: normal;
 
-    &.mb {
-        margin: 0 0 1em;
-    }
-
-    @include mq($from: xlg) {
+    @include mq(xlg) {
         font-size: $font-regular;
     }
 }
 
-ol, ul {
+ol,
+ul {
     margin: 0 0 10px 0;
     padding: 0;
 
     > li {
         line-height: 24px;
-    }
-    &.nospacing {
-      margin: 0;
-      padding: 0;
     }
 }
 
@@ -132,7 +124,7 @@ hr {
     box-sizing: content-box;
 
     &.nospacing {
-      margin: 0;
+        margin: 0;
     }
 }
 
@@ -148,4 +140,3 @@ mark {
     padding: .2em 0;
     background-color: #fcf8e3;
 }
-
