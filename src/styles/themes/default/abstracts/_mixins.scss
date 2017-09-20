@@ -252,10 +252,8 @@
     text-overflow: ellipsis;
 }
 
-@mixin border($width: $border-width) {
-    border-color: $color-grey-medium;
-    border-style: solid;
-    border-width: $width;
+@mixin border($width: $border-width, $style: solid, $color: $color-grey-medium) {
+    border: $width $style $color;
 }
 
 /// Pseudo selector most common properties
