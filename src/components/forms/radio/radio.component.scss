@@ -1,17 +1,20 @@
+:host {
 
-:host{
-  display: inline-block;
+	input {
+		display: none;
+	}
+}
 
-  label{
-    user-select: none;
-    min-width: 100%;
-    line-height: 1;
-    position: relative;
-    display: block;
+.uni-radio {
 
-    display:flex;
-    align-items: center;
+	&__inner {
+		user-select: none;
+		min-width: 100%;
+		line-height: 1;
+		position: relative;
+		display: block;
 
-    input{display: none;};
-  }
+		display: flex;
+		align-items: center;
+	}
 }

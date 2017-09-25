@@ -1,10 +1,12 @@
-<label [ngClass]="{
-  checked: model == value,
-  'only-icon': !label || !label.length
-}">
-  <uni-icon class="icon" [icon]="
-    model == value ? 'radio_button_checked' : 'radio_button_unchecked'"
-  ></uni-icon>
-  <input type="checkbox" [name]="name" [ngModel]="model == value" (ngModelChange)="onNgModelChange(this.value)">
-  <span class="label" *ngIf="label" [innerHtml]="label"></span>
+<label
+	class="uni-radio__inner"
+	[ngClass]="{
+		'uni-radio__inner--checked': model == value,
+		'uni-radio__inner--only-icon': !label || !label.length
+	}">
+	<uni-icon class="uni-radio__icon" [icon]="
+	model == value ? 'radio_button_checked' : 'radio_button_unchecked'"
+	></uni-icon>
+	<input type="checkbox" [name]="name" [ngModel]="model == value" (ngModelChange)="onNgModelChange(this.value)">
+	<span class="uni-radio__label" *ngIf="label" [innerHtml]="label"></span>
 </label>

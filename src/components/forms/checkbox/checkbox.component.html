@@ -1,10 +1,12 @@
-<label [ngClass]="{
-    disabled: disabled == true,
-    checked: model == true,
-    partial: partial == true,
-    'only-icon': !label || !label.length
-}">
-    <uni-icon class="icon" [icon]="
+<label
+    class="uni-checkbox__inner"
+    [ngClass]="{
+        'uni-checkbox__inner--disabled': disabled == true,
+        'uni-checkbox__inner--checked': model == true,
+        'uni-checkbox__inner--partial': partial == true,
+        'uni-checkbox__inner--only-icon': !label || !label.length
+    }">
+    <uni-icon class="uni-checkbox__icon" [icon]="
         model == true ? 'check_box' :
         partial == true ? 'indeterminate_check_box' : 'check_box_outline_blank'"
     ></uni-icon>
@@ -14,5 +16,5 @@
         [disabled]="disabled"
         (ngModelChange)="toggleUniModel()"
     >
-    <span class="label" *ngIf="label" [innerHtml]="label"></span>
+    <span class="uni-checkbox__label" *ngIf="label" [innerHtml]="label"></span>
 </label>
