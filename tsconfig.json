@@ -1,21 +1,29 @@
 {
-  "compilerOptions": {
-    "declaration": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "lib": ["es6", "dom"],
-    "module": "system",
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "target": "ES5",
-    "typeRoots": [
-      "node_modules/@types"
+    "compilerOptions": {
+        "declaration": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib": [
+            "es6",
+            "dom"
+        ],
+        "module": "system",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "target": "ES5",
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "paths": {
+            "@angular/*": [
+                "node_modules/@angular/*"
+            ]
+        }
+    },
+    "files": [
+        "index.ts"
+    ],
+    "exclude": [
+        "node_modules"
     ]
-  },
-  "files": [
-    "nts-ng2-components.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
 }

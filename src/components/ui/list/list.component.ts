@@ -40,7 +40,7 @@ export class UniListComponent implements OnChanges {
     // Double click handlers
     preventDoubleclick = false;
     preventClick = false;
-    timer: NodeJS.Timer;
+    timer;
     delay = 300;
 
     ngOnChanges(changes) {
