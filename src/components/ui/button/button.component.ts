@@ -5,7 +5,7 @@ import { UniButtonBaseComponent } from '../../base/button-base.component';
 @Component({
     selector: 'uni-button',
     templateUrl: 'button.component.html',
-    styleUrls: ['button.component.scss'],
+    styleUrls: ['button.component.scss']
 })
 export class UniButtonComponent extends UniButtonBaseComponent {
 

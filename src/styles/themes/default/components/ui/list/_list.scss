@@ -1,40 +1,46 @@
 .uni-list {
-    ul {
+
+    &__inner {
         margin-top: $basic-padding;
     }
 
     &__icon {
         margin: 0 $basic-padding/6;
     }
+
     &__separator {
         display: block;
         margin: $basic-padding/3 0;
     }
 
-    li {
+    &__item {
         min-height: $input-height;
         padding-left: $basic-padding;
 
         &.sortable-ghost {
             background-color: $color-grey-light;
         }
-        span {
-            padding: $basic-padding / 6 0;
-            margin-right: auto;
+    }
 
-            &.selected{
-                color: $color-primary;
-            }
+    &__content {
+        padding: $basic-padding / 6 0;
+        margin-right: auto;
+
+        &--selected {
+            color: $color-primary;
         }
     }
-    .drag-handle {
-        position: absolute;
-        left: $basic-padding / 4;
-    }
-    .show-hover {
+
+    &__hover-icon {
         opacity: 0.5;
+
         &:hover {
             opacity: 1;
+        }
+
+        &--drag {
+            position: absolute;
+            left: $basic-padding / 4;
         }
     }
 }

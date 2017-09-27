@@ -1,13 +1,17 @@
-
 :host {
     display: block;
     padding: 30px;
 }
-.footer{
-    display: flex;
-    margin-top: 30px;
-}
-.button-cancel{
-    margin-left: auto;
-    margin-right: 15px;
+
+.uni-datagrid-delete {
+
+    &__footer{
+        display: flex;
+        margin-top: 30px;
+    }
+
+    &__button-cancel{
+        margin-left: auto;
+        margin-right: 15px;
+    }
 }

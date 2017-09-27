@@ -50,7 +50,8 @@ export interface IUniDataCellEvent extends IUniDataRowEvent { j: number; column:
  */
 @Component({
     selector: 'uni-datagrid',
-    templateUrl: './datagrid.component.html'
+    templateUrl: './datagrid.component.html',
+    styleUrls: ['datagrid.component.scss']
 })
 export class UniDatagridComponent implements AfterContentInit, OnChanges {
     /** @lends UniDatagridComponent */

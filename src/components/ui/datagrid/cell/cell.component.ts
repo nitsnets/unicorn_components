@@ -11,7 +11,7 @@ export class UniDatagridCellComponent implements OnInit {
 
     @HostBinding('class.uni-datagrid-cell') componentClass = true;
     @Input()
-    @HostBinding('class.highlight')
+    @HostBinding('class.uni-datagrid-cell--highlight')
     highlight;
 
     @Input()

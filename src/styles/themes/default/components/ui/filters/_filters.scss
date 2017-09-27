@@ -1,25 +1,42 @@
 .uni-filters {
     margin-bottom: $basic-padding / 2;
 
-    .apply {
-        margin-right: auto;
+    &__btn {
+
+        &-apply {
+            margin-right: auto;
+        }
+
+        &-clear {
+            margin-left: auto;
+        }
     }
-    .clear {
-        margin-left: auto;
-    }
-    &__container {
+
+    &__options {
+        display: flex;
+        flex: 1;
         padding-left: $basic-padding / 2;
         align-items: flex-end;
 
-        &--three { min-width: 300px; }
-        &--two { min-width: 200px; }
-        &--one { min-width: 100px; }
+        &--three {
+            min-width: 300px;
+        }
+
+        &--two {
+            min-width: 200px;
+        }
+
+        &--one {
+            min-width: 100px;
+        }
     }
-    .filters-advanced {
+
+    &__advanced {
         margin-top: $basic-padding / 2;
     }
-    uni-filters-advanced,
-    uni-filters-main {
+
+    .uni-filters-advanced,
+    .uni-filters-main {
         display: block;
     }
 }

@@ -1,29 +1,34 @@
-ul {
-    list-style: none;
-    width: 100%;
-}
+.uni-list {
 
-li {
-    align-items: center;
-    cursor: default;
-    position: relative;
-    display: flex;
+    &__inner {
+        list-style: none;
+        width: 100%;
+    }
 
-    span {
+    &__content {
         user-select: none;
     }
 
-    .show-hover {
+    &__hover-icon {
         visibility: hidden;
     }
 
-    .pull-right {
-        margin-left: auto;
-    }
+    &__item {
+        align-items: center;
+        cursor: default;
+        position: relative;
+        display: flex;
 
-    &:hover {
-        .show-hover {
-            visibility: visible;
+        // TODO: @alv @andres Me parece que esta clase ya no se utiliza
+        .pull-right {
+            margin-left: auto;
+        }
+
+        &:hover {
+
+            .uni-list__hover-icon {
+                visibility: visible;
+            }
         }
     }
 }

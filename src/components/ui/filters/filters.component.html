@@ -7,7 +7,7 @@
             <div>
                 <ng-content select="uni-filters-main" *ngIf="advFilters"> </ng-content>
             </div>
-            <div class="filters-advanced" *ngIf="showAdvanced">
+            <div class="uni-filters__advanced" *ngIf="showAdvanced">
                 <ng-content select="uni-filters-advanced" *ngIf="advFilters"> </ng-content>
             </div>
         </ng-container>
@@ -17,9 +17,9 @@
         'uni-filters__options--two': optionsCount === 2,
         'uni-filters__options--one': optionsCount === 1
     }">
-        <uni-button class="apply" *ngIf="showButton" type="submit" [label]="buttonLabel" [color]="buttonColor" [icon]="buttonIcon"></uni-button>
-        <uni-button class="clear" *ngIf="clearable && !isDefault()" label="clear" icon="close" size="small" (click)="onClear()"></uni-button>
-        <uni-button class="save" *ngIf="savable && !isEmpty()" label="save" icon="add" size="small" (click)="onSave()"></uni-button>
+        <uni-button class="uni-filters__btn-apply" *ngIf="showButton" type="submit" [label]="buttonLabel" [color]="buttonColor" [icon]="buttonIcon"></uni-button>
+        <uni-button class="uni-filters__btn-clear" *ngIf="clearable && !isDefault()" label="clear" icon="close" size="small" (click)="onClear()"></uni-button>
+        <uni-button class="uni-filters__btn-save" *ngIf="savable && !isEmpty()" label="save" icon="add" size="small" (click)="onSave()"></uni-button>
     </div>
 </form>
 <uni-button *ngIf="advFilters && !showAdvanced" icon="keyboard_arrow_down" label="more filters" size="small" (click)="showAdvanced = true"></uni-button>

@@ -16,23 +16,23 @@ import { UniDatagridComponent } from '../datagrid.component';
 export class UniDatagridRowComponent implements OnChanges {
 
     @HostBinding('class.uni-datagrid-row') componentClass = true;
-    @HostBinding('class.selected')
+    @HostBinding('class.uni-datagrid-row--selected')
     @Input() selected = false;
 
-    @HostBinding('class.box')
+    @HostBinding('class.uni-datagrid-row--box')
     @Input() box = false;
 
-    @HostBinding('class.any-selected')
+    @HostBinding('class.uni-datagrid-row--any-selected')
     @Input() anySelected = false;
 
-    @HostBinding('class.deleting-selection')
+    @HostBinding('class.uni-datagrid-row--deleting-selection')
     @Input() deletingSelection = false;
 
     @Input()
-    @HostBinding('class.highlight')
+    @HostBinding('class.uni-datagrid-row--highlight')
     highlight;
 
-    @HostBinding('class.deleting')
+    @HostBinding('class.uni-datagrid-row--deleting')
     deleting = false;
 
     @Output() selectedChange = new EventEmitter();
