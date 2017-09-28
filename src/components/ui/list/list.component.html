@@ -1,14 +1,14 @@
-<ul *ngIf="data && data.length" [(sortablejs)]="data" [sortablejsOptions]="sortableOptions">
+<ul class="uni-list__inner" *ngIf="data && data.length" [(sortablejs)]="data" [sortablejsOptions]="sortableOptions">
 
     <ng-container *ngFor="let item of data; let i = index">
-        <li *ngIf="item.name !== '----'">
+        <li class="uni-list__item" *ngIf="item.name !== '----'">
 
-            <uni-icon class="drag-handle show-hover" *ngIf="sortable" icon="drag_handle"></uni-icon>
+            <uni-icon class="uni-list__hover-icon uni-list__hover-icon--drag" *ngIf="sortable" icon="drag_handle"></uni-icon>
 
             <ng-container *ngIf="!item.editing">
                 <uni-icon *ngIf="item.icon" [icon]="item.icon" class="uni-list__icon"></uni-icon>
-                <span (click)="onClick(item)" (dblclick)="onDoubleclick(item)" [class.selected]="isSelected(item)" [innerHtml]="item.name || '(Untitled)'"> </span>
-                <uni-button class="show-hover" *ngIf="deletable" icon="delete" (click)="onDelete(i, item, $event)"></uni-button>
+                <span class="uni-list__content" (click)="onClick(item)" (dblclick)="onDoubleclick(item)" [class.uni-list__content--selected]="isSelected(item)" [innerHtml]="item.name || '(Untitled)'"> </span>
+                <uni-button class="uni-list__hover-icon" *ngIf="deletable" icon="delete" (click)="onDelete(i, item, $event)"></uni-button>
             </ng-container>
 
             <form *ngIf="item.editing === true" (submit)="onEdit(i, item)">

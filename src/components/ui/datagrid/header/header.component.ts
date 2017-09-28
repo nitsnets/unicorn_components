@@ -4,7 +4,8 @@ import { UniDatagridComponent } from './../datagrid.component';
 
 @Component({
     selector: 'uni-datagrid-header',
-    templateUrl: './header.component.html'
+    templateUrl: './header.component.html',
+    styleUrls: ['header.component.scss']
 })
 export class UniDatagridHeaderComponent {
 

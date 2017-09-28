@@ -1,9 +1,16 @@
 .uni-datagrid-header {
-    display: block;
-    position: relative;
 
-    &__delete-cell{
+    &__delete-cell {
         visibility: hidden;
+    }
+
+    &__text {
+        color: $alpha-black;
+        top: 50%;
+        margin-top: - $input-height / 2;
+        height: $input-height;
+        position: absolute;
+        line-height: $input-height;
     }
 
     &__row {
@@ -11,19 +18,55 @@
 
         &--selected {
             background-color: $color-primary-light;
-            .uni-datagrid-header__text {color: $color-primary; }
-            .uni-datagrid-header__delete-cell{ visibility: visible; }
-            & + uni-separator hr { border-color: $color-primary; }
+
+            .uni-datagrid-header__text {
+                color: $color-primary;
+            }
+
+            .uni-datagrid-header__delete-cell {
+                visibility: visible;
+            }
+
+            & + .uni-separator hr {
+                border-color: $color-primary;
+            }
+
         }
+
         &--deleting {
             background-color: $color-error-light;
-            .uni-datagrid-header__text {color: $color-error; }
-            .uni-datagrid-header__delete-cell{ visibility: hidden; }
-            & + uni-separator hr { border-color: $color-error; }
+
+            .uni-datagrid-header__text {
+                color: $color-error;
+            }
+
+            .uni-datagrid-header__delete-cell {
+                visibility: hidden;
+            }
+
+            & + .uni-separator hr {
+                border-color: $color-error;
+            }
         }
+
         &--all-selected {
-            &.uni-datagrid-header__row--selected { background-color: darken($color-primary-light, 5%); uni-checkbox {color: $color-primary; } }
-            &.uni-datagrid-header__row--deleting { background-color: darken($color-error-light, 5%); uni-checkbox {color: $color-error; } }
+
+            &.uni-datagrid-header__row--selected {
+                background-color: darken($color-primary-light, 5%);
+
+                .uni-checkbox {
+                    color: $color-primary;
+                }
+
+            }
+
+            &.uni-datagrid-header__row--deleting {
+                background-color: darken($color-error-light, 5%);
+
+                .uni-checkbox {
+                    color: $color-error;
+                }
+            }
         }
     }
 
@@ -35,11 +78,18 @@
 
         &--deleting {
             display: flex;
-            .uni-datagrid-header__text { position: relative; flex: 1; }
-            uni-button { margin-left: $basic-padding / 4; }
+
+            .uni-datagrid-header__text {
+                position: relative;
+                flex: 1;
+            }
+
+            .uni-button {
+                margin-left: $basic-padding / 4;
+            }
         }
 
-        &--sortable{
+        &--sortable {
             cursor: pointer;
             user-select: none;
 
@@ -56,21 +106,25 @@
                 bottom: 0;
             }
         }
+
         &--sort-asc {
-            .uni-datagrid-header__text { color: $black; }
-            &:after { background-image: url('assets/img/sort_asc.png'); }
+            .uni-datagrid-header__text {
+                color: $black;
+            }
+
+            &:after {
+                background-image: url('assets/img/sort_asc.png');
+            }
         }
+
         &--sort-desc {
-            .uni-datagrid-header__text { color: $black; }
-            &:after { background-image: url('assets/img/sort_desc.png'); }
+            .uni-datagrid-header__text {
+                color: $black;
+            }
+
+            &:after {
+                background-image: url('assets/img/sort_desc.png');
+            }
         }
-    }
-    &__text {
-        color: $alpha-black;
-        top: 50%;
-        margin-top: - $input-height / 2;
-        height: $input-height;
-        position: absolute;
-        line-height: $input-height;
     }
 }

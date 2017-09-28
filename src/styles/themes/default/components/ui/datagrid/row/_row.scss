@@ -1,79 +1,99 @@
-uni-datagrid-row {
-    align-items: stretch;
-    transition: 200ms ease background-color;
+.uni-datagrid-row {
     position: relative;
 
     display: flex;
     flex: 1;
 
-    &.box {
-        flex: initial;
+    transition: 200ms ease background-color;
+
+    &__cell {
+
+        &-text {
+            flex: 1;
+        }
+
+        &--show-hover {
+            visibility: hidden;
+        }
     }
-    &.highlight:hover {
+
+    &:hover {
+
+        .uni-datagrid-row__cell--show-hover {
+            visibility: visible;
+        }
+    }
+
+    &--box {
+        flex: 0 1 auto; // Default options. initial value has no support on ie
+    }
+
+    &--highlight:hover {
         background-color: $alpha-black-lighter;
     }
-    &.selected {
+
+    &--selected {
         background-color: $color-primary-light;
-        &.highlight:hover {
+
+        &.uni-datagrid-row--highlight:hover {
             background-color: darken($color-primary-light, 2.5%);
         }
-        &.deleting-selection {
-            font-weight: bold;
+
+        &.uni-datagrid-row--deleting-selection {
+            font-weight: 700;
             background-color: $color-error-light;
             color: $color-error;
 
-            &.highlight:hover {
+            &.uni-datagrid-row--highlight:hover {
                 background-color: darken($color-error-light, 2.5%);
             }
-            .select-cell {
+
+            .uni-datagrid-row__cell--select {
                 color: $color-error;
             }
         }
-        .select-cell {
+
+        .uni-datagrid-row__cell--select {
             visibility: visible;
             color: $color-primary;
         }
     }
-    &.any-selected {
-        .delete-cell {
-            visibility: hidden !important;
+
+    &--any-selected {
+
+        .uni-datagrid-row__cell--delete {
+            visibility: hidden;
         }
-        .select-cell {
+
+        .uni-datagrid-row__cell--select {
             visibility: visible;
         }
     }
-    &:hover {
-        .show-hover {
-            visibility: visible;
-        }
-    }
-    .show-hover {
-        visibility: hidden;
-    }
-    &.deleting {
+
+    &--deleting {
         font-weight: bold;
         background-color: $color-error-light;
         color: $color-error;
         align-items: center;
 
 
-        &.highlight:hover {
+        &.uni-datagrid-row--highlight:hover {
             background-color: darken($color-error-light, 2.5%);
         }
-        .select-cell {
+
+        .uni-datagrid-row__cell--select {
             color: $color-error;
         }
 
-        .delete-cell {
-            visibility: hidden !important;
+        .uni-datagrid-row__cell--delete {
+            visibility: hidden;
         }
-        .deleting-cell {
+
+        .uni-datagrid-row__cell--deleting {
             display: flex;
             align-items: center;
-            span {
-                flex: 1;
-            }
-            uni-button {
+
+            .uni-button {
                 margin-left: $basic-padding / 4;
             }
         }
