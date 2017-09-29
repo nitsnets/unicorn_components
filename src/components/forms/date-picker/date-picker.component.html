@@ -4,7 +4,7 @@
             [label]="label" [clear]="true" [model]="model" (modelChange)="onDateChanges($event)" (uniFocus)="onFocus($event)"
             (uniBlur)="onBlur($event)" (uniKeypress)="onKeyPress($event, true)"> </uni-input>
     </div>
-    <div *ngIf="opened || !floating" class="uni-date-picker__controls" [class.align-left]="side === 'left'" [class.align-right]="side === 'right'">
+    <div *ngIf="opened || !floating" class="uni-date-picker__controls" [class.uni-date-picker__controls--left]="side === 'left'" [class.uni-date-picker__controls--right]="side === 'right'">
         <uni-calendar [bordered]="floating===false" [max]="max" [min]="min" [rangeFrom]="rangeFrom" [rangeTo]="rangeTo" [model]="model"
             (modelChange)="onDateChanges($event)">
         </uni-calendar>

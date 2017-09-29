@@ -1,4 +1,7 @@
-@import "mixins/mq";
+@import
+    'mixins/mq',
+    'mixins/components/button',
+    'mixins/components/slider';
 
 // Antialias
 @mixin antialias {
@@ -384,22 +387,4 @@
         bottom: auto;
         transform: translateY(-50%);
     }
-}
-
-//
-// Component mixins
-///////////////////////////
-
-// From /ui/button/_button.scss
-@mixin inverse-content {
-    color: white;
-    .sublabel{ color: white; }
-    .icon{ opacity: 1; color: white; }
-}
-@mixin button-background($color, $inverse: false) {
-    background-color: $color;
-    &:hover{background-color: lighten($color, 5%);}
-    &:focus{background-color: lighten($color, 5%);}
-    &:active{background-color: lighten($color, 8%);}
-    @if $inverse { @include inverse-content; }
 }

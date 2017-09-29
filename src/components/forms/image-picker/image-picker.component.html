@@ -1,16 +1,16 @@
-<label class="img-picker" droppable="true" (uniDragenter)="onDragEnter($event)" (dragover)="onDragOver($event)" (uniDragleave)="onDragLeave($event)"
-    (drop)="onDrop($event)" [ngClass]="{dragging: dragging}">
+<label class="uni-image-picker__inner" droppable="true" (uniDragenter)="onDragEnter($event)" (dragover)="onDragOver($event)" (uniDragleave)="onDragLeave($event)"
+    (drop)="onDrop($event)" [ngClass]="{'uni-image-picker__inner--dragging': dragging}">
 
-    <div class="placeholder" *ngIf="!imageData">
-        <uni-icon class="icon" icon="photo" size="large"></uni-icon>
-        <p class="label">
+    <div class="uni-image-picker__placeholder" *ngIf="!imageData">
+        <uni-icon class="uni-image-picker__icon" icon="photo" size="large"></uni-icon>
+        <p class="uni-image-picker__label">
             {{label || 'Click or drop an image to upload'}} <br> ({{width}} x {{height}})
         </p>
     </div>
-    <div class="preview" *ngIf="imageData">
-        <img class="image" [src]="imageData" alt="Image picker">
+    <div class="uni-image-picker__preview" *ngIf="imageData">
+        <img class="uni-image-picker__image" [src]="imageData" alt="Image picker">
     </div>
     <input #inputFile type="file" accept="image/*" (change)="onImagePicked($event)" [style.display]="'none'">
 
 </label>
-<uni-button class="delete" *ngIf="imageData" icon="delete" (click)="clear()"></uni-button>
+<uni-button class="uni-image-picker__delete-btn" *ngIf="imageData" icon="delete" (click)="clear()"></uni-button>

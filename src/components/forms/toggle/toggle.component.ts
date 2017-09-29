@@ -11,4 +11,5 @@ export class UniToggleComponent extends UniCheckboxComponent {
 
     @HostBinding('class.uni-toggle') componentClass = true;
     @Input() rounded = true;
+    @Input() size: string;
 }

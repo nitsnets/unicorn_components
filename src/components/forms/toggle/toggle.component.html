@@ -1,7 +1,11 @@
-<label [class]="color || ''" [class.checked]="model">
-    <div class="toggle-container">
-        <input type="checkbox" [name]="name" [ngModel]="model" (ngModelChange)="toggleUniModel()">
-        <div class="toggle-slider" [class.round]="rounded"></div>
+<label
+    class="uni-toggle__inner"
+    [class]="color ? 'uni-toggle__inner--' + color : ''"
+    [class.uni-toggle__inner--checked]="model"
+    [ngClass]="{'uni-toggle__inner--small': size === 'small'}">
+    <div class="uni-toggle__container">
+        <input class="uni-toggle__input" type="checkbox" [name]="name" [ngModel]="model" (ngModelChange)="toggleUniModel()">
+        <div class="uni-toggle__slider" [class.uni-toggle__slider--round]="rounded"></div>
     </div>
-    <span class="toggle-label" *ngIf="label">{{label}}</span>
+    <span class="uni-toggle__label" *ngIf="label">{{label}}</span>
 </label>
