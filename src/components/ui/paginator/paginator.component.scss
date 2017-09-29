@@ -1,20 +1,24 @@
-.container {
-    display: flex;
-    align-items: center;
-}
-.pages {
-    display: flex;
-    align-items: center;
-}
+.uni-paginator {
 
-.page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    user-select: none;
-}
+    .container {
+        display: flex;
+        align-items: center;
+    }
 
-.paginator-icon {
-    cursor: pointer;
+    .pages {
+        display: flex;
+        align-items: center;
+    }
+
+    .page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .paginator-icon {
+        cursor: pointer;
+    }
 }

@@ -1,7 +1,8 @@
 @import
     'mixins/mq',
     'mixins/components/button',
-    'mixins/components/slider';
+    'mixins/components/slider',
+    'mixins/components/clock';
 
 // Antialias
 @mixin antialias {
@@ -386,5 +387,22 @@
         top: 50%;
         bottom: auto;
         transform: translateY(-50%);
+    }
+}
+
+@mixin halfBg($side, $color: $color-primary-light) {
+    &::before {
+        @include pseudo;
+        background-color: $color;
+        z-index: 0;
+        height: 100%;
+        width: 50%;
+
+        @if $side==left {
+            left: 0;
+        }
+        @else {
+            right: 0;
+        }
     }
 }

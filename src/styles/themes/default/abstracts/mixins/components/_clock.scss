@@ -1,0 +1,8 @@
+@mixin clock-tick($width, $height) {
+    width: $width;
+    height: $height;
+    background-color: $color-primary;
+    top: $clock-size/2 - $height;
+    left: $clock-size/2 - $width/2;
+    @include transition(transform, 500ms, ease);
+}
