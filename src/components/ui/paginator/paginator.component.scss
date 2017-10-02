@@ -1,24 +1,20 @@
 .uni-paginator {
 
-    .container {
+    &__container {
         display: flex;
         align-items: center;
     }
 
-    .pages {
+    &__pages {
         display: flex;
         align-items: center;
     }
 
-    .page {
+    &__page {
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
         user-select: none;
-    }
-
-    .paginator-icon {
-        cursor: pointer;
     }
 }

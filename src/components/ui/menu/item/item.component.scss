@@ -1,13 +1,16 @@
-:host{
-  cursor: pointer;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  position: relative;
-  white-space: nowrap;
+:host {
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    position: relative;
+    white-space: nowrap;
 
-  .icon{
-    position: absolute;
-  }
+}
 
+.uni-menu-item {
+
+	&__icon {
+		position: absolute;
+	}
 }

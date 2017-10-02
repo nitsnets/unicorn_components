@@ -1,50 +1,44 @@
 .uni-paginator {
 
-    .container {
+    &__container {
         justify-content: center;
 
-        @include mq($from: sm) {
+        @include mq(sm) {
             justify-content: space-between;
         }
     }
 
-    &.right {
-
-        .pages {
-            @include mq($from: sm) {
-                margin-left: auto;
-            }
-        }
-    }
-
-    &.center {
-
-        .container {
-            text-align: center;
-        }
-    }
-
-    .paginator-icon {
-        cursor: pointer;
+    &__icon {
         padding: $basic-padding / 3;
+        line-height: 1;
+        cursor: pointer;
         opacity: 0.35;
 
         &:hover {
             opacity: 0.65;
         }
+
+        &--disabled {
+            opacity: 0.15;
+
+            &:hover {
+                opacity: 0.15;
+                cursor: default;
+            }
+        }
 	}
 
-    .counter {
+    &__counter {
         display: none;
         text-align: left;
         margin: 0;
 
-        @include mq($from: sm) {
+        @include mq(sm) {
             display: inline-block;
         }
     }
 
-    .page {
+    &__page {
         min-width: $input-height;
         height: $input-height;
         padding: $basic-padding / 3;
@@ -53,14 +47,14 @@
         opacity: 0.35;
         font-size: $font-small;
 
-        &.selectable {
+        &--selectable {
 
             &:hover {
                 opacity: 0.65;
             }
 		}
 
-        &.selected {
+        &--selected {
             opacity: 1;
             font-weight: bold;
         }
