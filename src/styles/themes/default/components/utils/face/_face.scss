@@ -1,31 +1,49 @@
-uni-face {
-  .face{
+.uni-face {
 
-    @include border-radius(50%);
-    background-color: $color-grey-light;
+	&__letter {
+		margin: 0;
+		font-size: 18px;
+		line-height: 1.8;
+		color: white;
+	}
 
-    width: $input-height + $basic-padding / 3;
-    height: $input-height + $basic-padding / 3;
+	&__icon {
+		opacity: 0.25;
+	}
 
-    &.small { width: $input-xs-height; height: $input-xs-height;}
-    &.big { width: $input-height * 2; height: $input-height * 2; }
-    &.initial { background-color: $color-grey; }
-
-    .letter{
-      color: white;
+	&__badge {
+        top: - $basic-padding / 8;
+        right: - $basic-padding / 8;
     }
 
-    .icon {
-      opacity: 0.25;
-    }
+    &__inner {
+        @include border-radius(50%);
+        background-color: $color-grey-light;
 
-    @include mq($from: sm) {
-      &.small { width: $input-height; height: $input-height;}
-    }
-  }
+        width: $input-height + $basic-padding / 3;
+        height: $input-height + $basic-padding / 3;
 
-  .face-badge {
-    top: - $basic-padding / 8;
-    right: - $basic-padding / 8;
-  }
+        &--small {
+            width: $input-xs-height;
+            height: $input-xs-height;
+		}
+
+        &--big {
+            width: $input-height * 2;
+            height: $input-height * 2;
+		}
+
+        &--initial {
+            background-color: $color-grey;
+        }
+
+
+        @include mq(sm) {
+
+            &--small {
+                width: $input-height;
+                height: $input-height;
+            }
+        }
+    }
 }

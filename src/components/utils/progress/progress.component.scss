@@ -1,14 +1,17 @@
+.uni-progress {
 
-.container {
-  position: relative;
-}
-.bar {
-  max-width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
+    &__container {
+        position: relative;
+    }
 
-span {
-  display:block;
+    &__bar {
+        max-width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    &__counter, &__percentage {
+        display: block;
+    }
 }

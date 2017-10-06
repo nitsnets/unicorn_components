@@ -16,6 +16,18 @@ export class UniSpinnerComponent implements OnChanges {
     @HostBinding('class') className = {};
 
     ngOnChanges() {
-        this.className = (this.color || '') + ' ' + (this.size || '') + ' ' + (this.type || '');
+
+        this.className='';
+        if ( this.color ) {
+            this.className += 'uni-spinner--' + this.color;
+        }
+
+        if ( this.size)  {
+            this.className += ' uni-spinner--' + this.size;
+        }
+
+        if ( this.type)  {
+            this.className += ' uni-spinner--' + this.type;
+        }
     }
 }

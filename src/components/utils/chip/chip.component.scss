@@ -1,8 +1,15 @@
 :host {
-  display: inline-flex;
-  align-items: center;
+    display: block;
+    // align-items: center;
+}
 
-  .remove {
-    cursor: pointer;
-  }
+.uni-chip {
+
+	&__inner {
+		position: relative;
+	}
+
+	&__icon-remove {
+        cursor: pointer;
+    }
 }

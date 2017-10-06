@@ -1,5 +1,6 @@
-uni-separator {
-  hr{
-    @include border-bottom();
-  }
+.uni-separator {
+
+    &__line {
+        @include border-bottom();
+    }
 }

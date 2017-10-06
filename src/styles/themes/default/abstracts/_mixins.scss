@@ -1,8 +1,9 @@
 @import
     'mixins/mq',
     'mixins/components/button',
+    'mixins/components/clock',
     'mixins/components/slider',
-    'mixins/components/clock';
+    'mixins/components/spinner';
 
 // Antialias
 @mixin antialias {

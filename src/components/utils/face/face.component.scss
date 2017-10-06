@@ -1,16 +1,20 @@
-:host{
+:host {
     position: relative;
 }
-.face{
-  background-size: cover;
-  background-repeat: no-repeat;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
+.uni-face {
 
-.face-badge {
-  position: absolute;
+	&__inner {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	&__badge {
+		position: absolute;
+	}
 }

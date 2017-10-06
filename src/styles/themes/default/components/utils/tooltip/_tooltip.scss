@@ -1,6 +1,6 @@
-uni-tooltip {
+.uni-tooltip {
 
-    .tooltip-container {
+    &__container {
         transition: all 200ms ease 0s;
         width: 225px;
 
@@ -15,6 +15,4 @@ uni-tooltip {
             opacity: 1;
         }
     }
-
 }
-

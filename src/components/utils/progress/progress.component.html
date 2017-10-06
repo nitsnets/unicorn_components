@@ -1,6 +1,6 @@
-<div class="container" [class.only-bar]="!showCount">
-  <div [class]="'bar ' + color || ''" [style.width]="value * 100 / total + '%'">
-    <span class="percentage" *ngIf="showPercentage">{{value * 100 / total | number:'1.0-2'}}%</span>
-  </div>
+<div class="uni-progress__container" [class.uni-progress__container--only-bar]="!showCount">
+    <div [class]="'uni-progress__bar ' + (color ? 'uni-progress__bar--' + color : '')" [style.width]="value * 100 / total + '%'">
+        <span class="uni-progress__percentage" *ngIf="showPercentage">{{value * 100 / total | number:'1.0-2'}}%</span>
+    </div>
 </div>
-<span class="counter" *ngIf="showCount"> {{value}}/{{total}}</span>
+<span class="uni-progress__counter" *ngIf="showCount"> {{value}}/{{total}}</span>

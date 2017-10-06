@@ -1,12 +1,11 @@
-<div class="face" [ngClass]="{
-        small: size === 'small',
-        big: size === 'big',
-        initial: user && !user.image
+<div class="uni-face__inner" [ngClass]="{
+        'uni-face__inner--small' : size === 'small',
+        'uni-face__inner--big' : size === 'big',
+        'uni-face__inner--initial' : user && !user.image
     }" [style.background-image]="user?.image ? 'url('+user?.image+')' : ''">
 
-    <p class="title4 letter" *ngIf="user && !user.image">{{user.name?.charAt(0) | uppercase}}</p>
+    <p class="uni-face__letter" *ngIf="user && !user.image">{{user.name?.charAt(0) | uppercase}}</p>
 
-    <uni-icon class="icon" [icon]="icon" *ngIf="!user"></uni-icon>
-
+    <uni-icon class="uni-face__icon" [icon]="icon" *ngIf="!user"></uni-icon>
 </div>
-<uni-badge class="face-badge" [label]="badge" color="error"></uni-badge>
+<uni-badge class="uni-face__badge" [label]="badge" color="error"></uni-badge>
