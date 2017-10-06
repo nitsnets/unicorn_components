@@ -1,3 +1,157 @@
+// For /forms/slider || slider-range
+$slider-height: $input-height;
+$slider-width: $input-height * 5;
+$slider-thumb-height: $slider-height / 2;
+$slider-track-height: $slider-height / 8;
+
 .uni-slider {
-    @include make-slider-styles('.uni-slider');
+    display: inline-block;
+    user-select: none;
+
+    &__track, &__track-fill {
+        position: absolute;
+        height: $slider-track-height;
+        @include border;
+        margin-top: ($slider-height - $slider-track-height) / 2;
+    }
+
+    &__track {
+        width: $slider-width;
+    }
+
+    &__track-fill {
+        background-color: $color-grey;
+    }
+
+    &__ticks {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__tick {
+        flex: 1;
+    }
+
+    &__thumb {
+        border-radius: 50%;
+        position: absolute;
+
+        height: $slider-thumb-height;
+        width: $slider-thumb-height;
+
+        @include border(2px);
+        margin-left: - $slider-thumb-height / 2;
+        margin-top: ($slider-height - $slider-thumb-height) / 2;
+
+        background-color: white;
+
+        transition: border-color ease 200ms;
+    }
+
+    &__inner {
+        position: relative;
+        height: $slider-height;
+        width: $slider-width;
+        cursor: pointer;
+
+        &:hover .uni-slider__thumb {
+            border-color: $color-grey;
+        }
+
+        &--primary {
+
+            .uni-slider {
+
+                &__track-fill {
+                    background-color: $color-primary;
+                }
+                &__thumb--sliding {
+                    border-color: $color-primary;
+                }
+            }
+
+            &:hover .uni-slider__thumb {
+                border-color: $color-primary;
+            }
+        }
+
+        &--success {
+
+            .uni-slider {
+
+                &__track-fill {
+                    background-color: $color-success;
+                }
+                &__thumb--sliding {
+                    border-color: $color-success;
+                }
+            }
+
+            &:hover .uni-slider__thumb {
+                border-color: $color-success;
+            }
+        }
+
+        &--warning {
+
+            .uni-slider {
+
+                &__track-fill {
+                    background-color: $color-warning;
+                }
+                &__thumb--sliding {
+                    border-color: $color-warning;
+                }
+            }
+
+            &:hover .uni-slider__thumb {
+                border-color: $color-warning;
+            }
+        }
+
+        &--error {
+
+            .uni-slider {
+
+                &__track-fill {
+                    background-color: $color-error;
+                }
+                &__thumb--sliding {
+                    border-color: $color-error;
+                }
+            }
+
+            &:hover .uni-slider__thumb {
+                border-color: $color-error;
+            }
+        }
+
+        &--light {
+
+            .uni-slider {
+
+                &__track-fill {
+                    background-color: $color-grey-light;
+                }
+                &__thumb--sliding {
+                    border-color: $color-grey;
+                }
+            }
+
+            &:hover .uni-slider__thumb {
+                border-color: $color-grey;
+            }
+        }
+    }
+
+    &__label {
+        height: $label-height;
+
+        margin: 0 $input-padding/4;
+
+        font-size: $font-small;
+        line-height: $label-height;
+        font-weight: 300;
+        color: $color-grey-dark;
+    }
 }
