@@ -12,7 +12,7 @@ export class UniAccordionItemComponent extends UniBaseComponent {
     @HostBinding('class.uni-accordion-item') componentClass = true;
     @Input() menu = false;
 
-    @HostBinding('class.collapsed')
+    @HostBinding('class.uni-accordion-item--collapsed')
     @Input() collapsed = true;
     @Output() collapsedChange = new EventEmitter<boolean>();
 

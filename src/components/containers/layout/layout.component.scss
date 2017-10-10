@@ -1,6 +1,17 @@
-:host{
-  &.has-header, &.has-subheader{ .layout{ overflow-y: auto; } }
+:host {
+
+    &.has-header,
+    &.has-subheader {
+
+        .uni-layout__inner {
+            overflow-y: auto;
+        }
+    }
 }
-.layout{
-  display: flex;
+
+.uni-layout {
+
+	&__inner {
+		display: flex;
+	}
 }

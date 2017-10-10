@@ -1,43 +1,50 @@
-
 .uni-header {
-    @include border-bottom();
+	height: $header-xs-height;
     padding: 0 $basic-padding / 2;
+	@include border-bottom();
+
     transition: all ease $slow;
-    height: $header-xs-height;
-    &--hidden{
-        margin-top:-$header-xs-height;
-    }
-    &--grey{
-        background-color: $alpha-black-light;
-    }
-    &--error{
-        background-color: $color-error-light;
-        border-color: $color-error-medium !important;
-        color: $color-error;
-    }
 
-    @include mq($from: sm) {
+	@include mq(sm) {
+		height: $header-height;
         padding: 0 $basic-padding;
-        height: $header-height;
-        &--hidden{ margin-top:-$header-height; }
     }
 
-    &--medium{
-        height: $header-xs-height;
-        @include mq($from: sm) {
+    &--hidden {
+		margin-top: -$header-xs-height;
+
+		@include mq(sm) {
+			margin-top: -$header-height;
+		}
+	}
+
+    &--grey {
+        background-color: $alpha-black-light;
+	}
+
+    &--error {
+		border-color: $color-error-medium !important;
+        color: $color-error;
+        background-color: $color-error-light;
+    }
+
+    &--medium {
+		height: $header-xs-height;
+
+        @include mq(sm) {
             height: $header-md-height;
         }
-    }
-    &--medium &--hidden{
-        margin-top:-$header-xs-height;
-        @include mq($from: sm) {
-            margin-top:-$header-md-height;
+	}
+
+    &--medium &--hidden {
+		margin-top: -$header-xs-height;
+
+        @include mq(sm) {
+            margin-top: -$header-md-height;
         }
-    }
-    &--less-padding{
+	}
+
+    &--less-padding {
         padding: 0 $basic-padding/2;
     }
 }
-
-
-

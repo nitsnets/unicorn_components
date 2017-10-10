@@ -1,19 +1,24 @@
-.modal-bg{
-    position: fixed;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    overflow-y: auto;
+.uni-modal {
 
-    &.aside {
-        padding: 0;
-        justify-content: flex-end;
-        overflow-x: hidden;
+    &__inner {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+
+        height: 100%;
+        width: 100%;
+
+        overflow-y: auto;
+
+        &--aside {
+            justify-content: flex-end;
+            padding: 0;
+            overflow-x: hidden;
+        }
     }
-
 }

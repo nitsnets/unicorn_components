@@ -1,22 +1,22 @@
-<div class="acc-container">
-    <div class="acc-header">
-        <uni-button class="acc-caret" icon="arrow_drop_down" (click)="onCollapsedChange(!collapsed)">
+<div class="uni-accordion-item__container">
+    <div class="uni-accordion-item__header">
+        <uni-button class="uni-accordion-item__caret" icon="arrow_drop_down" (click)="onCollapsedChange(!collapsed)">
         </uni-button>
 
-        <span class="acc-title" (click)="onCollapsedChange(!collapsed)" [innerHtml]="label"> </span>
+        <span class="uni-accordion-item__title" (click)="onCollapsedChange(!collapsed)" [innerHtml]="label"> </span>
 
-        <div class="acc-menu" *ngIf="!menu">
+        <div class="uni-accordion-item__menu" *ngIf="!menu">
             <ng-content select=".accordion-buttons"></ng-content>
         </div>
 
-        <uni-menu class="acc-menu" *ngIf="menu">
-            <uni-button class="acc-menu-trigger" icon="more_vert" uniMenuTrigger></uni-button>
+        <uni-menu class="uni-accordion-item__menu" *ngIf="menu">
+            <uni-button class="uni-accordion-item__menu-trigger" icon="more_vert" uniMenuTrigger></uni-button>
             <uni-menu-container>
                 <ng-content select="[uni-accordion-menu]"></ng-content>
             </uni-menu-container>
         </uni-menu>
     </div>
-    <div class="acc-content" *ngIf="!collapsed">
+    <div class="uni-accordion-item__content" *ngIf="!collapsed">
         <ng-content *ngIf="menu" select="[uni-accordion-content]"></ng-content>
         <ng-content *ngIf="!menu"></ng-content>
     </div>

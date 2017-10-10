@@ -1,5 +1,7 @@
 .popup-content {
-  padding: $basic-padding / 2;
+    padding: $basic-padding / 2;
 
-  &.padding { padding-right: $input-height; }
+    &.padding {
+        padding-right: $input-height;
+    }
 }

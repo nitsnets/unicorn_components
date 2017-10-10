@@ -1,6 +1,6 @@
-uni-popup{
-  .container {
-    @include border($border-width);
-    background-color: #fff;
-  }
+uni-popup {
+    .container {
+        @include border($border-width);
+        background-color: #fff;
+    }
 }

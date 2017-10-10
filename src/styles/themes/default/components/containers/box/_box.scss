@@ -1,4 +1,4 @@
 uni-box {
-  background-color: white;
-  @include border($border-width);
+	@include border($border-width);
+    background-color: white;
 }
