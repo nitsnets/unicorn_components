@@ -1,8 +1,9 @@
 :host {
-  flex: 1;
-  display: flex;
-}
+    flex: 1;
+	display: flex;
 
-:host.vertical, :host[vertical] {
-  flex-direction: column;
+	&.vertical,
+	&[vertical] {
+		flex-direction: column;
+	}
 }

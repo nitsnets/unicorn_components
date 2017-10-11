@@ -1,9 +1,12 @@
-.popup-content {
-    flex: 1;
-}
+.uni-popup-container {
 
-.close-button {
-    position: absolute;
-    right: 0;
-    top: 0;
+    &__inner {
+        flex: 1;
+    }
+
+    &__btn-close {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
 }

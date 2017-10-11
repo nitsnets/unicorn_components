@@ -1,6 +1,7 @@
-uni-row {
+.uni-row {
     flex-direction: column;
-    @include mq($from: sm) {
+
+    @include mq(sm) {
         flex-direction: row;
     }
 }

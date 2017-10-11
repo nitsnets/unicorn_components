@@ -12,7 +12,7 @@ export class UniTabsItemComponent {
     @Input() size: 'small';
 
     @Input()
-    @HostBinding('class.selected')
+    @HostBinding('class.uni-tabs-item--selected')
     selected = false;
 
     @Input() label: string;
@@ -20,7 +20,7 @@ export class UniTabsItemComponent {
 
     @Output() select = new EventEmitter<void>();
 
-    @HostBinding('class.small') get isSmall(): boolean { return this.size === 'small'; }
+    @HostBinding('class.uni-tabs-item--small') get isSmall(): boolean { return this.size === 'small'; }
     @HostBinding('innerHtml') get tabLabel(): string { return this.label; }
     @HostListener('click') onClick() { this.select.emit(this.value); }
 

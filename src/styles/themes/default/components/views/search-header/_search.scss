@@ -1,8 +1,10 @@
-uni-search-header {
-  uni-input{
-    margin-left: ($header-md-height - $input-height) - $basic-padding;
-  }
-  uni-button{
-    margin-right: - $basic-padding;
-  }
+.uni-search-header {
+
+    &__input {
+        margin-left: ($header-md-height - $input-height) - $basic-padding;
+	}
+
+    &__btn {
+        margin-right: - $basic-padding;
+    }
 }

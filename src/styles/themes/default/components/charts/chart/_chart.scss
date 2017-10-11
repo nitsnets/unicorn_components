@@ -1,6 +1,21 @@
-uni-chart {
-    .chart-tiny { height: $chart-tiny; }
-    .chart-small { height: $chart-small; }
-    .chart-medium { height: $chart-medium; }
-    .chart-large { height: $chart-large; }
+.uni-chart {
+
+    &__canvas {
+
+        &--tiny {
+            height: $chart-tiny;
+        }
+
+        &--small {
+            height: $chart-small;
+        }
+
+        &--medium {
+            height: $chart-medium;
+        }
+
+        &--large {
+            height: $chart-large;
+        }
+    }
 }

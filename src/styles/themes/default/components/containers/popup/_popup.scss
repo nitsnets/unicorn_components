@@ -1,5 +1,6 @@
-uni-popup {
-    .container {
+.uni-popup {
+
+    &__wrapper {
         @include border($border-width);
         background-color: #fff;
     }
