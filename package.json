@@ -1,6 +1,6 @@
 {
   "name": "nts-ng2-components",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "license": "MIT",
   "angular-cli": {},
   "typings": "./nts-ng2-components.d.ts",
