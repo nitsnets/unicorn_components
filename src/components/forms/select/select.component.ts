@@ -38,6 +38,8 @@ export class NtsSelectComponent extends NtsInputBaseComponent implements OnInit,
     optionsSelected: NtsOption[] = [];
     pointedIndex = 0;
     selecting = false;
+    justSelected = false;
+
     search = null;
 
     ngOnChanges(changes) {
@@ -77,7 +79,11 @@ export class NtsSelectComponent extends NtsInputBaseComponent implements OnInit,
         return this.pointedIndex === i;
     }
     onClickOutside() {
-        this.hideOptions();
+        if (this.justSelected) {
+            this.justSelected = false;
+        } else {
+            this.hideOptions();
+        }
     }
     onFocus($event) {
         this.showOptions();
@@ -96,6 +102,7 @@ export class NtsSelectComponent extends NtsInputBaseComponent implements OnInit,
     }
 
     onSelect(option: NtsOption) {
+        this.justSelected = true;
         if (option === null) {
             this.optionsSelected = [];
         } else if (this.multiple) {
