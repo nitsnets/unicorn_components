@@ -1,5 +1,7 @@
 :host {
     position: relative;
+    display: inline-block;
+    vertical-align: middle;
     flex-shrink: 0;
 }
 
@@ -12,15 +14,18 @@
         position: relative;
         cursor: pointer;
         outline: none;
-    }
-    &--large{
-        display: block;
 
-        .icon, .iconRight{
-            position: absolute;
-        }
-        .sublabel{
+        &--large {
             display: block;
+
+            .uni-button__icon, .uni-button__icon-right {
+                position: absolute;
+            }
+
+            .uni-button__sublabel {
+                display: block;
+            }
         }
     }
+
 }

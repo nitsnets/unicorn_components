@@ -5,8 +5,8 @@
             (uniKeypress)="onKeyPress($event)">
         </uni-input>
     </div>
-    <div *ngIf="opened || !floating" class="uni-time-picker__controls" [class.floating]="!!floating" [class.align-left]="side === 'left'"
-        [class.align-right]="side === 'right'">
+    <div *ngIf="opened || !floating" class="uni-time-picker__controls" [class.uni-time-picker__controls--floating]="floating" [class.uni-time-picker__controls--left]="side === 'left'"
+        [class.uni-time-picker__controls--right]="side === 'right'">
         <uni-clock [min]="min" [max]="max" [model]="model" (modelChange)="onTimeChanges($event)">
         </uni-clock>
     </div>

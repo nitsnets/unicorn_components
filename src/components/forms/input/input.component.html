@@ -1,4 +1,4 @@
-<label>
+<label class="uni-input__main-label">
     <div class="uni-input__label" *ngIf="label || counter">
         <span *ngIf="label" [innerHtml]="label"></span>
         <span *ngIf="counter">
@@ -42,11 +42,11 @@
             size="small"
             *ngIf="!multiline && clear && model && model.length"
             (click)="onNgModelChange(null)"
-        > </uni-icon>
+        ></uni-icon>
 
         <textarea
             *ngIf="multiline && type !== 'color'"
-            class="uni-input__field"
+            class="uni-input__field uni-input__field--textarea"
             [attr.maxlength]="max"
             [name]="name"
             [placeholder]="placeholder"

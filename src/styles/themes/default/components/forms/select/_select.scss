@@ -1,32 +1,34 @@
-uni-select {
+.uni-select {
     line-height: $input-height;
 
-    .options{
+    &__options {
         background-color: white;
         max-height: $input-height * 8;
         overflow-y: auto;
         @include border($border-width);
     }
-    .option{
+
+    &__option {
         font-size: $font-small;
         padding: $basic-padding/4;
         line-height: $input-height/2;
         min-height: $input-height;
 
-        &.selected {
+        &-icon {
+            margin-right: $basic-padding / 4;
+            opacity: 0.25;
+        }
+
+        &--selected {
             background-color: $color-grey-medium;
 
-            .icon {
+            .uni-select__option-icon {
                 opacity: 1;
             }
         }
-        &.pointed {
-            background-color: $color-grey-light;
-        }
 
-        .icon {
-            margin-right: $basic-padding / 4;
-            opacity: 0.25;
+        &--pointed {
+            background-color: $color-grey-light;
         }
     }
 }

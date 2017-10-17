@@ -1,35 +1,55 @@
 .uni-checkbox {
-  height: $input-height;
-  display: inline-block;
-
-  label {
-    min-width: 100%;
+    display: inline-block;
     height: $input-height;
-    line-height: 1;
-    font-size: $font-regular;
 
-    border: 0;
-    padding: 0;
-    padding-left: $input-height / 2 - $input-padding;
-    padding-right: $input-height / 2 - $input-padding;
-    border-radius: $border-radius;
-    background-color: transparent;
+    &__icon {
+        opacity: 0.25;
+	}
 
-    &.only-icon{ border-radius:$input-height/2;}
-
-    &:not(.only-icon) {
-      &:hover {background-color: $alpha-black-light}
-      &:focus{background-color: $alpha-black-medium}
-      &:active{background-color: $alpha-black;}
+    &__label {
+        margin-left: $input-height / 2 - $input-padding
     }
 
-    .icon{ opacity: 0.25; }
-    &.checked,
-    &.partial {
-      .icon{ opacity: 1; }
-    }
+    &__inner {
+        min-width: 100%;
+		height: $input-height;
 
-    span.label {
-        margin-left: $input-height / 2 - $input-padding}
+        padding: 0;
+        padding-left: $input-height / 2 - $input-padding;
+        padding-right: $input-height / 2 - $input-padding;
+        border: 0;
+
+		font-size: $font-regular;
+        line-height: 1;
+
+        border-radius: $border-radius;
+        background-color: transparent;
+
+        &--only-icon {
+            border-radius: $input-height/2;
+        }
+
+        &:not(.uni-checkbox__inner--only-icon) {
+
+            &:hover {
+                background-color: $alpha-black-light
+            }
+
+            &:focus {
+                background-color: $alpha-black-medium
+            }
+
+            &:active {
+                background-color: $alpha-black;
+            }
+        }
+
+        &--checked,
+        &--partial {
+
+			.uni-checkbox__icon {
+                opacity: 1;
+            }
+        }
     }
 }

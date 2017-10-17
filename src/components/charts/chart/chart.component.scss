@@ -1,4 +1,7 @@
-.chart-container {
-  position: relative;
-  user-select: none;
+.uni-chart {
+
+	&__container {
+		position: relative;
+		user-select: none;
+	}
 }

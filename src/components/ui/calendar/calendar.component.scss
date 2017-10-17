@@ -1,31 +1,41 @@
-.calendar-container {
-  display: flex;
-  flex-direction: column;
-}
-.month-name, .days-name, .week-row {
-  display: flex;
-  align-items: center;
-  p{
-    flex:1;
-    text-align: center;
-    margin: 0;
-  }
-}
-.week-row {
-  flex:1;
-  p{
-    display: flex;
-    justify-content: center;
-  }
-}
-.day-container {
-  position: relative;
-}
+.uni-calendar {
 
-.day {
-  cursor: default;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
+	&__container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__month-name,
+	&__days-name,
+	&__week-row {
+		display: flex;
+		align-items: center;
+
+		p {
+			flex: 1;
+			text-align: center;
+			margin: 0;
+		}
+	}
+
+	&__week-row {
+		flex: 1;
+
+		p {
+			display: flex;
+			justify-content: center;
+		}
+	}
+
+	&__day {
+		position: relative;
+	}
+
+	&__day-number {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 1;
+		cursor: default;
+	}
 }

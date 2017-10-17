@@ -1,13 +1,17 @@
 .uni-time-picker {
 
-  .spacing { margin-right: $basic-padding / 2;}
     &__input {
         width: 100%;
     }
+
+    &__buttons {
+        margin-bottom: $basic-padding / 2;
+    }
+
     &__controls {
         margin-top: $basic-padding / 2;
 
-        &.floating {
+        &--floating {
             margin-top: 0;
             border: solid $color-grey-medium $border-width;
             @include border-radius($border-radius);
@@ -30,23 +34,34 @@
                 border-top: 0;
             }
         }
-        &.align-right {
+
+        &--right {
             right: 0;
-            &:before { right: 6px; }
-            &:after { right: 7px; }
+
+            &:before {
+                right: 6px;
+            }
+            &:after {
+                right: 7px;
+            }
         }
-        &.align-left {
+
+        &--left {
             left: 0;
-            &:before { left: 6px; }
-            &:after { left: 7px; }
+
+            &:before {
+                left: 6px;
+            }
+            &:after {
+                left: 7px;
+            }
         }
     }
 
-    &--floating &__input {
-        width: auto;
-    }
+    &--floating {
 
-    &__buttons {
-        margin-bottom: $basic-padding / 2;
+        .uni-time-picker__input {
+            width: auto;
+        }
     }
 }

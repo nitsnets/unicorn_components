@@ -1,6 +1,7 @@
-uni-menu{
-  .container {
-    @include border($border-width);
-    background-color: #fff;
-  }
+.uni-menu {
+
+    &__container {
+        @include border($border-width);
+        background-color: #fff;
+    }
 }

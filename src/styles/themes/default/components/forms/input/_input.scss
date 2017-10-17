@@ -7,56 +7,150 @@
         padding-left: $input-padding;
         padding-right: $input-padding;
         border-radius: $border-radius;
-        @include border($border-width);
+        @include border();
+
+        &--textarea {
+            padding: $input-padding;
+            min-height: $input-height * 2;
+        }
     }
-    textarea {
-        padding: $input-padding;
-        min-height: $input-height*2;
-    }
+
 
     ::placeholder {
         color: $color-grey-dark;
         font-weight: 300;
     }
 
-    &__icon, &__icon-right{
+    &__icon, &__icon-right {
         opacity: 0.5;
         line-height: 2.2;
     }
-    &__icon{
-        left: ($input-height - $input-padding*2) / 2;
-    }
-    &__icon-right{
-        right: ($input-height - $input-padding*2) / 2;
+
+    &__icon {
+        left: ($input-height - $input-padding * 2) / 2;
     }
 
-    &--focused &__field{
-        background-color: $alpha-black-light;
-        border-color: $alpha-black-medium;
+    &__icon-right {
+        right: ($input-height - $input-padding * 2) / 2;
     }
-    &--with-icon &__field{ padding-left: $input-height; }
-    &--with-icon-right &__field{ padding-right: $input-height; }
-    &--with-two-icon-right &__field{ padding-right: 40px; }
-    &--with-chips &__field{ border-radius: 0 $border-radius $border-radius 0; border-left-width: 0; }
-    &--with-prefix &__field{ border-radius: 0 $border-radius $border-radius 0; }
-    &--with-suffix &__field{ border-radius: $border-radius 0 0 $border-radius; }
 
     &__label,
     &__prefix,
     &__suffix,
     &__error,
-    &__hint{
+    &__hint {
         font-weight: 300;
         line-height: $label-height;
         font-size: $font-small;
         color: $color-grey-dark;
-        margin: 0 $input-padding/4;
+        margin: 0 $input-padding / 4;
         height: $label-height;
     };
 
+    &__prefix,
+    &__suffix,
+    &__chips {
+        height: $input-height;
+        margin:0;
+        @include border();
+    }
+
+    &__prefix,
+    &__suffix {
+        padding: 0 $input-padding;
+        background-color: $alpha-black-light;
+    }
+
+    &__prefix,
+    &__chips {
+        border-radius: $border-radius 0 0 $border-radius;
+        border-right: 0;
+    }
+
+    &__suffix {
+        border-radius: 0 $border-radius $border-radius 0;
+        border-left: 0;
+    }
+
+    &__chips {
+        padding: 0 $input-padding / 2;
+
+        line-height: $font-regular;
+        font-size: $font-small;
+
+        .chip + .chip {
+            margin-left: $basic-padding / 6;
+        }
+    }
+
+    &__clear-btn {
+        position: absolute;
+
+        right: 0;
+
+        height: $input-height;
+        width: $input-height;
+        line-height: 2.5;
+        cursor: pointer;
+    }
+
+    &__hint {
+        color: $color-grey;
+        font-style: italic;
+    }
+
+    &__error {
+        color: $color-error;
+        font-weight: 400;
+    }
+
+    &--focused &__field {
+        background-color: $alpha-black-light;
+        border-color: $alpha-black-medium;
+    }
+
+    &--with-icon &__field {
+        padding-left: $input-height;
+    }
+
+    &--with-icon-right &__field {
+        padding-right: $input-height;
+    }
+
+    &--with-two-icon-right {
+
+        .uni-input__field {
+            padding-right: 50px;
+        }
+
+        .uni-input__clear-btn {
+            right: 20px;
+        }
+    }
+
+    &--with-chips &__field {
+        border-radius: 0 $border-radius $border-radius 0;
+        border-left-width: 0;
+    }
+
+    &--with-prefix &__field {
+        border-radius: 0 $border-radius $border-radius 0;
+    }
+
+    &--with-suffix {
+
+        .uni-input__field {
+            border-radius: $border-radius 0 0 $border-radius;
+        }
+
+        .uni-input__clear-btn {
+            right: 45px;
+        }
+    }
+
     &--floating {
 
-        .uni-input__label{
+        .uni-input__label {
             font-size: $font-regular;
             position: absolute;
             top: $label-height;
@@ -65,13 +159,15 @@
             cursor: text;
             transition: 100ms ease all;
         }
+
         .uni-input__field,
         .uni-input__prefix,
-        .uni-input__suffix{
-            @include border(0);
+        .uni-input__suffix {
+            border: 0 none;
             background-color: transparent;
             padding: 0;
         }
+
         &.uni-input--focused,
         &.uni-input--has-content {
             .uni-input__label {
@@ -84,61 +180,13 @@
         }
 
     }
-    &--focused &__field{
+
+    &--focused &__field {
         background-color: $alpha-black-light;
         border-color: $alpha-black-medium;
     }
-    &__prefix,
-    &__suffix,
-    &__chips {
-        height: $input-height;
-        margin:0;
-        @include border($border-width);
-    }
-    &__prefix,
-    &__suffix {
-        padding: 0 $input-padding;
-        background-color: $alpha-black-light;
-    }
-    &__prefix,
-    &__chips{
-        border-radius: $border-radius 0 0 $border-radius;
-        border-right: 0 !important;
-    }
-    &__suffix{
-        border-radius: 0 $border-radius $border-radius 0;
-        border-left: 0 !important;
-    }
-    &__chips {
-        padding: 0 $input-padding / 2;
 
-        line-height: $font-regular;
-        font-size: $font-small;
-        .chip + .chip {
-            margin-left: $basic-padding / 6;
-        }
-    }
     &--with-prefix &__chips {
         border-radius: 0;
-    }
-    &__clear-btn{
-        margin-left: - $input-height;
-        height: $input-height;
-        width: $input-height;
-        line-height: 2.5;
-        cursor: pointer;
-    }
-
-    &--with-two-icon-right {
-        .clear-btn{  margin-left: - 50px; }
-    }
-
-    &__hint{
-        color: $color-grey;
-        font-style: italic;
-    }
-    &__error{
-        color: $color-error;
-        font-weight: 400;
     }
 }

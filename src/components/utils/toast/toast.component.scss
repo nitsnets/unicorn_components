@@ -1,7 +1,11 @@
-.toast-container {
-    display: flex;
-    position: fixed;
-}
-.remove {
-    cursor: pointer;
+.uni-toast {
+
+    &__container {
+        display: flex;
+        position: fixed;
+    }
+
+    &__icon {
+        cursor: pointer;
+    }
 }

@@ -1,30 +1,45 @@
 .uni-aside {
-    @include md() {
-        &.collapsed{
-            margin-left: 0;
-            width: $input-height + $basic-padding;
-        }
-    }
+
     height: 100%;
     width: $aside-width;
 
     @include transition(all, 200ms, ease);
-    &.has-header, &[has-header]{
+
+    // TODO: @alv @andres No entiendo muy bien el comportamiento del componente con la clase collapsed. Tendríamos que hablarlo.
+    @include mq(md) {
+
+        &.collapsed {
+            margin-left: 0;
+            width: $input-height + $basic-padding;
+        }
+    }
+
+    &.has-header,
+    &[has-header] {
         height: calc(100% - #{$header-height});
     }
-    &.has-subheader, &[has-subheader] {
+
+    &.has-subheader,
+    &[has-subheader] {
         height: calc(100% - #{$header-height * 2});
     }
-    &--left, &[left]{
-        &.collapsed{
-                margin-left: - ($input-height + $basic-padding);
+
+    &--left,
+    &[left] {
+
+        &.collapsed {
+            margin-left: - ($input-height + $basic-padding);
         }
-        &.hidden{
-                margin-left: - $aside-width;
+
+        &.hidden {
+            margin-left: - $aside-width;
         }
+
         @include border-right();
     }
-    &--right, &[right]{
+
+    &--right,
+    &[right] {
         @include border-left();
     }
 }

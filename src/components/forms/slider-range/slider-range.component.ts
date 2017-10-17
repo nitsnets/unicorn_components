@@ -18,7 +18,7 @@ export class UniSliderRangeComponent extends UniSliderBaseComponent implements O
     @Input() pushable = true;
     @Input() showTicks = false;
 
-    @HostBinding('class.uni-slider') componentClass = true;
+    @HostBinding('class.uni-slider-range') componentClass = true;
 
     @HostListener('pan', ['$event'])
     onSlide(event) {

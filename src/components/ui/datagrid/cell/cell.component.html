@@ -1,18 +1,18 @@
 <ng-container *ngIf="!customCell">
-    <span class="datagrid-cell-label" *ngIf="showLabels">{{label}}:</span>
+    <span class="uni-datagrid-cell__label" *ngIf="showLabels">{{label}}:</span>
     <ng-container *ngIf="value" [ngSwitch]="format">
         <ng-container *ngSwitchCase="'void'"> {{value}} </ng-container>
-        <strong class="datagrid-cell-value" *ngSwitchCase="'strong'">{{value}}</strong>
-        <span class="datagrid-cell-value" *ngSwitchCase="'span'">{{value}}</span>
-        <p class="datagrid-cell-value" *ngSwitchCase="'p'">{{value}}</p>
-        <h1 class="datagrid-cell-value" *ngSwitchCase="'h1'">{{value}}</h1>
-        <h2 class="datagrid-cell-value" *ngSwitchCase="'h2'">{{value}}</h2>
-        <h3 class="datagrid-cell-value" *ngSwitchCase="'h3'">{{value}}</h3>
-        <h4 class="datagrid-cell-value" *ngSwitchCase="'h4'">{{value}}</h4>
-        <div class="datagrid-cell-value" *ngSwitchCase="'html'" [innerHtml]="value"></div>
-        <img class="datagrid-cell-value" alt="Cell image" *ngSwitchCase="'image'" [src]="value">
-        <uni-progress class="datagrid-cell-value" *ngSwitchCase="'progress'" [value]="value" [color]="options?.color" [total]="options?.total"></uni-progress>
-        <uni-badge class="datagrid-cell-value" *ngSwitchCase="'badge'" [label]="value" [color]="options?.color"></uni-badge>
+        <strong class="uni-datagrid-cell__value" *ngSwitchCase="'strong'">{{value}}</strong>
+        <span class="uni-datagrid-cell__value" *ngSwitchCase="'span'">{{value}}</span>
+        <p class="uni-datagrid-cell__value" *ngSwitchCase="'p'">{{value}}</p>
+        <h1 class="uni-datagrid-cell__value" *ngSwitchCase="'h1'">{{value}}</h1>
+        <h2 class="uni-datagrid-cell__value" *ngSwitchCase="'h2'">{{value}}</h2>
+        <h3 class="uni-datagrid-cell__value" *ngSwitchCase="'h3'">{{value}}</h3>
+        <h4 class="uni-datagrid-cell__value" *ngSwitchCase="'h4'">{{value}}</h4>
+        <div class="uni-datagrid-cell__value" *ngSwitchCase="'html'" [innerHtml]="value"></div>
+        <img class="uni-datagrid-cell__value" alt="Cell image" *ngSwitchCase="'image'" [src]="value">
+        <uni-progress class="uni-datagrid-cell__value" *ngSwitchCase="'progress'" [value]="value" [color]="options?.color" [total]="options?.total"></uni-progress>
+        <uni-badge class="uni-datagrid-cell__value" *ngSwitchCase="'badge'" [label]="value" [color]="options?.color"></uni-badge>
 
         <!-- You can add a new format case this way: -->
         <ng-container *ngSwitchCase="'yourCustomCase'">
@@ -20,7 +20,7 @@
         </ng-container>
         <!---->
 
-        <span class="datagrid-cell-value" *ngSwitchDefault>
+        <span class="uni-datagrid-cell__value" *ngSwitchDefault>
             default {{value | format: format}}
         </span>
     </ng-container>

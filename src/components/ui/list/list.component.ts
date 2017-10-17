@@ -47,7 +47,7 @@ export class UniListComponent implements OnChanges {
         if (changes.sortable) {
             if (this.sortable) {
                 this.sortableOptions = Object.assign(this.sortableOptions, this.sortable === true ? {} : this.sortable);
-                this.sortableOptions.handle = '.drag-handle';
+                this.sortableOptions.handle = '.uni-list__hover-icon--drag';
             } else {
                 this.sortableOptions = this.defaultSortableOptions;
             }

@@ -1,18 +1,20 @@
-uni-menu-item {
-  padding: 0 $input-padding*2;
-  height: $input-height;
-  line-height: 1;
-  color: black;
+.uni-menu-item {
+    padding: 0 $input-padding*2;
+    height: $input-height;
+    line-height: 1;
+    color: black;
 
-  .menu-item{
-    padding-left: $input-padding*2;
-    .icon{
-      left: ($input-height - $font-xlarge) / 2;
-      top: ($input-height - $font-xlarge) / 2;
+    &__inner {
+		padding-left: $input-padding*2;
+
     }
-  }
 
-  &:hover{
-    background-color: $alpha-black-light;
-  }
+	&__icon {
+		left: ($input-height - $font-xlarge) / 2;
+		top: ($input-height - $font-xlarge) / 2;
+	}
+
+    &:hover {
+        background-color: $alpha-black-light;
+    }
 }

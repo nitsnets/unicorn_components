@@ -1,4 +1,8 @@
-@import "mixins/mq";
+@import
+    'mixins/mq',
+    'mixins/components/button',
+    'mixins/components/clock',
+    'mixins/components/spinner';
 
 // Antialias
 @mixin antialias {
@@ -15,10 +19,16 @@
     #{$parent} {
         display: block !important;
     }
-    table#{$parent}  { display: table !important; }
-    tr#{$parent}     { display: table-row !important; }
+    table#{$parent} {
+        display: table !important;
+    }
+    tr#{$parent} {
+        display: table-row !important;
+    }
     th#{$parent},
-    td#{$parent}     { display: table-cell !important; }
+    td#{$parent} {
+        display: table-cell !important;
+    }
 }
 
 // [converter] $parent hack
@@ -36,7 +46,8 @@
         &:focus {
             @content;
         }
-    } @else {
+    }
+    @else {
         &:hover,
         &:active,
         &:focus {
@@ -62,17 +73,20 @@
         @content;
     }
 }
-@mixin invert(){
-  filter: invert(100%);
-  -webkit-filter: invert(100%);
+
+@mixin invert() {
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
 }
+
 @mixin animation($str) {
-  -webkit-animation: #{$str};
-  -moz-animation: #{$str};
-  -ms-animation: #{$str};
-  -o-animation: #{$str};
-  animation: #{$str};
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};
 }
+
 @mixin transition($transition-property: all, $transition-time: 200ms, $method: ease) {
     -webkit-transition: $transition-property $transition-time $method;
     -moz-transition: $transition-property $transition-time $method;
@@ -80,19 +94,32 @@
     -o-transition: $transition-property $transition-time $method;
     transition: $transition-property $transition-time $method;
 }
-@mixin transform($transforms) {
-  -webkit-transform: $transforms;
-  -moz-transform: $transforms;
-  -ms-transform: $transforms;
-  -o-transform: $transforms;
-  transform: $transforms;
-}
-@mixin rotate ($deg) { @include transform(rotate(#{$deg}deg)); }
-@mixin scale($scale) { @include transform(scale($scale)); }
-@mixin translate ($x, $y) { @include transform(translate($x, $y)); }
-@mixin skew ($x, $y) { @include transform(skew(#{$x}deg, #{$y}deg)); }
 
-@mixin delay($time){
+@mixin transform($transforms) {
+    -webkit-transform: $transforms;
+    -moz-transform: $transforms;
+    -ms-transform: $transforms;
+    -o-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin rotate ($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+
+@mixin scale($scale) {
+    @include transform(scale($scale));
+}
+
+@mixin translate ($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+@mixin skew ($x, $y) {
+    @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+@mixin delay($time) {
     transition-delay: $time;
     -webkit-transition-delay: $time;
 }
@@ -107,24 +134,57 @@
 }
 
 @mixin placeholder {
-    &::-webkit-input-placeholder { @content }
-    &:-moz-placeholder { @content }
-    &::-moz-placeholder { @content }
-    &:-ms-input-placeholder { @content }
+    &::-webkit-input-placeholder {
+        @content
+    }
+    &:-moz-placeholder {
+        @content
+    }
+    &::-moz-placeholder {
+        @content
+    }
+    &:-ms-input-placeholder {
+        @content
+    }
 }
 
 @mixin media($width) {
-    @media screen and (min-width: #{$width}){
+    @media screen and (min-width: #{$width}) {
         @content;
     }
 }
-@mixin xxs { @include media(320px) { @content; } }
-@mixin xs { @include media(480px) { @content; } }
-@mixin sm { @include media(768px) { @content; } }
-@mixin md { @include media(992px) { @content; } }
-@mixin lg { @include media(1200px) { @content; } }
 
-@mixin no-touch{
+@mixin xxs {
+    @include media(320px) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @include media(480px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @include media(768px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @include media(992px) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @include media(1200px) {
+        @content;
+    }
+}
+
+@mixin no-touch {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -132,157 +192,217 @@
     -ms-user-select: none;
     user-select: none;
 }
+
 @mixin opacity($opacity) {
-  opacity: $opacity;
-  $opacity-ie: $opacity * 100;
-  filter: alpha(opacity=$opacity-ie); //IE8
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
 }
 
 %clearfix {
-  *zoom: 1;
-  &:before, &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
 }
+
 @mixin flexbox() {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 }
+
 @mixin flex($values) {
-  -webkit-box-flex: $values;
-  -moz-box-flex:  $values;
-  -webkit-flex:  $values;
-  -ms-flex:  $values;
-  flex:  $values;
+    -webkit-box-flex: $values;
+    -moz-box-flex: $values;
+    -webkit-flex: $values;
+    -ms-flex: $values;
+    flex: $values;
 }
+
 @mixin order($val) {
-  -webkit-box-ordinal-group: $val;
-  -moz-box-ordinal-group: $val;
-  -ms-flex-order: $val;
-  -webkit-order: $val;
-  order: $val;
+    -webkit-box-ordinal-group: $val;
+    -moz-box-ordinal-group: $val;
+    -ms-flex-order: $val;
+    -webkit-order: $val;
+    order: $val;
 }
-@mixin noselect(){
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+
+@mixin noselect() {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
+
 @mixin calc($key, $value) {
-  #{$key}: -webkit-calc(#{$value});
-  #{$key}: -moz-calc(#{$value});
-  #{$key}: calc(#{$value});
+    #{$key}: -webkit-calc(#{$value});
+    #{$key}: -moz-calc(#{$value});
+    #{$key}: calc(#{$value});
 }
-@mixin ellipsis(){
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+
+@mixin ellipsis() {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-@mixin border($width: $border-width){
-  border-color: $color-grey-medium;
-  border-style: solid;
-  border-width: $width;
+
+@mixin border($width: $border-width, $style: solid, $color: $color-grey-medium) {
+    border: $width $style $color;
 }
+
 /// Pseudo selector most common properties
 /// @param {String} $display
 /// @param {String} $pos
 /// @param {String} $content
-@mixin pseudo($display: block, $pos: absolute, $content: ''){
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
     content: $content;
     display: $display;
     position: $pos;
 }
 
-@mixin border-top(){ border-top: solid $color-grey-medium $border-width;}
-@mixin border-bottom(){ border-bottom: solid $color-grey-medium $border-width;}
-@mixin border-right(){ border-right: solid $color-grey-medium $border-width;}
-@mixin border-left(){ border-left: solid $color-grey-medium $border-width;}
-@mixin cross($w, $h: $w){
-  position: relative;
-
-  width: $w;
-  height: $h;
-
-  &:before, &:after {
-    @include pseudo;
-    left: 50%;
-    top: $w / 4;
-    height: $h / 2;
-    width: $border-width;
-    margin-left: - $border-width;
-    background-color: $black;
-  }
-  &:before {
-    transform: rotate(45deg);
-  }
-  &:after {
-    transform: rotate(-45deg);
-  }
+@mixin border-top() {
+    border-top: solid $color-grey-medium $border-width;
 }
+
+@mixin border-bottom() {
+    border-bottom: solid $color-grey-medium $border-width;
+}
+
+@mixin border-right() {
+    border-right: solid $color-grey-medium $border-width;
+}
+
+@mixin border-left() {
+    border-left: solid $color-grey-medium $border-width;
+}
+
+@mixin cross($w, $h: $w) {
+    position: relative;
+
+    width: $w;
+    height: $h;
+
+    &:before,
+    &:after {
+        @include pseudo;
+        left: 50%;
+        top: $w / 4;
+        height: $h / 2;
+        width: $border-width;
+        margin-left: - $border-width;
+        background-color: $black;
+    }
+    &:before {
+        transform: rotate(45deg);
+    }
+    &:after {
+        transform: rotate(-45deg);
+    }
+}
+
 @function pi() {
-  @return 3.14159265359;
+    @return 3.14159265359;
 }
 
 @function pow($number, $exp) {
-  $value: 1;
-  @if $exp > 0 {
-    @for $i from 1 through $exp {
-      $value: $value * $number;
+    $value: 1;
+    @if $exp>0 {
+        @for $i from 1 through $exp {
+            $value: $value * $number;
+        }
     }
-  }
-  @else if $exp < 0 {
-    @for $i from 1 through -$exp {
-      $value: $value / $number;
+    @else if $exp < 0 {
+        @for $i from 1 through -$exp {
+            $value: $value / $number;
+        }
     }
-  }
-  @return $value;
+    @return $value;
 }
 
 @function fact($number) {
-  $value: 1;
-  @if $number > 0 {
-    @for $i from 1 through $number {
-      $value: $value * $i;
+    $value: 1;
+    @if $number>0 {
+        @for $i from 1 through $number {
+            $value: $value * $i;
+        }
     }
-  }
-  @return $value;
+    @return $value;
 }
 
 @function rad($angle) {
-  $unit: unit($angle);
-  $unitless: $angle / ($angle * 0 + 1);
-  // If the angle has 'deg' as unit, convert to radians.
-  @if $unit == deg {
-    $unitless: $unitless / 180 * pi();
-  }
-  @return $unitless;
+    $unit: unit($angle);
+    $unitless: $angle / ($angle * 0 + 1);
+    // If the angle has 'deg' as unit, convert to radians.
+    @if $unit==deg {
+        $unitless: $unitless / 180 * pi();
+    }
+    @return $unitless;
 }
 
 @function sin($angle) {
-  $sin: 0;
-  $angle: rad($angle);
-  // Iterate a bunch of times.
-  @for $i from 0 through 10 {
-    $sin: $sin + pow(-1, $i) * pow($angle, (2 * $i + 1)) / fact(2 * $i + 1);
-  }
-  @return $sin;
+    $sin: 0;
+    $angle: rad($angle);
+    // Iterate a bunch of times.
+    @for $i from 0 through 10 {
+        $sin: $sin + pow(-1, $i) * pow($angle, (2 * $i + 1)) / fact(2 * $i + 1);
+    }
+    @return $sin;
 }
 
 @function cos($angle) {
-  $cos: 0;
-  $angle: rad($angle);
-  // Iterate a bunch of times.
-  @for $i from 0 through 10 {
-    $cos: $cos + pow(-1, $i) * pow($angle, 2 * $i) / fact(2 * $i);
-  }
-  @return $cos;
+    $cos: 0;
+    $angle: rad($angle);
+    // Iterate a bunch of times.
+    @for $i from 0 through 10 {
+        $cos: $cos + pow(-1, $i) * pow($angle, 2 * $i) / fact(2 * $i);
+    }
+    @return $cos;
+}
+
+// Center vertically and/or horizontally an absolute positioned element
+@mixin center($xy:xy) {
+    @if $xy==xy {
+        left: 50%;
+        top: 50%;
+        bottom: auto;
+        right: auto;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    @else if $xy==x {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+    @else if $xy==y {
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%);
+    }
+}
+
+@mixin halfBg($side, $color: $color-primary-light) {
+    &::before {
+        @include pseudo;
+        background-color: $color;
+        z-index: 0;
+        height: 100%;
+        width: 50%;
+
+        @if $side==left {
+            left: 0;
+        }
+        @else {
+            right: 0;
+        }
+    }
 }

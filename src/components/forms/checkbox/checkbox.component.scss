@@ -1,14 +1,16 @@
 :host {
 
-    label {
-        align-items: center;
+    input {
+        display: none;
+    }
+}
+
+.uni-checkbox {
+
+	&__inner {
+		align-items: center;
         display: flex;
         position: relative;
         user-select: none;
-
-
-        input {
-            display: none;
-        };
-    }
+	}
 }

@@ -1,8 +1,8 @@
-:host{
+:host {
     position: relative;
     display: inline-flex;
 
-    button{
+    .uni-button-header__inner {
         display: block;
         overflow: hidden;
         position: relative;

@@ -1,5 +1,10 @@
-.popup-content {
-  padding: $basic-padding / 2;
+.uni-popup-container {
 
-  &.padding { padding-right: $input-height; }
+    &__inner {
+        padding: $basic-padding / 2;
+
+        &--closable {
+            padding-right: $input-height;
+        }
+    }
 }

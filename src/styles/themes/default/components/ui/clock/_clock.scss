@@ -8,103 +8,212 @@ $h-size: 40px;
 $h-padding: 5px;
 $h-tick-width: 4px;
 $h-tick-height: 30px;
-$h-radius: $clock-size/2 - $h-padding - $h-size/2;
+$h-radius: $clock-size / 2 - $h-padding - $h-size / 2;
 
 //Minutes vars
 $m-size: 30px;
-$m-padding: $h-size + $h-padding;
+$m-padding: $h-size+$h-padding;
 $m-tick-width: 1px;
 $m-tick-height: 45px;
-$m-radius: $clock-size/2 - $m-padding - $m-size/2;
+$m-radius: $clock-size / 2 - $m-padding - $m-size / 2;
 
-.clock-container{
-  width: $clock-size;
-  height: $clock-size;
-  background-color: #fff;
+.uni-clock {
 
-  @include border-radius($border-radius);
-  @include border($border-width);
-}
-.clock-mode{
-  padding: 10px;
-  font-size: 12px;
-  &.unavailable { opacity: 0.25; }
+    &__container {
+        width: $clock-size;
+        height: $clock-size;
+        background-color: #fff;
 
-  &.selected{ background-color: $alpha-black-medium; }
-  &:not(.selected):hover{ background-color: $alpha-black-light; }
-}
-.clock-circle{
-  width: $clock-size;
-  height: $clock-size;
-  background-color: white;
-  @include border($border-width);
-}
-.clock-center{
-  width: $center-size;
-  height: $center-size;
-  background-color: $color-grey-dark;
-  margin-top: - $center-size/2;
-  margin-left: - $center-size/2;
-}
-@mixin clock-tick($width, $height) {
-  width: $width;
-  height: $height;
-  background-color: $color-primary;
-  top: $clock-size/2 - $height;
-  left: $clock-size/2 - $width/2;
-  @include transition(transform, 500ms, ease);
-}
-.clock-hour-tick{ @include clock-tick($h-tick-width, $h-tick-height); }
-.clock-minute-tick{ @include clock-tick($m-tick-width, $m-tick-height); }
+        @include border-radius($border-radius);
+        @include border($border-width);
+    }
 
-.clock-number{
-    &:not(.selected):hover{ background-color: $alpha-black-medium; }
-}
-.clock-hour{
-  @include calc('left', '50% - #{$h-size/2}');
-  width: $h-size;
-  height: $h-size;
-  top: $h-padding;
-  padding: 8px 11px;
-  &.selected{
-    background-color: $color-primary;
-    color: white;
-  }
-  &.unavailable { opacity: 0.25; }
-}
-.clock-minute{
-  @include calc('left', '50% - #{$m-size/2}');
-  width: $m-size;
-  height: $m-size;
-  top: $m-padding;
-  font-size: 12px;
-  padding: 6px 8px;
-  &.selected{
-    box-shadow: inset 0 0 0 1px $color-primary
-  }
-  &.unavailable { opacity: 0.25; }
-}
+    &__mode {
+        padding: 10px;
+        font-size: 12px;
 
-.clock-hour-1{margin-top: $h-radius - $h-radius*$cos30; margin-left: $h-radius/2;}
-.clock-hour-5{margin-top: $h-radius + $h-radius*$cos30; margin-left: $h-radius/2;}
-.clock-hour-7{margin-top: $h-radius + $h-radius*$cos30; margin-left: -$h-radius/2;}
-.clock-hour-11{margin-top: $h-radius - $h-radius*$cos30; margin-left: -$h-radius/2;}
-.clock-hour-2{margin-top: $h-radius/2; margin-left: $h-radius*$cos30;}
-.clock-hour-10{margin-top: $h-radius/2; margin-left: -$h-radius*$cos30;}
-.clock-hour-4{margin-top: $h-radius*1.5; margin-left: $h-radius*$cos30;}
-.clock-hour-8{margin-top: $h-radius*1.5; margin-left: -$h-radius*$cos30;}
-.clock-hour-3{margin-top: $h-radius; margin-left: $h-radius;}
-.clock-hour-9{margin-top: $h-radius; margin-left: -$h-radius;}
-.clock-hour-6{margin-top: 2*$h-radius;}
+        &--unavailable {
+            opacity: 0.25;
+        }
 
-.clock-minute-1{margin-top: $m-radius - $m-radius*$cos30; margin-left: $m-radius/2;}
-.clock-minute-5{margin-top: $m-radius + $m-radius*$cos30; margin-left: $m-radius/2;}
-.clock-minute-7{margin-top: $m-radius + $m-radius*$cos30; margin-left: -$m-radius/2;}
-.clock-minute-11{margin-top: $m-radius - $m-radius*$cos30; margin-left: -$m-radius/2;}
-.clock-minute-2{margin-top: $m-radius/2; margin-left: $m-radius*$cos30;}
-.clock-minute-10{margin-top: $m-radius/2; margin-left: -$m-radius*$cos30;}
-.clock-minute-4{margin-top: $m-radius*1.5; margin-left: $m-radius*$cos30;}
-.clock-minute-8{margin-top: $m-radius*1.5; margin-left: -$m-radius*$cos30;}
-.clock-minute-3{margin-top: $m-radius; margin-left: $m-radius;}
-.clock-minute-9{margin-top: $m-radius; margin-left: -$m-radius;}
-.clock-minute-6{margin-top: 2*$m-radius;}
+        &--selected {
+            background-color: $alpha-black-medium;
+        }
+
+        &:not(.uni-clock__mode--selected):not(.uni-clock__mode--unavailable):hover {
+            background-color: $alpha-black-light;
+        }
+    }
+
+    &__circle {
+        width: $clock-size;
+        height: $clock-size;
+        background-color: white;
+        @include border($border-width);
+    }
+
+    &__center {
+        width: $center-size;
+        height: $center-size;
+        background-color: $color-grey-dark;
+        margin-top: - $center-size / 2;
+        margin-left: - $center-size / 2;
+    }
+
+    &__hour-tick {
+        @include clock-tick($h-tick-width, $h-tick-height);
+    }
+
+    &__minute-tick {
+        @include clock-tick($m-tick-width, $m-tick-height);
+    }
+
+    &__number {
+
+        &:not(.selected):not(.unavailable):hover {
+            background-color: $alpha-black-medium;
+        }
+    }
+
+    &__hour {
+        @include calc('left', '50% - #{$h-size / 2}');
+        width: $h-size;
+        height: $h-size;
+        top: $h-padding;
+        padding: 8px 11px;
+
+        &.selected {
+            background-color: $color-primary;
+            color: white;
+        }
+
+        &.unavailable {
+            opacity: 0.25;
+        }
+
+        &--1 {
+            margin-top: $h-radius - $h-radius * $cos30;
+            margin-left: $h-radius / 2;
+        }
+
+        &--2 {
+            margin-top: $h-radius / 2;
+            margin-left: $h-radius * $cos30;
+        }
+
+        &--3 {
+            margin-top: $h-radius;
+            margin-left: $h-radius;
+        }
+
+        &--4 {
+            margin-top: $h-radius * 1.5;
+            margin-left: $h-radius * $cos30;
+        }
+
+        &--5 {
+            margin-top: $h-radius + $h-radius * $cos30;
+            margin-left: $h-radius / 2;
+        }
+
+        &--6 {
+            margin-top: 2 * $h-radius;
+        }
+
+        &--7 {
+            margin-top: $h-radius + $h-radius * $cos30;
+            margin-left: -$h-radius / 2;
+        }
+
+        &--8 {
+            margin-top: $h-radius * 1.5;
+            margin-left: -$h-radius * $cos30;
+        }
+
+        &--9 {
+            margin-top: $h-radius;
+            margin-left: -$h-radius;
+        }
+
+        &--10 {
+            margin-top: $h-radius / 2;
+            margin-left: -$h-radius * $cos30;
+        }
+
+        &--11 {
+            margin-top: $h-radius - $h-radius * $cos30;
+            margin-left: -$h-radius / 2;
+        }
+    }
+
+    &__minute {
+        @include calc('left', '50% - #{$m-size/2}');
+        width: $m-size;
+        height: $m-size;
+        top: $m-padding;
+        font-size: 12px;
+        padding: 6px 8px;
+
+        &.selected {
+            box-shadow: inset 0 0 0 1px $color-primary
+        }
+
+        &.unavailable {
+            opacity: 0.25;
+		}
+
+		&--1 {
+			margin-top: $m-radius - $m-radius * $cos30;
+			margin-left: $m-radius / 2;
+		}
+
+		&--2 {
+			margin-top: $m-radius / 2;
+			margin-left: $m-radius * $cos30;
+		}
+
+		&--3 {
+			margin-top: $m-radius;
+			margin-left: $m-radius;
+		}
+
+		&--4 {
+			margin-top: $m-radius * 1.5;
+			margin-left: $m-radius * $cos30;
+		}
+
+		&--5 {
+			margin-top: $m-radius + $m-radius * $cos30;
+			margin-left: $m-radius / 2;
+		}
+
+		&--6 {
+			margin-top: 2 * $m-radius;
+		}
+
+		&--7 {
+			margin-top: $m-radius + $m-radius * $cos30;
+			margin-left: -$m-radius / 2;
+		}
+
+		&--8 {
+			margin-top: $m-radius * 1.5;
+			margin-left: -$m-radius * $cos30;
+		}
+
+		&--9 {
+			margin-top: $m-radius;
+			margin-left: -$m-radius;
+		}
+
+		&--10 {
+			margin-top: $m-radius / 2;
+			margin-left: -$m-radius * $cos30;
+		}
+
+		&--11 {
+			margin-top: $m-radius - $m-radius * $cos30;
+			margin-left: -$m-radius / 2;
+		}
+    }
+}

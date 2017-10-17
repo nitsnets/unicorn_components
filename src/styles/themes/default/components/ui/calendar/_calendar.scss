@@ -1,64 +1,122 @@
-@mixin halfBg($side, $color: $color-primary-light) {
-  &::before {
-    @include pseudo;
-    background-color: $color;
-    z-index: 0;
-    height: 100%;
-    width: 50%;
-    @if $side == left { left: 0; } @else { right: 0; }
-  }
-}
-
 .uni-calendar {
-  &__container {
-    width: $calendar-size;
-    height: $calendar-size;
-    background-color: #fff;
-    font-size: 12px;
-    padding: $basic-padding/3;
 
-    @include no-touch();
+    &__container {
+        width: $calendar-size;
+        height: $calendar-size;
+        background-color: #fff;
+        font-size: 12px;
+        padding: $basic-padding/3;
 
-    &.rangeFromActive .day-container {
-      &.selected { @include halfBg(left) }
-      &.rangeFrom { @include halfBg(right) }
+        @include no-touch();
+
+        &--range-from .uni-calendar__day {
+
+            &--selected {
+                @include halfBg(left)
+			}
+
+            &--range-from {
+                @include halfBg(right)
+            }
+		}
+
+        &--range-to .uni-calendar__day {
+
+            &--selected {
+                @include halfBg(right)
+			}
+
+            &--range-to {
+                @include halfBg(left)
+            }
+        }
+	}
+
+    &__month-name {
+
+        p {
+            font-weight: 700;
+        }
+	}
+
+    &__days-name {
+
+        p {
+            color: $color-primary;
+            font-weight: 700;
+            font-size: $font-small - 1px;
+            text-transform: uppercase;
+        }
+	}
+
+	&__day-number {
+		width: 30px;
+        height: 30px;
+        @include border-radius($label-height / 5);
     }
-    &.rangeToActive .day-container {
-      &.selected { @include halfBg(right) }
-      &.rangeTo { @include halfBg(left) }
-    }
-  }
-  .month-name {
-    p{ font-weight: bold; }
-  }
-  .days-name {
-    p{
-      color: $color-primary;
-      font-weight: bold;
-      font-size: $font-small - 1px;
-      text-transform: uppercase;
-    }
-  }
-  .day-container {
-    &:hover { .day{ background-color: $alpha-black-light; } }
-    &.today { .day { border: 1px $color-primary solid;} }
-    &.rangeFrom { .day {background-color: $color-primary-medium;} }
-    &.rangeTo { .day {background-color: $color-primary-medium;} }
-    &.rangeMiddle { background-color: $color-primary-light }
-    &.selected { .day { background-color: $color-primary; color: white; } }
-    &.different-month { visibility: hidden}
-    &.unavailable { opacity: 0.25; }
-  }
 
-  .day {
-    @include border-radius($label-height / 5);
-    width: 30px;
-    height: 30px;
-  }
+    &__day {
 
-  &--bordered &__container {
-      @include border();
-  }
+        &:hover {
+
+            .uni-calendar__day-number {
+                background-color: $alpha-black-light;
+            }
+		}
+
+        &--today, &--today:hover {
+
+            .uni-calendar__day-number {
+                border: 1px $color-primary solid;
+            }
+		}
+
+		&--range, &--range:hover {
+
+			&-from {
+
+				.uni-calendar__day-number {
+					background-color: $color-primary-medium;
+				}
+			}
+
+			&-to {
+
+				.uni-calendar__day-number {
+					background-color: $color-primary-medium;
+				}
+			}
+
+			&-middle {
+				background-color: $color-primary-light
+			}
+		}
+
+        &--selected, &--selected:hover {
+
+            .uni-calendar__day-number {
+                background-color: $color-primary;
+                color: white;
+            }
+		}
+
+        &--different-month {
+            visibility: hidden
+		}
+
+        &--unavailable, &--unavailable:hover {
+			opacity: 0.25;
+
+			.uni-calendar__day-number {
+                background-color: transparent;
+            }
+        }
+    }
+
+	&--bordered {
+
+		.uni-calendar__container {
+			@include border();
+		}
+	}
 }
-
-

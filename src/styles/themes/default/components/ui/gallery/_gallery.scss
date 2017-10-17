@@ -1,4 +1,23 @@
 .uni-gallery {
+
+    &__container {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    &__item {
+        margin: 0 $basic-padding/4 $basic-padding/4 0;
+    }
+
+    // TODO: @alv @andres No puedo comprobar los estilos de este componente, pero no sé si esto se esta aplicando como debería
+    .uni-image {
+
+        &__image {
+            cursor: zoom-in;
+        }
+    }
+
     &__header {
         height: $input-height;
         display: flex;
@@ -12,24 +31,10 @@
             padding-left: $basic-padding / 2;
             color: $black;
             background-color: $color-error-light;
-            strong { color: $color-error; }
-        }
-    }
-    &--deleting &__header {
-    }
 
-    &__container {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-    }
-    &__item {
-        margin: 0 $basic-padding/4 $basic-padding/4 0;
-    }
-
-    .uni-image {
-        &__image {
-            cursor: zoom-in;
+            strong {
+                color: $color-error;
+            }
         }
     }
 }

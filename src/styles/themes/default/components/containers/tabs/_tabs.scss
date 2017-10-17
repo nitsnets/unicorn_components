@@ -1,67 +1,83 @@
-uni-tabs {
-  .tabs-container {
-    max-height: $header-md-height;
-    @include border-bottom;
-  }
+.uni-tabs {
 
-  &.noborder {
-    .tabs-container {
-      border: none;
-    }
-  }
-
-  .tab {
-    padding: $basic-padding/2 $basic-padding/4;
-    line-height: $basic-padding/3 - $border-width * 2;
-    opacity: 0.5;
-    font-size: $font-small;
-
-    &:after {
-      @include pseudo;
-      @include transition(all, 0.1s, linear);
-      width: 100%;
-      height: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 0;
-      background-color: $color-primary;
+    &__wrapper {
+        max-height: $header-md-height;
+        @include border-bottom;
     }
 
-    &:hover {
-      opacity: 0.75;
+    .uni-tabs-item {
+        padding: $basic-padding/2 $basic-padding/4;
+        font-size: $font-small;
+        line-height: $basic-padding/3 - $border-width * 2;
+        opacity: 0.5;
 
-      &:after {
-        height: $border-width * 3;
-      }
-    }
-
-    &.selected{
-      opacity: 1;
-
-      &:after {
-        height: $border-width * 3;
-      }
-    }
-    &.small {
-      padding: $basic-padding/3 $basic-padding/2;
-      line-height: $basic-padding/2 - $border-width * 2;
-
-      &:hover {
+		//TODO: @alv @andres He cambiado la animación del borde inferior, si es necesario restablezco la anterior
         &:after {
-          height: $border-width * 2;
-        }
-      }
+            @include pseudo;
+            height: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: $color-primary;
 
-      &.selected{
-        &:after {
-          height: $border-width * 2;
+            transform: scale(0);
+			@include transition(all, 0.2s, linear);
+			will-change: transform;
         }
-      }
-    }
 
-    @include mq($from: sm) {
-      padding: $header-md-height/2 $basic-padding;
-      font-size: $font-regular;
+        &:hover {
+            opacity: 0.75;
+
+            &:after {
+				height: $border-width * 3;
+				transform: scale(1);
+            }
+		}
+
+		@include mq(sm) {
+            padding: $header-md-height/2 $basic-padding;
+            font-size: $font-regular;
+        }
+
+        &--selected {
+            opacity: 1;
+
+            &:after {
+				height: $border-width * 3;
+				transform: scale(1);
+			}
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+        &--small {
+            padding: $basic-padding/3 $basic-padding/2;
+            line-height: $basic-padding/2 - $border-width * 2;
+
+            &:hover {
+
+                &:after {
+					height: $border-width * 2;
+					transform: scale(1);
+                }
+            }
+
+            &.uni-tabs-item--selected {
+
+                &:after {
+					height: $border-width * 2;
+                }
+            }
+        }
+	}
+
+	//TODO: @alv @andres ¿utility class o modificación en el proyecto que use el componente en caso necesario?
+	&.noborder {
+
+        .uni-tabs__wrapper {
+            border: 0 none;
+        }
     }
-  }
 }

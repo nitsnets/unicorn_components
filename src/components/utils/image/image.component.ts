@@ -136,7 +136,7 @@ export class UniImageComponent implements AfterViewInit, OnChanges {
         if (!this.image) {
             this.image = new Image();
             this.image.src = this.imagePath;
-            this.image.classList.add(`${CLASS_NAME}__image`);
+            this.image.classList.add(`${CLASS_NAME}__inner`);
             if (this.fit) {
                 this.image.classList.add(`${CLASS_NAME}__thumb--${this.fit}`);
             }
@@ -146,7 +146,7 @@ export class UniImageComponent implements AfterViewInit, OnChanges {
                 // deallocated if the user scrolls too fast.
                 if (this.image) {
                     this.imageLoad.emit(this.image);
-                    this.image.classList.add(`${CLASS_NAME}__image--loaded`);
+                    this.image.classList.add(`${CLASS_NAME}__inner--loaded`);
                 }
             };
             this.image.onclick = (event) => this.clickImage.emit(event);

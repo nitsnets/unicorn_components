@@ -1,18 +1,22 @@
-.chart-tooltip {
-  position: absolute;
-  pointer-events: none;
-  opacity: 0;
+.uni-chart-tooltip {
 
-  ul {
-    list-style: none;
-  }
-  .tooltip-item {
-    display: flex;
-    align-items: center;
-  }
+	&__inner {
+		position: absolute;
+		pointer-events: none;
+		opacity: 0;
 
-  .tooltip-color {
-    display: inline-block;
-  }
+	}
+
+	&__items {
+		list-style: none;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+	}
+
+	&__color {
+		display: inline-block;
+	}
 }
-

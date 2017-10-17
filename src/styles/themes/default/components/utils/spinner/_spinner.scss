@@ -1,43 +1,45 @@
-@mixin circle($width) {
-    border-width: $width/10;
-    border-top-width: $width/10;
-    width: $width;
-    height: $width;
-}
+.uni-spinner {
 
-@mixin dots($totalWidth) {
-    $spacing: $totalWidth / 20;
-    $width: ($totalWidth - 2 * $spacing) / 3 ;
-
-    height: $width;
-    width: $width;
-    margin-right: $width * 2 + $spacing * 2;
-
-    &:before{ margin-left: $width + $spacing; }
-    &:after{ margin-left: 2 * $width + 2 * $spacing; }
-}
-
-uni-spinner {
-    &.circle {
-        display:block;
+    &--circle {
+        display: block;
         border-style: solid;
         border-color: $color-grey-light;
         border-radius: 50%;
         border-top-color: $color-grey-dark;
-        -webkit-animation: spin-circle 1s linear infinite;
         animation: spin-circle 1s linear infinite;
 
         @include circle($label-height);
 
-        &.primary { border-color: $color-primary-light; border-top-color: $color-primary; }
-        &.warning { border-color: $color-warning-light; border-top-color: $color-warning; }
-        &.error { border-color: $color-error-light; border-top-color: $color-error; }
-        &.light { border-color: $alpha-white-medium; border-top-color: $alpha-white-light; }
+        &.uni-spinner--primary {
+            border-color: $color-primary-light;
+            border-top-color: $color-primary;
+        }
 
-        &.small{ @include circle($font-regular); }
-        &.big { @include circle($input-height); }
+        &.uni-spinner--warning {
+            border-color: $color-warning-light;
+            border-top-color: $color-warning;
+        }
+
+        &.uni-spinner--error {
+            border-color: $color-error-light;
+            border-top-color: $color-error;
+        }
+
+        &.uni-spinner--light {
+            border-color: $alpha-white-medium;
+            border-top-color: $alpha-white-light;
+        }
+
+        &.uni-spinner--small {
+            @include circle($font-regular);
+        }
+
+        &.uni-spinner--big {
+            @include circle($input-height);
+        }
     }
-    &.dots {
+
+    &--dots {
         display: block;
         border-radius: 50%;
         background: $color-grey-dark;
@@ -45,7 +47,8 @@ uni-spinner {
         position: relative;
 
 
-        &:before, &:after{
+        &:before,
+        &:after {
             content: '';
             display: block;
             height: inherit;
@@ -55,31 +58,65 @@ uni-spinner {
             border-radius: inherit;
             animation: spin-dots 1s ease infinite;
         }
-        &:before{ animation-delay: 0.15s; }
-        &:after{ animation-delay: 0.3s; }
 
-        &.primary { background: $color-primary; }
-        &.warning { background: $color-warning; }
-        &.error { background: $color-error; }
-        &.light { background: $alpha-white-light; }
+        &:before {
+            animation-delay: 0.15s;
+        }
+
+        &:after {
+            animation-delay: 0.3s;
+        }
+
+        &.uni-spinner--primary {
+            background: $color-primary;
+        }
+
+        &.uni-spinner--warning {
+            background: $color-warning;
+        }
+
+        &.uni-spinner--error {
+            background: $color-error;
+        }
+
+        &.uni-spinner--light {
+            background: $alpha-white-light;
+        }
 
         @include dots($label-height);
 
-        &.small { @include dots($font-regular); }
-        &.big { @include dots($input-height); }
+        &.uni-spinner--small {
+            @include dots($font-regular);
+        }
+
+        &.uni-spinner--big {
+            @include dots($input-height);
+        }
     }
 }
 
-@-webkit-keyframes spin-circle {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-}
 @keyframes spin-circle {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
-@keyframes spin-dots{
-    0%{ opacity: 0; }
-    50%{ opacity: 1; }
-    100%{ opacity: 0; }
+
+@keyframes spin-dots {
+
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }

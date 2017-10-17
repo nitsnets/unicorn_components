@@ -1,20 +1,20 @@
 <button class="uni-button__inner" [disabled]="disabled || false" [type]="type || 'button'" [class]="color ? 'uni-button__inner--' + color : ''"
     [ngClass]="{
-        'uni-button--with-icon': icon,
-        'uni-button--with-icon-right': iconRight,
-        'uni-button--only-icon': icon && !iconRight && (!label || !label.length),
-        'uni-button--only-icon-right': iconRight && !icon && (!label || !label.length),
-        'uni-button--large': size === 'large',
-        'uni-button--small': size === 'small'
+        'uni-button__inner--with-icon': icon,
+        'uni-button__inner--with-icon-right': iconRight,
+        'uni-button__inner--only-icon': icon && !iconRight && (!label || !label.length),
+        'uni-button__inner--only-icon-right': iconRight && !icon && (!label || !label.length),
+        'uni-button__inner--large': size === 'large',
+        'uni-button__inner--small': size === 'small'
     }">
 
-    <uni-icon class="icon" *ngIf="icon && icon !== 'loading'" [icon]="icon" [size]="size || 'medium'"></uni-icon>
-    <uni-spinner class="icon" *ngIf="icon && icon === 'loading'"></uni-spinner>
+    <uni-icon class="uni-button__icon" *ngIf="icon && icon !== 'loading'" [icon]="icon" [size]="size || 'medium'"></uni-icon>
+    <uni-spinner class="uni-button__icon" *ngIf="icon && icon === 'loading'"></uni-spinner>
 
     {{label}}
-    <span class="sublabel" *ngIf="sublabel">
+    <span class="uni-button__sublabel" *ngIf="sublabel">
         {{sublabel}}
     </span>
 
-    <uni-icon class="iconRight" *ngIf="iconRight" [icon]="iconRight" [size]="size || 'medium'"></uni-icon>
+    <uni-icon class="uni-button__icon-right" *ngIf="iconRight" [icon]="iconRight" [size]="size || 'medium'"></uni-icon>
 </button>

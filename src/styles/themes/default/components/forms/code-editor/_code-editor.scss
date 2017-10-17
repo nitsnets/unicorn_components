@@ -1,5 +1,6 @@
-uni-code{
-    .code-container {
+.uni-code {
+
+    &__container {
         @include border;
         @include border-radius;
         padding: $basic-padding / 2;

@@ -1,18 +1,23 @@
-uni-button-group {
-    .button-group-container {
+.uni-button-group {
+
+    &__inner {
         display: flex;
 
-        & > *{
-            &:last-child button {
+        > * {
+
+            &:last-child .uni-button__inner {
                 border-radius: 0 $border-radius $border-radius 0;
             }
-            &:first-child button {
+
+            &:first-child .uni-button__inner {
                 border-radius: $border-radius 0 0 $border-radius;
             }
-            &:not(:last-child) button {
+
+            &:not(:last-child) .uni-button__inner {
                 border-right-width: 0;
             }
-            &:not(:first-child):not(:last-child) button {
+
+            &:not(:first-child):not(:last-child) .uni-button__inner {
                 border-radius: 0;
             }
         }

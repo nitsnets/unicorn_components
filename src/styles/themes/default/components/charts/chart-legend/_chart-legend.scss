@@ -1,33 +1,39 @@
-uni-chart-legend {
+// TODO: @alv @andres No he sabido testear este componente :(
+.uni-chart-legend {
 
-  .legend-item {
-    margin-right: $basic-padding;
-  }
-
-  .legend-color {
-    margin-right: $basic-padding / 6;
-    height: $input-height / 2;
-    width: $input-height / 2;
-    border-radius: $border-radius;
-  }
-
-  &.editable {
-    .legend-item {
-      cursor: default;
-
-      &:hover {
-        .legend-color {
-          opacity: 0.5;
-        }
-      }
-      &.inactive {
-        opacity: 0.5;
-
-        .legend-color {
-          @include cross($input-height / 2);
-        }
-      }
+    &__item {
+        margin-right: $basic-padding;
     }
 
-  }
+    &__color {
+        margin-right: $basic-padding / 6;
+        height: $input-height / 2;
+        width: $input-height / 2;
+        border-radius: $border-radius;
+	}
+
+	&__container {
+
+		&--editable {
+
+			.uni-chart-legend__item {
+				cursor: default;
+
+				&:hover {
+
+					.uni-chart-legend__color {
+						opacity: 0.5;
+					}
+				}
+
+				&--inactive {
+					opacity: 0.5;
+
+					.uni-chart-legend__color {
+						@include cross($input-height / 2);
+					}
+				}
+			}
+		}
+	}
 }

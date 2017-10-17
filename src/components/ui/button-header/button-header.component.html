@@ -1,11 +1,11 @@
-<button class="uni-button-header__inner" [disabled]="disabled || false" [type]="type || 'button'" [class]="color || ''" [ngClass]="{
-    'with-icon': icon,
-    'with-icon-right': iconRight,
-    'only-icon': icon && (!label || !label.length)
+<button class="uni-button-header__inner" [disabled]="disabled || false" [type]="type || 'button'" [class]="color ? 'uni-button-header__inner--' + color : ''" [ngClass]="{
+    'uni-button-header__inner--with-icon': icon,
+    'uni-button-header__inner--with-icon-right': iconRight,
+    'uni-button-header__inner--only-icon': icon && (!label || !label.length)
   }">
 
     <uni-icon
-        class="icon"
+        class="uni-button-header__icon"
         *ngIf="icon"
         [icon]="icon"
     ></uni-icon>
@@ -13,7 +13,7 @@
     {{label}}
 
     <uni-icon
-        class="iconRight"
+        class="uni-button-header__icon-right"
         *ngIf="iconRight"
         [icon]="iconRight"
     ></uni-icon>

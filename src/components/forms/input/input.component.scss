@@ -1,61 +1,76 @@
 :host {
     vertical-align: top;
 }
-label{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  width: 100%;
-  margin-bottom: 0;
-}
+
 .uni-input {
-    &__container{
+
+	&__main-label {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		width: 100%;
+		margin-bottom: 0;
+	}
+
+    &__container {
         display: flex;
-    }
+	}
+
     &__icon,
-    &__icon-right{
+    &__icon-right {
         position: absolute;
-    }
+	}
+
     &__label,
     &__prefix,
-    &__suffix{
-      display: flex;
-      justify-content: space-between;
-    }
+    &__suffix {
+        display: flex;
+        justify-content: space-between;
+	}
+
     &__prefix,
     &__suffix,
-    &__chips{
-      display: flex;
-      align-items: center;
-    }
+    &__chips {
+        display: flex;
+        align-items: center;
+	}
+
     &__chips {
         flex-shrink: 0;
-    }
-    &__field{
+	}
+
+    &__field {
         width: 100%;
-        text-overflow:ellipsis;
-        &:focus{
+        text-overflow: ellipsis;
+
+        &--textarea {
+            resize: vertical;
+        }
+
+        &:focus {
             outline: none;
         }
     }
 }
-textarea{
-  resize: vertical;
-}
-input[type=date]{
+
+input[type=date] {
     -webkit-appearance: none;
 }
-input[type=date]::-webkit-calendar-picker-indicator{
+
+input[type=date]::-webkit-calendar-picker-indicator {
     -webkit-appearance: none;
     display: none;
 }
+
 ::-webkit-inner-spin-button {
     -webkit-appearance: none;
     display: none;
 }
-::-webkit-clear-button{
-    display: none; /* Hide the button */
-    -webkit-appearance: none; /* turn off default browser styling */
-}
 
+::-webkit-clear-button {
+    display: none;
+    /* Hide the button */
+    -webkit-appearance: none;
+    /* turn off default browser styling */
+}

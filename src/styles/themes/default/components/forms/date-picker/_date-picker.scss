@@ -1,69 +1,84 @@
 .uni-date-picker {
 
-    .spacing { margin-right: $basic-padding / 2;}
-
-
-
     &__inputs {
         line-height: $input-height;
     }
+
     &__input {
         width: 100%;
+        min-width: 160px;
     }
+
     &__controls {
         z-index: 1;
 
         margin-top: $basic-padding / 2;
 
-        &.floating {
+        &--right {
 
-        }
-        &.align-right {
-            &:before { right: 6px; }
-            &:after { right: 7px; }
-        }
-        &.align-left {
-            &:before { left: 6px; }
-            &:after { left: 7px; }
-        }
-    }
-    &--floating &__controls{
-        z-index: 2;
-        position: absolute;
-        margin-top: 0;
-        border: solid $color-grey-medium $border-width;
-        @include border-radius($border-radius);
+            &:before {
+                right: 6px;
+            }
 
-        &:before {
-            @include pseudo;
-            top: -7px;
-            border-left: 7px solid transparent;
-            border-right: 7px solid transparent;
-            border-bottom: 7px solid $color-grey-medium;
-            border-top: 0;
+            &:after {
+                right: 7px;
+            }
         }
 
-        &:after {
-            @include pseudo;
-            top: -5px;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            border-bottom: 6px solid #fff;
-            border-top: 0;
-        }
+        &--left {
 
-        &.align-right {
-            right: 0;
+            &:before {
+                left: 6px;
+            }
+
+            &:after {
+                left: 7px;
+            }
         }
-        &.align-left {
-            left: 0;
-        }
-    }
-    &--floating &__input {
-        width: auto;
     }
 
     &__buttons {
         margin-bottom: $basic-padding / 2;
+    }
+
+    &--floating {
+
+        .uni-date-picker__controls {
+            z-index: 2;
+            position: absolute;
+            margin-top: 0;
+            border: solid $color-grey-medium $border-width;
+            @include border-radius($border-radius);
+
+            &:before {
+                @include pseudo;
+                top: -7px;
+                border-left: 7px solid transparent;
+                border-right: 7px solid transparent;
+                border-bottom: 7px solid $color-grey-medium;
+                border-top: 0;
+            }
+
+            &:after {
+                @include pseudo;
+                top: -5px;
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-bottom: 6px solid #fff;
+                border-top: 0;
+            }
+
+            &--right {
+                right: 0;
+            }
+
+            &--left {
+                left: 0;
+            }
+        }
+
+        .uni-date-picker__input {
+            width: auto;
+        }
     }
 }
