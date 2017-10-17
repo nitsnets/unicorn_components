@@ -1,57 +1,62 @@
-uni-paginator {
-  .container {
-    justify-content: center;
+.uni-paginator {
 
-    @include mq($from: sm) {
-      justify-content: space-between;
+    &__container {
+        justify-content: center;
+
+        @include mq(sm) {
+            justify-content: space-between;
+        }
     }
-  }
 
-  &.right {
-    .pages {
-      @include mq($from: sm) {
-        margin-left: auto;
-      }
+    &__icon {
+        padding: $basic-padding / 3;
+        line-height: 1;
+        cursor: pointer;
+        opacity: 0.35;
+
+        &:hover {
+            opacity: 0.65;
+        }
+
+        &--disabled {
+            opacity: 0.15;
+
+            &:hover {
+                opacity: 0.15;
+                cursor: default;
+            }
+        }
+	}
+
+    &__counter {
+        display: none;
+        text-align: left;
+        margin: 0;
+
+        @include mq(sm) {
+            display: inline-block;
+        }
     }
-  }
 
-  &.center {
-    .container {
-      text-align: center;
+    &__page {
+        min-width: $input-height;
+        height: $input-height;
+        padding: $basic-padding / 3;
+        border-radius: $input-height / 2;
+        color: $color-grey-dark;
+        opacity: 0.35;
+        font-size: $font-small;
+
+        &--selectable {
+
+            &:hover {
+                opacity: 0.65;
+            }
+		}
+
+        &--selected {
+            opacity: 1;
+            font-weight: bold;
+        }
     }
-  }
-
-  .paginator-icon {
-    cursor: pointer;
-    padding: $basic-padding / 3;
-    opacity: 0.35;
-
-    &:hover {
-      opacity: 0.65;
-    }
-  }
-  .counter {
-    display: none;
-    text-align: left;
-    margin: 0;
-
-    @include mq($from: sm) {
-      display: inline-block;
-    }
-  }
-
-  .page {
-    min-width: $input-height;
-    height: $input-height;
-    padding: $basic-padding / 3;
-    border-radius: $input-height / 2;
-    color: $color-grey-dark;
-    opacity: 0.35;
-    font-size: $font-small;
-
-    &.selectable {
-      &:hover { opacity: 0.65; }
-    }
-    &.selected { opacity: 1; font-weight: bold; }
-  }
 }

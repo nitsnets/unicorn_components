@@ -1,20 +1,21 @@
-uni-icon {
+.uni-icon {
 
-    span {
+    &__inner {
         font-size: $font-xlarge;
 
         &.small {
             font-size: $font-large;
-        }
+		}
+
         &.large {
             font-size: $font-xlarge;
 
-            @include mq($from: sm) {
+            @include mq(sm) {
                 font-size: $font-largest;
             }
         }
 
-        &::before {
+        &:before {
             font-family: "material-icons";
             font-size: 1em;
             margin-right: .2em;
@@ -27,17 +28,19 @@ uni-icon {
             cursor: grab;
             cursor: -moz-grab;
             cursor: -webkit-grab;
-        }
+		}
+
         &.drag:active {
             cursor: grabbing;
             cursor: -moz-grabbing;
             cursor: -webkit-grabbing;
         }
-    }
+	}
+
     &.paginator-icon {
+
         i {
             font-size: $font-small;
         }
     }
 }
-

@@ -1,27 +1,32 @@
-toast-component {
-    .toast-container {
+.uni-toast {
+
+    &__container {
         transition: all 0.5s ease 0s;
         width: 100%;
-        bottom: -80px;
+        bottom: 0;
 
         font-size: $font-regular;
         background: $color-grey-light;
         padding: $basic-padding;
+
+        transform: translateY(100%);
+        will-change: transform;
     }
 
-    .remove {
+    &__icon {
         margin-left: auto;
         opacity: 0.5;
+
         &:hover {
             opacity: 1;
         }
     }
 
     .animate-in {
-        bottom: 0px;
+        transform: translateY(0);
     }
 
     .animate-out {
-        bottom: -80px;
+        transform: translateY(100%);
     }
 }

@@ -8,22 +8,27 @@
     background-color: white;
 
     &__header {
+
         &--deleting {
             background-color: $color-error-light;
+
             strong {
                 color: $color-error;
             }
         }
     }
+
     &__close {
         margin-left: $basic-padding;
     }
+
     &__body {
         padding: $basic-padding;
         display: flex;
         align-items: center;
         flex: 1;
     }
+
     &__image-container {
         flex: 1;
         height: 100%;
@@ -31,10 +36,12 @@
         align-items: center;
         justify-content: center;
     }
+
     &__image {
         max-height: 100%;
         max-width: 100%;
     }
+
     &__arrow {
         height: 100%;
         display: flex;
@@ -42,17 +49,18 @@
         cursor: pointer;
         &:hover { background-color: $alpha-black-lighter; }
     }
+
     &__aside {
         padding: $basic-padding;
         display: flex;
         flex-direction: column;
         transition: width 200ms ease, opacity 200ms ease, padding 200ms ease;
         opacity: 1;
+
         &--hidden {
             width: 0;
             opacity: 0;
             padding: $basic-padding 0;
         }
     }
-
 }

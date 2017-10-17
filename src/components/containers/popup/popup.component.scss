@@ -1,31 +1,43 @@
-:host{
-  position: relative;
-  display: inline-flex;
+:host {
+    display: inline-flex;
+    position: relative;
 }
-.container {
-  position: absolute;
-  z-index: 1;
 
-  &.top-right {
-    bottom: 0;
-    left: 0;
-  }
-  &.top-left {
-    bottom: 0;
-    right: 0;
-  }
-  &.bottom-right {
-    left: 0;
-    top: 0;
-  }
-  &.bottom-left {
-    right: 0;
-    top: 0;
-  }
+.uni-popup {
 
-  &::not(&.top-right, &.top-left, &.bottom-right) {
-    right: 0;
-    top: 0;
-  }
+    &__wrapper {
+        position: absolute;
+        z-index: 1;
 
+        top: 0;
+        right: 0;
+
+        &--top-right {
+            top: auto;
+            left: 0;
+            bottom: 0;
+            right: auto;
+        }
+
+        &--top-left {
+            top: auto;
+            left: auto;
+            bottom: 0;
+            right: 0;
+        }
+
+        &--bottom-right {
+            top: 0;
+            left: 0;
+            bottom: auto;
+            right: auto;
+        }
+
+        &--bottom-left {
+            top: 0;
+            left: auto;
+            bottom: auto;
+            right: 0;
+        }
+    }
 }

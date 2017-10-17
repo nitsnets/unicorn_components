@@ -1,22 +1,22 @@
 <p class="title2 chart-title" *ngIf="chartTitle">{{chartTitle}}</p>
 
-<div class="chart-container">
-  <canvas baseChart
-    class="chart"
-    [ngClass]="{
-      'chart-tiny': size === 'tiny',
-      'chart-small': size === 'small',
-      'chart-medium': size === 'medium',
-      'chart-large': size === 'large'
-    }"
-    [datasets]="series"
-    [labels]="labels"
-    [options]="options"
-    [chartType]="type"
-    [legend]="true"
-    (chartHover)="chartHover.emit($event)"
-    (chartClick)="chartClick.emit($event)">
-  </canvas>
-  <uni-chart-tooltip [tooltip]="tooltip"> </uni-chart-tooltip>
+<div class="uni-chart__container">
+	<canvas baseChart
+		class="uni-chart__canvas"
+		[ngClass]="{
+			'uni-chart__canvas--tiny': size === 'tiny',
+			'uni-chart__canvas--small': size === 'small',
+			'uni-chart__canvas--medium': size === 'medium',
+			'uni-chart__canvas--large': size === 'large'
+		}"
+		[datasets]="series"
+		[labels]="labels"
+		[options]="options"
+		[chartType]="type"
+		[legend]="true"
+		(chartHover)="chartHover.emit($event)"
+		(chartClick)="chartClick.emit($event)">
+	</canvas>
+<uni-chart-tooltip [tooltip]="tooltip"> </uni-chart-tooltip>
 
 </div>

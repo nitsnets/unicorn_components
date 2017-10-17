@@ -1,28 +1,30 @@
 <div class="uni-calendar__container" [ngClass]="{
-  'rangeFromActive': isRangeFromActive(),
-  'rangeToActive': isRangeToActive()
+  'uni-calendar__container--range-from': isRangeFromActive(),
+  'uni-calendar__container--range-to': isRangeToActive()
 }">
-    <div class="month-name">
+    <div class="uni-calendar__month-name">
         <uni-button icon="keyboard_arrow_left" size="small" (click)="previous()"></uni-button>
         <p>{{month.format("MMMM YYYY")}}</p>
         <uni-button icon="keyboard_arrow_right" size="small" (click)="next()"></uni-button>
     </div>
-    <div class="days-name">
+
+    <div class="uni-calendar__days-name">
         <p *ngFor="let dayName of dayNames">{{dayName}}</p>
     </div>
-    <div class="week-row" *ngFor="let week of weeks">
-        <p class="day-container" *ngFor="let day of week.days" [ngClass]="{
-        'selected': day.date.isSame(selected),
-        'rangeMiddle': day.isRangeMiddle,
-        'rangeFrom': day.isRangeFrom,
-        'rangeTo': day.isRangeTo,
-        'today': day.isToday,
-        'different-month': !day.isCurrentMonth,
-        'unavailable': day.isUnavailable
+
+    <div class="uni-calendar__week-row" *ngFor="let week of weeks">
+        <p class="uni-calendar__day" *ngFor="let day of week.days" [ngClass]="{
+        'uni-calendar__day--selected': day.date.isSame(selected),
+        'uni-calendar__day--range-middle': day.isRangeMiddle,
+        'uni-calendar__day--range-from': day.isRangeFrom,
+        'uni-calendar__day--range-to': day.isRangeTo,
+        'uni-calendar__day--today': day.isToday,
+        'uni-calendar__day--different-month': !day.isCurrentMonth,
+        'uni-calendar__day--unavailable': day.isUnavailable
       }">
-            <span class="day" (click)="select(day)">
-        {{day.number}}
-      </span>
+            <span class="uni-calendar__day-number" (click)="select(day)">
+                {{day.number}}
+            </span>
         </p>
     </div>
 </div>

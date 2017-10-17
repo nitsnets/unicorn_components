@@ -1,4 +1,4 @@
 <ng-content select="[uniPopupTrigger]"></ng-content>
-<div *ngIf="opened" [class]="'container '+(position || calculatedPosition)">
+<div *ngIf="opened" [class]="'uni-popup__wrapper uni-popup__wrapper--'+(position || calculatedPosition)">
     <ng-content select="uni-popup-container"></ng-content>
 </div>

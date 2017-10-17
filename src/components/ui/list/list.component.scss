@@ -19,11 +19,6 @@
         position: relative;
         display: flex;
 
-        // TODO: @alv @andres Me parece que esta clase ya no se utiliza
-        .pull-right {
-            margin-left: auto;
-        }
-
         &:hover {
 
             .uni-list__hover-icon {

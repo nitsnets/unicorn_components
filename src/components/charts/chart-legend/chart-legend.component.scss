@@ -1,18 +1,23 @@
-.legend-container {
-  display: flex;
+.uni-chart-legend {
 
-  .legend-item {
-    align-items: center;
-    display: flex;
-  }
+	&__item {
+		align-items: center;
+		display: flex;
+	}
 
-  .legend-color {
-    display: inline-block;
-  }
+	&__color {
+		display: inline-block;
+	}
 
-  &.editable {
-    .legend-item {
-      cursor: default;
-    }
-  }
+	&__container {
+		display: flex;
+
+
+		&--editable {
+
+			.uni-chart-legend__item {
+				cursor: default;
+			}
+		}
+	}
 }

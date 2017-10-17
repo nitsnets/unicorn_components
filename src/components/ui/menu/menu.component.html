@@ -1,4 +1,4 @@
 <ng-content select="[uniMenuTrigger]"></ng-content>
-<div *ngIf="opened" [class]="'container '+(position || calculatedPosition)">
+<div *ngIf="opened" [class]="'uni-menu__container uni-menu__container--'+(position || calculatedPosition)">
     <ng-content select="uni-menu-container"></ng-content>
 </div>

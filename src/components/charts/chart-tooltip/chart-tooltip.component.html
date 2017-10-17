@@ -1,16 +1,16 @@
-<div class="chart-tooltip" [ngStyle]="tooltipStyle" >
+<div class="uni-chart-tooltip__inner" [ngStyle]="tooltipStyle" >
 
-    <p class="tooltip-title" *ngFor="let title of tooltipTitles">
-      {{title}}
-    </p>
+	<p class="uni-chart-tooltip__title" *ngFor="let title of tooltipTitles">
+		{{title}}
+	</p>
 
-    <ul>
-      <li class="tooltip-item" *ngFor="let serie of tooltipSeries">
-        <span class="tooltip-color"
-          [style.background-color]="serie.backgroundColor"
-          [style.border-color]="serie.borderColor"
-        ></span>
-        <span>{{serie.label}}</span>
-      </li>
-    </ul>
-  </div>
+	<ul class="uni-chart-tooltip__items">
+		<li class="uni-chart-tooltip__item" *ngFor="let serie of tooltipSeries">
+			<span class="uni-chart-tooltip__color"
+				[style.background-color]="serie.backgroundColor"
+				[style.border-color]="serie.borderColor"
+			></span>
+			<span>{{serie.label}}</span>
+		</li>
+	</ul>
+</div>

@@ -1,36 +1,45 @@
 :host {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
-.pickers-container {
-  display: flex;
-}
-.picker {
-  flex: 1;
-  position: relative;
-}
-.daterange-input-container {
-  display: flex;
-  align-items: flex-end;
 
-  &.filled {
-    .arrow-btn {
-      display: block;
-    }
-  }
-}
-.arrow-btn {
-  display: none;
-  position: absolute;
-}
-.main-container {
-  &.floating {
-    z-index: 2;
-    position: absolute;
-  }
-}
-.buttons-container {
-  uni-button {
-    flex: 1
-  }
+.uni-daterange-picker {
+
+	&__arrow-btn {
+		display: none;
+		position: absolute;
+	}
+
+	&__input-container {
+		display: flex;
+		align-items: flex-end;
+
+		&--filled {
+
+			.uni-daterange-picker__arrow-btn {
+				display: block;
+			}
+		}
+	}
+
+	&__date-pickers {
+		display: flex;
+	}
+
+	&__date-picker {
+		flex: 1;
+		position: relative;
+	}
+
+	&__btn-preset {
+		flex: 1;
+	}
+
+	&__panel {
+
+		&--floating {
+			z-index: 2;
+			position: absolute;
+		}
+	}
 }

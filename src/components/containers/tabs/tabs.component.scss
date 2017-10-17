@@ -1,8 +1,12 @@
-.tabs-container {
-    display: flex;
+.uni-tabs {
+
+	&__wrapper {
+		display: flex;
+	}
+
 }
 
-.tab {
-  position: relative;
-  cursor: pointer;
+.uni-tabs-item {
+	position: relative;
+	cursor: pointer;
 }

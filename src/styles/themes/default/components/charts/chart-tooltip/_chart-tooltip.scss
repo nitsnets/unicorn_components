@@ -1,22 +1,24 @@
-uni-chart-tooltip {
-  .chart-tooltip {
-    @include border;
-    @include border-radius;
-    @include transition;
-    background: white;
-    color: $black;
-    padding: $basic-padding / 2;
+// TODO: @alv @andres No he sabido testear este componente :(
+.uni-chart-tooltip {
 
-    .tooltip-title {
-      margin-bottom: $basic-padding / 3;
+    &__inner {
+        padding: $basic-padding / 2;
+        @include border;
+        color: $black;
+        background: white;
+        @include border-radius;
+        @include transition;
+
     }
 
-    .tooltip-color {
-      margin-right: $basic-padding / 6;
-      height: $input-height / 2;
-      width: $input-height / 2;
-      border-radius: $border-radius;
-    }
-  }
+	&__title {
+		margin-bottom: $basic-padding / 3;
+	}
 
+	&__color {
+		height: $input-height / 2;
+		width: $input-height / 2;
+		margin-right: $basic-padding / 6;
+		border-radius: $border-radius;
+	}
 }

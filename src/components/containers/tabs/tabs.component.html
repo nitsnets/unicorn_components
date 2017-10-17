@@ -1,5 +1,5 @@
-<div class="tabs-container" *ngIf="tabs">
-    <uni-tabs-item class="tab"
+<div class="uni-tabs__wrapper" *ngIf="tabs">
+    <uni-tabs-item
         [selected]="tab.value ? tab.value === tabSelected : i === tabSelected"
         *ngFor="let tab of tabs; let i = index;"
         (select)="selectTab(tab, i)"

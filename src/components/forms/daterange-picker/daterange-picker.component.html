@@ -1,30 +1,30 @@
 <div (mousedown)="onMouseDown()" (mouseup)="onMouseUp()" (clickOutside)="closeCombo()">
-    <div class="daterange-input-container" *ngIf="combo" [class.filled]="model?.to && model?.from" [class.with-arrows]="showArrows">
-        <uni-input icon="date_range" [model]="comboModel" [placeholder]="comboLabel" (uniFocus)="openCombo()">
+    <div class="uni-daterange-picker__input-container" *ngIf="combo" [class.uni-daterange-picker__input-container--filled]="model?.to && model?.from" [class.uni-daterange-picker__input-container--with-arrows]="showArrows">
+        <uni-input class="uni-daterange-picker__input" icon="date_range" [model]="comboModel" [placeholder]="comboLabel" (uniFocus)="openCombo()">
         </uni-input>
-        <uni-button class="arrow-btn left" *ngIf="showArrows" icon="keyboard_arrow_left" (click)="prevRange()"></uni-button>
-        <uni-button class="arrow-btn right" *ngIf="showArrows" icon="keyboard_arrow_right" (click)="nextRange()"></uni-button>
+        <uni-button class="uni-daterange-picker__arrow-btn uni-daterange-picker__arrow-btn--left" *ngIf="showArrows" icon="keyboard_arrow_left" (click)="prevRange()"></uni-button>
+        <uni-button class="uni-daterange-picker__arrow-btn uni-daterange-picker__arrow-btn--right" *ngIf="showArrows" icon="keyboard_arrow_right" (click)="nextRange()"></uni-button>
     </div>
 
-    <div class="main-container" *ngIf="!combo || comboOpened" [class.floating]="combo" [class.align-left]="side === 'left'" [class.align-right]="side === 'right'">
-        <div class="pickers-container">
-            <uni-date-picker class="picker spacing" (modelChange)="onFromChanges($event)" [model]="model?.from" [label]="fromLabel || (toLabel ? ' ' : '')"
+    <div class="uni-daterange-picker__panel" *ngIf="!combo || comboOpened" [class.uni-daterange-picker__panel--floating]="combo" [class.uni-daterange-picker__panel--align-left]="side === 'left'" [class.uni-daterange-picker__panel--align-right]="side === 'right'">
+        <div class="uni-daterange-picker__date-pickers">
+            <uni-date-picker class="uni-daterange-picker__date-picker" (modelChange)="onFromChanges($event)" [model]="model?.from" [label]="fromLabel || (toLabel ? ' ' : '')"
                 [floating]="!combo" [max]="model?.to || max" [min]="min" [rangeTo]="model?.to"> </uni-date-picker>
-            <uni-date-picker class="picker" (modelChange)="onToChanges($event)" [model]="model?.to" [label]="toLabel || (fromLabel ? ' ' : '')"
+            <uni-date-picker class="uni-daterange-picker__date-picker" (modelChange)="onToChanges($event)" [model]="model?.to" [label]="toLabel || (fromLabel ? ' ' : '')"
                 [floating]="!combo" [max]="max" [min]="model?.from || min" [rangeFrom]="model?.from"> </uni-date-picker>
         </div>
-        <div class="buttons-container" *ngIf="combo && comboOpened">
+        <div class="uni-daterange-picker__presets" *ngIf="combo && comboOpened">
             <uni-row>
-                <uni-button label="Today" (click)="loadPreset('today')"></uni-button>
-                <uni-button label="This week" (click)="loadPreset('week')"></uni-button>
-                <uni-button label="This month" (click)="loadPreset('month')"></uni-button>
-                <uni-button label="This year" (click)="loadPreset('year')"></uni-button>
+                <uni-button class="uni-daterange-picker__btn-preset" label="Today" (click)="loadPreset('today')"></uni-button>
+                <uni-button class="uni-daterange-picker__btn-preset" label="This week" (click)="loadPreset('week')"></uni-button>
+                <uni-button class="uni-daterange-picker__btn-preset" label="This month" (click)="loadPreset('month')"></uni-button>
+                <uni-button class="uni-daterange-picker__btn-preset" label="This year" (click)="loadPreset('year')"></uni-button>
             </uni-row>
             <uni-row>
-                <uni-button label="Yesterday" (click)="loadPreset('yesterday')"></uni-button>
-                <uni-button label="Last week" (click)="loadPreset('l_week')"></uni-button>
-                <uni-button label="Last month" (click)="loadPreset('l_month')"></uni-button>
-                <uni-button label="Last year" (click)="loadPreset('l_year')"></uni-button>
+                <uni-button class="uni-daterange-picker__btn-preset" label="Yesterday" (click)="loadPreset('yesterday')"></uni-button>
+                <uni-button class="uni-daterange-picker__btn-preset" label="Last week" (click)="loadPreset('l_week')"></uni-button>
+                <uni-button class="uni-daterange-picker__btn-preset" label="Last month" (click)="loadPreset('l_month')"></uni-button>
+                <uni-button class="uni-daterange-picker__btn-preset" label="Last year" (click)="loadPreset('l_year')"></uni-button>
             </uni-row>
         </div>
     </div>

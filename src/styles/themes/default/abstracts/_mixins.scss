@@ -1,4 +1,8 @@
-@import "mixins/mq";
+@import
+    'mixins/mq',
+    'mixins/components/button',
+    'mixins/components/clock',
+    'mixins/components/spinner';
 
 // Antialias
 @mixin antialias {
@@ -386,20 +390,19 @@
     }
 }
 
-//
-// Component mixins
-///////////////////////////
+@mixin halfBg($side, $color: $color-primary-light) {
+    &::before {
+        @include pseudo;
+        background-color: $color;
+        z-index: 0;
+        height: 100%;
+        width: 50%;
 
-// From /ui/button/_button.scss
-@mixin inverse-content {
-    color: white;
-    .sublabel{ color: white; }
-    .icon{ opacity: 1; color: white; }
-}
-@mixin button-background($color, $inverse: false) {
-    background-color: $color;
-    &:hover{background-color: lighten($color, 5%);}
-    &:focus{background-color: lighten($color, 5%);}
-    &:active{background-color: lighten($color, 8%);}
-    @if $inverse { @include inverse-content; }
+        @if $side==left {
+            left: 0;
+        }
+        @else {
+            right: 0;
+        }
+    }
 }

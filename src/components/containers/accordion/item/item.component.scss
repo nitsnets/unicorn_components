@@ -1,18 +1,27 @@
-.acc-header {
-  align-items: center;
-  display: flex;
-}
-
-.acc-title {
-  cursor: default;
-  user-select: none;
-}
-
-.acc-menu-trigger { visibility: hidden; }
 :host:hover {
-  .acc-menu-trigger { visibility: visible; }
-}
-.acc-menu {
-  margin-left: auto;
+
+	.uni-accordion-item__menu-trigger {
+		visibility: visible;
+	}
 }
 
+.uni-accordion-item {
+
+    &__header {
+        align-items: center;
+        display: flex;
+    }
+
+    &__title {
+        cursor: default;
+        user-select: none;
+    }
+
+	&__menu {
+		margin-left: auto;
+	}
+
+    &__menu-trigger {
+        visibility: hidden;
+    }
+}

@@ -1,13 +1,13 @@
-
 :host {
-  display: inline-block;
+    display: inline-block;
 }
 
-.uni-date-picker{
+.uni-date-picker {
 
     &__container {
         position: relative;
     }
+
     &__buttons {
         display: flex;
         flex-direction: row-reverse;

@@ -1,3 +1,5 @@
-<uni-icon class="icon" *ngIf="icon" size="small" [icon]="icon"></uni-icon>
-<span class="label">{{label}}</span>
-<uni-icon class="remove" *ngIf="removable" size="small" icon="close" (click)="onRemove($event)"></uni-icon>
+<div [class]="'uni-chip__inner ' + (color ? 'uni-chip__inner--' + color : '')" [ngClass]="{ 'uni-chip__inner--removable': removable }">
+    <uni-icon class="uni-chip__icon" *ngIf="icon" size="small" [icon]="icon"></uni-icon>
+    <span class="uni-chip__label">{{label}}</span>
+    <uni-icon class="uni-chip__icon-remove" *ngIf="removable" size="small" icon="close" (click)="onRemove($event)"></uni-icon>
+</div>

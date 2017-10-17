@@ -1,0 +1,32 @@
+// For /ui/button/_button.scss
+@mixin inverse-content {
+    color: white;
+
+    .uni-button__sublabel {
+        color: white;
+    }
+    .uni-button__icon {
+        opacity: 1;
+        color: white;
+    }
+}
+
+@mixin button-background($color, $inverse: false) {
+    background-color: $color;
+
+    &:hover {
+        background-color: lighten($color, 5%);
+    }
+
+    &:focus {
+        background-color: lighten($color, 5%);
+    }
+
+    &:active {
+        background-color: lighten($color, 8%);
+    }
+
+    @if $inverse {
+        @include inverse-content;
+    }
+}

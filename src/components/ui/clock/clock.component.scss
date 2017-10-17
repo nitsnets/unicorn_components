@@ -1,34 +1,54 @@
-.clock-container{
-  position: relative;
-  user-select: none;
-}
-.clock-mode{
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  cursor: default;
-  &.clock-am{left: 0; right: auto; }
-  &.clock-pm{left: auto; right: 0; text-align: right;}
-}
-.clock-circle{
-  margin: -1px;
-  position: relative;
-  border-radius: 50%;
-}
-.clock-center{
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
-.clock-hour-tick, .clock-minute-tick{ 
-  position: absolute;
-  transform-origin: bottom;
-}
+.uni-clock {
 
-ul{list-style-type: none;}
-.clock-number{
-    position: absolute;
-    border-radius: 50%;
-    cursor: default;
+	&__container {
+		position: relative;
+		user-select: none;
+	}
+
+	&__mode {
+		position: absolute;
+		width: 50%;
+		height: 50%;
+		cursor: default;
+
+		&--am {
+			left: 0;
+			right: auto;
+		}
+
+		&--pm {
+			left: auto;
+			right: 0;
+			text-align: right;
+		}
+	}
+
+	&__circle {
+		margin: -1px;
+		position: relative;
+		border-radius: 50%;
+	}
+
+	&__center {
+		border-radius: 50%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+	}
+
+	&__hour-tick,
+	&__minute-tick {
+		position: absolute;
+		transform-origin: bottom;
+	}
+
+	ul {
+		list-style-type: none;
+	}
+
+	&__number {
+		position: absolute;
+		border-radius: 50%;
+		cursor: default;
+	}
 }

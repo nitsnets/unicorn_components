@@ -1,8 +1,12 @@
 :host {
-  display: inline-flex;
+    display: inline-flex;
 }
-.badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+
+.uni-badge {
+
+	&__inner {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
 }

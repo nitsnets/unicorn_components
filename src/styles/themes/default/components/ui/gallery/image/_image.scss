@@ -1,4 +1,5 @@
 .uni-gallery-image {
+
     &__footer {
         position: absolute;
         z-index: 1;
@@ -9,8 +10,12 @@
         background-color: $color-grey-dark;
         transition: all ease 200ms;
         display: flex;
-        * { color: white !important; }
+
+        * {
+            color: white !important;
+        }
     }
+
     &__deleting {
         padding: $basic-padding;
 
@@ -29,28 +34,35 @@
             color: $color-error;
         }
     }
-    &:hover &__footer{
+
+    &:hover &__footer {
         opacity: 1;
     }
+
     &__text-container {
         flex: 1;
         cursor: pointer;
     }
+
     &__title,
     &__dimensions {
         margin: 0;
     }
+
     &__dimensions {
         font-size: $font-smallest;
     }
-    &--selected &__footer{
+
+    &--selected &__footer {
         opacity: 1;
         background-color: $color-primary;
     }
+
     &--deleting-selection &__footer {
         opacity: 1;
         background-color: $color-error;
     }
+
     &--deleting &__footer {
         opacity: 0 !important;
     }

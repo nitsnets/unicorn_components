@@ -1,14 +1,15 @@
-<div [class]="'modal-bg ' + (options['class'] || '')" [ngClass]="{
-  full: options['type'] === 'full',
-  aside: options['type'] === 'aside',
-  large: options['size'] === 'large',
-  leaving: leaving
+<div [class]="'uni-modal__inner ' + (options['class'] || '')" [ngClass]="{
+  'uni-modal__inner--full': options['type'] === 'full',
+  'uni-modal__inner--aside': options['type'] === 'aside',
+  'uni-modal__inner--large': options['size'] === 'large',
+  'uni-modal__inner--only-content': options['hideHeader'] === true,
+  'uni-modal__inner--leaving': leaving
 }">
-    <div class="modal-container" (clickOutside)="onClickOutside($event)" [class.leaving]="leaving">
+    <div class="uni-modal__container" (clickOutside)="onClickOutside($event)" [class.uni-modal__container--leaving]="leaving">
         <uni-header *ngIf="options['hideHeader'] !== true">
-            <p class="modal-title">{{options['title']}}</p>
+            <p class="uni-modal__title">{{options['title']}}</p>
         </uni-header>
-        <uni-icon class="close-button" icon="close" (click)="onCancel()"></uni-icon>
+        <uni-icon class="uni-modal__btn-close" icon="close" (click)="onCancel()"></uni-icon>
         <div [uniComponentLoader]="component" (uniComponentLoaded)="componentLoaded($event)"></div>
     </div>
 </div>

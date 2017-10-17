@@ -1,33 +1,35 @@
-uni-accordion-item {
+.uni-accordion-item {
 
-    .acc-container {
+    &__container {
         @include border-bottom;
     }
 
-    .acc-header {
+    &__header {
         height: $header-md-height;
         @include border-bottom;
         padding: 0 $basic-padding / 4;
     }
 
-    .acc-title {
+    &__title {
         margin-left: $basic-padding / 6;
     }
-    .acc-caret {
+
+    &__caret {
         @include transition(transform, $fast, ease);
-        &.collapsed { @include rotate(-90); }
     }
 
-    .acc-content {
+    &__content {
         /* @include v-grow-animation; */
     }
 
-    &.collapsed {
-        .acc-caret {
-            @include rotate(-90);
-        }
-        .acc-header {
+    &--collapsed {
+
+        .uni-accordion-item__header {
             border-bottom-color: transparent;
+        }
+
+        .uni-accordion-item__caret {
+            @include rotate(-90);
         }
     }
 }
