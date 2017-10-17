@@ -2,6 +2,9 @@ import { UniMenuComponent, UniMenuTriggerDirective } from './ui/menu/menu.compon
 import { UniPopupComponent, UniPopupTriggerDirective } from './containers/popup/popup.component';
 
 import { FilteredDatagridComponent } from './views/filtered-datagrid/filtered-datagrid.component';
+import { ModalService } from './containers/modal/modal.service';
+import { ToastService } from './utils/toast/toast.service';
+import { TooltipService } from './utils/tooltip/tooltip.service';
 import { UniAccordionComponent } from './containers/accordion/accordion.component';
 import { UniAccordionItemComponent } from './containers/accordion/item/item.component';
 import { UniAlertComponent } from './utils/alert/alert.component';
@@ -53,6 +56,7 @@ import { UniLayoutComponent } from './containers/layout/layout.component';
 import { UniListComponent } from './ui/list/list.component';
 import { UniMenuContainerComponent } from './ui/menu/container/container.component';
 import { UniMenuItemComponent } from './ui/menu/item/item.component';
+import { UniModalComponent } from './containers/modal/modal.component';
 import { UniPaginatorComponent } from './ui/paginator/paginator.component';
 import { UniPopupContainerComponent } from './containers/popup/container/container.component';
 import { UniProgressComponent } from './utils/progress/progress.component';
@@ -70,7 +74,9 @@ import { UniTabsComponent } from './containers/tabs/tabs.component';
 import { UniTabsItemComponent } from './containers/tabs/item/item.component';
 import { UniTextareaComponent } from './forms/textarea/textarea.component';
 import { UniTimePickerComponent } from './forms/time-picker/time-picker.component';
+import { UniToastComponent } from './utils/toast/toast.component';
 import { UniToggleComponent } from './forms/toggle/toggle.component';
+import { UniTooltipComponent } from './utils/tooltip/tooltip.component';
 
 export const UNI_COMPONENTS = [
     UniPopupComponent, UniPopupTriggerDirective, UniPopupContainerComponent, UniMenuComponent, UniMenuTriggerDirective,
@@ -89,5 +95,11 @@ export const UNI_COMPONENTS = [
     UniSpinnerComponent, UniAccordionItemComponent, UniButtonGroupComponent, UniRadioGroupComponent,
     UniButtonToggleGroupComponent, UniSliderComponent, UniAlertComponent, UniTabsItemComponent, UniTextareaComponent,
     UniSliderRangeComponent, UniImageComponent, UniGalleryImageComponent, UniGalleryComponent,
-    UniGalleryFullImageComponent
+    UniGalleryFullImageComponent, UniModalComponent, UniTooltipComponent, UniToastComponent
 ];
+export const UNI_ENTRY_COMPONENTS = [
+    UniDatagridDeleteComponent, UniGalleryFullImageComponent, UniModalComponent, UniTooltipComponent, UniToastComponent
+]
+export const UNI_SERVICES = [
+    ModalService, TooltipService, ToastService
+]

@@ -1,4 +1,4 @@
-<ul class="uni-list__inner" *ngIf="data && data.length" [(sortablejs)]="data" [sortablejsOptions]="sortableOptions">
+<ul class="uni-list__inner" *ngIf="data && data.length">
 
     <ng-container *ngFor="let item of data; let i = index">
         <li class="uni-list__item" *ngIf="item.name !== '----'">

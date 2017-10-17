@@ -1,21 +1,19 @@
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { UNI_COMPONENTS, UNI_ENTRY_COMPONENTS, UNI_SERVICES } from './components/';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
-import { SortablejsModule } from 'angular-sortablejs';
 import { TextMaskModule } from 'angular2-text-mask';
-import { UNI_COMPONENTS } from './components/';
 import { UNI_DIRECTIVES } from './directives/';
 import { UNI_PIPES } from './pipes/';
-import { UniDatagridDeleteComponent } from './components/ui/datagrid/delete/delete.component';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         TextMaskModule,
-        SortablejsModule,
-        BrowserModule
+        BrowserModule,
     ],
     declarations: [
         UNI_COMPONENTS,
@@ -26,11 +24,19 @@ import { UniDatagridDeleteComponent } from './components/ui/datagrid/delete/dele
         UNI_COMPONENTS,
         UNI_DIRECTIVES,
         UNI_PIPES,
-        BrowserModule
     ],
     entryComponents: [
-        UniDatagridDeleteComponent
+        UNI_ENTRY_COMPONENTS
     ]
 })
-export class UnicornComponentsModule { }
+export class UnicornComponentsModule {
+    static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: UnicornComponentsModule,
+            providers: [
+                UNI_SERVICES
+            ]
+        }
+    }
+}
 
