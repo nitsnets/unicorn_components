@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnChanges, OnInit } from '@angular/core';
 
 import { FilterPipe } from '../../../pipes/filter.pipe';
 import { NtsInputBaseComponent } from '../../base/input-base.component';
@@ -54,9 +54,14 @@ export class NtsSelectComponent extends NtsInputBaseComponent implements OnInit,
             this.onFilter();
         }
     }
+    @HostListener('window:keydown', ['$event'])
+    onGlobalKeyDown(e: KeyboardEvent) {
+        switch (e.key) {
+            case 'Escape': case 'Tab': this.hideOptions(); break;
+        }
+    }
     onKeyDown(e: KeyboardEvent) {
         switch (e.key) {
-            case 'Escape': this.hideOptions(); break;
             case 'Enter': this.selectPointedOption(); break;
             case 'ArrowDown':
                 this.areOptionsVisible ?
