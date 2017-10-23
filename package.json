@@ -10,7 +10,8 @@
     "main": "index.ts",
     "scripts": {
         "build": "ng build",
-        "test": "ng test",
+        "test": "ng test --browsers PhantomJS --watch false",
+        "test-chrome": "ng test --browsers Chrome",
         "build-prod": "ng build --prod",
         "reset": "rm -Rf node_modules && npm install",
         "refresh": "git pull && npm install && npm run build",
