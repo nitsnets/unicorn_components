@@ -283,7 +283,7 @@ function generateColor(index: number): number[] {
  * @param count
  * @returns {Color}
  */
-function getColors(chartType: string, index: number, count: number): Color {
+function getColors(chartType: string, index: number, count: number): Color | number[] {
     if (chartType === 'pie' || chartType === 'doughnut') {
         return formatPieColors(generateColors(count));
     }

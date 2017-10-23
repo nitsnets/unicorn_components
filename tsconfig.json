@@ -1,29 +1,35 @@
 {
     "compilerOptions": {
-        "declaration": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noImplicitAny": false,
+        "noEmitOnError": true,
+        "removeComments": true,
+        "outDir": "out-tsc/spec",
+        "baseUrl": "src",
+        "target": "es5",
+        "types": [
+            "jasmine",
+            "node"
+        ],
+        "styles": [
+            "src/styles/themes/cms/_all.scss"
+        ],
         "lib": [
             "es6",
             "dom"
         ],
-        "module": "system",
-        "moduleResolution": "node",
-        "sourceMap": true,
-        "target": "ES5",
         "typeRoots": [
             "node_modules/@types"
-        ],
-        "paths": {
-            "@angular/*": [
-                "node_modules/@angular/*"
-            ]
-        }
+        ]
     },
     "files": [
-        "index.ts"
+        "test/test.ts"
     ],
-    "exclude": [
-        "node_modules"
+    "include": [
+        "**/*.spec.ts",
+        "**/*.d.ts"
     ]
 }
