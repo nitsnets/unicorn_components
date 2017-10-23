@@ -11,7 +11,6 @@
         line-height: $basic-padding/3 - $border-width * 2;
         opacity: 0.5;
 
-		//TODO: @alv @andres He cambiado la animación del borde inferior, si es necesario restablezco la anterior
         &:after {
             @include pseudo;
             height: 0;
@@ -73,8 +72,7 @@
         }
 	}
 
-	//TODO: @alv @andres ¿utility class o modificación en el proyecto que use el componente en caso necesario?
-	&.noborder {
+	&--no-border {
 
         .uni-tabs__wrapper {
             border: 0 none;

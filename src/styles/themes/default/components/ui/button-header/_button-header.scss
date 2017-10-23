@@ -3,7 +3,7 @@
 
     &__icon {
 
-        // TODO: @alv @andres Revisar juntos este posicionamiento relativo/absoluto, en la demo no tiene efecto
+        // @alv @andres Revisar juntos este posicionamiento relativo/absoluto, en la demo no tiene efecto
         @include mq(sm) {
             top: $header-height/3;
             left: $header-height/3;
@@ -34,7 +34,7 @@
             background-color: $alpha-black-medium;
         }
 
-        // TODO: @alv Éste estilo no veo dónde se usa o aplica, si no se usa borrar
+        // @alv Éste estilo no veo dónde se usa o aplica, si no se usa borrar
         i {
             font-size: $font-large;
         }
@@ -49,7 +49,7 @@
         }
     }
 
-    // TODO: @alv @andres Revisar juntos este modificador para ver qué comportamiento se quiere. No me encajan los estilos, muchos no se aplican en la demo
+    // @alv @andres Revisar juntos este modificador para ver qué comportamiento se quiere. No me encajan los estilos, muchos no se aplican en la demo
     &--md {
         height: 100%;
 

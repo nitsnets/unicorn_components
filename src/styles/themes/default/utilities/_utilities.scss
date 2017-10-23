@@ -26,6 +26,38 @@
     color: $color-grey-light !important;
 }
 
+.u-bg-black {
+    background-color: #000 !important;
+}
+
+.u-bg-white {
+    background-color: #fff !important;
+}
+
+.u-bg-primary {
+    background-color: $color-primary !important;
+}
+
+.u-bg-grey {
+    background-color: $color-grey !important;
+}
+
+.u-bg-grey-dark {
+    background-color: $color-grey-dark !important;
+}
+
+.u-bg-grey-light {
+    background-color: $color-grey-light !important;
+}
+
+/**
+ * Remove padding
+ */
+
+.u-no-padding {
+    padding: 0 !important;
+}
+
 /**
  * Position relative
  */

@@ -4,13 +4,4 @@
     &__inner {
         max-width: 1080px;
 	}
-
-	// TODO: @alv @andres Tendríamos que comentar el uso de estas clases... ¿mejor como atributos o como clases de utilidad?
-    &.grey {
-        background-color: $color-grey-light;
-	}
-
-    &.nopadding {
-        padding: 0;
-    }
 }

@@ -5,15 +5,6 @@
 
     @include transition(all, 200ms, ease);
 
-    // TODO: @alv @andres No entiendo muy bien el comportamiento del componente con la clase collapsed. Tendríamos que hablarlo.
-    @include mq(md) {
-
-        &.collapsed {
-            margin-left: 0;
-            width: $input-height + $basic-padding;
-        }
-    }
-
     &.has-header,
     &[has-header] {
         height: calc(100% - #{$header-height});
@@ -26,20 +17,19 @@
 
     &--left,
     &[left] {
+        @include border-right();
 
         &.collapsed {
-            margin-left: - ($input-height + $basic-padding);
+            margin-left: - #{$aside-width};
         }
-
-        &.hidden {
-            margin-left: - $aside-width;
-        }
-
-        @include border-right();
     }
 
     &--right,
     &[right] {
         @include border-left();
+
+        &.collapsed {
+            margin-right: - #{$aside-width};
+        }
     }
 }
