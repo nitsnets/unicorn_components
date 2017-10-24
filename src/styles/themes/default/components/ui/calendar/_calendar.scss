@@ -71,26 +71,26 @@
             }
 		}
 
-		&--range, &--range:hover {
+		&--range {
 
-			&-from {
+            &-from, &-from:hover {
 
-				.uni-calendar__day-number {
-					background-color: $color-primary-medium;
-				}
-			}
+                .uni-calendar__day-number {
+                    background-color: $color-primary-medium;
+                }
+            }
 
-			&-to {
+            &-to, &-to:hover {
 
-				.uni-calendar__day-number {
-					background-color: $color-primary-medium;
-				}
-			}
+                .uni-calendar__day-number {
+                    background-color: $color-primary-medium;
+                }
+            }
 
-			&-middle {
-				background-color: $color-primary-light
-			}
-		}
+            &-middle, &-middle:hover {
+                background-color: $color-primary-light
+            }
+        }
 
         &--selected, &--selected:hover {
 

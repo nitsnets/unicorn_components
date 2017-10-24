@@ -150,35 +150,59 @@
 
     &--floating {
 
-        .uni-input__label {
-            font-size: $font-regular;
-            position: absolute;
-            top: $label-height;
-            left: $input-padding;
-            line-height: $input-height;
-            cursor: text;
-            transition: 100ms ease all;
-        }
+        .uni-input {
 
-        .uni-input__field,
-        .uni-input__prefix,
-        .uni-input__suffix {
-            border: 0 none;
-            background-color: transparent;
-            padding: 0;
+            &__main-label {
+                padding-top: $label-height;
+            }
+
+            &__label {
+                position: absolute;
+
+                top: $label-height;
+                left: $input-padding;
+
+                height: auto;
+
+                font-size: $font-regular;
+                line-height: $input-height;
+
+                cursor: text;
+                transition: transform ease-in-out 0.1s;
+                will-change: transform;
+            }
+
+            &__field {
+                border: 0 none;
+                border-bottom: 1px solid $alpha-black-medium;
+                border-radius: 0;
+                background-color: transparent;
+            }
+
+            &__prefix,
+            &__suffix {
+                border: 0 none;
+                background-color: transparent;
+                padding: 0;
+            }
         }
 
         &.uni-input--focused,
         &.uni-input--has-content {
-            .uni-input__label {
-                font-size: $font-small;
-                top: 0;
-                left: 0;
-                line-height: $label-height;
-                cursor: default;
+
+            $scale-factor: $font-small / $font-regular;
+            .uni-input {
+
+                &__label {
+                    cursor: default;
+                    transform: scale($scale-factor) translate3d(-20px, -32px, 0);
+                }
+
+                &__field {
+                    background-color: transparent;
+                }
             }
         }
-
     }
 
     &--focused &__field {
