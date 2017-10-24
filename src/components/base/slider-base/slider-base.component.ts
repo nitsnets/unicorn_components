@@ -1,6 +1,6 @@
 import { ElementRef, HostListener, Input, OnChanges } from '@angular/core';
 
-import { UniInputBaseComponent } from './input-base.component';
+import { UniInputBaseComponent } from '../input-base/input-base.component';
 
 export abstract class UniSliderBaseComponent extends UniInputBaseComponent implements OnChanges {
 

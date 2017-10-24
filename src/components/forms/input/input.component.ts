@@ -1,7 +1,7 @@
 import { Component, EventEmitter, HostBinding, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 import { Observable } from 'rxjs/Rx';
-import { UniInputBaseComponent } from '../../base/input-base.component';
+import { UniInputBaseComponent } from '../../base/input-base/input-base.component';
 import { UniOption } from './../../../models/option';
 import { conformToMask } from 'angular2-text-mask';
 

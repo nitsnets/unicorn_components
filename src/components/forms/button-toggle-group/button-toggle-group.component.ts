@@ -1,7 +1,7 @@
-import { Component, ContentChildren, Input, QueryList, HostBinding } from '@angular/core';
+import { Component, ContentChildren, HostBinding, Input, QueryList } from '@angular/core';
 
 import { UniButtonToggleComponent } from '../button-toggle/button-toggle.component';
-import { UniInputBaseComponent } from '../../base/input-base.component';
+import { UniInputBaseComponent } from '../../base/input-base/input-base.component';
 
 @Component({
     selector: 'uni-button-toggle-group',

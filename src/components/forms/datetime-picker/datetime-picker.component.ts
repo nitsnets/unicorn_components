@@ -1,6 +1,6 @@
 import { Component, ElementRef, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 
-import { UniInputBaseComponent } from '../../base/input-base.component';
+import { UniInputBaseComponent } from '../../base/input-base/input-base.component';
 
 @Component({
     selector: 'uni-datetime-picker',

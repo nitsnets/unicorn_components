@@ -22,7 +22,7 @@
         'uni-calendar__day--different-month': !day.isCurrentMonth,
         'uni-calendar__day--unavailable': day.isUnavailable
       }">
-            <span class="uni-calendar__day-number" (click)="select(day)">
+            <span class="uni-calendar__day-number" (click)="select(day.date)">
                 {{day.number}}
             </span>
         </p>

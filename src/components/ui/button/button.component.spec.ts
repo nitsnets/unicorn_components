@@ -23,23 +23,67 @@ describe('<uni-button>', () => {
             element = fixture.debugElement.nativeElement;
         });
     }));
-    it('should create the button', async(() => {
+    it(`- Should create the button`, async(() => {
         expect(component).toBeTruthy();
     }));
-    it(`should add <uni-icon> when 'icon' param is set`, async(() => {
+    /**
+     * LABEL
+     */
+    it(`- Should add text content when 'label' param is set`, async(() => {
+        component.label = 'Click me!';
+        fixture.detectChanges();
+        expect(element.querySelector('button').textContent).toContain('Click me!');
+    }));
+    it(`- Should add additional text content when 'sublabel' param is set`, async(() => {
+        component.label = 'Click me!';
+        component.sublabel = 'Do it, please';
+        fixture.detectChanges();
+        expect(element.querySelector('button').textContent).toContain('Click me!');
+        expect(element.querySelector('button').textContent).toContain('Do it, please');
+    }));
+    /**
+     * ICONS
+     */
+    it(`- Should add <uni-icon> when 'icon' param is set`, async(() => {
         component.icon = 'description';
         fixture.detectChanges();
         expect(element.querySelector('uni-icon')).not.toBe(null);
     }));
-    it(`should add a <uni-spinner> instead of a regular icon when 'icon' param is set to 'loading'`, async(() => {
+    it(`- Should add right icon when 'iconRight' param is set`, async(() => {
+        component.iconRight = 'description';
+        fixture.detectChanges();
+        expect(element.querySelector('uni-icon')).not.toBe(null);
+    }));
+    it(`- Should add both left left and right icon when 'icon' and 'iconRight' params are set`, async(() => {
+        component.iconRight = 'description';
+        fixture.detectChanges();
+        expect(element.querySelector('uni-icon')).not.toBe(null);
+    }));
+    it(`- Should add a <uni-spinner> instead of a regular icon when 'icon' param is set to 'loading'`, async(() => {
         component.icon = 'loading';
         fixture.detectChanges();
         expect(element.querySelector('uni-spinner')).not.toBe(null);
         expect(element.querySelector('uni-icon')).toBe(null);
     }));
-    it(`should add text content when 'label' param is set`, async(() => {
-        component.label = 'Click me!';
+    /**
+     * DISABLE AND TYPE
+     */
+    it(`- Should disable internal button when when 'dissable' param is set`, async(() => {
+        component.disabled = true;
         fixture.detectChanges();
-        expect(element.querySelector('button').textContent).toContain('Click me!');
+        expect(element.querySelector('button').disabled).toBe(true);
     }));
+    it(`- Should set 'type' to internal button as 'type' param`, async(() => {
+        ['reset', 'submit', 'button'].forEach(type => {
+            component.type = type;
+            fixture.detectChanges();
+            expect(element.querySelector('button').type).toBe(type || 'button');
+        })
+    }));
+    it(`- Should set 'button' type when no type param is specify`, async(() => {
+        component.type = null;
+        fixture.detectChanges();
+        expect(element.querySelector('button').type).toBe('button');
+    }));
+
 });

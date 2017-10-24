@@ -1,7 +1,7 @@
 import { ComponentFactoryResolver, Injectable, ViewContainerRef } from '@angular/core';
 import { Observable, Subject } from 'rxjs/Rx';
 
-import { DynamicContainerService } from '../../base/dynamic-container.service';
+import { DynamicContainerService } from '../../base/dynamic-container/dynamic-container.service';
 import { UniToastComponent } from './toast.component';
 
 @Injectable()

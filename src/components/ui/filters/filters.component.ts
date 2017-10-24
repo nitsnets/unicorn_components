@@ -18,7 +18,7 @@ import { UniDatePickerComponent } from '../../forms/date-picker/date-picker.comp
 import { UniFilter } from '../../../models/filter';
 import { UniFiltersAdvancedComponent } from './filters-advanced/filters-advanced.component';
 import { UniFiltersMainComponent } from './filters-main/filters-main.component';
-import { UniInputBaseComponent } from '../../base/input-base.component';
+import { UniInputBaseComponent } from '../../base/input-base/input-base.component';
 import { UniInputComponent } from '../../forms/input/input.component';
 import { UniRadioComponent } from '../../forms/radio/radio.component';
 import { UniSelectComponent } from '../../forms/select/select.component';

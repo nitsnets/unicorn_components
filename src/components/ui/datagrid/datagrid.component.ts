@@ -98,7 +98,14 @@ export class UniDatagridComponent implements AfterContentInit, OnChanges {
      * The input where the items get into the component
      * @type {Array<object>}
      */
-    @Input() data: Array<Object> = null;
+    private _data: Array<Object> = null;
+    @Input() set data(value: Array<Object>) {
+        this._data = value;
+        this.updateData();
+    };
+    get data(): Array<Object> {
+        return this._data
+    }
     /**
      * The output where changes in the items emitted
      * @event UniDatagridComponent#dataChange
@@ -343,6 +350,8 @@ export class UniDatagridComponent implements AfterContentInit, OnChanges {
         if (!this.sort.field) {
             this.dataView = [...this.dataView];
         }
+        console.log(this.localSort);
+
         this.onPageChange(0);
         this.sortChange.emit(this.sort);
     }

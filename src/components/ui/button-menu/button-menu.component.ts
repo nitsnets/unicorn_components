@@ -1,6 +1,6 @@
-import { Component, Input, HostBinding } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 
-import { UniButtonBaseComponent } from '../../base/button-base.component';
+import { UniButtonBaseComponent } from '../../base/button-base/button-base.component';
 import { UniPosition } from '../../../models/types';
 
 @Component({

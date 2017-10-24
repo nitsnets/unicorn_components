@@ -1,7 +1,7 @@
 import { EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Observable, Subscription } from 'rxjs/Rx';
 
-import { UniBaseComponent } from './base.component';
+import { UniBaseComponent } from './../base/base.component';
 
 export abstract class UniInputBaseComponent extends UniBaseComponent implements OnInit {
 

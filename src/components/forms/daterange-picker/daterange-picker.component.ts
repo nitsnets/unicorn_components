@@ -1,10 +1,10 @@
 import * as moment from 'moment';
 
-import { Component, ElementRef, Input, HostBinding } from '@angular/core';
+import { Component, ElementRef, HostBinding, Input } from '@angular/core';
 import { abbrDateRange, sideOfScreen } from '../../../utils';
 
 import { Observable } from 'rxjs/Rx';
-import { UniInputBaseComponent } from '../../base/input-base.component';
+import { UniInputBaseComponent } from '../../base/input-base/input-base.component';
 
 moment.locale('es', { week: { dow: 1, doy: 4 } });
 
