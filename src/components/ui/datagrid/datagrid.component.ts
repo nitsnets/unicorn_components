@@ -350,7 +350,6 @@ export class UniDatagridComponent implements AfterContentInit, OnChanges {
         if (!this.sort.field) {
             this.dataView = [...this.dataView];
         }
-        console.log(this.localSort);
 
         this.onPageChange(0);
         this.sortChange.emit(this.sort);
