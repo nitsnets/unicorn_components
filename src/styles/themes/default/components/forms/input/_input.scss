@@ -190,12 +190,17 @@
         &.uni-input--focused,
         &.uni-input--has-content {
 
+            // Animation variables
             $scale-factor: $font-small / $font-regular;
+            $translateX: $input-padding / $scale-factor;
+            $translateY: ($label-height / $scale-factor) + ((($input-height - $font-regular) / 2) * $scale-factor) - (($label-height - $font-small) / 2);
+
             .uni-input {
 
                 &__label {
                     cursor: default;
-                    transform: scale($scale-factor) translate3d(-20px, -32px, 0);
+                    transform: scale($scale-factor) translate3d(- $translateX, - $translateY, 0);
+                    transform-origin: left top;
                 }
 
                 &__field {
