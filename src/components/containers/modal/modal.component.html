@@ -10,6 +10,6 @@
             <p class="uni-modal__title">{{options['title']}}</p>
         </uni-header>
         <uni-icon class="uni-modal__btn-close" icon="close" (click)="onCancel()"></uni-icon>
-        <div [uniComponentLoader]="component" (uniComponentLoaded)="componentLoaded($event)"></div>
+        <div [uniComponentLoader]="component" (uniComponentLoaded)="onComponentLoaded($event)"></div>
     </div>
 </div>

@@ -1,23 +1,18 @@
-import { Directive, ElementRef, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
+import { Directive, EventEmitter, HostListener, Output } from '@angular/core';
 
 @Directive({
     selector: '[droppable]'
 })
-export class UniDroppableDirective implements OnInit {
+export class UniDroppableDirective {
     @HostListener('dragenter', ['$event']) dragenter = this.onDragEnter;
     @HostListener('dragleave', ['$event']) dragleave = this.onDragLeave;
 
-    @Output() uniDragenter = new EventEmitter();
-    @Output() uniDragleave = new EventEmitter();
+    @Output() uniDragenter: EventEmitter<{ dataTransfer: DataTransfer, sourceEvent: DragEvent }> = new EventEmitter();
+    @Output() uniDragleave: EventEmitter<{ dataTransfer: DataTransfer, sourceEvent: DragEvent }> = new EventEmitter();
 
     first = false;
     second = false;
 
-    constructor(private elementRef: ElementRef) { }
-
-    ngOnInit() {
-
-    }
     onDragEnter(e: DragEvent) {
         if (this.first) {
             return this.second = true;

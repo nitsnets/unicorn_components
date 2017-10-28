@@ -77,7 +77,7 @@ describe('<uni-button>', () => {
         ['reset', 'submit', 'button'].forEach(type => {
             component.type = type;
             fixture.detectChanges();
-            expect(element.querySelector('button').type).toBe(type || 'button');
+            expect(element.querySelector('button').type).toBe(type);
         })
     }));
     it(`- Should set 'button' type when no type param is specify`, async(() => {
