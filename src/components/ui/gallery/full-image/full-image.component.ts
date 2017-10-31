@@ -1,7 +1,7 @@
 import { Component, HostBinding } from '@angular/core';
 import { EventEmitter, Input, Output } from '@angular/core';
 
-import { Image } from '../../../../models/image';
+import { UniGalleryImage } from '../../../../models/image';
 
 @Component({
     selector: 'uni-gallery-full-image',
@@ -10,8 +10,8 @@ import { Image } from '../../../../models/image';
 export class UniGalleryFullImageComponent {
     @HostBinding(`class.uni-gallery-full-image`) subClassName = true;
 
-    @Input() images: Image[] = [];
-    get image(): Image {
+    @Input() images: UniGalleryImage[] = [];
+    get image(): UniGalleryImage {
         return this.images && this.index >= 0 ? this.images[this.index] : null;
     }
     @Input() index: number;
@@ -23,11 +23,11 @@ export class UniGalleryFullImageComponent {
     infoShown = false;
     deleting = false;
 
-    init(images: Image[], currentIndex: number) {
+    init(images: UniGalleryImage[], currentIndex: number) {
         this.images = images;
         this.index = currentIndex;
     }
-    download(image: Image) {
+    download(image: UniGalleryImage) {
         if (!image.fullPath) { return; }
         const save = document.createElement('a');
         save.href = image.fullPath;

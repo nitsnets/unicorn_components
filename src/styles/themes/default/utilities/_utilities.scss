@@ -17,6 +17,12 @@
 .u-color-grey {
     color: $color-grey !important;
 }
+.u-color-error {
+    color: $color-error !important;
+}
+.u-color-success {
+    color: $color-success !important;
+}
 
 .u-color-grey-dark {
     color: $color-grey-dark !important;
@@ -59,12 +65,25 @@
 }
 
 /**
- * Position relative
+ * Cursors
+ */
+
+.u-pointer {
+    cursor: pointer;
+}
+
+/**
+ * Position
  */
 .u-relative {
     position: relative;
 }
-
+.u-absolute {
+    position: absolute;
+}
+.u-affix {
+    position: fixed;
+}
 /**
  * Clear inner floats
  */
@@ -180,11 +199,6 @@
     background-color: transparent;
     border: 0;
 }
-
-.u-affix {
-    position: fixed;
-}
-
 
 @at-root {
     @-ms-viewport {
@@ -401,14 +415,14 @@
 .u-mb30 { margin-bottom: 30px !important; }
 .u-mb35 { margin-bottom: 35px !important; }
 
-.u-mb { margin-top: $basic-padding !important; }
-.u-mb0 { margin-top: 0px !important; }
-.u-mb10 { margin-top: 10px !important; }
-.u-mb15 { margin-top: 15px !important; }
-.u-mb20 { margin-top: 20px !important; }
-.u-mb25 { margin-top: 25px !important; }
-.u-mb30 { margin-top: 30px !important; }
-.u-mb35 { margin-top: 35px !important; }
+.u-mt { margin-top: $basic-padding !important; }
+.u-mt0 { margin-top: 0px !important; }
+.u-mt10 { margin-top: 10px !important; }
+.u-mt15 { margin-top: 15px !important; }
+.u-mt20 { margin-top: 20px !important; }
+.u-mt25 { margin-top: 25px !important; }
+.u-mt30 { margin-top: 30px !important; }
+.u-mt35 { margin-top: 35px !important; }
 
 .u-ml { margin-left: $basic-padding !important; }
 .u-ml0 { margin-left: 0px !important; }

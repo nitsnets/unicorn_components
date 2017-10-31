@@ -1,4 +1,4 @@
-export class Image {
+export class UniGalleryImage {
     name?: string;
 
     width?: number;
