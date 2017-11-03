@@ -78,7 +78,9 @@
     './src/styles/themes/default/components/views/search-header/search';
 
 // UNI-COMPONENTS Utility classes
-@import './src/styles/themes/default/utilities/utilities';
+@import
+    './src/styles/themes/default/utilities/animations',
+    './src/styles/themes/default/utilities/utilities';
 
 
 
