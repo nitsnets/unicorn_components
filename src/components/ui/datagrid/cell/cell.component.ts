@@ -14,9 +14,17 @@ export class UniDatagridCellComponent implements OnInit {
     @HostBinding('class.uni-datagrid-cell--highlight')
     highlight;
 
-    @Input()
-    @HostBinding('style.flex-grow')
-    width = 1;
+    @HostBinding('style.flex-grow') flexWidth = 1;
+    @HostBinding('style.width')
+    @HostBinding('style.max-width')
+    @HostBinding('style.min-width') pixelsWidth: string;
+    @Input() set width(value: string) {
+        if (typeof value === 'string' && value.indexOf('px') > 0) {
+            this.pixelsWidth = value;
+        } else {
+            this.flexWidth = +value;
+        }
+    };
 
     @Input() clickPropagation: boolean;
 

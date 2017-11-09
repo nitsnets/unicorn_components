@@ -13,7 +13,7 @@
                     [showLabels]="column.showLabels === undefined ? showLabels : column.showLabels" [style.text-align]="column.formatOptions?.align || 'left'"
                     [customCell]="column.customCell" [clickPropagation]="column.clickPropagation" [value]="column.getValue(row)"
                     [label]="column.title" [format]="column.format" [class]="column.cellClass" [options]="column.formatOptions"
-                    [context]="{$implicit: row, i: i, j: j, row: row, column: column, cell: row[column.field]}"></uni-datagrid-cell>
+                    [context]="{$implicit: row, i: i, j: j, row: row, column: column, cell: column.getValue(row)}"></uni-datagrid-cell>
             </ng-container>
             <ng-container *ngIf="customRow">
                 <ng-template [ngTemplateOutlet]="customRow" [ngOutletContext]="{ $implicit: row, i: i }"> </ng-template>

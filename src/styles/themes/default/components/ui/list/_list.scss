@@ -20,15 +20,17 @@
         &.sortable-ghost {
             background-color: $color-grey-light;
         }
+        &--selected {
+            .uni-list__icon,
+            .uni-list__content{
+                color: $color-primary;
+            }
+        }
     }
 
     &__content {
         padding: $basic-padding / 6 0;
         margin-right: auto;
-
-        &--selected {
-            color: $color-primary;
-        }
     }
 
     &__hover-icon {

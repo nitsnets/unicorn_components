@@ -1,8 +1,8 @@
 export class UniOption {
     value;
     label;
-    sublabel;
-    obj;
+    sublabel?;
+    obj?;
     constructor(obj: Object) {
         Object.assign(this, obj);
     }

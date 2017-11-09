@@ -86,7 +86,7 @@
         }
 
         .uni-datagrid-row__cell--delete {
-            visibility: hidden;
+            visibility: hidden !important;
         }
 
         .uni-datagrid-row__cell--deleting {

@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, ContentChild, Input, OnChanges, TemplateRef, HostBinding } from '@angular/core';
+import { AfterContentInit, Component, ContentChild, HostBinding, Input, OnChanges, TemplateRef } from '@angular/core';
 
 import { UniDatagridCellDirective } from '../cell/cell-variables.directive';
 import { findByPath } from '../../../../utils';
@@ -39,6 +39,9 @@ export class UniDatagridColumnComponent implements AfterContentInit, OnChanges {
     }
 
     getValue(obj: any) {
+        if (!this.field) {
+            return obj;
+        }
         if (this.path && this.path.length) {
             return findByPath(obj, this.path);
         } else { return obj[this.field]; }
