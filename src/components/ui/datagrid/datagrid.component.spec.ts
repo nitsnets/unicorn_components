@@ -1,4 +1,4 @@
-import { Component, DebugElement, ViewChild, ViewRef } from '@angular/core';
+import { Component, ViewChild, ViewRef } from '@angular/core';
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 
 import { FormatPipe } from '../../../pipes/format.pipe';
@@ -12,6 +12,7 @@ import { UniDatagridColumnComponent } from './column/column.component';
 import { UniDatagridComponent } from './datagrid.component';
 import { UniDatagridHeaderComponent } from './header/header.component';
 import { UniDatagridRowComponent } from './row/row.component';
+import { UniFaceComponent } from './../../utils/face/face.component';
 import { UniFillMapPipe } from './../../../pipes/fill-map.pipe';
 import { UniIconComponent } from '../../utils/icon/icon.component';
 import { UniPaginatePipe } from './../../../pipes/paginate.pipe';
@@ -70,7 +71,7 @@ describe('<uni-datagrid>', () => {
                 UniDatagridComponent, UniDatagridHeaderComponent, UniDatagridColumnComponent, UniDatagridRowComponent,
                 UniDatagridCellComponent,
                 // Aux Components
-                UniButtonComponent, UniIconComponent, UniSpinnerComponent, UniSeparatorComponent,
+                UniButtonComponent, UniIconComponent, UniSpinnerComponent, UniSeparatorComponent, UniFaceComponent,
                 UniPaginatorComponent, UniCheckboxComponent, UniRowComponent, UniProgressComponent, UniBadgeComponent,
                 // Pipes
                 UniPaginatePipe, UniSortPipe, UniFillMapPipe, FormatPipe,
