@@ -16,7 +16,7 @@
                     [context]="{$implicit: row, i: i, j: j, row: row, column: column, cell: column.getValue(row)}"></uni-datagrid-cell>
             </ng-container>
             <ng-container *ngIf="customRow">
-                <ng-template [ngTemplateOutlet]="customRow" [ngOutletContext]="{ $implicit: row, i: i }"> </ng-template>
+                <ng-template [ngTemplateOutlet]="customRow" [ngTemplateOutletContext]="{ $implicit: row, i: i }"> </ng-template>
             </ng-container>
         </uni-datagrid-row>
     </div>
