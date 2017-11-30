@@ -14,6 +14,10 @@
     './src/styles/themes/default/base/fonts',
     './src/styles/themes/default/base/base';
 
+// UNI-COMPONENTS Layout
+@import
+    './src/styles/themes/default/layout/flex';
+
 // UNI-COMPONENTS Components
 @import
     './src/styles/themes/default/components/containers/popup/popup',
@@ -78,7 +82,6 @@
     './src/styles/themes/default/components/views/search-header/search';
 
 // UNI-COMPONENTS Utility classes
-@import './src/styles/themes/default/utilities/utilities';
-
-
-
+@import
+    './src/styles/themes/default/utilities/animations',
+    './src/styles/themes/default/utilities/utilities';
