@@ -30,7 +30,7 @@ $modal-animation-time: 200ms;
         padding: 5%;
         background-color: $modal-bg;
 
-        animation: bg-enter $modal-animation-time;
+        animation: fade-in-1 $modal-animation-time;
 
         &--leaving {
             opacity: 0;
@@ -53,12 +53,12 @@ $modal-animation-time: 200ms;
                 width: $aside-width;
                 height: 100%;
 
-                animation: aside-enter $modal-animation-time;
+                animation: aside-enter-right $modal-animation-time;
 
                 &--leaving {
                     transform: translateX(100%);
 
-                    animation: aside-leave $modal-animation-time;
+                    animation: aside-leave-right $modal-animation-time;
                 }
             }
 
@@ -85,46 +85,5 @@ $modal-animation-time: 200ms;
 
     @include mq(lg) {
         padding-top: $aside-width / 3;
-    }
-}
-
-
-@keyframes bg-enter {
-
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes bg-leave {
-
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
-@keyframes aside-enter {
-
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes aside-leave {
-
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(100%);
     }
 }
