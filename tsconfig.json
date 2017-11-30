@@ -14,9 +14,6 @@
             "jasmine",
             "node"
         ],
-        "styles": [
-            "src/styles/themes/cms/_all.scss"
-        ],
         "lib": [
             "es6",
             "dom"

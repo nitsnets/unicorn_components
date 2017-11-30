@@ -43,10 +43,10 @@
         "zone.js": "0.8.x"
     },
     "devDependencies": {
-        "@angular/cli": "1.4.7",
+        "@angular/cli": "1.4.x - 1.5.x",
         "@angular/common": "4.x - 5.x",
         "@angular/compiler": "4.x - 5.x",
-        "@angular/compiler-cli": "^4.2.4",
+        "@angular/compiler-cli": "4.x - 5.x",
         "@angular/core": "4.x - 5.x",
         "@angular/forms": "4.x - 5.x",
         "@angular/http": "4.x - 5.x",
