@@ -55,9 +55,10 @@ describe('<uni-button>', () => {
         expect(element.querySelector('uni-icon')).not.toBe(null);
     }));
     it(`- Should add both left left and right icon when 'icon' and 'iconRight' params are set`, async(() => {
+        component.icon = 'description';
         component.iconRight = 'description';
         fixture.detectChanges();
-        expect(element.querySelector('uni-icon')).not.toBe(null);
+        expect(element.querySelectorAll('uni-icon').length).toBe(2);
     }));
     it(`- Should add a <uni-spinner> instead of a regular icon when 'icon' param is set to 'loading'`, async(() => {
         component.icon = 'loading';
