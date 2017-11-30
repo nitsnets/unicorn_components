@@ -2,7 +2,8 @@
     <div class="uni-input__label" *ngIf="label || counter">
         <span *ngIf="label" [innerHtml]="label"></span>
         <span *ngIf="counter">
-            {{model? model.length : 0}} <span *ngIf="max>-1">/ {{max}}</span>
+            {{model? model.length : 0}}
+            <span *ngIf="max>-1">/ {{max}}</span>
         </span>
     </div>
 
@@ -17,46 +18,15 @@
             <uni-chip class="chip" *ngFor="let chip of chips; let i = index" [label]="chip.label || chip" [removable]="true" (remove)="onRemoveChip(i)"></uni-chip>
         </div>
         <span class="uni-input__prefix" *ngIf="type === 'color' && colorSwatch" [style.backgroundColor]="model"></span>
-        <input
-            *ngIf="!multiline && type !== 'color'"
-            class="uni-input__field"
-            [type]="type"
-            [attr.maxlength]="max && max > 0 ? max : 999999"
-            [attr.max]="maxValue"
-            [attr.min]="minValue"
-            [name]="name || 'inputName'"
-            [placeholder]="placeholder"
-            [readonly]="readonly"
-            [value]="value"
-            [autofocus]="autofocus"
-            [required]="required"
-            [ngModel]="model"
-            (ngModelChange)="onNgModelChange($event)"
-            (blur)="onInputBlur($event)"
-            (focus)="onInputFocus($event)"
-            (keypress)="uniKeypress.emit($event)"
-        />
-        <uni-icon
-            class="uni-input__clear-btn"
-            icon="close"
-            size="small"
-            *ngIf="!multiline && clear && model && model.length"
-            (click)="onNgModelChange(null)"
-        ></uni-icon>
+        <input *ngIf="!multiline && type !== 'color'" class="uni-input__field" [type]="type" [attr.maxlength]="max && max > 0 ? max : 999999"
+            [attr.max]="maxValue" [attr.min]="minValue" [name]="name || 'inputName'" [placeholder]="placeholder" [readonly]="readonly"
+            [value]="value" [autofocus]="autofocus" [required]="required" [ngModel]="model" (ngModelChange)="onNgModelChange($event)"
+            (blur)="onInputBlur($event)" (focus)="onInputFocus($event)" (keypress)="onKeyPress($event)" />
+        <uni-icon class="uni-input__clear-btn" icon="close" size="small" *ngIf="!multiline && clear && model && model.length" (click)="onNgModelChange(null)"></uni-icon>
 
-        <textarea
-            *ngIf="multiline && type !== 'color'"
-            class="uni-input__field uni-input__field--textarea"
-            [attr.maxlength]="max"
-            [name]="name"
-            [placeholder]="placeholder"
-            [readonly]="readonly"
-            [value]="value"
-            [ngModel]="model"
-            (ngModelChange)="onNgModelChange($event)"
-            (blur)="onInputBlur($event)"
-            (focus)="onInputFocus($event)"
-            (keypress)="uniKeypress.emit($event)">
+        <textarea *ngIf="multiline && type !== 'color'" class="uni-input__field uni-input__field--textarea" [attr.maxlength]="max"
+            [name]="name" [placeholder]="placeholder" [readonly]="readonly" [value]="value" [ngModel]="model" (ngModelChange)="onNgModelChange($event)"
+            (blur)="onInputBlur($event)" (focus)="onInputFocus($event)" (keypress)="onKeyPress($event)">
         </textarea>
         <div class="uni-input__suffix" *ngIf="suffix || suffixIcon">
             <uni-icon *ngIf="suffixIcon" [icon]="suffixIcon"></uni-icon>

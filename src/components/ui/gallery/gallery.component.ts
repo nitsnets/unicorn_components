@@ -9,8 +9,8 @@ import {
     ViewContainerRef
 } from '@angular/core';
 
-import { Image } from '../../../models/image';
 import { UniGalleryFullImageComponent } from './full-image/full-image.component';
+import { UniGalleryImage } from '../../../models/image';
 
 @Component({
     selector: 'uni-gallery',
@@ -19,7 +19,7 @@ import { UniGalleryFullImageComponent } from './full-image/full-image.component'
 export class UniGalleryComponent {
     @HostBinding('class.uni-gallery') componentClass = true;
 
-    @Input() images: Image[];
+    @Input() images: UniGalleryImage[];
 
     _imagesSelected = [];
     set imagesSelected(value: number[]) {
@@ -35,8 +35,8 @@ export class UniGalleryComponent {
     @HostBinding('class.uni-gallery--deleting')
     deletingSelection = false;
 
-    @Output() select = new EventEmitter<Image[]>();
-    @Output() delete = new EventEmitter<Image[]>();
+    @Output() select = new EventEmitter<UniGalleryImage[]>();
+    @Output() delete = new EventEmitter<UniGalleryImage[]>();
 
     fullImageComponent: ComponentRef<UniGalleryFullImageComponent>;
 
@@ -67,7 +67,7 @@ export class UniGalleryComponent {
         this.imagesSelected = [];
         this.select.emit([]);
     }
-    isSelected(image: number | Image) {
+    isSelected(image: number | UniGalleryImage) {
         if (typeof image === 'number') {
             return this.imagesSelected.indexOf(image) !== -1;
         } else {
@@ -76,7 +76,7 @@ export class UniGalleryComponent {
         }
     }
 
-    onDelete(i: number, image: Image) {
+    onDelete(i: number, image: UniGalleryImage) {
         this.delete.emit([image]);
     }
     onDeleteSelection() {

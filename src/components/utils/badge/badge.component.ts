@@ -1,5 +1,6 @@
 import { Component, HostBinding } from '@angular/core';
-import { UniBaseComponent } from '../../base/base.component';
+
+import { UniBaseComponent } from '../../base/base/base.component';
 
 @Component({
     selector: 'uni-badge',

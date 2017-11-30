@@ -1,6 +1,6 @@
 import { ComponentFactoryResolver, ComponentRef, Injectable, ViewContainerRef } from '@angular/core';
 
-import { DynamicContainerService } from '../../base/dynamic-container.service';
+import { DynamicContainerService } from '../../base/dynamic-container/dynamic-container.service';
 import { UniTooltipComponent } from './tooltip.component';
 
 @Injectable()

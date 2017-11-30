@@ -4,11 +4,11 @@ import {
     ComponentRef,
     ElementRef,
     EventEmitter,
+    HostBinding,
     HostListener,
     Input,
     Output,
     Type,
-    HostBinding,
 } from '@angular/core';
 
 @Component({
@@ -40,7 +40,7 @@ export class UniModalComponent implements AfterContentInit {
         this.component = component;
         this.options = options;
     }
-    componentLoaded(componentRef: ComponentRef<any>) {
+    onComponentLoaded(componentRef: ComponentRef<any>) {
         this.componentRef = componentRef;
         if (this.componentRef.instance.submitModal) {
             this.componentRef.instance.submitModal.subscribe(ev => this.onSubmit(ev));

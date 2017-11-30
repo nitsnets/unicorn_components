@@ -1,5 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+import { findByPath } from '../utils';
+
 @Pipe({
     name: 'sort'
 })
@@ -27,12 +29,19 @@ export class UniSortPipe implements PipeTransform {
         const desc = this.isDesc(rawProp);
         const prop: string = this.cleanProp(rawProp);
         const sortedInput = input.sort((a, b) => {
-            return this.compare(a[prop], b[prop], desc);
+            return this.compare(this.getValue(a, prop), this.getValue(b, prop), desc);
         });
         return [...sortedInput];
     }
     private cleanProp(key: string) {
         return key.startsWith('+') || key.startsWith('-') ? key.substr(1) : key;
+    }
+    private getValue(obj, key) {
+        const path = key.split('.');
+
+        if (path && path.length) {
+            return findByPath(obj, path);
+        } else { return obj[key]; }
     }
     private isDesc(key: string) {
         return key.substr(0, 1) === '-';

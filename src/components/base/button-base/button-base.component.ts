@@ -1,5 +1,5 @@
 import { Input } from '@angular/core';
-import { UniBaseComponent } from './base.component';
+import { UniBaseComponent } from './../base/base.component';
 
 export abstract class UniButtonBaseComponent extends UniBaseComponent {
     @Input() icon: string;

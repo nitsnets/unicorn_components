@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostBinding, Input } from '@angular/core';
 
-import { UniInputBaseComponent } from '../../base/input-base.component';
+import { UniInputBaseComponent } from '../../base/input-base/input-base.component';
 import { sideOfScreen } from '../../../utils';
 
 @Component({

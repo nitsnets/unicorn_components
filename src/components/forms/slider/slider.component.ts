@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostBinding, HostListener, Input, OnChanges } from '@angular/core';
 
-import { UniSliderBaseComponent } from '../../base/slider-base.component';
+import { UniSliderBaseComponent } from '../../base/slider-base/slider-base.component';
 
 @Component({
     selector: 'uni-slider',

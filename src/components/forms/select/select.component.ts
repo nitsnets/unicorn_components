@@ -1,7 +1,7 @@
 import { Component, EventEmitter, HostBinding, HostListener, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 import { FilterPipe } from '../../../pipes/filter.pipe';
-import { UniInputBaseComponent } from '../../base/input-base.component';
+import { UniInputBaseComponent } from '../../base/input-base/input-base.component';
 import { UniOption } from '../../../models/option';
 
 export enum SelectTypes { text, number, email, password }

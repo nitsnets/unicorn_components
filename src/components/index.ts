@@ -77,6 +77,7 @@ import { UniTimePickerComponent } from './forms/time-picker/time-picker.componen
 import { UniToastComponent } from './utils/toast/toast.component';
 import { UniToggleComponent } from './forms/toggle/toggle.component';
 import { UniTooltipComponent } from './utils/tooltip/tooltip.component';
+import { UniTooltipDirective } from './utils/tooltip/tooltip.directive';
 
 export const UNI_COMPONENTS = [
     UniPopupComponent, UniPopupTriggerDirective, UniPopupContainerComponent, UniMenuComponent, UniMenuTriggerDirective,
@@ -95,7 +96,7 @@ export const UNI_COMPONENTS = [
     UniSpinnerComponent, UniAccordionItemComponent, UniButtonGroupComponent, UniRadioGroupComponent,
     UniButtonToggleGroupComponent, UniSliderComponent, UniAlertComponent, UniTabsItemComponent, UniTextareaComponent,
     UniSliderRangeComponent, UniImageComponent, UniGalleryImageComponent, UniGalleryComponent,
-    UniGalleryFullImageComponent, UniModalComponent, UniTooltipComponent, UniToastComponent
+    UniGalleryFullImageComponent, UniModalComponent, UniTooltipComponent, UniTooltipDirective, UniToastComponent
 ];
 export const UNI_ENTRY_COMPONENTS = [
     UniDatagridDeleteComponent, UniGalleryFullImageComponent, UniModalComponent, UniTooltipComponent, UniToastComponent

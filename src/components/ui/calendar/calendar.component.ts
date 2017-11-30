@@ -14,7 +14,19 @@ export class UniCalendarComponent implements OnChanges {
     @HostBinding('class.uni-calendar--bordered')
     @Input() bordered = false;
 
-    @Input() model;
+    private _model;
+    @Input() set model(value: string) {
+        if (value) {
+            this._model = value;
+            this.selected = this.normalizeDate(moment(value, 'YYYY-MM-DD'));
+            this.month = this.selected.clone();
+        } else {
+            this.selected = null;
+            this.month = moment();
+        }
+    }
+    get model() { return this._model }
+
     @Output() modelChange = new EventEmitter();
 
     @Input() max;
@@ -23,52 +35,44 @@ export class UniCalendarComponent implements OnChanges {
     @Input() rangeFrom;
     @Input() rangeTo;
 
-    selected: moment.Moment;
-    month: moment.Moment = null;
+    selected: moment.Moment = null;
+    month: moment.Moment = moment();
     weeks = [];
     dayNames = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
 
     constructor() { }
 
     ngOnChanges(changes) {
-        if (this.model) {
-            this.selected = this.normalizeDate(moment(this.model, 'YYYY-MM-DD'));
-            this.month = this.selected.clone();
-        } else {
-            this.selected = null;
-            this.month = moment();
-        }
         if (changes.rangeFrom && this.rangeFrom) { this.rangeFrom = moment(this.rangeFrom, 'YYYY-MM-DD'); }
         if (changes.rangeTo && this.rangeTo) { this.rangeTo = moment(this.rangeTo, 'YYYY-MM-DD'); }
-
-        this.buildMonth(this.beginOfMonth(this.month));
+        this.renderCalendar();
     };
 
     select(day) {
-        if (
-            this.max
-            && day.date.isAfter(this.max)
-            || this.min && day.date.isBefore(this.min)
-        ) { return; }
+        if (!day) { return; }
 
-        this.selected = day.date;
-        const newDate = this.selected.format('YYYY-MM-DD');
-        this.modelChange.emit(newDate);
+        if (this.max && day.isAfter(this.max)) { day = moment(this.max) }
+        if (this.min && day.isBefore(this.min)) { day = moment(this.min) }
+
+        this.selected = day;
+        this.modelChange.emit(day.format('YYYY-MM-DD'));
     };
 
     next() {
         const next = this.beginOfNextMonth(this.month);
         this.month.add(1, 'months');
-        this.buildMonth(next);
+        this.renderMonth(next);
     };
     previous() {
         const previous = this.beginOfPreviousMonth(this.month);
         this.month.subtract(1, 'months');
-        this.buildMonth(previous);
+        this.renderMonth(previous);
     };
     isRangeFromActive() { return this.rangeFrom && this.selected && !this.rangeFrom.isSame(this.selected); }
     isRangeToActive() { return this.rangeTo && this.selected && !this.rangeTo.isSame(this.selected); }
-
+    renderCalendar() {
+        this.renderMonth(this.beginOfMonth(this.month));
+    }
     private normalizeDate(date: moment.Moment): moment.Moment {
         return date.hour(0).minute(0).second(0).millisecond(0);
     }
@@ -81,24 +85,23 @@ export class UniCalendarComponent implements OnChanges {
     private beginOfNextMonth(date: moment.Moment): moment.Moment {
         return this.beginOfMonth(date.clone().add(1, 'months'));
     }
-
-    private buildMonth(start: moment.Moment) {
+    private renderMonth(start: moment.Moment) {
         this.weeks = [];
         const date = start.clone();
         let done = false, monthIndex = date.month(), count = 0;
         while (!done) {
-            this.weeks.push({ days: this.buildWeek(date.clone()) });
+            this.weeks.push({ days: this.renderWeek(date.clone()) });
             date.add(1, 'w');
             done = count++ > 2 && monthIndex !== date.month();
             monthIndex = date.month();
         }
     }
 
-    private buildWeek(date: moment.Moment): Array<any> {
+    private renderWeek(date: moment.Moment): Array<any> {
         const days = [];
         for (let i = 0; i < 7; i++) {
             days.push({
-                name: date.format('dd').substring(0, 1),
+                name: date ? date.format('dd').substring(0, 1) : '-',
                 number: date.date(),
                 isCurrentMonth: date.month() === this.month.month(),
                 isToday: date.isSame(new Date(), 'day'),

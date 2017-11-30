@@ -11,4 +11,7 @@ export * from './src/components/containers/modal/modal.interface';
 
 export * from './src/components/utils/toast/toast.service';
 export * from './src/components/containers/modal/modal.service';
-export * from './src/components/utils/tooltip/tooltip.service'
+export * from './src/components/utils/tooltip/tooltip.service';
+
+export * from './src/directives/droppable.directive';
+export * from './src/components/base/dynamic-container/dynamic-container.service';

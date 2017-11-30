@@ -7,6 +7,8 @@
         padding-left: $input-padding;
         padding-right: $input-padding;
         border-radius: $border-radius;
+        font-size: inherit;
+        color: inherit;
         @include border();
 
         &--textarea {
@@ -152,7 +154,7 @@
 
         .uni-input {
 
-            &__main-label {
+            &__main-label.uni-input--has-label {
                 padding-top: $label-height;
             }
 

@@ -1,14 +1,15 @@
-<uni-datagrid-cell class="uni-datagrid-row__cell uni-datagrid-row__cell--select uni-datagrid-row__cell--show-hover" width="0" *ngIf="box && datagrid.selectable" [highlight]="true">
+<uni-datagrid-cell uniStopClick class="uni-datagrid-row__cell uni-datagrid-row__cell--select uni-datagrid-row__cell--show-hover"
+    width="0" *ngIf="box && datagrid.selectable" [highlight]="true">
     <uni-checkbox [model]="selected" (modelChange)="selectedChange.emit($event)"></uni-checkbox>
 </uni-datagrid-cell>
-
 <ng-content *ngIf="!deleting"></ng-content>
-<uni-datagrid-cell *ngIf="deleting" class="uni-datagrid-row__cell uni-datagrid-row__cell--deleting">
+<uni-datagrid-cell uniStopClick *ngIf="deleting" class="uni-datagrid-row__cell uni-datagrid-row__cell--deleting">
     <span class="uni-datagrid-row__cell-text">Are you sure you want to delete this item?</span>
     <uni-button label="Delete" color="error" (click)="delete.emit()"></uni-button>
-    <uni-button label="Cancel" color="default" (click)="deleting = false"></uni-button>
+    <uni-button label="Cancel" color="default" uniStopClick (click)="deleting = false"></uni-button>
 </uni-datagrid-cell>
 
-<uni-datagrid-cell class="uni-datagrid-row__cell uni-datagrid-row__cell--delete uni-datagrid-row__cell--show-hover" width="0" *ngIf="box && datagrid.deletable" [highlight]="true">
+<uni-datagrid-cell uniStopClick class="uni-datagrid-row__cell uni-datagrid-row__cell--delete uni-datagrid-row__cell--show-hover"
+    width="0" *ngIf="box && datagrid.deletable" [highlight]="true">
     <uni-button icon="delete" (click)="onDeleteAttempt()"></uni-button>
 </uni-datagrid-cell>

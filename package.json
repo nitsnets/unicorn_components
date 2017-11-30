@@ -11,7 +11,7 @@
     "scripts": {
         "build": "ng build",
         "test": "ng test --browsers PhantomJS --watch false",
-        "test-chrome": "ng test --browsers Chrome",
+        "test-chrome": "ng test --browsers Chrome -sm false",
         "build-prod": "ng build --prod",
         "reset": "rm -Rf node_modules && npm install",
         "refresh": "git pull && npm install && npm run build",
@@ -21,14 +21,14 @@
         "lint": "tslint \"src/**/*.ts\""
     },
     "peerDependencies": {
-        "@angular/common": "4.x",
-        "@angular/compiler": "4.x",
-        "@angular/core": "4.x",
-        "@angular/forms": "4.x",
-        "@angular/http": "4.x",
-        "@angular/platform-browser": "4.x",
-        "@angular/platform-browser-dynamic": "4.x",
-        "@angular/router": "4.x",
+        "@angular/common": "4.x - 5.x",
+        "@angular/compiler": "4.x - 5.x",
+        "@angular/core": "4.x - 5.x",
+        "@angular/forms": "4.x - 5.x",
+        "@angular/http": "4.x - 5.x",
+        "@angular/platform-browser": "4.x - 5.x",
+        "@angular/platform-browser-dynamic": "4.x - 5.x",
+        "@angular/router": "4.x - 5.x",
         "codelyzer": "3.x",
         "core-js": "2.4.x",
         "moment": "2.18.1",
@@ -44,18 +44,19 @@
     },
     "devDependencies": {
         "@angular/cli": "1.4.7",
-        "@angular/common": "4.x",
-        "@angular/compiler": "4.x",
+        "@angular/common": "4.x - 5.x",
+        "@angular/compiler": "4.x - 5.x",
         "@angular/compiler-cli": "^4.2.4",
-        "@angular/core": "4.x",
-        "@angular/forms": "4.x",
-        "@angular/http": "4.x",
-        "@angular/platform-browser": "4.x",
-        "@angular/platform-browser-dynamic": "4.x",
-        "@angular/router": "4.x",
+        "@angular/core": "4.x - 5.x",
+        "@angular/forms": "4.x - 5.x",
+        "@angular/http": "4.x - 5.x",
+        "@angular/platform-browser": "4.x - 5.x",
+        "@angular/platform-browser-dynamic": "4.x - 5.x",
+        "@angular/router": "4.x - 5.x",
         "@types/core-js": "^0.9.43",
         "@types/jasmine": "~2.5.53",
         "@types/jasminewd2": "~2.0.2",
+        "@types/karma": "^1.7.1",
         "angular2-text-mask": "8.x",
         "autoprefixer": "6.7.2",
         "chart.js": "2.4.0",
@@ -81,8 +82,5 @@
         "tslint": "5.x",
         "typescript": "2.x",
         "zone.js": "0.8.x"
-    },
-    "dependencies": {
-        "@types/karma": "^1.7.1"
     }
 }

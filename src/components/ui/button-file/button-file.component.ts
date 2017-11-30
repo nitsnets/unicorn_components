@@ -1,6 +1,6 @@
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild, HostBinding } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostBinding, Input, Output, ViewChild } from '@angular/core';
 
-import { UniButtonBaseComponent } from '../../base/button-base.component';
+import { UniButtonBaseComponent } from '../../base/button-base/button-base.component';
 
 @Component({
     selector: 'uni-button-file',

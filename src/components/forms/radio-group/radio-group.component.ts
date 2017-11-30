@@ -1,6 +1,6 @@
-import { AfterContentInit, Component, ContentChildren, Input, QueryList, HostBinding } from '@angular/core';
+import { AfterContentInit, Component, ContentChildren, HostBinding, Input, QueryList } from '@angular/core';
 
-import { UniInputBaseComponent } from '../../base/input-base.component';
+import { UniInputBaseComponent } from '../../base/input-base/input-base.component';
 import { UniRadioComponent } from '../radio/radio.component';
 
 @Component({

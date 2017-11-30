@@ -1,9 +1,9 @@
-import { AfterContentInit, Component, ContentChildren, QueryList, HostBinding } from '@angular/core';
+import { AfterContentInit, Component, ContentChildren, HostBinding, QueryList } from '@angular/core';
 
 import { UniButtonToggleComponent } from '../../../forms/button-toggle/button-toggle.component';
 import { UniCheckboxComponent } from './../../../forms/checkbox/checkbox.component';
 import { UniDatePickerComponent } from '../../../forms/date-picker/date-picker.component';
-import { UniInputBaseComponent } from '../../../base/input-base.component';
+import { UniInputBaseComponent } from '../../../base/input-base/input-base.component';
 import { UniInputComponent } from '../../../forms/input/input.component';
 import { UniRadioComponent } from './../../../forms/radio/radio.component';
 import { UniSelectComponent } from './../../../forms/select/select.component';
