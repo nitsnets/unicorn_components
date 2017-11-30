@@ -297,6 +297,9 @@ export class UniDatagridComponent implements AfterContentInit, OnChanges {
      * Initialize the children elements got from the content
      */
     ngAfterContentInit() {
+        this.columnsComponents.changes.subscribe(
+            () => this.columns = this.columnsComponents.toArray()
+        );
         this.columns = this.columnsComponents.toArray();
         this.customRow = this.customRowDirective ? this.customRowDirective.templateRef : null;
         this.sortBydefault();

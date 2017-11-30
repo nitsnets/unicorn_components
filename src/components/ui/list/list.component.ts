@@ -41,7 +41,7 @@ export class UniListComponent implements OnChanges {
     preventDoubleclick = false;
     preventClick = false;
     timer;
-    delay = 300;
+    delay = 0;
 
     ngOnChanges(changes) {
         if (changes.sortable) {
@@ -54,6 +54,9 @@ export class UniListComponent implements OnChanges {
         }
         if (changes.itemSelected || changes.data) {
             this.itemSelected = this.data.find(i => i.value === this.itemSelected || i === this.itemSelected);
+        }
+        if (changes.editable) {
+            this.delay = this.editable ? 300 : 0;
         }
     }
     onSort(event) {

@@ -17,6 +17,7 @@ export type MaskArray = (string | RegExp)[];
 export class UniInputComponent extends UniInputBaseComponent implements OnInit, OnChanges {
     @HostBinding('class.uni-input') componentClass = true;
     @HostBinding('class.uni-input--focused') focused = false;
+    @HostBinding('class.uni-input--has-label') get hasLabel() { return this.label && this.label.length; }
     @HostBinding('class.uni-input--has-content') get hasContent() { return this.model && this.model.length; }
     @HostBinding('class.uni-input--with-prefix') get hasPrefix() { return this.prefix || this.prefixIcon || this.type === 'color'; }
     @HostBinding('class.uni-input--with-suffix') get hasSuffix() { return this.suffix || this.suffixIcon; }
@@ -58,6 +59,7 @@ export class UniInputComponent extends UniInputBaseComponent implements OnInit, 
     @Input() deleteChip = new EventEmitter<number>();
 
     @Output() uniKeypress = new EventEmitter();
+    @Output() enter = new EventEmitter();
 
     _mask: MaskArray = null;
 
@@ -67,6 +69,12 @@ export class UniInputComponent extends UniInputBaseComponent implements OnInit, 
         }
         if (changes.model) {
             this.applyMask();
+        }
+    }
+    onKeyPress(event: KeyboardEvent) {
+        this.uniKeypress.emit(event);
+        if (event.key === 'Enter') {
+            this.enter.emit(event);
         }
     }
     onInputFocus(ev) {

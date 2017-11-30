@@ -1,3 +1,4 @@
+/*
 import 'brace/mode/html';
 import 'brace/mode/json';
 import 'brace/mode/javascript';
@@ -8,12 +9,12 @@ import 'brace/ext/beautify';
 
 import * as Ace from 'brace';
 
-import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild, HostBinding } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, HostBinding, Input, OnChanges, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
     selector: 'uni-code',
-    templateUrl: 'code.component.html',
-    styleUrls: ['code.component.scss']
+    templateUrl: 'code-editor.component.html',
+    styleUrls: ['code-editor.component.scss']
 })
 export class CodeEditorComponent implements OnInit, OnChanges, AfterViewInit {
 
@@ -81,3 +82,4 @@ export class CodeEditorComponent implements OnInit, OnChanges, AfterViewInit {
     }
 }
 
+*/
