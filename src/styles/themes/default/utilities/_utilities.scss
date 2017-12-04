@@ -394,7 +394,7 @@
 }
 
 /**
- * Paddings
+ * Padding and margin
  */
 @for $i from 0 through 50 {
     @if ($i % 2 == 0 or $i == 1) {
@@ -402,12 +402,22 @@
         .u-pl#{$i} { padding-left: #{$i}px !important; }
         .u-pb#{$i} { padding-bottom: #{$i}px !important; }
         .u-pr#{$i} { padding-right: #{$i}px !important; }
+
+        .u-mt#{$i} { margin-top: #{$i}px !important; }
+        .u-ml#{$i} { margin-left: #{$i}px !important; }
+        .u-mb#{$i} { margin-bottom: #{$i}px !important; }
+        .u-mr#{$i} { margin-right: #{$i}px !important; }
     }
     @else if ($i % 5 == 0) {
         .u-pt#{$i} { padding-top: #{$i}px !important; }
         .u-pl#{$i} { padding-left: #{$i}px !important; }
         .u-pb#{$i} { padding-bottom: #{$i}px !important; }
         .u-pr#{$i} { padding-right: #{$i}px !important; }
+
+        .u-mt#{$i} { margin-top: #{$i}px !important; }
+        .u-ml#{$i} { margin-left: #{$i}px !important; }
+        .u-mb#{$i} { margin-bottom: #{$i}px !important; }
+        .u-mr#{$i} { margin-right: #{$i}px !important; }
     }
 }
 
@@ -415,24 +425,6 @@
 .u-pl { padding-left: $basic-padding !important; }
 .u-pb { padding-bottom: $basic-padding !important; }
 .u-pr { padding-right: $basic-padding !important; }
-
-/**
- * Margins
- */
-@for $i from 0 through 50 {
-    @if ($i % 2 == 0 or $i == 1) {
-        .u-mt#{$i} { margin-top: #{$i}px !important; }
-        .u-ml#{$i} { margin-left: #{$i}px !important; }
-        .u-mb#{$i} { margin-bottom: #{$i}px !important; }
-        .u-mr#{$i} { margin-right: #{$i}px !important; }
-    }
-    @else if ($i % 5 == 0) {
-        .u-mt#{$i} { margin-top: #{$i}px !important; }
-        .u-ml#{$i} { margin-left: #{$i}px !important; }
-        .u-mb#{$i} { margin-bottom: #{$i}px !important; }
-        .u-mr#{$i} { margin-right: #{$i}px !important; }
-    }
-}
 
 .u-mt { margin-top: $basic-padding !important; }
 .u-ml { margin-left: $basic-padding !important; }
