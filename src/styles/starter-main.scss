@@ -6,11 +6,9 @@
     './src/styles/themes/default/abstracts/mixins',
     './src/styles/themes/default/abstracts/functions';
 
-// UNI-COMPONENTS Reset and dependencies
-// TODO
-
 // UNI-COMPONENTS Core CSS
 @import
+    './src/styles/themes/default/base/normalize',
     './src/styles/themes/default/base/fonts',
     './src/styles/themes/default/base/base';
 
