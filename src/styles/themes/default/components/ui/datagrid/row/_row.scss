@@ -86,7 +86,7 @@
         }
 
         .uni-datagrid-row__cell--delete {
-            visibility: hidden !important;
+            visibility: hidden;
         }
 
         .uni-datagrid-row__cell--deleting {
@@ -95,6 +95,13 @@
 
             .uni-button {
                 margin-left: $basic-padding / 4;
+            }
+        }
+
+        &:hover {
+
+            .uni-datagrid-row__cell--delete {
+                visibility: hidden;
             }
         }
     }

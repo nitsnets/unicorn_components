@@ -154,10 +154,6 @@
 
         .uni-input {
 
-            &__main-label.uni-input--has-label {
-                padding-top: $label-height;
-            }
-
             &__label {
                 position: absolute;
 
@@ -209,6 +205,10 @@
                     background-color: transparent;
                 }
             }
+        }
+
+        &.uni-input--has-label .uni-input__main-label {
+            padding-top: $label-height;
         }
     }
 

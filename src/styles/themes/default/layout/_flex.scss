@@ -1,0 +1,50 @@
+//
+// Flex classes
+// ///////////////////////////////////
+
+// How to use: .flex-(horizontal align)-(vertical align)
+
+// Row direction
+.flex-left-stretch {
+    display: flex;
+}
+
+.flex-left-top {
+    display: flex;
+    align-items: flex-start;
+}
+
+.flex-left-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex-center-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-between-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-left-bottom {
+    display: flex;
+    align-items: flex-end;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-column {
+    flex-direction: column;
+}
