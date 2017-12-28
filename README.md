@@ -1,16 +1,16 @@
 Unicorn Components
 ==================
-###### tags: `unicorn` `components` `library` `ui` `angular` `index`
-Kit de componentes de interfaz de Unicorn Platform. Desarrollados en Angular.
 
-## Instalación
-En la raíz del proyecto ejecutar el comando:
+Angular UI componentes kit of Unicorn Platform.
+
+## Install
+
 ```shell
 npm install unicorn_components --save
 ```
 
-## Uso
-En el módulo principal:
+## Usage
+
 ```typescript
 import { UnicornComponentsModule } from 'unicorn_components';
 
@@ -22,21 +22,17 @@ import { UnicornComponentsModule } from 'unicorn_components';
 })
 export class AppModule { }
 ```
-En el template de tus componentes:
+
 ```htmlmixed
-<uni-button label="Mi botón"></uni-button>
+<uni-button label="Mu button"></uni-button>
 ```
 
 ## Demo
 
-El código fuente de la demo:
-https://bitbucket.org/nitsnetsstudios-ondemand/unicorn_components_demo
-
-La demo publicada:
 http://components.servidorbeta.com
 
 
-## Listado de componentes
+## List of components
 
 | Grupo          | Componente        | Nomenclatura              | Estado              | + Info 
 | -------------- | ----------------- | ------------------------- | ------------------- | ------- 
@@ -97,14 +93,14 @@ http://components.servidorbeta.com
 | **Views**      | Filtered Datagrid | `<uni-filtered-datagrid>` | :large_blue_circle: | [+ Info](components/views/filtered-datagrid/README)
 | "              | Search Header     | `<uni-search-header>`     | :large_blue_circle: | [+ Info](components/views/search-header/README)
 
-**Leyenda**:
+**Legend**:
 
-:white_circle: **Previsto**: Su desarrollo está previsto para el futuro
+:white_circle: **Coming soon** 
 
-:large_blue_circle:cial**: Está desarrollado pero no se ha probado lo suficiente
+:large_blue_circle: **Initial**
 
-:white_check_mark: **Estable**: Desarrollado, probado y sin cambios relevantes previstos
+:white_check_mark: **Stable**
 
-:red_circle: **Inestable**: Con fallos conocidos o con cambios relevantes previstos
+:red_circle: **Unstable**
 
-:black_circle: **Obsoleto**: Soporte y desarrollo descontinuados
+:black_circle: **Deprecated**
