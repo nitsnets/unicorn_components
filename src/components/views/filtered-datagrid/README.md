@@ -2,7 +2,7 @@ Filtered datagrid
 ===================
 `uni-filtered-datagrid`
 ---
-:blue_circle: Initial
+:large_blue_circle: Initial
 
 Agrupación de filtros con funciones de limpiado y guardado.
 
@@ -54,6 +54,6 @@ Agrupación de filtros con funciones de limpiado y guardado.
 
 | Componente          | Nomenclatura         | Estado         | + Info 
 | ------------------- | -------------------- | -------------- | -------
-| Datagrid            | `<uni-filters>`      | :blue_circle:  | [+ Info](../../ui/datagrid/README)
-| Filters             | `<uni-datagrid>`     | :blue_circle:  | [+ Info](../../ui/filters/README)
-| Filters list        | `<uni-filters-list>` | :blue_circle:  | [+ Info](../../ui/filters-list/README)
+| Datagrid            | `<uni-filters>`      | :large_blue_circle:  | [+ Info](../../ui/datagrid/README)
+| Filters             | `<uni-datagrid>`     | :large_blue_circle:  | [+ Info](../../ui/filters/README)
+| Filters list        | `<uni-filters-list>` | :large_blue_circle:  | [+ Info](../../ui/filters-list/README)

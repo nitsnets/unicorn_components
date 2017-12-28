@@ -2,7 +2,7 @@ Filters
 ===================
 `uni-filters`
 ---
-:blue_circle: Initial
+:large_blue_circle: Initial
 
 Agrupación de filtros con funciones de limpiado y guardado.
 
@@ -97,5 +97,5 @@ Sólo tienen sentido usados dentro de `uni-filters`.
 
 | Componente          | Nomenclatura            | Estado         | + Info 
 | ------------------- | ----------------------- | -------------- | -------
-| Filters advanced    | `<uni-filters-avanced>` | :blue_circle:  | [+ Info](filters-advanced/README)
-| Filters main        | `<uni-filters-main>`    | :blue_circle:  | [+ Info](filters-main/README)
+| Filters advanced    | `<uni-filters-avanced>` | :large_blue_circle:  | [+ Info](filters-advanced/README)
+| Filters main        | `<uni-filters-main>`    | :large_blue_circle:  | [+ Info](filters-main/README)

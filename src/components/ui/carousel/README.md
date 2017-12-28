@@ -2,7 +2,7 @@ Carousel
 ===================
 `uniCarousel`
 ---
-:blue_circle: Initial
+:large_blue_circle: Initial
 
 Carousel básico con navegación pinchando y arrastrando. Encapsula la librería [Flickity](https://flickity.metafizzy.co/).
 

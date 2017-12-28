@@ -2,7 +2,7 @@ Chip
 ===================
 `uni-chip`
 ---
-:blue_circle: Inicial
+:large_blue_circle: Inicial
 
 Pastilla de texto frecuentemente usada para representar etiquetas o *tags*
 

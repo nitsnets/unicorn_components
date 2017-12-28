@@ -2,7 +2,7 @@ Filters list
 ===================
 `uni-filters-list`
 ---
-:blue_circle: Initial
+:large_blue_circle: Initial
 
 Listado preparado para contener filtros guardados. Consta de dos secciones:
 - **Filtros principales**: Definidos por el sistema y por tanto NO editables

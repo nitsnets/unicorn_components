@@ -2,7 +2,7 @@ Chart
 ===================
 `uni-chart`
 ---
-:blue_circle: Inicial
+:large_blue_circle: Inicial
 
 Gráfico versátil. Encapsulación de [Chart.js](http://www.chartjs.org/)
 

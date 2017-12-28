@@ -2,7 +2,7 @@ Image picker
 ===================
 `uni-checkbox`
 ---
-:blue_circle: Inicial
+:large_blue_circle: Inicial
 
 Area donde colocar una imagen para ser subida. Se puede colocar arrastrandolsa o clicando en el area para seleccionarla.
 

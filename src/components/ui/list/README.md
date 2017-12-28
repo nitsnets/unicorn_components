@@ -2,7 +2,7 @@ List
 ===================
 `uni-list`
 ---
-:blue_circle: Initial
+:large_blue_circle: Initial
 
 Listado simple con funciones de ordenado, selección y borrado de elementos
 

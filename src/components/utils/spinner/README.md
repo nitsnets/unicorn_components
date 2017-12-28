@@ -2,7 +2,7 @@ Spinner
 ===================
 `uni-spinner`
 ---
-:blue_circle: Inicial
+:large_blue_circle: Inicial
 
 Indicador de *cargando* de progreso indeterminado
 

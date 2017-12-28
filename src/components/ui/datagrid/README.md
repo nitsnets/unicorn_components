@@ -2,7 +2,7 @@ Datagrid
 ===================
 `uni-datagrid`
 ---
-:blue_circle: Initial
+:large_blue_circle: Initial
 
 Tabla de contenidos compleja
 
@@ -114,11 +114,11 @@ Sólo tienen sentido usados dentro de un datagrid.
 
 | Componente          | Nomenclatura              | Estado         | + Info 
 | ------------------- | ------------------------- | -------------- | ------- 
-| Datagrid cell       | `<uni-datagrid-cell>`     | :blue_circle:  | [+ Info](cell/README)
-| Datagrid column     | `<uni-datagrid-column>`   | :blue_circle:  | [+ Info](column/README)
-| Datagrid row        | `<uni-datagrid-row>`      | :blue_circle:  | [+ Info](row/README)
-| Datagrid header     | `<uni-datagrid-header>`   | :blue_circle:  | [+ Info](header/README)
-| Datagrid delete     | `<uni-datagrid-delete>`   | :blue_circle:  | [+ Info](delete/README)
+| Datagrid cell       | `<uni-datagrid-cell>`     | :large_blue_circle:  | [+ Info](cell/README)
+| Datagrid column     | `<uni-datagrid-column>`   | :large_blue_circle:  | [+ Info](column/README)
+| Datagrid row        | `<uni-datagrid-row>`      | :large_blue_circle:  | [+ Info](row/README)
+| Datagrid header     | `<uni-datagrid-header>`   | :large_blue_circle:  | [+ Info](header/README)
+| Datagrid delete     | `<uni-datagrid-delete>`   | :large_blue_circle:  | [+ Info](delete/README)
 
 ## Mejoras previstas (TODO)
 

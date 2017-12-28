@@ -2,7 +2,7 @@ Chart legend
 ===================
 `uni-chart-legend`
 ---
-:blue_circle: Inicial
+:large_blue_circle: Inicial
 
 Leyenda para gráficos.
 

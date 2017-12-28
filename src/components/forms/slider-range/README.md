@@ -2,7 +2,7 @@ Slider range
 ===================
 `uni-slider-range`
 ---
-:blue_circle: Initial
+:large_blue_circle: Initial
 
 Selector de rango mediante barra deslizante
 
