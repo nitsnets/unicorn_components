@@ -3,9 +3,6 @@
     "version": "1.0.0-11",
     "license": "MIT",
     "author": "Nitsnets S.L.",
-    "publishConfig": {
-        "registry": "http://modules.getunicorn.io"
-    },
     "private": false,
     "main": "index.ts",
     "scripts": {
