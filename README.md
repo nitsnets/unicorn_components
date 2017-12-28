@@ -1,4 +1,4 @@
-<img src="https://bitbucket-assetroot.s3.amazonaws.com/c/photos/2017/Jul/07/2615006260-5-nitsnetsstudios-ondemand-UNI_avatar.png" align="left">
+<a target="_blank" href="https://getunicorn.io"><img src="https://bitbucket-assetroot.s3.amazonaws.com/c/photos/2017/Jul/07/2615006260-5-nitsnetsstudios-ondemand-UNI_avatar.png" align="left"></a>
 
 Unicorn Components
 ==================
