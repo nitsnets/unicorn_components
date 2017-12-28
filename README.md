@@ -40,8 +40,8 @@ http://components.servidorbeta.com
 
 | Grupo          | Componente        | Nomenclatura              | Estado              | + Info 
 | -------------- | ----------------- | ------------------------- | ------------------- | ------- 
-| **Charts**     | Chart             | `<uni-chart>`             | :blue_circle:       | [+ Info](components/charts/chart/README)
-| "              | Legend            | `<uni-chart-legend>`      | :blue_circle:       | [+ Info](components/charts/chart-legend/README)
+| **Charts**     | Chart             | `<uni-chart>`             | :large_blue_circle: | [+ Info](components/charts/chart/README)
+| "              | Legend            | `<uni-chart-legend>`      | :large_blue_circle: | [+ Info](components/charts/chart-legend/README)
 | "              | Tooltip           | `<uni-chart-tooltip>`     | :red_circle:        | [+ Info](components/charts/chart-tooltip/README)
 | **Containers** | Accordion         | `<uni-accordion>`         | :white_check_mark:  | [+ Info](components/containers/accordion/README)
 | "              | Aside             | `<uni-aside>`             | :white_check_mark:  | [+ Info](components/containers/aside/README)
@@ -60,33 +60,33 @@ http://components.servidorbeta.com
 | "              | Date Picker       | `<uni-date-picker>`       | :white_check_mark:  | [+ Info](components/forms/date-picker/README)
 | "              | Date Range Picker | `<uni-daterange-picker>`  | :white_check_mark:  | [+ Info](components/forms/daterange-picker/README)
 | "              | Date Time Picker  | `<uni-datetime-picker>`   | :white_check_mark:  | [+ Info](components/forms/datetime-picker/README)
-| "              | Image Picker      | `<uni-image-picker>`      | :blue_circle:       | [+ Info](components/forms/image-picker/README)
+| "              | Image Picker      | `<uni-image-picker>`      | :large_blue_circle: | [+ Info](components/forms/image-picker/README)
 | "              | Input             | `<uni-input>`             | :white_check_mark:  | [+ Info](components/forms/input/README)
 | "              | Radio             | `<uni-radio>`             | :white_check_mark:  | [+ Info](components/forms/radio/README)
 | "              | Select            | `<uni-select>`            | :white_check_mark:  | [+ Info](components/forms/select/README)
-| "              | Slider            | `<uni-slider>`            | :blue_circle:       | [+ Info](components/forms/slider/README)
+| "              | Slider            | `<uni-slider>`            | :large_blue_circle: | [+ Info](components/forms/slider/README)
 | "              | Slider Range      | `<uni-slider-range>`      | :white_circle:      | [+ Info](components/forms/slider-range/README)
 | "              | Time Picker       | `<uni-time-picker>`       | :white_check_mark:  | [+ Info](components/forms/time-picker/README)
 | "              | Toggle            | `<uni-toggle>`            | :white_check_mark:  | [+ Info](components/forms/toggle/README)
 | **UI**         | Button            | `<uni-button>`            | :white_check_mark:  | [+ Info](components/ui/button/README)
-| "              | Button File       | `<uni-button-file>`       | :blue_circle:       | [+ Info](components/ui/button/README)
+| "              | Button File       | `<uni-button-file>`       | :large_blue_circle: | [+ Info](components/ui/button/README)
 | "              | Button Group      | `<uni-button-group>`      | :white_check_mark:  | [+ Info](components/ui/button-group/README)
 | "              | Button Header     | `<uni-button-header>`     | :white_check_mark:  | [+ Info](components/ui/button-header/README)
 | "              | Button Menu       | `<uni-button-menu>`       | :white_check_mark:  | [+ Info](components/ui/button-menu/README)
 | "              | Button Popup      | `<uni-button-popup>`      | :white_check_mark:  | [+ Info](components/ui/button-popup/README)
 | "              | Calendar          | `<uni-calendar>`          | :white_check_mark:  | [+ Info](components/ui/calendar/README)
-| "              | Carousel          | `<uni-carousel>`          | :blue_circle:       | [+ Info](components/ui/carousel/README)
+| "              | Carousel          | `<uni-carousel>`          | :large_blue_circle: | [+ Info](components/ui/carousel/README)
 | "              | Clock             | `<uni-clock>`             | :white_check_mark:  | [+ Info](components/ui/clock/README)
-| "              | Datagrid          | `<uni-datagrid>`          | :blue_circle:       | [+ Info](components/ui/datagrid/README)
-| "              | Filters           | `<uni-filters>`           | :blue_circle:       | [+ Info](components/ui/filters/README)
-| "              | Filters List      | `<uni-filters-list>`      | :blue_circle:       | [+ Info](components/ui/filters-list/README)
-| "              | List              | `<uni-list>`              | :blue_circle:       | [+ Info](components/ui/list/README)
+| "              | Datagrid          | `<uni-datagrid>`          | :large_blue_circle: | [+ Info](components/ui/datagrid/README)
+| "              | Filters           | `<uni-filters>`           | :large_blue_circle: | [+ Info](components/ui/filters/README)
+| "              | Filters List      | `<uni-filters-list>`      | :large_blue_circle: | [+ Info](components/ui/filters-list/README)
+| "              | List              | `<uni-list>`              | :large_blue_circle: | [+ Info](components/ui/list/README)
 | "              | Menu              | `<uni-menu>`              | :white_check_mark:  | [+ Info](components/ui/menu/README)
 | "              | Paginator         | `<uni-paginator>`         | :white_check_mark:  | [+ Info](components/ui/paginator/README)
 | "              | Tree              | `<uni-tree>`              | :white_circle:      | [+ Info](components/ui/tree/README)
 | **Utils**      | Alert             | `<uni-alert>`             | :white_check_mark:  | [+ Info](components/utils/alert/README)
 | "              | Badge             | `<uni-badge>`             | :white_check_mark:  | [+ Info](components/utils/badge/README)
-| "              | Chip              | `<uni-chip>`              | :blue_circle:       | [+ Info](components/utils/chip/README)
+| "              | Chip              | `<uni-chip>`              | :large_blue_circle: | [+ Info](components/utils/chip/README)
 | "              | Face              | `<uni-face>`              | :white_check_mark:  | [+ Info](components/utils/face/README)
 | "              | Icon              | `<uni-icon>`              | :white_check_mark:  | [+ Info](components/utils/icon/README)
 | "              | Progress          | `<uni-progress>`          | :white_check_mark:  | [+ Info](components/utils/progress/README)
@@ -94,14 +94,14 @@ http://components.servidorbeta.com
 | "              | Spinner           | `<uni-spinner>`           | :white_check_mark:  | [+ Info](components/utils/spinner/README)
 | "              | Toast             | `<uni-toast>`             | :red_circle:        | [+ Info](components/utils/toast/README)
 | "              | Tooltip           | `<uni-tooltip>`           | :red_circle:        | [+ Info](components/utils/tooltip/README)
-| **Views**      | Filtered Datagrid | `<uni-filtered-datagrid>` | :blue_circle:       | [+ Info](components/views/filtered-datagrid/README)
-| "              | Search Header     | `<uni-search-header>`     | :blue_circle:       | [+ Info](components/views/search-header/README)
+| **Views**      | Filtered Datagrid | `<uni-filtered-datagrid>` | :large_blue_circle: | [+ Info](components/views/filtered-datagrid/README)
+| "              | Search Header     | `<uni-search-header>`     | :large_blue_circle: | [+ Info](components/views/search-header/README)
 
 **Leyenda**:
 
 :white_circle: **Previsto**: Su desarrollo está previsto para el futuro
 
-:blue_circle: **Inicial**: Está desarrollado pero no se ha probado lo suficiente
+:large_blue_circle:cial**: Está desarrollado pero no se ha probado lo suficiente
 
 :white_check_mark: **Estable**: Desarrollado, probado y sin cambios relevantes previstos
 
