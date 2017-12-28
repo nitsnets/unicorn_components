@@ -3,7 +3,7 @@
 Unicorn Components
 ==================
 
-Angular UI componentes kit of Unicorn Platform.
+Angular UI componentes kit of [Unicorn Platform][unicorn].
 
 ----
 
@@ -108,6 +108,10 @@ http://components.servidorbeta.com
 :red_circle: **Unstable**
 
 :black_circle: **Deprecated**
+
+
+[unicorn]: https://getunicorn.io
+[demo]: http://components.servidorbeta.com
 
 [charts/chart]: https://github.com/nitsnets/unicorn_components/tree/master/src/components/charts/chart
 [charts/chart-legend]: https://github.com/nitsnets/unicorn_components/tree/master/src/components/charts/chart-legend
