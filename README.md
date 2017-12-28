@@ -23,8 +23,8 @@ import { UnicornComponentsModule } from 'unicorn_components';
 export class AppModule { }
 ```
 
-```htmlmixed
-<uni-button label="Mu button"></uni-button>
+```html
+<uni-button label="My button"></uni-button>
 ```
 
 ## Demo
