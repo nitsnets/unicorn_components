@@ -1,7 +1,11 @@
+<img src="https://bitbucket-assetroot.s3.amazonaws.com/c/photos/2017/Jul/07/2615006260-5-nitsnetsstudios-ondemand-UNI_avatar.png" align="left">
+
 Unicorn Components
 ==================
 
 Angular UI componentes kit of Unicorn Platform.
+
+----
 
 ## Install
 
