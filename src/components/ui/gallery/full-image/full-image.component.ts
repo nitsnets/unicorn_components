@@ -28,9 +28,9 @@ export class UniGalleryFullImageComponent {
         this.index = currentIndex;
     }
     download(image: UniGalleryImage) {
-        if (!image.fullPath) { return; }
+        if (!image.src) { return; }
         const save = document.createElement('a');
-        save.href = image.fullPath;
+        save.href = image.src;
         save.target = '_blank';
         save.download = image.name;
         save.click();

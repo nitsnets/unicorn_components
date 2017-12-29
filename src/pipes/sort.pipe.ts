@@ -47,6 +47,8 @@ export class UniSortPipe implements PipeTransform {
         return key.substr(0, 1) === '-';
     }
     private compare(a, b, desc = false): number {
+        if (!a) { return desc ? -1 : 1; }
+        if (!b) { return desc ? 1 : -1; }
         if ((isNaN(parseFloat(a)) || !isFinite(a)) || (isNaN(parseFloat(b)) || !isFinite(b))) {
             if (a.toLowerCase() < b.toLowerCase()) { return desc ? -1 : 1; }
             if (a.toLowerCase() > b.toLowerCase()) { return desc ? 1 : -1; }

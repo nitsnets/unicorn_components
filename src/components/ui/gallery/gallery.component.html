@@ -6,7 +6,10 @@
     <uni-button icon="delete" (click)="deletingSelection = true"></uni-button>
 </div>
 <div class="uni-gallery__header uni-gallery__header--deleting" *ngIf="imagesSelected && imagesSelected.length && deletingSelection">
-    <strong><uni-icon icon="delete"></uni-icon></strong> Do you want to delete <strong> {{' ' + imagesSelected.length}} items </strong>?
+    <strong>
+        <uni-icon icon="delete"></uni-icon>
+    </strong> Do you want to delete
+    <strong> {{' ' + imagesSelected.length}} items </strong>?
     <uni-row-spacer></uni-row-spacer>
     <uni-button label="Delete" (click)="onDeleteSelection()"></uni-button>
     <uni-button label="Cancel" (click)="onCleanSelected()"></uni-button>
@@ -14,6 +17,6 @@
 <div class="uni-gallery__container" *ngIf="images && images.length">
     <uni-gallery-image class="uni-gallery__item" *ngFor="let image of images, let i = index" [selected]="isSelected(i)" (selectedChange)="onSelect($event, i)"
         [deletingSelection]="deletingSelection" (delete)="onDelete(i, image)" [height]="200" [aspectRatio]="image.aspectRatio"
-        [imagePath]="image.fullPath" [thumbPath]="image.thumbPath" [label]="image.name" (clickImage)="openFullImage(i)">
+        [imagePath]="image.src" [thumbPath]="image.thumbSrc" [label]="image.name" (clickImage)="openFullImage(i)">
     </uni-gallery-image>
 </div>

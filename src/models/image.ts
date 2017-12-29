@@ -8,6 +8,10 @@ export class UniGalleryImage {
     originalHeight?: number;
 
     aspectRatio?: number;
-    fullPath: string;
-    thumbPath?: string;
+    src: string;
+    thumbSrc?: string;
+
+    constructor(obj: Object = {}) {
+        Object.assign(this, obj);
+    }
 }
