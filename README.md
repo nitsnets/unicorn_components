@@ -5,6 +5,8 @@ Unicorn Components
 
 Angular UI componentes kit of [Unicorn Platform][unicorn].
 
+[![Build Status](https://travis-ci.org/nitsnets/unicorn_components.svg?branch=master)](https://travis-ci.org/nitsnets/unicorn_components)
+
 ----
 
 ## Install
