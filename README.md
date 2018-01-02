@@ -10,13 +10,13 @@ Angular UI componentes kit of [Unicorn Platform][unicorn].
 ## Install
 
 ```shell
-npm install unicorn_components --save
+npm install --save @unicorn.io/components
 ```
 
 ## Usage
 
 ```typescript
-import { UnicornComponentsModule } from 'unicorn_components';
+import { UnicornComponentsModule } from '@unicorn.io/components';
 
 @NgModule({
   imports: [
