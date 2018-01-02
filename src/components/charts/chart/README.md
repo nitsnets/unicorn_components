@@ -19,7 +19,7 @@ npm install chart.js --save
 ```html
 <uni-chart
     type="bar"
-    [series]="[`
+    [series]="[
         { label: 'Serie 1', data: [12, 19, 3, 5, 2, 3] },
         { label: 'Serie 2', data: [22, 12, 20, 10, 5, 1] }
     ]"
