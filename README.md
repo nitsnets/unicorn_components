@@ -19,20 +19,27 @@ npm install --save @unicorn.io/components
 
 ## Usage
 
+Import the module
 ```typescript
 import { UnicornComponentsModule } from '@unicorn.io/components';
 
 @NgModule({
   imports: [
-    UnicornComponentsModule
+    UnicornComponentsModule.forRoot()
   ],
   ...
 })
 export class AppModule { }
 ```
+Start using components
 
 ```html
 <uni-button label="My button"></uni-button>
+```
+Select styles theme _(Optional)_
+
+```scss
+@import './node_modules/@unicorn.io/components/src/styles/themes/cms/all'
 ```
 
 ## Demo
