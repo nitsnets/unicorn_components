@@ -3,7 +3,11 @@
 Unicorn Components
 ==================
 
-Angular UI componentes kit of [Unicorn Platform][unicorn].
+<a target="_blank" href="https://travis-ci.org/nitsnets/unicorn_components"><img src="https://travis-ci.org/nitsnets/unicorn_components.svg?branch=master" align="right"></a>
+
+
+Angular UI components kit of [Unicorn Platform][unicorn].
+
 
 ----
 
