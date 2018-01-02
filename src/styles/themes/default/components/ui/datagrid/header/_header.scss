@@ -70,6 +70,11 @@
         }
     }
 
+    &__icon {
+        position: absolute;
+        right: $basic-padding / 4;
+    }
+
     &__cell {
         font-weight: bold;
         position: relative;
@@ -92,38 +97,11 @@
         &--sortable {
             cursor: pointer;
             user-select: none;
-
-            &:after {
-                @include pseudo();
-                background-image: url('assets/img/sort_both.png');
-                background-position: center;
-                background-repeat: no-repeat;
-                top: 50%;
-                margin-top: - $input-height / 2;
-                height: $input-height;
-                width: $input-height;
-                right: $basic-padding / 4;
-                bottom: 0;
-            }
         }
 
-        &--sort-asc {
+        &--sorted {
             .uni-datagrid-header__text {
                 color: $black;
-            }
-
-            &:after {
-                background-image: url('assets/img/sort_asc.png');
-            }
-        }
-
-        &--sort-desc {
-            .uni-datagrid-header__text {
-                color: $black;
-            }
-
-            &:after {
-                background-image: url('assets/img/sort_desc.png');
             }
         }
     }

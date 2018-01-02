@@ -4,7 +4,7 @@
 
 ### Project structure
 
-All the config files are located at `/` (root), the static files are at `/assets/`, and the source code at `/src/`. 
+All the config files are located at `/` (root), and the source code at `/src/`. 
 Beside, the package's main file  is `/unicorn-components.ts`. All the relevant modules are exported from there.
 
 Inside `/src/` we can find the following folders:
