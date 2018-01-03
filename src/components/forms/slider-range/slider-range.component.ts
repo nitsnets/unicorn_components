@@ -2,7 +2,7 @@ import { Component, ElementRef, HostBinding, HostListener, Input, OnChanges } fr
 
 import { UniSliderBaseComponent } from '../../base/slider-base/slider-base.component';
 
-type SliderModel = { sliding: boolean, percent: number };
+export type SliderModel = { sliding: boolean, percent: number };
 
 @Component({
     selector: 'uni-slider-range',
