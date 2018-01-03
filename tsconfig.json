@@ -7,7 +7,6 @@
         "noImplicitAny": false,
         "noEmitOnError": true,
         "removeComments": true,
-        "outDir": "out-tsc/spec",
         "baseUrl": "src",
         "target": "es5",
         "types": [
@@ -23,10 +22,7 @@
         ]
     },
     "files": [
-        "test/test.ts"
-    ],
-    "include": [
-        "**/*.spec.ts",
-        "**/*.d.ts"
+        "test/test.ts",
+        "index.ts"
     ]
 }
