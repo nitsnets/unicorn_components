@@ -11,8 +11,8 @@ typings.json
 *.log
 *.tgz
 .config
-!*.d.ts
 **/*.ts
+!**/*.d.ts
 **/*.spec.js
 **/*.spec.d.ts
 .vscode
