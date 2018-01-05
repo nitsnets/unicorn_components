@@ -33,9 +33,3 @@ testem.log
 #System Files
 .DS_Store
 Thumbs.db
-
-# built files
-
-*.js
-*.map
-*.d.ts

@@ -14,7 +14,7 @@ import {
 import { deepClone, uuid } from '../../../utils';
 
 import { ModalService } from './../../containers/modal/modal.service';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import { UniDatagridColumnComponent } from './column/column.component';
 import { UniDatagridDeleteComponent } from './delete/delete.component';
 import { UniDatagridRowDirective } from './row/row-variables.directive';

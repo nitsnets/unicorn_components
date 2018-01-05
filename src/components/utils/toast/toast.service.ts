@@ -1,14 +1,15 @@
-import { ComponentFactoryResolver, Injectable, ViewContainerRef } from '@angular/core';
-import { Observable, Subject } from 'rxjs/Rx';
+import { ComponentFactoryResolver, ComponentRef, Injectable, ViewContainerRef } from '@angular/core';
 
 import { DynamicContainerService } from '../../base/dynamic-container/dynamic-container.service';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 import { UniToastComponent } from './toast.component';
 
 @Injectable()
 export class ToastService extends DynamicContainerService {
-    toastRef;
-    toastSub;
-    intervalClose;
+    toastRef: ComponentRef<any>;
+    toastSub: Subject<any>;
+    intervalClose: number;
 
     constructor(cmpFactoryResolver: ComponentFactoryResolver) {
         super(cmpFactoryResolver);
@@ -16,7 +17,7 @@ export class ToastService extends DynamicContainerService {
 
     createToast(
         msg: string,
-        options = {},
+        options: any = {},
         viewContainerRef: ViewContainerRef = this.defaultContainer
     ): Observable<any> {
 
@@ -31,7 +32,7 @@ export class ToastService extends DynamicContainerService {
             this.toastRef.instance.initContent(options);
 
             this.toastRef.instance.accept.subscribe(
-                ev => {
+                (ev: any) => {
                     this.toastSub.next(ev);
                     this.close();
                 }

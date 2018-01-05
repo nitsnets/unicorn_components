@@ -110,8 +110,8 @@ export class UniCalendarComponent implements OnChanges {
                     this.rangeFrom ? date.isBetween(this.rangeFrom, this.selected, 'day') : false,
                 isRangeTo: this.rangeTo ? date.isSame(this.rangeTo, 'day') : false,
                 isUnavailable:
-                (this.max && date.isAfter(this.max)) ||
-                (this.min && date.isBefore(this.min)),
+                    (this.max && date.isAfter(this.max)) ||
+                    (this.min && date.isBefore(this.min)),
                 date: date
             });
             date = date.clone();

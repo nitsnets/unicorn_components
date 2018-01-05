@@ -7,9 +7,11 @@
         "noImplicitAny": false,
         "noEmitOnError": true,
         "removeComments": true,
+        "allowSyntheticDefaultImports": true,
         "baseUrl": "src",
         "target": "es5",
         "types": [
+            "moment",
             "jasmine",
             "node"
         ],
@@ -22,7 +24,10 @@
         ]
     },
     "files": [
-        "index.ts",
         "test/test.ts"
+    ],
+    "include": [
+        "**/*.spec.ts",
+        "**/*.d.ts"
     ]
 }

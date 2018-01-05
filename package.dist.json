@@ -1,0 +1,35 @@
+{
+    "name": "@unicorn.io/components",
+    "version": "1.0.0-16",
+    "description": "Angular UI components kit of Unicorn Platform.",
+    "license": "MIT",
+    "author": "Nitsnets S.L.",
+    "repository": "https://github.com/nitsnets/unicorn_components",
+    "main": "index.js",
+    "publishConfig": {
+        "access": "public"
+    },
+    "peerDependencies": {
+        "@angular/common": "2.4.x - 5.x",
+        "@angular/compiler": "2.4.x - 5.x",
+        "@angular/core": "2.4.x - 5.x",
+        "@angular/forms": "2.4.x - 5.x",
+        "@angular/http": "2.4.x - 5.x",
+        "@angular/platform-browser": "2.4.x - 5.x",
+        "@angular/platform-browser-dynamic": "2.4.x - 5.x",
+        "@angular/router": "2.4.x - 5.x",
+        "core-js": "2.4.x",
+        "rxjs": "5.x",
+        "ts-node": "3.x",
+        "tslint": "5.x",
+        "typescript": "2.x"
+    },
+    "dependencies": {
+        "moment": "2.18.1",
+        "chart.js": "2.4.x",
+        "autoprefixer": "6.x",
+        "flickity": "2.x",
+        "hammerjs": "2.x",
+        "zone.js": "0.8.x"
+    }
+}

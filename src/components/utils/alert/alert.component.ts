@@ -1,6 +1,5 @@
 import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 
-import { Observable } from 'rxjs/Rx';
 import { UniBaseComponent } from '../../base/base/base.component';
 
 @Component({

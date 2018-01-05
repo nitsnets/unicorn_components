@@ -1,6 +1,5 @@
 import { Component, EventEmitter, HostBinding, Input, OnChanges, OnInit, Output } from '@angular/core';
 
-import { Observable } from 'rxjs/Rx';
 import { UniInputComponent } from '../input/input.component';
 
 @Component({
