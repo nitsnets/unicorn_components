@@ -4,17 +4,11 @@
     "main": "index.ts",
     "scripts": {
         "build": "./scripts/build.sh",
-        "unbuild": "rm -rf dist",
-        "rebuild": "npm run unbuild && npm run build",
-        "uninstall": "rm -rf node_modules",
         "reinstall": "npm uninstall && npm install",
-        "prepublish": "npm run rebuild",
+        "prepublish": "npm run build",
         "test": "ng test --browsers PhantomJS --watch false",
         "test-chrome": "ng test --browsers Chrome -sm false",
         "lint": "tslint \"src/**/*.ts\"",
-        "transpile": "ngc -p tsconfig.app.json",
-        "package": "rollup -c",
-        "minify": "uglifyjs dist/bundles/unicorn.components.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/unicorn.components.umd.min.js"
     },
     "devDependencies": {
         "@angular/cli": "1.4.x - 1.5.x",

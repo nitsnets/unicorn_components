@@ -28,6 +28,9 @@ echo "Minifying code... "
 ./node_modules/.bin/uglifyjs dist/bundles/unicorn.components.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/unicorn.components.umd.min.js
 echo "Done!"
 
+echo "Copying package.dist.json to dist/"
+cp package.dist.json dist/package.json
+
 echo "Reseting imports... "
 find . -name "*.ts" -type f -exec \
     sed -i '' -e 's/import moment from/import \* as moment from/g' {} +
