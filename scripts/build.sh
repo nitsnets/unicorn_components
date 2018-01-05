@@ -1,3 +1,4 @@
+
 # The script should immediately exit if any command in the script fails.
 set -e
 
@@ -6,24 +7,30 @@ cd $(dirname $0)/..
 
 echo "Starting the build process."
 
-# Clean previous build result
+echo "Adequating imports for bundling... "
+find . -name "*.ts" -type f -exec \
+    sed -i '' -e 's/import \* as moment from/import moment from/g' {} +
+echo "Done!"
+
 echo "Cleaning previous build... "
 rm -rf dist
 echo "Done!"
 
-# Compile the project
 echo "Compiling project... "
-ngc -p tsconfig.app.json
+./node_modules/.bin/ngc -p tsconfig.app.json
 echo "Done!"
 
-# Bundle it
 echo "Bundling code... "
-rollup -c
+./node_modules/.bin/rollup -c
 echo "Done!"
 
-# And minify
 echo "Minifying code... "
-uglifyjs dist/bundles/unicorn.components.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/unicorn.components.umd.min.js
+./node_modules/.bin/uglifyjs dist/bundles/unicorn.components.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/unicorn.components.umd.min.js
+echo "Done!"
+
+echo "Reseting imports... "
+find . -name "*.ts" -type f -exec \
+    sed -i '' -e 's/import moment from/import \* as moment from/g' {} +
 echo "Done!"
 
 echo "Build successfull."
