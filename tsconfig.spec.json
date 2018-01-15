@@ -7,16 +7,14 @@
         "noImplicitAny": false,
         "noEmitOnError": true,
         "removeComments": true,
-        "allowSyntheticDefaultImports": true,
         "baseUrl": "src",
         "target": "es5",
         "types": [
-            "moment",
             "jasmine",
             "node"
         ],
         "lib": [
-            "es2015",
+            "es6",
             "dom"
         ],
         "typeRoots": [
@@ -24,7 +22,8 @@
         ]
     },
     "files": [
-        "test/test.ts"
+        "test/test.ts",
+        "index.ts"
     ],
     "include": [
         "**/*.spec.ts",
