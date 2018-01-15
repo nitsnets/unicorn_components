@@ -14,7 +14,7 @@
             "node"
         ],
         "lib": [
-            "es2015",
+            "es6",
             "dom"
         ],
         "typeRoots": [
@@ -22,7 +22,7 @@
         ]
     },
     "files": [
-        "index.ts",
-        "test/test.ts"
+        "test/test.ts",
+        "index.ts"
     ]
 }
