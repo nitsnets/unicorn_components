@@ -7,7 +7,7 @@
         "deploy": "gulp deploy",
         "reinstall": "npm uninstall && npm install",
         "build": "echo 'Use `npm run dist` instead.';",
-        "prepublish": "echo 'Use `npm run deploy` instead.'; exit 1;",
+        "prepublish": "echo 'Use `npm run deploy` instead.';",
         "test": "ng test --browsers PhantomJS --watch false",
         "test-chrome": "ng test --browsers Chrome -sm false",
         "lint": "tslint \"src/**/*.ts\""
