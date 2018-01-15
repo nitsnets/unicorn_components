@@ -1,6 +1,6 @@
 {
   "name": "@unicorn.io/components",
-  "version": "1.0.0-17",
+  "version": "1.0.0-18",
   "main": "index.ts",
   "scripts": {
     "build": "./scripts/build.sh",
