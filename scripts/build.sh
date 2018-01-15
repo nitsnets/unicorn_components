@@ -7,33 +7,32 @@ cd $(dirname $0)/..
 
 echo "Starting the build process."
 
-echo "Adequating imports for bundling... "
-find . -name "*.ts" -type f -exec \
-    sed -i '' -e 's/import \* as moment from/import moment from/g' {} +
-echo "Done!"
-
-echo "Cleaning previous build... "
+echo "Preparing... "
 rm -rf dist
+# Replaces moment imports to make it bundler compatible
+find . -name "*.ts" -type f -exec sed -i '' -e 's/import \* as moment from/import moment from/g' {} +
+# Replaces components template and styles URL with the inline content
+# And puts the result at ./tmp/
+./node_modules/.bin/gulp inline
 echo "Done!"
 
-echo "Compiling project... "
+echo "Compiling, bundling and minifying project... "
+# Compiles the comtent of ./tmp/ and puts the result at ./dist/
 ./node_modules/.bin/ngc -p tsconfig.app.json
-echo "Done!"
-
-echo "Bundling code... "
+# Bundles the content of ./dist/ and puts the result at ./dist/bundles/
 ./node_modules/.bin/rollup -c
-echo "Done!"
-
-echo "Minifying code... "
+#Minify the content of ./dist/bundles/unicorn.components.umd.js and puts the result at ./dist/bundles/unicorn.components.umd.min.js
 ./node_modules/.bin/uglifyjs dist/bundles/unicorn.components.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/unicorn.components.umd.min.js
 echo "Done!"
 
-echo "Copying package.dist.json to dist/"
+echo "Copying static files ..."
 cp package.dist.json dist/package.json
+cp -R src/styles dist/src/styles
+echo "Done!"
 
-echo "Reseting imports... "
-find . -name "*.ts" -type f -exec \
-    sed -i '' -e 's/import moment from/import \* as moment from/g' {} +
+echo "Undoing preparation... "
+find . -name "*.ts" -type f -exec sed -i '' -e 's/import moment from/import \* as moment from/g' {} +
+rm -rf tmp
 echo "Done!"
 
 echo "Build successfull."
