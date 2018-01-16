@@ -158,7 +158,7 @@ http://components.servidorbeta.com
 [forms/time-picker]: https://github.com/nitsnets/unicorn_components/tree/master/src/components/forms/time-picker
 [forms/toggle]: https://github.com/nitsnets/unicorn_components/tree/master/src/components/forms/toggle
 [ui/button]: https://github.com/nitsnets/unicorn_components/tree/master/src/components/ui/button
-[ui/button-file]: https://github.com/nitsnets/unicorn_components/tree/master/src/components/ui/button
+[ui/button-file]: https://github.com/nitsnets/unicorn_components/tree/master/src/components/ui/button-file
 [ui/button-group]: https://github.com/nitsnets/unicorn_components/tree/master/src/components/ui/button-group
 [ui/button-header]: https://github.com/nitsnets/unicorn_components/tree/master/src/components/ui/button-header
 [ui/button-menu]: https://github.com/nitsnets/unicorn_components/tree/master/src/components/ui/button-menu
