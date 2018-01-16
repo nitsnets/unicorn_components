@@ -54,7 +54,7 @@ http://components.servidorbeta.com
 
 ## List of components
 
-| Grupo          | Componente        | Nomenclatura              | Estado              | + Info 
+| Group          | Component         | Naming                    | Status              | + Info 
 | -------------- | ----------------- | ------------------------- | ------------------- | ------- 
 | **Charts**     | Chart             | `<uni-chart>`             | :large_blue_circle: | [+ Info][charts/chart]
 | "              | Legend            | `<uni-chart-legend>`      | :large_blue_circle: | [+ Info][charts/chart-legend]
