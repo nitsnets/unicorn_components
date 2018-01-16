@@ -39,7 +39,7 @@ Start using components
 Select styles theme _(Optional)_
 
 ```scss
-@import './node_modules/@unicorn.io/components/src/styles/themes/cms/all'
+@import './node_modules/@unicorn.io/components/styles/themes/cms/all'
 ```
 
 ## Demo
