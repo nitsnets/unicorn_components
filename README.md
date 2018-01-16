@@ -5,6 +5,11 @@ Unicorn Components
 
 <a target="_blank" href="https://travis-ci.org/nitsnets/unicorn_components"><img src="https://travis-ci.org/nitsnets/unicorn_components.svg?branch=master" align="right"></a>
 
+<a href="https://badge.fury.io/js/%40unicorn.io%2Fcomponents"><img src="https://badge.fury.io/js/%40unicorn.io%2Fcomponents.svg" align="right"></a>
+
+<a target="_blank" href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" align="right"></a>
+
+
 
 Angular UI components kit of [Unicorn Platform][unicorn].
 
