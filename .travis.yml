@@ -5,13 +5,3 @@ branches:
 language: node_js
 node_js:
   - "6"
-cache:
-  directories:
-    - "node_modules"
-deploy:
-  provider: npm
-  email: $NPM_EMAIL
-  api_key: $NPM_TOKEN
-  on:
-    branch: master
-    tags: true
