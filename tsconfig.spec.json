@@ -4,7 +4,6 @@
         "test/test.ts"
     ],
     "include": [
-        "**/*.spec.ts",
-        "**/*.d.ts"
+        "**/*.spec.ts"
     ]
 }
