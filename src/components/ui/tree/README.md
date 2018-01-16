@@ -1,6 +1,6 @@
-Paginator
+Tree
 ===================
-`uni-paginator`
+`uni-tree`
 ---
 :white_circle: Previsto
 
