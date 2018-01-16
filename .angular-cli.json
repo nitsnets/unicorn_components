@@ -1,23 +1,16 @@
 {
     "project": {
-        "version": "1.0.0-beta.19-3",
-        "name": "unicorn_components"
+        "version": "1.0.0",
+        "name": "@unicorn.io/components"
     },
     "apps": [
         {
             "root": "test",
-            "outDir": "dist",
-            "assets": [
-                "favicon.ico",
-                "logo.png"
-            ],
-            "index": "index.html",
+            "assets": [],
             "main": "index.ts",
             "test": "test.ts",
             "tsconfig": "../tsconfig.app.json",
             "testTsconfig": "../tsconfig.spec.json",
-            "prefix": "uni",
-            "mobile": false,
             "styles": [],
             "scripts": [],
             "environmentSource": "../env.ts",
@@ -27,9 +20,6 @@
             }
         }
     ],
-    "addons": [],
-    "packages": [],
-    "e2e": {},
     "test": {
         "karma": {
             "config": "./karma.conf.js"
