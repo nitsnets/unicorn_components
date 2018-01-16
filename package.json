@@ -1,6 +1,6 @@
 {
   "name": "@unicorn.io/components",
-  "version": "1.0.0-20",
+  "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
     "build": "gulp build",
