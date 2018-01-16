@@ -1,6 +1,6 @@
 Image picker
 ===================
-`uni-checkbox`
+`uni-image-picker`
 ---
 :large_blue_circle: Inicial
 
