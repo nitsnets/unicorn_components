@@ -5,18 +5,18 @@
     },
     "apps": [
         {
-            "root": "test",
+            "root": ".",
             "assets": [],
             "main": "index.ts",
-            "test": "test.ts",
-            "tsconfig": "../tsconfig.app.json",
-            "testTsconfig": "../tsconfig.spec.json",
+            "test": "test/test.ts",
+            "tsconfig": "tsconfig.json",
+            "testTsconfig": "tsconfig.spec.json",
             "styles": [],
             "scripts": [],
-            "environmentSource": "../env.ts",
+            "environmentSource": "env.ts",
             "environments": {
-                "dev": "../env.ts",
-                "prod": "../env.ts"
+                "dev": "env.ts",
+                "prod": "env.ts"
             }
         }
     ],

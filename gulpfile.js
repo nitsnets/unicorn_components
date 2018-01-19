@@ -12,6 +12,7 @@ const version = require('./package.json').version;
 
 const temp = './tmp';
 const dist = './dist';
+const demo = './demo/dist';
 const bundles = `${dist}/bundles`;
 const styles = `${dist}/styles`;
 
@@ -21,6 +22,7 @@ const styles = `${dist}/styles`;
 
 gulp.task('build', sequence('clean', 'prepare-build', 'compile', 'clean-temp', 'styles', 'bundle', 'minify'));
 gulp.task('deploy', sequence('build', 'prepare-deploy', 'publish'));
+gulp.task('demo', sequence('clean-demo', ['prepare-demo', 'copy-demo'], 'storybook'));
 
 /**
  * Aux tasks
@@ -28,7 +30,8 @@ gulp.task('deploy', sequence('build', 'prepare-deploy', 'publish'));
 
 gulp.task('clean', cb => remove(dist, cb));
 gulp.task('clean-temp', cb => remove(temp, cb));
-gulp.task('prepare-build', () => getSrcTs()
+gulp.task('clean-demo', cb => remove(demo, cb));
+gulp.task('prepare-build', () => gulp.src(['./index.ts', './src/**/*.ts', '!./**/*.spec.ts'], { base: './' })
     .pipe(inlineCmp())
     .pipe(prepareImports())
     .pipe(gulp.dest(temp))
@@ -47,10 +50,15 @@ gulp.task('prepare-deploy', () => gulp.src('./package.dist.json')
     .pipe(gulp.dest(dist))
 );
 gulp.task('publish', cb => publish(cb));
+gulp.task('prepare-demo', () => gulp.src(['./src/**/*.ts', '!./**/*.spec.ts'])
+    .pipe(inlineCmp())
+    .pipe(gulp.dest(demo))
+);
+gulp.task('copy-demo', () => gulp.src('src/**/*.demo.ts').pipe(gulp.dest(demo)));
+gulp.task('storybook', () => cb => storybook(cb));
 /**
  * Aux functions
  */
-const getSrcTs = () => gulp.src(['./index.ts', './src/**/*.ts', '!./**/*.spec.ts'], { base: './' });
 const inlineCmp = () => inlineTemplates({
     base: '/',
     target: 'es6',
@@ -62,6 +70,12 @@ const compileSass = (path, ext, file, cb) => {
     cb(null, compiledCss.css);
 };
 const prepareImports = () => replace('import * as moment from', 'import moment from');
-const compile = cb => exec('./node_modules/.bin/ngc -p tsconfig.app.json', err => cb(err));
+const compile = cb => exec('./node_modules/.bin/ngc -p tsconfig.dist.json', err => cb(err));
 const bundle = cb => exec('./node_modules/.bin/rollup -c', err => cb(err));
 const publish = cb => exec('npm publish', { cwd: dist }, err => cb(err));
+const storybook = cb => exec('./node_modules/.bin/start-storybook -p 6006', (err, stdout, stderr) => {
+    console.log(stdout);
+    console.log(stderr);
+    console.log(err);
+    cb(err);
+});
