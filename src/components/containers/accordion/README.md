@@ -12,15 +12,15 @@ Elementos con cabecera y cuerpo. El cuerpo puede mostrarse u ocultarse a elecci�
 
 ```html
 <uni-accordion mode="single">
-    <uni-ccordion-item label="Etiqueta de la cabecera 1" [collapsed]="false">
+    <uni-accordion-item label="Etiqueta de la cabecera 1" [collapsed]="false">
         Contenido de la primera sección
-    </uni-ccordion-item>
-    <uni-ccordion-item label="Etiqueta de la cabecera 2">
+    </uni-accordion-item>
+    <uni-accordion-item label="Etiqueta de la cabecera 2">
         Contenido de la segunda sección
-    </uni-ccordion-item>
-    <uni-ccordion-item label="Etiqueta de la cabecera 3">
+    </uni-accordion-item>
+    <uni-accordion-item label="Etiqueta de la cabecera 3">
         Contenido de la tercera sección
-    </uni-ccordion-item>
+    </uni-accordion-item>
 </uni-accordion>
 ```
 
