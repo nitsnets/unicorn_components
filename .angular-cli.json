@@ -11,7 +11,7 @@
             "test": "test/test.ts",
             "tsconfig": "tsconfig.json",
             "testTsconfig": "tsconfig.spec.json",
-            "styles": [],
+            "styles": ["src/styles/themes/cms/_all.scss"],
             "scripts": [],
             "environmentSource": "env.ts",
             "environments": {

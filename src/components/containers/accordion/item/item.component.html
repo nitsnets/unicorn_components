@@ -5,8 +5,8 @@
 
         <span class="uni-accordion-item__title" (click)="onCollapsedChange(!collapsed)" [innerHtml]="label"> </span>
 
-        <div class="uni-accordion-item__menu" *ngIf="!menu">
-            <ng-content select=".accordion-buttons"></ng-content>
+        <div class="uni-accordion-item__menu" *ngIf="buttons">
+            <ng-content select="[uni-accordion-buttons]"></ng-content>
         </div>
 
         <uni-menu class="uni-accordion-item__menu" *ngIf="menu">
@@ -17,7 +17,7 @@
         </uni-menu>
     </div>
     <div class="uni-accordion-item__content" *ngIf="!collapsed">
-        <ng-content *ngIf="menu" select="[uni-accordion-content]"></ng-content>
-        <ng-content *ngIf="!menu"></ng-content>
+        <ng-content *ngIf="menu || buttons" select="[uni-accordion-content]"></ng-content>
+        <ng-content *ngIf="!menu && !buttons"></ng-content>
     </div>
 </div>

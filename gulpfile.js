@@ -23,6 +23,7 @@ const styles = `${dist}/styles`;
 gulp.task('build', sequence('clean', 'prepare-build', 'compile', 'clean-temp', 'styles', 'bundle', 'minify'));
 gulp.task('deploy', sequence('build', 'prepare-deploy', 'publish'));
 gulp.task('demo', sequence('clean-demo', ['prepare-demo', 'copy-demo'], 'storybook'));
+gulp.task('demo-watch', () => gulp.watch('./src/**/*.demo.ts', ['copy-demo']));
 
 /**
  * Aux tasks
@@ -31,7 +32,7 @@ gulp.task('demo', sequence('clean-demo', ['prepare-demo', 'copy-demo'], 'storybo
 gulp.task('clean', cb => remove(dist, cb));
 gulp.task('clean-temp', cb => remove(temp, cb));
 gulp.task('clean-demo', cb => remove(demo, cb));
-gulp.task('prepare-build', () => gulp.src(['./index.ts', './src/**/*.ts', '!./**/*.spec.ts'], { base: './' })
+gulp.task('prepare-build', () => gulp.src(['./index.ts', './src/**/*.ts', '!./**/*.spec.ts', '!./**/*.demo.ts'], { base: './' })
     .pipe(inlineCmp())
     .pipe(prepareImports())
     .pipe(gulp.dest(temp))
@@ -50,7 +51,7 @@ gulp.task('prepare-deploy', () => gulp.src('./package.dist.json')
     .pipe(gulp.dest(dist))
 );
 gulp.task('publish', cb => publish(cb));
-gulp.task('prepare-demo', () => gulp.src(['./src/**/*.ts', '!./**/*.spec.ts'])
+gulp.task('prepare-demo', () => gulp.src(['./src/**/*.ts', '!./**/*.spec.ts', '!./**/*.demo.ts'])
     .pipe(inlineCmp())
     .pipe(gulp.dest(demo))
 );
