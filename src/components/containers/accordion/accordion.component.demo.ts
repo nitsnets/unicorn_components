@@ -77,9 +77,7 @@ const templateMenu = `
         </uni-accordion-item>
     </uni-accordion>
 `;
-const stories = storiesOf('Accordion', module);
-
-stories
+storiesOf('Accordion', module)
     .add('Basic', () => ({ template: templateBasic, moduleMetadata, props: {
         mode: 'multiple'
     }}))
