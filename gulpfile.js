@@ -23,7 +23,10 @@ const styles = `${dist}/styles`;
 gulp.task('build', sequence('clean', 'prepare-build', 'compile', 'clean-temp', 'styles', 'bundle', 'minify'));
 gulp.task('deploy', sequence('build', 'prepare-deploy', 'publish'));
 gulp.task('demo', sequence('clean-demo', ['prepare-demo', 'copy-demo'], 'storybook'));
-gulp.task('demo-watch', () => gulp.watch('./src/**/*.demo.ts', ['copy-demo']));
+gulp.task('demo-watch', () => {
+    gulp.watch('./src/**/*.demo.ts', ['copy-demo'])
+    gulp.watch(['./src/**/*.html', './src/**/*.ts', '!./**/*.spec.ts', '!./**/*.demo.ts'], ['prepare-demo'])
+});
 
 /**
  * Aux tasks
@@ -32,7 +35,9 @@ gulp.task('demo-watch', () => gulp.watch('./src/**/*.demo.ts', ['copy-demo']));
 gulp.task('clean', cb => remove(dist, cb));
 gulp.task('clean-temp', cb => remove(temp, cb));
 gulp.task('clean-demo', cb => remove(demo, cb));
-gulp.task('prepare-build', () => gulp.src(['./index.ts', './src/**/*.ts', '!./**/*.spec.ts', '!./**/*.demo.ts'], { base: './' })
+gulp.task('prepare-build', () => gulp.src(['./index.ts', './src/**/*.ts', '!./**/*.spec.ts', '!./**/*.demo.ts'], {
+        base: './'
+    })
     .pipe(inlineCmp())
     .pipe(prepareImports())
     .pipe(gulp.dest(temp))
@@ -41,12 +46,16 @@ gulp.task('compile', cb => compile(cb));
 gulp.task('bundle', cb => bundle(cb));
 gulp.task('minify', () => gulp.src(`${bundles}/unicorn.components.umd.js`)
     .pipe(uglify())
-    .pipe(rename({ suffix: '.min' }))
+    .pipe(rename({
+        suffix: '.min'
+    }))
     .pipe(gulp.dest(bundles))
 );
 gulp.task('styles', () => gulp.src('src/styles/**/*.scss').pipe(gulp.dest(styles)));
 gulp.task('prepare-deploy', () => gulp.src('./package.dist.json')
-    .pipe(versioner({ version }))
+    .pipe(versioner({
+        version
+    }))
     .pipe(rename('package.json'))
     .pipe(gulp.dest(dist))
 );
@@ -67,13 +76,18 @@ const inlineCmp = () => inlineTemplates({
     styleProcessor: compileSass
 });
 const compileSass = (path, ext, file, cb) => {
-    let compiledCss = sass.renderSync({ file: path, outputStyle: 'compressed' });
+    let compiledCss = sass.renderSync({
+        file: path,
+        outputStyle: 'compressed'
+    });
     cb(null, compiledCss.css);
 };
 const prepareImports = () => replace('import * as moment from', 'import moment from');
 const compile = cb => exec('./node_modules/.bin/ngc -p tsconfig.dist.json', err => cb(err));
 const bundle = cb => exec('./node_modules/.bin/rollup -c', err => cb(err));
-const publish = cb => exec('npm publish', { cwd: dist }, err => cb(err));
+const publish = cb => exec('npm publish', {
+    cwd: dist
+}, err => cb(err));
 const storybook = cb => exec('./node_modules/.bin/start-storybook -p 6006', (err, stdout, stderr) => {
     console.log(stdout);
     console.log(stderr);

@@ -9,16 +9,18 @@ import { UniSpinnerComponent } from '../../utils/spinner/spinner.component';
 import { storiesOf } from '@storybook/angular';
 
 
-const moduleMetadata = {declarations: [
-    UniAccordionComponent,
-    UniAccordionItemComponent,
-    UniMenuComponent,
-    UniMenuItemComponent,
-    UniMenuContainerComponent,
-    UniButtonComponent,
-    UniIconComponent,
-    UniSpinnerComponent,
-]};
+const moduleMetadata = {
+    declarations: [
+        UniAccordionComponent,
+        UniAccordionItemComponent,
+        UniMenuComponent,
+        UniMenuItemComponent,
+        UniMenuContainerComponent,
+        UniButtonComponent,
+        UniIconComponent,
+        UniSpinnerComponent,
+    ]
+};
 const lorem = `
     Est labore fugiat irure aliquip laborum minim ea eu in irure pariatur nulla.
     Incididunt incididunt aute et occaecat ut eiusmod incididunt laboris eu proident
@@ -78,20 +80,28 @@ const templateMenu = `
     </uni-accordion>
 `;
 storiesOf('Accordion', module)
-    .add('Basic', () => ({ template: templateBasic, moduleMetadata, props: {
-        mode: 'multiple'
-    }}))
-    .add('Autocollapse', () => ({ template: templateBasic, moduleMetadata, props: {
-        mode: 'single'
-    }}))
-    .add('Buttons', () => ({ template: templateButtons, moduleMetadata, props: {
-        mode: 'single',
-        buttonIcon1: 'check',
-        buttonIcon2: 'close'
-    }}))
-    .add('Menu', () => ({ template: templateMenu, moduleMetadata, props: {
-        mode: 'single',
-        menu1: { icon: 'check', label: 'Complete' },
-        menu2: { icon: 'close', label: 'Delete' }
-    }}))
-;
+    .add('Basic', () => ({
+        template: templateBasic, moduleMetadata, props: {
+            mode: 'multiple'
+        }
+    }))
+    .add('Autocollapse', () => ({
+        template: templateBasic, moduleMetadata, props: {
+            mode: 'single'
+        }
+    }))
+    .add('Buttons', () => ({
+        template: templateButtons, moduleMetadata, props: {
+            mode: 'single',
+            buttonIcon1: 'check',
+            buttonIcon2: 'close'
+        }
+    }))
+    .add('Menu', () => ({
+        template: templateMenu, moduleMetadata, props: {
+            mode: 'single',
+            menu1: { icon: 'check', label: 'Complete' },
+            menu2: { icon: 'close', label: 'Delete' }
+        }
+    }))
+    ;

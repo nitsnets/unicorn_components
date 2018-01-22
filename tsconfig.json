@@ -15,4 +15,7 @@
             "dom"
         ]
     },
+    "exclude": [
+        "dist"
+    ]
 }
