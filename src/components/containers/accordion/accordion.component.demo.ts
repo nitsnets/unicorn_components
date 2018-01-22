@@ -2,7 +2,7 @@ import { UniAccordionComponent } from './accordion.component';
 import { UniAccordionItemComponent } from './item/item.component';
 import { UniIconComponent } from '../../utils/icon/icon.component';
 import { UniButtonComponent } from '../../ui/button/button.component';
-import { UniMenuComponent } from '../../ui/menu/menu.component';
+import { UniMenuComponent, UniMenuTriggerDirective } from '../../ui/menu/menu.component';
 import { UniMenuContainerComponent } from '../../ui/menu/container/container.component';
 import { UniMenuItemComponent } from '../../ui/menu/item/item.component';
 import { UniSpinnerComponent } from '../../utils/spinner/spinner.component';
@@ -16,6 +16,7 @@ const moduleMetadata = {
         UniMenuComponent,
         UniMenuItemComponent,
         UniMenuContainerComponent,
+        UniMenuTriggerDirective,
         UniButtonComponent,
         UniIconComponent,
         UniSpinnerComponent,
@@ -85,7 +86,7 @@ storiesOf('Accordion', module)
             mode: 'multiple'
         }
     }))
-    .add('Autocollapse', () => ({
+    .add('Auto-collapse', () => ({
         template: templateBasic, moduleMetadata, props: {
             mode: 'single'
         }
