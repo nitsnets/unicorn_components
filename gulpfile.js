@@ -22,7 +22,7 @@ const styles = `${dist}/styles`;
 
 gulp.task('build', sequence('clean', 'prepare-build', 'compile', 'clean-temp', 'styles', 'bundle', 'minify'));
 gulp.task('deploy', sequence('build', 'prepare-deploy', 'publish'));
-gulp.task('demo', ['prepare-demo', 'copy-demo'], () => {
+gulp.task('demo', ['clean-demo', 'prepare-demo', 'copy-demo'], () => {
     gulp.watch('./src/**/*.demo.ts', ['copy-demo'])
     gulp.watch(['./src/**/*.html', './src/**/*.ts', '!./**/*.spec.ts', '!./**/*.demo.ts'], ['prepare-demo'])
 });
