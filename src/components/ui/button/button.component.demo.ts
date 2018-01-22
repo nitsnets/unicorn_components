@@ -1,102 +1,129 @@
+import { ViewEncapsulation } from '@angular/core';
 import { UniButtonComponent } from './button.component';
 import { UniIconComponent } from '../../utils/icon/icon.component';
 import { UniSpinnerComponent } from '../../utils/spinner/spinner.component';
 import { storiesOf } from '@storybook/angular';
 
+import { withKnobs, select, text } from '@storybook/addon-knobs/angular';
 
-const moduleMetadata = {declarations: [ UniIconComponent, UniSpinnerComponent ]};
+const moduleMetadata = {
+    declarations: [UniIconComponent, UniSpinnerComponent, UniButtonComponent],
+    entryComponents: [UniButtonComponent],
+};
 const component = UniButtonComponent;
-const label = 'Hello button!';
-const icon = 'check';
+
+const colorKnob = [
+    'Color',
+    {
+        default: 'Default',
+        primary: 'Primary',
+        success: 'Success',
+        warning: 'Warning',
+        error: 'Error',
+    },
+    'default'
+];
+const labelKnob = ['Label', 'Hello button!'];
+const sublabelKnob = ['Sublabel', 'Hello button!'];
+const iconKnob = ['Icon left', 'check'];
+const iconRightKnob = ['Icon right', 'check'];
 
 storiesOf('Button', module)
-    .add('Basic', () => ({ component, moduleMetadata, props: {
-            label,
-    }}))
-    .add('Basic default', () => ({ component, moduleMetadata, props: {
-            label,
-            color: 'default',
-    }}))
-    .add('Basic primary', () => ({ component, moduleMetadata, props: {
-            label,
-            color: 'primary',
-    }}))
-    .add('Basic success', () => ({ component, moduleMetadata, props: {
-            label,
-            color: 'success',
-    }}))
-    .add('Basic warning', () => ({ component, moduleMetadata, props: {
-            label,
-            color: 'warning',
-    }}))
-    .add('Basic error', () => ({ component, moduleMetadata, props: {
-            label,
-            color: 'error',
-    }}))
-    .add('Icon default', () => ({ component, moduleMetadata, props: {
-            icon,
-            color: 'default',
-    }}))
-    .add('Icon and label', () => ({ component, moduleMetadata, props: {
-            label,
-            icon,
-            color: 'default',
-    }}))
-    .add('Icon right and label', () => ({ component, moduleMetadata, props: {
-            label,
-            iconRight: icon,
-            color: 'default',
-    }}))
-    .add('Icon left, right and label', () => ({ component, moduleMetadata, props: {
-            label,
-            icon,
-            iconRight: icon,
-            color: 'default',
-    }}))
-    .add('Small default', () => ({ component, moduleMetadata, props: {
-            label,
+    .addDecorator(withKnobs)
+    .add('Basic', () => ({
+        component, moduleMetadata, props: {
+            label: text(...labelKnob),
+            color: select(...colorKnob)
+        }
+    }))
+    .add('Icon ', () => ({
+        component, moduleMetadata, props: {
+            icon: text(...iconKnob),
+            color: select(...colorKnob)
+        }
+    }))
+    .add('Icon and label', () => ({
+        component, moduleMetadata, props: {
+            label: text(...labelKnob),
+            icon: text(...iconKnob),
+            color: select(...colorKnob)
+        }
+    }))
+    .add('Icon right and label', () => ({
+        component, moduleMetadata, props: {
+            label: text(...labelKnob),
+            color: select(...colorKnob),
+            iconRight: text(...iconRightKnob)
+        }
+    }))
+    .add('Icon left, right and label', () => ({
+        component, moduleMetadata, props: {
+            label: text(...labelKnob),
+            color: select(...colorKnob),
+            icon: text(...iconKnob),
+            iconRight: text(...iconRightKnob),
+        }
+    }))
+    .add('Small default', () => ({
+        component, moduleMetadata, props: {
+            label: text(...labelKnob),
+            color: select(...colorKnob),
             size: 'small',
-            color: 'default',
-    }}))
-    .add('Small and icon', () => ({ component, moduleMetadata, props: {
-            label,
-            icon,
+        }
+    }))
+    .add('Small and icon', () => ({
+        component, moduleMetadata, props: {
+            label: text(...labelKnob),
+            color: select(...colorKnob),
+            icon: text(...iconKnob),
             size: 'small',
-            color: 'default',
-    }}))
-    .add('Large default', () => ({ component, moduleMetadata, props: {
-            label,
+        }
+    }))
+    .add('Large', () => ({
+        component, moduleMetadata, props: {
+            label: text(...labelKnob),
+            color: select(...colorKnob),
             size: 'large',
-            color: 'default',
-    }}))
-    .add('Large icon', () => ({ component, moduleMetadata, props: {
-            icon,
+        }
+    }))
+    .add('Large icon', () => ({
+        component, moduleMetadata, props: {
+            icon: text(...iconKnob),
+            color: select(...colorKnob),
             size: 'large',
-            color: 'default',
-    }}))
-    .add('Large and sublabel', () => ({ component, moduleMetadata, props: {
-            label,
-            sublabel: label,
+        }
+    }))
+    .add('Large and sublabel', () => ({
+        component, moduleMetadata, props: {
+            label: text(...labelKnob),
+            color: select(...colorKnob),
+            sublabel: text(...sublabelKnob),
             size: 'large',
-            color: 'default',
-    }}))
-    .add('Large, icon and sublabel', () => ({ component, moduleMetadata, props: {
-            label,
-            icon,
-            sublabel: label,
+        }
+    }))
+    .add('Large, icon and sublabel', () => ({
+        component, moduleMetadata, props: {
+            label: text(...labelKnob),
+            color: select(...colorKnob),
+            icon: text(...iconKnob),
+            sublabel: text(...sublabelKnob),
             size: 'large',
-            color: 'default',
-    }}))
-    .add('Loading and label', () => ({ component, moduleMetadata, props: {
-            label,
+        }
+    }))
+    .add('Loading and label', () => ({
+        component, moduleMetadata, props: {
+            label: text(...labelKnob),
+            color: select(...colorKnob),
             icon: 'loading',
-            color: 'default',
-    }}))
-    .add('Loading large', () => ({ component, moduleMetadata, props: {
-            label,
+        }
+    }))
+    .add('Loading large', () => ({
+        component, moduleMetadata, props: {
+            label: text(...labelKnob),
+            color: select(...colorKnob),
+            sublabel: text(...sublabelKnob),
             icon: 'loading',
-            sublabel: label,
             size: 'large',
-            color: 'default',
-    }}))
-;
+        }
+    }))
+    ;
