@@ -197,8 +197,10 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
     }
     private showOptions() {
         this.areOptionsVisible = true;
-        this.searchModel = '';
-        this.onFilter();
+        if (this.filterable) {
+            this.searchModel = '';
+            this.onFilter();
+        }
     }
     private selectPointedOption() {
         const pointedOption = this.optionsFiltered[this.pointedIndex];

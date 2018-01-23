@@ -111,4 +111,9 @@ storiesOf('Input', module)
             <p *ngIf="value">The value is {{value}}</p>
         `
     }))
+    .add('Textarea', () => ({
+        moduleMetadata, component, props: {
+            multiline: true
+        }
+    }))
     ;

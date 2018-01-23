@@ -13,7 +13,9 @@
         "styles": [
             "src/styles/themes/cms/_all.scss"
         ],
-        "scripts": [],
+        "scripts": [
+            "node_modules/hammerjs/hammer.min.js"
+        ],
         "environmentSource": "env.ts",
         "environments": {
             "dev": "env.ts",

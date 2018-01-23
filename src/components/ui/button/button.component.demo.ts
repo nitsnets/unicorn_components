@@ -8,7 +8,6 @@ import { withKnobs, select, text } from '@storybook/addon-knobs/angular';
 
 const moduleMetadata = {
     declarations: [UniIconComponent, UniSpinnerComponent, UniButtonComponent],
-    entryComponents: [UniButtonComponent],
 };
 const component = UniButtonComponent;
 
@@ -34,6 +33,18 @@ storiesOf('Button', module)
         component, moduleMetadata, props: {
             label: text(...labelKnob),
             color: select(...colorKnob)
+        }
+    }))
+    .add('Colors', () => ({
+        template: `
+            <uni-button [label]="label"></uni-buttonc>
+            <uni-button [label]="label" color="default"></uni-button>
+            <uni-button [label]="label" color="primary"></uni-button>
+            <uni-button [label]="label" color="success"></uni-button>
+            <uni-button [label]="label" color="warning"></uni-button>
+            <uni-button [label]="label" color="error"></uni-button>
+        `, moduleMetadata, props: {
+            label: text(...labelKnob),
         }
     }))
     .add('Icon ', () => ({

@@ -23,13 +23,13 @@ const moduleMetadata = {
 const label = 'Click here!'
 
 storiesOf('Radio', module)
-    .add('Radio', () => ({ moduleMetadata, component: UniRadioComponent }))
-    .add('Radio and label', () => ({
+    .add('Basic', () => ({ moduleMetadata, component: UniRadioComponent }))
+    .add('Label', () => ({
         moduleMetadata,
         component: UniRadioComponent,
         props: { label }
     }))
-    .add('Radio group', () => ({
+    .add('Group', () => ({
         moduleMetadata,
         template: `
             <uni-radio-group>
@@ -39,7 +39,7 @@ storiesOf('Radio', module)
             </uni-radio-group>
         `,
     }))
-    .add('Radio group and label', () => ({
+    .add('Group and label', () => ({
         moduleMetadata,
         template: `
             <uni-radio-group>
@@ -49,7 +49,7 @@ storiesOf('Radio', module)
             </uni-radio-group>
         `,
     }))
-    .add('Radio value tracking', () => ({
+    .add('Value tracking', () => ({
         moduleMetadata,
         template: `
             <uni-radio-group [(model)]="selected">
@@ -60,7 +60,7 @@ storiesOf('Radio', module)
             <p>Selected de option {{selected}}</p>
         `,
     }))
-    .add('Radio toggle buttons', () => ({
+    .add('Toggle buttons', () => ({
         moduleMetadata,
         template: `
             <uni-button-toggle-group>

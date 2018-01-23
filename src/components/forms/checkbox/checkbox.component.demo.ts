@@ -37,6 +37,10 @@ storiesOf('Checkbox', module)
     }))
     .add('Toggle', () => ({
         moduleMetadata,
+        component: UniToggleComponent
+    }))
+    .add('Toggle colors', () => ({
+        moduleMetadata,
         template: `
             <uni-toggle></uni-toggle>
             <uni-toggle color="primary"></uni-toggle>
@@ -104,7 +108,6 @@ storiesOf('Checkbox', module)
                 <uni-button-toggle label="3" color="default"></uni-button-toggle>
                 <uni-button-toggle label="4" color="default"></uni-button-toggle>
             </uni-button-group>
-        `,
-        props: { label }
+        `
     }))
     ;

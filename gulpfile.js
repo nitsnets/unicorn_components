@@ -20,12 +20,12 @@ const styles = `${dist}/styles`;
  * Main tasks
  */
 
-gulp.task('build', sequence('clean', 'prepare-build', 'compile', 'clean-temp', 'styles', 'bundle', 'minify'));
+gulp.task('build', sequence('clean', 'prepare-build', ['compile', 'clean-temp', 'styles'], 'bundle', 'minify'));
 gulp.task('deploy', sequence('build', 'prepare-deploy', 'publish'));
-gulp.task('demo', ['clean-demo', 'prepare-demo', 'copy-demo'], () => {
+gulp.task('demo', () => sequence('clean-demo', ['prepare-demo', 'copy-demo'], () => {
     gulp.watch('./src/**/*.demo.ts', ['copy-demo'])
     gulp.watch(['./src/**/*.html', './src/**/*.ts', '!./**/*.spec.ts', '!./**/*.demo.ts'], ['prepare-demo'])
-});
+}));
 
 /**
  * Aux tasks
@@ -34,7 +34,8 @@ gulp.task('demo', ['clean-demo', 'prepare-demo', 'copy-demo'], () => {
 gulp.task('clean', cb => remove(dist, cb));
 gulp.task('clean-temp', cb => remove(temp, cb));
 gulp.task('clean-demo', cb => remove(demo, cb));
-gulp.task('prepare-build', () => gulp.src(['./index.ts', './src/**/*.ts', '!./**/*.spec.ts', '!./**/*.demo.ts'], {
+gulp.task('prepare-build', () =>
+    gulp.src(['./index.ts', './src/**/*.ts', '!./**/*.spec.ts', '!./**/*.demo.ts'], {
         base: './'
     })
     .pipe(inlineCmp())
