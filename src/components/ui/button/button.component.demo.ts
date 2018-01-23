@@ -27,7 +27,7 @@ const sublabelKnob = ['Sublabel', 'Hello button!'];
 const iconKnob = ['Icon left', 'check'];
 const iconRightKnob = ['Icon right', 'check'];
 
-storiesOf('Button', module)
+storiesOf('Buttons/Button', module)
     .addDecorator(withKnobs)
     .add('Basic', () => ({
         component, moduleMetadata, props: {
