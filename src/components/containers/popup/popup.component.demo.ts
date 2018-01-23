@@ -66,19 +66,4 @@ storiesOf('Popup', module)
             <uni-popup-container> ${lorem} </uni-popup-container>
         </uni-popup>
     `}))
-    .add('Button triggered', () => ({
-        moduleMetadata, template: `
-        <uni-button-popup label="${label}" color="default" iconRight="add_circle">
-            ${lorem}
-        </uni-button-popup>
-    `}))
-    .add('Button group triggered', () => ({
-        moduleMetadata, template: `
-        <uni-button-group>
-            <uni-button color="default" label="Action button"></uni-button>
-            <uni-button-popup color="default" iconRight="info">
-                ${lorem}
-            </uni-button-popup>
-        </uni-button-group>
-    `}))
     ;
