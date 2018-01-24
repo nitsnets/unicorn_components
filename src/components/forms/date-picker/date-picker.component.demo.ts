@@ -27,7 +27,6 @@ const moduleMetadata = {
         FormatDatePipe
     ]
 };
-const label = 'Slide me!'
 
 storiesOf('Date and time/Date picker', module)
     .add('Basic', () => ({ moduleMetadata, component: UniDatePickerComponent }))
