@@ -3,7 +3,7 @@
         <li class="uni-list__item" *ngIf="item.name !== '----'" [class.uni-list__item--selected]="isSelected(item)">
             <uni-icon class="uni-list__hover-icon uni-list__hover-icon--drag" *ngIf="sortable" icon="drag_handle"></uni-icon>
             <ng-container *ngIf="!item.editing">
-                <uni-icon *ngIf="item.icon" [icon]="item.icon" class="uni-list__icon"></uni-icon>
+                <uni-icon *ngIf="showIcons && item.icon" [icon]="item.icon" class="uni-list__icon"></uni-icon>
                 <span class="uni-list__content" (click)="onClick(item)" (dblclick)="onDoubleclick(item)" [innerHtml]="item.name || '(Untitled)'"></span>
                 <uni-button class="uni-list__hover-icon" *ngIf="deletable" icon="delete" (click)="onDelete(i, item, $event)"></uni-button>
             </ng-container>

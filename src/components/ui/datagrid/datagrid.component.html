@@ -24,6 +24,6 @@
 <ng-container *ngIf="pageable && pageSize < (local ? dataView.length : totalItems)">
     <uni-separator></uni-separator>
     <uni-paginator [totalElements]="local ? dataView.length : totalItems" [pageSize]="pageSize || (local ? 10 : dataView.length)"
-        [selected]="page" (selectedChange)="onPageChange($event)">
+        [selected]="page" (selectedChange)="onPageChange($event)" [local]="local">
     </uni-paginator>
 </ng-container>
