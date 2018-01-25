@@ -11,7 +11,7 @@ Unicorn Components
 
 
 
-Angular UI components kit of [Unicorn Platform][unicorn].
+Angular UI components kit of Unicorn Platform.
 
 
 ----
@@ -21,6 +21,11 @@ Angular UI components kit of [Unicorn Platform][unicorn].
 ```shell
 npm install --save @unicorn.io/components
 ```
+
+## Demo
+
+https://nitsnets.github.io/unicorn_components
+
 
 ## Usage
 
@@ -46,11 +51,6 @@ Select styles theme _(Optional)_
 ```scss
 @import './node_modules/@unicorn.io/components/styles/themes/cms/all'
 ```
-
-## Demo
-
-http://components.servidorbeta.com
-
 
 ## List of components
 
