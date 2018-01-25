@@ -15,6 +15,7 @@ export class UniListComponent implements OnChanges {
 
     @Input() local = true;
     @Input() contentField;
+    @Input() showIcons = true;
 
     @Input() sortable: any;
     @Input() selectable = false;

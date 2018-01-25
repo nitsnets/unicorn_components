@@ -1,35 +1,27 @@
 {
     "project": {
-        "version": "1.0.0-beta.19-3",
-        "name": "unicorn_components"
+        "version": "1.0.0",
+        "name": "@unicorn.io/components"
     },
-    "apps": [
-        {
-            "root": "test",
-            "outDir": "dist",
-            "assets": [
-                "favicon.ico",
-                "logo.png"
-            ],
-            "index": "index.html",
-            "main": "index.ts",
-            "test": "test.ts",
-            "tsconfig": "../tsconfig.json",
-            "testTsconfig": "../tsconfig.json",
-            "prefix": "uni",
-            "mobile": false,
-            "styles": [],
-            "scripts": [],
-            "environmentSource": "../env.ts",
-            "environments": {
-                "dev": "../env.ts",
-                "prod": "../env.ts"
-            }
+    "apps": [{
+        "root": ".",
+        "assets": [],
+        "main": "index.ts",
+        "test": "test/test.ts",
+        "tsconfig": "tsconfig.json",
+        "testTsconfig": "tsconfig.spec.json",
+        "styles": [
+            "src/styles/themes/cms/_all.scss"
+        ],
+        "scripts": [
+            "node_modules/hammerjs/hammer.min.js"
+        ],
+        "environmentSource": "env.ts",
+        "environments": {
+            "dev": "env.ts",
+            "prod": "env.ts"
         }
-    ],
-    "addons": [],
-    "packages": [],
-    "e2e": {},
+    }],
     "test": {
         "karma": {
             "config": "./karma.conf.js"

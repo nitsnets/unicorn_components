@@ -5,6 +5,6 @@
 
 <ng-container *ngIf="customFilters">
     <p class="title3" *ngIf="customTitle">{{customTitle}}</p>
-    <uni-list contentField="filter" [editable]="true" [selectable]="true" [sortable]="true" [deletable]="true" [data]="customFilters" [itemSelected]="filterSelected"
+    <uni-list contentField="filter" [editable]="true" [selectable]="true" [deletable]="true" [data]="customFilters" [itemSelected]="filterSelected"
         (itemSelectedChange)="onFilterSelected($event)"></uni-list>
 </ng-container>

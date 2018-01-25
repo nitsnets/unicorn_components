@@ -3,32 +3,43 @@
 Unicorn Components
 ==================
 
-Angular UI componentes kit of [Unicorn Platform][unicorn].
+<a target="_blank" href="https://travis-ci.org/nitsnets/unicorn_components"><img src="https://travis-ci.org/nitsnets/unicorn_components.svg?branch=master" align="right"></a>
+
+
+Angular UI components kit of [Unicorn Platform][unicorn].
+
 
 ----
 
 ## Install
 
 ```shell
-npm install unicorn_components --save
+npm install --save @unicorn.io/components
 ```
 
 ## Usage
 
+Import the module
 ```typescript
-import { UnicornComponentsModule } from 'unicorn_components';
+import { UnicornComponentsModule } from '@unicorn.io/components';
 
 @NgModule({
   imports: [
-    UnicornComponentsModule
+    UnicornComponentsModule.forRoot()
   ],
   ...
 })
 export class AppModule { }
 ```
+Start using components
 
 ```html
 <uni-button label="My button"></uni-button>
+```
+Select styles theme _(Optional)_
+
+```scss
+@import './node_modules/@unicorn.io/components/styles/themes/cms/all'
 ```
 
 ## Demo

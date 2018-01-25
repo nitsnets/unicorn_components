@@ -14,7 +14,8 @@
         <uni-icon icon="delete"></uni-icon>
     </strong>
     <span>
-        Do you want to delete <strong>{{image?.name || '(Untitled)'}}</strong>
+        Do you want to delete
+        <strong>{{image?.name || '(Untitled)'}}</strong>
     </span>
     <uni-row-spacer></uni-row-spacer>
     <uni-button label="Cancel" (click)="deleting = false"></uni-button>
@@ -24,7 +25,7 @@
     <div class=" uni-gallery-full-image__body ">
         <uni-button class="uni-gallery-full-image__arrow" *ngIf="index> 0" icon="keyboard_arrow_left" (click)="index = index-1"></uni-button>
         <div class="uni-gallery-full-image__image-container">
-            <img class="uni-gallery-full-image__image" [src]="image?.fullPath">
+            <img class="uni-gallery-full-image__image" [src]="image?.src">
         </div>
         <uni-button class="uni-gallery-full-image__arrow" *ngIf="index < images?.length-1" icon="keyboard_arrow_right" (click)="index = index+1"></uni-button>
     </div>

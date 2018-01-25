@@ -7,6 +7,5 @@ export class UniStopClickDirective {
     @HostListener('click', ['$event'])
     onClick(event: MouseEvent): void {
         event.stopPropagation();
-        console.log('Click stopped');
     }
 }

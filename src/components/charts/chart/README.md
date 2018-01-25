@@ -8,16 +8,22 @@ Gráfico versátil. Encapsulación de [Chart.js](http://www.chartjs.org/)
 
 ## Uso
 
+❗️ **IMPORTANTE**: Debe instalar `Chart.js` para utilizar `<uni-chart>`.
+```
+npm install chart.js --save
+```
+
+
 ## Ejemplo simple
 
 ```html
 <uni-chart
     type="bar"
-    series="[
+    [series]="[
         { label: 'Serie 1', data: [12, 19, 3, 5, 2, 3] },
         { label: 'Serie 2', data: [22, 12, 20, 10, 5, 1] }
     ]"
-    labels="['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5', 'Label 6']"
+    [labels]="['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5', 'Label 6']"
 ></uni-chart>
 
 ```

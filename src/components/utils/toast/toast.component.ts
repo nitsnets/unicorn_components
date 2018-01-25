@@ -3,8 +3,8 @@ import {
     Component,
     ElementRef,
     EventEmitter,
-    Output,
     HostBinding,
+    Output,
 } from '@angular/core';
 
 export interface ToastOptions { showClose: boolean; }
@@ -18,10 +18,10 @@ export class UniToastComponent implements AfterContentInit {
     @HostBinding('class.uni-toast') componentClass = true;
     animateIn = false;
     animateOut = false;
-    toastOptions: ToastOptions = null;
+    toastOptions: ToastOptions;
     msg = '';
 
-    @Output() accept = new EventEmitter();
+    @Output() accept = new EventEmitter<any>();
 
     constructor(private elementRef: ElementRef) { }
 

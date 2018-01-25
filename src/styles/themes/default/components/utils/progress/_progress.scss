@@ -1,50 +1,39 @@
 .uni-progress {
-
     &__container {
         margin: 0 0 10px 0;
         min-height: 3px;
         background-color: $color-grey-medium;
-
         &--only-bar {
             margin: 0;
         }
     }
-
-    &__counter, &__percentage {
-        color: $color-grey-dark;
+    &__counter,
+    &__percentage {
         font-size: $font-smallest;
     }
-
+    &__percentage {
+        color: white;
+    }
+    &__counter {
+        color: $color-grey-dark;
+    }
     &__bar {
         background-color: $color-grey;
-		padding: $basic-padding / 15 $basic-padding / 15 $basic-padding / 15 $basic-padding / 6;
-
+        padding: $basic-padding / 15 $basic-padding / 15 $basic-padding / 15 $basic-padding / 6;
         &--primary {
-			background-color: $color-primary;
-
-            .uni-progress__percentage {
-                color: white;
-            }
-		}
-
+            background-color: $color-primary;
+        }
         &--error {
-			background-color: $color-error;
-
-            .uni-progress__percentage {
-                color: white;
-            }
-		}
-
+            background-color: $color-error;
+        }
         &--warning {
             background-color: $color-warning;
-		}
-
-        &--success {
-			background-color: $color-success;
-
             .uni-progress__percentage {
-                color: white;
+                color: $color-grey-dark;
             }
+        }
+        &--success {
+            background-color: $color-success;
         }
     }
 }

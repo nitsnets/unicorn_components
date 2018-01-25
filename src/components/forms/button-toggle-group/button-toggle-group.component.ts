@@ -2,6 +2,7 @@ import { Component, ContentChildren, HostBinding, Input, QueryList } from '@angu
 
 import { UniButtonToggleComponent } from '../button-toggle/button-toggle.component';
 import { UniInputBaseComponent } from '../../base/input-base/input-base.component';
+import 'rxjs/add/operator/filter';
 
 @Component({
     selector: 'uni-button-toggle-group',
@@ -33,10 +34,9 @@ export class UniButtonToggleGroupComponent extends UniInputBaseComponent {
     }
     private initButtonsListeners() {
         this.buttons.forEach(
-            item => item.modelChange.filter(
-                value => !!value,
-            ).subscribe(
+            item => item.modelChange.subscribe(
                 value => {
+                    if (!value) { return; }
                     this.model = item.value;
                     this.onNgModelChange(item.value);
                 },

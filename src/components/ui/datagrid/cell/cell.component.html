@@ -22,7 +22,7 @@
         <!---->
 
         <span class="uni-datagrid-cell__value" *ngSwitchDefault>
-            default {{value | format: format}}
+            {{value | format: format}}
         </span>
     </ng-container>
     <ng-content *ngIf="!value"></ng-content>

@@ -1,32 +1,21 @@
 {
     "compilerOptions": {
+        "outDir": "./dist/out-tsc",
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "node",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "noImplicitAny": false,
-        "noEmitOnError": true,
-        "removeComments": true,
-        "outDir": "out-tsc/spec",
-        "baseUrl": "src",
         "target": "es5",
-        "types": [
-            "jasmine",
-            "node"
-        ],
-        "lib": [
-            "es6",
-            "dom"
-        ],
         "typeRoots": [
             "node_modules/@types"
+        ],
+        "lib": [
+            "es2017",
+            "dom"
         ]
     },
-    "files": [
-        "test/test.ts"
-    ],
-    "include": [
-        "**/*.spec.ts",
-        "**/*.d.ts"
+    "exclude": [
+        "dist"
     ]
 }

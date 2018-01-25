@@ -2,8 +2,9 @@
 
 # compiled output
 /dist
-/demo-dist/
 /tmp
+/demo/dist
+/demo/public
 
 # dependencies
 /node_modules
@@ -33,9 +34,4 @@ testem.log
 #System Files
 .DS_Store
 Thumbs.db
-
-# built files
-
-*.js
-*.map
-*.d.ts
+npm-debug.log*

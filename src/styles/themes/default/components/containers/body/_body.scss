@@ -1,6 +1,7 @@
 .uni-body {
-    padding: $basic-padding;
-
+    &--padding{
+        padding: $basic-padding;
+    }
     &__inner {
         max-width: 1080px;
 	}

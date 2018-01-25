@@ -25,13 +25,13 @@ export class UniMenuComponent {
     @HostBinding('class.uni-menu') componentClass = true;
     @Input() toggle = false;
     @Input() keepOpen = false;
+    @Input() opened = false;
     @Output() openedChange = new EventEmitter();
     @Input() position: UniPosition = null;
     calculatedPosition: UniPosition = null;
 
     @ContentChild(UniMenuContainerComponent) menuScope: UniMenuContainerComponent;
 
-    opened = false;
 
     constructor(private elementRef: ElementRef) { }
 

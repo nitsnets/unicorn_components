@@ -1,13 +1,13 @@
 import * as moment from 'moment';
 
-import { Component, EventEmitter, HostBinding, Input, OnChanges, Output } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, OnChanges, Output, OnInit } from '@angular/core';
 
 @Component({
     selector: 'uni-calendar',
     templateUrl: 'calendar.component.html',
     styleUrls: ['calendar.component.scss'],
 })
-export class UniCalendarComponent implements OnChanges {
+export class UniCalendarComponent implements OnChanges, OnInit {
 
     @HostBinding('class.uni-calendar') componentClass = true;
 
@@ -43,10 +43,17 @@ export class UniCalendarComponent implements OnChanges {
     constructor() { }
 
     ngOnChanges(changes) {
-        if (changes.rangeFrom && this.rangeFrom) { this.rangeFrom = moment(this.rangeFrom, 'YYYY-MM-DD'); }
-        if (changes.rangeTo && this.rangeTo) { this.rangeTo = moment(this.rangeTo, 'YYYY-MM-DD'); }
+        if (changes.rangeFrom && this.rangeFrom) {
+            this.rangeFrom = moment(this.rangeFrom, 'YYYY-MM-DD');
+        }
+        if (changes.rangeTo && this.rangeTo) {
+            this.rangeTo = moment(this.rangeTo, 'YYYY-MM-DD');
+        }
         this.renderCalendar();
     };
+    ngOnInit() {
+        this.renderCalendar();
+    }
 
     select(day) {
         if (!day) { return; }
@@ -56,6 +63,7 @@ export class UniCalendarComponent implements OnChanges {
 
         this.selected = day;
         this.modelChange.emit(day.format('YYYY-MM-DD'));
+        this.renderCalendar();
     };
 
     next() {
@@ -110,8 +118,8 @@ export class UniCalendarComponent implements OnChanges {
                     this.rangeFrom ? date.isBetween(this.rangeFrom, this.selected, 'day') : false,
                 isRangeTo: this.rangeTo ? date.isSame(this.rangeTo, 'day') : false,
                 isUnavailable:
-                (this.max && date.isAfter(this.max)) ||
-                (this.min && date.isBefore(this.min)),
+                    (this.max && date.isAfter(this.max)) ||
+                    (this.min && date.isBefore(this.min)),
                 date: date
             });
             date = date.clone();

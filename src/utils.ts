@@ -1,6 +1,6 @@
 import * as moment from 'moment';
 
-import { Subscription } from 'rxjs/Rx';
+import { Subscription } from 'rxjs/Subscription';
 
 export function removeHostElement(element: HTMLElement) {
     const parentElement: HTMLElement = element.parentElement;

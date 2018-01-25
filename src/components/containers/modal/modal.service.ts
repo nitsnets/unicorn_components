@@ -1,7 +1,8 @@
 import { ComponentFactoryResolver, ComponentRef, Injectable, Type, ViewContainerRef } from '@angular/core';
-import { Observable, Subject } from 'rxjs/Rx';
 
 import { DynamicContainerService } from '../../base/dynamic-container/dynamic-container.service';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 import { UniModalComponent } from './modal.component';
 
 @Injectable()

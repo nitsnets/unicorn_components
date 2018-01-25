@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noImplicitAny": false,
+        "noEmitOnError": true,
+        "removeComments": true,
+        "baseUrl": "src",
+        "target": "es5",
+        "types": [
+            "jasmine",
+            "node"
+        ],
+        "lib": [
+            "es6",
+            "dom"
+        ],
+        "typeRoots": [
+            "node_modules/@types"
+        ]
+    },
+    "files": [
+        "test/test.ts"
+    ],
+    "include": [
+        "**/*.spec.ts"
+    ],
+    "exclude": [
+        "dist"
+    ]
+}

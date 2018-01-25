@@ -2,10 +2,11 @@
     padding: $basic-padding / 4;
     display: table-cell;
     flex-basis: 0;
-
     transition: 200ms ease background-color;
-
     &--highlight:hover {
         background-color: $alpha-black-lighter;
+    }
+    &__value {
+        max-width: 100%;
     }
 }
