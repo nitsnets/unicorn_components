@@ -15,6 +15,8 @@ export class UniSliderRangeComponent extends UniSliderBaseComponent implements O
         from: { sliding: false, percent: 0 },
         to: { sliding: false, percent: 0 }
     }
+    private sliding: 'from' | 'to' = null;
+
     @Input() pushable = true;
     @Input() showTicks = false;
 
@@ -23,7 +25,7 @@ export class UniSliderRangeComponent extends UniSliderBaseComponent implements O
     @HostListener('pan', ['$event'])
     onSlide(event) {
         const percent = this.getPercentByX(event.center.x);
-        let thumb = this.sliding || this.selectThumbByPercent(percent);
+        const thumb = this.sliding || this.selectThumbByPercent(percent);
         this.thumbs[thumb].percent = percent;
         this.fixPercents();
         this.updateModelByPercent();
@@ -69,7 +71,6 @@ export class UniSliderRangeComponent extends UniSliderBaseComponent implements O
         };
     }
 
-    private sliding: 'from' | 'to' = null;
 
     constructor(elementRef: ElementRef) { super(elementRef); }
 
@@ -106,9 +107,11 @@ export class UniSliderRangeComponent extends UniSliderBaseComponent implements O
     private fixPercents() {
         if (this.thumbs.from.percent > this.thumbs.to.percent) {
             if (this.sliding === 'from') {
-                this.thumbs.to.percent = this.pushable ? this.thumbs.from.percent : this.thumbs.from.percent + 1;
+                this.thumbs.to.percent = this.pushable ? this.thumbs.from.percent : this.thumbs.to.percent;
+                this.thumbs.from.percent = this.pushable ? this.thumbs.from.percent : this.thumbs.to.percent;
             } else {
-                this.thumbs.from.percent = this.pushable ? this.thumbs.to.percent : this.thumbs.to.percent + 1;
+                this.thumbs.from.percent = this.pushable ? this.thumbs.to.percent : this.thumbs.from.percent;
+                this.thumbs.to.percent = this.pushable ? this.thumbs.to.percent : this.thumbs.from.percent;
             }
         }
     }

@@ -3,23 +3,25 @@
         "version": "1.0.0",
         "name": "@unicorn.io/components"
     },
-    "apps": [
-        {
-            "root": "test",
-            "assets": [],
-            "main": "index.ts",
-            "test": "test.ts",
-            "tsconfig": "../tsconfig.app.json",
-            "testTsconfig": "../tsconfig.spec.json",
-            "styles": [],
-            "scripts": [],
-            "environmentSource": "../env.ts",
-            "environments": {
-                "dev": "../env.ts",
-                "prod": "../env.ts"
-            }
+    "apps": [{
+        "root": ".",
+        "assets": [],
+        "main": "index.ts",
+        "test": "test/test.ts",
+        "tsconfig": "tsconfig.json",
+        "testTsconfig": "tsconfig.spec.json",
+        "styles": [
+            "src/styles/themes/cms/_all.scss"
+        ],
+        "scripts": [
+            "node_modules/hammerjs/hammer.min.js"
+        ],
+        "environmentSource": "env.ts",
+        "environments": {
+            "dev": "env.ts",
+            "prod": "env.ts"
         }
-    ],
+    }],
     "test": {
         "karma": {
             "config": "./karma.conf.js"

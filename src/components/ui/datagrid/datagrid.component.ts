@@ -334,7 +334,7 @@ export class UniDatagridComponent implements AfterContentInit, OnChanges {
                 field: column.field,
                 dir: dir === 'desc' ? true : dir === 'asc' ? false : dir
             };
-        } else if (this.sort.field === column.field) {
+        } else if (this.sort && this.sort.field === column.field) {
             if (this.sort.dir) {
                 this.sort.field = null;
                 this.sort.dir = false;
@@ -376,6 +376,7 @@ export class UniDatagridComponent implements AfterContentInit, OnChanges {
         if (!this.selected.length) {
             this.deletingSelection = false;
         }
+        this.notifySelection();
     }
     /**
      * Fired when the user clicks on a checkbox of a row
@@ -396,6 +397,9 @@ export class UniDatagridComponent implements AfterContentInit, OnChanges {
         if (!this.selected.length) {
             this.deletingSelection = false;
         }
+        this.notifySelection();
+    }
+    notifySelection() {
         if (this.randomIds) {
             this.selectedChange.emit(this.fillIds(this.selected));
         } else { this.selectedChange.emit(this.selected); }
@@ -420,6 +424,7 @@ export class UniDatagridComponent implements AfterContentInit, OnChanges {
             this.viewContainerRef
         );
     }
+
     /**
      * Fired when an item selection is confirmed (at the row)
      * @param {string} id
@@ -510,8 +515,11 @@ export class UniDatagridComponent implements AfterContentInit, OnChanges {
                 dataSource[el['id']] = deepClone(el);
             });
         }
-
-        this.selected = [];
+        if (this.selected && this.selected.length) {
+            this.selected.forEach(id => this.onSelectItem(id, true));
+        } else {
+            this.selected = [];
+        }
         this.dataSource = dataSource;
         this.dataView = dataView;
     }

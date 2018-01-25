@@ -5,21 +5,24 @@
     </uni-input>
 
     <ul class="uni-select__options nospacing" *ngIf="areOptionsVisible">
-        <li *ngIf="multiple && !searchModel" class="uni-select__option" (click)="onSelectAll()" (mousedown)="onSelectingOption(true)" (mouseup)="onSelectingOption(false)">
+        <li *ngIf="multiple && !searchModel" class="uni-select__option" (click)="onSelectAll()" (mousedown)="onSelectingOption(true)"
+            (mouseup)="onSelectingOption(false)">
             Select all
         </li>
-        <li *ngIf="multiple && !searchModel" class="uni-select__option" (click)="onSelect(null)" (mousedown)="onSelectingOption(true)" (mouseup)="onSelectingOption(false)">
+        <li *ngIf="multiple && !searchModel" class="uni-select__option" (click)="onSelect(null)" (mousedown)="onSelectingOption(true)"
+            (mouseup)="onSelectingOption(false)">
             Select none
         </li>
 
         <uni-separator *ngIf="multiple && !searchModel"></uni-separator>
 
-        <li class="uni-select__option" *ngFor="let option of optionsFiltered; let i = index;" [class.uni-select__option--selected]="isOptionSelected(option)" [class.uni-select__option--pointed]="isOptionPointed(i)"
-            (click)="onSelect(option)" (mouseover)="onHoverOption(i)" (mousedown)="onSelectingOption(true)" (mouseup)="onSelectingOption(false)">
+        <li class="uni-select__option" *ngFor="let option of optionsFiltered; let i = index;" [class.uni-select__option--selected]="isOptionSelected(option)"
+            [class.uni-select__option--pointed]="isOptionPointed(i)" (click)="onSelect(option)" (mouseover)="onHoverOption(i)"
+            (mousedown)="onSelectingOption(true)" (mouseup)="onSelectingOption(false)">
 
             <uni-icon *ngIf="multiple" class="uni-select__option-icon" [icon]="isOptionSelected(option) ? 'check_box' : 'check_box_outline_blank'">
             </uni-icon>
-            <span [innerHtml]="(option.label | highlight:searchModel) || '(Unlabeled)'"></span>
+            <span [innerHtml]="(option.label | highlight:(filterable ? searchModel : '')) || '(Unlabeled)'"></span>
         </li>
     </ul>
 </div>

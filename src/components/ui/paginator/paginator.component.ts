@@ -9,6 +9,8 @@ const pagesWindow = 4;
 })
 export class UniPaginatorComponent implements OnChanges {
 
+    @Input() local = true;
+
     @HostBinding('class.uni-paginator') componentClass = true;
     @Input() totalElements: number;
     @Input() pageSize = 10;
@@ -30,9 +32,11 @@ export class UniPaginatorComponent implements OnChanges {
         if (page === null) { return; }
         if (page < 0) { page = 0; }
         if (page > this.pagesCount - 1) { page = this.pagesCount - 1; }
-        // this.selected = page;
         this.selectedChange.emit(page);
-        // this.refreshPagesToShow();
+        if (this.local) {
+            this.selected = page;
+            this.refreshPagesToShow();
+        }
     }
     nextPage() {
         this.selectPage(this.selected + 1);

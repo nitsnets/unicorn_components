@@ -11,6 +11,7 @@ export class UniAccordionItemComponent extends UniBaseComponent {
 
     @HostBinding('class.uni-accordion-item') componentClass = true;
     @Input() menu = false;
+    @Input() buttons = false;
 
     @HostBinding('class.uni-accordion-item--collapsed')
     @Input() collapsed = true;

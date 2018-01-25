@@ -154,7 +154,7 @@ export class UniFiltersComponent implements AfterContentInit, OnChanges {
         this.doFilter();
     }
     onSave() {
-        this.save.emit(this.filter);
+        this.save.emit(deepClone(this.filter));
     }
     isDefault(): boolean {
         return objEquals(this.filter, this.defaultFilter);
@@ -163,7 +163,7 @@ export class UniFiltersComponent implements AfterContentInit, OnChanges {
         return objEmpty(this.filter);
     }
     doFilter() {
-        this.filterChange.emit(this.filter);
+        this.filterChange.emit(deepClone(this.filter));
         if (this.persistent) { this.storeFilter(); }
         console.log('Do filter', this.filter);
     }
