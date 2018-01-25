@@ -6,7 +6,7 @@
         "build": "gulp build",
         "deploy": "gulp deploy",
         "start": "gulp demo & start-storybook -p 6006 -c demo",
-        "build-demo": "gulp prepare-demo && build-storybook -c demo -o demo/public",
+        "build-demo": "gulp prepare-demo && build-storybook -c demo -o docs",
         "reinstall": "npm uninstall && npm install",
         "prepublish": "echo 'Use `npm run deploy` instead.';",
         "postinstall": "ng --version",
