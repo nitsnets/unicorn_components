@@ -6,13 +6,13 @@
         "build": "gulp build",
         "deploy": "gulp deploy",
         "start": "gulp demo & start-storybook -p 6006 -c demo",
+        "build-demo": "gulp prepare-demo && build-storybook -c demo -o demo/public",
         "reinstall": "npm uninstall && npm install",
         "prepublish": "echo 'Use `npm run deploy` instead.';",
         "postinstall": "ng --version",
         "test": "ng test --browsers PhantomJS --watch false",
         "test-chrome": "ng test --browsers Chrome -sm false",
-        "lint": "tslint \"src/**/*.ts\"",
-        "build-storybook": "build-storybook"
+        "lint": "tslint \"src/**/*.ts\""
     },
     "devDependencies": {
         "@angular/cli": "1.4.x - 1.5.x",

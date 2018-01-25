@@ -16,5 +16,4 @@ export class UniProgressComponent {
     @Input() showCount = false;
     @Input() color: UniColor;
 
-    constructor() { }
 }

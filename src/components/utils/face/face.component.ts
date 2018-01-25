@@ -10,7 +10,7 @@ export class UniFaceComponent implements OnInit {
     @HostBinding('class.uni-face') componentClass = true;
     @Input() size: 'small' | 'big';
     @Input() user: { name: string, image: string };
-    @Input() icon = 'user';
+    @Input() icon = 'person';
     @Input() badge = 0;
 
     constructor() { }

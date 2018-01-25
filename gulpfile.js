@@ -22,10 +22,10 @@ const styles = `${dist}/styles`;
 
 gulp.task('build', sequence('clean', 'prepare-build', ['compile', 'clean-temp', 'styles'], 'bundle', 'minify'));
 gulp.task('deploy', sequence('build', 'prepare-deploy', 'publish'));
-gulp.task('demo', () => sequence('clean-demo', ['prepare-demo', 'copy-demo'], () => {
+gulp.task('demo', ['prepare-demo'], () => {
     gulp.watch('./src/**/*.demo.ts', ['copy-demo'])
-    gulp.watch(['./src/**/*.html', './src/**/*.ts', '!./**/*.spec.ts', '!./**/*.demo.ts'], ['prepare-demo'])
-}));
+    gulp.watch(['./src/**/*.html', './src/**/*.ts', '!./**/*.spec.ts', '!./**/*.demo.ts'], ['compile-demo'])
+});
 
 /**
  * Aux tasks
@@ -60,12 +60,13 @@ gulp.task('prepare-deploy', () => gulp.src('./package.dist.json')
     .pipe(gulp.dest(dist))
 );
 gulp.task('publish', cb => publish(cb));
-gulp.task('prepare-demo', () => gulp.src(['./src/**/*.ts', '!./**/*.spec.ts', '!./**/*.demo.ts'])
+gulp.task('compile-demo', () => gulp.src(['./src/**/*.ts', '!./**/*.spec.ts', '!./**/*.demo.ts'])
     .pipe(inlineCmp())
     .pipe(gulp.dest(demo))
 );
 gulp.task('copy-demo', () => gulp.src('src/**/*.demo.ts').pipe(gulp.dest(demo)));
 gulp.task('storybook', () => cb => storybook(cb));
+gulp.task('prepare-demo', sequence('clean-demo', ['compile-demo', 'copy-demo']));
 /**
  * Aux functions
  */

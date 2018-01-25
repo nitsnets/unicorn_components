@@ -52,7 +52,7 @@ const tagsOptions: UniOption[] = [
     { label: 'Tag 3', value: 'tag3' }
 ];
 
-storiesOf('Filters/General', module)
+storiesOf('Filters', module)
     .add('Basic', () => ({
         moduleMetadata, template: `
             <uni-filters [clearable]="false">
