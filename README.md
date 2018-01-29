@@ -81,7 +81,7 @@ Select styles theme _(Optional)_
 | "              | Radio             | `<uni-radio>`             | :white_check_mark:  | [Docs][forms/radio]             | [Demo][forms/radio/demo]                        |
 | "              | Select            | `<uni-select>`            | :white_check_mark:  | [Docs][forms/select]            | [Demo][forms/select/demo]                       |
 | "              | Slider            | `<uni-slider>`            | :large_blue_circle: | [Docs][forms/slider]            | [Demo][forms/slider/demo]                       |
-| "              | Slider Range      | `<uni-slider-range>`      | :white_circle:      | [Docs][forms/slider-range]      | [Demo][forms/slider-range/demo]                 |
+| "              | Slider Range      | `<uni-slider-range>`      | :large_blue_circle: | [Docs][forms/slider-range]      | [Demo][forms/slider-range/demo]                 |
 | "              | Time Picker       | `<uni-time-picker>`       | :white_check_mark:  | [Docs][forms/time-picker]       | [Demo][forms/time-picker/demo]                  |
 | "              | Toggle            | `<uni-toggle>`            | :white_check_mark:  | [Docs][forms/toggle]            | [Demo][forms/toggle/demo]                       |
 | **UI**         | Button            | `<uni-button>`            | :white_check_mark:  | [Docs][ui/button]               | [Demo][ui/button/demo]                          |
