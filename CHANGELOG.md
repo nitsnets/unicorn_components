@@ -4,8 +4,11 @@
 
 
 ## **[1.0.1]** - 25/01/2018
+
+### New features
+- Demo integrated in the project as a Storybook showroom.
+
 ### Bug fixes
-- Storybook integrated for the demo.
 - Documentation mistakes fixed
 
 ## **[1.0.0]** - 16/01/2018
