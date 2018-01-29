@@ -54,64 +54,64 @@ Select styles theme _(Optional)_
 
 ## List of components
 
-| Group          | Component         | Naming                    | Status              | + Info 
-| -------------- | ----------------- | ------------------------- | ------------------- | ------- 
-| **Charts**     | Chart             | `<uni-chart>`             | :large_blue_circle: | [+ Info][charts/chart]
-| "              | Legend            | `<uni-chart-legend>`      | :large_blue_circle: | [+ Info][charts/chart-legend]
-| "              | Tooltip           | `<uni-chart-tooltip>`     | :red_circle:        | [+ Info][charts/chart-tooltip]
-| **Containers** | Accordion         | `<uni-accordion>`         | :white_check_mark:  | [+ Info][containers/accordion]
-| "              | Aside             | `<uni-aside>`             | :white_check_mark:  | [+ Info][containers/aside]
-| "              | Body              | `<uni-body>`              | :white_check_mark:  | [+ Info][containers/body]
-| "              | Box               | `<uni-box>`               | :white_check_mark:  | [+ Info][containers/box]
-| "              | Header            | `<uni-header>`            | :white_check_mark:  | [+ Info][containers/header]
-| "              | Layout            | `<uni-layout>`            | :white_check_mark:  | [+ Info][containers/layout]
-| "              | Modal             | `<uni-modal>`             | :white_check_mark:  | [+ Info][containers/modal]
-| "              | Popup             | `<uni-popup>`             | :white_check_mark:  | [+ Info][containers/popup]
-| "              | Row               | `<uni-row>`               | :white_check_mark:  | [+ Info][containers/row]
-| "              | Row Spacer        | `<uni-row-spacer>`        | :white_check_mark:  | [+ Info][containers/row-spacer]
-| "              | Tabs              | `<uni-tabs>`              | :white_check_mark:  | [+ Info][containers/tabs]
-| **Forms**      | Button toggle     | `<uni-button-toggle>`     | :white_check_mark:  | [+ Info][forms/button-toggle]
-| "              | Checkbox          | `<uni-checkbox>`          | :white_check_mark:  | [+ Info][forms/checkbox]
-| "              | Code Editor       | `<uni-code-editor>`       | :red_circle:        | [+ Info][forms/code-editor]
-| "              | Date Picker       | `<uni-date-picker>`       | :white_check_mark:  | [+ Info][forms/date-picker]
-| "              | Date Range Picker | `<uni-daterange-picker>`  | :white_check_mark:  | [+ Info][forms/daterange-picker]
-| "              | Date Time Picker  | `<uni-datetime-picker>`   | :white_check_mark:  | [+ Info][forms/datetime-picker]
-| "              | Image Picker      | `<uni-image-picker>`      | :large_blue_circle: | [+ Info][forms/image-picker]
-| "              | Input             | `<uni-input>`             | :white_check_mark:  | [+ Info][forms/input]
-| "              | Radio             | `<uni-radio>`             | :white_check_mark:  | [+ Info][forms/radio]
-| "              | Select            | `<uni-select>`            | :white_check_mark:  | [+ Info][forms/select]
-| "              | Slider            | `<uni-slider>`            | :large_blue_circle: | [+ Info][forms/slider]
-| "              | Slider Range      | `<uni-slider-range>`      | :white_circle:      | [+ Info][forms/slider-range]
-| "              | Time Picker       | `<uni-time-picker>`       | :white_check_mark:  | [+ Info][forms/time-picker]
-| "              | Toggle            | `<uni-toggle>`            | :white_check_mark:  | [+ Info][forms/toggle]
-| **UI**         | Button            | `<uni-button>`            | :white_check_mark:  | [+ Info][ui/button]
-| "              | Button File       | `<uni-button-file>`       | :large_blue_circle: | [+ Info][ui/button-file]
-| "              | Button Group      | `<uni-button-group>`      | :white_check_mark:  | [+ Info][ui/button-group]
-| "              | Button Header     | `<uni-button-header>`     | :white_check_mark:  | [+ Info][ui/button-header]
-| "              | Button Menu       | `<uni-button-menu>`       | :white_check_mark:  | [+ Info][ui/button-menu]
-| "              | Button Popup      | `<uni-button-popup>`      | :white_check_mark:  | [+ Info][ui/button-popup]
-| "              | Calendar          | `<uni-calendar>`          | :white_check_mark:  | [+ Info][ui/calendar]
-| "              | Carousel          | `<uni-carousel>`          | :large_blue_circle: | [+ Info][ui/carousel]
-| "              | Clock             | `<uni-clock>`             | :white_check_mark:  | [+ Info][ui/clock]
-| "              | Datagrid          | `<uni-datagrid>`          | :large_blue_circle: | [+ Info][ui/datagrid]
-| "              | Filters           | `<uni-filters>`           | :large_blue_circle: | [+ Info][ui/filters]
-| "              | Filters List      | `<uni-filters-list>`      | :large_blue_circle: | [+ Info][ui/filters-list]
-| "              | List              | `<uni-list>`              | :large_blue_circle: | [+ Info][ui/list]
-| "              | Menu              | `<uni-menu>`              | :white_check_mark:  | [+ Info][ui/menu]
-| "              | Paginator         | `<uni-paginator>`         | :white_check_mark:  | [+ Info][ui/paginator]
-| "              | Tree              | `<uni-tree>`              | :white_circle:      | [+ Info][ui/tree]
-| **Utils**      | Alert             | `<uni-alert>`             | :white_check_mark:  | [+ Info][utils/alert]
-| "              | Badge             | `<uni-badge>`             | :white_check_mark:  | [+ Info][utils/badge]
-| "              | Chip              | `<uni-chip>`              | :large_blue_circle: | [+ Info][utils/chip]
-| "              | Face              | `<uni-face>`              | :white_check_mark:  | [+ Info][utils/face]
-| "              | Icon              | `<uni-icon>`              | :white_check_mark:  | [+ Info][utils/icon]
-| "              | Progress          | `<uni-progress>`          | :white_check_mark:  | [+ Info][utils/progress]
-| "              | Separator         | `<uni-separator>`         | :white_check_mark:  | [+ Info][utils/separator]
-| "              | Spinner           | `<uni-spinner>`           | :white_check_mark:  | [+ Info][utils/spinner]
-| "              | Toast             | `<uni-toast>`             | :red_circle:        | [+ Info][utils/toast]
-| "              | Tooltip           | `<uni-tooltip>`           | :red_circle:        | [+ Info][utils/tooltip]
-| **Views**      | Filtered Datagrid | `<uni-filtered-datagrid>` | :large_blue_circle: | [+ Info][views/filtered-datagrid]
-| "              | Search Header     | `<uni-search-header>`     | :large_blue_circle: | [+ Info][views/search-header]
+| Group          | Component         | Naming                    | Status              | Docs                            | Demo                                            |
+| -------------- | ----------------- | ------------------------- | ------------------- | ------------------------------- | ----------------------------------------------- |
+| **Charts**     | Chart             | `<uni-chart>`             | :large_blue_circle: | [Docs][charts/chart]            | - <!-- [Demo][charts/chart/demo]-->             |
+| "              | Legend            | `<uni-chart-legend>`      | :large_blue_circle: | [Docs][charts/chart-legend]     | - <!-- [Demo][charts/chart-legend/demo]-->      |
+| "              | Tooltip           | `<uni-chart-tooltip>`     | :red_circle:        | [Docs][charts/chart-tooltip]    | - <!-- [Demo][charts/chart-tooltip/demo]-->     |
+| **Containers** | Accordion         | `<uni-accordion>`         | :white_check_mark:  | [Docs][containers/accordion]    | [Demo][containers/accordion/demo]               |
+| "              | Aside             | `<uni-aside>`             | :white_check_mark:  | [Docs][containers/aside]        | [Demo][containers/aside/demo]                   |
+| "              | Body              | `<uni-body>`              | :white_check_mark:  | [Docs][containers/body]         | [Demo][containers/body/demo]                    |
+| "              | Box               | `<uni-box>`               | :white_check_mark:  | [Docs][containers/box]          | [Demo][containers/box/demo]                     |
+| "              | Header            | `<uni-header>`            | :white_check_mark:  | [Docs][containers/header]       | [Demo][containers/header/demo]                  |
+| "              | Layout            | `<uni-layout>`            | :white_check_mark:  | [Docs][containers/layout]       | [Demo][containers/layout/demo]                  |
+| "              | Modal             | `<uni-modal>`             | :white_check_mark:  | [Docs][containers/modal]        | - <!-- [Demo][containers/modal/demo] -->        |
+| "              | Popup             | `<uni-popup>`             | :white_check_mark:  | [Docs][containers/popup]        | [Demo][containers/popup/demo]                   |
+| "              | Row               | `<uni-row>`               | :white_check_mark:  | [Docs][containers/row]          | [Demo][containers/row/demo]                     |
+| "              | Row Spacer        | `<uni-row-spacer>`        | :white_check_mark:  | [Docs][containers/row-spacer]   | [Demo][containers/row-spacer/demo]              |
+| "              | Tabs              | `<uni-tabs>`              | :white_check_mark:  | [Docs][containers/tabs]         | [Demo][containers/tabs/demo]                    |
+| **Forms**      | Button toggle     | `<uni-button-toggle>`     | :white_check_mark:  | [Docs][forms/button-toggle]     | [Demo][forms/button-toggle/demo]                |
+| "              | Checkbox          | `<uni-checkbox>`          | :white_check_mark:  | [Docs][forms/checkbox]          | [Demo][forms/checkbox/demo]                     |
+| "              | Code Editor       | `<uni-code-editor>`       | :red_circle:        | [Docs][forms/code-editor]       | - <!-- [Demo][forms/code-editor/demo] -->       |
+| "              | Date Picker       | `<uni-date-picker>`       | :white_check_mark:  | [Docs][forms/date-picker]       | [Demo][forms/date-picker/demo]                  |
+| "              | Date Range Picker | `<uni-daterange-picker>`  | :white_check_mark:  | [Docs][forms/daterange-picker]  | [Demo][forms/daterange-picker/demo]             |
+| "              | Date Time Picker  | `<uni-datetime-picker>`   | :white_check_mark:  | [Docs][forms/datetime-picker]   | [Demo][forms/datetime-picker/demo]              |
+| "              | Image Picker      | `<uni-image-picker>`      | :large_blue_circle: | [Docs][forms/image-picker]      | - <!-- [Demo][forms/image-picker/demo] -->      |
+| "              | Input             | `<uni-input>`             | :white_check_mark:  | [Docs][forms/input]             | [Demo][forms/input/demo]                        |
+| "              | Radio             | `<uni-radio>`             | :white_check_mark:  | [Docs][forms/radio]             | [Demo][forms/radio/demo]                        |
+| "              | Select            | `<uni-select>`            | :white_check_mark:  | [Docs][forms/select]            | [Demo][forms/select/demo]                       |
+| "              | Slider            | `<uni-slider>`            | :large_blue_circle: | [Docs][forms/slider]            | [Demo][forms/slider/demo]                       |
+| "              | Slider Range      | `<uni-slider-range>`      | :white_circle:      | [Docs][forms/slider-range]      | [Demo][forms/slider-range/demo]                 |
+| "              | Time Picker       | `<uni-time-picker>`       | :white_check_mark:  | [Docs][forms/time-picker]       | [Demo][forms/time-picker/demo]                  |
+| "              | Toggle            | `<uni-toggle>`            | :white_check_mark:  | [Docs][forms/toggle]            | [Demo][forms/toggle/demo]                       |
+| **UI**         | Button            | `<uni-button>`            | :white_check_mark:  | [Docs][ui/button]               | [Demo][ui/button/demo]                          |
+| "              | Button File       | `<uni-button-file>`       | :large_blue_circle: | [Docs][ui/button-file]          | [Demo][ui/button-file/demo]                     |
+| "              | Button Group      | `<uni-button-group>`      | :white_check_mark:  | [Docs][ui/button-group]         | [Demo][ui/button-group/demo]                    |
+| "              | Button Header     | `<uni-button-header>`     | :white_check_mark:  | [Docs][ui/button-header]        | [Demo][ui/button-header/demo]                   |
+| "              | Button Menu       | `<uni-button-menu>`       | :white_check_mark:  | [Docs][ui/button-menu]          | [Demo][ui/button-menu/demo]                     |
+| "              | Button Popup      | `<uni-button-popup>`      | :white_check_mark:  | [Docs][ui/button-popup]         | [Demo][ui/button-popup/demo]                    |
+| "              | Calendar          | `<uni-calendar>`          | :white_check_mark:  | [Docs][ui/calendar]             | [Demo][ui/calendar/demo]                        |
+| "              | Carousel          | `<uni-carousel>`          | :large_blue_circle: | [Docs][ui/carousel]             | - <!-- [Demo][ui/carousel/demo] -->             |
+| "              | Clock             | `<uni-clock>`             | :white_check_mark:  | [Docs][ui/clock]                | [Demo][ui/clock/demo]                           |
+| "              | Datagrid          | `<uni-datagrid>`          | :large_blue_circle: | [Docs][ui/datagrid]             | [Demo][ui/datagrid/demo]                        |
+| "              | Filters           | `<uni-filters>`           | :large_blue_circle: | [Docs][ui/filters]              | [Demo][ui/filters/demo]                         |
+| "              | Filters List      | `<uni-filters-list>`      | :large_blue_circle: | [Docs][ui/filters-list]         | - <!-- [Demo][ui/filters-list/demo] -->         |
+| "              | List              | `<uni-list>`              | :large_blue_circle: | [Docs][ui/list]                 | [Demo][ui/list/demo]                            |
+| "              | Menu              | `<uni-menu>`              | :white_check_mark:  | [Docs][ui/menu]                 | [Demo][ui/menu/demo]                            |
+| "              | Paginator         | `<uni-paginator>`         | :white_check_mark:  | [Docs][ui/paginator]            | [Demo][ui/paginator/demo]                       |
+| "              | Tree              | `<uni-tree>`              | :white_circle:      | [Docs][ui/tree]                 | - <!-- [Demo][ui/tree/demo] -->                 |
+| **Utils**      | Alert             | `<uni-alert>`             | :white_check_mark:  | [Docs][utils/alert]             | [Demo][utils/alert/demo]                        |
+| "              | Badge             | `<uni-badge>`             | :white_check_mark:  | [Docs][utils/badge]             | [Demo][utils/badge/demo]                        |
+| "              | Chip              | `<uni-chip>`              | :large_blue_circle: | [Docs][utils/chip]              | [Demo][utils/chip/demo]                         |
+| "              | Face              | `<uni-face>`              | :white_check_mark:  | [Docs][utils/face]              | [Demo][utils/face/demo]                         |
+| "              | Icon              | `<uni-icon>`              | :white_check_mark:  | [Docs][utils/icon]              | - <!-- [Demo][utils/icon/demo] -->                        |
+| "              | Progress          | `<uni-progress>`          | :white_check_mark:  | [Docs][utils/progress]          | [Demo][utils/progress/demo]                     |
+| "              | Separator         | `<uni-separator>`         | :white_check_mark:  | [Docs][utils/separator]         | - <!-- [Demo][utils/separator/demo] -->         |
+| "              | Spinner           | `<uni-spinner>`           | :white_check_mark:  | [Docs][utils/spinner]           | [Demo][utils/spinner/demo]                      |
+| "              | Toast             | `<uni-toast>`             | :red_circle:        | [Docs][utils/toast]             | - <!-- [Demo][utils/toast/demo] -->             |
+| "              | Tooltip           | `<uni-tooltip>`           | :red_circle:        | [Docs][utils/tooltip]           | - <!-- [Demo][utils/tooltip/demo] -->           |
+| **Views**      | Filtered Datagrid | `<uni-filtered-datagrid>` | :large_blue_circle: | [Docs][views/filtered-datagrid] | - <!-- [Demo][views/filtered-datagrid/demo] --> |
+| "              | Search Header     | `<uni-search-header>`     | :large_blue_circle: | [Docs][views/search-header]     | - <!-- [Demo][views/search-header/demo] -->     |
 
 **Legend**:
 
@@ -185,3 +185,60 @@ Select styles theme _(Optional)_
 [utils/tooltip]: https://github.com/nitsnets/unicorn_components/tree/master/src/components/utils/tooltip
 [views/filtered-datagrid]: https://github.com/nitsnets/unicorn_components/tree/master/src/components/views/filtered-datagrid
 [views/search-header]: https://github.com/nitsnets/unicorn_components/tree/master/src/components/views/search-header
+
+<!-- [charts/chart/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind= -->
+<!-- [charts/chart-legend/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind= -->
+<!-- [charts/chart-tooltip/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind= -->
+[containers/accordion/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Accordion
+[containers/aside/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Layout
+[containers/body/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Layout
+[containers/box/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Layout&selectedStory=Row%20of%20boxes
+[containers/header/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Layout&selectedStory=Header%2C%20aside%20and%20body
+[containers/layout/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Layout
+<!-- [containers/modal/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind= -->
+[containers/popup/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Popup
+[containers/row/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Layout&selectedStory=Row%20of%20boxes
+[containers/row-spacer/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Layout&selectedStory=Row%20spacer
+[containers/tabs/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Tabs
+[forms/button-toggle/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Checkables%2FButton%20toggle
+[forms/checkbox/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Checkables%2FCheckbox
+<!-- [forms/code-editor/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind= -->
+[forms/date-picker/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Date%20and%20time%2FDate%20picker
+[forms/daterange-picker/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Date%20and%20time%2FDate-range%20picker
+[forms/datetime-picker/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Date%20and%20time%2FDate-time%20picker
+<!-- [forms/image-picker/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind= -->
+[forms/input/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Input
+[forms/radio/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Radio
+[forms/select/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Select
+[forms/slider/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Slider
+[forms/slider-range/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Slider&selectedStory=Range
+[forms/time-picker/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Date%20and%20time%2FTime%20picker
+[forms/toggle/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Checkables%2FToggle
+[ui/button/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Buttons%2FButton
+[ui/button-file/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Buttons%2FFile%20picker
+[ui/button-group/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Buttons%2FGroup
+[ui/button-header/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Buttons%2FHeader
+[ui/button-menu/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Menu&selectedStory=Button%20triggered
+[ui/button-popup/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Popup&selectedStory=Button%20triggered
+[ui/calendar/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Date%20and%20time%2FCalendar
+<!-- [ui/carousel/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind= -->
+[ui/clock/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Date%20and%20time%2FClock
+[ui/datagrid/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Datagrid%2FGeneral
+[ui/filters/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Filters
+<!-- [ui/filters-list/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind= -->
+[ui/list/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=List
+[ui/menu/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Menu&selectedStory=Basic
+[ui/paginator/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Paginator
+<!-- [ui/tree/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind= -->
+[utils/alert/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Alert
+[utils/badge/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Badge
+[utils/chip/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Chip
+[utils/face/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Face
+<!-- [utils/icon/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind= -->
+[utils/progress/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Progress
+<!-- [utils/separator/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind= -->
+[utils/spinner/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind=Spinner
+<!-- [utils/toast/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind= -->
+<!-- [utils/tooltip/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind= -->
+<!-- [views/filtered-datagrid/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind= -->
+<!-- [views/search-header/demo]: https://nitsnets.github.io/unicorn_components/?selectedKind= -->
