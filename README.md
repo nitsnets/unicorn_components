@@ -30,17 +30,18 @@ https://nitsnets.github.io/unicorn_components
 ## Usage
 
 Import the module
-```typescript
+
+```javascript
 import { UnicornComponentsModule } from '@unicorn.io/components';
 
 @NgModule({
   imports: [
     UnicornComponentsModule.forRoot()
-  ],
-  ...
+  ]
 })
 export class AppModule { }
 ```
+
 Start using components
 
 ```html
