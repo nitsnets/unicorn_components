@@ -2,11 +2,11 @@ Tabs item
 ===================
 `uni-tabs-item`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Solapa que solo tiene sentido dentro de un componente `<uni-tabs>`
 
-## Uso
+## Usage
 
 ### Ejemplo
 
@@ -18,10 +18,10 @@ Solapa que solo tiene sentido dentro de un componente `<uni-tabs>`
 </uni-tabs>
 ```
 
-### Atributos de entrada
+### Inputs
 
 
-| Nombre      | Tipo      | Por defecto | Descripción 
+| Name      | Type      | Default | Description 
 | ----------- | --------- | ----------- | -----------
 | label       | `string`  | `''`        | Indica la etiqueta textual que aparecerá en la solapa
 | value       | `any`     | `false`     | Valor identificativo que se emite al seleccionar la solapa

@@ -2,13 +2,13 @@ Modal
 ===================
 `uni-modal`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Contenedor flotante que se abre sobre todo el contendido.
 
-## Uso
+## Usage
 
-### Ejemplo básico
+### Basic example
 
 #### Componente que invoca la modal
 ```typescript
@@ -60,17 +60,17 @@ export class MyModalContentComponent implements IModalContent {
 
 ### Atributos de opciones
 
-| Nombre      | Tipo                         | Por defecto | Descripción 
-| ----------- | ---------------------------- | ----------- | -----------
-| title       | `string`                     | `''`        | Texto que se situa en el titular de la modal
-| class       | `string`                     | `''`        | Clase(s) extra para colocar en el contenedor de la modal
-| type        | `'aside' | 'full' | null`    | `''`        | Formato de la modal, puede versar entre varios predefinidos
-| size        | `'large' | 'medium'`         | `''`        | Ancho de la modal
-| hideHeader  | `boolean`                    | `false`     | Estado deshabilitado que impide la apertura del acordeón
+| Name     | Type      | Default | Description                                              |
+| ---------- | --------- | ----------- | -------------------------------------------------------- |
+| title      | `string`  | `''`        | Texto que se situa en el titular de la modal             |
+| class      | `string`  | `''`        | Clase(s) extra para colocar en el contenedor de la modal |
+| type       | `'aside'  | 'full'      | null`                                                    | `''` | Formato de la modal, puede versar entre varios predefinidos |
+| size       | `'large'  | 'medium'`   | `''`                                                     | Ancho de la modal |
+| hideHeader | `boolean` | `false`     | Status deshabilitado que impide la apertura del acordeón |
 
 Los atributos descritos son los que utiliza el componente modal. Pero se pueden añadir tantos atributos de opciones extra como sea necesario, para utilizarlos desde el componente contenido.
 
-### Eventos de salida
+### Outputs
 
 El método de creación de modal es un Observable que recibe eventos cuando la modal se cierra. Estos eventos se pueden lanzar desde el componente contenido, mediante los emisores `submitModal` y `cancelModal`. En estos eventos se puede incluir el contenido que se considere oportuno ambos cerrarán la modal. 
 

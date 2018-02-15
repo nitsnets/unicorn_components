@@ -2,11 +2,11 @@ Header
 ===================
 `uni-header`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Contenedor que funciona como cabecera. Es combinable con un `<uni-layout>`.
 
-## Uso
+## Usage
 
 ### Ejemplo
 
@@ -22,9 +22,9 @@ Contenedor que funciona como cabecera. Es combinable con un `<uni-layout>`.
     </uni-body>
 </uni-layout>
 ```
-### Atributos de entrada
+### Inputs
 
-| Nombre      | Tipo                  | Por defecto | Descripción 
+| Name      | Type                  | Default | Description 
 | ----------- | --------------------- | ----------- | -----------
 | size        | `'medium' | 'normal'` | `'normal'`  | Indica la altura de la barra
 | color       | NtsColor              | `''`        | Indica el color de la barra

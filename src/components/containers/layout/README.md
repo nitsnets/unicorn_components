@@ -2,11 +2,11 @@ Layout
 ===================
 `uni-layout`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Contenedor para organizar interfaces. Es combinable con un `<uni-layout>`.
 
-## Uso
+## Usage
 
 ### Ejemplo
 

@@ -2,11 +2,11 @@ Separator
 ===================
 `uni-separaor`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 separador simple
 
-## Uso
+## Usage
 
 ## Ejemplo simple
 

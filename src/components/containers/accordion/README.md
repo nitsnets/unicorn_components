@@ -2,13 +2,13 @@ Accordion
 ===================
 `uni-accordion`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Elementos con cabecera y cuerpo. El cuerpo puede mostrarse u ocultarse a elección del usuario.
 
-## Uso
+## Usage
 
-### Ejemplo básico
+### Basic example
 
 ```html
 <uni-accordion mode="single">
@@ -24,22 +24,22 @@ Elementos con cabecera y cuerpo. El cuerpo puede mostrarse u ocultarse a elecci�
 </uni-accordion>
 ```
 
-### Atributos de entrada
+### Inputs
 
-| Nombre      | Tipo                    | Por defecto  | Descripción 
-| ----------- | ----------------------- | ------------ | -----------
-| mode        | `'single'` `'multiple'` | `'multiple'` | Indica si solo puede haber un solo *item* abierto (`'single'`) o más de uno (`'multiple'`).
+| Name | Type                    | Default      | Description                                                                                 |
+| ---- | ----------------------- | ------------ | ------------------------------------------------------------------------------------------- |
+| mode | `'single'` `'multiple'` | `'multiple'` | Indica si solo puede haber un solo *item* abierto (`'single'`) o más de uno (`'multiple'`). |
 
-### Eventos de salida
+### Outputs
 
-| Nombre          | Tipo                              | Descripción
-| --------------- | --------------------------------- | -----------
-| collapsedChange | `{index: number, value: boolean}` | Notifica cuándo algún *item* del acordeón (con posición `index`) se ha abierto (`value = false`) o cerrado (`value = true`)
+| Name            | Type                              | Description                                                                                                                 |
+| --------------- | --------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| collapsedChange | `{index: number, value: boolean}` | Notifica cuándo algún *item* del acordeón (con posición `index`) se ha abierto (`value = false`) o cerrado (`value = true`) |
 
-## Subcomponentes
+## Sub-components
 
 Sólo tienen sentido usados dentro de un datagrid.
 
-| Componente          | Nomenclatura              | Estado              | + Info 
-| ------------------- | ------------------------- | ------------------- | ------- 
-| Accordion item      | `<uni-accordion-item>`    | :white_check_mark:  | [+ Info](item/README)
+| Component      | Selector               | Status             | Docs                  |
+| -------------- | ---------------------- | ------------------ | --------------------- |
+| Accordion item | `<uni-accordion-item>` | :white_check_mark: | [+ Info](item/README) |

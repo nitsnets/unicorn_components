@@ -2,11 +2,11 @@ Progress
 ===================
 `uni-progress`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Barra de progreso
 
-## Uso
+## Usage
 
 ## Ejemplo simple
 
@@ -15,9 +15,9 @@ Barra de progreso
 
 ```
 
-### Atributos de entrada
+### Inputs
 
-| Nombre          | Tipo       | Por defecto | Descripción 
+| Name          | Type       | Default | Description 
 | --------------- | ---------- | ----------- | -----------
 | value           | `number`   | `0`         | El valor de progreso completado
 | total           | `number`   | `100`       | El valor total del progreso

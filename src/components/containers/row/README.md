@@ -2,11 +2,11 @@ Row
 ===================
 `uni-row`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Contenedor que dispone todo su contenido de manera horizontal uno al lado de otro, o vertical, uno encima del otro.
 
-## Uso
+## Usage
 
 ### Ejemplo horizontal
 

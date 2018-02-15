@@ -6,9 +6,9 @@ Button group
 
 Agrupación visual de botones
 
-## Uso
+## Usage
 
-### Ejemplo básico
+### Basic example
 
 ```html
 <uni-button-group>

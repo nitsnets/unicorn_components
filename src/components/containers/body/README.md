@@ -2,11 +2,11 @@ Body
 ===================
 `uni-body`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Contenedor principal de una página. Debe situarse dentro de un `<uni-layout>`.
 
-## Uso
+## Usage
 
 ### Ejemplo
 

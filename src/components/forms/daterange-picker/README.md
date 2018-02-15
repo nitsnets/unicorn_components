@@ -2,11 +2,11 @@ Daterange picker
 ===================
 `uni-daterange-picker`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Botón con estado: *pulsado* o *no pulsado*.
 
-## Uso
+## Usage
 
 ### Ejemplo
 
@@ -14,14 +14,14 @@ Botón con estado: *pulsado* o *no pulsado*.
 <uni-daterange-picker label="Etiqueta del botón" ([model])="checked"></uni-daterange-picker>
 ```
 
-### Atributos de entrada
+### Inputs
 
-| Nombre      | Tipo                                              | Por defecto | Descripción 
+| Name      | Type                                              | Default | Description 
 | ----------- | ------------------------------------------------- | ----------- | -----------
-| name        | `string`                                          | `''`        | Nombre del input de cara a usarse en formularios
+| name        | `string`                                          | `''`        | Name del input de cara a usarse en formularios
 | label       | `string`                                          | `''`        | Etiqueta textual del input
 | color       | `UniColor`                                        | `''`        | Color del fondo y del contenido
-| disabled    | `boolean`                                         | `false`     | Estado deshabilitado que impide la manipulación del input
+| disabled    | `boolean`                                         | `false`     | Status deshabilitado que impide la manipulación del input
 | model       | `{from: string, to: string}` (ambos YYYY-MM-DD)   | `undefined` | Valor introducido en el input
 | value       | `{from: string, to: string}` (ambos YYYY-MM-DD)   | `undefined` | Valor por defecto del input0
 | debounce    | `number`                                          | `0`         | Tiempo que debe permanecer el input sin cambios tras un cambio dado para que este se propague
@@ -33,9 +33,9 @@ Botón con estado: *pulsado* o *no pulsado*.
 | fromLabel   | `string`                                          | `''`        | Etiqueta que acompaña al input de `from`
 | toLabel     | `string`                                          | `''`        | Etiqueta que acompaña al input de `to`
 
-### Eventos de salida
+### Outputs
 
-| Nombre          | Tipo                                            | Descripción
+| Name          | Type                                            | Description
 | --------------- | ----------------------------------------------- | -----------
 | modelChange     | `{from: string, to: string}` (ambos YYYY-MM-DD) | Notifica cuando ha habido un cambio de valor en el input
 | uniFocus        | `Event`                                         | Notifica cuando se ha hecho puesto el foco en el input

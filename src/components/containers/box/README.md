@@ -2,11 +2,11 @@ Box
 ===================
 `uni-box`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Contenedor auxiliar con borde.
 
-## Uso
+## Usage
 
 ### Ejemplo
 

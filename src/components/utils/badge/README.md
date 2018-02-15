@@ -2,11 +2,11 @@ Badge
 ===================
 `uni-badge`
 ---
-:white_check_marck: Estable
+:white_check_marck: Stable
 
 Piloto indicador con numero
 
-## Uso
+## Usage
 
 ## Ejemplo simple
 
@@ -15,9 +15,9 @@ Piloto indicador con numero
 
 ```
 
-### Atributos de entrada
+### Inputs
 
-| Nombre   | Tipo         | Por defecto | Descripción 
+| Name   | Type         | Default | Description 
 | -------- | ------------ | ----------- | -----------
 | label    | `string`     | `undefined` | Contenido textual del piloto
 | color    | `UniColor`   | `10`        | Color aplicado al fondo del piloto

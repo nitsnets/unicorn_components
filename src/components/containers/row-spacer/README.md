@@ -2,11 +2,11 @@ Row Spacer
 ===================
 `uni-row-spacer`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Usado dentro de un `<uni-row>` genera un espaciado ocupando todo el espacio posible entre dos items.
 
-## Uso
+## Usage
 
 ### Ejemplo horizontal
 

@@ -2,11 +2,11 @@ Menu
 ===================
 `uni-menu`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Menú desplegable con opciones
 
-## Uso
+## Usage
 
 ## Ejemplo simple
 
@@ -22,16 +22,16 @@ Menú desplegable con opciones
 
 ```
 
-### Atributos de entrada
+### Inputs
 
-| Nombre   | Tipo              | Por defecto | Descripción 
-| -------- | ----------------- | ----------- | -----------
-| toggle   | `boolean`         | `false`     | Indica si un clic en el trigger cierra el popup cuando este está abierto (`true`) o no (`false`) 
-| keepOpen | `boolean`         | `false`     | Indica si al clicar dentro del popup se debe cerrar (`false`) o no (`true`)
-| position | `UniPosition`     | `null`      | La posición hacia la que se abre el popup respecto al trigger 
+| Name     | Type          | Default | Description                                                                                      |
+| -------- | ------------- | ------- | ------------------------------------------------------------------------------------------------ |
+| toggle   | `boolean`     | `false` | Indica si un clic en el trigger cierra el popup cuando este está abierto (`true`) o no (`false`) |
+| keepOpen | `boolean`     | `false` | Indica si al clicar dentro del popup se debe cerrar (`false`) o no (`true`)                      |
+| position | `UniPosition` | `null`  | La posición hacia la que se abre el popup respecto al trigger                                    |
 
-### Eventos de salidas
+### Outputs
 
-| Nombre       | Tipo           | Descripción
-| ------------ | -------------- | -----------
-| openedChange | `void`         | Notifica cuando se abre o se cierra el menú
+| Name         | Type   | Description                                 |
+| ------------ | ------ | ------------------------------------------- |
+| openedChange | `void` | Notifica cuando se abre o se cierra el menú |

@@ -2,13 +2,13 @@ Select
 ===================
 `uni-select`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Selector de opciones vitaminado.
 
-## Uso
+## Usage
 
-### Ejemplo básico
+### Basic example
 
 ```html
 <uni-select label="Default select" [(model)]="selectModel" [options]="[
@@ -32,35 +32,35 @@ Selector de opciones vitaminado.
 ]">
 ```
 
-### Atributos de entrada
+### Inputs
 
-| Nombre          | Tipo          | Por defecto | Descripción 
-| --------------- | ------------- | ----------- | -----------
-| local           | `boolean`     | `true`      | Indica si el filtrado de las opciones se debe realizar de manera interna (`true`) o delegarlo en el padre (`false`)
-| name            | `string`      | `''`        | Nombre del input de cara a usarse en formularios
-| label           | `string`      | `''`        | Etiqueta textual del input
-| color           | `UniColor`    | `''`        | Color del fondo y del contenido
-| disabled        | `boolean`     | `false`     | Estado deshabilitado que impide la manipulación del input
-| model           | `any`         | `false`     | Valor introducido en el input
-| value           | `any`         | `false`     | Valor por defecto del input
-| debounce        | `number`      | `0`         | Tiempo que debe permanecer el input sin cambios tras un cambio dado para que este se propague
-| placeholder     | `string`      | `''`        | Contenido del input cuando no tiene un valor seleccionado
-| icon            | `string`      | `undefined` | Nombre del icono que aparece en la parte interior izquierda del input
-| multiple        | `boolean`     | `false`     | Activa o desactiva la selección de varias opciones
-| clear           | `boolean`     | `false`     | Habilita un botón para limpiar el campo, situado a la derecha del mismo
-| options         | `UniOption[]` | `[]`        | El `array` de opciones seleccionables 
-| excludedOptions | `any[]`       | `[]`        | Un `array` con las claves de las opciones que no deben mostrarse
-| filterable      | `boolean`     | `true`      | Indica si las opciones se pueden filtrar mediante búsqueda textual
-| chips           | `boolean`     | `false`     | Indica si las opciones seleccionadas aparecen como chips en el input
+| Name          | Type          | Default | Description                                                                                                         |
+| --------------- | ------------- | ----------- | ------------------------------------------------------------------------------------------------------------------- |
+| local           | `boolean`     | `true`      | Indica si el filtrado de las opciones se debe realizar de manera interna (`true`) o delegarlo en el padre (`false`) |
+| name            | `string`      | `''`        | Name del input de cara a usarse en formularios                                                                    |
+| label           | `string`      | `''`        | Etiqueta textual del input                                                                                          |
+| color           | `UniColor`    | `''`        | Color del fondo y del contenido                                                                                     |
+| disabled        | `boolean`     | `false`     | Status deshabilitado que impide la manipulación del input                                                           |
+| model           | `any`         | `false`     | Valor introducido en el input                                                                                       |
+| value           | `any`         | `false`     | Valor por defecto del input                                                                                         |
+| debounce        | `number`      | `0`         | Tiempo que debe permanecer el input sin cambios tras un cambio dado para que este se propague                       |
+| placeholder     | `string`      | `''`        | Contenido del input cuando no tiene un valor seleccionado                                                           |
+| icon            | `string`      | `undefined` | Name del icono que aparece en la parte interior izquierda del input                                               |
+| multiple        | `boolean`     | `false`     | Activa o desactiva la selección de varias opciones                                                                  |
+| clear           | `boolean`     | `false`     | Habilita un botón para limpiar el campo, situado a la derecha del mismo                                             |
+| options         | `UniOption[]` | `[]`        | El `array` de opciones seleccionables                                                                               |
+| excludedOptions | `any[]`       | `[]`        | Un `array` con las claves de las opciones que no deben mostrarse                                                    |
+| filterable      | `boolean`     | `true`      | Indica si las opciones se pueden filtrar mediante búsqueda textual                                                  |
+| chips           | `boolean`     | `false`     | Indica si las opciones seleccionadas aparecen como chips en el input                                                |
 
-### Eventos de salida
+### Outputs
 
-| Nombre          | Tipo      | Descripción
-| --------------- | --------- | -----------
-| modelChange     | `boolean` | Notifica cuando ha habido un cambio de valor en el input
-| uniFocus        | `Event`   | Notifica cuando se ha hecho puesto el foco en el input
-| uniBlur         | `Event`   | Notifica cuándo se ha quitado el foco del input
-| search          | `string`  | Notifica cuándo el usuario intenta filtrar las opciones
+| Name      | Type      | Description                                              |
+| ----------- | --------- | -------------------------------------------------------- |
+| modelChange | `boolean` | Notifica cuando ha habido un cambio de valor en el input |
+| uniFocus    | `Event`   | Notifica cuando se ha hecho puesto el foco en el input   |
+| uniBlur     | `Event`   | Notifica cuándo se ha quitado el foco del input          |
+| search      | `string`  | Notifica cuándo el usuario intenta filtrar las opciones  |
 
 ## Mejoras previstas (TODO)
 

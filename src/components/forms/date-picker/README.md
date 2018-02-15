@@ -2,11 +2,11 @@ Date picker
 ===================
 `uni-date-picker`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Selector de fecha con calendario auxiliar.
 
-## Uso
+## Usage
 
 ### Ejemplo
 
@@ -14,14 +14,14 @@ Selector de fecha con calendario auxiliar.
 <uni-date-picker label="Etiqueta del botón" ([model])="checked"></uni-date-picker>
 ```
 
-### Atributos de entrada
+### Inputs
 
-| Nombre      | Tipo                    | Por defecto | Descripción 
+| Name      | Type                    | Default | Description 
 | ----------- | ----------------------- | ----------- | -----------
-| name        | `string`                | `''`        | Nombre del input de cara a usarse en formularios
+| name        | `string`                | `''`        | Name del input de cara a usarse en formularios
 | label       | `string`                | `''`        | Etiqueta textual del input
 | color       | `UniColor`              | `''`        | Color del fondo y del contenido
-| disabled    | `boolean`               | `false`     | Estado deshabilitado que impide la manipulación del input
+| disabled    | `boolean`               | `false`     | Status deshabilitado que impide la manipulación del input
 | model       | `string` (YYYY-MM-DD)   | `undefined` | Valor introducido en el input
 | value       | `string` (YYYY-MM-DD)   | `undefined` | Valor por defecto del input
 | debounce    | `number`                | `0`         | Tiempo que debe permanecer el input sin cambios tras un cambio dado para que este se propague
@@ -31,9 +31,9 @@ Selector de fecha con calendario auxiliar.
 | rangeFrom   | `string` (YYYY-MM-DD)   | `undefined` | Inicio del rango si procede
 | rangeTo     | `string` (YYYY-MM-DD)   | `undefined` | Final del rango si procede
 
-### Eventos de salida
+### Outputs
 
-| Nombre          | Tipo                  | Descripción
+| Name          | Type                  | Description
 | --------------- | --------------------- | -----------
 | modelChange     | `string` (YYYY-MM-DD) | Notifica cuando ha habido un cambio de valor en el input
 | uniFocus        | `Event`               | Notifica cuando se ha hecho puesto el foco en el input

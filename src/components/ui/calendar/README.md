@@ -2,11 +2,11 @@ Calendar
 ===================
 `uni-calendar`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Calendario para la selección de días
 
-## Uso
+## Usage
 
 ## Ejemplo
 
@@ -14,21 +14,21 @@ Calendario para la selección de días
 <uni-calendar [(model)]="daySelected"></uni-calendar>
 ```
 
-### Atributos de entrada
+### Inputs
 
-| Nombre      | Tipo                  | Por defecto | Descripción 
-| ----------- | --------------------- | ----------- | -----------
-| model       | `string` (YYYY-MM-DD) | `undefined` | Valor introducido en el input
-| max         | `string`              | `''`        | Nombre del campo de cara a usarse en formularios
-| min         | `string`              | `''`        | Nombre del campo de cara a usarse en formularios
-| rangeFrom   | `string`              | `''`        | Nombre del campo de cara a usarse en formularios
-| rangeTo     | `string`              | `''`        | Nombre del campo de cara a usarse en formularios
+| Name      | Type                  | Default     | Description                                    |
+| --------- | --------------------- | ----------- | ---------------------------------------------- |
+| model     | `string` (YYYY-MM-DD) | `undefined` | Valor introducido en el input                  |
+| max       | `string`              | `''`        | Name del campo de cara a usarse en formularios |
+| min       | `string`              | `''`        | Name del campo de cara a usarse en formularios |
+| rangeFrom | `string`              | `''`        | Name del campo de cara a usarse en formularios |
+| rangeTo   | `string`              | `''`        | Name del campo de cara a usarse en formularios |
 
-### Eventos de salida
+### Outputs
 
-| Nombre         | Tipo                     | Descripción
-| -------------- | ------------------------ | -----------
-| modelChange    | `string` (YYYY-MM-DD)    | Notifica cuando se ha seleccionado un fichero exitosamente
+| Name        | Type                  | Description                                                |
+| ----------- | --------------------- | ---------------------------------------------------------- |
+| modelChange | `string` (YYYY-MM-DD) | Notifica cuando se ha seleccionado un fichero exitosamente |
 
 
 ## Mejoras previstas (TODO)

@@ -2,11 +2,11 @@ Tooltip
 ===================
 `uni-tooltip`
 ---
-:red_circle: Inestable
+:red_circle: Unstable
 
 Contenedor flotante relativo a un elemento
 
-## Uso
+## Usage
 
 ### Ejemplo con servicio
 
@@ -37,11 +37,11 @@ constructor( private tooltipService: TooltipService ) { }
 
 ### Atributos de opciones
 
-| Nombre    | Tipo                                  | Por defecto | Descripción 
-| --------- | ------------------------------------- | ----------- | -----------
-| left      | `number`                              | `undefined` | Píxeles desde la izquierda de la pantalla
-| right     | `number`                              | `undefined` | Píxeles desde la derecha de la pantalla
-| top       | `number`                              | `undefined` | Píxeles desde arriba de la pantalla
-| bottom    | `number`                              | `undefined` | Píxeles desde abajo de la pantalla
-| element   | `Element`                             | `undefined` | Elemento al que se adjunta el *tooltip*, debe ir acompañado de `position`
-| position  | `'left'` `'right'` `'top'` `'bottom'` | `undefined` | Posición relativa a `element` a la que se coloca el *tooltip* 
+| Name     | Type                                  | Default     | Description                                                               |
+| -------- | ------------------------------------- | ----------- | ------------------------------------------------------------------------- |
+| left     | `number`                              | `undefined` | Píxeles desde la izquierda de la pantalla                                 |
+| right    | `number`                              | `undefined` | Píxeles desde la derecha de la pantalla                                   |
+| top      | `number`                              | `undefined` | Píxeles desde arriba de la pantalla                                       |
+| bottom   | `number`                              | `undefined` | Píxeles desde abajo de la pantalla                                        |
+| element  | `Element`                             | `undefined` | Elemento al que se adjunta el *tooltip*, debe ir acompañado de `position` |
+| position | `'left'` `'right'` `'top'` `'bottom'` | `undefined` | Posición relativa a `element` a la que se coloca el *tooltip*             |

@@ -2,11 +2,11 @@ Icon
 ===================
 `uni-icon`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Icono básico
 
-## Uso
+## Usage
 
 ## Ejemplo simple
 
@@ -15,9 +15,9 @@ Icono básico
 
 ```
 
-### Atributos de entrada
+### Inputs
 
-| Nombre   | Tipo                            | Por defecto | Descripción 
+| Name   | Type                            | Default | Description 
 | -------- | ------------------------------- | ----------- | -----------
 | size     | `'small'` `'big'` `null`        | `undefined` | Tamaño del icono
 | icon     | `string`                        | `undefined` | Clave del icono a visualizar

@@ -2,11 +2,11 @@ Input
 ===================
 `uni-input`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Campo de texto básico pero vitaminado.
 
-## Uso
+## Usage
 
 ### Ejemplos
 
@@ -27,14 +27,14 @@ Campo de texto básico pero vitaminado.
 <uni-input label="Multiline input" multiline="true"></uni-input>
 ```
 
-### Atributos de entrada
+### Inputs
 
-| Nombre      | Tipo                       | Por defecto | Descripción 
+| Name      | Type                       | Default | Description 
 | ----------- | -------------------------- | ----------- | -----------
-| name        | `string`                   | `''`        | Nombre del campo de cara a usarse en formularios
+| name        | `string`                   | `''`        | Name del campo de cara a usarse en formularios
 | label       | `string`                   | `''`        | Etiqueta textual del botón
 | color       | `UniColor`                 | `''`        | Color del fondo y del contenido
-| disabled    | `boolean`                  | `false`     | Estado deshabilitado que impide la manipulación del campo
+| disabled    | `boolean`                  | `false`     | Status deshabilitado que impide la manipulación del campo
 | model       | `boolean`                  | `false`     | Valor introducido en el campo
 | value       | `boolean`                  | `false`     | Valor por defecto del campo
 | debounce    | `number`                   | `0`         | Tiempo que debe permanecer el campo sin cambios tras un cambio dado para que este se propague
@@ -59,9 +59,9 @@ Campo de texto básico pero vitaminado.
 | caret       | `boolean`                  | `false`     | Colocal una flecha a la derecha del campo, pensada para los campos de selección de opciones
 | chips       | `string[]` `UniOption[]`   | `[]`        | Conjunto de chips que aparecen en el input
 
-### Eventos de salida
+### Outputs
 
-| Nombre          | Tipo                     | Descripción
+| Name          | Type                     | Description
 | --------------- | ------------------------ | -----------
 | modelChange     | `boolean`                | Notifica cuando ha habido un cambio de valor en el input
 | chipsChange     | `string[]` `UniOption[]` | Notifica cuando ha habido un cambio en los chips

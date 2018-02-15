@@ -2,11 +2,11 @@ Input
 ===================
 `uni-textarea`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Campo de texto multilinea vitaminado.
 
-## Uso
+## Usage
 
 ### Ejemplos
 
@@ -24,14 +24,14 @@ Campo de texto multilinea vitaminado.
 <uni-textarea label="Input with debounce" [debounce]="200"></uni-textarea>
 ```
 
-### Atributos de entrada
+### Inputs
 
-| Nombre      | Tipo        | Por defecto | Descripción 
+| Name      | Type        | Default | Description 
 | ----------- | ----------- | ----------- | -----------
-| name        | `string`    | `''`        | Nombre del campo de cara a usarse en formularios
+| name        | `string`    | `''`        | Name del campo de cara a usarse en formularios
 | label       | `string`    | `''`        | Etiqueta textual del botón
 | color       | `UniColor`  | `''`        | Color del fondo y del contenido
-| disabled    | `boolean`   | `false`     | Estado deshabilitado que impide la manipulación del campo
+| disabled    | `boolean`   | `false`     | Status deshabilitado que impide la manipulación del campo
 | model       | `boolean`   | `false`     | Valor introducido en el campo
 | value       | `boolean`   | `false`     | Valor por defecto del campo
 | debounce    | `number`    | `0`         | Tiempo que debe permanecer el campo sin cambios tras un cambio dado para que este se propague
@@ -54,9 +54,9 @@ Campo de texto multilinea vitaminado.
 | colorSwatch | `boolean`   | `false`     | Coloca una celda coloreada a la izquierda del campo, pensada para introducción de códigos de color
 | caret       | `boolean`   | `false`     | Colocal una flecha a la derecha del campo, pensada para los campos de selección de opciones
 
-### Eventos de salida
+### Outputs
 
-| Nombre          | Tipo      | Descripción
+| Name          | Type      | Description
 | --------------- | --------- | -----------
 | modelChange     | `boolean` | Notifica cuando ha habido un cambio de valor en el input
 | uniFocus        | `Event`   | Notifica cuando se ha hecho puesto el foco en el input

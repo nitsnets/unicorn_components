@@ -2,11 +2,11 @@ Chart
 ===================
 `uni-chart`
 ---
-:large_blue_circle: Inicial
+:large_blue_circle: Initial
 
 Gráfico versátil. Encapsulación de [Chart.js](http://www.chartjs.org/)
 
-## Uso
+## Usage
 
 ❗️ **IMPORTANTE**: Debe instalar `Chart.js` para utilizar `<uni-chart>`.
 ```
@@ -28,21 +28,21 @@ npm install chart.js --save
 
 ```
 
-### Atributos de entrada
+### Inputs
 
-| Nombre      | Tipo                                                                            | Por defecto | Descripción 
-| ----------- | ------------------------------------------------------------------------------- | ----------- | -----------
-| chartTitle  | `string`                                                                        | `undefined` | Título del gráfico
-| size        | `'tiny'` `'small'` `'medium'` `'large'`                                         | `'medium'`  | Tamaño del gráfico
-| type        | `'line'` `'bar'` `'pie'` `'radar'` `'doughnut'` `'polarArea'` `'horizontalBar'` | `undefined` | Tipo de gráfico
-| series      | `Array<{ label: string, data: [number], color: Color }>`                        | `[]`        | Datos a representar
-| labels      | `string[]`                                                                      | `[]`        | Etiquetas del gráfico
-| options     | `Object`                                                                        | `{}`        | Optiones adicionales
+| Name       | Type                                                                            | Default     | Description           |
+| ---------- | ------------------------------------------------------------------------------- | ----------- | --------------------- |
+| chartTitle | `string`                                                                        | `undefined` | Título del gráfico    |
+| size       | `'tiny'` `'small'` `'medium'` `'large'`                                         | `'medium'`  | Tamaño del gráfico    |
+| type       | `'line'` `'bar'` `'pie'` `'radar'` `'doughnut'` `'polarArea'` `'horizontalBar'` | `undefined` | Type de gráfico       |
+| series     | `Array<{ label: string, data: [number], color: Color }>`                        | `[]`        | Datos a representar   |
+| labels     | `string[]`                                                                      | `[]`        | Etiquetas del gráfico |
+| options    | `Object`                                                                        | `{}`        | Optiones adicionales  |
 
 
-### Eventos de salidas
+### Outputs
 
-| Nombre         | Tipo                            | Descripción
-| -------------- | ------------------------------- | -----------
-| chartHover     | `{active: any[]}`               | Notifica cuando pasa el ratón sobre el gráfico, devuelve los elementos implicados
-| chartClick     | `{event: Event, active: any[]}` | Notifica cuando se clica el gráfico y devuelve los elementos implicados
+| Name       | Type                            | Description                                                                       |
+| ---------- | ------------------------------- | --------------------------------------------------------------------------------- |
+| chartHover | `{active: any[]}`               | Notifica cuando pasa el ratón sobre el gráfico, devuelve los elementos implicados |
+| chartClick | `{event: Event, active: any[]}` | Notifica cuando se clica el gráfico y devuelve los elementos implicados           |

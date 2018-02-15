@@ -2,11 +2,11 @@ Tabs
 ===================
 `uni-tabs`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Conjunto de solapas seleccionables de manera excluyente.
 
-## Uso
+## Usage
 
 ### Ejemplo con atributo
 
@@ -32,28 +32,28 @@ Conjunto de solapas seleccionables de manera excluyente.
 </uni-tabs>
 ```
 
-### Atributos de entrada
+### Inputs
 
 
-| Nombre      | Tipo                                      | Por defecto | Descripción 
-| ----------- | ----------------------------------------- | ----------- | -----------
-| size        | `'small' | ''`                            | `''`        | Indica la altura de los tabs
-| tabs        | `Array<{label: string, value: string}>`   | `false`     | Array de tabs. Si no se indica `value` se toma como clave el índice del tab en este array.
-| tabSelected | `string`                                  | `true`      | La clave del tab que se encuentra seleccionado
+| Name        | Type                                    | Default | Description                                                                                |
+| ----------- | --------------------------------------- | ------- | ------------------------------------------------------------------------------------------ |
+| size        | `'small'                                | ''`     | `''`                                                                                       | Indica la altura de los tabs |
+| tabs        | `Array<{label: string, value: string}>` | `false` | Array de tabs. Si no se indica `value` se toma como clave el índice del tab en este array. |
+| tabSelected | `string`                                | `true`  | La clave del tab que se encuentra seleccionado                                             |
 
-### Eventos de salida
+### Outputs
 
-| Nombre            | Tipo      | Descripción
-| ----------------- | --------- | -----------
-| tabSelectedChange | `string`  | Notifica cuándo cambia el tab seleccionado devolviendo su clave
+| Name              | Type     | Description                                                     |
+| ----------------- | -------- | --------------------------------------------------------------- |
+| tabSelectedChange | `string` | Notifica cuándo cambia el tab seleccionado devolviendo su clave |
 
-## Subcomponentes
+## Sub-components
 
 Sólo tienen sentido usados dentro de un datagrid.
 
-| Componente          | Nomenclatura              | Estado               | + Info 
-| ------------------- | ------------------------- | -------------------- | ------- 
-| Tabs item           | `<uni-tabs-item>`         | :white_check_marck:  | [+ Info](item/README)
+| Component | Selector          | Status              | Docs                  |
+| --------- | ----------------- | ------------------- | --------------------- |
+| Tabs item | `<uni-tabs-item>` | :white_check_marck: | [+ Info](item/README) |
 
 ## Clases modificadoras
 * `.uni-tabs--no-border` -> Elimina el borde inferior.

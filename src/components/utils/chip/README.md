@@ -2,11 +2,11 @@ Chip
 ===================
 `uni-chip`
 ---
-:large_blue_circle: Inicial
+:large_blue_circle: Initial
 
 Pastilla de texto frecuentemente usada para representar etiquetas o *tags*
 
-## Uso
+## Usage
 
 ## Ejemplo simple
 
@@ -19,18 +19,18 @@ Pastilla de texto frecuentemente usada para representar etiquetas o *tags*
 
 ```
 
-### Atributos de entrada
+### Inputs
 
-| Nombre   | Tipo         | Por defecto | Descripción 
-| -------- | ------------ | ----------- | -----------
-| icon     | `string`     | `undefined` | Icono que encabeza la pastilla
-| label    | `string`     | `undefined` | Contendio textual eneiquecido de la pastilla
-| color    | `UniColor`   | `undefined` | Color aplicado al fondo y texto de la pastilla
-| disabled | `boolean`    | `false`     | Bloquea la interacción
-| closable | `boolean`    | `false`     | Indica si la pastilla se puede cerrar
+| Name     | Type       | Default     | Description                                    |
+| -------- | ---------- | ----------- | ---------------------------------------------- |
+| icon     | `string`   | `undefined` | Icono que encabeza la pastilla                 |
+| label    | `string`   | `undefined` | Contendio textual eneiquecido de la pastilla   |
+| color    | `UniColor` | `undefined` | Color aplicado al fondo y texto de la pastilla |
+| disabled | `boolean`  | `false`     | Bloquea la interacción                         |
+| closable | `boolean`  | `false`     | Indica si la pastilla se puede cerrar          |
 
-### Eventos de salidas
+### Outputs
 
-| Nombre         | Tipo         | Descripción
-| -------------- | ------------ | -----------
-| close          | `void`       | Notifica cuando se ha cerrado la pastilla
+| Name  | Type   | Description                               |
+| ----- | ------ | ----------------------------------------- |
+| close | `void` | Notifica cuando se ha cerrado la pastilla |

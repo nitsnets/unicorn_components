@@ -2,11 +2,11 @@ Aside
 ===================
 `uni-aside`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Contenedor situado en los laterales de una página. Debe situarse dentro de un `<uni-layout>` y combinarse con un `<uni-body>`.
 
-## Uso
+## Usage
 
 ### Ejemplo
 
@@ -24,8 +24,8 @@ Contenedor situado en los laterales de una página. Debe situarse dentro de un `
 </uni-layout>
 ```
 
-### Atributos de entrada
+### Inputs
 
-| Nombre      | Tipo               | Por defecto | Descripción 
+| Name      | Type               | Default | Description 
 | ----------- | ------------------ | ----------- | -----------
 | position    | `'left' 'right'`   | `'left'`    | Indica a qué lado del `body` se colocará el aside. Puede colocarse directamente como atributo (ver ejemplo).

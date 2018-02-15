@@ -6,7 +6,7 @@ Filtered datagrid
 
 Agrupación de filtros con funciones de limpiado y guardado.
 
-## Uso
+## Usage
 
 ## Ejemplo
 
@@ -33,27 +33,27 @@ Agrupación de filtros con funciones de limpiado y guardado.
 
 ```
 
-### Atributos de entrada
+### Inputs
 
-| Nombre                | Tipo                        | Por defecto | Descripción 
-| ---------------------- | -------------------------- | ----------- | -----------
-| filterNameFn          | `(item, filter) => boolean` | `undefined` | Función empleada para filtrar los elementos. Los recibe uno a uno y devuelve un booleano si pasan el filtro.
-| filterFn              | `(filter) => string`        | `undefined` | Recibe un filtro activo y devuelve el nombre con el que se debe guardar por defecto
-| hasHeader             | `boolean`                   | `false`     | Applies the specified layout
-| hasSubheader          | `boolean`                   | `false`     | Applies the specified layout
-| hasSubheaderAndTabs   | `boolean`                   | `false`     | Applies the specified layout
-| fullWidth             | `boolean`                   | `false`     | Applies the specified layout
+| Name                | Type                        | Default     | Description                                                                                                  |
+| ------------------- | --------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------ |
+| filterNameFn        | `(item, filter) => boolean` | `undefined` | Función empleada para filtrar los elementos. Los recibe uno a uno y devuelve un booleano si pasan el filtro. |
+| filterFn            | `(filter) => string`        | `undefined` | Recibe un filtro activo y devuelve el nombre con el que se debe guardar por defecto                          |
+| hasHeader           | `boolean`                   | `false`     | Applies the specified layout                                                                                 |
+| hasSubheader        | `boolean`                   | `false`     | Applies the specified layout                                                                                 |
+| hasSubheaderAndTabs | `boolean`                   | `false`     | Applies the specified layout                                                                                 |
+| fullWidth           | `boolean`                   | `false`     | Applies the specified layout                                                                                 |
 
-### Eventos de salida
+### Outputs
 
-| Nombre       | Tipo            | Descripción
-| ------------ | --------------- | -----------
-| filterSave   | `UniFilterItem` | Indica que se ha guardado un nuevo filtro
+| Name       | Type            | Description                               |
+| ---------- | --------------- | ----------------------------------------- |
+| filterSave | `UniFilterItem` | Indica que se ha guardado un nuevo filtro |
 
-## Subcomponentes
+## Sub-components
 
-| Componente          | Nomenclatura         | Estado         | + Info 
-| ------------------- | -------------------- | -------------- | -------
-| Datagrid            | `<uni-filters>`      | :large_blue_circle:  | [+ Info](../../ui/datagrid/README)
-| Filters             | `<uni-datagrid>`     | :large_blue_circle:  | [+ Info](../../ui/filters/README)
-| Filters list        | `<uni-filters-list>` | :large_blue_circle:  | [+ Info](../../ui/filters-list/README)
+| Component    | Selector             | Status              | Docs                                   |
+| ------------ | -------------------- | ------------------- | -------------------------------------- |
+| Datagrid     | `<uni-filters>`      | :large_blue_circle: | [+ Info](../../ui/datagrid/README)     |
+| Filters      | `<uni-datagrid>`     | :large_blue_circle: | [+ Info](../../ui/filters/README)      |
+| Filters list | `<uni-filters-list>` | :large_blue_circle: | [+ Info](../../ui/filters-list/README) |

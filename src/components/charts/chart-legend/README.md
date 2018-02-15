@@ -2,11 +2,11 @@ Chart legend
 ===================
 `uni-chart-legend`
 ---
-:large_blue_circle: Inicial
+:large_blue_circle: Initial
 
 Leyenda para gráficos.
 
-## Uso
+## Usage
 
 ## Ejemplo simple
 
@@ -22,17 +22,17 @@ Leyenda para gráficos.
 
 ```
 
-### Atributos de entrada
+### Inputs
 
-| Nombre      | Tipo             | Por defecto | Descripción 
-| ----------- | ---------------- | ----------- | -----------
-| editable    | `boolean`        | `true`      | Título del gráfico
-| series      | `Array<any>`     | `[]`        |  Tamaño del gráfico
-| colors      | `Array<number>`  | `[]`        | Tipo de gráfico
+| Name     | Type            | Default | Description        |
+| -------- | --------------- | ------- | ------------------ |
+| editable | `boolean`       | `true`  | Título del gráfico |
+| series   | `Array<any>`    | `[]`    | Tamaño del gráfico |
+| colors   | `Array<number>` | `[]`    | Type de gráfico    |
 
 
-### Eventos de salidas
+### Outputs
 
-| Nombre         | Tipo               | Descripción
-| -------------- | ------------------ | -----------
-| serieToggle     | `{active: any[]}` | Notifica cuando
+| Name        | Type              | Description     |
+| ----------- | ----------------- | --------------- |
+| serieToggle | `{active: any[]}` | Notifica cuando |

@@ -2,11 +2,11 @@ Paginator
 ===================
 `uni-paginator`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Selector de página
 
-## Uso
+## Usage
 
 ## Ejemplo simple
 
@@ -18,16 +18,16 @@ Selector de página
 
 ```
 
-### Atributos de entrada
+### Inputs
 
-| Nombre         | Tipo         | Por defecto | Descripción 
-| -------------- | ------------ | ----------- | -----------
-| totalElements  | `number`     | `undefined` | El número total de elementos para calcular el número de páginas respecto a `pageSize`
-| pageSize       | `number`     | `10`        | El tamaño de página para calcular el número de páginas repecto a `totalElements`
-| selected       | `number`     | `0`         | La página seleccionada
+| Name          | Type     | Default     | Description                                                                           |
+| ------------- | -------- | ----------- | ------------------------------------------------------------------------------------- |
+| totalElements | `number` | `undefined` | El número total de elementos para calcular el número de páginas respecto a `pageSize` |
+| pageSize      | `number` | `10`        | El tamaño de página para calcular el número de páginas repecto a `totalElements`      |
+| selected      | `number` | `0`         | La página seleccionada                                                                |
 
-### Eventos de salidas
+### Outputs
 
-| Nombre         | Tipo           | Descripción
-| -------------- | -------------- | -----------
-| selectedChange | `number`       | Notifica cuando se ha cambiado la página seleccionada
+| Name           | Type     | Description                                           |
+| -------------- | -------- | ----------------------------------------------------- |
+| selectedChange | `number` | Notifica cuando se ha cambiado la página seleccionada |

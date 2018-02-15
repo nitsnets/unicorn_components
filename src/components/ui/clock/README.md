@@ -2,11 +2,11 @@ Clock
 ===================
 `uni-clock`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Reloj para la selección de horas y minutos
 
-## Uso
+## Usage
 
 ## Ejemplo
 
@@ -14,17 +14,17 @@ Reloj para la selección de horas y minutos
 <uni-clock [(model)]="timeSelected"></uni-clock>
 ```
 
-### Atributos de entrada
+### Inputs
 
-| Nombre      | Tipo             | Por defecto | Descripción 
-| ----------- | ---------------- | ----------- | -----------
-| model       | `string` (hh:mm) | `undefined` | Valor introducido en el input
+| Name  | Type             | Default     | Description                   |
+| ----- | ---------------- | ----------- | ----------------------------- |
+| model | `string` (hh:mm) | `undefined` | Valor introducido en el input |
 
-### Eventos de salida
+### Outputs
 
-| Nombre         | Tipo             | Descripción
-| -------------- | ---------------- | -----------
-| modelChange    | `string` (hh:mm) | Notifica cuando se ha seleccionado un fichero exitosamente
+| Name        | Type             | Description                                                |
+| ----------- | ---------------- | ---------------------------------------------------------- |
+| modelChange | `string` (hh:mm) | Notifica cuando se ha seleccionado un fichero exitosamente |
 
 
 ## Mejoras previstas (TODO)

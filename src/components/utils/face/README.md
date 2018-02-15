@@ -2,11 +2,11 @@ Face
 ===================
 `uni-face`
 ---
-:white_check_mark: Estable
+:white_check_mark: Stable
 
 Avatar circular de un usuario. Si el usuario no posee imagen muestra la inicial del nombre. Y si no recibe usuario se muestra el icono elegido.
 
-## Uso
+## Usage
 
 ## Ejemplo simple
 
@@ -15,9 +15,9 @@ Avatar circular de un usuario. Si el usuario no posee imagen muestra la inicial 
 
 ```
 
-### Atributos de entrada
+### Inputs
 
-| Nombre   | Tipo                            | Por defecto | Descripción 
+| Name   | Type                            | Default | Description 
 | -------- | ------------------------------- | ----------- | -----------
 | size     | `'small'` `'big'` `null`        | `undefined` | Icono que encabeza la pastilla
 | user     | `{image: string, name: string}` | `undefined` | Usuario a visualizar

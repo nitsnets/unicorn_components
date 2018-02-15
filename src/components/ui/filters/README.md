@@ -6,7 +6,7 @@ Filters
 
 Agrupación de filtros con funciones de limpiado y guardado.
 
-## Uso
+## Usage
 
 Como contenido de la etiqueta `<uni-filters></uni-filters>` se puede colocar la estructura HTML que se desee. Sin embargo, los elementos cuyo valor se monitoriza y se tiene en cuenta para configurar el filtro son:
 
@@ -70,32 +70,32 @@ Por último, los valores por defecto de los filtros se toman del contenido de lo
 </uni-filters>
 ```
 
-### Atributos de entrada
+### Inputs
 
-| Nombre        | Tipo                            | Por defecto | Descripción 
-| ------------- | ------------------------------- | ----------- | -----------
-| autoFilter    | `'onChange'` `'onBlur'` `false` | `false`     | Indica de qué manera se notifican los cambios de filtro
-| persistent    | `string`                        | `null`      | Recibe una clave única y almacena los filtros para persistir al refresco de página
-| savable       | `boolean`                       | `false`     | Habilita un botón para guardar los filtros
-| clearable     | `boolean`                       | `true`      | Habilita un botón para limpiar los filtros. Este botón sólo es visible si los filtros actuales difieren de los filtros por defecto. Y cuando se clica se restablecen los valores por defecto.
-| button        | `boolean`                       | `false`     | Muestra u oculta el botón de *Aplicar filtros*. Si `autoFilter = false` este parámetro debe ser `true`.
-| buttonColor   | `UniColor`                      | `'primary'` | Asigna un color al botón de búsqueda.
-| buttonLabel   | `string`                        | `'Apply'`   | Asigna una etiqueta al botón de búsqueda.
-| buttonIcon    | `string`                        | `null`      | Asigna un icono al botón de búsqueda
-| filter        | `UniFilter`                     | `{}`        | Filtros activos
+| Name        | Type                            | Default     | Description                                                                                                                                                                                   |
+| ----------- | ------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| autoFilter  | `'onChange'` `'onBlur'` `false` | `false`     | Indica de qué manera se notifican los cambios de filtro                                                                                                                                       |
+| persistent  | `string`                        | `null`      | Recibe una clave única y almacena los filtros para persistir al refresco de página                                                                                                            |
+| savable     | `boolean`                       | `false`     | Habilita un botón para guardar los filtros                                                                                                                                                    |
+| clearable   | `boolean`                       | `true`      | Habilita un botón para limpiar los filtros. Este botón sólo es visible si los filtros actuales difieren de los filtros por defecto. Y cuando se clica se restablecen los valores por defecto. |
+| button      | `boolean`                       | `false`     | Muestra u oculta el botón de *Aplicar filtros*. Si `autoFilter = false` este parámetro debe ser `true`.                                                                                       |
+| buttonColor | `UniColor`                      | `'primary'` | Asigna un color al botón de búsqueda.                                                                                                                                                         |
+| buttonLabel | `string`                        | `'Apply'`   | Asigna una etiqueta al botón de búsqueda.                                                                                                                                                     |
+| buttonIcon  | `string`                        | `null`      | Asigna un icono al botón de búsqueda                                                                                                                                                          |
+| filter      | `UniFilter`                     | `{}`        | Filtros activos                                                                                                                                                                               |
 
-### Eventos de salida
+### Outputs
 
-| Nombre       | Tipo        | Descripción
-| ------------ | ----------- | -----------
-| filterChange | `UniFilter` | Indica cambios en los filtros activos
-| save         | `UniFilter` | Indica que se desean guardar los filtros activos 
+| Name         | Type        | Description                                      |
+| ------------ | ----------- | ------------------------------------------------ |
+| filterChange | `UniFilter` | Indica cambios en los filtros activos            |
+| save         | `UniFilter` | Indica que se desean guardar los filtros activos |
 
-## Subcomponentes
+## Sub-components
 
 Sólo tienen sentido usados dentro de `uni-filters`.
 
-| Componente          | Nomenclatura            | Estado         | + Info 
-| ------------------- | ----------------------- | -------------- | -------
-| Filters advanced    | `<uni-filters-avanced>` | :large_blue_circle:  | [+ Info](filters-advanced/README)
-| Filters main        | `<uni-filters-main>`    | :large_blue_circle:  | [+ Info](filters-main/README)
+| Component        | Selector                | Status              | Docs                              |
+| ---------------- | ----------------------- | ------------------- | --------------------------------- |
+| Filters advanced | `<uni-filters-avanced>` | :large_blue_circle: | [+ Info](filters-advanced/README) |
+| Filters main     | `<uni-filters-main>`    | :large_blue_circle: | [+ Info](filters-main/README)     |
