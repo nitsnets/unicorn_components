@@ -2,6 +2,8 @@
 
 ## Current
 
+### New features
+- Demo links included at the components table.
 
 ## **[1.0.1]** - 25/01/2018
 
@@ -9,7 +11,7 @@
 - Demo integrated in the project as a Storybook showroom.
 
 ### Bug fixes
-- Documentation mistakes fixed
+- Documentation mistakes fixed.
 
 ## **[1.0.0]** - 16/01/2018
 
