@@ -4,7 +4,7 @@ import { UniIconComponent } from '../../utils/icon/icon.component';
 import { UniSpinnerComponent } from '../../utils/spinner/spinner.component';
 import { storiesOf } from '@storybook/angular';
 
-import { withKnobs, select, text } from '@storybook/addon-knobs/angular';
+import { select, text } from '@storybook/addon-knobs/angular';
 
 const moduleMetadata = {
     declarations: [UniIconComponent, UniSpinnerComponent, UniButtonComponent],
@@ -28,7 +28,6 @@ const iconKnob = ['Icon left', 'check'];
 const iconRightKnob = ['Icon right', 'check'];
 
 storiesOf('Buttons/Button', module)
-    .addDecorator(withKnobs)
     .add('Basic', () => ({
         component, moduleMetadata, props: {
             label: text(...labelKnob),
@@ -37,7 +36,7 @@ storiesOf('Buttons/Button', module)
     }))
     .add('Colors', () => ({
         template: `
-            <uni-button [label]="label"></uni-buttonc>
+            <uni-button [label]="label"></uni-button>
             <uni-button [label]="label" color="default"></uni-button>
             <uni-button [label]="label" color="primary"></uni-button>
             <uni-button [label]="label" color="success"></uni-button>
