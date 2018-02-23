@@ -23,9 +23,9 @@ const moduleMetadata = {
     ]
 };
 const data: UniListItem[] = [
-    { name: 'Item 1', icon: 'check', value: 1 },
-    { name: 'Item 2', icon: 'add', value: 2 },
-    { name: 'Item 3', icon: 'close', value: 3 }
+    { label: 'Item 1', icon: 'check', value: 1 },
+    { label: 'Item 2', icon: 'add', value: 2 },
+    { label: 'Item 3', icon: 'close', value: 3 }
 ]
 
 storiesOf('List', module)

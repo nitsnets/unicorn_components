@@ -50,12 +50,12 @@ export class FilteredDatagridComponent implements AfterContentInit, OnChanges {
     }
     private onSaveFilter(filter: UniFilter) {
         const filterItem: UniFilterItem = {
-            name: '',
+            label: '',
             icon: '',
             filter: deepClone(filter)
         };
         if (this.filterNameFn) {
-            filterItem.name = this.filterNameFn(filter);
+            filterItem.label = this.filterNameFn(filter);
         }
         this.filterSave.emit(filterItem);
         this.filtersList.addCustomFilter(filterItem);

@@ -2,9 +2,17 @@
 
 ## Current
 
+### Breaking changes
+- The interface `UniListItem`'s attibute `name` renamed to `label`. This is to be consistent with `UniOption`, `UniButton`, `UniInput` and other classes.
 ### New features
-- Demo links included at the components table.
-
+- Demo links included at the components table, at README.
+- Component `<uni-select>` now accepts items with icons:
+```html
+<uni-select [options]="[
+  { label: 'Good', icon: 'check', value: 1 },
+  { label: 'Wrong', icon: 'cross', value: 0 },
+]"></uni-select>
+```
 ## **[1.0.1]** - 25/01/2018
 
 ### New features

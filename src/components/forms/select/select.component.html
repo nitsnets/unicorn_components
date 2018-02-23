@@ -1,5 +1,6 @@
 <div (clickOutside)="onClickOutside()">
-    <uni-input iconRight="arrow_drop_down" [placeholder]="placeholder" [name]="name" [icon]="icon" [label]="label" [clear]="clear"
+    {{optionSelected | json}}
+    <uni-input iconRight="arrow_drop_down" [placeholder]="placeholder" [name]="name" [icon]="icon || (!multiple ? (optionsSelected[0]?.icon || null) : null)" [label]="label" [clear]="clear"
         (uniFocus)="onFocus($event)" (uniBlur)="onBlur($event)" [(model)]="searchModel" [readonly]="!filterable" (modelChange)="onFilter($event)"
         [chips]="chips ? optionsSelected : null" (deleteChip)="onSelect(optionsSelected[$event])">
     </uni-input>
@@ -16,12 +17,15 @@
 
         <uni-separator *ngIf="multiple && !searchModel"></uni-separator>
 
-        <li class="uni-select__option" *ngFor="let option of optionsFiltered; let i = index;" [class.uni-select__option--selected]="isOptionSelected(option)"
-            [class.uni-select__option--pointed]="isOptionPointed(i)" (click)="onSelect(option)" (mouseover)="onHoverOption(i)"
-            (mousedown)="onSelectingOption(true)" (mouseup)="onSelectingOption(false)">
+        <li class="uni-select__option" *ngFor="let option of optionsFiltered; let i = index;" (click)="onSelect(option)" (mouseover)="onHoverOption(i)"
+            (mousedown)="onSelectingOption(true)" (mouseup)="onSelectingOption(false)" [ngClass]="{
+            'uni-select__option--selected': isOptionSelected(option),
+            'uni-select__option--pointed': isOptionPointed(i)
+        }">
 
             <uni-icon *ngIf="multiple" class="uni-select__option-icon" [icon]="isOptionSelected(option) ? 'check_box' : 'check_box_outline_blank'">
             </uni-icon>
+            <uni-icon *ngIf="option.icon" class="uni-select__option-icon" [icon]="option.icon"> </uni-icon>
             <span [innerHtml]="(option.label | highlight:(filterable ? searchModel : '')) || '(Unlabeled)'"></span>
         </li>
     </ul>

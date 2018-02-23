@@ -25,6 +25,13 @@ const options = [
     { label: 'Option 4', value: 4 }
 ];
 
+const optionsIcons = [
+    { label: 'Love', value: 1, icon: 'favorite' },
+    { label: 'Health', value: 2, icon: 'healing' },
+    { label: 'Money', value: 3, icon: 'monetization_on' },
+    { label: 'Time', value: 4, icon: 'hourglass_empty' }
+];
+
 storiesOf('Select', module)
     .add('Basic', () => ({
         moduleMetadata, component, props: {
@@ -53,6 +60,12 @@ storiesOf('Select', module)
             options
         }
     }))
+    .add('Items with icons', () => ({
+        moduleMetadata, component, props: {
+            filterable: false,
+            options: optionsIcons
+        }
+    }))
     .add('Clearable', () => ({
         moduleMetadata, component, props: {
             clear: true,
@@ -68,6 +81,12 @@ storiesOf('Select', module)
     .add('Multiple', () => ({
         moduleMetadata, component, props: {
             options,
+            multiple: true
+        }
+    }))
+    .add('Multiple and icons', () => ({
+        moduleMetadata, component, props: {
+            options: optionsIcons,
             multiple: true
         }
     }))

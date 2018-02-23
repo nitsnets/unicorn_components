@@ -88,10 +88,10 @@ export class UniListComponent implements OnChanges {
         this.preventClick = true;
         this.data.map(s => s['editing'] = false);
         item['editing'] = true;
-        item['newname'] = item.name;
+        item['newname'] = item.label;
     }
     onEdit(index: number, item: UniListItem) {
-        item.name = item['newname'];
+        item.label = item['newname'];
         item['editing'] = false;
 
         this.edit.emit({ index, item });

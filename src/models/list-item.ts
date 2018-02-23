@@ -1,5 +1,6 @@
 export interface UniListItem {
-    name: string;
+    label: string;
     value?: any;
     icon?: string;
+    sublabel?: string;
 }

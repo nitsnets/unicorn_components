@@ -1,24 +1,21 @@
 :host {
     display: inline-block;
     position: relative;
-
-	uni-input {
-		width: 100%;
-	}
+    uni-input {
+        width: 100%;
+    }
 }
 
-
 .uni-select {
-
-	&__options {
-		z-index: 5;
-		width: 100%;
-		list-style: none;
-		position: absolute;
-	}
-
-	&__option {
-		cursor: default;
-		display: flex;
-	}
+    &__options {
+        z-index: 5;
+        width: 100%;
+        list-style: none;
+        position: absolute;
+    }
+    &__option {
+        cursor: default;
+        display: flex;
+        align-items: center;
+    }
 }
