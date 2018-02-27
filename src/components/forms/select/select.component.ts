@@ -31,6 +31,7 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
     @Input() clear = false;
     @Input() filterable = true;
     @Input() chips = false;
+    @Input() autofocus = false;
 
     @Input() options: UniOption[] = [];
     @Input() excludedOptions: string[];
