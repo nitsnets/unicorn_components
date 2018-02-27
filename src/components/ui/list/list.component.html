@@ -1,16 +1,16 @@
 <ul class="uni-list__inner" *ngIf="data && data.length">
     <ng-container *ngFor="let item of data; let i = index">
-        <li class="uni-list__item" *ngIf="item.name !== '----'" [class.uni-list__item--selected]="isSelected(item)">
+        <li class="uni-list__item" *ngIf="item.label !== '----'" [class.uni-list__item--selected]="isSelected(item)">
             <uni-icon class="uni-list__hover-icon uni-list__hover-icon--drag" *ngIf="sortable" icon="drag_handle"></uni-icon>
             <ng-container *ngIf="!item.editing">
                 <uni-icon *ngIf="showIcons && item.icon" [icon]="item.icon" class="uni-list__icon"></uni-icon>
-                <span class="uni-list__content" (click)="onClick(item)" (dblclick)="onDoubleclick(item)" [innerHtml]="item.name || '(Untitled)'"></span>
+                <span class="uni-list__content" (click)="onClick(item)" (dblclick)="onDoubleclick(item)" [innerHtml]="item.label || '(Untitled)'"></span>
                 <uni-button class="uni-list__hover-icon" *ngIf="deletable" icon="delete" (click)="onDelete(i, item, $event)"></uni-button>
             </ng-container>
             <form *ngIf="item.editing === true" (submit)="onEdit(i, item)">
                 <uni-input floating="true" [autofocus]="true" [(model)]="item.newname" [placeholder]="placeholder || ''" (uniBlur)="item.editing = false"></uni-input>
             </form>
         </li>
-        <uni-separator class="uni-list__separator" *ngIf="item.name === '----'"></uni-separator>
+        <uni-separator class="uni-list__separator" *ngIf="item.label === '----'"></uni-separator>
     </ng-container>
 </ul>
