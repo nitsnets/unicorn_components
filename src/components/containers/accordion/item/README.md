@@ -24,10 +24,10 @@ Elementos con cabecera y cuerpo. El cuerpo puede mostrarse u ocultarse a elecciÃ
     [collapsed]="false"
     (colapsedChange)="log('Colapsed changed: ' + $event)"
 >
-    <ng-container uni-accordion-item-content>
+    <ng-container uni-accordion-content>
         Et commodo reprehenderit quis fugiat in sit ut veniam.
     </ng-container>
-    <ng-container uni-accordion-item-menu>
+    <ng-container uni-accordion-menu>
         <uni-menu-item label="Option 1" icon="check"></uni-menu-item>
         <uni-menu-item label="Option 2" icon="close"></uni-menu-item>
         <uni-menu-item label="Option 3" icon="heart"></uni-menu-item>
