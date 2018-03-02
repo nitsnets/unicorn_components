@@ -78,6 +78,7 @@ import { UniToastComponent } from './utils/toast/toast.component';
 import { UniToggleComponent } from './forms/toggle/toggle.component';
 import { UniTooltipComponent } from './utils/tooltip/tooltip.component';
 import { UniTooltipDirective } from './utils/tooltip/tooltip.directive';
+import { UniLinkPickerComponent } from './forms/link-picker/link-picker.component';
 
 export const UNI_COMPONENTS = [
     UniPopupComponent, UniPopupTriggerDirective, UniPopupContainerComponent, UniMenuComponent, UniMenuTriggerDirective,
@@ -96,7 +97,8 @@ export const UNI_COMPONENTS = [
     UniSpinnerComponent, UniAccordionItemComponent, UniButtonGroupComponent, UniRadioGroupComponent,
     UniButtonToggleGroupComponent, UniSliderComponent, UniAlertComponent, UniTabsItemComponent, UniTextareaComponent,
     UniSliderRangeComponent, UniImageComponent, UniGalleryImageComponent, UniGalleryComponent,
-    UniGalleryFullImageComponent, UniModalComponent, UniTooltipComponent, UniTooltipDirective, UniToastComponent
+    UniGalleryFullImageComponent, UniModalComponent, UniTooltipComponent, UniTooltipDirective, UniToastComponent,
+    UniLinkPickerComponent
 ];
 export const UNI_ENTRY_COMPONENTS = [
     UniDatagridDeleteComponent, UniGalleryFullImageComponent, UniModalComponent, UniTooltipComponent, UniToastComponent

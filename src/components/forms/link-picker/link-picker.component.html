@@ -1,0 +1,14 @@
+<uni-select *ngIf="!external" [options]="options" (search)="onSearch($event)" [icon]="blank || external ? 'open_in_new' : 'link'"
+    (modelChange)="onNgModelChange($event.value)">
+    <div #suffix class="uni-input__suffix-content">
+        <uni-button icon="link" (click)="openLink()"></uni-button>
+    </div>
+    <div #footer *ngIf="!external" class="uni-select__options-footer">
+        <uni-checkbox [(model)]="blank" [disabled]="external" label="Open in new tab"></uni-checkbox>
+    </div>
+</uni-select>
+<uni-input [(model)]="search" *ngIf="external" icon="open_in_new" [autofocus]="true" (modelChange)="onNgModelChange($event)">
+    <div #suffix class="uni-input__suffix-content">
+        <uni-button icon="link" (click)="openLink()"></uni-button>
+    </div>
+</uni-input>
