@@ -32,6 +32,13 @@ const optionsIcons = [
     { label: 'Time', value: 4, icon: 'hourglass_empty' }
 ];
 
+const optionsSublabel = [
+    { label: 'Love', sublabel: 'Will make you suffer', value: 1, icon: 'favorite' },
+    { label: 'Health', sublabel: 'Will bore you', value: 2, icon: 'healing' },
+    { label: 'Money', sublabel: 'Will make you crazy', value: 3, icon: 'monetization_on' },
+    { label: 'Time', sublabel: 'Will make you despair', value: 4, icon: 'hourglass_empty' }
+];
+
 storiesOf('Select', module)
     .add('Basic', () => ({
         moduleMetadata, component, props: {
@@ -65,6 +72,21 @@ storiesOf('Select', module)
             filterable: false,
             options: optionsIcons
         }
+    }))
+    .add('Items with sublabel', () => ({
+        moduleMetadata, component, props: {
+            filterable: false,
+            options: optionsSublabel
+        }
+    }))
+    .add('Items footer', () => ({
+        moduleMetadata, template: `
+            <uni-select [options]="options" [filterable]="false">
+                <span #footer class="uni-select__options-footer">
+                    Options taken from database.
+                </span>
+            </uni-select>
+        `, props: { options }
     }))
     .add('Clearable', () => ({
         moduleMetadata, component, props: {

@@ -1,11 +1,11 @@
-import { Component, EventEmitter, HostBinding, HostListener, Input, OnChanges, OnInit, Output } from '@angular/core';
+import {
+    Component, EventEmitter, HostBinding, HostListener, Input, OnChanges, OnInit, Output, ElementRef,
+    ContentChild
+} from '@angular/core';
 
 import { FilterPipe } from '../../../pipes/filter.pipe';
 import { UniInputBaseComponent } from '../../base/input-base/input-base.component';
 import { UniOption } from '../../../models/option';
-
-export enum SelectTypes { text, number, email, password }
-
 @Component({
     selector: 'uni-select',
     templateUrl: 'select.component.html',
@@ -32,11 +32,17 @@ export class UniSelectComponent extends UniInputBaseComponent implements OnInit,
     @Input() filterable = true;
     @Input() chips = false;
     @Input() autofocus = false;
+    @Input() prefix = '';
+    @Input() prefixIcon = '';
+    @Input() suffix = '';
+    @Input() suffixIcon = '';
 
     @Input() options: UniOption[] = [];
     @Input() excludedOptions: string[];
 
     @Output() search = new EventEmitter();
+
+    @ContentChild('footer') footer: ElementRef;
 
     areOptionsVisible = false;
     optionsFiltered: UniOption[] = [];

@@ -1,32 +1,39 @@
 .uni-select {
     line-height: $input-height;
-
     &__options {
         background-color: white;
-        max-height: $input-height * 8;
-        overflow-y: auto;
         @include border($border-width);
+        &-inner {
+            max-height: $input-height * 8;
+            overflow-y: auto;
+        }
     }
-
     &__option {
         font-size: $font-small;
         padding: $basic-padding/4;
         line-height: $input-height/2;
         min-height: $input-height;
-
         &-icon {
             margin-right: $basic-padding / 4;
             opacity: 0.25;
         }
-
+        &-sublabel {
+            opacity: 0.5;
+        }
+        &-footer {
+            @include border($border-width);
+            top: 100%;
+            width: 100%;
+            font-size: $font-small;
+            background-color: $color-grey-light;
+            padding: 0 $basic-padding/4;
+        }
         &--selected {
             background-color: $color-grey-medium;
-
             .uni-select__option-icon {
                 opacity: 1;
             }
         }
-
         &--pointed {
             background-color: $color-grey-light;
         }
