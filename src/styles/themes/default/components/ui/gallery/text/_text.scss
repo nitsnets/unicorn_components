@@ -1,0 +1,69 @@
+.uni-gallery-text {
+
+    &__footer {
+        position: absolute;
+        z-index: 1;
+        opacity: 0;
+        bottom: 0;
+        width: 100%;
+        padding: $basic-padding/4 0;
+        background-color: $color-grey-dark;
+        transition: all ease 200ms;
+        display: flex;
+
+        * {
+            color: white !important;
+        }
+    }
+
+    &__deleting {
+        padding: $basic-padding;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        background-color: transparentize($color-error-light, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        strong {
+            color: $color-error;
+        }
+    }
+
+    &:hover &__footer {
+        opacity: 1;
+    }
+
+    &__text-container {
+        flex: 1;
+        cursor: pointer;
+    }
+
+    &__title,
+    &__dimensions {
+        margin: 0;
+    }
+
+    &__dimensions {
+        font-size: $font-smallest;
+    }
+
+    &--selected &__footer {
+        opacity: 1;
+        background-color: $color-primary;
+    }
+
+    &--deleting-selection &__footer {
+        opacity: 1;
+        background-color: $color-error;
+    }
+
+    &--deleting &__footer {
+        opacity: 0 !important;
+    }
+}

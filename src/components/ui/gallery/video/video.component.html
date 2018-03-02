@@ -1,0 +1,18 @@
+<uni-row class="uni-gallery-video__footer">
+    <uni-checkbox class="uni-gallery-video__checkbox" [model]="selected" (modelChange)="onSelect($event)"></uni-checkbox>
+    <div class="uni-gallery-video__text-container" (click)="onSelect(!selected)">
+        <p class="uni-gallery-video__title">{{label || '(Untitled)'}}</p>
+    </div>
+    <uni-button class="uni-gallery-video__delete" (click)="onDeleting(true)" icon="delete"></uni-button>
+</uni-row>
+
+<div class="uni-gallery-video__deleting" *ngIf="deleting">
+    <div>Are you sure you want to delete
+        <strong>{{label || '(Untitled)'}}</strong>?</div>
+    <div>
+        <uni-button class="u-fr" label="Cancel" (click)="onDeleting(false)"></uni-button>
+        <uni-button class="u-fr" label="Delete" color="error" (click)="onDelete()"></uni-button>
+    </div>
+</div>
+
+<uni-icon [icon]="'video_library'"></uni-icon>
