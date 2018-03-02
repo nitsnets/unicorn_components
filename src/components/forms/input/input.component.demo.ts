@@ -42,6 +42,16 @@ storiesOf('Input', module)
             suffix: '.com'
         }
     }))
+    .add('Custom prefix and suffix', () => ({
+        moduleMetadata, template: `
+            <uni-input>
+                <div #suffix class="uni-input__suffix-content">
+                    Custom
+                    <uni-icon icon="check"></uni-icon>
+                </div>
+            </uni-input>
+        `
+    }))
     .add('Icon left', () => ({
         moduleMetadata, component, props: {
             icon: 'check'

@@ -1,7 +1,6 @@
-.uni-input{
+.uni-input {
     display: inline-flex;
     line-height: $input-height;
-
     &__field {
         height: $input-height;
         padding-left: $input-padding;
@@ -10,32 +9,26 @@
         font-size: inherit;
         color: inherit;
         @include border();
-
         &--textarea {
             padding: $input-padding;
             min-height: $input-height * 2;
         }
     }
-
-
     ::placeholder {
         color: $color-grey-dark;
         font-weight: 300;
     }
-
-    &__icon, &__icon-right {
+    &__icon,
+    &__icon-right {
         opacity: 0.5;
         line-height: 2.2;
     }
-
     &__icon {
         left: ($input-height - $input-padding * 2) / 2;
     }
-
     &__icon-right {
         right: ($input-height - $input-padding * 2) / 2;
     }
-
     &__label,
     &__prefix,
     &__suffix,
@@ -47,136 +40,106 @@
         color: $color-grey-dark;
         margin: 0 $input-padding / 4;
         height: $label-height;
-    };
-
+        white-space: nowrap;
+    }
+    ;
     &__prefix,
     &__suffix,
     &__chips {
         height: $input-height;
-        margin:0;
+        margin: 0;
         @include border();
     }
-
     &__prefix,
     &__suffix {
         padding: 0 $input-padding;
         background-color: $alpha-black-light;
     }
-
     &__prefix,
     &__chips {
         border-radius: $border-radius 0 0 $border-radius;
         border-right: 0;
     }
-
     &__suffix {
         border-radius: 0 $border-radius $border-radius 0;
         border-left: 0;
     }
-
     &__chips {
         padding: 0 $input-padding / 2;
-
         line-height: $font-regular;
         font-size: $font-small;
-
-        .chip + .chip {
+        .chip+.chip {
             margin-left: $basic-padding / 6;
         }
     }
-
     &__clear-btn {
         position: absolute;
-
         right: 0;
-
         height: $input-height;
         width: $input-height;
         line-height: 2.5;
         cursor: pointer;
     }
-
     &__hint {
         color: $color-grey;
         font-style: italic;
     }
-
     &__error {
         color: $color-error;
         font-weight: 400;
     }
-
     &--focused &__field {
         background-color: $alpha-black-light;
         border-color: $alpha-black-medium;
     }
-
     &--with-icon &__field {
         padding-left: $input-height;
     }
-
     &--with-icon-right &__field {
         padding-right: $input-height;
     }
-
     &--with-two-icon-right {
-
         .uni-input__field {
             padding-right: 50px;
         }
-
         .uni-input__clear-btn {
             right: 20px;
         }
     }
-
     &--with-chips &__field {
         border-radius: 0 $border-radius $border-radius 0;
         border-left-width: 0;
     }
-
     &--with-prefix &__field {
         border-radius: 0 $border-radius $border-radius 0;
     }
-
     &--with-suffix {
-
         .uni-input__field {
             border-radius: $border-radius 0 0 $border-radius;
         }
-
         .uni-input__clear-btn {
             right: 45px;
         }
     }
-
     &--floating {
-
         .uni-input {
-
             &__label {
                 position: absolute;
-
                 top: $label-height;
                 left: $input-padding;
-
                 height: auto;
-
                 font-size: $font-regular;
                 line-height: $input-height;
-
                 cursor: text;
                 transition: transform ease-in-out 0.1s;
                 will-change: transform;
             }
-
             &__field {
                 border: 0 none;
                 border-bottom: 1px solid $alpha-black-medium;
                 border-radius: 0;
                 background-color: transparent;
             }
-
             &__prefix,
             &__suffix {
                 border: 0 none;
@@ -184,39 +147,31 @@
                 padding: 0;
             }
         }
-
         &.uni-input--focused,
         &.uni-input--has-content {
-
             // Animation variables
             $scale-factor: $font-small / $font-regular;
             $translateX: $input-padding / $scale-factor;
             $translateY: ($label-height / $scale-factor) + ((($input-height - $font-regular) / 2) * $scale-factor) - (($label-height - $font-small) / 2);
-
             .uni-input {
-
                 &__label {
                     cursor: default;
                     transform: scale($scale-factor) translate3d(- $translateX, - $translateY, 0);
                     transform-origin: left top;
                 }
-
                 &__field {
                     background-color: transparent;
                 }
             }
         }
-
         &.uni-input--has-label .uni-input__main-label {
             padding-top: $label-height;
         }
     }
-
     &--focused &__field {
         background-color: $alpha-black-light;
         border-color: $alpha-black-medium;
     }
-
     &--with-prefix &__chips {
         border-radius: 0;
     }

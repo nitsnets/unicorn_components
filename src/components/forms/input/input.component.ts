@@ -1,4 +1,7 @@
-import { Component, EventEmitter, HostBinding, Input, OnChanges, OnInit, Output } from '@angular/core';
+import {
+    Component, EventEmitter, HostBinding, Input, OnChanges, Output, ContentChild, ElementRef,
+    AfterContentInit
+} from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 import { UniInputBaseComponent } from '../../base/input-base/input-base.component';
@@ -13,21 +16,24 @@ export type MaskArray = (string | RegExp)[];
     templateUrl: 'input.component.html',
     styleUrls: ['input.component.scss'],
 })
-export class UniInputComponent extends UniInputBaseComponent implements OnInit {
+export class UniInputComponent extends UniInputBaseComponent implements AfterContentInit {
     @HostBinding('class.uni-input') componentClass = true;
     @HostBinding('class.uni-input--focused') focused = false;
     @HostBinding('class.uni-input--has-label') get hasLabel() { return this.label && this.label.length; }
     @HostBinding('class.uni-input--has-content') get hasContent() { return this.model && this.model.length; }
-    @HostBinding('class.uni-input--with-suffix') get hasSuffix() { return this.suffix || this.suffixIcon; }
     @HostBinding('class.uni-input--with-chips') get hasChips() { return this.chips && this.chips.length; }
     @HostBinding('class.uni-input--with-icon') get hasIcon() { return this.icon; }
     @HostBinding('class.uni-input--with-icon-right') get hasIconRight() { return this.iconRight || this.clear; }
     @HostBinding('class.uni-input--with-two-icon-right') get hasTwoIconRight() { return this.iconRight && this.clear }
-    @HostBinding('class.uni-input--with-prefix') get hasPrefix() {
-        return this.prefix ||
-            this.prefixIcon ||
-            this.type === 'color';
+    @HostBinding('class.uni-input--with-suffix') get hasSuffix() {
+        return this.suffix || this.suffixIcon || this.suffixContent;
     }
+    @HostBinding('class.uni-input--with-prefix') get hasPrefix() {
+        return this.prefix || this.prefixIcon || this.prefixContent
+    }
+
+    @ContentChild('prefix') prefixContent: ElementRef;
+    @ContentChild('suffix') suffixContent: ElementRef;
 
     @HostBinding('class.uni-input--floating')
     @Input() floating = false;
@@ -53,7 +59,6 @@ export class UniInputComponent extends UniInputBaseComponent implements OnInit {
     @Input() multiline = false;
     @Input() autofocus = false;
     @Input() clear = false;
-    @Input() colorSwatch = false;
     @Input() caret = false;
 
     @Input() chips: string[] | UniOption[];
@@ -62,6 +67,11 @@ export class UniInputComponent extends UniInputBaseComponent implements OnInit {
 
     @Output() uniKeypress = new EventEmitter();
     @Output() enter = new EventEmitter();
+
+    ngAfterContentInit() {
+        if (this.prefixContent) { this.prefixContent.nativeElement.classList.add('uni-input__prefix-content') }
+        if (this.suffixContent) { this.suffixContent.nativeElement.classList.add('uni-input__suffix-content') }
+    }
 
     onKeyPress(event: KeyboardEvent) {
         this.uniKeypress.emit(event);
