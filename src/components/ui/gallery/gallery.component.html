@@ -15,79 +15,8 @@
     <uni-button label="Cancel" (click)="onCleanSelected()"></uni-button>
 </div>
 <div class="uni-gallery__container" *ngIf="images && images.length">
-    <!-- <uni-gallery-image class="uni-gallery__item" *ngFor="let image of images, let i = index" [selected]="isSelected(i)" (selectedChange)="onSelect($event, i)"
+    <uni-gallery-image class="uni-gallery__item" *ngFor="let image of images, let i = index" [selected]="isSelected(i)" (selectedChange)="onSelect($event, i)"
         [deletingSelection]="deletingSelection" (delete)="onDelete(i, image)" [height]="200" [aspectRatio]="image.aspectRatio"
         [imagePath]="image.src" [thumbPath]="image.thumbSrc" [label]="image.name" (clickImage)="openFullImage(i)">
-    </uni-gallery-image> -->
-
-
-
-    <div *ngFor="let image of images, let i = index" >
-
-        <div [ngSwitch]="image.type" >
-
-             <uni-gallery-image *ngSwitchCase="'image'" class="uni-gallery__item" [selected]="isSelected(i)" (selectedChange)="onSelect($event, i)"
-                [deletingSelection]="deletingSelection" (delete)="onDelete(i, image)" [height]="200" [aspectRatio]="image.aspectRatio"
-                [imagePath]="image.src" [thumbPath]="image.thumbSrc" [label]="image.name" (clickImage)="openFullImage(i)">
-            </uni-gallery-image>
-
-            <uni-gallery-audio *ngSwitchCase="'audio'" class="uni-gallery__item"[selected]="isSelected(i)" (selectedChange)="onSelect($event, i)"
-                [deletingSelection]="deletingSelection" (delete)="onDelete(i, image)" [aspectRatio]="1"
-                [audioPath]="image.src" [label]="image.name" (clickImage)="openFullImage(i)">
-            </uni-gallery-audio>
-
-            <uni-gallery-text *ngSwitchCase="'text'" class="uni-gallery__item"  [selected]="isSelected(i)" (selectedChange)="onSelect($event, i)"
-                [deletingSelection]="deletingSelection" (delete)="onDelete(i, image)" [aspectRatio]="image.aspectRatio"
-                [textPath]="image.src" [label]="image.name" (clickImage)="openFullImage(i)">
-            </uni-gallery-text>
-
-            <uni-gallery-video *ngSwitchCase="'video'" class="uni-gallery__item" [selected]="isSelected(i)" (selectedChange)="onSelect($event, i)"
-                [deletingSelection]="deletingSelection" (delete)="onDelete(i, image)" [aspectRatio]="image.aspectRatio"
-                [videoPath]="image.src" [label]="image.name" (clickImage)="openFullImage(i)">
-            </uni-gallery-video>
-
-
-            <!-- <uni-gallery-audio *ngSwitchCase="'audio'" class="uni-gallery__item"[selected]="isSelected(i)" (selectedChange)="onSelect($event, i)"
-                [deletingSelection]="deletingSelection" (delete)="onDelete(i, image)" [aspectRatio]="image.aspectRatio"
-                [imagePath]="image.src" [label]="image.name" (clickImage)="openFullImage(i)">
-            </uni-gallery-audio> -->
-
-            <!-- <uni-gallery-text *ngSwitchCase="'text'" class="uni-gallery__item"  [selected]="isSelected(i)" (selectedChange)="onSelect($event, i)"
-                [deletingSelection]="deletingSelection" (delete)="onDelete(i, image)" [aspectRatio]="image.aspectRatio"
-                [imagePath]="image.src" [label]="image.name" (clickImage)="openFullImage(i)">
-            </uni-gallery-text>
-
-           
-
-            <uni-gallery-video *ngSwitchCase="'video'" class="uni-gallery__item" [selected]="isSelected(i)" (selectedChange)="onSelect($event, i)"
-                [deletingSelection]="deletingSelection" (delete)="onDelete(i, image)" [aspectRatio]="image.aspectRatio"
-                [imagePath]="image.src" [label]="image.name" (clickImage)="openFullImage(i)">
-            </uni-gallery-video> -->
-
-         
-
-            <!-- <div *ngSwitchCase="'image'">
-                <p> Image: {{image.name}} </p>
-            </div>
-
-            <div *ngSwitchCase="'text'">
-                <p> Text: {{image.name}} </p>
-                <uni-icon [icon]="'library_books'"></uni-icon>
-            </div>
-
-            <div *ngSwitchCase="'audio'">
-                <p> Audio: {{image.name}} </p>
-                <uni-icon [icon]="'audiotrack'"></uni-icon>
-            </div>
-
-            <div *ngSwitchCase="'video'">
-                <p> Video: {{image.name}} </p>
-                <uni-icon [icon]="'video_library'"></uni-icon>
-            </div> -->
-
-        </div>
-       
-    </div>
-
-
+    </uni-gallery-image>
 </div>

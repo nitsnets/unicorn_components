@@ -78,9 +78,6 @@ import { UniToastComponent } from './utils/toast/toast.component';
 import { UniToggleComponent } from './forms/toggle/toggle.component';
 import { UniTooltipComponent } from './utils/tooltip/tooltip.component';
 import { UniTooltipDirective } from './utils/tooltip/tooltip.directive';
-import { UniGalleryAudioComponent } from './ui/gallery/audio/audio.component';
-import { UniGalleryTextComponent } from './ui/gallery/text/text.component';
-import { UniGalleryVideoComponent } from './ui/gallery/video/video.component';
 
 export const UNI_COMPONENTS = [
     UniPopupComponent, UniPopupTriggerDirective, UniPopupContainerComponent, UniMenuComponent, UniMenuTriggerDirective,
@@ -98,9 +95,7 @@ export const UNI_COMPONENTS = [
     UniCarouselDirective, UniDatagridDeleteComponent, FilteredDatagridComponent, UniFiltersListComponent,
     UniSpinnerComponent, UniAccordionItemComponent, UniButtonGroupComponent, UniRadioGroupComponent,
     UniButtonToggleGroupComponent, UniSliderComponent, UniAlertComponent, UniTabsItemComponent, UniTextareaComponent,
-    UniSliderRangeComponent, UniImageComponent,
-    UniGalleryImageComponent, UniGalleryAudioComponent, UniGalleryTextComponent, UniGalleryVideoComponent,
-    UniGalleryComponent,
+    UniSliderRangeComponent, UniImageComponent, UniGalleryImageComponent, UniGalleryComponent,
     UniGalleryFullImageComponent, UniModalComponent, UniTooltipComponent, UniTooltipDirective, UniToastComponent
 ];
 export const UNI_ENTRY_COMPONENTS = [

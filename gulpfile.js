@@ -14,7 +14,7 @@ const temp = './tmp';
 const dist = './dist';
 const demo = './demo/dist';
 const bundles = `${dist}/bundles`;
-const styles = `${dist}/src/styles`;
+const styles = `${dist}/styles`;
 
 /**
  * Main tasks

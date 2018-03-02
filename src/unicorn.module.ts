@@ -5,13 +5,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { UNI_DIRECTIVES } from './directives/index';
 import { UNI_PIPES } from './pipes/index';
-import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
     imports: [
         CommonModule,
-        FormsModule,
-        BrowserModule
+        FormsModule
     ],
     declarations: [
         UNI_COMPONENTS,

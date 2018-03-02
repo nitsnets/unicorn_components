@@ -43,9 +43,7 @@ export class UniGalleryComponent {
     constructor(
         private viewContainerRef: ViewContainerRef,
         private cmpFactoryResolver: ComponentFactoryResolver
-    ) {
-        console.log('int: ', this.images);
-    }
+    ) { }
 
     onSelect(value: boolean, i: number) {
         const currSelectedIndex = this.imagesSelected.indexOf(i);
